@@ -1,0 +1,6 @@
+[build]
+  command = "pip install markdown && python build_static_site.py --input ./site --output ./dist"
+  publish = "dist"
+
+[build.environment]
+  PYTHON_VERSION = "3.8"
