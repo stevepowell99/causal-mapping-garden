@@ -1,2 +1,2 @@
 [build]
-  publish = "site"
+  publish = "generated_site"
