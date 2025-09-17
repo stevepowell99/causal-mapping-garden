@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR009
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: South Sudan
+**Year**: 2023
+**Outcome description**: On <redacted>, a youth union was formed by Malakal youth and youth of the protection of civilians site in Malakal.
+**Significance of the outcome**: For the first time since 2016 incident in Protection of Civilians site the youth group from <person> on one side and Shilluk-Nure on the other side gather together in <redacted> town to discuss issues of peaceful co-existence. The formation of the union shows a lot of potential of cooperation between these groups in the future. 
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: Justice and Peace Commission of the Catholic Diocese of Malakal facilitated a youth roundtable meeting for both youth representatives of the Malakal and Protection of Civilian site. This meeting took place at the Ministry of Information and Telecommunication and services of the Upper Nile State Malakal. There were representatives of the <LOC> present at the meeting which shows importance of the meeting. This meeting has caused for the creation of this union.
+**Contribution of other actors and factors**: The willingness of the representatives of the youth is an important contribution. The chair person of the different youth groups have played a big role in the creation of the union.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: partners data
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.2  Pastoralist Youth groups increase their engagement in/ initiate peace building-activities to end child-abduction, revenge killing, cattle-raiding and ambushes 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: On <redacted>, a youth union was formed by Malakal youth and youth of the <redacted> of civilians site in Malakal.  Significance description: For the first time since 2016 incident in Protection of Civilians site the youth group from <person> on one side and Shilluk-Nure on the other side gather together in <redacted> town to discuss issues of peaceful co-existence. The formation of the union shows a lot of potential of cooperation between these groups in the future.   Contribution of the programme: Justice and Peace Commission of the Catholic Diocese of Malakal facilitated a youth roundtable meeting for both youth representatives of the Malakal and Protection of Civilian site. This meeting took place at the Ministry of Information and Telecommunication and services of the Upper Nile State Malakal. There were representatives of the <LOC> present at the meeting which shows importance of the meeting. This meeting has caused for the creation of this union.  Additional information:   Contribution of other actors and factors: The willingness of the representatives of the youth is an important contribution. The chair person of the different youth groups have played a big role in the creation of the union.
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging, New structure
+**TypeOfChangeCluster**: Community bridging, Mobilizing citizens and organizations

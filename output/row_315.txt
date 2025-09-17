@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SSU2312/CIV012
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: South Sudan
+**Year**: 2023
+**Outcome description**: In December 2023, the government of South Sudan used the 22.973 names of missing people who lost their lives from the 1955 war and inter-communal fighting accross South Sudan to draft the bill on reparation and compensation authority. 
+**Significance of the outcome**: The government of South Sudan (Ministry of Justice and Constitutional Development) is more committed than before in implemeting memorilisation and documentation as mean to bring healing and reconciliation as demonstration in drafting the bill or reparation and compensation authority in South Sudan
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: From 2016 until December 2023, X organisation (partner from PAX) collected, documented and pubilshed 22,937 names of missing people who lost their lives from the 1995 war and inter-communal fighting. Furthermore, the organisation organised one talkshow on Radio Bakhita in Juba, Torit and Malakal about commemoration of 18th August 1955 Torit Revolution. During the talk show many people called the radio to request remembering the ones we lost to continue the program and to create awareness to stop violence in south sudan and to remember the horrors. 
+**Contribution of other actors and factors**: no
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: website organisation, draft bil
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 2.3 CSO's and networks proactively monitor and advocate for implementation of R-ARCSS and human rights.
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In December 2023, the government of South Sudan used the 22.973 names of missing people who lost their lives from the 1955 war and inter-communal fighting accross South Sudan to draft the bill on reparation and compensation authority.   Significance description: The government of South Sudan (Ministry of Justice and Constitutional Development) is more committed than before in implemeting memorilisation and documentation as mean to bring healing and reconciliation as demonstration in drafting the bill or reparation and compensation authority in South Sudan  Contribution of the programme: From 2016 until December 2023, X organisation (partner from PAX) collected, documented and pubilshed 22,937 names of missing people who lost their lives from the 1995 war and inter-communal fighting. Furthermore, the organisation organised one talkshow on Radio Bakhita in Juba, Torit and Malakal about commemoration of 18th August 1955 Torit Revolution. During the talk show many people called the radio to request remembering the ones we lost to continue the program and to create awareness to stop violence in south sudan and to remember the horrors.   Additional information:   Contribution of other actors and factors: no
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SAH2508/PHR034
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Sahel/Burkina Faso
+**Year**: 2024
+**Outcome description**: In 2024 and 2025, the quality of the MDR reports produced by the CIFDHA team in Burkina Faso on human rights violations and abuses improved significantly compared to 2023, both in terms of form and content.
+**Significance of the outcome**: Before 2024, the reports produced by the team were lacking in data and structure. This undermined their credibility and limited their use in advocacy.  With AINL's support, an expert was recruited to strengthen the CIFDHA team's capacity and assist it in preparing SDR reports in 2024 and 2025. This has resulted in high-quality reports with evidence that can be used in advocacy for the protection of human rights. This contributes directly to the programme's objectives of strengthening advocacy for the protection of human rights.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: As part of the project to monitor human rights violations and abuses in the northern, north-central and Sahel regions funded by AINL, AINL recruited an MDR expert to support the CIFDHA team in strengthening its capacity to improve the quality of MDR reports. It was the support of this expert that made it possible to improve the quality of the MDR reports.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: The 2023 and 2024 MDR reports
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.3 Output 2.3.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In 2024 and 2025, the quality of the MDR reports produced by the CIFDHA team in Burkina Faso on human rights violations and abuses improved significantly compared to 2023, both in terms of form and content. Significance:  Before 2024, the reports produced by the team were lacking in data and structure. This undermined their credibility and limited their use in advocacy.  With AINL's support, an expert was recruited to strengthen the CIFDHA team's capacity and assist it in preparing SDR reports in 2024 and 2025. This has resulted in high-quality reports with evidence that can be used in advocacy for the protection of human rights. This contributes directly to the programme's objectives of strengthening advocacy for the protection of human rights. Contribution:  As part of the project to monitor human rights violations and abuses in the northern, north-central and Sahel regions funded by AINL, AINL recruited an MDR expert to support the CIFDHA team in strengthening its capacity to improve the quality of MDR reports. It was the support of this expert that made it possible to improve the quality of the MDR reports. Additional Info:   Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

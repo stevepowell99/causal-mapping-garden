@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV008
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Sahel/Niger
+**Year**: 2022
+**Outcome description**: In <redacted>, following RNDDH's plea to amend the decree on NGOs, the <person> <redacted> amended the decree on NGOs No. <redacted>/PRN/MAT/DC and to remove the clauses limiting the operations of NGOs. 
+**Significance of the outcome**: In <redacted>, the government promulgated a decree on NGOs with clauses restricting their operations. RNDDH initiated advocacy actions with the government of <redacted> to amend the unfavourable clauses.  Following RNDDH's continued advocacy, the government of Niger organised a national meeting to discuss the NGO decree with NGOs and amended the decree in accordance with the NGOs' suggestions. 
+**Additional information (use if needed) **: The government has set up a committee to review the decree. 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: The programme, through RNDDH, supported advocacy efforts on the NGO decree and also rallied NGOs to support the amendment of the law.  
+**Contribution of other actors and factors**: The Government of Niger, ICNL, supports the decree review committee, USAID/SHIGA supports the draft legal arguments. 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Reports and links of RNDDH <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **:  Outcome 1.2
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In <redacted>, following RNDDH's plea to amend the decree on NGOs, the <person> <redacted> amended the decree on NGOs No. <redacted>/PRN/MAT/DC and to remove the clauses limiting the <redacted> of NGOs.   Significance description: In <redacted>, the government promulgated a decree on NGOs with clauses restricting their operations. RNDDH initiated advocacy actions with the government of <redacted> to amend the unfavourable clauses.  Following RNDDH's continued advocacy, the government of Niger organised a national meeting to discuss the NGO decree with NGOs and amended the decree in accordance with the NGOs' suggestions.   Contribution of the programme: The programme, through RNDDH, supported advocacy efforts on the NGO decree and also rallied NGOs to support the amendment of the law.    Additional information: The government has set up a committee to review the decree.   Contribution of other actors and factors: The Government of Niger, ICNL, supports the decree review committee, USAID/SHIGA supports the draft legal arguments. 
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-LEB2508/GEQ027
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 3
+**coutnry**: Lebanon
+**Year**: 2025
+**Outcome description**: On July 7, 2025, 19-year-old Youssef left his job at a bakery due to feeling undervalued and found a new job with better pay and guaranteed labor rights, demonstrating increased self-awareness and assertiveness in advocating for his rights.
+**Significance of the outcome**: This represents a key personal empowerment milestone, where Youssef applied the knowledge and confidence gained to improve his working conditions and assert his dignity in employment, which can contribute to better labor practices and youth agency in a vulnerable context.
+**Additional information (use if needed) **:  
+**Rating significance**: early/small
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: ABAAD conducted 12 capacity-building sessions in which Youssef participated, and provided Youssef with critical skills, self-awareness, and knowledge about his rights, which motivated his decision to leave an unfavorable job and seek better employment conditions.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: No
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 3.2
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: On July 7, 2025, 19-year-old Youssef left his job at a bakery due to feeling undervalued and found a new job with better pay and guaranteed labor rights, demonstrating increased self-awareness and assertiveness in advocating for his rights.  Significance description: This represents a key personal empowerment milestone, where Youssef applied the knowledge and confidence gained to improve his working conditions and assert his dignity in employment, which can contribute to better labor practices and youth agency in a vulnerable context.  Contribution of the programme: ABAAD conducted 12 capacity-building sessions in which Youssef participated, and provided Youssef with critical skills, self-awareness, and knowledge about his rights, which motivated his decision to leave an unfavorable job and seek better employment conditions.  Additional information:    Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change Mental health resilience
+**TypeOfChangeCluster**: Capacity change

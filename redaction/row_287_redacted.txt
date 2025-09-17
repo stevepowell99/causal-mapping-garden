@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ007
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: South Sudan
+**Year**: 2023
+**Outcome description**: On <redacted>, community leaders were directed to report cases of sexual gender based violence to court of law. The declaration was done in the assembly meeting hall in <LOC> town.
+**Significance of the outcome**: During the last war in 2013 in Malakal town and around issues of sexual gender based violence were reported and perpurtrators are not held accountable but now some cases are being reported and the mobile court s looking into most cases. After women cacus in the <LOC> state transitional legislative assembly received training on sexual gender based violence concepts conducted by Justice and Peace Commission- Catholic Diocese of Malakal, members of the assembly have advocated for awareness and women rights among women groups in Malakal and in the Protection site for civilians. Before the declaration there was little movement between towns and this declaration has given more trust between people and even women are moving on the streets more.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: After women cacus in the <LOC> state transitional legislative assembly received training on sexual gender based violence concepts conducted by Justice and Peace Commission- Catholic Diocese of Malakal. Thes trainings have increased awarness and trust within communties.
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.1  Women, youth, local traditional leaders and local politicians from conflicting communities reconcile through regional peace-building processes and adhere to local level peace agreements
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: On <redacted>, community leaders were directed to report cases of sexual gender based violence to court of law. The declaration was done in the assembly meeting hall in <LOC> town.  Significance description: During the last war in 2013 in Malakal town and around issues of sexual gender based violence were reported and perpurtrators are not held accountable but now some cases are being reported and the mobile court s looking into most cases. After women cacus in the <LOC> state transitional legislative assembly received training on sexual gender based violence concepts conducted by Justice and Peace Commission- Catholic Diocese of Malakal, members of the assembly have advocated for awareness and women rights among women groups in Malakal and in the Protection site for civilians. Before the declaration there was little movement between towns and this declaration has given more trust between people and even women are moving on the streets more.  Contribution of the programme: After women cacus in the <LOC> state transitional legislative assembly received training on sexual gender based violence concepts conducted by Justice and Peace Commission- Catholic Diocese of Malakal. Thes trainings have increased awarness and trust within communties.  Additional information:   Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Policy implementation, Policy change, Gender transformative, Other
+**TypeOfChangeCluster**: Policy, Gender, Other

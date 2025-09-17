@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SSU2305/CIV040
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: South Sudan
+**Year**: 2022
+**Outcome description**: After the press conference held on 20th October 2022 on the enactment of the Constitution Making Process Bill, the Reconstituted Transitional National Legislative Assembly of South Sudan, on 24th October 2022, passed the bill that will guide the permanent constitution making process.
+**Significance of the outcome**: While in the 2018 Peace Agreement it was agreed to start drafting a new Permanent Constitution by enacting a legislation to govern the constitutional making process within six months, it now has finally passed the bill which leads reconstitution of the NCRC and formation of the constitution drafting committee, preparatory sub-committee and the national constitution conference. This is a significant step to start the process.
+**Additional information (use if needed) **: According to the Roadmap for implementing the R-ARCSS, agreed upon on 4th of August 2022, the constituion making process bill was supposed to be passed in February 2022 and all the mechanisms in it formed by December 2022 and the first civic engagement and consultation on the permanent constitution making process was supposed to start in Jan 2023 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: SSYCW conducted 1 press conference and 2 radio talk shows on 20th October 2022, while 4 more radio talk shows were conducted on 24, 26, 29 & 31st of October 2022. 
+**Contribution of other actors and factors**: Political parties, Signatories to the peace agreements, National youth Union, International community
+**Rating contribution**: little
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Press statement, recorded talk shows (Eye Radio), https://www.scribd.com/document/570592949/CMP-BILL-2022-1#
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: After the press conference held on 20th October 2022 on the enactment of the Constitution Making Process Bill, the Reconstituted Transitional National Legislative Assembly of South Sudan, on 24th October 2022, passed the bill that will guide the permanent constitution making process.  Significance description: While in the 2018 Peace Agreement it was agreed to start drafting a new Permanent Constitution by enacting a legislation to govern the constitutional making process within six months, it now has finally passed the bill which leads reconstitution of the NCRC and formation of the constitution drafting committee, preparatory sub-committee and the national constitution conference. This is a significant step to start the process.  Contribution of the programme: SSYCW conducted 1 press conference and 2 radio talk shows on 20th October 2022, while 4 more radio talk shows were conducted on 24, 26, 29 & 31st of October 2022.   Additional information: According to the Roadmap for implementing the R-ARCSS, agreed upon on 4th of August 2022, the constituion making process bill was supposed to be passed in February 2022 and all the mechanisms in it formed by December 2022 and the first civic engagement and consultation on the permanent constitution making process was supposed to start in Jan 2023   Contribution of other actors and factors: Political parties, Signatories to the peace agreements, National youth Union, International community
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

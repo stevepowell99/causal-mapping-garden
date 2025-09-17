@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ034
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Lebanon
+**Year**: 2025
+**Outcome description**: Men(Tell), a student-led <redacted> supported by the Ali Ghandour Center at International College Beirut, developed and implemented a mental health project for 20 members of the Lebanese Civil Defense Fire Brigade during <redacted>.
+**Significance of the outcome**: This initiative filled a critical gap by providing tailored psychosocial support to emergency front-liners, a group traditionally reluctant to seek mental health care due to social stigma around masculinity. 
+**Additional information (use if needed) **: The creation of a dedicated wellness space within the brigade headquarters offers a sustainable environment where members can practice and reflect on mental health techniques. Additionally, familiarizing participants with Abaad’s Men Center expanded their access to free, confidential counseling services. The uptake of these services by several participants after the workshops indicates meaningful and sustained impact on their well-being.
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: The students learned about ABAAD’s work through the MenEngage Network in Lebanon, which <redacted> them to ABAAD’s approach to masculinities and mental health. Two awareness videos produced by ABAAD in 2024, one an animated poem on caring fatherhood during war, and the other a dialogue between two generations of fathers, were shared through the network and inspired the students’ interest in these themes. These materials helped shape the focus of the Men(Tell) initiative and led to their request for ABAAD’s support in designing and facilitating the workshops, making ABAAD a key contributor to the project's impact.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: No
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 3.4
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: Outcome description:  Men(Tell), a student-led <redacted> supported by the Ali Ghandour Center at International College Beirut, developed and implemented a mental health project for 20 members of the Lebanese Civil Defense Fire Brigade during <redacted>. Significance:  This <redacted> filled a critical gap by providing tailored psychosocial support to emergency front-liners, a group traditionally reluctant to seek mental health care due to social stigma around masculinity.  Contribution:  The students learned about ABAAD’s work through the MenEngage Network in Lebanon, which <redacted> them to ABAAD’s approach to masculinities and mental health. Two awareness videos produced by ABAAD in 2024, one an animated poem on caring fatherhood during war, and the other a dialogue between two generations of fathers, were shared through the network and inspired the students’ interest in these themes. These materials helped shape the focus of the Men(Tell) initiative and led to their request for ABAAD’s support in designing and facilitating the workshops, making ABAAD a key contributor to the project's impact. Additional Info:  The creation of a dedicated wellness space within the brigade headquarters offers a sustainable environment where members can practice and reflect on mental health techniques. Additionally, familiarizing participants with Abaad’s Men Center expanded their access to free, confidential counseling services. The uptake of these services by several participants after the workshops indicates meaningful and sustained impact on their well-being. Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change Mental health resilience, Gender sensitive
+**TypeOfChangeCluster**: Gender, Capacity change

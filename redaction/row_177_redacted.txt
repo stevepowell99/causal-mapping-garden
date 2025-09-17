@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV010
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Palestine
+**Year**: 2022
+**Outcome description**: 7amleh fostered it's international standing and outreach with gaining ECOSOC consultative status (<redacted>) and membership of the Global Network Initiative (6th of <redacted>)
+**Significance of the outcome**: Growing international advocacy and outreach, previously limited opportunities towards UN bodies
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: International community
+**Scale**: International
+**Contribution of the programme**: Part of the network and effort as part of the programme. 7amleh applied. Financial support for PDAF contributed to the international standing of 7amleh and advocacy staff is partly financed by the programme 
+**Contribution of other actors and factors**: Mainly because of the great work 7amleh is doing in general, not only this programme 
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted> and <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes, outcome 1.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: 7amleh fostered it's international standing and outreach with gaining ECOSOC consultative status (<redacted>) and membership of the Global Network Initiative (6th of <redacted>)  Significance description: Growing international advocacy and outreach, previously limited opportunities towards UN bodies  Contribution of the programme: Part of the network and effort as part of the programme. 7amleh applied. Financial support for PDAF contributed to the international standing of 7amleh and advocacy staff is partly financed by the programme   Additional information:   Contribution of other actors and factors: Mainly because of the great work 7amleh is doing in general, not only this programme 
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

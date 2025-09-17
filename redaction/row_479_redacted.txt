@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/ESF022
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: International / External Stress Factors
+**Year**: 2024
+**Outcome description**: In 2024, like in <redacted>, at the UNSC Protection of Civilians (PoC) week, UN Secretary General's PoC report included strong references to explosive weapons in populated areas as a source of civilian harm, echoed by several <LOC> in their statements during the PoC debate and related side events.
+**Significance of the outcome**: This development helps to keep EWIPA on the political agenda, which will help universailzation and implementation of the politcal declaration on explosive weapons in populated areas. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: International community
+**Scale**: International 
+**Contribution of the programme**: PAX's contribution is indirect.  PAX' long-standing work on the issue has been helping to raise awareness about it for <redacted> among Member States, and UN organizations. INEW of which PAX is a board member, over <redacted> has had many inputs to the UN SC's report on the Protection of Civilians. 
+**Contribution of other actors and factors**: Yes, there are numerous other actors involved in pushing for the recognition of the humanitarian concerns around explosive weapon use in towns and cities  on the UN level, including champions among Member States, IOs, and other civil society actors.
+**Rating contribution**: little
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: PoC report: <redacted> overview of the PoC debate: <redacted> news article on the POC week 1 debates with regard to EWIPA: <redacted> , week 2: <redacted> and <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: SO1, outcome 1.1
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In 2024, like in <redacted>, at the UNSC Protection of Civilians (PoC) week, UN Secretary General's PoC report included strong references to explosive weapons in populated areas as a source of civilian harm, echoed by several <LOC> in their statements during the PoC debate and related side events.  Significance description: This development helps to keep EWIPA on the political agenda, which will help universailzation and implementation of the politcal declaration on explosive weapons in populated areas.   Contribution of the programme: PAX's contribution is indirect.  PAX' long-standing work on the issue has been helping to raise awareness about it for <redacted> among Member States, and UN organizations. INEW of which PAX is a board member, over <redacted> has had many inputs to the UN SC's report on the Protection of Civilians.   Additional information:   Contribution of other actors and factors: Yes, there are numerous other actors involved in pushing for the recognition of the humanitarian concerns around explosive weapon use in towns and cities  on the UN level, including champions among Member States, IOs, and other civil society actors.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, New structure
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Mobilizing citizens and organizations

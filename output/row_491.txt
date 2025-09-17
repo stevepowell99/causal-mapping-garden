@@ -1,0 +1,23 @@
+**FragmentID**: SCC-INT2508/ESF023
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: International / External Stress Factors
+**Year**: 2024
+**Outcome description**: In May 2024 states expressed support for the political work on explosive weapons during an INEW organized full day program in Oslo before the second official meeting of endorsing states to the political declaration on explosive weapons, called the Protection Forum which was attended by states, UN organizations and civil society. 
+**Significance of the outcome**: PAX was part of the INEW working group that organized the Protection Forum, has provided input on the agenda, brought speakers from Yemen and Ukraine to pannel discussions and organized a public screening of the documantery "For Sama" in a cinema in the centre of Oslo to inform the geneal public on the humanitarian consequences of bombing towns and cities, in this documentary Aleppo specifically. 
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: International community
+**Scale**: International 
+**Contribution of the programme**: Direct, PAX was part of the INEW working group organizing the Protection Forum, and delivered and drafted one of the three  INEW statement during the official conference organized by Norway the day after. 
+**Contribution of other actors and factors**: Yes the working group organizing the forum consisted of five other organizations too
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: News item on the Protection Forum: https://www.inew.org/the-protection-forum-and-oslo-conference-to-review-implementation-of-the-political-declaration/ INEW statement session 2 delivered by PAX: https://www.inew.org/wp-content/uploads/2024/04/Roos-Statement-EWIPA-Oslo.pdf 
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: SO1, outcome 1.1
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In May 2024 states expressed support for the political work on explosive weapons during an INEW organized full day program in Oslo before the second official meeting of endorsing states to the political declaration on explosive weapons, called the Protection Forum which was attended by states, UN organizations and civil society.   Significance description: PAX was part of the INEW working group that organized the Protection Forum, has provided input on the agenda, brought speakers from Yemen and Ukraine to pannel discussions and organized a public screening of the documantery "For Sama" in a cinema in the centre of Oslo to inform the geneal public on the humanitarian consequences of bombing towns and cities, in this documentary Aleppo specifically.   Contribution of the programme: Direct, PAX was part of the INEW working group organizing the Protection Forum, and delivered and drafted one of the three  INEW statement during the official conference organized by Norway the day after.   Additional information:   Contribution of other actors and factors: Yes the working group organizing the forum consisted of five other organizations too
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, New structure
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Mobilizing citizens and organizations

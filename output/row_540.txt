@@ -1,0 +1,23 @@
+**FragmentID**: SCC-DRC2508/PHR006
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: DR Congo
+**Year**: 2025
+**Outcome description**: During 2023-2025, clans and families of the ex-LRA combatants accepted the former fighters and their dependents in northern Uganda. This helped with the resettlement process of former LRA fighters in northern Uganda, who often chose to live in areas near their original home communities and set up workshops in those places, while re-establishing relations with their families and visiting them regularly.
+**Significance of the outcome**: This came as a result of traditional transitional justice processes and mediation and reconciliation processes. Acceptance by local communities - who often remembered grave abuses by the LRA and deal with major land conflicts - is important for the effective reintegration of the ex-LRA returnees  in these communities. The Acholi tribe has not dealt fully with its violent past, and this specific process has set an example for other communities.
+**Additional information (use if needed) **: These changes started in 2023, continued in 2024 and 2025. These have been gradual changes, with steady progress made over time.
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: These changes were made possible through traditional cleansing ceremonies at the clan level, several home visits accompanied by the social workers of PAX and the clean leaders, phycho-social support of returnees and their families by partner organization CCVS, and mediation sessions by PAX and partner organizations Terra and CCVS.
+**Contribution of other actors and factors**: No.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes - primarily PAX's internal reporting on the LRA DDR programme and the above-mentioned external evaluations.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes, Outcome 2.7
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description: During 2023-2025, clans and families of the ex-LRA combatants accepted the former fighters and their dependents in northern Uganda. This helped with the resettlement process of former LRA fighters in northern Uganda, who often chose to live in areas near their original home communities and set up workshops in those places, while re-establishing relations with their families and visiting them regularly.  Significance: This came as a result of traditional transitional justice processes and mediation and reconciliation processes. Acceptance by local communities - who often remembered grave abuses by the LRA and deal with major land conflicts - is important for the effective reintegration of the ex-LRA returnees in these communities. The Acholi tribe has not dealt fully with its violent past, and this specific process has set an example for other communities.  Contribution: These changes were made possible through traditional cleansing ceremonies at the clan level, several home visits accompanied by the social workers of PAX and the clean leaders, phycho-social support of returnees and their families by partner organization CCVS, and mediation sessions by PAX and partner organizations Terra and CCVS.  Additional info (if any): These changes started in 2023, continued in 2024 and 2025. These have been gradual changes, with steady progress made over time.  Contribution of other actors and factors (if any): No.  
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging, New structure
+**TypeOfChangeCluster**: Community bridging, Mobilizing citizens and organizations

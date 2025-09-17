@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR004
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Sahel/Mali
+**Year**: 2022
+**Outcome description**: In <redacted>, MINUSMA expressed its interest in better documenting cases of human rights violations outside SCC intervention zones by applying the Monitoring, Documentation and Reporting method, inviting ADD to submit a proposal to support MINSUMA in the application of Monitoring, Documentation and Reporting.
+**Significance of the outcome**: MINUSMA is a large organisation with considerable resources. Its application of the SDR method could result in high-quality monitoring of the human rights situation and strong advocacy based on proven facts.  NB: In <redacted> the decision was taken to withdraw the <LOC> mission. That information was not yet known when harvesting the outcomes. 
+**Additional information (use if needed) **: The process is ongoing. MINUSMA was already using other channels to collect data and information on human rights violations.  NB: In <redacted> the decision was taken to withdraw the <LOC> mission. That information was not yet known when harvesting the outcomes. 
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: National
+**Contribution of the programme**: During the local training for CSOs on the <redacted>, Documentation and Reporting approach in <redacted>, the ADD team met with the MINUSMA Human Rights section in <person> to explain the project and its actions. 
+**Contribution of other actors and factors**: Other MINUSMA channels
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Project submitted to <person>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.3
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In <redacted>, MINUSMA expressed its interest in better documenting cases of human rights <redacted> outside SCC intervention zones by applying the <redacted>, Documentation and Reporting method, inviting ADD to submit a proposal to support MINSUMA in the application of <redacted>, Documentation and Reporting.  Significance description: MINUSMA is a large organisation with considerable resources. Its application of the SDR method could result in high-quality <redacted> of the human rights situation and strong advocacy based on proven facts.  NB: In <redacted> the decision was taken to withdraw the <LOC> mission. That information was not yet known when <redacted> the outcomes.   Contribution of the programme: During the local training for CSOs on the <redacted>, Documentation and Reporting approach in <redacted>, the ADD team met with the MINUSMA Human Rights section in <person> to explain the project and its actions.   Additional information: The process is ongoing. MINUSMA was already using other channels to collect data and information on human rights violations.  NB: In <redacted> the decision was taken to withdraw the <LOC> mission. That information was not yet known when harvesting the outcomes.   Contribution of other actors and factors: Other MINUSMA channels
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

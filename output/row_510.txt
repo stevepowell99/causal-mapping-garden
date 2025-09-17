@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SYR2508/PHR003
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Syria
+**Year**: 2024
+**Outcome description**: In December 2024, the Swiss Foreign Ministry decided to support Justice for Life and requested that a similar conference, like the Berlin meeting, be organised in the near future.
+**Significance of the outcome**: The Swiss Foreign Ministry has never before been involved in northeastern Syria, and the new support/ fund for Justice for Life marks the first time the Foreign Ministry has been directly involved in supporting such initiatives in the region.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: International community
+**Scale**: Organisation
+**Contribution of the programme**: The project's ability to bring together different parties with different backgrounds at one table has contributed to attracting the attention of international players.
+**Contribution of other actors and factors**: JFL has been in talks with the Swiss Ministry for many months about obtaining possible support for their work in NES. The successful organization of the conference in Berlin one factor among others that helped convince the Swiss Ministry of JFL's capacity.
+**Rating contribution**: moderate
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: Yes (JFL's contract with the Swiss Ministry)
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In December 2024, the Swiss Foreign Ministry decided to support Justice for Life and requested that a similar conference, like the Berlin meeting, be organised in the near future.  Significance description: The Swiss Foreign Ministry has never before been involved in northeastern Syria, and the new support/ fund for Justice for Life marks the first time the Foreign Ministry has been directly involved in supporting such initiatives in the region.  Contribution of the programme: The project's ability to bring together different parties with different backgrounds at one table has contributed to attracting the attention of international players.  Additional information:   Contribution of other actors and factors: JFL has been in talks with the Swiss Ministry for many months about obtaining possible support for their work in NES. The successful organization of the conference in Berlin one factor among others that helped convince the Swiss Ministry of JFL's capacity.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

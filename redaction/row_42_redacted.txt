@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ016
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: South Sudan
+**Year**: 2021
+**Outcome description**: In <redacted>, 60 members of state Women parliamentarians of <person> and <LOC> state comprising the women Caucus promoted gender equality and advocacted for women’s representation in their respective state and national governments.
+**Significance of the outcome**: Previously there was lack of awareness on gender equality in <LOC> and <LOC> states. There was low representation of women in leadership in <LOC> and <LOC> el Ghazal states. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: Regional
+**Contribution of the programme**: Conducted 6 consultative meetings with members of women caucus of <LOC> and <LOC> state. Conducted four empowernment sessions on their roles in parliament in <LOC> and <LOC> state.
+**Contribution of other actors and factors**: Civilians of <LOC> and Nothern Bahr el Ghazal
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes, in the partner-reports.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 3.1
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In <redacted>, 60 members of state Women parliamentarians of <person> and <LOC> state comprising the women Caucus promoted gender equality and advocacted for women’s representation in their respective state and national governments.  Significance description: Previously there was lack of awareness on gender equality in <LOC> and <LOC> states. There was low representation of women in leadership in <LOC> and <LOC> el Ghazal states.   Contribution of the programme: Conducted 6 consultative meetings with members of women caucus of <LOC> and <LOC> state. Conducted four empowernment sessions on their roles in parliament in <LOC> and <LOC> state.  Additional information:   Contribution of other actors and factors: Civilians of <LOC> and Nothern Bahr el Ghazal
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A, Gender transformative
+**TypeOfChangeCluster**: Gender, Capacity change

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR004
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: DR Congo
+**Year**: 2022
+**Outcome description**: In <redacted>, in <LOC>, the director of the Lomami National Park signed a memorandum of understanding with the CDJP-Kisangani, allowing the latter to oversee mediation activities with communities living near the park.
+**Significance of the outcome**: The population has confidence in the CDJP-Kisangani, a faith-based grassroots actor that conducts regular activities in the territories of <LOC> and Ubundu. The signing of the agreement by the park authorities was necessary to move forward in the dialogue process, in a context where tensions persist between ICCN and the neighboring communities. Previously, the local communities surrounding <LOC>, and the armed opposition among the population, also accepted (the terms of) a dialogue process.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Non-state authorities
+**Scale**: Local
+**Contribution of the programme**: The CDJP<redacted> invited ICCN to a workshop in <person> in 2021, which helped ICCN understand the importance of  CDJP's work around the park. Other meetings were subsequently held in <LOC> (with the ICCN general direction) and <person> (park headquarters).
+**Contribution of other actors and factors**: No.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Copy of the Memorandum of Understanding with ICCN.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.5
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In <redacted>, in <LOC>, the director of the Lomami National Park signed a <redacted> of understanding with the CDJP<redacted>, allowing the latter to oversee mediation <redacted> with communities living near the park.  Significance description: The <redacted> has <redacted> in the CDJP<redacted>, a faith-based <redacted> actor that conducts regular <redacted> in the territories of <LOC> and Ubundu. The signing of the agreement by the park authorities was necessary to move forward in the dialogue process, in a context where tensions persist between ICCN and the neighboring communities. <redacted>, the local communities surrounding <LOC>, and the armed <redacted> among the <redacted>, also accepted (the terms of) a dialogue process.  Contribution of the programme: The CDJP<redacted> invited ICCN to a workshop in <person> in 2021, which helped ICCN understand the importance of  CDJP's work around the park. Other meetings were subsequently held in <LOC> (with the ICCN general direction) and <person> (park headquarters).  Additional information:   Contribution of other actors and factors: No.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

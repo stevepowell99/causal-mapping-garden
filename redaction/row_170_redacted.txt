@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR007
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Burundi
+**Year**: 2022
+**Outcome description**: The Minister of Justice ordered the release of <person>, a woman residing in <LOC> commune, on <redacted> from Bubanza prison, after <redacted> of unjust detention. Her <redacted> son was accused of raping a <redacted> girl, Renathe was falsely accused of encouraging her son. 
+**Significance of the outcome**: The release of the mother of the young child shows that the government is susceptible to public pressure, which followed after the partner organisation published details about the victim and the case. A direct WhatsApp message of our partner to the Minister of Justice and the President made the former to order the release. Like other releases, this release had an impact on the whole population so that they would continue to denounce such cases and put pressure on local authorities, as that could reach farther than they would think.
+**Additional information (use if needed) **: The Minister of Justice herself telephoned the director of Rumonge Prison to order the release of <person>. It was already <redacted> The Minister was under strong public pressure after the FOCODE post (see column F).
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: Individual
+**Contribution of the programme**: FOCODE denounced this imprisonment. <person> was informed of this injustice on <redacted> November 12, 2022. There was no evidence of rape and there was no evidence of <person> involvement. <person>, FOCODE alerted the population and the Minister of Justice. The information shocked public opinion and was even sent to President <person>. Renathe was released <redacted> in the evening. For this case of a victim's release, in the documentation of the case FOCODE used the knowledge acquired during the MDR training by AINL; more specifically: there has gradually been more attention also to proper interviewing and the verification of specific details in the cases.
+**Contribution of other actors and factors**: FOCODE, followers of FOCODE publications on social media
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: FOCODE posts on Facebook are in Kirundi in ordre to reach the maximum burundians
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.4
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: The Minister of Justice ordered the release of <person>, a woman residing in <LOC> commune, on <redacted> from Bubanza prison, after <redacted> of unjust detention. Her <redacted> son was accused of raping a <redacted> girl, Renathe was falsely accused of encouraging her son.   Significance description: The release of the mother of the young child shows that the <redacted> is susceptible to public pressure, which followed after the partner organisation published details about the victim and the case. A direct WhatsApp message of our partner to the Minister of Justice and the President made the former to order the release. Like other releases, this release had an impact on the whole <redacted> so that they would continue to denounce such cases and put pressure on local authorities, as that could reach farther than they would think.  Contribution of the programme: FOCODE denounced this imprisonment. <person> was informed of this injustice on <redacted> November 12, 2022. There was no evidence of rape and there was no evidence of <person> involvement. <person>, FOCODE alerted the population and the Minister of Justice. The information shocked public opinion and was even sent to President <person>. Renathe was released <redacted> in the evening. For this case of a victim's release, in the documentation of the case FOCODE used the knowledge acquired during the MDR training by AINL; more specifically: there has gradually been more attention also to proper interviewing and the verification of specific details in the cases.  Additional information: The Minister of Justice herself telephoned the director of Rumonge Prison to order the release of <person>. It was already <redacted> The Minister was under strong public pressure after the FOCODE post (see column F).  Contribution of other actors and factors: FOCODE, followers of FOCODE publications on social media
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

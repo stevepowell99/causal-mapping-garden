@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV001
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Sahel
+**Year**: 2023
+**Outcome description**: Human rights defenders (HRDs) who are members of the National <redacted> of Burkina Faso, Mali, and Niger have enhanced the <redacted> of human rights defenders and local partners in physical and digital security in Burkina Faso, Mali, and Niger since 2023.
+**Significance of the outcome**: Before 2023, HRDs in Burkina Faso, Mali, and <redacted> belonging to the aforementioned coalitions, did not have the capacity to identify risks, analyze HRDs' security needs, or provide training in digital and physical security.
+**Additional information (use if needed) **: Following the physical and digital security training held in <redacted> in <LOC>, Togo, human rights defenders from Burkina Faso, Mali, and <redacted> belonging to the aforementioned <redacted>, were not only able to identify security risks and training needs in physical and digital security of other HRDs and journalists, but also to train them on this matter. In Burkina Faso, HRDs who are members of the Burkinabe Coalition of Human Rights Defenders (CBDDH) trained journalists under the supervision of FREEDOM HOUSE in <redacted>. In Mali, HRDs who are members of the Malian Coalition of Human Rights Defenders (COMADDH) trained AMNESTY partners (TRIJEUD and ADD) in physical and digital security in <redacted>. In 2025, COMADDH trained HRDs in the capital city of <LOC> in <redacted> in physical and digital security. In Niger, the network of HRDs (NDDH) trained ROTAB monitors and staff, partner of AMNESTY and PAX, in <redacted> in <LOC>, Niger. RNDDH also trained HIVOS staff in <redacted>.
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: The program trained members of national coalitions of human rights defenders (CBDDH, COMADDH, RNDDH) using the train-the-trainer model.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Training report, photos, and accounting documents.
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 1.2                                                             Output 1.2.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Outcome description:  Human rights defenders (HRDs) who are members of the National <redacted> of Burkina Faso, Mali, and Niger have enhanced the <redacted> of human rights defenders and local partners in physical and digital security in Burkina Faso, Mali, and Niger since 2023. Significance:  Before 2023, HRDs in Burkina Faso, Mali, and <redacted> belonging to the aforementioned <redacted>, did not have the capacity to identify risks, analyze HRDs' security needs, or provide training in digital and physical security. Contribution:  The program trained members of national <redacted> of human rights defenders (CBDDH, COMADDH, RNDDH) using the <redacted>trainer model. <redacted> <redacted>:  Following the physical and digital security training held in <redacted> in <LOC>, Togo, human rights defenders from Burkina Faso, Mali, and <redacted> belonging to the aforementioned <redacted>, were not only able to identify security risks and training needs in physical and digital security of other HRDs and journalists, but also to train them on this matter. In Burkina Faso, HRDs who are members of the Burkinabe Coalition of Human Rights Defenders (CBDDH) trained journalists under the supervision of FREEDOM HOUSE in <redacted>. In Mali, HRDs who are members of the Malian Coalition of Human Rights Defenders (COMADDH) trained AMNESTY partners (TRIJEUD and ADD) in physical and digital security in <redacted>. In 2025, COMADDH trained HRDs in the capital city of <LOC> in <redacted> in physical and digital security. In Niger, the network of HRDs (NDDH) trained ROTAB monitors and staff, partner of AMNESTY and PAX, in <redacted> in <LOC>, Niger. RNDDH also trained HIVOS staff in <redacted>. Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change  Safety and Security
+**TypeOfChangeCluster**: Capacity change

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-BUR2312/PHR004
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Burundi
+**Year**: 2023
+**Outcome description**: In his report on the human rights situation in Burundi of 11 August 2023, the United Nations Special Rapporteur on Burundi specifically mentioned the phenomenon of enforced disappearances in point 48, referring to FOCODE.
+**Significance of the outcome**: The authorities in Burundi, including the President of the Republic, have long denied the existence of enforced disappearances and have never taken steps to investigate these cases. The UN Special Rapporteur recognises and identifies serious human rights violations, but he has not yet mentioned enforced disappearances as clearly, nor FOCODE's contribution. The clear mention of these facts is important for international advocacy, to convince international actors that Burundi does not respect human rights and that it must be held accountable for these serious violations.
+**Additional information (use if needed) **: The reference to FOCODE by the United Nations Special Rapporteur reinforces the credibility of FOCODE's documentation work on the phenomenon of enforced disappearances.
+**Rating significance**: medium
+**Social actor**: International community
+**Scale**: National
+**Contribution of the programme**: The contribution of the programme/partner is positive, intentional and great. FOCODE has always sent its statements and reports to the Special Rapporteur, the Rapporteur follows FOCODE on social networks and has spoken with FOCODE when he was visiting Belgium.
+**Contribution of other actors and factors**: The local population and field monitors, who provide credible information on a daily basis. And the Rapporteur himself.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: https://reliefweb.int/report/burundi/situation-des-droits-de-lhomme-au-burundi-rapport-du-rapporteur-special-sur-la-situation-des-droits-de-lhomme-au-burundi-fortune-gaetan-zongo-ahrc5456 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.3
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In his report on the human rights situation in Burundi of 11 August 2023, the United Nations Special Rapporteur on Burundi specifically mentioned the phenomenon of enforced disappearances in point 48, referring to FOCODE.  Significance description: The authorities in Burundi, including the President of the Republic, have long denied the existence of enforced disappearances and have never taken steps to investigate these cases. The UN Special Rapporteur recognises and identifies serious human rights violations, but he has not yet mentioned enforced disappearances as clearly, nor FOCODE's contribution. The clear mention of these facts is important for international advocacy, to convince international actors that Burundi does not respect human rights and that it must be held accountable for these serious violations.  Contribution of the programme: The contribution of the programme/partner is positive, intentional and great. FOCODE has always sent its statements and reports to the Special Rapporteur, the Rapporteur follows FOCODE on social networks and has spoken with FOCODE when he was visiting Belgium.  Additional information: The reference to FOCODE by the United Nations Special Rapporteur reinforces the credibility of FOCODE's documentation work on the phenomenon of enforced disappearances.  Contribution of other actors and factors: The local population and field monitors, who provide credible information on a daily basis. And the Rapporteur himself.
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

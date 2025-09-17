@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR011
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: DR Congo
+**Year**: 2023
+**Outcome description**: In <redacted>, the <redacted> Governor of <LOC> <redacted> the Sokola II Operational Sector Commander and the administrators of the <person> and <LOC> territories (In letter no. <redacted>/CAB/GP-NK/2023, <redacted>, 2023) to identify illegal roadblocks, remove them and impose sanctions on recalcitrant offenders.  
+**Significance of the outcome**: This effect, like the previous one, is significant in that it is an indication of the impetus given to the protection of human rights by the provincial authority. This is an evolution given that, as mentioned above, it was rare for the authorities to give clear written instructions to subordinates in stead of verbal instructions regarding the protection and respect of human rights 
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: The program supports MDR <redacted> and the use of this information in lobby and advocacy <redacted>. In this context, ASSODIP writes letters, in this case to the <redacted> Governor (no. 005/<LOC>, dated <redacted>), in which it was recommended to remove the roadblocks it had identified that infringed freedom of movement.  
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Letters available in ASSODIPS archive
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.2, 2.3
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In <redacted>, the <redacted> Governor of <LOC> <redacted> the Sokola II Operational Sector Commander and the administrators of the <person> and <LOC> territories (In letter no. <redacted>/CAB/GP-NK/2023, <redacted>, 2023) to identify illegal <redacted>, remove them and impose sanctions on recalcitrant offenders.    Significance description: This effect, like the previous one, is significant in that it is an <redacted> of the impetus given to the <redacted> of human rights by the <redacted> authority. This is an evolution given that, as mentioned above, it was rare for the authorities to give clear written instructions to subordinates in stead of verbal instructions regarding the <redacted> and respect of human rights   Contribution of the programme: The program supports MDR <redacted> and the use of this information in lobby and advocacy <redacted>. In this context, ASSODIP writes letters, in this case to the <redacted> Governor (no. 005/<LOC>, dated <redacted>), in which it was recommended to remove the roadblocks it had identified that infringed freedom of movement.    Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Policy implementation
+**TypeOfChangeCluster**: Policy

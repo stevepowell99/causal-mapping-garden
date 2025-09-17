@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR008
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Lebanon
+**Year**: 2022
+**Outcome description**: In meetings held between RPW coalition members, <redacted> and <LOC> and <person>, and <redacted> and Belgium policy makers in <LOC> in <redacted>, EU policymakers agreed more explicitly with RPW recommendations related to establishing ways to monitor return. Also, they were willing to explore direct funding of refugee-led organizations.  
+**Significance of the outcome**: One of RPW’s strategic priorities is to promote the role and work of Refugee-Led Organisations (RLOs) among international donors. RPW is urging donors to explicitly commit to accelerate aid localisation efforts and commitments, by pledging more resources to humanitarian, development, human rights, and peacebuilding projects and programmes by local civil society organisations and Refugee-Led Organisations (RLOs). As part of such localisation efforts, provide financial support to RLO initiatives, such as the Resourcing Refugees Leadership Initiative (RRLI) and its RLO-to-RLO fund.
+**Additional information (use if needed) **:  
+**Rating significance**: medium
+**Social actor**: International community
+**Scale**: National
+**Contribution of the programme**: Before this meeting, the RPW coalition has set up various online and in-person meetings with both the EU officals to present our findings and share our recommendations.
+**Contribution of other actors and factors**:  
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: No
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.2  EU and EU member states, agencies and donors  have advocated for the creation of an independent mechanism to monitor the conditions for safe, voluntary and dignified return of refugees from Syria. 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In meetings held between RPW coalition members, <redacted> and <LOC> and <person>, and <redacted> and Belgium policy makers in <LOC> in <redacted>, EU policymakers agreed more explicitly with RPW recommendations related to establishing ways to monitor return. Also, they were willing to explore direct funding of refugee-led organizations.    Significance description: One of RPW’s strategic priorities is to promote the role and work of Refugee-Led Organisations (RLOs) among international donors. RPW is urging donors to explicitly commit to accelerate aid localisation efforts and commitments, by pledging more resources to humanitarian, development, human rights, and peacebuilding projects and programmes by local civil society organisations and Refugee-Led Organisations (RLOs). As part of such localisation efforts, provide financial support to RLO initiatives, such as the Resourcing Refugees Leadership Initiative (RRLI) and its RLO-to-RLO fund.  Contribution of the programme: Before this meeting, the RPW coalition has set up various online and in-person meetings with both the EU officals to present our findings and share our recommendations.  Additional information:    Contribution of other actors and factors:  
+**Outcome is negative**: NO
+**MCQType of change**: Creating space for CSOs
+**TypeOfChangeCluster**: Empowering citizens and CSOs

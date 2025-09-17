@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR003
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: DR Congo
+**Year**: 2025
+**Outcome description**: In <redacted>, the management of the Lomami National Park in Tshopo and <person> provinces prepared a pre-dialogue with neighboring communities -- a development for which the SCC programme had considerably laid the groundwork in <redacted> through workshops and capacity-building activities.
+**Significance of the outcome**: There are many issues between the Lomami National Park and local communities, including allegations of grave abuses by park rangers and unresolved grievances related to the loss of livelihoods and land for communities. The park has a poor record when it comes to engagement with local communities, being long reluctant to engage in dialogue with local communities to discuss these issues peacefully. 
+**Additional information (use if needed) **: Dialogue between the Lomami National Park and local communities is a key objective of the DRC SCC programme.
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: Local
+**Contribution of the programme**: Starting in 2021, the SCC programme lobbied with the park management and authorities and helped prepare local communities for dialogue with the Lomami National Park. This included workshops and trainings with local communities implemented by our partner CDJP-Kisangani. PAX together with APEM also developed a guide with images ('boîte à images'), highlighting the importance of dialogue and explaining the main steps in this process. This helped CDJP-Kisangani and APEM in their lobby efforts towards the park.
+**Contribution of other actors and factors**: Yes, other actors also lobbied for such a dialogue and contributed to this outcome. This includes local organizations in Tshopo province, national and international NGOs and donors of the park.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: The NGO APEM, with which PAX had developed a guide with images ('boîte à images') informed PAX by email on <redacted>, sharing an email from the director of the Lomami National Park. The 'boîte à images' is available on PAX's sharepoint.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes, Outcome 2.5
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description: In <redacted>, the <redacted> of the Lomami National Park in Tshopo and <person> provinces prepared a pre-dialogue with neighboring communities -- a development for which the SCC programme had considerably laid the <redacted> in <redacted> through workshops and capacity-building <redacted>.  Significance: There are many issues between the Lomami National Park and local communities, including allegations of grave abuses by park rangers and <redacted> related to the loss of livelihoods and land for communities. The park has a poor record when it comes to <redacted> with local communities, being long reluctant to engage in dialogue with local communities to discuss these issues <redacted>.  Contribution: Starting in 2021, the SCC programme lobbied with the park management and authorities and helped prepare local communities for dialogue with the Lomami National Park. This included workshops and trainings with local communities implemented by our partner CDJP-Kisangani. PAX together with APEM also developed a guide with images ('boîte à images'), highlighting the importance of dialogue and explaining the main steps in this process. This helped CDJP-Kisangani and APEM in their lobby efforts towards the park  Additional info (if any): Dialogue between the Lomami National Park and local communities is a key objective of the DRC SCC programme.  Contribution of other actors and factors (if any): Yes, other actors also lobbied for such a dialogue and contributed to this outcome. This includes local organizations in Tshopo province, national and international NGOs and donors of the park. 
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Community bridging
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Community bridging

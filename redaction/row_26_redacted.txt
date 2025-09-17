@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR027
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: <LOC>/Burkina Faso
+**Year**: 2021
+**Outcome description**: Since 2021, CIFDHA has been working in synergy with the Mouvement Burkinabè des Droits de l'Homme et des Peuples (MBDHP) to monitor the human rights situation in the North, Centre-North and <LOC> regions.
+**Significance of the outcome**: Previously, MBDHP and CIFDHA monitored human rights violations and abuses in isolation. This limited the effectiveness of the monitoring and the advocacy work that could result. Synergy of action enables the organisations to share their experience and expertise in terms of monitoring. This guarantees a safe and effective monitoring system. 
+**Additional information (use if needed) **: In view of the insecurity, it has proved very important to have a good network of credible monitors capable of carrying out the work. The MBDHP is one of the major associations present throughout the country. The collaboration between MBDHP and CIFDHA is a great initiative to achieve wide geographical coverage and access to information on the ground in an efficient and professional manner. 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: <LOC> has initiated steps for collaboration between MBDHP and CIFDHA in 2020 and 2021. Amnesty <redacted> and convinced the two human rights organisations to work together to produce stronger and more solid results. The 2 associations drafted and submitted a project to monitor the human rights situation in <LOC>, <LOC> and <LOC> regions, which was financed by Amnesty and will be implemented in 2021. Amnesty is providing technical and financial support to the 2 partners.
+**Contribution of other actors and factors**: The digital platform designed on kobo toolbox is managed by an external consultant supporting CIFDHA/MBDHP.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Project document Reports of joint field verification missions
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 2.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Since 2021, CIFDHA has been working in synergy with the Mouvement Burkinabè des Droits de l'Homme et des Peuples (MBDHP) to monitor the human rights situation in the North, Centre-North and <LOC> regions.  Significance description: <redacted>, MBDHP and CIFDHA monitored human rights <redacted> and abuses in isolation. This limited the effectiveness of the <redacted> and the advocacy work that could result. Synergy of action enables the organisations to share their <redacted> and expertise in terms of <redacted>. This <redacted> a safe and effective <redacted> system.   Contribution of the programme: <LOC> has initiated steps for collaboration between MBDHP and CIFDHA in 2020 and 2021. Amnesty <redacted> and convinced the two human rights organisations to work together to produce stronger and more solid results. The 2 associations drafted and submitted a project to monitor the human rights situation in <LOC>, <LOC> and <LOC> regions, which was financed by Amnesty and will be implemented in 2021. Amnesty is providing technical and financial support to the 2 partners.  Additional information: In view of the insecurity, it has proved very important to have a good network of credible monitors capable of carrying out the work. The MBDHP is one of the major associations present throughout the country. The collaboration between MBDHP and CIFDHA is a great initiative to achieve wide geographical coverage and access to information on the ground in an efficient and professional manner.   Contribution of other actors and factors: The digital platform designed on kobo toolbox is managed by an external consultant supporting CIFDHA/MBDHP.
+**Outcome is negative**: NO
+**MCQType of change**: New structure
+**TypeOfChangeCluster**: Mobilizing citizens and organizations

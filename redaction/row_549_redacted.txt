@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV003
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: South Sudan
+**Year**: 2025
+**Outcome description**: In <redacted>, CCNP forged a new relationship/partnership with South Sudan Council of churces task-force and the peace envoy; episcopal mediation and advisory team; Sudan and South Sudan Catholic Bishops conference- Justice and Peace secretariat in <LOC>.
+**Significance of the outcome**: It is important to strengthen and broaden the network of CCNP. This is the first of its kind that this partnership is forged, to work towards amplifying voices of the people. To speak with one voice; building a movement.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: National 
+**Contribution of the programme**: CCNP had lobby meetings with each of them. And two strategy convening meetings to ask for their partnership and to solidify it.
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.3 CSO's and networks proactively monitor and advocate for implementation of R-ARCSS and human rights.
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Outcome description:  In <redacted>, CCNP forged a new relationship/partnership with South Sudan Council of churces task-force and the peace envoy; episcopal mediation and advisory team; Sudan and South Sudan Catholic Bishops conference- Justice and Peace secretariat in <LOC>. Significance:  It is important to strengthen and broaden the network of CCNP. This is the first of its kind that this partnership is forged, to work towards amplifying voices of the people. To speak with one voice; building a movement. Contribution:  CCNP had lobby meetings with each of them. And two strategy convening meetings to ask for their partnership and to solidify it. Additional <redacted>:   Contribution of Other factors:  
+**Outcome is negative**: NO
+**MCQType of change**: New structure, Creating space for CSOs
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Mobilizing citizens and organizations

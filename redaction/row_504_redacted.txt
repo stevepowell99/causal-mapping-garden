@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR015
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Iraq
+**Year**: 2024
+**Outcome description**:  In <redacted>, 2024, the Martyrs Foundation in <LOC>, completed the digital transformation of their official services and documentation in Iraq, and started to transform their diverse services to digital approach
+**Significance of the outcome**: This shift was an urgent necessity for the families of victims, women, and excluded groups in remote areas to relieve the burden of roads and transportation and to avoid exposure to corruption and financial and sexual extortion.
+**Additional information (use if needed) **: beside the comprehensive digitalization for the application proceeds, some side services like archiving department, asked people to come in person for the office, but after a visit of project staff, media department shift the process to digital form
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: National 
+**Contribution of the programme**: 12 Advocacy initiatives conducted with the Martyrs Institution in <LOC>, two of them were a big focused conferences on Martyrs families and the need for digital transformation, attended by high level of decision makers, 5 workshops and trainings, and advocacy visit for the head of provincial council, policy paper, digital transformation study, and 10 case studies all submitted
+**Contribution of other actors and factors**: yes: there is official letter from the prime minister for all the governmental institutions to go through digital transformation, which encouraged and offered resources for the institutions, but there is a big resilience from the employees and lack of commitments
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Link 
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: yes
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**:  In <redacted>, 2024, the Martyrs Foundation in <LOC>, completed the digital transformation of their official services and documentation in Iraq, and started to transform their diverse services to digital approach  Significance description: This shift was an urgent necessity for the families of victims, women, and excluded groups in remote areas to relieve the burden of roads and transportation and to avoid exposure to corruption and financial and sexual extortion.  Contribution of the programme: 12 Advocacy initiatives conducted with the Martyrs Institution in <LOC>, two of them were a big focused conferences on Martyrs families and the need for digital transformation, attended by high level of decision makers, 5 workshops and trainings, and advocacy visit for the head of provincial council, policy paper, digital transformation study, and 10 case studies all submitted  Additional information: beside the comprehensive digitalization for the application proceeds, some side services like archiving department, asked people to come in person for the office, but after a visit of project staff, media department shift the process to digital form  Contribution of other actors and factors: yes: there is official letter from the prime minister for all the governmental institutions to go through digital transformation, which encouraged and offered resources for the institutions, but there is a big resilience from the employees and lack of commitments
+**Outcome is negative**: NO
+**MCQType of change**: Policy implementation, Gender sensitive
+**TypeOfChangeCluster**: Policy, Gender

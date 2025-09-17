@@ -1,0 +1,23 @@
+**FragmentID**:  SCC-<redacted>/PHR005
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Sudan
+**Year**: 2023
+**Outcome description**: On <redacted>, <redacted> & 31 <redacted> The U.S. Treasury Department announced that it would be sanctioning targeted entities aligned to the <redacted> warring parties that are currently engaged in the war (RSF & SAF)
+**Significance of the outcome**: This is a significant outcome for the Sudan SCC programme because part of our work is to support evidence-based research on how the military actors engaged in the war in Sudan have captured the economy through the monopoly of the various sectors, especially gold, and how this is aiding the war. The idea is for this work to support any redress efforts or  targeted sanctions
+**Additional information (use if needed) **: d
+**Rating significance**: early/small
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: Mr. <person> of STPT our PAX partner who conducted the research on gold mining participated in a number of meetings in <LOC>, <LOC>, <LOC>, and <LOC> with the office of the US Treasury, EU and other <redacted> national governments representatives such as the Netherlands, Belgium, and Germany. He spoke about the <redacted> of controlling funding for the belligerents and the role of gold in this context, drawing on the Pax research even before that was published. They expressed some views on specific potential sanctions targets (including <person>) in these meetings which were recently <redacted> by the US in 2024. They also published an op-ed on sanctions on <redacted>. 
+**Contribution of other actors and factors**: Yes, of course, organisations like <person> and C4DS have been instrumental also from the INGO in advocating for these targeted sanctions
+**Rating contribution**: little
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted>
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Output 2.2.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: On <redacted>, <redacted> & 31 <redacted> The U.S. Treasury <redacted> announced that it would be sanctioning targeted entities aligned to the <redacted> warring parties that are currently engaged in the war (RSF & SAF)  Significance description: This is a significant outcome for the Sudan SCC programme because part of our work is to support evidence-based research on how the military actors engaged in the war in Sudan have captured the economy through the monopoly of the various sectors, <redacted> gold, and how this is aiding the war. The idea is for this work to support any redress efforts or  targeted sanctions  Contribution of the programme: Mr. <person> of STPT our PAX partner who conducted the research on gold mining participated in a number of meetings in <LOC>, <LOC>, <LOC>, and <LOC> with the office of the US Treasury, EU and other <redacted> national governments representatives such as the Netherlands, Belgium, and Germany. He spoke about the <redacted> of controlling funding for the belligerents and the role of gold in this context, drawing on the Pax research even before that was published. They expressed some views on specific potential sanctions targets (including <person>) in these meetings which were recently <redacted> by the US in 2024. They also published an op-ed on sanctions on <redacted>.   Additional information: d  Contribution of other actors and factors: Yes, of course, organisations like <person> and C4DS have been instrumental also from the INGO in advocating for these targeted sanctions
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR007
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Syria
+**Year**: 2025
+**Outcome description**: In <redacted>, the universities of Gent and Mecklenburg decided to include the Women Now's book "Justice of the place" narrating experiences of women through forced displacement in Syria  in their curricula of the study of Urban Planning and Social documentation.
+**Significance of the outcome**: This is important because the feminist methodology developed by Women Now to produce the book through ensuring that narratives of women who experienced conflict and impact of conflict are adequately documented  will now be introduced to students and presented as an important methodology 
+**Additional information (use if needed) **: Unintended outcome
+**Rating significance**: medium
+**Social actor**: Companies
+**Scale**: International 
+**Contribution of the programme**: WND produced the book as part of its work under the programme and further presented the book at several event (during a launch event in <LOC> in 2024 and invited to an event organized by <person> in <LOC> in 2025) which hlped to disseminate the book including to academics
+**Contribution of other actors and factors**: <person> organized an event during which WND was invited to present the book providing an additional platform to WND to disseminate the book
+**Rating contribution**: great
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: Yes (syllabus of the university course?)
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In <redacted>, the universities of Gent and Mecklenburg decided to include the Women Now's book "Justice of the place" narrating experiences of women through forced displacement in Syria  in their curricula of the study of Urban Planning and Social documentation.  Significance description: This is important because the feminist methodology developed by Women Now to produce the book through ensuring that <redacted> of women who experienced conflict and impact of conflict are <redacted>  will now be <redacted> to students and presented as an important methodology   Contribution of the programme: WND produced the book as part of its work under the programme and further presented the book at several event (during a launch event in <LOC> in 2024 and invited to an event organized by <person> in <LOC> in 2025) which hlped to disseminate the book including to academics  Additional information: Unintended outcome  Contribution of other actors and factors: <person> organized an event during which WND was invited to present the book providing an additional platform to WND to disseminate the book
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Creating space for CSOs
+**TypeOfChangeCluster**: Empowering citizens and CSOs

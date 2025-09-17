@@ -1,0 +1,23 @@
+**FragmentID**: SCC-DRC2305/PHR012
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: DR Congo
+**Year**: 2022
+**Outcome description**: The commitment of civil society and local public authorities (including the military) to demand the release in Kipese of the houses of individuals occupied by military, as expressed in the advocacy note signed during the advocacy panel in Lubero-Centre in June 2022.
+**Significance of the outcome**: The synergy, the collaboration of civil society actors and local authorities around an important problem for the community. This is a fight against impunity that shows their understanding that the military is not above the law.
+**Additional information (use if needed) **: The houses had been occupied at a time when there were clashes between the FARDC and the maimai. Now that the war is over between these two belligerents, the soldiers refuse to release the houses claimed by their owners.
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: UFAREP organised in Lubero-centre an initial advocacy panel in June and a follow-up panel in september. UFAREP prepared the advocacy note that was signed by all parties.
+**Contribution of other actors and factors**:  The signatures of the advocacy note by other civil society actors and the authorities.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Signed advocacy note.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.2
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: The commitment of civil society and local public authorities (including the military) to demand the release in Kipese of the houses of individuals occupied by military, as expressed in the advocacy note signed during the advocacy panel in Lubero-Centre in June 2022.  Significance description: The synergy, the collaboration of civil society actors and local authorities around an important problem for the community. This is a fight against impunity that shows their understanding that the military is not above the law.  Contribution of the programme: UFAREP organised in Lubero-centre an initial advocacy panel in June and a follow-up panel in september. UFAREP prepared the advocacy note that was signed by all parties.  Additional information: The houses had been occupied at a time when there were clashes between the FARDC and the maimai. Now that the war is over between these two belligerents, the soldiers refuse to release the houses claimed by their owners.  Contribution of other actors and factors:  The signatures of the advocacy note by other civil society actors and the authorities.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

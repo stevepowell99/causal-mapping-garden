@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SAH2305/CIV002
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Sahel/Mali
+**Year**: 2022
+**Outcome description**: Since November 2022, following a training course on physical and digital security organised by DefendDefenders and followed by COMADDH, CSOs involved in prison monitoring have been drawing up a security plan before going on any monitoring mission. The security plan requires the CSOs to obtain permission from the prison authorities before any visit. If permission is denied, the CSO organises visits under the name of an authorised organisation. As a result, they now have unrestricted access with security measures.  This follows the training on physical and digital security organised by the SCC project.
+**Significance of the outcome**: Before the training and adoption of the security plan policy, CSOs encountered a great deal of resistance. They did not identify the risks and did not think about measures to mitigate the risks identified. Prison monitoring is however both risky and very exposing for HRDs and the prison administration.
+**Additional information (use if needed) **: The Commission Nationale des Droits Humains (National Human Rights Commission) organises missions to monitor prisons throughout Mali. Civil society organisations, including COMADDH and its members, are involved in these monitoring missions, which often take place in insecure areas. 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: National
+**Contribution of the programme**: The outcome was the result of training on physical and digital security organised by the SCC project. The development of a security plan, including risk mitigation strategies, following the security management training, reduced the likelihood of risks to CSOs monitoring places of deprivation of liberty.
+**Contribution of other actors and factors**: Other CSOs have adopted COMADDH's approach.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Testimonies of NGOs.
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 1.2
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Since November 2022, following a training course on physical and digital security organised by DefendDefenders and followed by COMADDH, CSOs involved in prison monitoring have been drawing up a security plan before going on any monitoring mission. The security plan requires the CSOs to obtain permission from the prison authorities before any visit. If permission is denied, the CSO organises visits under the name of an authorised organisation. As a result, they now have unrestricted access with security measures.  This follows the training on physical and digital security organised by the SCC project.  Significance description: Before the training and adoption of the security plan policy, CSOs encountered a great deal of resistance. They did not identify the risks and did not think about measures to mitigate the risks identified. Prison monitoring is however both risky and very exposing for HRDs and the prison administration.  Contribution of the programme: The outcome was the result of training on physical and digital security organised by the SCC project. The development of a security plan, including risk mitigation strategies, following the security management training, reduced the likelihood of risks to CSOs monitoring places of deprivation of liberty.  Additional information: The Commission Nationale des Droits Humains (National Human Rights Commission) organises missions to monitor prisons throughout Mali. Civil society organisations, including COMADDH and its members, are involved in these monitoring missions, which often take place in insecure areas.   Contribution of other actors and factors: Other CSOs have adopted COMADDH's approach.
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change  Safety and Security
+**TypeOfChangeCluster**: Capacity change

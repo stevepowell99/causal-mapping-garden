@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV042
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: South Sudan
+**Year**: 2022
+**Outcome description**: In <redacted>, Eye Radio gave a one time offer for free airtime to the SSYCW to discuss the press statement and the constitutional making process 
+**Significance of the outcome**: This is important because having a live talk show on Eye Radio that covers the <redacted> states provided the youth to reach the communities with messages on the constitution making process.
+**Additional information (use if needed) **: The talk show happened on the 'Sundown' programme on the Eye radio which is prime time for listenership.
+**Rating significance**: medium
+**Social actor**: Media
+**Scale**: National
+**Contribution of the programme**: SSYCW conducted 1 press <redacted> and 2 radio talk shows on <redacted>, while 4 more radio talk shows were conducted on 24, <redacted>, <redacted> of October 2022. 
+**Contribution of other actors and factors**: Media; Eye Radio 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Recordings of the talk show with Eye Radio, Social media (eye radio Facebook)
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In <redacted>, Eye Radio gave a one time offer for free airtime to the SSYCW to discuss the press statement and the constitutional making process   Significance description: This is important because having a live talk show on Eye Radio that covers the <redacted> states provided the youth to reach the communities with messages on the constitution making process.  Contribution of the programme: SSYCW conducted 1 press <redacted> and 2 radio talk shows on <redacted>, while 4 more radio talk shows were conducted on 24, <redacted>, <redacted> of October 2022.   Additional information: The talk show happened on the 'Sundown' programme on the Eye radio which is prime time for listenership.  Contribution of other actors and factors: Media; Eye Radio 
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

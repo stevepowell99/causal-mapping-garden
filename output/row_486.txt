@@ -1,0 +1,23 @@
+**FragmentID**: SCC-INT2508/ESF025
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: International / External Stress Factors
+**Year**: 2024
+**Outcome description**: In 2024, parliamentarians asked the government critical questions with regard to the US deliveries of anti-personel mines to Ukraine, after a briefing by PAX to parliament and media attention created by PAX. 
+**Significance of the outcome**: PAX has contributed to awareness raising on this issue through appearing in national media, reaching out to parliamentarians and policy makers internationally and domestically on the issue. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: International 
+**Contribution of the programme**: PAX put out a statement, did interviews and engaged with policy makers in Geneva and domestically. 
+**Contribution of other actors and factors**: No
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: PAX statement: https://paxvoorvrede.nl/nieuws/nederland-veroordeel-levering-antipersoonsmijnen-aan-oekraine/#:~:text=Landmijnen%20in%20Oekra%C3%AFne&text=Zowel%20PAX%20als%20de%20Internationale,waar%20Oekra%C3%AFne%20lid%20van%20is. Narional radio: https://www.nporadio1.nl/fragmenten/nieuwsweekend/9d8e6f12-3153-4d71-b42e-8cd6f1e49906/2024-11-23-landmijntje-leggen-niemand-zeggen 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: SO1, outcome 1.1
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In 2024, parliamentarians asked the government critical questions with regard to the US deliveries of anti-personel mines to Ukraine, after a briefing by PAX to parliament and media attention created by PAX.   Significance description: PAX has contributed to awareness raising on this issue through appearing in national media, reaching out to parliamentarians and policy makers internationally and domestically on the issue.   Contribution of the programme: PAX put out a statement, did interviews and engaged with policy makers in Geneva and domestically.   Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, New structure
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Mobilizing citizens and organizations

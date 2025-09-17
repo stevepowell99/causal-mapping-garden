@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/Civ009
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Lebanon
+**Year**: 2023
+**Outcome description**: More and more participants have been coming on their own to use the computer equipment, audio equipment and sports equipment. For example, LW is one of our young participants who regularly uses thr cameras and audio equipment for her photography projects. MK also frequently uses the audio equipment, speakers, mixers and the computers to cover local events and to edit his video and photo materials.
+**Significance of the outcome**: There is now an increased access to computer literacy which was not present earlier.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: Peace of Arts through the project provided the space and equipment
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.2.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: More and more participants have been coming on their own to use the computer equipment, audio equipment and sports equipment. For example, LW is one of our young participants who regularly uses thr cameras and audio equipment for her photography projects. MK also frequently uses the audio equipment, speakers, mixers and the computers to cover local events and to edit his video and photo materials.  Significance description: There is now an increased access to computer literacy which was not present earlier.  Contribution of the programme: Peace of Arts through the project provided the space and equipment  Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV012
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: DR Congo
+**Year**: 2023
+**Outcome description**: On <redacted>, the Congolese Government enacted Law No. 23/027 on the protection of human rights defenders.
+**Significance of the outcome**: Although it has weaknesses, the national government had not previously put in place any instrument to protect HRDs.
+**Additional information (use if needed) **: Law No. 23/027 of <redacted> on the protection of human rights defenders not only involved us in consultations and work at the provincial level, but our reports on human rights violations also helped influence the authorities to protect those who defend human rights. .
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: The action was carried out by both national and international organisations. ASSODIP was involved in consultations in the provinces.
+**Contribution of other actors and factors**: Yes, several national and international organisation were involved in consultations.
+**Rating contribution**: little
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: The law in question
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.3
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: On <redacted>, the Congolese <redacted> enacted Law No. 23/027 on the <redacted> of human rights defenders.  Significance description: Although it has <redacted>, the national <redacted> had not <redacted> put in place any <redacted> to protect HRDs.  Contribution of the programme: The action was carried out by both national and international organisations. ASSODIP was involved in consultations in the provinces.  <redacted> information: Law No. 23/027 of <redacted> on the protection of human rights defenders not only involved us in consultations and work at the provincial level, but our reports on human rights violations also helped influence the authorities to protect those who defend human rights. .  Contribution of other actors and factors: Yes, several national and international organisation were involved in consultations.
+**Outcome is negative**: NO
+**MCQType of change**: Policy change, Supportive action
+**TypeOfChangeCluster**: Policy, Empowering citizens and CSOs

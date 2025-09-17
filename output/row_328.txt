@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SYR2312/PHR006
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Syria
+**Year**: 2023
+**Outcome description**: PEL took steps to better communicate around their work by launching an environment newsletter in order to develop a direct communication channel with their audiences. 
+**Significance of the outcome**: PEL has been leading various interesting and impactful initiatives in NES with little communication with international community towards their work. By creating a newsletter to promote their work in the field of environment, PEL will aim to enlarge its audience and build interest towards their work in this field, raising awareness about developments in the context in NES as well as initiatives engaged by PEL in the environment field
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: Regional
+**Contribution of the programme**: By increasingly engaging PEL on issues related to environment, PAX generated an interest from PEL's side to raise awareness about issues and PEL's work in this field.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes (newsletters) https://mailchi.mp/651b9a26e81a/pls-newsletter-june
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: PEL took steps to better communicate around their work by launching an environment newsletter in order to develop a direct communication channel with their audiences.   Significance description: PEL has been leading various interesting and impactful initiatives in NES with little communication with international community towards their work. By creating a newsletter to promote their work in the field of environment, PEL will aim to enlarge its audience and build interest towards their work in this field, raising awareness about developments in the context in NES as well as initiatives engaged by PEL in the environment field  Contribution of the programme: By increasingly engaging PEL on issues related to environment, PAX generated an interest from PEL's side to raise awareness about issues and PEL's work in this field.  Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

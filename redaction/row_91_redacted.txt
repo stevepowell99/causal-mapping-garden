@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR007
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: DR Congo
+**Year**: 2022
+**Outcome description**: In 2022, the commander of the LRA groups in the CAR-DRC border area accepted direct contact with PAX and APRu to discuss the rebels' possible demobilization. 
+**Significance of the outcome**: Although many defections from the LRA have occured over <redacted>, two groups remain in the CAR-DRC border area. It is crucial for these groups to demobilize, to improve human security in that area and also to provide better futures for the groups fighters and, importantly, also to their dependents (women and chilren).
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Non-state authorities
+**Scale**: Local
+**Contribution of the programme**: PAX and APRu worked for <redacted> on promoting defection from the LRA and on <redacted> ex-<redacted> and LRA escapees in the <LOC> and Uganda, including with psychosocial support, medical support, and educational support. In 2022, PAX and APRu staff also travelled directly to the CAR-DRC area to establish contact with the LRA commander.
+**Contribution of other actors and factors**: No. The LRA commander had been previously in contact with CAR authorities, the UN, and other NGOs, but the contact with PAX and APRu was mainly due to these organizations' own efforts.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Internal APRu and PAX reports, including photos.
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 2.7
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In 2022, the commander of the LRA groups in the CAR-DRC border area accepted direct contact with PAX and APRu to discuss the rebels' possible demobilization.   Significance description: Although many <redacted> from the LRA have occured over <redacted>, two groups remain in the CAR-DRC border area. It is crucial for these groups to <redacted>, to improve human security in that area and also to provide better futures for the groups fighters and, importantly, also to their <redacted> (women and chilren).  Contribution of the programme: PAX and APRu worked for <redacted> on promoting defection from the LRA and on <redacted> ex-<redacted> and LRA escapees in the <LOC> and Uganda, including with psychosocial support, medical support, and educational support. In 2022, PAX and APRu staff also travelled directly to the CAR-DRC area to establish contact with the LRA commander.  Additional information:   Contribution of other actors and factors: No. The LRA commander had been previously in contact with CAR authorities, the UN, and other NGOs, but the contact with PAX and APRu was mainly due to these organizations' own efforts.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

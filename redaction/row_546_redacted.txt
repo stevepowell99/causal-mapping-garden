@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR018
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: South Sudan
+**Year**: 2025
+**Outcome description**: In <redacted>, the St Thomas Primary and Secondary schools in <LOC> admitted 110 children from the Jie and <redacted> communities. 
+**Significance of the outcome**: Prior to this, There were no many children from these communities studying in the schools due to the violence existing among the <person>, <person> and <person>. The children from the Jie and the <person> were not allowed by the Toposa community to study in these schools because they were regarded as children of the enemies
+**Additional information (use if needed) **: <redacted>, the <person>, <person> and <person> have been fighting over cattle, child abductions and revenge attacks. The Toposa threatened to kill or abduct any child from the Jie and <redacted> communities because they were regarded as enemies
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: There were 3 dialogue meetings conducted in <redacted>, <redacted> and <redacted> to solve outstanding issues existing among these warring communities. The dialogues encouraged common settlement and having children from these communities studying together
+**Contribution of other actors and factors**: no
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.2  Pastoralist Youth groups increase their engagement in/ initiate peace building-activities to end child-abduction, revenge killing, cattle-raiding and ambushes 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In <redacted>, the St Thomas Primary and Secondary schools in <LOC> admitted 110 children from the Jie and <redacted> communities.  Significance:  Prior to this, There were no many children from these communities studying in the schools due to the violence existing among the <person>, <person> and <person>. The children from the Jie and the <person> were not allowed by the Toposa community to study in these schools because they were regarded as children of the enemies Contribution:  There were 3 dialogue meetings conducted in <redacted>, <redacted> and <redacted> to solve outstanding issues existing among these warring communities. The dialogues encouraged common settlement and having children from these communities studying together Additional <redacted>:  <redacted>, the <person>, <person> and <person> have been fighting over cattle, child abductions and revenge attacks. The Toposa threatened to kill or abduct any child from the Jie and <redacted> communities because they were regarded as enemies Contribution of Other factors:  no
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging
+**TypeOfChangeCluster**: Community bridging

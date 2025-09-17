@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR009
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: South Sudan
+**Year**: 2022
+**Outcome description**: By <redacted>, relatives of people who were killed or missing during conflict in South Sudan were able to cooperate and provide information about their loved one to ROWL volunteers much more easily.
+**Significance of the outcome**: In the past there was a lot of mistrust when volunteers asked for the names, now it is becoming easier to get accurate information. Now people of South Sudan acknowledge importance of memorialization as means for healing and reconciliation.
+**Additional information (use if needed) **: ‘Relative peace’ is contributing to people living with less fear, enabling them to open up.
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: National
+**Contribution of the programme**: One on one interaction of ROWL trained volunteers with relatives of the deceased. Only name, sex, age and location is being published, NOT who is sharing that information and in what type of conflict – in order to protect the volunteers and people contributing. Volunteers are having a code and are not identified with their names. 5 radio programs on importance of memorialization. Regular press releases. Continuous update of names on the website.
+**Contribution of other actors and factors**: no
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Moving Forward (<redacted>)
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.3
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: By <redacted>, relatives of people who were killed or missing during conflict in South Sudan were able to cooperate and provide information about their loved one to ROWL volunteers much more easily.  Significance description: In the past there was a lot of mistrust when volunteers asked for the names, now it is becoming easier to get accurate information. Now people of South Sudan acknowledge importance of memorialization as means for healing and reconciliation.  Contribution of the programme: One on one interaction of ROWL trained volunteers with relatives of the deceased. Only name, sex, age and location is being published, NOT who is sharing that information and in what type of conflict – in order to protect the volunteers and people contributing. Volunteers are having a code and are not identified with their names. 5 radio programs on importance of memorialization. Regular press releases. Continuous update of names on the website.  Additional information: ‘Relative peace’ is contributing to people living with less fear, enabling them to open up.  Contribution of other actors and factors: no
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

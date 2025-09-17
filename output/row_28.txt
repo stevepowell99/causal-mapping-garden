@@ -1,0 +1,23 @@
+**FragmentID**: SCC-INT2305/ESF009
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: International / External Stress Factors
+**Year**: 2021
+**Outcome description**: In July 2021, a large Dutch asset manager, Actiam, published a strong policy on remedy and their responsibilities in this field
+**Significance of the outcome**: Especially in the field of remedy there is still a long way to go for companies and investors in living up to their responsibilities. Having a strong policy in place is the necessary basis for strong practice and gives us an opening to engage with this financial institution on the topic and hold them accountable towards their own policies. In this specific case it's also significant because Actiam is an asset manager that manages the assets of and/or is hired to provide advice to a lot of other smaller/medium sized financial institutions. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Companies
+**Scale**: Organisation
+**Contribution of the programme**: In the RBC Agreement for Insurers (between the Dutch Government, insurers and civil society), a lot of work has been done in putting remedy and investors' responsibilities in this field on the agenda. While drafting this policy, Actiam asked PAX for input, which we provided. Our input was included.
+**Contribution of other actors and factors**: Actiam also incorporated input by others.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: https://www.actiam.com/491aac/siteassets/4_verantwoord/documenten/en/d-actiam-sustainable-investment-instruments.pdf (p.6)
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.1
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In July 2021, a large Dutch asset manager, Actiam, published a strong policy on remedy and their responsibilities in this field  Significance description: Especially in the field of remedy there is still a long way to go for companies and investors in living up to their responsibilities. Having a strong policy in place is the necessary basis for strong practice and gives us an opening to engage with this financial institution on the topic and hold them accountable towards their own policies. In this specific case it's also significant because Actiam is an asset manager that manages the assets of and/or is hired to provide advice to a lot of other smaller/medium sized financial institutions.   Contribution of the programme: In the RBC Agreement for Insurers (between the Dutch Government, insurers and civil society), a lot of work has been done in putting remedy and investors' responsibilities in this field on the agenda. While drafting this policy, Actiam asked PAX for input, which we provided. Our input was included.  Additional information:   Contribution of other actors and factors: Actiam also incorporated input by others.
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

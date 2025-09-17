@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV039
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: South Sudan
+**Year**: 2021
+**Outcome description**: In <redacted>, the youth in <LOC> formed the South Sudan Youth Constitution Review Working group to advocate for youth participation and civic space in the permanent constitution making process of South Sudan.
+**Significance of the outcome**: Before this group was formed, there was lack of an all-inclusive youth body. The youth were not organized to actively participate in the implementation of the Chapter VI of the peace agreement in South Sudan.  The formation of the group is important because when youth participate in the constitution making process, their rights and demands are more likely to be included.
+**Additional information (use if needed) **: Initially, South Sudan Youth Constitution Review Working Group was known as the 35 Constitution Review Activists. But in 2022, the members of the group increased to over <redacted> (20 females, 25 males), hence the change of name. Currently, the group is headed by a female coordinator.
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: National
+**Contribution of the programme**: Under the SCC programme, Agency for Humanitarian <redacted> and Development (AHD) conducted two trainings on lobby and advocacy, <redacted>, youth rights and transformational <redacted>, <redacted> public speaking, and <redacted> for 45 participants. AHD provided a seed grant (3900 USD) to SSYCW.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted> reports, press statements
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In <redacted>, the youth in <LOC> formed the South Sudan Youth Constitution Review Working group to advocate for youth participation and civic space in the permanent constitution making process of South Sudan.  Significance description: Before this group was formed, there was lack of an all<redacted> youth body. The youth were not organized to actively participate in the implementation of the Chapter VI of the peace agreement in South Sudan.  The formation of the group is important because when youth participate in the constitution making process, their rights and demands are more likely to be included.  Contribution of the programme: Under the SCC programme, Agency for Humanitarian <redacted> and Development (AHD) conducted two trainings on lobby and advocacy, <redacted>, youth rights and transformational <redacted>, <redacted> public speaking, and <redacted> for 45 participants. AHD provided a seed grant (3900 USD) to SSYCW.  <redacted> information: Initially, South Sudan Youth Constitution Review Working Group was known as the 35 Constitution Review Activists. But in 2022, the members of the group increased to over <redacted> (20 females, 25 males), hence the change of name. Currently, the group is headed by a female coordinator.  Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: New structure, Capacity change L and A
+**TypeOfChangeCluster**: Capacity change, Mobilizing citizens and organizations

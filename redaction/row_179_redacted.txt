@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV010
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Syria
+**Year**: 2022
+**Outcome description**: In <redacted>, UN policymakers included language on HLP rights in the Third Committee human rights resolution.
+**Significance of the outcome**: The inclusion of HLP rights language in the Third Committee resolution ensures that there is UN reporting and monitoring on HLP rights violations, secures funding for agencies working on the issue, and sets the agenda for current and future initiatives 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: International community
+**Scale**: International
+**Contribution of the programme**: During the UN's Third Committee session on the human rights situation in Syria, PAX, Impunity Watch, and <redacted> partners produced and circulated a Briefing Note on HLP rights to UN policymakers.
+**Contribution of other actors and factors**: Yes - The US is the penholder on the Syria resolution. The Syria Justice and Accountability Centre (SJAC) has conducted research on HLP rights in Syria and has conducted targeted advocacy on the issue with the US
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Third Committee resolution that includes HLP rights violations and Briefing Note
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In <redacted>, UN policymakers included language on HLP rights in the Third Committee human rights resolution.  Significance description: The inclusion of HLP rights language in the Third Committee resolution ensures that there is UN reporting and monitoring on HLP rights violations, secures funding for agencies working on the issue, and sets the agenda for current and future initiatives   Contribution of the programme: During the UN's Third Committee session on the human rights situation in Syria, PAX, Impunity Watch, and <redacted> partners produced and circulated a Briefing Note on HLP rights to UN policymakers.  Additional information:   Contribution of other actors and factors: Yes - The US is the penholder on the Syria resolution. The Syria Justice and Accountability Centre (SJAC) has conducted research on HLP rights in Syria and has conducted targeted advocacy on the issue with the US
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

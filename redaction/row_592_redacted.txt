@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR022
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Iraq
+**Year**: 2025
+**Outcome description**: In <redacted>, 2025, the Ninewa Provincial Council, three universities in <LOC>, and the Ninewa Governorate Office celebrated International Women’s Day through large-scale events for the first time, where officials issued official letters of appreciation and annouced benefits for all female employees. The Mayor and university presidents also gave public statements recognizing the achievements and success stories of women
+**Significance of the outcome**: One of the key drivers of violence against women during and after the conflict was the lack of recognition of women's human rights. Acknowledging these rights plays a vital role in the transformative justice process—a message that was powerfully emphasized during a major event held in <LOC>
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: <redacted>, the Network of Advocates and PFO carried out coordination meetings and advocacy visits to universities and the Ninewa Provincial Council, submitting formal requests to issue appreciation letters for women employees. The success of <redacted> smaller event at the University of Mosul, held under the project, served as a strong motivation to expand the <redacted> celebration across more institutions
+**Contribution of other actors and factors**: yes, CSOs work on awareness
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Link to support the outcome 
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In <redacted>, 2025, the Ninewa Provincial Council, three universities in <LOC>, and the Ninewa Governorate Office celebrated International Women’s Day through large-scale events for the first time, where officials issued official letters of appreciation and annouced benefits for all female employees. The Mayor and university presidents also gave public statements recognizing the achievements and success stories of women Significance:  One of the key drivers of violence against women during and after the conflict was the lack of recognition of women's human rights. Acknowledging these rights plays a vital role in the transformative justice process—a message that was powerfully emphasized during a major event held in <LOC> Contribution:  <redacted>, the Network of Advocates and PFO carried out coordination meetings and advocacy visits to universities and the Ninewa Provincial Council, submitting formal requests to issue appreciation letters for women employees. The success of <redacted> smaller event at the University of Mosul, held under the project, served as a strong motivation to expand the <redacted> celebration across more institutions Additional <redacted>:   Contribution of Other factors:  yes, CSOs work on awareness
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Gender transformative
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Gender

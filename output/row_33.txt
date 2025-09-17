@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SSU2305/PHR025
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: South Sudan
+**Year**: 2021
+**Outcome description**: In June 2021, a peace agreement was signed among the Murle, Toposa, Jie and Kachipo in Morukomod cattle camp, in Kuron Boma of Kapoeta East County for peaceful coexistence and sharing grazing lands and water.
+**Significance of the outcome**: Prior to signing of peace agreement, there was intense cattle raiding, child abduction and revenge killings amongst the four ethnic communities of Toposa, Jie, Murle and Kachipo. There was no social interaction along the Kuron-Boma corridor. There was high dispute over grazing lands and watering points.
+**Additional information (use if needed) **: Culturally killings of women and children is forbiden among the Toposa, Jie, Murle and Kachipo. Sharing of grazing and watering point is free as long as the agreement is binding.
+**Rating significance**: large
+**Social actor**: Non-state authorities
+**Scale**: Local
+**Contribution of the programme**: 1 consultation meeting was conducted for the Murle, Toposa, Jie and kachipo in Boma in April 2021,County and Payam administrators in Boma continued with peace consultation meetings with Murle, Kachipo and Jie, while in Kuron HTPVK held 3 peace consultations with Toposa communities.
+**Contribution of other actors and factors**: The 2021 peace agreement has played a vital part in this development.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes, the partnr reports and the 2021 peace agreement.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In June 2021, a peace agreement was signed among the Murle, Toposa, Jie and Kachipo in Morukomod cattle camp, in Kuron Boma of Kapoeta East County for peaceful coexistence and sharing grazing lands and water.  Significance description: Prior to signing of peace agreement, there was intense cattle raiding, child abduction and revenge killings amongst the four ethnic communities of Toposa, Jie, Murle and Kachipo. There was no social interaction along the Kuron-Boma corridor. There was high dispute over grazing lands and watering points.  Contribution of the programme: 1 consultation meeting was conducted for the Murle, Toposa, Jie and kachipo in Boma in April 2021,County and Payam administrators in Boma continued with peace consultation meetings with Murle, Kachipo and Jie, while in Kuron HTPVK held 3 peace consultations with Toposa communities.  Additional information: Culturally killings of women and children is forbiden among the Toposa, Jie, Murle and Kachipo. Sharing of grazing and watering point is free as long as the agreement is binding.  Contribution of other actors and factors: The 2021 peace agreement has played a vital part in this development.
+**Outcome is negative**: NO
+**MCQType of change**: Policy change, Community bridging
+**TypeOfChangeCluster**: Policy, Community bridging

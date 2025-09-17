@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ003
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Lebanon
+**Year**: 2023
+**Outcome description**: In <redacted>, Mrs. "N" underwent a significant personal transformation, discovering and embracing her talent for drawing after participating in community group sessions specifically session related to advocacy at the Tyre Model Center in her local community. As a result of her participation, she began creating artwork to summarize discussions during committee meetings.
+**Significance of the outcome**: Women and girls from areas in the <LOC> are raised in patriarchal communities where their rights to engage in artistic activities is often forbidden. By fully engaging in community groups trainings to build their capacities on advocacy and gender, Mrs. "N" felt empowered and confident to embrace her dormant talent for drawing and attributed this shift in behavior to the encouragement and supportive atmosphere of the sessions. Mrs. "N's" family had long discouraged her from expressing her artistic abilities. This outcome is significant because it demonstrates the importance of the trainings not just on community levels but also on personal level, and symbolizes the transformative power of providing women and girls with the tools and support they need to assert their rights and pursue their passions.
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: As part of ABAAD's implementation to empower and capacitate women at rsk and survivors of gender based violence in Lebanon, women in the <LOC> participated in 12 sessions of community groups where they strengthened their skills and self-confidence on different topics related to gender equality and gender-based violence. Mrs. "N" felt inspired by her participation in those sessions to embrace her artistic talents. This is a positive, unintended change.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Link
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 3.1, Output 3.1.1
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In <redacted>, Mrs. "N" underwent a significant personal transformation, discovering and embracing her talent for drawing after participating in community group sessions specifically session related to advocacy at the Tyre Model Center in her local community. As a result of her participation, she began creating artwork to summarize discussions during committee meetings.  Significance description: Women and girls from areas in the <LOC> are raised in patriarchal communities where their rights to engage in artistic activities is often forbidden. By fully engaging in community groups trainings to build their capacities on advocacy and gender, Mrs. "N" felt empowered and confident to embrace her dormant talent for drawing and attributed this shift in behavior to the encouragement and supportive atmosphere of the sessions. Mrs. "N's" family had long discouraged her from expressing her artistic abilities. This outcome is significant because it demonstrates the importance of the trainings not just on community levels but also on personal level, and symbolizes the transformative power of providing women and girls with the tools and support they need to assert their rights and pursue their passions.  Contribution of the programme: As part of ABAAD's implementation to empower and capacitate women at rsk and survivors of gender based violence in Lebanon, women in the <LOC> participated in 12 sessions of community groups where they strengthened their skills and self-confidence on different topics related to gender equality and gender-based violence. Mrs. "N" felt inspired by her participation in those sessions to embrace her artistic talents. This is a positive, unintended change.  Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A, Gender sensitive
+**TypeOfChangeCluster**: Gender, Capacity change

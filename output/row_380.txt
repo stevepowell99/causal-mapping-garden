@@ -1,0 +1,23 @@
+**FragmentID**: SCC-IRQ2312/GEQ021
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Iraq
+**Year**: 2023
+**Outcome description**: In July 2023, in response to the reconciliation initiative between Arab and Yizidi in Sinjar, the Sunni organziation received a negative reaction from the Yizidi communities in Sinjar. 
+**Significance of the outcome**: The increased tentions and threats between both Arab and Yizidi communities after the return of both communities, also due lack of the justice and reconcilation process by the government with many secuity challenges in Sinjar. As well as the accussation on the Arab community to be affliated or support ISIS, these issues is main challange that hinder any reconcilation iniaitive in Sinjar
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: Local
+**Contribution of the programme**: In July 2023, under the transformative Justice Project, Sunni Organization from the Yazidi community implemented two initiatives with the aim of reconciling between the Yazidi community in Sinjar and Arab Sunni Muslim community residing in the border villages of the northern district, Sinjar District. The first initiative was entitled “Safe Use of Social Media for Women.” In Sununi" and the other entitled "Together towards a united society in Sununi", where they brought together activists from both communities for peaceful dialogue and reconcilation process in Sinjar. 
+**Contribution of other actors and factors**: 
+**Rating contribution**: moderate
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.1 
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In July 2023, in response to the reconciliation initiative between Arab and Yizidi in Sinjar, the Sunni organziation received a negative reaction from the Yizidi communities in Sinjar.   Significance description: The increased tentions and threats between both Arab and Yizidi communities after the return of both communities, also due lack of the justice and reconcilation process by the government with many secuity challenges in Sinjar. As well as the accussation on the Arab community to be affliated or support ISIS, these issues is main challange that hinder any reconcilation iniaitive in Sinjar  Contribution of the programme: In July 2023, under the transformative Justice Project, Sunni Organization from the Yazidi community implemented two initiatives with the aim of reconciling between the Yazidi community in Sinjar and Arab Sunni Muslim community residing in the border villages of the northern district, Sinjar District. The first initiative was entitled “Safe Use of Social Media for Women.” In Sununi" and the other entitled "Together towards a united society in Sununi", where they brought together activists from both communities for peaceful dialogue and reconcilation process in Sinjar.   Additional information:   Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Policy change, Gender sensitive
+**TypeOfChangeCluster**: Policy, Gender

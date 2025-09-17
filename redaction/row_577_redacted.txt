@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ005
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Palestine
+**Year**: 2025
+**Outcome description**: in 2025, youth participants involved with the program with PCPD initiated the idea of a shadow parliament during a reflection session in <LOC>, given the lack of elections.
+**Significance of the outcome**: Initiative by youth involved in the project themselves to increase accountability and influence. Showing their interest and activism for meaningfull change and participation in relevant decision-making processes. 
+**Additional information (use if needed) **: With no elections,the youth came up with the idea of creating their own parliament. With representatives from all over the <LOC> serve as a shadow parliament during the absense of a "real" one
+**Rating significance**: early/small
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: Youth were involved in the program, received trainings and organised project activities like meetings with local authorities. They saw the needs and identified the opportunities
+**Contribution of other actors and factors**: Yes, also other programs, including Musawat and <person> contributed to the development of the skills and interest of the youth. Furthermore, the lack of election and political climate also plays a role
+**Rating contribution**: little
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: Quotes of participants 
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 3.1 - Young women and men selected by local partner have strengthened their capacities on GE & leadership in public life     
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: Outcome description:  in 2025, youth participants involved with the program with PCPD initiated the idea of a shadow parliament during a reflection session in <LOC>, given the lack of elections. Significance:  Initiative by youth involved in the project themselves to increase accountability and influence. Showing their interest and activism for meaningfull change and participation in relevant decision-making processes.  Contribution:  Youth were involved in the program, received trainings and organised project activities like meetings with local authorities. They saw the needs and identified the opportunities Additional <redacted>:  With no elections,the youth came up with the idea of creating their own parliament. With representatives from all over the <LOC> serve as a shadow parliament during the absense of a "real" one Contribution of Other factors:  Yes, also other programs, including Musawat and <person> contributed to the development of the skills and interest of the youth. Furthermore, the lack of election and political climate also plays a role
+**Outcome is negative**: NO
+**MCQType of change**: Seeking public support
+**TypeOfChangeCluster**: Mobilizing citizens and organizations

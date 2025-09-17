@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV012
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Yemen
+**Year**: 2022
+**Outcome description**: In <redacted>, an activist with special needs, organised an advocacy training for participants with special needs in <LOC>.
+**Significance of the outcome**: Women with special needs don't have any opportunities in <LOC> to speak out. They are not allowed to leave the home, it is a shame in the society to have disabilities. They are left out of public life. Now, she has the opportunity to lead this training. 
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: The project trained 12 young women in advocacy in <LOC>
+**Contribution of other actors and factors**: 
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Picture of the training, training report
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: yes
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In <redacted>, an activist with special needs, organised an advocacy training for participants with special needs in <LOC>.  Significance description: Women with special needs don't have any opportunities in <LOC> to speak out. They are not allowed to leave the home, it is a shame in the society to have disabilities. They are left out of public life. Now, she has the opportunity to lead this training.   Contribution of the programme: The project trained 12 young women in advocacy in <LOC>  Additional information:   Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A, Gender sensitive
+**TypeOfChangeCluster**: Gender, Capacity change

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-DRC2312/PHR010
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: DR Congo
+**Year**: 2023
+**Outcome description**: In December 2023, the Governor of the Province of North Kivu instructed the administrators of the territories of Masisi and Nyiragongo, in his letter No 01/1932/CAB/GP-NK/2023 of 21 December 2023, to question the leaders of the Wazalendo groups in order to call on them to respect human rights by putting an end to the Kiboro underground dungeons, spoke about this at the security meeting held on 30 January in Monigi, and put an army captain in charge of the file on the elimination of these dungeons, which led to the closure of the Mujoga dungeon in the Kibati groupement.
+**Significance of the outcome**: This effect is significant in that it reflects the provincial authority's recognition of its responsibility to protect human rights. This is an evolution, as it was rare for the authorities to give clear written instructions to subordinates regarding human rights violations, fearing a kind of self-accusation instead of only verbal instructions during meetings which was done sometimes previously.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: On 14 December 2023, ASSODIP wrote a letter to the Governor of the Province of North Kivu denouncing the underground dungeons maintained by the Wazalendo (letter N/Réf: 17/ASSODIP-SG/2023). This is part of the MDR work that the programme is supporting. 
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Letter of ASSODIP available
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.2, 2.3
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In December 2023, the Governor of the Province of North Kivu instructed the administrators of the territories of Masisi and Nyiragongo, in his letter No 01/1932/CAB/GP-NK/2023 of 21 December 2023, to question the leaders of the Wazalendo groups in order to call on them to respect human rights by putting an end to the Kiboro underground dungeons, spoke about this at the security meeting held on 30 January in Monigi, and put an army captain in charge of the file on the elimination of these dungeons, which led to the closure of the Mujoga dungeon in the Kibati groupement.  Significance description: This effect is significant in that it reflects the provincial authority's recognition of its responsibility to protect human rights. This is an evolution, as it was rare for the authorities to give clear written instructions to subordinates regarding human rights violations, fearing a kind of self-accusation instead of only verbal instructions during meetings which was done sometimes previously.  Contribution of the programme: On 14 December 2023, ASSODIP wrote a letter to the Governor of the Province of North Kivu denouncing the underground dungeons maintained by the Wazalendo (letter N/Réf: 17/ASSODIP-SG/2023). This is part of the MDR work that the programme is supporting.   Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

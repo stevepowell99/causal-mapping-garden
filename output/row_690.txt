@@ -1,0 +1,23 @@
+**FragmentID**: SCC-KEN2508/PHR011
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Kenya
+**Year**: 2025
+**Outcome description**: In August 2025, HURIA staff facilitated a digital safety & security training to HRDs in Mombasa.
+**Significance of the outcome**: There has been an increased targeting of Human Rights Defenders (HRDs), especially in the digital and online spaces. Their limited knowledge and capacity to safeguard against cyber threats and risks, coupled with a inappropriate equipment and tools has left the institutions vulnerable to such attacks.  
+**Additional information (use if needed) **: Due to digital security training supported by Amnesty International and DefendDefenders, HURIA staff has gained knowledge and improved their capacity on Digital safety and security. HURIA staff are now able to share knowledge with other institutions targeting HRDs within Mombasa County. HURIA staff facilitated a one day training that was supported by Tribeless youth organization from Nakuru County, who targeted 30 HRDs in Mombasa, from different institutions. HURIA staff engaged in the training as trainers and shared materials and information learned from the previous training.
+**Rating significance**: early/small
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: The programme provided HURIA will the knowledge and skills to train others
+**Contribution of other actors and factors**: Tribeless Youth Org., 
+**Rating contribution**: little
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: (See attached PPPT and photos for the training &Media Link)
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In August 2025, HURIA staff facilitated a digital safety & security training to HRDs in Mombasa. Significance:  There has been an increased targeting of Human Rights Defenders (HRDs), especially in the digital and online spaces. Their limited knowledge and capacity to safeguard against cyber threats and risks, coupled with a inappropriate equipment and tools has left the institutions vulnerable to such attacks.   Contribution:  The programme provided HURIA will the knowledge and skills to train others Additional Info:  Due to digital security training supported by Amnesty International and DefendDefenders, HURIA staff has gained knowledge and improved their capacity on Digital safety and security. HURIA staff are now able to share knowledge with other institutions targeting HRDs within Mombasa County. HURIA staff facilitated a one day training that was supported by Tribeless youth organization from Nakuru County, who targeted 30 HRDs in Mombasa, from different institutions. HURIA staff engaged in the training as trainers and shared materials and information learned from the previous training. Contribution of Other factors:  Tribeless Youth Org., 
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

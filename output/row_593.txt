@@ -1,0 +1,23 @@
+**FragmentID**: SCC-DRC2508/PHR016
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: DR Congo
+**Year**: 2025
+**Outcome description**: In February 2025,  55 FARDC soldiers from various regiments were found guilty of looting, rape, murder and assassination by the Butembo military tribunal in Musienene.  
+**Significance of the outcome**: During the advance of M23 rebels in November 2024, FARDC soldiers committed looting, rape, sexual violence and murder during their retreat from combat. Thanks to the panel organised by UFAREP with community leaders, 55 soldiers who committed the violations were brought to justice. Thus, this outcome reflects a significant shift toward military accountability for human rights violations committed during armed conflict.
+**Additional information (use if needed) **: In November 2024, as M23 rebels advanced towards villages and Lubero Centre, several FARDC soldiers from the Grand Nord military operations regiments engaged in reprehensible conduct (looting, rape, sexual violence and murder) in Alimbongo, Mambasa, Kantondi, Kitsombiro and Kagherie. In January 2025, during the advocacy panel involving the authorities and community leaders, UFAREP presented its reports on the human rights situation, highlighting violations in the Lubero territory. During the discussions, community leaders had already sent an advocacy memorandum to the military authorities. The military officials promised to start arresting the perpetrators of violations. On 28 February 2025, the Butembo military court, sitting in Musienene, held hearings during which 55 FARDC soldiers were found guilty of rape, theft, sexual violence and murder.
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: In accordance with the action plan, UFAREP is required to organise advocacy panels based on its reports on human rights violations, with the authorities to discuss the extent of human rights violations in their jurisdiction. Amnesty International fully supports this programme.
+**Contribution of other actors and factors**: Yes, community leaders played a significant role through sending an advocacy memorandum.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Rapport :
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.3
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description: In February 2025, 55 FARDC soldiers from various regiments were found guilty of looting, rape, murder and assassination by the Butembo military tribunal in Musienene.  Significance: During the advance of M23 rebels in November 2024, FARDC soldiers committed looting, rape, sexual violence and murder during their retreat from combat. Thanks to the panel organised by UFAREP with community leaders, 55 soldiers who committed the violations were brought to justice. Thus, this outcome reflects a significant shift toward military accountability for human rights violations committed during armed conflict.  Contribution: In accordance with the action plan, UFAREP is required to organise advocacy panels based on its reports on human rights violations, with the authorities to discuss the extent of human rights violations in their jurisdiction. Amnesty International fully supports this programme.  Additional info (if any): In November 2024, as M23 rebels advanced towards villages and Lubero Centre, several FARDC soldiers from the Grand Nord military operations regiments engaged in reprehensible conduct (looting, rape, sexual violence and murder) in Alimbongo, Mambasa, Kantondi, Kitsombiro and Kagherie. In January 2025, during the advocacy panel involving the authorities and community leaders, UFAREP presented its reports on the human rights situation, highlighting violations in the Lubero territory. During the discussions, community leaders had already sent an advocacy memorandum to the military authorities. The military officials promised to start arresting the perpetrators of violations. On 28 February 2025, the Butembo military court, sitting in Musienene, held hearings during which 55 FARDC soldiers were found guilty of rape, theft, sexual violence and murder.  Contribution of other actors and factors (if any): Yes, community leaders played a significant role through sending an advocacy memorandum.  
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Gender sensitive
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Gender

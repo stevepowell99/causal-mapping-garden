@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SAH2508/PHR025
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Sahel/Mali
+**Year**: 2024
+**Outcome description**: In May 2024, in the commune of Soni-Aliber in Gao (Mali), a minor survivor of sexual violence obtained justice after the perpetrator was convicted by the Gao High Court.
+**Significance of the outcome**: Cases of GBV were rarely reported to the courts. This concrete support for a minor survivor marks an important step in bringing cases to justice in order to promote access to justice for survivors.
+**Additional information (use if needed) **: The initiative to support survivors is a fundamental affirmation of the right to protection and dignity of victims of sexual violence. The conviction is an important step towards breaking the silence on GBV and the cycle of impunity, and guaranteeing the rights of individuals, particularly survivors, especially minors. Supporting the survivor from the complaint to the verdict constitutes legal and social support from civil society organisations for the protection of human rights.
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Individual
+**Contribution of the programme**: The project team supported the process from the documentation of the case to the filing of the complaint and the conviction of the perpetrator. The support consisted of legal and social assistance during the various stages of the legal proceedings.
+**Contribution of other actors and factors**: YES – Social development and the development of judicial police officers (OPJ) have facilitated the process.
+**Rating contribution**: moderate
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: Yes – complaint report and monthly report from the monitor.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.2 Output 2.2.2
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In May 2024, in the commune of Soni-Aliber in Gao (Mali), a minor survivor of sexual violence obtained justice after the perpetrator was convicted by the Gao High Court. Significance:  Cases of GBV were rarely reported to the courts. This concrete support for a minor survivor marks an important step in bringing cases to justice in order to promote access to justice for survivors. Contribution:  The project team supported the process from the documentation of the case to the filing of the complaint and the conviction of the perpetrator. The support consisted of legal and social assistance during the various stages of the legal proceedings. Additional Info:  The initiative to support survivors is a fundamental affirmation of the right to protection and dignity of victims of sexual violence. The conviction is an important step towards breaking the silence on GBV and the cycle of impunity, and guaranteeing the rights of individuals, particularly survivors, especially minors. Supporting the survivor from the complaint to the verdict constitutes legal and social support from civil society organisations for the protection of human rights. Contribution of Other factors:  YES – Social development and the development of judicial police officers (OPJ) have facilitated the process.
+**Outcome is negative**: NO
+**MCQType of change**: Policy implementation, Gender sensitive
+**TypeOfChangeCluster**: Policy, Gender

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV034
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: South Sudan
+**Year**: 2022
+**Outcome description**: In <redacted>, the Chairperson of the Specialised Committee of Peacebuilding in the Transistional National Legislative Assembly, invited CCNP to dessiminate the third edition of the Scenario <redacted> before the members of parliament of TNLA.
+**Significance of the outcome**: Prior the members of parliament were ignorant of the existance of Scenario documents that provide for guidance to govermment towards a peaceful South Sudan. Moreover, no such publication conducted by <redacted> with very extensive knowledge of the conext of the country existed.
+**Additional information (use if needed) **: The third edition of Scenario <redacted> was developed by an experienced <redacted> consultant who was knowlegdeable about the context of South Sudan. 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: 6 planning meetings for dissemination of the Scenario to the <redacted>. <redacted> of dissemination workshop with 77 Members of the Peace Commission in Parliament, they were joined by around 40 people from different commissions within the parliament. in attendance.
+**Contribution of other actors and factors**: 77 Members of the Peace Commission in Parliament
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes, Report from dissemination
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: 1.2
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In <redacted>, the Chairperson of the Specialised Committee of Peacebuilding in the Transistional National Legislative Assembly, invited CCNP to dessiminate the third edition of the Scenario <redacted> before the members of <redacted> of TNLA.  Significance description: Prior the members of <redacted> were ignorant of the existance of Scenario documents that provide for guidance to <redacted> towards a peaceful South Sudan. Moreover, no such publication conducted by <redacted> with very extensive knowledge of the conext of the country existed.  Contribution of the programme: 6 planning meetings for dissemination of the Scenario to the <redacted>. <redacted> of dissemination workshop with 77 Members of the Peace <redacted> in <redacted>, they were joined by around 40 people from different commissions within the <redacted>. in <redacted>.  <redacted> information: The third edition of Scenario <redacted> was developed by an experienced <redacted> consultant who was knowlegdeable about the context of South Sudan.   Contribution of other actors and factors: 77 Members of the Peace Commission in Parliament
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

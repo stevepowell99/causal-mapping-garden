@@ -1,0 +1,23 @@
+**FragmentID**: SCC-IRQ2305/ESF001
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Iraq
+**Year**: 2021
+**Outcome description**: Dutch parliament engaged on compensation for Hawija in September 2021 through written questions by D66. 
+**Significance of the outcome**: In December 2020, after a motion from the members of parliament Belhaj and Voordewind and with a reference to a PAX report, then Minister Bijleveld announced that the Netherlands would make 4 million dollars available “to the benefit of the community in Hawija, Iraq, who on the night of 2 on 3 June 2015 was hit by a Dutch weapon deployment.” After the publication of our September 2021 publication on Hawija, an update on the assistance to the community in Hawija was asked by D66 to the Minister. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: PAX shared an article on Hawija with parliamentarians, who then raised the issue in parliament (again)
+**Contribution of other actors and factors**: AL Ghad (local partner in Hawija)
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: parliament question for update: https://www.tweedekamer.nl/kamerstukken/detail?id=2021D36252&did=2021D36252 PAX publication: https://paxvoorvrede.nl/nieuws/berichten/blog-inwoners-gebombardeerd-hawija-we-dachten-dat-de-missie-ons-zou-beschermen PAX oped: https://www.trouw.nl/opinie/slachtoffers-van-hawija-hebben-recht-op-grotere-betrokkenheid-en-excuses-van-nederland~bf7e86fa/ 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Oucome 3.2
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: Dutch parliament engaged on compensation for Hawija in September 2021 through written questions by D66.   Significance description: In December 2020, after a motion from the members of parliament Belhaj and Voordewind and with a reference to a PAX report, then Minister Bijleveld announced that the Netherlands would make 4 million dollars available “to the benefit of the community in Hawija, Iraq, who on the night of 2 on 3 June 2015 was hit by a Dutch weapon deployment.” After the publication of our September 2021 publication on Hawija, an update on the assistance to the community in Hawija was asked by D66 to the Minister.   Contribution of the programme: PAX shared an article on Hawija with parliamentarians, who then raised the issue in parliament (again)  Additional information:   Contribution of other actors and factors: AL Ghad (local partner in Hawija)
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

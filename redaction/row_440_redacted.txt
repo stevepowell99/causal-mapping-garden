@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/ESF018
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Syria
+**Year**: 2024
+**Outcome description**: In <redacted>, UN Special <redacted> on the right to food <redacted> PAX’s input on conflict impacts on food <redacted> in Syria (among other places) in his report on “<redacted> and the Right to Food, with an Emphasis on the Palestinian People’s Food Sovereignty”, which he presented to UN General Assembly in <redacted> 
+**Significance of the outcome**: Such acknowledgment helps to position the situation in Syria within the broader international discussion about conflict effects on food insecurity and about environmental impacts of conflicts more broadly. This is important for the issue not to fall out of the international attention, especially amid the decrease of international attention to Syria's needs after the acute conflict stage has ended.
+**Additional information (use if needed) **: <redacted>.pdf
+**Rating significance**: early/small
+**Social actor**: International community
+**Scale**: International 
+**Contribution of the programme**: Direct, as PAX is among the few actors working on EPS issues in Syria and proactive to feed those insights into international policy discussions.
+**Contribution of other actors and factors**: The Special Rapporteur's team and his other cntacts have been instrumental for initiating and producing the report in the first place.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In <redacted>, UN Special <redacted> on the right to food <redacted> PAX’s input on conflict impacts on food <redacted> in Syria (among other places) in his report on “<redacted> and the Right to Food, with an Emphasis on the Palestinian People’s Food Sovereignty”, which he presented to UN General Assembly in <redacted>   Significance description: Such acknowledgment helps to position the situation in Syria within the broader international <redacted> about conflict effects on food <redacted> and about environmental impacts of conflicts more broadly. This is important for the issue not to fall out of the international attention, <redacted> amid the decrease of international attention to Syria's needs after the acute conflict stage has ended.  Contribution of the programme: Direct, as PAX is among the few actors working on EPS issues in Syria and proactive to feed those insights into international policy discussions.  <redacted> information: <redacted>.pdf  Contribution of other actors and factors: The Special Rapporteur's team and his other cntacts have been instrumental for initiating and producing the report in the first place.
+**Outcome is negative**: NO
+**MCQType of change**: Creating space for CSOs
+**TypeOfChangeCluster**: Empowering citizens and CSOs

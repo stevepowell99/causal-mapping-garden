@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ030
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 3
+**coutnry**: Lebanon
+**Year**: 2025
+**Outcome description**: On <redacted>, participants from "مبادرة مفقود" formed a peer-led emotional support group during <redacted> of a resilience training in <LOC>. They defined the group’s purpose, ethics, leadership structure, and meeting schedule to ensure continued emotional care beyond the training.
+**Significance of the outcome**: This outcome marks a meaningful shift from individual coping to collective emotional resilience. In a high-stress context where participants often lack access to safe, supportive spaces, the decision to form a peer-led group shows a deep recognition of the need for ongoing, shared emotional care. 
+**Additional information (use if needed) **: This reflects increased self-awareness, trust, and readiness to maintain mutual support beyond the training setting. More importantly, it signals a sense of ownership and sustainability, as participants took the initiative to design and lead a structure that meets their emotional needs, a rare and valuable form of community-driven support in such fragile contexts.
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: Individual
+**Contribution of the programme**: The Holistic Wellness and Compassion Resilience Training provided participants with practical tools on stress management, compassion fatigue, and peer support. By offering a safe space for reflection and connection, the training enabled participants to build trust and take initiative in forming a peer-led emotional support group.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**:  
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: SO3 New actor
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: On <redacted>, participants from "مبادرة مفقود" formed a peer-led emotional support group during <redacted> of a resilience training in <LOC>. They defined the group’s purpose, ethics, leadership structure, and meeting schedule to ensure continued emotional care beyond the training.  Significance description: This outcome marks a meaningful shift from individual coping to collective emotional resilience. In a high-stress context where participants often lack access to safe, supportive spaces, the decision to form a peer-led group shows a deep recognition of the need for ongoing, shared emotional care.   Contribution of the programme: The Holistic Wellness and Compassion Resilience Training provided participants with practical tools on stress management, compassion fatigue, and peer support. By offering a safe space for reflection and connection, the training enabled participants to build trust and take initiative in forming a peer-led emotional support group.  Additional information: This reflects increased self-awareness, trust, and readiness to maintain mutual support beyond the training setting. More importantly, it signals a sense of ownership and sustainability, as participants took the initiative to design and lead a structure that meets their emotional needs, a rare and valuable form of community-driven support in such fragile contexts.  Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: New structure, Capacity change Mental health resilience
+**TypeOfChangeCluster**: Capacity change, Mobilizing citizens and organizations

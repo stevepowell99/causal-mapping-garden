@@ -1,0 +1,23 @@
+**FragmentID**: SCC-INT2305/ESF008
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: International / External Stress Factors
+**Year**: 2021
+**Outcome description**: In October 2021, Dutch investors in the company Glencore had a meeting with representatives of victims of human rights violations that have taken place in the coal mine region of César, Colombia (violations to which Glencore has contributed). During this meeting the representatives voiced their grievances and asked the investors to use their leverage on the company to pressure it to fulfill its responsibility to contribute to remedy.
+**Significance of the outcome**: It is significant in the sense that local communities have been able to directly engage with investors in a company that has contributed to violations of their rights, voice their concerns, their demands of the company and their asks to the investors. From the financial institutions' perspective, the fact that they participated in this meeting shows the (slowly) growing practice within these institutions to engage in direct local stakeholder engagement and have these local stakeholder views inform their due diligence efforts towards the companies that they are invested in (which is a requirement under the international standards).
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Companies
+**Scale**: Organisation
+**Contribution of the programme**: PAX (BCHR & the Latin America program) organized and facilitated this meeting. 
+**Contribution of other actors and factors**: The PAX Latin America program contributed to this outcome (not funded by SCC)
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: This was a meeting under Chatham House rules, so it was not recorded.
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: 2.2
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In October 2021, Dutch investors in the company Glencore had a meeting with representatives of victims of human rights violations that have taken place in the coal mine region of César, Colombia (violations to which Glencore has contributed). During this meeting the representatives voiced their grievances and asked the investors to use their leverage on the company to pressure it to fulfill its responsibility to contribute to remedy.  Significance description: It is significant in the sense that local communities have been able to directly engage with investors in a company that has contributed to violations of their rights, voice their concerns, their demands of the company and their asks to the investors. From the financial institutions' perspective, the fact that they participated in this meeting shows the (slowly) growing practice within these institutions to engage in direct local stakeholder engagement and have these local stakeholder views inform their due diligence efforts towards the companies that they are invested in (which is a requirement under the international standards).  Contribution of the programme: PAX (BCHR & the Latin America program) organized and facilitated this meeting.   Additional information:   Contribution of other actors and factors: The PAX Latin America program contributed to this outcome (not funded by SCC)
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR029
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Sahel/Mali
+**Year**: 2024
+**Outcome description**: In 2024, in the <LOC> district of Mali, an MDR project monitor documented the abduction of eight members of a local NGO by armed groups and took the initiative to participate in the mediations that led to their release.
+**Significance of the outcome**: Before participating in the MDR project, the trainer was not directly involved in resolving security incidents. This change is important because it shows that the MDR project has strengthened not only the technical capacity of trainers to document violations, but also their confidence and role as protection actors in the field. This contributes directly to the MDR programme's objectives of strengthening the security and resilience of human rights defenders in high-risk contexts.
+**Additional information (use if needed) **: This effect demonstrates that the MDR project has enabled a shift from a strictly documentary approach to a proactive approach, where monitors become actors in crisis response. This is particularly innovative and relevant in a context such as Mali, where local NGOs work in areas with high security risks.
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: Thanks to the training and support received through the MDR project, particularly on documenting violations, security management and rapid information sharing, the monitor developed the capacity and confidence to intervene in this situation and play an active role in mediation.
+**Contribution of other actors and factors**: Yes. The network of traditional communicators for development in Mali (Recotrade), community leaders and other NGOs took part in the mediation that led to the victims' release.
+**Rating contribution**: moderate
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: Incident report written by the MDR monitor; internal testimonials on the monitor's intervention.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.2 Output 2.2.3
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In 2024, in the <LOC> district of Mali, an MDR project monitor documented the abduction of eight members of a local NGO by armed groups and took the initiative to participate in the mediations that led to their release. Significance:  Before participating in the MDR project, the trainer was not directly involved in resolving security incidents. This change is important because it shows that the MDR project has strengthened not only the technical capacity of trainers to document violations, but also their confidence and role as protection actors in the field. This contributes directly to the MDR programme's objectives of strengthening the security and resilience of human rights defenders in high-risk contexts. Contribution:  Thanks to the training and support received through the MDR project, particularly on documenting violations, security management and rapid information sharing, the monitor developed the capacity and confidence to intervene in this situation and play an active role in mediation. Additional <redacted>:  This effect demonstrates that the MDR project has enabled a shift from a strictly documentary approach to a proactive approach, where monitors become actors in crisis response. This is particularly innovative and relevant in a context such as Mali, where local NGOs work in areas with high security risks. Contribution of Other factors:  Yes. The network of traditional communicators for development in Mali (Recotrade), community leaders and other NGOs took part in the mediation that led to the victims' release.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Capacity change L and A
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Capacity change

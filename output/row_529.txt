@@ -1,0 +1,23 @@
+**FragmentID**: SCC-DRC2508/ESF001
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: DR Congo
+**Year**: 2025
+**Outcome description**: Between January and July 2025, civil society activists and lawyers in Canada engaged with PAX and wrote publicly about human rights violations at DRC's Kibali gold mine which PAX documented in its December 2024 "Giant Evictions, Giant Profits" report.
+**Significance of the outcome**: PAX published a report on human rights abuses at the Kibali goldmine (co-owned and operated by the Canada based enterprise Barrick) in the DRC in December 2024. This was the first public human rights report by an international NGO on Kibali since PAX published "Le Géant minier Kibali" almost a decade earlier, in 2015. Canadian  civil society and lawyers were working on other mines in the world operated by Barrick but not on the Kibali mine. PAX’s report helped sparking interest and gave them facts about the Kibali case.
+**Additional information (use if needed) **: Procedures in Canada are crucial to hold Barrick accountable for alleged complicity in abuses at Kibali and change Barrick’s behavior at Kibali. 
+**Rating significance**: early/small
+**Social actor**: Engaged citizens
+**Scale**: International
+**Contribution of the programme**: In 2025, PAX engaged with MiningWatch Canada and with two Canadian lawyers. This included sharing PAX's report, participating in several phone calls, and exchanging written messages.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: The notes of calls and email exchanges are confidential. Public documentation related to this outcome can be found on the website of MiningWatch Canada. The network re-published PAX’s report (https://miningwatch.ca/2024/12/19/giant-evictions-giant-profits) and also publicly mentioned forced evictions at Kibali and PAX’s report in a press release at the occasion of Barrick’s 2025 annual shareholders meeting (https://miningwatch.ca/news/2025/5/6/unable-access-barrick-shareholder-meeting-mining-impacted-communities-speak-out). 
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: No, SO3, new actor
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: Between January and July 2025, civil society activists and lawyers in Canada engaged with PAX and wrote publicly about human rights violations at DRC's Kibali gold mine which PAX documented in its December 2024 "Giant Evictions, Giant Profits" report.  Significance description: PAX published a report on human rights abuses at the Kibali goldmine (co-owned and operated by the Canada based enterprise Barrick) in the DRC in December 2024. This was the first public human rights report by an international NGO on Kibali since PAX published "Le Géant minier Kibali" almost a decade earlier, in 2015. Canadian  civil society and lawyers were working on other mines in the world operated by Barrick but not on the Kibali mine. PAX’s report helped sparking interest and gave them facts about the Kibali case.  Contribution of the programme: In 2025, PAX engaged with MiningWatch Canada and with two Canadian lawyers. This included sharing PAX's report, participating in several phone calls, and exchanging written messages.  Additional information: Procedures in Canada are crucial to hold Barrick accountable for alleged complicity in abuses at Kibali and change Barrick’s behavior at Kibali.   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Seeking public support
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Mobilizing citizens and organizations

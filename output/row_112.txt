@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SUD2305/CIV004
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Sudan
+**Year**: 2022
+**Outcome description**: In June 2022 in Kampala, individual (W) HRDs and HRD organisations established the Sudan human rights defenders coalition (SudanDefenders) to maximise safety and protection of (W)HRDs in Sudan. 
+**Significance of the outcome**: Before the establishment of the Coalition in Sudan, there was a lack of coordination, limited access to protection mechanisms and a safe platform for (W)HRDs to discuss issues pertinent to them. The Coalition provides tailor made solutions and creates opportunities for (W)HRDs to access protection services, assess AU and UN mechanisms for advocacy and capacity building in security management. Under the project, this is registered as a major breakthrough since the establishment of the Coalition was a pending issue since 2013
+**Additional information (use if needed) **: DefendDefenders established the Coalition in 2010 but it was disolved as a result of mismanagement in 2013. In June 2022, DefendDefenders convened a consultation meeting for individual (W)HRDs and HRD organisations in Kampala. A Kampala Declaration was developed and signed to establish SudanDefenders. An interim committee constituting 9 members were elected with women in majority positions.
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: National
+**Contribution of the programme**: DefendDefenders facilitated the establishment and launch of SudanDefenders in June 2022 in Kampala, Uganda.
+**Contribution of other actors and factors**: Lawyers for Justice and Huqooq facilitated the pre-consultation exercise prior to the establishment of the Coalition through identification of members, logistics and communication in Sudan.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: The Kampala Declaration,  Report on the Consultation for Coalition building.
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 1.4
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In June 2022 in Kampala, individual (W) HRDs and HRD organisations established the Sudan human rights defenders coalition (SudanDefenders) to maximise safety and protection of (W)HRDs in Sudan.   Significance description: Before the establishment of the Coalition in Sudan, there was a lack of coordination, limited access to protection mechanisms and a safe platform for (W)HRDs to discuss issues pertinent to them. The Coalition provides tailor made solutions and creates opportunities for (W)HRDs to access protection services, assess AU and UN mechanisms for advocacy and capacity building in security management. Under the project, this is registered as a major breakthrough since the establishment of the Coalition was a pending issue since 2013  Contribution of the programme: DefendDefenders facilitated the establishment and launch of SudanDefenders in June 2022 in Kampala, Uganda.  Additional information: DefendDefenders established the Coalition in 2010 but it was disolved as a result of mismanagement in 2013. In June 2022, DefendDefenders convened a consultation meeting for individual (W)HRDs and HRD organisations in Kampala. A Kampala Declaration was developed and signed to establish SudanDefenders. An interim committee constituting 9 members were elected with women in majority positions.  Contribution of other actors and factors: Lawyers for Justice and Huqooq facilitated the pre-consultation exercise prior to the establishment of the Coalition through identification of members, logistics and communication in Sudan.
+**Outcome is negative**: NO
+**MCQType of change**: New structure, Gender sensitive
+**TypeOfChangeCluster**: Gender, Mobilizing citizens and organizations

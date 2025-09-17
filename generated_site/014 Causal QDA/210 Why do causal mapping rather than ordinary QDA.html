@@ -1,0 +1,444 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Why do causal mapping rather than ordinary QDA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+      /* layout: sticky left sidebar */
+      :root {
+        --cm-body-bg: #fcfcfc;
+        --cm-text: #222;
+        --cm-muted: #6c757d;
+        --cm-border: #e5e5e5;
+      }
+      body {
+        overflow-y: scroll;
+        background: var(--cm-body-bg);
+        color: var(--cm-text);
+        font-size: 1.0625rem; /* ~17px, slightly larger */
+      }
+      .layout-container {
+        display: grid;
+        grid-template-columns: 200px 1fr 260px; /* narrow sidebar by default */
+        column-gap: 2.25rem;
+        min-height: 100vh;
+        transition: grid-template-columns 0.3s ease;
+      }
+      .layout-container.sidebar-expanded {
+        grid-template-columns: 540px 1fr 260px; /* expand when triggered by JS */
+      }
+      .sidebar {
+        border-right: 1px solid var(--cm-border);
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow: hidden; /* hide overflow when narrow */
+        background: #fafafa;
+        padding: 1.25rem 1.25rem 2rem 1.25rem; /* more padding */
+        transition: overflow 0.3s ease;
+      }
+      .layout-container.sidebar-expanded .sidebar {
+        overflow: auto; /* show scrollbar when expanded */
+      }
+      aside.sidebar .p-2 {
+        opacity: .55 !important; /* 55% opacity by default */
+        transition: opacity .2s ease;
+      }
+      aside.sidebar:hover .p-2 {
+        opacity: .8 !important; /* more visible on sidebar hover */
+      }
+      aside.sidebar .p-2 summary {
+        opacity: inherit; /* ensure folder headers inherit the fade */
+      }
+      aside.sidebar .nav-link {
+        padding: .2rem .4rem;
+        color: var(--cm-text);
+        font-size: 1.025rem; /* slightly larger */
+      }
+      aside.sidebar .nav-link:hover {
+        background: #eef2f6;
+        border-radius: .25rem;
+      }
+      details > summary {
+        cursor: pointer;
+        list-style: none;
+        transition: opacity .15s ease;
+      }
+      details > summary::marker {
+        display: none;
+      }
+      aside.sidebar details:hover > summary {
+        opacity: 1 !important; /* full visibility on section hover */
+      }
+      aside.sidebar .nav-link:hover {
+        opacity: 1 !important; /* full visibility on link hover */
+      }
+      details > summary .chev {
+        transition: transform .15s ease, opacity .2s ease;
+        opacity: 0; /* invisible by default */
+        font-size: 1.2em; /* smaller */
+        margin-left: .5rem;
+      }
+      aside.sidebar:hover details > summary .chev {
+        opacity: .6; /* visible on sidebar hover */
+      }
+      details[open] > summary .chev {
+        transform: rotate(90deg);
+      }
+      .content {
+        padding: 3rem 4rem; /* more padding */
+        max-width: 980px;  /* a bit wider */
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+        line-height: 1.7;
+        letter-spacing: .2px;
+        background: white;
+        box-shadow: 0 1px 2px rgba(0,0,0,.03);
+        border: 1px solid var(--cm-border);
+        border-radius: 8px;
+        margin: 2.5rem 2.5rem 5rem 0; /* more breathing room */
+      }
+      .content img { max-width: 100%; height: auto; }
+      .content h1, .content h2, .content h3, .content h4 {
+        margin-top: 2rem;
+        font-weight: 600;
+      }
+      .content p {
+        margin-bottom: 1.1rem;
+      }
+      .content pre, .content code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      }
+      .content pre {
+        background: #f7f7f7;
+        border: 1px solid var(--cm-border);
+        border-radius: 6px;
+        padding: .75rem 1rem;
+      }
+      .content hr {
+        border-top: 1px solid var(--cm-border);
+        margin: 1.5rem 0;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover { text-decoration: underline; }
+      /* Wikilink embed blocks */
+      .embed-block {
+        border: 1px dashed var(--cm-border);
+        background: #fafafa;
+        border-radius: 6px;
+        padding: .5rem .75rem;
+      }
+      .embed-block > summary {
+        font-weight: 500;
+        user-select: none;
+      }
+      .embed-block > summary .chev {
+        transition: transform .15s ease;
+        opacity: .6;
+        font-size: 1.2em; /* smaller */
+        margin-left: .5rem;
+      }
+      .embed-block[open] > summary .chev {
+        transform: rotate(90deg);
+      }
+      .embed-block > summary::before {
+        content: "Relevant page: ";
+        font-size: 0.75rem;
+        color: var(--cm-muted);
+        opacity: 0.7;
+        margin-right: 0.5rem;
+      }
+      /* Active nav link */
+      aside.sidebar .nav-link.active {
+        background: #e7effa;
+        border-radius: .25rem;
+        font-weight: 600;
+      }
+      /* Right ToC */
+      .rightbar {
+        position: sticky;
+        top: 2.5rem; /* align with main content's top margin */
+        align-self: start; /* start at top of grid row */
+        max-height: calc(100vh - 2.5rem);
+        overflow: auto;
+        margin: 2.5rem 0 5rem 0; /* match main content vertical margins */
+        padding: 3rem 2rem; /* similar vertical padding to content */
+        background: white;
+        border: 1px solid var(--cm-border);
+        border-radius: 8px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.03);
+      }
+      .rightbar h2 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        color: var(--cm-muted);
+      }
+      .rightbar .toc ul {
+        padding-left: 1rem;
+      }
+      .rightbar .toc {
+        opacity: .55; /* paler by default */
+        transition: opacity .15s ease;
+      }
+      .rightbar:hover .toc {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout-container">
+      <aside class="sidebar"><div class="p-2"><form class="mb-2" action="../search.html" method="get">  <div class="input-group input-group-sm">    <input class="form-control" type="text" name="q" placeholder="Search…" />    <button class="btn btn-outline-secondary" type="submit">Search</button>  </div></form><a class="btn btn-outline-primary w-100 mb-2" href="../index.html">Home</a><ul class="list-unstyled"><li class="nav-item"><a class="nav-link" href="../index.html">index</a></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>reference articles</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../000 reference articles/010 better-evaluation.html">better-evaluation</a></li><li class="nav-item"><a class="nav-link" href="../000 reference articles/eval2024.html">eval2024</a></li><li class="nav-item"><a class="nav-link" href="../000 reference articles/eval2025.html">eval2025</a></li><li class="nav-item"><a class="nav-link" href="../000 reference articles/trash.html">trash</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>unpublished</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../005 unpublished/! Knowledge graphs.html">! Knowledge graphs</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/! meaning but not epistemology.html">! meaning but not epistemology</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/! Questions you can answer.html">! Questions you can answer</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!350 is there a hidden vocabulary.html">!350 is there a hidden vocabulary</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!400 Being realist about causation.html">!400 Being realist about causation</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!500 nuance.html">!500 nuance</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!700 Retraceable, reconstructable, operationalisable.html">!700 Retraceable, reconstructable, operationalisable</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!Humans are the best detectors of causation.html">!Humans are the best detectors of causation</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!qual causal models.html">!qual causal models</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!Transitivity as the fundamental property.html">!Transitivity as the fundamental property</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/600 bricolage.html">bricolage</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/650 OH plus Attitudes.html">OH plus Attitudes</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Causal mapping</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0.10 What is causal mapping.html">What is causal mapping</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0.130 Causal mapping has been used for over 50 years in many disciplines.html">Causal mapping has been used for over 50 years in many disciplines</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/011 Causal mapping distinguishes evidence from facts and does not make ca-7f2975.html">Causal mapping distinguishes evidence from facts and does not make causal inferences</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/012 When to use and not to use causal mapping.html">When to use and not to use causal mapping</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/013 History of the Causal Map app.html">History of the Causal Map app</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0130.0 Causal mapping approaches differ in application, construction, ana-39069f.html">Causal mapping approaches differ in application, construction, analysis and how they deal with multiple sources</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0132 Causal mappers believe that humans are good at thinking in terms of -c87577.html">Causal mappers believe that humans are good at thinking in terms of causal nuggets</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0132 Causal mappers believe that humans are hardwired to perceive causation.html">Causal mappers believe that humans are hardwired to perceive causation</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0132 Causal mapping is part of the qualitative branch of the new causal r-d0ad71.html">Causal mapping is part of the qualitative branch of the new causal revolution</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0133 Six ways causal mapping differs from related approaches.html">Six ways causal mapping differs from related approaches</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/01331 What is the difference between outcome harvesting, contribution ana-9cd115.html">What is the difference between outcome harvesting, contribution analysis and causal mapping</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0134 Janus - Causal mappers face in two directions.html">Janus - Causal mappers face in two directions</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0135 Epistemic logic.html">Epistemic logic</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0136 Causal mapping in evaluation - Three tasks.html">Causal mapping in evaluation - Three tasks</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/01361 Task 1 - Gathering narrative data.html">Task 1 - Gathering narrative data</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0137 Task 2 - Coding causal claims as causal qualitative data analysis.html">Task 2 - Coding causal claims as causal qualitative data analysis</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0138 Task 3 - Answering questions, specifically evaluation questions.html">Task 3 - Answering questions, specifically evaluation questions</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/01381 Limitations - data quality.html">Limitations - data quality</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/01382 Dangers - granularity and generalisability.html">Dangers - granularity and generalisability</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/Advantages of causal mapping - coping with messiness.html">Advantages of causal mapping - coping with messiness</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/Causal maps are knowledge graphs, but with wings.html">Causal maps are knowledge graphs, but with wings</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/Contribution criteria in advance.html">Contribution criteria in advance</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/Layout.html">Layout</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/There has always been complexity.html">There has always been complexity</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Algorithms and questions</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Answering EVALUATION questions (1).html">Answering EVALUATION questions (1)</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Distinguishing between factors which make causal claims about different groups.html">Distinguishing between factors which make causal claims about different groups</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Etiograph - robustness.html">Etiograph - robustness</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Reporting global and local network statistics.html">Reporting global and local network statistics</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Simplification - co-terminal link bundles.html">Simplification - co-terminal link bundles</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Simplification - factor and link frequency.html">Simplification - factor and link frequency</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Simplification - hierarchical zooming.html">Simplification - hierarchical zooming</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Source clustering.html">Source clustering</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Source thread tracing.html">Source thread tracing</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/The transitivity trap.html">The transitivity trap</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Causal Map app</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../012 Causal Map app/500 Open-source causal mapping functions.html">Open-source causal mapping functions</a></li></ul></details></li><li><details class="mb-1" open><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Causal QDA</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link active" aria-current="page" href="210 Why do causal mapping rather than ordinary QDA.html">Why do causal mapping rather than ordinary QDA</a></li><li class="nav-item"><a class="nav-link" href="220 where do the labels come from.html">where do the labels come from</a></li><li class="nav-item"><a class="nav-link" href="250 causal mapping turns QDA on its head.html">causal mapping turns QDA on its head</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Causal mapping in evaluation</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../015 Causal mapping in evaluation/610 The elephant in the room.html">The elephant in the room</a></li><li class="nav-item"><a class="nav-link" href="../015 Causal mapping in evaluation/650 Qual versus quant impact evaluation strength vs modelling.html">Qual versus quant impact evaluation strength vs modelling</a></li><li class="nav-item"><a class="nav-link" href="../015 Causal mapping in evaluation/Reconstructing program theory empirically.html">Reconstructing program theory empirically</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>AI reaction</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../400 AI reaction/! words - bodies.html">! words - bodies</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/! words - perspective.html">! words - perspective</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/200 Causal QDA 1.html">Causal QDA 1</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/210 Causal QDA 2Break the AI coding roadblock with causal coding.html">Causal QDA 2Break the AI coding roadblock with causal coding</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/300 flawed brains.html">flawed brains</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/ChatGPT - causal, of course.html">ChatGPT - causal, of course</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/ChatGPT is changing how we do evaluation The view  1b634167ad4081bfb541ca-ffce43.html">ChatGPT is changing how we do evaluation The view  1b634167ad4081bfb541ca66a3655094</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/How hard is evaluation actually.html">How hard is evaluation actually</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/READY Yes, there are AI-shaped holes in organisations-8304bf.html">READY Yes, there are AI-shaped holes in organisations.</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>AI - rigour - black box</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/! modelling.html">! modelling</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/! Tips.html">! Tips</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/AI in evaluation actually show your working!.html">AI in evaluation actually show your working!</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/black box.html">black box</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/Just add rigour Three do’s and don’ts.html">Just add rigour Three do’s and don’ts</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/problem difficulty.html">problem difficulty</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/responsibility.html">responsibility</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/rigour.html">rigour</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/Take responsibility Another DO and another DON’T w.html">Take responsibility Another DO and another DON’T w</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/Tiny black boxes.html">Tiny black boxes</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/Trust the algorithm, not the AI.html">Trust the algorithm, not the AI</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/What’s your positionality, robot.html">What’s your positionality, robot</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Bias in AI</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../550 Bias in AI/400 bias.html">bias</a></li><li class="nav-item"><a class="nav-link" href="../550 Bias in AI/Hofman.html">Hofman</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>AI techniques - specific</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/!Using genAI to generate labels for clusters for use as magnets.html">!Using genAI to generate labels for clusters for use as magnets</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/coding polarity and sentiment in causal mapping -- opposites.html">coding polarity and sentiment in causal mapping -- opposites</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/coding polarity and sentiment in causal mapping -- overview.html">coding polarity and sentiment in causal mapping -- overview</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/coding polarity and sentiment in causal mapping -- sentiment.html">coding polarity and sentiment in causal mapping -- sentiment</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/Comparing a Fine-Tuned Model to an Engineered.html">Comparing a Fine-Tuned Model to an Engineered</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/Concrete and Memorable labels.html">Concrete and Memorable labels</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/interview-instructions.html">interview-instructions</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/Reconstructing program theory empirically.html">Reconstructing program theory empirically</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/Solving polarity ambiguity with sentiment.html">Solving polarity ambiguity with sentiment</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/Why nxn magnetising is a bad idea.html">Why nxn magnetising is a bad idea</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Qualia</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../700 Qualia/01 The seamless workflow succeeds in practice.html">The seamless workflow succeeds in practice</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/AI interviewing - beware of sensitive data.html">AI interviewing - beware of sensitive data</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/AI interviewing - beware of suitability.html">AI interviewing - beware of suitability</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/AI interviewing - the evaluator retains responsibility.html">AI interviewing - the evaluator retains responsibility</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/AI interviewing has potential - scalability, reach, reproducibility, causality.html">AI interviewing has potential - scalability, reach, reproducibility, causality</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/AI interviewing needs further work.html">AI interviewing needs further work</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/An AI interviewer can successfully gather causal information at scale.html">An AI interviewer can successfully gather causal information at scale</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/CASA.html">CASA</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Introducing Seamless Stories From Qualia to Causal.html">Introducing Seamless Stories From Qualia to Causal</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/It is possible to gather evidence at scale about program theory and contr-6a9b6e.html">It is possible to gather evidence at scale about program theory and contribution simultaneously - three steps</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Our seamless stories workflow in practice.html">Our seamless stories workflow in practice</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Qualia -security- languages.html">Qualia -security- languages</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Qualia-USA.html">Qualia-USA</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Step 1 Conducting the chat interviews.html">Step 1 Conducting the chat interviews</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Step 2a Coding the interviews  Constructing a guideline.html">Step 2a Coding the interviews  Constructing a guideline</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Step 2b Coding the interviews  Coding.html">Step 2b Coding the interviews  Coding</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Step 2c Coding the interviews  Clustering.html">Step 2c Coding the interviews  Clustering</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Workflows</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../750 Workflows/Workflows - Barbara.html">Workflows - Barbara</a></li><li class="nav-item"><a class="nav-link" href="../750 Workflows/Workflows description at bullet.html">Workflows description at bullet</a></li><li class="nav-item"><a class="nav-link" href="../750 Workflows/Workflows gdoc.html">Workflows gdoc</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Applications</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../800 Applications/Evaluator niche in AI.html">Evaluator niche in AI</a></li><li class="nav-item"><a class="nav-link" href="../800 Applications/Full - Strengthening OH with causal mapping.html">Full - Strengthening OH with causal mapping</a></li><li class="nav-item"><a class="nav-link" href="../800 Applications/Strengthening OH with causal mapping.html">Strengthening OH with causal mapping</a></li><li class="nav-item"><a class="nav-link" href="../800 Applications/Using AI to facilitate feedback on the learning experiences of doctoral s-762280.html">Using AI to facilitate feedback on the learning experiences of doctoral students.</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>After AI</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>philosophy</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../9100 philosophy/Existentialists.html">Existentialists</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Beyond causal mapping</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../930 Beyond causal mapping/! Beyond causal mapping - teleology, stories.html">! Beyond causal mapping - teleology, stories</a></li><li class="nav-item"><a class="nav-link" href="../930 Beyond causal mapping/storytelling overview from gemini.html">storytelling overview from gemini</a></li></ul></details></li></ul></div></aside>
+      <main class="content">
+        <h1 class="h3">Why do causal mapping rather than ordinary QDA</h1>
+        <hr />
+        <h1 id="why-do-causal-mapping-rather-than-ordinary-qualitative-coding">Why do causal mapping rather than ordinary qualitative coding?</h1>
+<p>in a google doc atm https://docs.google.com/document/d/1kXrH6pdKSvVNVEsRoZCw4GlN87L7m8x65lHtWk-ZbMo/edit?tab=t.0</p>
+<p>Causal mapping has traditionally been done manually, just like working with Nvivo, but instead of coding individual <em>themes</em> we code <em>links between themes (aka causal factors)</em>. For example in the text “then the teacher said that the children are now much more active due to the new playground”, we would code “the new playground” as the cause, “the children are now much more active” as the effect, “the teacher” as the source and the whole sentence as the associated quote or evidence.  The coding is nowadays entirely done by AI. But human input is crucial, in particular to craft the instructions to the AI and in deciding how to cluster and label similar themes. The software automatically constructs maps and tables to answer specific questions, e.g. “what drives poverty, from the point of view of the women?”.</p>
+<hr />
+<p>**# Causal mapping: an unusually useful form of qualitative coding?</p>
+<p>Our aim is to present causal QDA as a particularly useful way to make sense of text in a way which is straightforward to apply with a highly, though not completely, standardised approach.  </p>
+<p>Our steps in doing this are: </p>
+<ul>
+<li>
+<p>We present causal QDA as an important and useful form of QDA</p>
+</li>
+<li>
+<p>We explain why causal coding can be easier to apply than non-causal coding. </p>
+</li>
+<li>
+<p>We explain how it gives us causal maps “for free”, which can be used to answer useful questions.</p>
+</li>
+</ul>
+<p>Although the focus of this paper is not on AI assistance, we also argue that these properties make causal mapping particularly suitable for automation with AI in a way which is verifiable and avoids using the AI as a “black box”.</p>
+<h2 id="what-is-causal-mapping">What is causal mapping?</h2>
+<p>Causal mapping helps make sense of the causal claims (about "what influences what") that people make in interviews, conversations, and documents. This data is coded, combined, and displayed in the form of a causal map. Each claim adds a link to the map. These maps represent individuals' and groups' mental models: individual links and (often interlocking) longer chains of causal explanations. For every link, we can store the original sources and quotes.</p>
+<p>Causal mapping has been used across multiple disciplines for over 50 years <a href="https://www.zotero.org/google-docs/?7MjFBb">(Ackermann et al., 2004; Axelrod, 1976; Eden, 1992; Hodgkinson et al., 2004; Laukkanen, 1994; Narayanan, 2005; Powell et al., 2024)</a>, but though some causal mapping practitioners have published guides to causal coding, it has not often been presented as (also) a stand-alone form of QDA. We tried to rectify that in <a href="https://www.zotero.org/google-docs/?0TB0AV">(Powell et al., 2024)</a>. This paper follows on from that explication.</p>
+<h2 id="what-is-causal-qda">What is causal QDA?</h2>
+<p><img alt="" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXf799gcLwZ-_-O6I25u5YHKKiL1E3u72B418GPJkt9X5nPD7nB443zfhJa1X6Rtb7UwKumcRvs3GYd8-P4JEeF1AggoxncG9Y6EC_LV_DhJB8zNssVGND0y-bD7kVsNl2_CsjHYOg?key=HqSC1Nnmz1P6ho1HY9VSBCMB" /></p>
+<p>Some forms of causal mapping may involve constructing maps directly, for example in participatory fashion with a group of people. In this paper we don’t cover that method. Here, we do causal mapping by coding causal claims within text, what we call "causal QDA".  So this is a less participatory approach. This task is similar to other forms of qualitative data analysis (QDA). However, non-causal QDA is designed to capture concepts in general, whereas in causal QDA we code (claimed) causal links between causal factors: things, events, phenomena, changes: anything which can affect or influence, or be affected or influenced by, something else. Using non-causal QDA we can create post-hoc causal links between independent concepts as in the figure above, version 2. Or we can create the causal link as a monolithic concept as in version 1. But then the word “cause” does not really do anything: we can’t automatically deduce anything from it. In causal QDA, the primary act of coding is to highlight a specific quote from within a statement and identify the causal claim made by simultaneously identifying a pair of causal factors: a "cause" and an "effect". In causal QDA, we only code causal claims. The causal factors only exist as one or other end of a causal link and have no meaning except in their role as either end of a causal link. The coding Floods happened → Crops destroyed IS a causal link, and a set of such links can be immediately visualised as a network or map using suitable software – even <a href="https://causalmap.notion.site/Coding-with-Excel-f5d2ea5542004d28882f67613bef1850">Excel</a>. In causal coding, the result of each act of coding is a pair of factors (an ordered pair, because B → C is not the same as C → B). It is the factors which are the atomic units, which form the codebook, even though the factors only make sense as part of causal links. </p>
+<h2 id="an-emergent-reproducible-spectrum-in-qda">An emergent-reproducible spectrum in QDA?</h2>
+<p>Before we get to the logic of causal QDA, let’s present what we might call an emergent/reproducible spectrum within QDA more generally. We will then place causal QDA on this spectrum.</p>
+<p>In emergent forms of QDA:</p>
+<ul>
+<li>
+<p>The design is not pre-determined but emerges: Yvonna Lincoln &amp; Egon Guba (1985): there is no clear distinction between the method and the output. As Braun and Clarke describe in thematic analysis, an inductive approach “is grounded in the qualitative data itself, enabling researchers to identify patterns and derive key themes without the constraints of pre-existing categories”​ xx</p>
+</li>
+<li>
+<p>Analysis is interpretative rather than systematic. The product is interpretive text, not a structured model. It’s usually a report, paper, a narrative synthesis of themes.</p>
+</li>
+<li>
+<p>Answers are mediated by the author. You need the author (or a reader-analyst) to interpret the analysis and answer your questions.</p>
+</li>
+<li>
+<p>It’s not machine-readable. You can’t automate reasoning over it or extract structured inferences without re-coding it.</p>
+</li>
+<li>
+<p>More interested in a general theory a la Glaser and Strauss <a href="https://www.zotero.org/google-docs/?broken=5JrRzk">(1967)</a>.</p>
+</li>
+</ul>
+<p>Reproducible designs on the other hand tend to propose:</p>
+<ul>
+<li>
+<p>Pre-registration of questions and methods.</p>
+</li>
+<li>
+<p>More emphasis on a top-down or deductive deconstruction of high-level questions into simpler tasks.</p>
+</li>
+<li>
+<p>A greater chance of being able to reproduce similar results with similar inputs.</p>
+</li>
+<li>
+<p>More interested in a case-specific summary as in Mayring <a href="https://www.zotero.org/google-docs/?broken=Glvgcf">(1991)</a> rather than a global theory. </p>
+</li>
+</ul>
+<p>We do not claim that any form of QDA is truly reproducible; we use reproducible as a name for an idealised pole of a spectrum opposite the other pole, “emergent”.</p>
+<p>Every form of QDA involves at least to some extent breaking down hard, high-level questions into simpler tasks which are at least somewhat more traceable and verifiable than the original questions. In more "emergent" traditions we might start with the vaguest of research questions and refine the questions and the methodology as part of the process,"making up the rules as we go along". The positionality of the researcher is central<a href="https://www.zotero.org/google-docs/?5vszGn">(Copestake et al., 2019)</a>. In more reproducible approaches, the balance is more heavily algorithmic and the outputs are closer to being machine-readable answers to pre-determined, even pre-registered, questions, though the researcher still has to make crucial decisions at various points (“human in the loop”). </p>
+<p>Reproducible QDA at least partially encodes claims in a structured, somewhat machine-readable form. It supports decentralized interpretation: once the output exists, anyone can inspect, trace, and reason over it without needing to consult the author.</p>
+<p>Like Patton we affirm a “paradigm of choices” – balancing flexibility with appropriate methodological structure for the situation​ xx<a href="https://scholar.lib.vt.edu/ejournals/JTE/v9n1/hoepfl.html#:~:text=complex%20and%20dynamic%20quality%20of,example%2C%20Russek%20and%20Weinberg">scholar.lib.vt.edu</a> Each application involves some balance between these two extremes, on various subdimensions, where we might characterise the disputes between Glaser and Strauss &amp; Corbyn as about the introduction of at least a degree of pre-structured methods, a smidgen of reproducibility.</p>
+<p>Spoiler: Causal QDA lies at the latter, reproducible, end of this spectrum. </p>
+<h2 id="the-logic-of-qda-youve-done-your-analysis-now-what">The logic of QDA: you’ve done your analysis, now what?</h2>
+<p>The result of qualitative data analysis can be understood as, at least, some kind of qualitative theory or model at least of the sources’ beliefs, with at least some possibility of generalising beyond them. But it can be hard to know what to do with the results of an emergent qualitative text analysis. There is no clear decision procedure: we can ask the author, and the answer is: some explanation, i.e. more text. In more reproducible approaches we do get some more structured outputs such as tables of frequencies. Some authors such as Mayring see these kinds of outputs as an important analysis result. QDA software is often used to capture and structure and even make inferences with these kinds of outputs. </p>
+<p>In the logic of (non-causal) reproducible QDA, we can do things like this:</p>
+<ul>
+<li>
+<ul>
+<li>count occurrences of concepts, and use ordinary arithmetic to report eg which of two concepts was more common</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>count co-occurrences of two concepts, and construct measures like association between concepts, and more generally combine and query occurrences with boolean logic</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>create case/code matrices</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>report relationships between sources and concepts, for example to compare codings of one concept for different genders</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>reason about concepts, for example to deduce that an occurrence of "lion" is also an occurrence of "mammal", either relying on our implicit understanding of the concepts or through the explicit declaration of a parent-child relationship. </li>
+</ul>
+</li>
+</ul>
+<p>Of course frequency statistics are notoriously unstable, because they depend on our decisions about granularity and chunking. If I have a codebook which has 100 different codes for cats and only 1 code for dogs, we may conclude that dogs were mentioned in the text more often than any other animal-concept even if cat-concepts were mentioned more often in combination.  This is one reason why reasoning with these kinds of outputs can never be merely automated. There always has to be a “human in the loop”. Nevertheless the point is that we can understand the output of QDA coding as some proportion of "more text", which itself needs to be interpreted by humans, and a complementary proportion of machine-readable, structured output which can be used to ask and answer questions (Which are the overarching themes? How much does climate anxiety come up as a theme? Who mentions it most?) at least somewhat independently of human guidance. </p>
+<p>QDA logic can also be extended beyond the simple logic of frequencies and occurrences to apply (special kinds of) codes which have additional explicit rules associated with them, such as code weighting (as for example in MaxQDA). This means we can for example apply codes like “somewhat happy” or ‘very unhappy’ which enable us to say that the expression of happiness in one case is stronger than the other, or (if we also allow coding for time) that happiness increases or decreases over time. These extra deductions we can make come free with the (implicit or explicit) underlying ordinal logic of comparison of intensity.</p>
+<h3 id="qda-without-coding">QDA without coding</h3>
+<p>Coding does not have to be central to qualitative data analysis <a href="https://www.zotero.org/google-docs/?kIV7Qv">(Morgan, 2025; Nguyen-Trung &amp; Nguyen, 2025)</a>. …</p>
+<h2 id="what-are-the-advantages-of-causal-over-non-causal-qda">What are the advantages of causal over non-causal QDA?</h2>
+<h3 id="the-additional-logic-of-causal-qda-lets-us-ask-and-answer-additional-questions">The additional logic of causal QDA lets us ask and answer additional questions</h3>
+<p>In the ontology of causal QDA, we have factors, which are something like concepts, and also links, which are ordered pairs of factors. We can immediately make use of all of the frequency/occurrence logic mentioned above for both factors and links, e.g. to report which was the most commonly mentioned causal factor and/or which was the most commonly mentioned causal link. The same caveats about granularity and frequency apply (here and also in the following section).</p>
+<p>But that is just the start of it. In addition, any set of links can also be understood as a network. We don't need to do any extra work, we can simply display and query the network using any suitable algorithm or software. There is a whole wealth of <a href="https://www.causalmap.app/resources/open-source-cm-functions/">causal-belief logic</a> we can (tentatively) apply here to ask and answer practical questions.</p>
+<p>Causal coding allows us to make free use of the logic of causal mapping to do causal-belief analysis: to ask and answer questions and make deductions. </p>
+<h5 id="we-can-ask-questions-about-the-causal-map-overall">We can ask questions about the causal map overall:</h5>
+<ul>
+<li>
+<p>Leveraging our ability to count the frequency with which particular links are mentioned, we can, with caveats, interpret the frequency with which a link is mentioned as the strength of the evidence for that link. </p>
+</li>
+<li>
+<ul>
+<li>which factors are causally central or causally peripheral? </li>
+</ul>
+</li>
+<li>
+<ul>
+<li>which factors appear most often at (or near) the end of causal chains, and which appear at (or near) the beginning?: which factors appear proportionately more often as outcomes than as drivers?</li>
+</ul>
+</li>
+</ul>
+<h5 id="we-can-ask-questions-anchored-to-specific-factors">We can ask questions anchored to specific factors</h5>
+<p>For example, </p>
+<ul>
+<li>
+<p>we can ask about all the immediate causes or effects of a particular factor or set of factors, </p>
+</li>
+<li>
+<p>or we can ask about both causes and effects, to produce the local neighbourhood or "ego network" xx.</p>
+</li>
+</ul>
+<h5 id="most-interestingly-we-can-ask-about-chains-anchored-to-specific-factors">Most interestingly we can ask about chains anchored to specific factors.</h5>
+<p>A fundamental, emergent property of networks is (with caveats) transitivity: being able to ask questions not just about links but about chains. </p>
+<ul>
+<li>
+<p>All the questions mentioned above about links we can also apply to arbitrary chains. So for example we can ask how often a particular chain is mentioned, or mentioned by women.</p>
+</li>
+<li>
+<p>We can list all of the factors downstream of a particular factor of interest. Here, there is a lot to be said about transitivity (when and where we can, from B → C and C → D, conclude B → D). </p>
+</li>
+<li>
+<p>For example if the same source who claims Floods happened → Crops destroyed, in the same context also says that Crops destroyed led to going hungry, we can deduce that perhaps this person attributes going hungry indirectly to the floods.</p>
+</li>
+<li>
+<p>Likewise, we can list all the factors upstream of a particular factor (or set of factors)</p>
+</li>
+<li>
+<p>Likewise, we can list all the factors between an origin factor (or set of factors) and a target factor (or set of factors), again optionally up to a certain length of chain, which Bougon called xx. In terms of program evaluation, we can think of this as all the causal chains from one or more interventions of interest to one or more outcomes of interest.</p>
+</li>
+<li>
+<p>All the logic which we can apply to the whole network can be applied to arbitrary chains or subnetworks. For example we can ask how robust overall is the network of evidence for the influence of X on Y? (for which we have proposed the maximum flow / minimum cut algorithm). </p>
+</li>
+</ul>
+<p>Causal mapping also gives us some additional, optional tools (like <a href="https://guide.causalmap.app/hierarchical-coding/">hierarchical causal coding</a> and <a href="https://guide.causalmap.app/opposites/">opposites coding</a> and coding links with hashtagsxx) for organising its elements in a way which will help answer additional practical questions, which we will however not cover here.</p>
+<h3 id="coding-the-strength-of-a-link-and-why-we-dont-do-that">Coding the strength of a link, and why we don’t do that</h3>
+<p>Many or most causal mapping approaches, including Causal Loop Diagrams, also code the perceived strength of a causal link. This means that the factors become variables which can take values between, say, low and high or positive and negative, and we can make a much broader range of inferences using some form of numerical modelling. This can be seen as the extreme reproducible end of our spectrum and borders on quantitative approaches. </p>
+<p>However we do not go so far: our causal factors are closer to being propositions rather than variables and we do not jump to code, say, poverty as negative wealth, or unemployment as obviously just the opposite of employment.</p>
+<p>Generally all forms of causal mapping have been less interested in finding general rules but only in modelling a more or less specific case or set of cases. But causal mapping has been used for causal meta-analysis, for example of sets of existing evaluation reports (see Powell (2020) for an example).</p>
+<h3 id="why-a-more-restricted-causal-ontology-helps-cut-to-the-chase-in-asking-and-answering-useful-questions">Why a more restricted, causal, ontology helps cut to the chase in asking and answering useful questions</h3>
+<p>The result of causal QDA is not just a report or an essay, but a network, a map, already structured to answer questions about causal beliefs. Many practical, real-world questions are at least partly causal in nature: what leads to what? why does Z happen? what might happen if X? what are the dominant explanations for Y?. Causal mapping gives us a causal vocabulary which provides some semi-standard ways not only to ask but also to answer those kinds of causal questions (e.g. what is the collected evidence for a causal path from X to Y?.  For which pathway is there most evidence? According to the women only?)</p>
+<p>We should stress that even here, we very much need a human in the loop, for instance in order to:</p>
+<ul>
+<li>
+<p>Pay attention to problems of chunking (where do phenomena begin and end) and granularity (how big are the chunks) </p>
+</li>
+<li>
+<p>The transitivity trap</p>
+</li>
+<li>
+<p>While we can be guided by relative frequencies of links, we always consider the specific (combined) evidence for each link, for example when some evidence might be weak or valid only for a specific context</p>
+</li>
+</ul>
+<p><img alt="" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfJ2Nw_YsKTnRxJWflVGeqCRb7QweXvNnTrYk5N3771gjLkj_dv8zQticbUY2_ly-uCt9mkypy9LKUSeBnQu5JAKexX2cyJoimOH6QzFGu-XEvAU7zwFiXbWNBuTg0N9cBYaJzynw?key=HqSC1Nnmz1P6ho1HY9VSBCMB" /></p>
+<h3 id="a-more-restricted-causal-ontology-simplifies-the-construction-and-development-of-a-codebook">A more restricted, causal, ontology simplifies the construction and development of a codebook</h3>
+<p>"What are the causal factors, the cause and the effect, at each end of this causal claim" … is a very challenging question, but it is a whole ballgame less challenging, less open, than "what themes/concepts are mentioned here". This fact makes it much easier to get started on and complete our coding, whether we are going to code deductively (from an established codebook) or inductively (developing the codebook iteratively). It is particularly easy when working inductively and using in-vivo labels close to the original text: we simply have to identify each and every causal claim in the text, and for each one, identify the cause and the effect – the “causal factors”. (Using in-vivo labels means we then need another way to consolidate the resulting large number of factor labels.) Inter-rater agreement in causal coding is good <a href="https://www.zotero.org/google-docs/?tRWcaj">(Buzogany et al., 2024; McCardle-Keurentjes et al., 2018)</a>. This means that we can reduce most of causal coding to a series of low-level tasks: code each and every causal link.</p>
+<h3 id="inter-rater-agreement-for-causal-coding-is-high-making-it-suitable-for-automation-with-ai">Inter-rater agreement for causal coding is high, making it suitable for automation with AI</h3>
+<p>The fact that causal coding can be largely reduced to a series of low-level tasks makes it very suitable for automation with AI. High <a href="https://drive.google.com/file/d/1-1SjT7B86BFn0sR9hRgjXCWnMDYWXh8T/view?usp=sharing">precision and recall scores</a> can be achieved. (Consolidating a large number of in-vivo labels can be accomplished mostly automatically with <a href="https://docs.google.com/document/d/1d7J-aTOPnkOH1AQ2DsWZLFjlgaRxk8VG/edit">clustering of text embeddings</a>.)</p>
+<p>The AI is used only as a tireless, low-level but incredibly fast assistant with the instruction to code each and every causal claim in the text. This is radically different from the kind of AI-supported “black box” coding which essentially treats the AI as a trusted co-coder who is asked to make, or help make, high-level decisions such as "what are the main themes in this text?" or even “What is the overarching causal network in this text?”. </p>
+<p>The accuracy (precision and recall) of AI-supported causal coding is not perfect, but it is improving all the time. Creating, implementing and monitoring the coding protocol remains an essential task ("human in the loop") but we claim that AI-supported causal coding comes closer than other approaches to providing an almost out-of-the-box way to make sense of texts at scale.</p>
+<h2 id="but-causation">But, causation?</h2>
+<p>There are many caveats about causation, as outlined in Powell et al. </p>
+<p>Critical realist about actual processes, and realist about causation itself.</p>
+<h2 id="limitations">Limitations</h2>
+<p>Causal coding uses a restricted ontology will certainly reduce the potential scope of the final report or model, but perhaps not as much as we might expect. It cannot answer all questions about a text! It will fail to code claims or statements which contain material which never influences anything else or is influenced by anything else. </p>
+<p>It is also not suited to constructing broader theories with wider applicability in the sense of <a href="https://www.zotero.org/google-docs/?jGl1ck">(Glaser &amp; Strauss, 1967)</a>. </p>
+<p>We have not used causal coding explicitly to search for latent as opposed to explicit material, ibid, <a href="https://www.zotero.org/google-docs/?WH7AaX">(Braun &amp; Clarke, 2006)</a>. Perhaps it will prove possible but we know of no examples from the wider causal mapping literature where this has been tried.</p>
+<p>The causal coding procedures we have outlined here represent a single-pass, non-iterative approach. Of course this can be expanded to include the more iterative approach essential to most QDA approaches, with varying levels of human oversight. For example we can quickly and cheaply experiment with different coding rules, compare the results, modify the rules and iterate again. This ability to experiment with, compare and iterate potentially hundreds of coding rules and algorithms is a real strength of (semi-)automated coding.</p>
+<p>Vulnerable to limited attention: if we really process only one section at a time, we will be unable to notice cross-references or places where one section qualifies another, as pointed out by Udo Kelle (1997) xx. This may not be a fundamental limitation of machine-led approaches if we arbitrarily expand the surrounding context, increasing the attention or context window, but at present this is slow and expensive. See A 2023 study by Rezaee et al. compared topic modeling (LDA) vs human qualitative coding of tweets, finding that automated methods reliably find dominant themes but miss subtle frames that human interpretive coding can catch.</p>
+<h2 id="what-causal-map-ltd-provides">What Causal Map Ltd provides</h2>
+<p>A wider overview of causal mapping as applied in disciplines from ecology to organisation science is presented in <a href="https://www.zotero.org/google-docs/?tAaTp5">(Powell et al., 2024)</a> and in this <a href="https://www.zotero.org/groups/2858107/causal-mapping/library">Zotero library</a>. </p>
+<p>We provide a web app <a href="http://causalmap.app">Causal Map</a> which is specifically designed for (mostly human-powered) causal QDA and has been used in <a href="http://causalmap.app/resources">academic and practical applications</a>. Colleagues at BathSDR and others have applied (human-powered) causal coding in over 100 evaluation projects using the Qualitative Impact Protocol <a href="https://www.zotero.org/google-docs/?broken=cnk8gl">(Copestake et al., 2019)</a>, mostly in the field of international development, more recently using the Causal Map app. </p>
+<p>Here is a broader list of <a href="https://en.wikipedia.org/wiki/List_of_causal_mapping_software">causal mapping software</a>. </p>
+<p>Finally, we also provide dedicated software for AI-powered causal QDA, details on request.**</p>
+      </main>
+      <aside class="rightbar"><h2>On this page</h2><div class="toc"><div class="toc">
+<ul>
+<li><a href="#why-do-causal-mapping-rather-than-ordinary-qualitative-coding">Why do causal mapping rather than ordinary qualitative coding?</a><ul>
+<li><a href="#what-is-causal-mapping">What is causal mapping?</a></li>
+<li><a href="#what-is-causal-qda">What is causal QDA?</a></li>
+<li><a href="#an-emergent-reproducible-spectrum-in-qda">An emergent-reproducible spectrum in QDA?</a></li>
+<li><a href="#the-logic-of-qda-youve-done-your-analysis-now-what">The logic of QDA: you’ve done your analysis, now what?</a><ul>
+<li><a href="#qda-without-coding">QDA without coding</a></li>
+</ul>
+</li>
+<li><a href="#what-are-the-advantages-of-causal-over-non-causal-qda">What are the advantages of causal over non-causal QDA?</a><ul>
+<li><a href="#the-additional-logic-of-causal-qda-lets-us-ask-and-answer-additional-questions">The additional logic of causal QDA lets us ask and answer additional questions</a><ul>
+<li><a href="#we-can-ask-questions-about-the-causal-map-overall">We can ask questions about the causal map overall:</a></li>
+<li><a href="#we-can-ask-questions-anchored-to-specific-factors">We can ask questions anchored to specific factors</a></li>
+<li><a href="#most-interestingly-we-can-ask-about-chains-anchored-to-specific-factors">Most interestingly we can ask about chains anchored to specific factors.</a></li>
+</ul>
+</li>
+<li><a href="#coding-the-strength-of-a-link-and-why-we-dont-do-that">Coding the strength of a link, and why we don’t do that</a></li>
+<li><a href="#why-a-more-restricted-causal-ontology-helps-cut-to-the-chase-in-asking-and-answering-useful-questions">Why a more restricted, causal, ontology helps cut to the chase in asking and answering useful questions</a></li>
+<li><a href="#a-more-restricted-causal-ontology-simplifies-the-construction-and-development-of-a-codebook">A more restricted, causal, ontology simplifies the construction and development of a codebook</a></li>
+<li><a href="#inter-rater-agreement-for-causal-coding-is-high-making-it-suitable-for-automation-with-ai">Inter-rater agreement for causal coding is high, making it suitable for automation with AI</a></li>
+</ul>
+</li>
+<li><a href="#but-causation">But, causation?</a></li>
+<li><a href="#limitations">Limitations</a></li>
+<li><a href="#what-causal-map-ltd-provides">What Causal Map Ltd provides</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div></aside>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      // Handle sidebar expand/collapse with delay
+      let sidebarTimeout;
+      const layoutContainer = document.querySelector('.layout-container');
+      const sidebar = document.querySelector('.sidebar');
+      
+      sidebar.addEventListener('mouseenter', () => {
+        clearTimeout(sidebarTimeout);
+        layoutContainer.classList.add('sidebar-expanded');
+      });
+      
+      sidebar.addEventListener('mouseleave', () => {
+        sidebarTimeout = setTimeout(() => {
+          layoutContainer.classList.remove('sidebar-expanded');
+        }, 500); // 500ms delay before collapsing
+      });
+    </script>
+  </body>
+ </html>

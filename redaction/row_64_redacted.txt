@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV011
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Yemen
+**Year**: 2022
+**Outcome description**: In <redacted>, in <LOC>, one of the trainer-of-trainers participants got a job opportunity with an international non-governmental organisation.
+**Significance of the outcome**: She recently got divorced and has many responsibilities, so this job opportunity makes her in power in the gender civic space as a women. She is now a bridge between a <redacted> donor and yemen for the first time in the community
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: CAP trained the participant in the advocacy training of trainers, in <redacted>
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Picture in her new job
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: no
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In <redacted>, in <LOC>, one of the <redacted>-trainers participants got a job opportunity with an international non-governmental organisation.  Significance description: She recently got divorced and has many responsibilities, so this job opportunity makes her in power in the gender civic space as a women. She is now a bridge between a <redacted> donor and yemen for the first time in the community  Contribution of the programme: CAP trained the participant in the advocacy training of trainers, in <redacted>  Additional information:   Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

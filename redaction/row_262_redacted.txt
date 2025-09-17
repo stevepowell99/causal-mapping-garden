@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ006
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: South Sudan
+**Year**: 2023
+**Outcome description**: On <redacted>,  Justice and Peace Commission- Catholic Diocese of Malakal declared the enactment of laws to protect the survivors of gender based violence including advocacy on rights of survivors to report in Malakal.
+**Significance of the outcome**: During the last war in 2013 in Malakal town and around issues of sexual gender based violence were reported and perpetrators are not held accountable but now some cases are being reported and the mobile court is looking into most cases. After women caucus in the <LOC> state transitional legislative assembly received training on sexual gender based violence concepts conducted by Justice and Peace Commission- Catholic Diocese of Malakal, members of the assembly have advocated for awareness on women rights among women groups in Malakal and in the Protection site for civilians. Before the declaration there was little movement between towns and this declaration has given more trust between people and even women are moving on the streets more.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Local
+**Contribution of the programme**: After women caucus in the <LOC> state transitional legislative assembly received training on sexual gender based violence concepts conducted by Justice and Peace Commission- Catholic Diocese of Malakal. Thes trainings have increased awarness and trust within communties.
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: partner data
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 2.1  Women, youth, local traditional leaders and local politicians from conflicting communities reconcile through regional peace-building processes and adhere to local level peace agreements
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: On <redacted>,  Justice and Peace <redacted>- Catholic Diocese of Malakal declared the enactment of laws to protect the survivors of gender based violence including advocacy on rights of survivors to report in Malakal.  Significance description: During the last war in 2013 in Malakal town and around issues of sexual gender based violence were reported and perpetrators are not held accountable but now some cases are being reported and the mobile court is looking into most cases. After women caucus in the <LOC> state transitional legislative assembly received training on sexual gender based violence concepts conducted by Justice and Peace Commission- Catholic Diocese of Malakal, members of the assembly have advocated for awareness on women rights among women groups in Malakal and in the Protection site for civilians. Before the declaration there was little movement between towns and this declaration has given more trust between people and even women are moving on the streets more.  Contribution of the programme: After women caucus in the <LOC> state transitional legislative assembly received training on sexual gender based violence concepts conducted by Justice and Peace Commission- Catholic Diocese of Malakal. Thes trainings have increased awarness and trust within communties.  Additional information:   Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Policy implementation
+**TypeOfChangeCluster**: Policy

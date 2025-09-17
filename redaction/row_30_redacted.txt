@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ015
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: South Sudan
+**Year**: 2021
+**Outcome description**: In <redacted>, a gender based violence forum is promoting interaction amongst the women groups in <LOC> and <LOC> state. 
+**Significance of the outcome**: This Gender Based Violence forum is the first of its kind in <LOC> and <LOC> state. There was a gap between women at the grassroots and their colleagues at the state level. Previously there were not women traditional chiefs as well as knowing their roles. The community at grassroots were ignorant of the existence female chiefs.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Regional
+**Contribution of the programme**: Four consultative meetings comprising of 160 members of women groups in <LOC> state and <LOC> states. Two awareness sessions on Gender Based Violence in <LOC> and <LOC> state.
+**Contribution of other actors and factors**: no
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: The reports of the four meetings & attendance list.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 3.1
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In <redacted>, a gender based violence forum is promoting interaction amongst the women groups in <LOC> and <LOC> state.   Significance description: This Gender Based Violence forum is the first of its kind in <LOC> and <LOC> state. There was a gap between women at the grassroots and their colleagues at the state level. Previously there were not women traditional chiefs as well as knowing their roles. The community at grassroots were ignorant of the existence female chiefs.  Contribution of the programme: Four consultative meetings comprising of 160 members of women groups in <LOC> state and <LOC> states. Two awareness sessions on Gender Based Violence in <LOC> and <LOC> state.  Additional information:   Contribution of other actors and factors: no
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging, Gender transformative
+**TypeOfChangeCluster**: Gender, Community bridging

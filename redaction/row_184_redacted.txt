@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ004
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Iraq
+**Year**: 2022
+**Outcome description**: In <redacted>, the community police department of Bashiqa reported an unprecedented increase in the number of calls from women who were subjected to electronic harassment and extortion
+**Significance of the outcome**: Women in <person> are particularly at risk of online harassment and extortion due to existing patriarchal norms, and this has been reportedly increasing over <redacted>. However women who were threatened online rarely ever reported their case for fear of repraisal. This further contributed to their marginalization.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: In <redacted>, a group of volunteers from the city of <LOC>, with the support of the Peace and Freedom Organization, produced a video to raise awarness about electronic blackmail and how to act in the event of exposure to it, highlighting the rights of women to come forward without consequences. It was done with the participation of religious leaders and trusted community figures in all languages, and it was highly promoted on social media and became viral online in the region.
+**Contribution of other actors and factors**: No
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Midterm review (Intrac data collection)
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.1
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In <redacted>, the community police <redacted> of Bashiqa reported an unprecedented increase in the number of calls from women who were subjected to <redacted> and extortion  Significance description: Women in <person> are particularly at risk of online <redacted> and extortion due to existing patriarchal norms, and this has been <redacted> over <redacted>. However women who were <redacted> online rarely ever reported their case for fear of repraisal. This further contributed to their marginalization.  Contribution of the programme: In <redacted>, a group of volunteers from the city of <LOC>, with the support of the Peace and Freedom Organization, produced a video to raise awarness about electronic blackmail and how to act in the event of exposure to it, highlighting the rights of women to come forward without consequences. It was done with the participation of religious leaders and trusted community figures in all languages, and it was highly promoted on social media and became viral online in the region.  Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change  Safety and Security, Gender transformative
+**TypeOfChangeCluster**: Gender, Capacity change

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SAH2508/PHR030
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Sahel/Mali
+**Year**: 2025
+**Outcome description**: In 2025, in Mali, TRIJEUD, ADD and COMADDH systematically integrate and implement gender perspectives within their organisations.
+**Significance of the outcome**: Prior to this initiative, organisations did not have specific, up-to-date institutional policies on gender, which limited the systematic consideration of gender perspectives in their actions. The development of these policies is an important change as it formalises the gender approach, strengthens the quality of interventions and enables a better response to the specific challenges faced by women and men in the intervention areas.
+**Additional information (use if needed) **: This initiative is particularly relevant in the Malian context, where gender inequalities are high and women are often the first victims of security and humanitarian crises. These policies will serve as a framework for the development of gender-sensitive programmes and targeted advocacy actions.
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: The SCC programme provided financial support through a dedicated gender fund, which enabled the recruitment of consultants to support the development and revision of relevant and context-appropriate gender policies. 
+**Contribution of other actors and factors**: No, this change was mainly the result of the SCC programme's interventions and the internal initiatives of the three organisations.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: The gender policies of the three organisations, the gender training report, and the list of staff who received training
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: SO1 as well as SO2
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In 2025, in Mali, TRIJEUD, ADD and COMADDH systematically integrate and implement gender perspectives within their organisations. Significance:  Prior to this initiative, organisations did not have specific, up-to-date institutional policies on gender, which limited the systematic consideration of gender perspectives in their actions. The development of these policies is an important change as it formalises the gender approach, strengthens the quality of interventions and enables a better response to the specific challenges faced by women and men in the intervention areas. Contribution:  The SCC programme provided financial support through a dedicated gender fund, which enabled the recruitment of consultants to support the development and revision of relevant and context-appropriate gender policies.  Additional Info:  This initiative is particularly relevant in the Malian context, where gender inequalities are high and women are often the first victims of security and humanitarian crises. These policies will serve as a framework for the development of gender-sensitive programmes and targeted advocacy actions. Contribution of Other factors:  No, this change was mainly the result of the SCC programme's interventions and the internal initiatives of the three organisations.
+**Outcome is negative**: NO
+**MCQType of change**: Policy change, Gender sensitive
+**TypeOfChangeCluster**: Policy, Gender

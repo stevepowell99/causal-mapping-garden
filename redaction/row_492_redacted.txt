@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/ESF004
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: International / External Stress Factors
+**Year**: 2024
+**Outcome description**: In <redacted>, During the UNSC PoC week Slovenia, Switzerland and Geneva Water Hub, in partnership with other State and non-State actors, launched the Global Alliance to Spare Water from Armed Conflicts
+**Significance of the outcome**: This is the new international initative focusing on an important EPS issues that has now received strong backing from a cross-regional group os states and non-State actors, which has potential to advance important policy initiatives at the UN level and to improve protection of water resources and infrastructure from the impacts of armed conflicts. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: International community
+**Scale**: International 
+**Contribution of the programme**: PAX has been part of the initial core group <redacted> the creation of the Alliance under the <redacted> of Slovenia, Switzerland and Geneva Water Hub, and one of its first members. PAX took part in preliminary meetings in the <redacted>, contributing with practical insights and research around the issue, and spoke at several events on the topic in support of the Alliance. PAX also provided platform for <redacted> plans about expected Alliance's launch at its own UNGA side event on water security in <redacted>. Hence, contribution is direct.
+**Contribution of other actors and factors**: The key role was played by Slovenia, Switzerland and Geneva Water Hub, who designed the initiative and mobilised support from the first members, including PAX, for it, and dealt with logistical issues. PAX's contribution is therefore secondary, albeit significant.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Newly established Global Alliance aspires to better protect water in armed conflicts - Building Trust
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: SO1, outcome 1.2
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In <redacted>, During the UNSC PoC week Slovenia, Switzerland and Geneva Water Hub, in partnership with other State and non-State actors, launched the Global Alliance to Spare Water from Armed Conflicts  Significance description: This is the new international initative focusing on an important EPS issues that has now received strong backing from a cross-regional group os states and non-State actors, which has potential to advance important policy initiatives at the UN level and to improve <redacted> of water resources and infrastructure from the impacts of armed conflicts.   Contribution of the programme: PAX has been part of the initial core group <redacted> the creation of the Alliance under the <redacted> of Slovenia, Switzerland and Geneva Water Hub, and one of its first members. PAX took part in preliminary meetings in the <redacted>, contributing with practical insights and research around the issue, and spoke at several events on the topic in support of the Alliance. PAX also provided platform for <redacted> plans about expected Alliance's launch at its own UNGA side event on water security in <redacted>. Hence, contribution is direct.  Additional information:   Contribution of other actors and factors: The key role was played by Slovenia, Switzerland and Geneva Water Hub, who designed the initiative and mobilised support from the first members, including PAX, for it, and dealt with logistical issues. PAX's contribution is therefore secondary, albeit significant.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, New structure
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Mobilizing citizens and organizations

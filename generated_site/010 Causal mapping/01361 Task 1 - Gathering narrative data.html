@@ -1,0 +1,250 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task 1 - Gathering narrative data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+      /* layout: sticky left sidebar */
+      :root {
+        --cm-body-bg: #fcfcfc;
+        --cm-text: #222;
+        --cm-muted: #6c757d;
+        --cm-border: #e5e5e5;
+      }
+      body {
+        overflow-y: scroll;
+        background: var(--cm-body-bg);
+        color: var(--cm-text);
+        font-size: 1.0625rem; /* ~17px, slightly larger */
+      }
+      .layout-container {
+        display: grid;
+        grid-template-columns: 200px 1fr 260px; /* narrow sidebar by default */
+        column-gap: 2.25rem;
+        min-height: 100vh;
+        transition: grid-template-columns 0.3s ease;
+      }
+      .layout-container.sidebar-expanded {
+        grid-template-columns: 540px 1fr 260px; /* expand when triggered by JS */
+      }
+      .sidebar {
+        border-right: 1px solid var(--cm-border);
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow: hidden; /* hide overflow when narrow */
+        background: #fafafa;
+        padding: 1.25rem 1.25rem 2rem 1.25rem; /* more padding */
+        transition: overflow 0.3s ease;
+      }
+      .layout-container.sidebar-expanded .sidebar {
+        overflow: auto; /* show scrollbar when expanded */
+      }
+      aside.sidebar .p-2 {
+        opacity: .55 !important; /* 55% opacity by default */
+        transition: opacity .2s ease;
+      }
+      aside.sidebar:hover .p-2 {
+        opacity: .8 !important; /* more visible on sidebar hover */
+      }
+      aside.sidebar .p-2 summary {
+        opacity: inherit; /* ensure folder headers inherit the fade */
+      }
+      aside.sidebar .nav-link {
+        padding: .2rem .4rem;
+        color: var(--cm-text);
+        font-size: 1.025rem; /* slightly larger */
+      }
+      aside.sidebar .nav-link:hover {
+        background: #eef2f6;
+        border-radius: .25rem;
+      }
+      details > summary {
+        cursor: pointer;
+        list-style: none;
+        transition: opacity .15s ease;
+      }
+      details > summary::marker {
+        display: none;
+      }
+      aside.sidebar details:hover > summary {
+        opacity: 1 !important; /* full visibility on section hover */
+      }
+      aside.sidebar .nav-link:hover {
+        opacity: 1 !important; /* full visibility on link hover */
+      }
+      details > summary .chev {
+        transition: transform .15s ease, opacity .2s ease;
+        opacity: 0; /* invisible by default */
+        font-size: 1.2em; /* smaller */
+        margin-left: .5rem;
+      }
+      aside.sidebar:hover details > summary .chev {
+        opacity: .6; /* visible on sidebar hover */
+      }
+      details[open] > summary .chev {
+        transform: rotate(90deg);
+      }
+      .content {
+        padding: 3rem 4rem; /* more padding */
+        max-width: 980px;  /* a bit wider */
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+        line-height: 1.7;
+        letter-spacing: .2px;
+        background: white;
+        box-shadow: 0 1px 2px rgba(0,0,0,.03);
+        border: 1px solid var(--cm-border);
+        border-radius: 8px;
+        margin: 2.5rem 2.5rem 5rem 0; /* more breathing room */
+      }
+      .content img { max-width: 100%; height: auto; }
+      .content h1, .content h2, .content h3, .content h4 {
+        margin-top: 2rem;
+        font-weight: 600;
+      }
+      .content p {
+        margin-bottom: 1.1rem;
+      }
+      .content pre, .content code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      }
+      .content pre {
+        background: #f7f7f7;
+        border: 1px solid var(--cm-border);
+        border-radius: 6px;
+        padding: .75rem 1rem;
+      }
+      .content hr {
+        border-top: 1px solid var(--cm-border);
+        margin: 1.5rem 0;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover { text-decoration: underline; }
+      /* Wikilink embed blocks */
+      .embed-block {
+        border: 1px dashed var(--cm-border);
+        background: #fafafa;
+        border-radius: 6px;
+        padding: .5rem .75rem;
+      }
+      .embed-block > summary {
+        font-weight: 500;
+        user-select: none;
+      }
+      .embed-block > summary .chev {
+        transition: transform .15s ease;
+        opacity: .6;
+        font-size: 1.2em; /* smaller */
+        margin-left: .5rem;
+      }
+      .embed-block[open] > summary .chev {
+        transform: rotate(90deg);
+      }
+      .embed-block > summary::before {
+        content: "Relevant page: ";
+        font-size: 0.75rem;
+        color: var(--cm-muted);
+        opacity: 0.7;
+        margin-right: 0.5rem;
+      }
+      /* Active nav link */
+      aside.sidebar .nav-link.active {
+        background: #e7effa;
+        border-radius: .25rem;
+        font-weight: 600;
+      }
+      /* Right ToC */
+      .rightbar {
+        position: sticky;
+        top: 2.5rem; /* align with main content's top margin */
+        align-self: start; /* start at top of grid row */
+        max-height: calc(100vh - 2.5rem);
+        overflow: auto;
+        margin: 2.5rem 0 5rem 0; /* match main content vertical margins */
+        padding: 3rem 2rem; /* similar vertical padding to content */
+        background: white;
+        border: 1px solid var(--cm-border);
+        border-radius: 8px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.03);
+      }
+      .rightbar h2 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        color: var(--cm-muted);
+      }
+      .rightbar .toc ul {
+        padding-left: 1rem;
+      }
+      .rightbar .toc {
+        opacity: .55; /* paler by default */
+        transition: opacity .15s ease;
+      }
+      .rightbar:hover .toc {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout-container">
+      <aside class="sidebar"><div class="p-2"><form class="mb-2" action="../search.html" method="get">  <div class="input-group input-group-sm">    <input class="form-control" type="text" name="q" placeholder="Search…" />    <button class="btn btn-outline-secondary" type="submit">Search</button>  </div></form><a class="btn btn-outline-primary w-100 mb-2" href="../index.html">Home</a><ul class="list-unstyled"><li class="nav-item"><a class="nav-link" href="../index.html">index</a></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>reference articles</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../000 reference articles/010 better-evaluation.html">better-evaluation</a></li><li class="nav-item"><a class="nav-link" href="../000 reference articles/eval2024.html">eval2024</a></li><li class="nav-item"><a class="nav-link" href="../000 reference articles/eval2025.html">eval2025</a></li><li class="nav-item"><a class="nav-link" href="../000 reference articles/trash.html">trash</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>unpublished</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../005 unpublished/! Knowledge graphs.html">! Knowledge graphs</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/! meaning but not epistemology.html">! meaning but not epistemology</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/! Questions you can answer.html">! Questions you can answer</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!350 is there a hidden vocabulary.html">!350 is there a hidden vocabulary</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!400 Being realist about causation.html">!400 Being realist about causation</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!500 nuance.html">!500 nuance</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!700 Retraceable, reconstructable, operationalisable.html">!700 Retraceable, reconstructable, operationalisable</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!Humans are the best detectors of causation.html">!Humans are the best detectors of causation</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!qual causal models.html">!qual causal models</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!Transitivity as the fundamental property.html">!Transitivity as the fundamental property</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/600 bricolage.html">bricolage</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/650 OH plus Attitudes.html">OH plus Attitudes</a></li></ul></details></li><li><details class="mb-1" open><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Causal mapping</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="0.10 What is causal mapping.html">What is causal mapping</a></li><li class="nav-item"><a class="nav-link" href="0.130 Causal mapping has been used for over 50 years in many disciplines.html">Causal mapping has been used for over 50 years in many disciplines</a></li><li class="nav-item"><a class="nav-link" href="011 Causal mapping distinguishes evidence from facts and does not make ca-7f2975.html">Causal mapping distinguishes evidence from facts and does not make causal inferences</a></li><li class="nav-item"><a class="nav-link" href="012 When to use and not to use causal mapping.html">When to use and not to use causal mapping</a></li><li class="nav-item"><a class="nav-link" href="013 History of the Causal Map app.html">History of the Causal Map app</a></li><li class="nav-item"><a class="nav-link" href="0130.0 Causal mapping approaches differ in application, construction, ana-39069f.html">Causal mapping approaches differ in application, construction, analysis and how they deal with multiple sources</a></li><li class="nav-item"><a class="nav-link" href="0132 Causal mappers believe that humans are good at thinking in terms of -c87577.html">Causal mappers believe that humans are good at thinking in terms of causal nuggets</a></li><li class="nav-item"><a class="nav-link" href="0132 Causal mappers believe that humans are hardwired to perceive causation.html">Causal mappers believe that humans are hardwired to perceive causation</a></li><li class="nav-item"><a class="nav-link" href="0132 Causal mapping is part of the qualitative branch of the new causal r-d0ad71.html">Causal mapping is part of the qualitative branch of the new causal revolution</a></li><li class="nav-item"><a class="nav-link" href="0133 Six ways causal mapping differs from related approaches.html">Six ways causal mapping differs from related approaches</a></li><li class="nav-item"><a class="nav-link" href="01331 What is the difference between outcome harvesting, contribution ana-9cd115.html">What is the difference between outcome harvesting, contribution analysis and causal mapping</a></li><li class="nav-item"><a class="nav-link" href="0134 Janus - Causal mappers face in two directions.html">Janus - Causal mappers face in two directions</a></li><li class="nav-item"><a class="nav-link" href="0135 Epistemic logic.html">Epistemic logic</a></li><li class="nav-item"><a class="nav-link" href="0136 Causal mapping in evaluation - Three tasks.html">Causal mapping in evaluation - Three tasks</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="01361 Task 1 - Gathering narrative data.html">Task 1 - Gathering narrative data</a></li><li class="nav-item"><a class="nav-link" href="0137 Task 2 - Coding causal claims as causal qualitative data analysis.html">Task 2 - Coding causal claims as causal qualitative data analysis</a></li><li class="nav-item"><a class="nav-link" href="0138 Task 3 - Answering questions, specifically evaluation questions.html">Task 3 - Answering questions, specifically evaluation questions</a></li><li class="nav-item"><a class="nav-link" href="01381 Limitations - data quality.html">Limitations - data quality</a></li><li class="nav-item"><a class="nav-link" href="01382 Dangers - granularity and generalisability.html">Dangers - granularity and generalisability</a></li><li class="nav-item"><a class="nav-link" href="Advantages of causal mapping - coping with messiness.html">Advantages of causal mapping - coping with messiness</a></li><li class="nav-item"><a class="nav-link" href="Causal maps are knowledge graphs, but with wings.html">Causal maps are knowledge graphs, but with wings</a></li><li class="nav-item"><a class="nav-link" href="Contribution criteria in advance.html">Contribution criteria in advance</a></li><li class="nav-item"><a class="nav-link" href="Layout.html">Layout</a></li><li class="nav-item"><a class="nav-link" href="There has always been complexity.html">There has always been complexity</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Algorithms and questions</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Answering EVALUATION questions (1).html">Answering EVALUATION questions (1)</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Distinguishing between factors which make causal claims about different groups.html">Distinguishing between factors which make causal claims about different groups</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Etiograph - robustness.html">Etiograph - robustness</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Reporting global and local network statistics.html">Reporting global and local network statistics</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Simplification - co-terminal link bundles.html">Simplification - co-terminal link bundles</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Simplification - factor and link frequency.html">Simplification - factor and link frequency</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Simplification - hierarchical zooming.html">Simplification - hierarchical zooming</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Source clustering.html">Source clustering</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Source thread tracing.html">Source thread tracing</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/The transitivity trap.html">The transitivity trap</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Causal Map app</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../012 Causal Map app/500 Open-source causal mapping functions.html">Open-source causal mapping functions</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Causal QDA</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../014 Causal QDA/210 Why do causal mapping rather than ordinary QDA.html">Why do causal mapping rather than ordinary QDA</a></li><li class="nav-item"><a class="nav-link" href="../014 Causal QDA/220 where do the labels come from.html">where do the labels come from</a></li><li class="nav-item"><a class="nav-link" href="../014 Causal QDA/250 causal mapping turns QDA on its head.html">causal mapping turns QDA on its head</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Causal mapping in evaluation</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../015 Causal mapping in evaluation/610 The elephant in the room.html">The elephant in the room</a></li><li class="nav-item"><a class="nav-link" href="../015 Causal mapping in evaluation/650 Qual versus quant impact evaluation strength vs modelling.html">Qual versus quant impact evaluation strength vs modelling</a></li><li class="nav-item"><a class="nav-link" href="../015 Causal mapping in evaluation/Reconstructing program theory empirically.html">Reconstructing program theory empirically</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>AI reaction</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../400 AI reaction/! words - bodies.html">! words - bodies</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/! words - perspective.html">! words - perspective</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/200 Causal QDA 1.html">Causal QDA 1</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/210 Causal QDA 2Break the AI coding roadblock with causal coding.html">Causal QDA 2Break the AI coding roadblock with causal coding</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/300 flawed brains.html">flawed brains</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/ChatGPT - causal, of course.html">ChatGPT - causal, of course</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/ChatGPT is changing how we do evaluation The view  1b634167ad4081bfb541ca-ffce43.html">ChatGPT is changing how we do evaluation The view  1b634167ad4081bfb541ca66a3655094</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/How hard is evaluation actually.html">How hard is evaluation actually</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/READY Yes, there are AI-shaped holes in organisations-8304bf.html">READY Yes, there are AI-shaped holes in organisations.</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>AI - rigour - black box</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/! modelling.html">! modelling</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/! Tips.html">! Tips</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/AI in evaluation actually show your working!.html">AI in evaluation actually show your working!</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/black box.html">black box</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/Just add rigour Three do’s and don’ts.html">Just add rigour Three do’s and don’ts</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/problem difficulty.html">problem difficulty</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/responsibility.html">responsibility</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/rigour.html">rigour</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/Take responsibility Another DO and another DON’T w.html">Take responsibility Another DO and another DON’T w</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/Tiny black boxes.html">Tiny black boxes</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/Trust the algorithm, not the AI.html">Trust the algorithm, not the AI</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/What’s your positionality, robot.html">What’s your positionality, robot</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Bias in AI</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../550 Bias in AI/400 bias.html">bias</a></li><li class="nav-item"><a class="nav-link" href="../550 Bias in AI/Hofman.html">Hofman</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>AI techniques - specific</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/!Using genAI to generate labels for clusters for use as magnets.html">!Using genAI to generate labels for clusters for use as magnets</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/coding polarity and sentiment in causal mapping -- opposites.html">coding polarity and sentiment in causal mapping -- opposites</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/coding polarity and sentiment in causal mapping -- overview.html">coding polarity and sentiment in causal mapping -- overview</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/coding polarity and sentiment in causal mapping -- sentiment.html">coding polarity and sentiment in causal mapping -- sentiment</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/Comparing a Fine-Tuned Model to an Engineered.html">Comparing a Fine-Tuned Model to an Engineered</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/Concrete and Memorable labels.html">Concrete and Memorable labels</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/interview-instructions.html">interview-instructions</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/Reconstructing program theory empirically.html">Reconstructing program theory empirically</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/Solving polarity ambiguity with sentiment.html">Solving polarity ambiguity with sentiment</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/Why nxn magnetising is a bad idea.html">Why nxn magnetising is a bad idea</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Qualia</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../700 Qualia/01 The seamless workflow succeeds in practice.html">The seamless workflow succeeds in practice</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/AI interviewing - beware of sensitive data.html">AI interviewing - beware of sensitive data</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/AI interviewing - beware of suitability.html">AI interviewing - beware of suitability</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/AI interviewing - the evaluator retains responsibility.html">AI interviewing - the evaluator retains responsibility</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/AI interviewing has potential - scalability, reach, reproducibility, causality.html">AI interviewing has potential - scalability, reach, reproducibility, causality</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/AI interviewing needs further work.html">AI interviewing needs further work</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/An AI interviewer can successfully gather causal information at scale.html">An AI interviewer can successfully gather causal information at scale</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/CASA.html">CASA</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Introducing Seamless Stories From Qualia to Causal.html">Introducing Seamless Stories From Qualia to Causal</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/It is possible to gather evidence at scale about program theory and contr-6a9b6e.html">It is possible to gather evidence at scale about program theory and contribution simultaneously - three steps</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Our seamless stories workflow in practice.html">Our seamless stories workflow in practice</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Qualia -security- languages.html">Qualia -security- languages</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Qualia-USA.html">Qualia-USA</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Step 1 Conducting the chat interviews.html">Step 1 Conducting the chat interviews</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Step 2a Coding the interviews  Constructing a guideline.html">Step 2a Coding the interviews  Constructing a guideline</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Step 2b Coding the interviews  Coding.html">Step 2b Coding the interviews  Coding</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Step 2c Coding the interviews  Clustering.html">Step 2c Coding the interviews  Clustering</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Workflows</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../750 Workflows/Workflows - Barbara.html">Workflows - Barbara</a></li><li class="nav-item"><a class="nav-link" href="../750 Workflows/Workflows description at bullet.html">Workflows description at bullet</a></li><li class="nav-item"><a class="nav-link" href="../750 Workflows/Workflows gdoc.html">Workflows gdoc</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Applications</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../800 Applications/Evaluator niche in AI.html">Evaluator niche in AI</a></li><li class="nav-item"><a class="nav-link" href="../800 Applications/Full - Strengthening OH with causal mapping.html">Full - Strengthening OH with causal mapping</a></li><li class="nav-item"><a class="nav-link" href="../800 Applications/Strengthening OH with causal mapping.html">Strengthening OH with causal mapping</a></li><li class="nav-item"><a class="nav-link" href="../800 Applications/Using AI to facilitate feedback on the learning experiences of doctoral s-762280.html">Using AI to facilitate feedback on the learning experiences of doctoral students.</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>After AI</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>philosophy</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../9100 philosophy/Existentialists.html">Existentialists</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Beyond causal mapping</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../930 Beyond causal mapping/! Beyond causal mapping - teleology, stories.html">! Beyond causal mapping - teleology, stories</a></li><li class="nav-item"><a class="nav-link" href="../930 Beyond causal mapping/storytelling overview from gemini.html">storytelling overview from gemini</a></li></ul></details></li></ul></div></aside>
+      <main class="content">
+        <h1 class="h3">Task 1 - Gathering narrative data</h1>
+        <hr />
+        <blockquote>
+<p>From <a href="">Powell, Copestake, et al. (2023)</a></p>
+</blockquote>
+<p>How to collect causal claims from which to draw causal maps? There are a wide variety of options, including in-depth individual interviews (Ackermann and Eden, 2004), reuse of open-ended questions in structured surveys (Jackson and Trochim, 2002), literature reviews (in which ‘sources’ can be documents rather than individuals) and archival or secondary material within which pre-existing causal claims are already made (Copestake, 2020). Other approaches aim to build consensus by using structured collaborative processes, including Delphi studies and PSM (Penn and Barbrook-Johnson, 2019). Guidelines for causal mapping may include procedures for collecting primary data, with forms of elicitation including back-chaining (‘what influenced what?’) and forward-chaining (what resulted, or could result, from this?)</p>
+<p>When gathering primary data, the way in which questions are asked influences the meaning of the maps and their links. For example, in the QuIP, (Copestake et al., 2019b) respondents are asked to identify causes of changes, then causes of the causes and so on. This means that most of the factors are not expressed directly as variables that may go up or down (e.g. ‘harvest’, ‘hunger’) but already as changes in something, such as ‘an improved harvest’ or ‘reduced hunger’). This has implications for how positive and negative statements are combined, as discussed in the following section.</p>
+<p>With primary data collection, we can distinguish between relatively closed and open approaches and whether respondents are forced to choose between pre-selected optional answers or can formulate their own (see Table 2). Interviewers may also be guided by a chaining algorithm; for example, they may be instructed to iteratively ask questions like ‘You mentioned X, please could you tell me what were the main factors that influenced X or led to it happening.’</p>
+<p>Table 2. Different approaches within primary data collection for causal mapping, with example questions.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Admissible answers / Scope of questions</strong></th>
+<th><strong>Explicit</strong>: factors are explicitly identified</th>
+<th><strong>Implicit</strong>: factors are not explicitly named</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Closed: questions with a predetermined focus</td>
+<td>Which factors in this list influenced this particular event?</td>
+<td>What influenced this particular event?</td>
+</tr>
+<tr>
+<td>Open: a freer discussion</td>
+<td>Identify the biggest change you experienced in relation to X, and list three factors that influenced it</td>
+<td>Tell me what has changed for you in the last x years</td>
+</tr>
+</tbody>
+</table>
+      </main>
+      
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      // Handle sidebar expand/collapse with delay
+      let sidebarTimeout;
+      const layoutContainer = document.querySelector('.layout-container');
+      const sidebar = document.querySelector('.sidebar');
+      
+      sidebar.addEventListener('mouseenter', () => {
+        clearTimeout(sidebarTimeout);
+        layoutContainer.classList.add('sidebar-expanded');
+      });
+      
+      sidebar.addEventListener('mouseleave', () => {
+        sidebarTimeout = setTimeout(() => {
+          layoutContainer.classList.remove('sidebar-expanded');
+        }, 500); // 500ms delay before collapsing
+      });
+    </script>
+  </body>
+ </html>

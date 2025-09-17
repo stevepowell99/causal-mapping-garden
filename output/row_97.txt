@@ -1,0 +1,23 @@
+**FragmentID**: SCC-DRC2305/PHR015
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: DR Congo
+**Year**: 2022
+**Outcome description**: In June and July 2022, the local military authority closed two illegal military cells, including an underground one, of the FARDC Services Regiment of Sake, following community meetings and advocacy panel activities held in June 2022 and initiated and organized by ASSODIP.
+**Significance of the outcome**: In these illegal detention centres people were illegally imprisoned and were sometimes tortured or victimes of other inhuman and degrading treatment.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: * ASSODIP organized a community awareness meeting on human rights in which an official of the Services Regiment took part in February 2022; June 2022 advocacy panel in Sake; * Activism of monitors throughout 2022 to alert the administrator of the territory to the facts. * Continuous coaching of monitors by ASSODIP throughput 2022 
+**Contribution of other actors and factors**: Other local organisations.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Witness statements of local civil society organisations.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.3
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In June and July 2022, the local military authority closed two illegal military cells, including an underground one, of the FARDC Services Regiment of Sake, following community meetings and advocacy panel activities held in June 2022 and initiated and organized by ASSODIP.  Significance description: In these illegal detention centres people were illegally imprisoned and were sometimes tortured or victimes of other inhuman and degrading treatment.  Contribution of the programme: * ASSODIP organized a community awareness meeting on human rights in which an official of the Services Regiment took part in February 2022; June 2022 advocacy panel in Sake; * Activism of monitors throughout 2022 to alert the administrator of the territory to the facts. * Continuous coaching of monitors by ASSODIP throughput 2022   Additional information:   Contribution of other actors and factors: Other local organisations.
+**Outcome is negative**: NO
+**MCQType of change**: Policy implementation
+**TypeOfChangeCluster**: Policy

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-YEM2508/PHR010
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Yemen
+**Year**: 2024
+**Outcome description**: In the last quarter of 2024, Sara Ayash, a community mediator trained under the Watan project, and in collaboration with her team, resolved approximately 70 social and family-related conflicts at the Sheikh Othman police state in Aden, Yemen. 
+**Significance of the outcome**: Sara successfully led a community mediation team in Sheikh Othman District of Aden. . Their efforts led to the release of detainees without escalating the cases to formal institutions such as the prosecution or courts. This helped decongest the formal justice system and reinforced the role of informal mechanisms in conflict resolution.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Local
+**Contribution of the programme**: This intervention took place within another project implemented by Afaq Shababia Foundation and supported by the United Nations Development Programme (UNDP). Nonetheless this outcome is directly linked to the Watan project’s capacity-building activities, which aimed to train and empower female community mediators across five Yemeni governorates. The training equipped Sara with the necessary skills and confidence to apply her learning in a real-world setting. Her leadership and impact served as a practical demonstration of the project’s effectiveness, showcasing how grassroots interventions can foster institutional trust and create sustainable change in local governance and justice practices.
+**Contribution of other actors and factors**: yes
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Information at partner
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In the last quarter of 2024, Sara Ayash, a community mediator trained under the Watan project, and in collaboration with her team, resolved approximately 70 social and family-related conflicts at the Sheikh Othman police state in Aden, Yemen.   Significance description: Sara successfully led a community mediation team in Sheikh Othman District of Aden. . Their efforts led to the release of detainees without escalating the cases to formal institutions such as the prosecution or courts. This helped decongest the formal justice system and reinforced the role of informal mechanisms in conflict resolution.  Contribution of the programme: This intervention took place within another project implemented by Afaq Shababia Foundation and supported by the United Nations Development Programme (UNDP). Nonetheless this outcome is directly linked to the Watan project’s capacity-building activities, which aimed to train and empower female community mediators across five Yemeni governorates. The training equipped Sara with the necessary skills and confidence to apply her learning in a real-world setting. Her leadership and impact served as a practical demonstration of the project’s effectiveness, showcasing how grassroots interventions can foster institutional trust and create sustainable change in local governance and justice practices.  Additional information:   Contribution of other actors and factors: yes
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging, Capacity change L and A
+**TypeOfChangeCluster**: Capacity change, Community bridging

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR008
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: <LOC>/Burkina Faso
+**Year**: 2025
+**Outcome description**: In <redacted>, the special <redacted> from <LOC> included for the first time a budget line for the psychological and psychosocial care of victims of violent extremism and GBV in the <redacted> Municipal Development Plan (PCD).
+**Significance of the outcome**: With the transfer of powers from the State, health care is now managed by local authorities. In the previous PCD, it was noted that, despite increased need, psychosocial care was not a reality. Advocacy by AFEDEB and its local partners has influenced municipal authorities, which have included psychological care for victims of violent extremism and GBV in the PCD for the first time. This change contributes to the achievement of SDG 2 of the
+**Additional information (use if needed) **: In order for funds to be allocated and expenditure to be incurred at the municipal level, the expenditure must first be included in the CDP, which is drawn up and adopted <redacted>. This is a first in the development plans of the municipality of <LOC>.
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: In 2024, AFEDEB received coaching and technical guidance from PAX on advocacy and lobbying. These actions enabled it not only to draft advocacy and partnership documents but also to carry out advocacy actions related to local concerns. With this in mind, AFEDEB mobilised at least 20 local partner associations to advocate with the special delegation of the municipality of <LOC> for psychological care for people in need. The municipal council's decision is a result of this advocacy work, which drew on the skills and techniques acquired.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: PCD <redacted>, which is currently being validated. Advocacy document Activity reports 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.4
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In <redacted>, the special <redacted> from <LOC> included for the first time a budget line for the psychological and psychosocial care of victims of violent extremism and GBV in the <redacted> Municipal Development Plan (PCD). Significance:  With the transfer of powers from the State, health care is now managed by local authorities. In the previous PCD, it was noted that, despite increased need, psychosocial care was not a reality. Advocacy by AFEDEB and its local partners has <redacted> municipal authorities, which have included psychological care for victims of violent extremism and GBV in the PCD for the first time. This change contributes to the achievement of SDG 2 of the Contribution:  In 2024, AFEDEB received coaching and technical guidance from PAX on advocacy and lobbying. These actions enabled it not only to draft advocacy and partnership documents but also to carry out advocacy actions related to local concerns. With this in mind, AFEDEB mobilised at least 20 local partner associations to advocate with the special delegation of the municipality of <LOC> for psychological care for people in need. The municipal council's decision is a result of this advocacy work, which drew on the skills and techniques acquired. Additional Info:  In order for funds to be allocated and expenditure to be incurred at the municipal level, the expenditure must first be included in the CDP, which is drawn up and adopted <redacted>. This is a first in the development plans of the municipality of <LOC>. Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Policy change, Capacity change Mental health resilience
+**TypeOfChangeCluster**: Policy, Capacity change

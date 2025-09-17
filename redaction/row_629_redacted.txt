@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV003
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 3
+**coutnry**: <LOC>/Burkina Faso
+**Year**: 2024
+**Outcome description**: In Burkina Faso, the CBDDH and the CNDH have strengthened their collaboration since 2024.
+**Significance of the outcome**: Before 2024, the CBDDH had a partnership with the CNDH as a member of the human rights defenders protection mechanism housed within the national human rights institution (CNDH).
+**Additional information (use if needed) **: In <redacted>, on the recommendation of the Dutch Embassy in Burkina Faso, the CNDH participated in a training workshop on secure data collection (KOBO TOOLBOX) organized by CBDDH partner Defenddefenders. In <redacted>, the CBDDH and its partner <redacted> participated in the biennial forum for human rights defenders organized by the CNDH.
+**Rating significance**: medium
+**Social actor**: Multiple
+**Scale**: Organisation
+**Contribution of the programme**: The program strengthened the mutual ties between the two institutions.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Images , Repports.
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 1.2                                                             Output 1.2.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Outcome description:  In Burkina Faso, the CBDDH and the CNDH have strengthened their collaboration since 2024. Significance:  Before 2024, the CBDDH had a partnership with the CNDH as a member of the human rights defenders <redacted> mechanism housed within the national human rights institution (CNDH). Contribution:  The program strengthened the mutual ties between the two institutions. <redacted> <redacted>:  In <redacted>, on the recommendation of the Dutch Embassy in Burkina Faso, the CNDH participated in a training workshop on secure data collection (KOBO TOOLBOX) organized by CBDDH partner Defenddefenders. In <redacted>, the CBDDH and its partner <redacted> participated in the biennial forum for human rights defenders organized by the CNDH. Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Creating space for CSOs
+**TypeOfChangeCluster**: Empowering citizens and CSOs

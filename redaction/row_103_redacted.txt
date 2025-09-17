@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/ESF006
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: International / External Stress Factors
+**Year**: 2022
+**Outcome description**: In the context of the negotiations within the European <redacted> on its position towards the upcoming mandatory human rights due diligence legislation, 3 MEPs have tabled <redacted> to the text that propose to incorporate a <redacted> human rights due diligence for companies active in conflict-affected and high-risk areas, and to include IHL in the normative scope of the legislation. When: tabled in the course of <redacted>, formally submitted in <redacted>.
+**Significance of the outcome**: The fact that these <redacted> were tabled by MEPs (and, in <redacted> adopted in 2 of the 3 <redacted>, with one more vote to come end of March 2023) brings our objective of getting provisions on hHRDD in conflict-affected areas in the EU due diligence legislation one step closer. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: National
+**Contribution of the programme**: PAX published a policy brief (<redacted>) and a joint statement (<redacted>) on the <redacted> of including specific obligations for companies active in conflict-affected areas in the EU due diligence legislation. The statement was signed by over 50 civil society organizations and academics and shared broadly with members of the European <redacted> and Member State representatives to the Council (the two bodies that need to negotiate on the legislative proposal with the European <redacted>). We had follow-up conversations with relevant MEPs and we drafted <redacted> to the legislative proposal. These <redacted> were then tabled by 3 separate MEPs. The vote in the lead committee (where these <redacted> are currently being discussed) will take place end of March 2023. 
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted> (opninion AFET committee) <redacted> (opinion DEVE committee) <redacted> (amendments to JURI draft report) <redacted> (PAX policy brief) <redacted> (joint statement) 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.3
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In the context of the negotiations within the European <redacted> on its position towards the upcoming mandatory human rights due diligence legislation, 3 MEPs have tabled <redacted> to the text that propose to incorporate a <redacted> human rights due diligence for companies active in conflict-affected and high-risk areas, and to include IHL in the normative scope of the legislation. When: tabled in the course of <redacted>, formally submitted in <redacted>.  Significance description: The fact that these <redacted> were tabled by MEPs (and, in <redacted> adopted in 2 of the 3 <redacted>, with one more vote to come end of March 2023) brings our objective of getting <redacted> on hHRDD in conflict-affected areas in the EU due diligence legislation one step closer.   Contribution of the programme: PAX published a policy brief (<redacted>) and a joint statement (<redacted>) on the <redacted> of including specific obligations for companies active in conflict-affected areas in the EU due diligence legislation. The statement was signed by over 50 civil society organizations and academics and shared broadly with members of the European <redacted> and Member State representatives to the Council (the two bodies that need to negotiate on the legislative proposal with the European <redacted>). We had follow-up conversations with relevant MEPs and we drafted <redacted> to the legislative proposal. These <redacted> were then tabled by 3 separate MEPs. The vote in the lead committee (where these <redacted> are currently being discussed) will take place end of March 2023.   Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

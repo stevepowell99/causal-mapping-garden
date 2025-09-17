@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/ESF009
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: International / External Stress Factors
+**Year**: 2025
+**Outcome description**: In 2024 and 2025, on several occasions, the UN OHCHR published positions that outlined specifically and clearly that companies as well as financial institions financing these companies are under obligation by international standards to act to prevent, mitigate and remediate violations of human rights and IHL in <LOC>, and at risk of becoming legally liable if they failed to do so.
+**Significance of the outcome**: In 2022, the UN Working Group on Business and Human Rights for the first time <redacted> stated that the arms industry should conduct human rights due diligence. During 2024 and 2025, triggered by events in <LOC>, the OHCHR and the Working Group published statements that emphasized this much more and urgently.
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: International community
+**Scale**: International 
+**Contribution of the programme**: PAX has provided input to the OHCHR on several occasions, and the reports PAX wrote are referenced in various of the OHCRH or special rapporteurs reports. 
+**Contribution of other actors and factors**: Yes, other actors have contributed as well, but the reports PAX wrote added specific information on the role of the arms industry and their financiers. 
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted> and: <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: SO2, new actor
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In 2024 and 2025, on several occasions, the UN OHCHR published positions that outlined specifically and clearly that companies as well as financial <redacted> financing these companies are under <redacted> by international standards to act to prevent, mitigate and remediate <redacted> of human rights and IHL in <LOC>, and at risk of becoming legally liable if they failed to do so.  Significance description: In 2022, the UN Working Group on Business and Human Rights for the first time <redacted> stated that the arms industry should conduct human rights due diligence. During 2024 and 2025, triggered by events in <LOC>, the OHCHR and the Working Group published statements that emphasized this much more and urgently.  Contribution of the programme: PAX has provided input to the OHCHR on several occasions, and the reports PAX wrote are referenced in various of the OHCRH or special rapporteurs reports.   Additional information:   Contribution of other actors and factors: Yes, other actors have contributed as well, but the reports PAX wrote added specific information on the role of the arms industry and their financiers. 
+**Outcome is negative**: NO
+**MCQType of change**: Policy change, Supportive action
+**TypeOfChangeCluster**: Policy, Empowering citizens and CSOs

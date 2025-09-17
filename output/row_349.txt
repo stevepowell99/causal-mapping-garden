@@ -1,0 +1,23 @@
+**FragmentID**: SCC-PAL2312/PHR015
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Palestine
+**Year**: 2023
+**Outcome description**: In December 2023 Dutch Parliament adopted a motion that asks the Dutch government to make European efforts for a visa ban for settlers who commit violence and glorify violence
+**Significance of the outcome**: Concrete action against settlements. Not often that parliament adopts motions with concrete measures in light of settler violence/violations in light of housing and residency rights on the West Bank
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: PAX advocated for concrete measures also in briefings to parliament members
+**Contribution of other actors and factors**: Also many other organisations did this and developments in other countries (among them Belgium) support this outcome.
+**Rating contribution**: little
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: https://www.tweedekamer.nl/kamerstukken/moties/detail?id=2023Z20047&did=2023D48999
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In December 2023 Dutch Parliament adopted a motion that asks the Dutch government to make European efforts for a visa ban for settlers who commit violence and glorify violence  Significance description: Concrete action against settlements. Not often that parliament adopts motions with concrete measures in light of settler violence/violations in light of housing and residency rights on the West Bank  Contribution of the programme: PAX advocated for concrete measures also in briefings to parliament members  Additional information:   Contribution of other actors and factors: Also many other organisations did this and developments in other countries (among them Belgium) support this outcome.
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

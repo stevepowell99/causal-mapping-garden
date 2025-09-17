@@ -1,0 +1,23 @@
+**FragmentID**: SCC-KEN2305/PHR010
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Kenya
+**Year**: 2023
+**Outcome description**:  In January 2023, the Independent Policing Oversight Authority (IPOA) pledged to work with HSI in addressing human rights violation cases and also join HSI during the upcoming human rights desks and make community awareness on the importance of reporting of cases.
+**Significance of the outcome**: Given its mandate to investigate human rights violations allegedly perpetrated by state actors, IPOA as a key duty bearer has began initial conversations on collaboration with HSI, which may lead to investigations and ultimately redress for victims of HRVs.
+**Additional information (use if needed) **: IPOA staff suggested to hold a meeting with both IPOA's and HSI' leadrship and further agree on ways to collaborate. It is the first time that IPOA reaches out to HSI in Garissa.  
+**Rating significance**: medium
+**Social actor**: Non-state authorities
+**Scale**: Local
+**Contribution of the programme**: Community-Security dialogue organized in January 2023 by HSI (See above).
+**Contribution of other actors and factors**: 
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: HURICAP Senior Programme Officer has interviewed 01 HSI staff member and 01 community member that attended the dialogues (Interview date 26  February, Garissa) to corroborate the information.
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 2.2.1 and IPOA is a relevant ToC actor.
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**:  In January 2023, the Independent Policing Oversight Authority (IPOA) pledged to work with HSI in addressing human rights violation cases and also join HSI during the upcoming human rights desks and make community awareness on the importance of reporting of cases.  Significance description: Given its mandate to investigate human rights violations allegedly perpetrated by state actors, IPOA as a key duty bearer has began initial conversations on collaboration with HSI, which may lead to investigations and ultimately redress for victims of HRVs.  Contribution of the programme: Community-Security dialogue organized in January 2023 by HSI (See above).  Additional information: IPOA staff suggested to hold a meeting with both IPOA's and HSI' leadrship and further agree on ways to collaborate. It is the first time that IPOA reaches out to HSI in Garissa.    Contribution of other actors and factors: n/a
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Creating space for CSOs, Seeking public support
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Mobilizing citizens and organizations

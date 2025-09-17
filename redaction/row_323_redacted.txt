@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR011
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Syria
+**Year**: 2023
+**Outcome description**: In <redacted>, Kesh Malek designed a new programme that was succesfully funded by DRL to address the gender backlash in <LOC> and empower women economically
+**Significance of the outcome**: In the course of 2022 and 2023, Kesh <person> <redacted> the gender backlash phenomena occurring in <LOC> and reflected on how to better design <redacted> aiming at <redacted> women without <redacted> a backlash. This process led to formulating a project that was proposed and further received funding from DRL, contributing to <redacted> the work of Kesh Malek in NWS until 2025. 
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: PAX supported <person> to conduct a research on the gender backlask in NWS. The need to conduct a research was identified as part of a training cycle organized by PAX for <person> to adjust their advocacy strategy.
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: Yes (DRL grant contract)
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In <redacted>, Kesh Malek designed a new programme that was succesfully funded by DRL to address the gender backlash in <LOC> and empower women economically  Significance description: In the course of 2022 and 2023, Kesh <person> <redacted> the gender backlash phenomena occurring in <LOC> and reflected on how to better design <redacted> aiming at <redacted> women without <redacted> a backlash. This process led to formulating a project that was proposed and further received funding from DRL, contributing to <redacted> the work of Kesh Malek in NWS until 2025.   Contribution of the programme: PAX supported <person> to conduct a research on the gender backlask in NWS. The need to conduct a research was identified as part of a training cycle organized by PAX for <person> to adjust their advocacy strategy.  Additional information:   Contribution of other actors and factors: None
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

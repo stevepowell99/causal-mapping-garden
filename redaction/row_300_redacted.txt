@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV017
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 2
+**coutnry**: South Sudan
+**Year**: 2023
+**Outcome description**: In <redacted>, a lot of young people in South Sudan, and in <LOC> particularly, joined the South Sudan Youth Constitutional Working Group. And 'a lot of people' is vague
+**Significance of the outcome**: This increase in support is in line with our goal of strengthening the group’s membership and inspiring more young people to participate in the constitution making process through the network.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: International community
+**Scale**: National
+**Contribution of the programme**: After the launch of the One Youth One Voice campaign on Facebook and WhatsApp in <redacted>, 2023, followers of South Sudan Youth Constitutional Working Group significantly increased on Facebook. The change is also a result of our other <redacted> such as the our <redacted> training for youth peace ambassadors on civic <redacted> and public consultation on the constitution making process done in <redacted> at Juba Regency Hotel and the <redacted> Youth Forum on <redacted> a federal constitution held on 6th and 7th December 2023 at <LOC>, <LOC>. The project contributed greatly to this increase in youth membership in South Sudan Youth Constitutional Working Group.
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: facebook page, whatsapp channel, participant attendence 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.1 Youth and women's groups effectively advocate for participation in the constitution making process and for their needs and rights to be included in the constitution.                         
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In <redacted>, a lot of young people in South Sudan, and in <LOC> particularly, joined the South Sudan Youth Constitutional Working Group. And 'a lot of people' is vague  Significance description: This increase in support is in line with our goal of strengthening the group’s <redacted> and inspiring more young people to participate in the constitution making process through the network.  Contribution of the programme: After the launch of the One Youth One Voice campaign on Facebook and WhatsApp in <redacted>, 2023, followers of South Sudan Youth Constitutional Working Group significantly increased on Facebook. The change is also a result of our other <redacted> such as the our <redacted> training for youth peace ambassadors on civic <redacted> and public consultation on the constitution making process done in <redacted> at Juba Regency Hotel and the <redacted> Youth Forum on <redacted> a federal constitution held on 6th and 7th December 2023 at <LOC>, <LOC>. The project contributed greatly to this increase in youth membership in South Sudan Youth Constitutional Working Group.  Additional information:   Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Other
+**TypeOfChangeCluster**: Other

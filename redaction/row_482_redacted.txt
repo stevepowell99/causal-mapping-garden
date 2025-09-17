@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV014
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Palestine
+**Year**: 2024
+**Outcome description**: In <redacted>, Meta adjusted their moderation standards, reversing damaging policies including the blanket ban on the word "Shahed." Meta announced this on its own transparency website.
+**Significance of the outcome**: The reversing of policies that suppres the space for <redacted> and international HRD to speak out is a specific goal of the program. Achieving this in this specific case is therefore significant
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Companies
+**Scale**: Organisation
+**Contribution of the programme**: 7amleh is one of the organisations who worked together with Meta's Oversight Board to put pressure to adjust the policies. The support of the program to PDAF, 7amleh's <redacted> conference fostered the network of 7amleh as well as its outreach capacities
+**Contribution of other actors and factors**: Yes, Meta's oversight boards as well as other allies put pressure on Meta and joined campaigns
+**Rating contribution**: little
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted> and <redacted> and <redacted>
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 1.2  - Social media companies (Facebook, TikTok, Twitter, Instagram) have modified some of their community standards and related regulations, in order to counter suppression of space for <redacted> and international HRDs and organisations 
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In <redacted>, Meta adjusted their moderation standards, reversing damaging policies including the blanket ban on the word "Shahed." Meta announced this on its own transparency website.  Significance description: The reversing of policies that suppres the space for <redacted> and international HRD to speak out is a specific goal of the program. Achieving this in this specific case is therefore significant  Contribution of the programme: 7amleh is one of the organisations who worked together with Meta's Oversight Board to put pressure to adjust the policies. The support of the program to PDAF, 7amleh's <redacted> conference fostered the network of 7amleh as well as its outreach capacities  Additional information:   Contribution of other actors and factors: Yes, Meta's oversight boards as well as other allies put pressure on Meta and joined campaigns
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

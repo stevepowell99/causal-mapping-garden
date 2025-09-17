@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SSU2305/PHR031
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: South Sudan
+**Year**: 2022
+**Outcome description**: Since February 2022, after trauma healing sessions/awareness, members of the armed forces in military barracks of Kit Gwang, Upper Nile State, are now promoting social relationships among themselves and with the civil community.
+**Significance of the outcome**: Kit Gwang is a fraction from IO dominated by Shiluk, located in the Northern part of Upper Nile bordering Sudan. This is a closed region, where not many people go to. CDOM was requested by a medical doctor – who is also a commandor in the army - to conduct a trauma-healing session in this region as there is a high rate of suicide among the soldiers. In the past soldiers were living ‘on themselves’ dealing with their own stress. During the training the soldiers showed great interest and happiness. After the trauma healing session they started sharing their struggles and stress, they started laughing and the suicide rates reduced. 
+**Additional information (use if needed) **: The medical doctor/commandor welcomed the team from CDOM, contributed during the training and followed up with the soldiers after the training.
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: A trauma-healing training was conducted using he SSCC manual for trauma-healing and reconciliation. 
+**Contribution of other actors and factors**: no
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: no 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Since February 2022, after trauma healing sessions/awareness, members of the armed forces in military barracks of Kit Gwang, Upper Nile State, are now promoting social relationships among themselves and with the civil community.  Significance description: Kit Gwang is a fraction from IO dominated by Shiluk, located in the Northern part of Upper Nile bordering Sudan. This is a closed region, where not many people go to. CDOM was requested by a medical doctor – who is also a commandor in the army - to conduct a trauma-healing session in this region as there is a high rate of suicide among the soldiers. In the past soldiers were living ‘on themselves’ dealing with their own stress. During the training the soldiers showed great interest and happiness. After the trauma healing session they started sharing their struggles and stress, they started laughing and the suicide rates reduced.   Contribution of the programme: A trauma-healing training was conducted using he SSCC manual for trauma-healing and reconciliation.   Additional information: The medical doctor/commandor welcomed the team from CDOM, contributed during the training and followed up with the soldiers after the training.  Contribution of other actors and factors: no
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change Mental health resilience
+**TypeOfChangeCluster**: Capacity change

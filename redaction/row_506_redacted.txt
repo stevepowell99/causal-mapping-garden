@@ -1,0 +1,21 @@
+**FragmentID**: SCC-<redacted>/CIV041
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: South Sudan
+**Year**: 2024
+**Outcome description**: On <redacted>, the <redacted> of South Sudan passed the NSS amendment bill 2024, reinstating the sections (54, <redacted>, and 57) which were deemed problematic to the civic space in South Sudan.
+**Significance of the outcome**: From the start of the SCC intervention, it was an intentional objective to see the NSS Bill amended. The passing of the amended bill was not however in favorable to the program's work because it still going to infringe civic space. 
+**Additional information (use if needed) **: The president of the republic of South Sudan left the bill without a comment hence its maturity into a full law as provided for by the transitional constitution of 2011 as amended.
+**Rating significance**: large
+**Social actor**: 
+**Scale**: National 
+**Contribution of the programme**: The program partners held <redacted> advocacy meetings to strategise. Supported by the program, SSHRDN executed these strategies by making the in persons visits to the members of parliaments, the NSS leadership while providing press statements for publication to  media outlets on behalf of the program partners.
+**Contribution of other actors and factors**: Other international human rights organisations like Amnesty International, Human Rights Watch and UNOHCHR in South Sudan through their <redacted> reports on South Sudan made calls for the Act to be renewed. The international community and diplomatic community through their advisory notes and during <LOC> UPR 3rd cycle recommended reviews of country laws to align them to international best human rights practices.            
+**Rating contribution**: moderate
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: <redacted> | <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.4: Strengthened technical and organisational capacity of (W)HRDs, CSOs and the national network (SSHRDN) (in security management and protection)
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: On <redacted>, the <redacted> of South Sudan passed the NSS amendment bill 2024, reinstating the sections (54, <redacted>, and 57) which were deemed problematic to the civic space in South Sudan.  Significance description: From the start of the SCC intervention, it was an intentional objective to see the NSS Bill amended. The passing of the amended bill was not however in favorable to the program's work because it still going to infringe civic space.   Contribution of the programme: The program partners held <redacted> advocacy meetings to <redacted>. Supported by the program, SSHRDN executed these <redacted> by making the in persons visits to the members of parliaments, the NSS <redacted> while providing press <redacted> for publication to  media outlets on behalf of the program partners.  <redacted> information: The president of the republic of South Sudan left the bill without a comment hence its maturity into a full law as provided for by the transitional constitution of 2011 as amended.  Contribution of other actors and factors: Other international human rights organisations like Amnesty International, Human Rights Watch and UNOHCHR in South Sudan through their <redacted> reports on South Sudan made calls for the Act to be renewed. The international community and diplomatic community through their advisory notes and during <LOC> UPR 3rd cycle recommended reviews of country laws to align them to international best human rights practices.            
+**Outcome is negative**: YES

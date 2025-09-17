@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR011
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Kenya
+**Year**: 2022
+**Outcome description**: Since <redacted>, 06 paralegals (2 female and 4 male) have documented 15 cases in an increasingly accurate and safe manner in <LOC> and <person> and are providing the necessary support to victims of enforced disappearances, torture and extrajudicial executions.
+**Significance of the outcome**: Due to the SCC programme, HSI is the first and  only organization carrying out systematic documentation of security related HRVs in <LOC>, others are focusing their work on countering violent extremism (CVE) or ad hoc security incidents. As regards to <person>, while there are other organisations handling cases, their quality is low and there are concerns about how victims are sufficiently supported in the process, this gap is being addressed by HSI paralegals based in <LOC>.
+**Additional information (use if needed) **: Paralegals are young community members (21-33 y.o) who have had very little exposure to this kind of work before the project started. While they are well-known in their community, they had no proper skills to document human rights violations nor knowledge of the concepts. 
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: Since <redacted>, a series of trainings and coaching activities were provided by AINL/HURICAP to enhance the capacity of paralegals in <LOC> and <person> to monitor, document and report human rights violations perpetrated by security agents. The documentation work has been revised by HURICAP on a regular basis and an initial assessement has been positive as regards the skills of paralegals to carry out interviews and proper documentation in the form of interview reports. DD has also provided a digital and security training for HSI Staff. Paralegals are therefore making use of encrypted emails and phone applications as the main communication channels.
+**Contribution of other actors and factors**: 
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: HURICAP Senior Programme Officer has interviewed all paralegals under this programme (Interview dates 27  <redacted>, <LOC> and <redacted>, <person>). 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.1 (output 2.1.1 and 2.1.2)
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Since <redacted>, 06 <redacted> (2 female and 4 male) have <redacted> 15 cases in an increasingly accurate and safe manner in <LOC> and <person> and are providing the necessary support to victims of enforced disappearances, torture and extrajudicial <redacted>.  Significance description: Due to the SCC programme, HSI is the first and  only organization carrying out <redacted> documentation of security related HRVs in <LOC>, others are focusing their work on <redacted> violent extremism (CVE) or ad hoc security incidents. As regards to <person>, while there are other organisations handling cases, their quality is low and there are concerns about how victims are sufficiently supported in the process, this gap is being addressed by HSI <redacted> based in <LOC>.  Contribution of the programme: Since <redacted>, a series of trainings and coaching activities were provided by AINL/HURICAP to enhance the capacity of paralegals in <LOC> and <person> to monitor, document and report human rights violations perpetrated by security agents. The documentation work has been revised by HURICAP on a regular basis and an initial assessement has been positive as regards the skills of paralegals to carry out interviews and proper documentation in the form of interview reports. DD has also provided a digital and security training for HSI Staff. Paralegals are therefore making use of encrypted emails and phone applications as the main communication channels.  Additional information: Paralegals are young community members (21-33 y.o) who have had very little exposure to this kind of work before the project started. While they are well-known in their community, they had no proper skills to document human rights violations nor knowledge of the concepts.   Contribution of other actors and factors: n/a
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A, Capacity change  Safety and Security
+**TypeOfChangeCluster**: Capacity change

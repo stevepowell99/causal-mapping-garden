@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SSU2312/CIV035
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: South Sudan
+**Year**: 2023
+**Outcome description**: In August 2023, SSUDEMOP produced advocacy paper and submitted it during public hearing on National Budget 2023/24 to parliament. When the paper was submitted to the parliament the budgeting committe requested SSUDEMOP to review the national budget of 2023/24. And to give guidance on items that would fall under tax reduction (e.g. sanitary pads) and tax exemption. 
+**Significance of the outcome**: it is not common for the South Sudanese government to request for involvement from civil society organisations in their finances.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: SSUDEMOP has created the advocacy paper and lobbied for submission to parliament.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Partners report
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.1 Youth and women's groups effectively advocate for participation in the constitution making process and for their needs and rights to be included in the constitution.                         
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In August 2023, SSUDEMOP produced advocacy paper and submitted it during public hearing on National Budget 2023/24 to parliament. When the paper was submitted to the parliament the budgeting committe requested SSUDEMOP to review the national budget of 2023/24. And to give guidance on items that would fall under tax reduction (e.g. sanitary pads) and tax exemption.   Significance description: it is not common for the South Sudanese government to request for involvement from civil society organisations in their finances.  Contribution of the programme: SSUDEMOP has created the advocacy paper and lobbied for submission to parliament.  Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Creating space for CSOs, Gender sensitive
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Gender

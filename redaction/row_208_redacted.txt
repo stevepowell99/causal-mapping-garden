@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV014
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Palestine
+**Year**: 2022
+**Outcome description**: Trusted digital channel between 7amleh and Palestinian Central Election Committee in <LOC> was set-up before the 2nd round of the local elections in <redacted> in order to quickly respond to online hate speech around the elections
+**Significance of the outcome**: New connection, didn't exist previously
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: 7amleh contacted the Central Elections Committee to set-up the cooperation 
+**Contribution of other actors and factors**: Openess from the elections committee to engage met civil society 
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes, outcome 1.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Trusted digital channel between 7amleh and Palestinian Central Election Committee in <LOC> was set-up before the 2nd round of the local elections in <redacted> in order to quickly respond to online hate speech around the elections  Significance description: New connection, didn't exist previously  Contribution of the programme: 7amleh contacted the Central Elections Committee to set-up the cooperation   Additional information:   Contribution of other actors and factors: <redacted> from the elections committee to engage met civil society 
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

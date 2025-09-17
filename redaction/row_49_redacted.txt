@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ010
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Iraq
+**Year**: 2022
+**Outcome description**: In <redacted>, a young woman from the shabaki component led a storytelling activity and shared her experience as a minority group member and as a survivor from ISIS  to a wide audience in <LOC>
+**Significance of the outcome**: The shabaki component is not well integrated in <person> as there are existing tensions between them and several other components due to clashes that happened during ISIS rule. This activity provided the space for female survivors from  minority groups to participate in the transformative justice discourse alongside a religiously diverse group of participants
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: Peace and Freedom Organization in partnership with PAX, organized a forum for survivors in <person> in <redacted> where all components in <LOC> participated to tell their stories.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: no
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.2
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In <redacted>, a young woman from the shabaki component led a storytelling activity and shared her <redacted> as a minority group member and as a survivor from ISIS  to a wide audience in <LOC>  Significance description: The shabaki component is not well <redacted> in <person> as there are existing tensions between them and several other <redacted> due to clashes that happened during ISIS rule. This activity provided the space for female survivors from  minority groups to participate in the transformative justice discourse alongside a religiously diverse group of participants  Contribution of the programme: Peace and Freedom Organization in partnership with PAX, organized a forum for survivors in <person> in <redacted> where all components in <LOC> participated to tell their stories.  Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging, Gender sensitive, <redacted> participation
+**TypeOfChangeCluster**: Gender, Community bridging

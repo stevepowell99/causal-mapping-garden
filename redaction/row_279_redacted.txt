@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR010
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: DR Congo
+**Year**: 2023
+**Outcome description**: In <redacted>, the Governor of <LOC> <redacted> the administrators of the territories of <person> and <LOC>, in his letter No <redacted>/CAB/GP-NK/2023 of <redacted>, to question the leaders of the <person> groups in order to call on them to respect human rights by putting an end to the <LOC> underground dungeons, spoke about this at the security meeting held on <redacted> in <LOC>, and put an army captain in charge of the file on the elimination of these dungeons, which led to the closure of the <LOC> dungeon in the Kibati groupement.
+**Significance of the outcome**: This effect is significant in that it reflects the provincial authority's recognition of its responsibility to protect human rights. This is an evolution, as it was rare for the authorities to give clear written instructions to subordinates regarding human rights violations, fearing a kind of self-accusation instead of only verbal instructions during meetings which was done sometimes previously.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: On <redacted>, ASSODIP wrote a letter to the Governor of <LOC> <redacted> the underground dungeons <redacted> by the <person> (letter N/Réf: 17/<redacted>/2023). This is part of the MDR work that the programme is supporting. 
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Letter of ASSODIP available
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.2, 2.3
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In <redacted>, the Governor of <LOC> <redacted> the administrators of the territories of <person> and <LOC>, in his letter No <redacted>/CAB/GP-NK/2023 of <redacted>, to question the leaders of the <person> groups in order to call on them to respect human rights by putting an end to the <LOC> underground dungeons, spoke about this at the security meeting held on <redacted> in <LOC>, and put an army captain in charge of the file on the elimination of these dungeons, which led to the closure of the <LOC> dungeon in the Kibati <redacted>.  Significance description: This effect is significant in that it reflects the <redacted> authority's recognition of its responsibility to protect human rights. This is an evolution, as it was rare for the authorities to give clear written instructions to subordinates regarding human rights <redacted>, fearing a kind of self-<redacted> instead of only verbal instructions during meetings which was done sometimes <redacted>.  Contribution of the programme: On <redacted>, ASSODIP wrote a letter to the Governor of <LOC> <redacted> the underground dungeons <redacted> by the <person> (letter N/Réf: 17/<redacted>/2023). This is part of the MDR work that the programme is supporting.   Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

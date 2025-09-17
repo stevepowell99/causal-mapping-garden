@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV012
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 3
+**coutnry**: Lebanon
+**Year**: 2025
+**Outcome description**: In <redacted>, youth activists designed and implemented a campaign for youth political participation in regional and local politics in <person>, Chouf, Lebanon
+**Significance of the outcome**: Supporting youth in being part of the decision-making process is the core goal of DAA and to open civic spaces in these particular regions that has been traditionally marginalized in politics.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: <person> has created spaces for activists to co-design and create techniques and solutions for breakthroughs in the traditional systems and ensure a place for alternative youth agents in the municipal boards.
+**Contribution of other actors and factors**: The groups that led on this initiative had existing networks in the regions.
+**Rating contribution**: 
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes - Outcome 1.1 
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Outcome description:  In <redacted>, youth activists designed and implemented a campaign for youth political participation in regional and local politics in <person>, Chouf, Lebanon Significance:  Supporting youth in being part of the decision-making process is the core goal of DAA and to open civic spaces in these particular regions that has been traditionally marginalized in politics. Contribution:  <person> has created spaces for activists to co-design and create techniques and solutions for breakthroughs in the traditional systems and ensure a place for alternative youth agents in the municipal boards. Additional <redacted>:   Contribution of Other factors:  The groups that led on this initiative had existing networks in the regions.
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

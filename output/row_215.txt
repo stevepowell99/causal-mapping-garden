@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SYR2305/ESF015
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Syria
+**Year**: 2022
+**Outcome description**: After PEL started working on environment and its relation to social cohesion in the NE, many other local organizations for the fisrt time started to show interests in environmental issues. 
+**Significance of the outcome**: There is a lack of attention among local communties and local organizations in NE Syria regarding environment and its effect on social cohesion and peace. PEL was a pioneer organization in bringing this topic forward. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: Local
+**Contribution of the programme**: PEL has organized many activites last year to raise awareness among youths and different stackholders on topics related to enviroment and social cohesion. They organized as well competition for youths who are intersted in environmental challenges to research such problems and suggest solutions. 
+**Contribution of other actors and factors**: 
+**Rating contribution**: 
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: After PEL started working on environment and its relation to social cohesion in the NE, many other local organizations for the fisrt time started to show interests in environmental issues.   Significance description: There is a lack of attention among local communties and local organizations in NE Syria regarding environment and its effect on social cohesion and peace. PEL was a pioneer organization in bringing this topic forward.   Contribution of the programme: PEL has organized many activites last year to raise awareness among youths and different stackholders on topics related to enviroment and social cohesion. They organized as well competition for youths who are intersted in environmental challenges to research such problems and suggest solutions.   Additional information:   Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

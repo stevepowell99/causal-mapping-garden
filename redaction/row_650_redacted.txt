@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR024
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Sahel/Mali
+**Year**: 2024
+**Outcome description**: In Mali, during <redacted>, a man and a woman, both civilians, who had been abducted in <LOC> in the commune of <LOC> and in <LOC> by elements affiliated with the EIGS, regained their freedom following a long process of discreet community negotiations initiated by the monitors and conducted by the local authorities.
+**Significance of the outcome**: Prior to this release, negotiations for the release of people kidnapped by the EIGS rarely succeeded, especially in the municipalities concerned. Furthermore, the monitors were not tasked with conducting negotiations. It was through their documentation work that they saw the need to provide assistance to those whose cases had been documented. Also, in relation to specific objective 2, it appears that although the monitors' work was not official, it was carried out under the umbrella of the NGO ADD, which provided them with the necessary tools and procedures. This can be seen as a commitment by the organisations to promoting human rights.
+**Additional information (use if needed) **: This action has also helped to strengthen the communities' trust in the monitors and, by extension, to expand the list of contacts needed to monitor future cases.
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: The monitor who took the initiative to engage local authorities in the process works on behalf of the SCC programme and the cases have been documented under the same programme.
+**Contribution of other actors and factors**: YES – Local and administrative authorities (mayor and village chief) were involved in the mediation, as well as prominent figures recognised by local armed groups.
+**Rating contribution**: moderate
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: Yes – Verbal testimony from victims, images of victims, contact details of victims and associated persons.
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 2.2 Output 2.2.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In Mali, during <redacted>, a man and a woman, both civilians, who had been abducted in <LOC> in the commune of <LOC> and in <LOC> by elements affiliated with the EIGS, regained their freedom following a long process of discreet community negotiations initiated by the monitors and conducted by the local authorities. Significance:  Prior to this release, negotiations for the release of people kidnapped by the EIGS rarely succeeded, especially in the municipalities concerned. Furthermore, the monitors were not tasked with conducting negotiations. It was through their documentation work that they saw the need to provide assistance to those whose cases had been documented. Also, in relation to specific objective 2, it appears that although the monitors' work was not official, it was carried out under the umbrella of the NGO ADD, which provided them with the necessary tools and procedures. This can be seen as a commitment by the organisations to promoting human rights. Contribution:  The monitor who took the initiative to engage local authorities in the process works on behalf of the SCC programme and the cases have been documented under the same programme. Additional <redacted>:  This action has also helped to strengthen the communities' trust in the monitors and, by extension, to expand the list of contacts needed to monitor future cases. Contribution of Other factors:  YES – Local and administrative authorities (mayor and village chief) were involved in the mediation, as well as prominent figures recognised by local armed groups.
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV005
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Lebanon
+**Year**: 2022
+**Outcome description**: In <redacted>, <person> was requested to provide input on refugee protection to the Core Group of the Ministry of Social Affairs of Lebanon. 
+**Significance of the outcome**: The Core Group interacts with matter experts according to the topic discussed. Interactions with governments normally take place with likeminded insiders. In turn, likeminded in formal authorities often times become gatekeepers for larger outreach. Based on the consultation and <person>’s input, the official representing the government and Ministry of Social Affairs in the meeting recognized that there are technicalities or areas where progress needs to be done.
+**Additional information (use if needed) **:  
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: Although ALEF is quite a prominent advocacy actor in the country, being part of RPW supports ALEF national advocacy efforts.
+**Contribution of other actors and factors**: ALEF has a strong track record and established channels inside the <redacted> government.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: No
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.3 <redacted> and <redacted> partner CSOs (based in Lebanon; the coalition PAX is part of) mobilise and influence international stakeholders successfully to ensure a safe, voluntary, informed and dignified return of <redacted> refugees. 
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In <redacted>, <person> was requested to provide input on refugee protection to the Core Group of the Ministry of Social Affairs of Lebanon.   Significance description: The Core Group interacts with matter experts according to the topic discussed. Interactions with governments normally take place with likeminded insiders. In turn, likeminded in formal authorities often times become gatekeepers for larger outreach. Based on the consultation and <person>’s input, the official representing the government and Ministry of Social Affairs in the meeting recognized that there are technicalities or areas where progress needs to be done.  Contribution of the programme: Although ALEF is quite a prominent advocacy actor in the country, being part of RPW supports ALEF national advocacy efforts.  Additional information:    Contribution of other actors and factors: ALEF has a strong track record and established channels inside the <redacted> government.
+**Outcome is negative**: NO
+**MCQType of change**: Creating space for CSOs
+**TypeOfChangeCluster**: Empowering citizens and CSOs

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV003
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Yemen
+**Year**: 2022
+**Outcome description**: Because of the exposure R Talks gave to the participants, in <redacted>, media channels and TV radios for the first time invited 1 speaker of R Talks to talk and advocate about his work in peacebuilding
+**Significance of the outcome**: Lack of public events where peacebuilders and activists in Yemen can share their local peacebuilding efforts and conflict resolution. Before the R Talks event, their work was limitedly known, and now they have more chances/opportunites like talking through media channels to tell about their work and advocate for peacebuilding. 
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Media
+**Scale**: Local
+**Contribution of the programme**: During <redacted>, Resonate Yemen organised a group of training sessions in <person> (<person>) for speakers and volunteers on advocacy, story telling, stage presentation, volunteering, social work, and event media.
+**Contribution of other actors and factors**: No other actors contributed to this outcome.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: yes
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Because of the exposure R Talks gave to the participants, in <redacted>, media channels and TV radios for the first time invited 1 speaker of R Talks to talk and advocate about his work in peacebuilding  Significance description: Lack of public events where peacebuilders and activists in Yemen can share their local peacebuilding efforts and conflict <redacted>. Before the R Talks event, their work was limitedly known, and now they have more chances/opportunites like talking through media channels to tell about their work and advocate for peacebuilding.   Contribution of the programme: During <redacted>, Resonate Yemen organised a group of training sessions in <person> (<person>) for speakers and volunteers on advocacy, story telling, stage presentation, volunteering, social work, and event media.  Additional information:   Contribution of other actors and factors: No other actors contributed to this outcome.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

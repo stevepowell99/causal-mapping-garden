@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SAH2508/PHR023
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Sahel/Mali
+**Year**: 2024
+**Outcome description**: From January to May 2024, monitors in the Ansongo district showed their ability to adapt and continued to document human rights abuses and violations, contributing to the organisation's national report despite the blockade imposed on the Ansongo-Menaka road (Mali), which prohibited all movement in and out of the area.
+**Significance of the outcome**: At the start of the project, monitors were trained and deployed in the field, each in their own area of coverage. Some monitors were able to spend one or two months documenting cases. They complained about difficulties in accessing certain areas with a strong presence of terrorist groups and roads where blockades and robberies are quite frequent. Following the second series of training sessions on physical and digital security, the monitors developed the ability to adapt and overcome certain security challenges. Although the monitors' ability to adapt is not an ultimate objective of the project, their role in collecting verifiable information on incidents creates an essential factual basis for conducting advocacy on human rights issues in the area, thereby contributing to the achievement of specific objective 2.
+**Additional information (use if needed) **: Following the evolution of the context marked by roadblocks and the abduction of a human rights observer from another organisation in Gossi, it was necessary to train monitors and project staff on physical and digital security. This training was conducted in April 2023 by COMADDH and DD. It provided monitors and project staff with the guidelines and tools they need to continue their monitoring activities in complete safety.
+**Rating significance**: early/small
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: The various training sessions organised in 2022 and 2023 were fully funded by the SCC programme.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes – Testimonies, humanitarian reports from third-party agencies and case reports
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.3 Output 2.3.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  From January to May 2024, monitors in the Ansongo district showed their ability to adapt and continued to document human rights abuses and violations, contributing to the organisation's national report despite the blockade imposed on the Ansongo-Menaka road (Mali), which prohibited all movement in and out of the area. Significance:  At the start of the project, monitors were trained and deployed in the field, each in their own area of coverage. Some monitors were able to spend one or two months documenting cases. They complained about difficulties in accessing certain areas with a strong presence of terrorist groups and roads where blockades and robberies are quite frequent. Following the second series of training sessions on physical and digital security, the monitors developed the ability to adapt and overcome certain security challenges. Although the monitors' ability to adapt is not an ultimate objective of the project, their role in collecting verifiable information on incidents creates an essential factual basis for conducting advocacy on human rights issues in the area, thereby contributing to the achievement of specific objective 2. Contribution:  The various training sessions organised in 2022 and 2023 were fully funded by the SCC programme. Additional Info:  Following the evolution of the context marked by roadblocks and the abduction of a human rights observer from another organisation in Gossi, it was necessary to train monitors and project staff on physical and digital security. This training was conducted in April 2023 by COMADDH and DD. It provided monitors and project staff with the guidelines and tools they need to continue their monitoring activities in complete safety. Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A, Capacity change  Safety and Security
+**TypeOfChangeCluster**: Capacity change

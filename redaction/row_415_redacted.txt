@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV013
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: <LOC>/Burkina Faso
+**Year**: 2023
+**Outcome description**: In BF the Ministry of Justice involved the CIFDHA and the MBDHP in 2023 (<redacted> and <redacted>) in the drafting of a concerted training plan for volunteers for the defence of the homeland in human rights and international humanitarian law
+**Significance of the outcome**: In the context of the security crisis, Volunteers for the Defence of the Fatherland (VDP) are often the subject of allegations of human rights violations. Human rights organisations such as CIFDHA and MBDHP have long called on the government to build the capacity of VDPs in human rights and international humanitarian law in order to improve the human rights situation in Burkina Faso.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: As part of the monitoring of human rights violations in the fight against terrorism, the CIFDHA and the MBDHP document cases of human rights violations committed by VDPs. They have repeatedly called on the authorities to take steps to strengthen the capacity of monitors in human rights and international humanitarian law. The Ministry's initiative to draw up this training plan for VDPs and to involve CIFDHA and MBDHP is the beginning of a change in the State's behaviour. This result is an intermediate step towards achieving the objectives of our programme.
+**Contribution of other actors and factors**: The National Human Rights Commission Amnesty International Burkina Faso The International Committee of the Red Cross Institutions of the United Nations system, such as the Office of the United Nations High Commissioner for Human Rights and the UNDP
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Letter and emails inviting you to take part in meetings to draw up the concerted plan
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.2
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In BF the Ministry of Justice involved the CIFDHA and the MBDHP in 2023 (<redacted> and <redacted>) in the drafting of a concerted training plan for volunteers for the defence of the homeland in human rights and international humanitarian law  Significance description: In the context of the security crisis, Volunteers for the Defence of the Fatherland (VDP) are often the subject of allegations of human rights violations. Human rights organisations such as CIFDHA and MBDHP have long called on the government to build the capacity of VDPs in human rights and international humanitarian law in order to improve the human rights situation in Burkina Faso.  Contribution of the programme: As part of the monitoring of human rights violations in the fight against terrorism, the CIFDHA and the MBDHP document cases of human rights violations committed by VDPs. They have repeatedly called on the authorities to take steps to strengthen the capacity of monitors in human rights and international humanitarian law. The Ministry's initiative to draw up this training plan for VDPs and to involve CIFDHA and MBDHP is the beginning of a change in the State's behaviour. This result is an intermediate step towards achieving the objectives of our programme.  Additional information:   Contribution of other actors and factors: The National Human Rights Commission Amnesty International Burkina Faso The International Committee of the Red Cross Institutions of the United Nations system, such as the Office of the United Nations High Commissioner for Human Rights and the UNDP
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

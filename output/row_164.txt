@@ -1,0 +1,23 @@
+**FragmentID**: SCC-KEN2305/PHR009
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Kenya
+**Year**: 2022
+**Outcome description**: Since August  2022, 15 victims in Garissa and Lamu have come forward to seek justice on security related human rights violations, in particular enforced disappearances, arbitrary arrest and detention and torture.
+**Significance of the outcome**: Since May 2022, HSI is the only CSO based in Garissa documenting cases of HRVs on a systematic way, providing victims a  safe space for reporting on their cases and advising on next steps. Others are doing ad hoc documentation on profiled cases.  
+**Additional information (use if needed) **: Initial observations on case documentation suggest that underreporting is an issue related to lack of awareness on channels to report cases in both areas, as well as fear of reporting and lack of trust in the judicial system. 
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: HSI started documenting cases in Garissa in August 2022. During a Human rights desk in October 2022, organized by HSI, a significant number of victims (6 out of 11 cases documented in one day) came out for documentation in search for justice on gross human rights violations, in particular enforced disappearances. This suggests there is still a high level of underreporting of sensitive cases. The CITIZEN TV coverage of the event also triggered more visibility to HSI as a key CSO in Garissa to support victims with their claims.
+**Contribution of other actors and factors**: Garissa High Court provided their compound as a safe space to hold this acitivity. Citizen TV made the event public nationally.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**:  Citizen tv https://www.youtube.com/watch?v=gz-zDl9DJ9o         https://twitter.com/Haki_na_Sheria/status/1585172344473268226?t=7MQuacLtPEA8LAaRQoxmog&s=19
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 2.2
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Since August  2022, 15 victims in Garissa and Lamu have come forward to seek justice on security related human rights violations, in particular enforced disappearances, arbitrary arrest and detention and torture.  Significance description: Since May 2022, HSI is the only CSO based in Garissa documenting cases of HRVs on a systematic way, providing victims a  safe space for reporting on their cases and advising on next steps. Others are doing ad hoc documentation on profiled cases.    Contribution of the programme: HSI started documenting cases in Garissa in August 2022. During a Human rights desk in October 2022, organized by HSI, a significant number of victims (6 out of 11 cases documented in one day) came out for documentation in search for justice on gross human rights violations, in particular enforced disappearances. This suggests there is still a high level of underreporting of sensitive cases. The CITIZEN TV coverage of the event also triggered more visibility to HSI as a key CSO in Garissa to support victims with their claims.  Additional information: Initial observations on case documentation suggest that underreporting is an issue related to lack of awareness on channels to report cases in both areas, as well as fear of reporting and lack of trust in the judicial system.   Contribution of other actors and factors: Garissa High Court provided their compound as a safe space to hold this acitivity. Citizen TV made the event public nationally.
+**Outcome is negative**: NO
+**MCQType of change**: Other
+**TypeOfChangeCluster**: Other

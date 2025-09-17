@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ007
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Iraq
+**Year**: 2025
+**Outcome description**: In <redacted>, community leaders in <LOC> allowed returnee families formerly affiliated with ISIS  to return to their original areas in <LOC> (<person>), rebuilding trust and acceptance with the community and victim families. 
+**Significance of the outcome**: Returnee families formerly affiliated with ISIS often face deep mistrust and social exclusion from their communities, hindering social cohesion and peacebuilding. Reintegrating these families is essential for community stability and long-term reconciliation in conflict-affected areas like <LOC>. 
+**Additional information (use if needed) **: Psychological support remains underprovided for families affected by conflict-related violence in <person>. This intervention filled a gap in mental health services, especially for marginalized survivors. 
+**Rating significance**: large
+**Social actor**: Non-state authorities
+**Scale**: Local
+**Contribution of the programme**: This progress came after <redacted> of engagement through dialogue, psychosocial support sessions, and peacebuilding initiatives involving both parties orgnized by <person>, and our grantee Basmat KhairTeam. <person> and Basmat Khair Team organized and facilitated ongoing dialogue sessions, psychosocial support activities, and peacebuilding efforts between returnees, community members, and victim families. Their work created a safe space for communication and healing, enabling successful reintegration and reducing tensions in Imam <person>. 
+**Contribution of other actors and factors**: Yes, other actors were also involved in the rebuiding (construction) proejct in the areas, such as GIZ and 
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes — participant feedback forms, photos from sessions
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: yes
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: Outcome description:  In <redacted>, community leaders in <LOC> allowed returnee families formerly affiliated with ISIS  to return to their original areas in <LOC> (<person>), rebuilding trust and acceptance with the community and victim families.  Significance:  Returnee families formerly affiliated with ISIS often face deep mistrust and social exclusion from their communities, hindering social cohesion and peacebuilding. Reintegrating these families is essential for community stability and long-term reconciliation in conflict-affected areas like <LOC>.  Contribution:  This progress came after <redacted> of engagement through dialogue, psychosocial support sessions, and peacebuilding initiatives involving both parties orgnized by <person>, and our grantee Basmat KhairTeam. <person> and Basmat Khair Team organized and facilitated ongoing dialogue sessions, psychosocial support activities, and peacebuilding efforts between returnees, community members, and victim families. Their work created a safe space for communication and healing, enabling successful reintegration and reducing tensions in Imam <person>.  Additional <redacted>:  Psychological support remains underprovided for families affected by conflict-related violence in <person>. This intervention filled a gap in mental health services, especially for marginalized survivors.  Contribution of Other factors:  Yes, other actors were also involved in the rebuiding (construction) proejct in the areas, such as GIZ and 
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Community bridging
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Community bridging

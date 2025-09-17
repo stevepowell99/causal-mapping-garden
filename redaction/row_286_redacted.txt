@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV030
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: South Sudan
+**Year**: 2023
+**Outcome description**: On <redacted>, for the first time during the Annual Memorial Celebration for the 1992 Juba Massacre, the Juba Massacre Widows and Orphans Association conducted a procession led by a military officer from the massacre site at <LOC> to Nyokuron Cultural Centre in <LOC>. 
+**Significance of the outcome**: <redacted>, the military was not involved in the Annual Memorial Celebration of the victims of the 1992 Juba Massacre,When the public saw the widows march being led by a military officer, they joined the <redacted> since this showed that the <redacted> offered support by leading the <redacted>. This also showed some public acknowledgement that the victims of the 1992 Juba Massacre were also important contributors to the liberation struggle. 
+**Additional information (use if needed) **:  
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: The Juba Massacre Widows and Orphans Association met with the army general who then acknowledged to them that the victims lost during the 1992 Juba Massacre were also part of the struggle for liberation. Following this meeting, they assigned a military officer to lead the procession during the Annual Memorial Celebrations. 
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Partners data
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.3 CSO's and networks proactively monitor and advocate for implementation of R-ARCSS and human rights.
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: On <redacted>, for the first time during the Annual Memorial Celebration for the 1992 Juba Massacre, the Juba Massacre Widows and Orphans Association conducted a <redacted> led by a military officer from the massacre site at <LOC> to Nyokuron Cultural Centre in <LOC>.   Significance description: <redacted>, the military was not involved in the Annual Memorial Celebration of the victims of the 1992 Juba Massacre,When the public saw the widows march being led by a military officer, they joined the <redacted> since this showed that the <redacted> offered support by leading the <redacted>. This also showed some public acknowledgement that the victims of the 1992 Juba Massacre were also important contributors to the <redacted> struggle.   Contribution of the programme: The Juba Massacre Widows and Orphans Association met with the army general who then acknowledged to them that the victims lost during the 1992 Juba Massacre were also part of the struggle for liberation. Following this meeting, they assigned a military officer to lead the procession during the Annual Memorial Celebrations.   Additional information:    Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Seeking public support
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Mobilizing citizens and organizations

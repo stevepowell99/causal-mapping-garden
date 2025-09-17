@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR032
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Lebanon
+**Year**: 2023
+**Outcome description**: The chairman’s statement on <redacted> at <LOC> conference included suggested language by the Refugee Protection Watch coalition on Promoting the role & work of Refugee-Led Organizations (RLOs), the Triple Nexus and Accountability to Affect Populations.
+**Significance of the outcome**: Refugee Protection Watch's recommendations are seen as relevant and feasible. Also, this shows RPW's expanded access in key EU advocacy platforms.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: International community
+**Scale**: International
+**Contribution of the programme**: RPW sent the text changes which led to the coalition being able to cause structural change at the EU policy level.
+**Contribution of other actors and factors**: Other suggestions by organisations working on refugee protection were incorporated in the statement.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Text suggestions sent and final version of the statement
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: <redacted>
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: The chairman’s statement on <redacted> at <LOC> conference included suggested language by the Refugee Protection Watch coalition on Promoting the role & work of Refugee-Led Organizations (RLOs), the Triple Nexus and Accountability to Affect Populations.  Significance description: Refugee Protection Watch's recommendations are seen as relevant and feasible. Also, this shows RPW's expanded access in key EU advocacy platforms.  Contribution of the programme: RPW sent the text changes which led to the coalition being able to cause structural change at the EU policy level.  Additional information:   Contribution of other actors and factors: Other suggestions by organisations working on refugee protection were incorporated in the statement.
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

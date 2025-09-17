@@ -1,0 +1,23 @@
+**FragmentID**: SCC-ETH2508/CIV012
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Ethiopia
+**Year**: 2024
+**Outcome description**: On 21 Nov 2024, the Authority for Civil Society Organizations (ACSO) suspended CARD, and froze its bank account, citing allegations of "activities deemed contrary to the interests of the country" and a "lack of political neutrality". 
+**Significance of the outcome**: Before 2020-21, CARD and other organisations in Ethiopia were able to openly work towards the promotion of a democratic environment where critical voices and standing up for human rights were respected and encouraged. But over the past few years, the space for CSOs has changed completely, particularly because the CSOs stood their ground and continued to speak out on human rights violations. 
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: National 
+**Contribution of the programme**: Some of CARD's activities that could have annoyed the government, as cited in Addis Standard: launching a petition calling for more transparency and inclusivity in Ethiopia's national dialogue process, reports on the significant impact of internet shutdowns in Ethiopia, release of the SCC-supported report on human rights violations in Oromia's Guji Zones (dating from June 2024).
+**Contribution of other actors and factors**: Apart from the Guji activities supported by AINL under SCC, other CARD activities supported by a range of other partners/donors have certainly also contributed to CARD's ability to identify violations and advocate for improvements in the behaviour of government authorities.
+**Rating contribution**: moderate
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: Documentation supporting the contributions: https://addisstandard.com/?p=47145 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: No
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Outcome description:  On 21 Nov 2024, the Authority for Civil Society Organizations (ACSO) suspended CARD, and froze its bank account, citing allegations of "activities deemed contrary to the interests of the country" and a "lack of political neutrality".  Significance:  Before 2020-21, CARD and other organisations in Ethiopia were able to openly work towards the promotion of a democratic environment where critical voices and standing up for human rights were respected and encouraged. But over the past few years, the space for CSOs has changed completely, particularly because the CSOs stood their ground and continued to speak out on human rights violations.  Contribution:  Some of CARD's activities that could have annoyed the government, as cited in Addis Standard: launching a petition calling for more transparency and inclusivity in Ethiopia's national dialogue process, reports on the significant impact of internet shutdowns in Ethiopia, release of the SCC-supported report on human rights violations in Oromia's Guji Zones (dating from June 2024). Additional Info:   Contribution of Other factors:  Apart from the Guji activities supported by AINL under SCC, other CARD activities supported by a range of other partners/donors have certainly also contributed to CARD's ability to identify violations and advocate for improvements in the behaviour of government authorities.
+**Outcome is negative**: YES
+**MCQType of change**: Other
+**TypeOfChangeCluster**: Other

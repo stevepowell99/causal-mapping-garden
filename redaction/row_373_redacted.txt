@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR013
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Palestine
+**Year**: 2023
+**Outcome description**: First half of 2023, the UN special rapporteur on Palestine sent a communication to the government of Israel, based on the request of CAC, calling on them to stop the eviction of the Sub <person> family from <LOC>’s old city
+**Significance of the outcome**: Shows the L&A capacities of CAC and the relevance of their work. Unfortunately it didn't stop the eviction. Did lead to a lot of international attention
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: International community
+**Scale**: International
+**Contribution of the programme**: PAX supported the salary of the advocacy officer and several meetings costs
+**Contribution of other actors and factors**: Also other organizations support the work of CAC
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 2.1 - Local partners have stronger capacities in monitoring and reporting economic, social and cultural rights and conducting L&A towards international duty bearers
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: First half of 2023, the UN special rapporteur on Palestine sent a communication to the government of Israel, based on the request of CAC, calling on them to stop the eviction of the Sub <person> family from <LOC>’s old city  Significance description: Shows the L&A capacities of CAC and the relevance of their work. Unfortunately it didn't stop the eviction. Did lead to a lot of international attention  Contribution of the programme: PAX supported the salary of the advocacy officer and several meetings costs  Additional information:   Contribution of other actors and factors: Also other organizations support the work of CAC
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

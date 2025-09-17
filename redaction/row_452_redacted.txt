@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ002
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Iraq
+**Year**: 2024
+**Outcome description**: In <redacted> in <LOC>, Brigadier General <person>, former advisor to the Nineveh Operations Command and currently advisor to the Ministry of Defense, stated that he will establish a special club that supports the talents of women and girls with special needs in <LOC>.
+**Significance of the outcome**: In <redacted> society and its governmental institutions, women and girls with special needs are often <redacted> and deemed a financial and social burden. This demographic group is rarely <redacted> for their potential to <redacted> productively. This issue is even more <redacted> for female survivors of human rights abuses with special needs, who face <redacted> discrimination. Such intersectional discrimination leads to further marginalization of an already <redacted> group, a fact highlighted by the gender and conflict analysis conducted by PFO in 2022. By addressing this issue and empowering this marginalized group, Brigadier <person> is challenging prevailing stereotypes. His actions are a significant step towards their rightful integration into society and a move towards rectifying the injustices they have endured.  
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: PFO and several grantees organized a <redacted> event called "Spring of creativity" in <LOC> in <redacted>, aimed at providing an artistic platform for women and girls with special needs, particularly those belonging to minority groups. Other than displaying their art and skills, the participants of the events had the opportunity to share their stories with a wider audience and to address their needs and priorities. Local and government authorities attended the event, including Brigadier <person>. After initially showing interest for the issues raised through the event, PFO followed-up with the representative to concretize his interest into actions.  
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <person>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.4
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In <redacted> in <LOC>, Brigadier General <person>, former advisor to the Nineveh <redacted> Command and currently advisor to the Ministry of Defense, stated that he will establish a special club that supports the talents of women and girls with special needs in <LOC>.  Significance description: In <redacted> society and its governmental institutions, women and girls with special needs are often <redacted> and deemed a financial and social burden. This demographic group is rarely <redacted> for their potential to <redacted> productively. This issue is even more <redacted> for female survivors of human rights abuses with special needs, who face <redacted> discrimination. Such intersectional discrimination leads to further marginalization of an already <redacted> group, a fact highlighted by the gender and conflict analysis conducted by PFO in 2022. By addressing this issue and empowering this marginalized group, Brigadier <person> is challenging prevailing stereotypes. His actions are a significant step towards their rightful integration into society and a move towards rectifying the injustices they have endured.    Contribution of the programme: PFO and several grantees organized a <redacted> event called "Spring of creativity" in <LOC> in <redacted>, aimed at providing an artistic platform for women and girls with special needs, particularly those belonging to minority groups. Other than displaying their art and skills, the participants of the events had the opportunity to share their stories with a wider audience and to address their needs and priorities. Local and government authorities attended the event, including Brigadier <person>. After initially showing interest for the issues raised through the event, PFO followed-up with the representative to concretize his interest into actions.    Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Policy change, Gender sensitive
+**TypeOfChangeCluster**: Policy, Gender

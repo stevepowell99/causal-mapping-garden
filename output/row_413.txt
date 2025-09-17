@@ -1,0 +1,23 @@
+**FragmentID**: SCC-INT2312/ESF003
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: International / External Stress Factors
+**Year**: 2023
+**Outcome description**: In January 2023, the Dutch Minister of Defence indicated publicly that her call to pension funds to invest in arms producers should not be read as to mean in arms producers that export to dictatorships and human rights violators. 
+**Significance of the outcome**: Over the second half of 2022, several officials high in the MoD had indicated they felt financiers needed to invest in arms producers. Without specification, this call seemed to ask investors to invest in any arms companies and disregard concerns around human rights that led to stricter policies in the past. In january 2023, the Dutch Minister of Defence indicated in a TV-show that she did not want banks and pension funds to invest in arms producers selling weapons to dictatorships, an important specification of previous statements by the Minister and other MoD officials. 
+**Additional information (use if needed) **: In the context of growing public pressure to invest in arms producers, this statement by the minister was significant. 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: On the Saturday before the Ministers appearance in a TV show, PAX had an oped in the largest Dutch newspaper, as well as an appearance on a morningshow on radio. It is possible that the Minister made her statement in reply to these appearances. 
+**Contribution of other actors and factors**: This is possible, but in the context PAX was the only actor involved with a possible clear link between the statement of the minister and our actions. 
+**Rating contribution**: moderate
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: https://www.vpro.nl/buitenhof/lees/in-de-uitzending/2023/15-jan.html and https://www.nporadio1.nl/fragmenten/nieuwsweekend/29f051b0-5dff-4b04-a06d-708b076e2325/2023-01-14-pax-advies-om-te-beleggen-in-wapens-is-stap-terug-in-ontwikkeling
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.1
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In January 2023, the Dutch Minister of Defence indicated publicly that her call to pension funds to invest in arms producers should not be read as to mean in arms producers that export to dictatorships and human rights violators.   Significance description: Over the second half of 2022, several officials high in the MoD had indicated they felt financiers needed to invest in arms producers. Without specification, this call seemed to ask investors to invest in any arms companies and disregard concerns around human rights that led to stricter policies in the past. In january 2023, the Dutch Minister of Defence indicated in a TV-show that she did not want banks and pension funds to invest in arms producers selling weapons to dictatorships, an important specification of previous statements by the Minister and other MoD officials.   Contribution of the programme: On the Saturday before the Ministers appearance in a TV show, PAX had an oped in the largest Dutch newspaper, as well as an appearance on a morningshow on radio. It is possible that the Minister made her statement in reply to these appearances.   Additional information: In the context of growing public pressure to invest in arms producers, this statement by the minister was significant.   Contribution of other actors and factors: This is possible, but in the context PAX was the only actor involved with a possible clear link between the statement of the minister and our actions. 
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

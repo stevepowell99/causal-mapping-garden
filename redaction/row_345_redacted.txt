@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/ESF008
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: International / External Stress Factors
+**Year**: 2023
+**Outcome description**: In <redacted>, the <redacted> government was challenged in the Netherlands, on not condemning the US deliveries of cluster munitions to Ukraine. Parliamentary questions were asked by the SP on cluster munitions deliveries to Ukraine by the US, breaking the silence in parliament, and multiple media outlets reflected our views including an oped in a national newspaper and prime time <LOC> coverage.  
+**Significance of the outcome**: The Convention on Cluster Munitions is signed by the Netherlands, and includes the obligation to " promote the norms it establishes and shall make its best efforts to discourage <LOC> not party to this Convention from using cluster munitions. ". Strong implementation of the Convention on Cluster Munitions, and condemnation of use by anyone anywhere is important for the stigma on cluster munitions
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: National
+**Contribution of the programme**: PAX is a long term former steering committee member of the Cluster Munition Coalition, striving for a world without cluster munitions. We did multiple media on cluster munitions <redacted> to Ukraine too in 2023. 
+**Contribution of other actors and factors**: Yes, worldwide action was being taken by CMC members to condemn the US deliveries of cluster munitions to Ukraine. 
+**Rating contribution**: little
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted> 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In <redacted>, the <redacted> <redacted> was <redacted> in the Netherlands, on not <redacted> the US <redacted> of cluster munitions to Ukraine. Parliamentary questions were asked by the SP on cluster munitions <redacted> to Ukraine by the US, breaking the silence in <redacted>, and multiple media outlets reflected our views including an oped in a national newspaper and prime time <LOC> coverage.    Significance description: The <redacted> on Cluster Munitions is signed by the Netherlands, and includes the <redacted> to " promote the norms it establishes and shall make its best efforts to <redacted> <LOC> not party to this <redacted> from using cluster munitions. ". Strong implementation of the <redacted> on Cluster Munitions, and condemnation of use by anyone anywhere is important for the stigma on cluster munitions  Contribution of the programme: PAX is a long term former steering committee member of the Cluster Munition Coalition, striving for a world without cluster munitions. We did multiple media on cluster munitions <redacted> to Ukraine too in 2023.   Additional information:   Contribution of other actors and factors: Yes, worldwide action was being taken by CMC members to condemn the US deliveries of cluster munitions to Ukraine. 
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

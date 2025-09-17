@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR004
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Burundi
+**Year**: 2022
+**Outcome description**: Informal groups of young members of the ruling party (Imbonerakure) invited the chairman of a partner organisation to discuss the human rights situation in Burundi on WhatsApp and Telegram, 3 or 4 times in 2022, the last time on <redacted>.
+**Significance of the outcome**: Before, the Imbonerakure made accusations over social media about the partner organisation supporting anti-government propaganda. The WhatsApp/Telegram discussions with the chairman show that they are open to dialogue on human rights. 
+**Additional information (use if needed) **: Some groups among the Imbonerakure who are now being threatened and facing violations/retributions themselves, may be open to dialogue on human rights as they would like to make a plea for themselves/have the partner organisation advocate for them.
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: National
+**Contribution of the programme**: The partner organisation received training from DD and <person> (their supervisors including the chairman were trained between <redacted>) and also received institutional support to strengthen the organisation. Due to this, the partner carried out more in-depth activities and case reports and published more cases on social networks, which may have changed the mentality of young people in Burundi, including the Imbonerakure. The visibility of the organisation on social media led the Imbonerakure to invite the chairman.
+**Contribution of other actors and factors**: FOCODE, Other funders of FOCODE, victims
+**Rating contribution**: little
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: The WhatsApp and Telegram audio messages can be shared, but they are in Kirundi
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: No
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Informal groups of young members of the ruling party (Imbonerakure) invited the chairman of a partner organisation to discuss the human rights situation in Burundi on WhatsApp and Telegram, 3 or 4 times in 2022, the last time on <redacted>.  Significance description: Before, the Imbonerakure made accusations over social media about the partner organisation <redacted> anti-<redacted>. The WhatsApp/Telegram discussions with the chairman show that they are open to dialogue on human rights.   Contribution of the programme: The partner organisation received training from DD and <person> (their supervisors including the chairman were trained between <redacted>) and also received institutional support to strengthen the organisation. Due to this, the partner carried out more in-depth activities and case reports and published more cases on social networks, which may have changed the mentality of young people in Burundi, including the Imbonerakure. The visibility of the organisation on social media led the Imbonerakure to invite the chairman.  Additional information: Some groups among the Imbonerakure who are now being threatened and facing violations/retributions themselves, may be open to dialogue on human rights as they would like to make a plea for themselves/have the partner organisation advocate for them.  Contribution of other actors and factors: FOCODE, Other funders of FOCODE, victims
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

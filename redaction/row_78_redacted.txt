@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR005
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: DR Congo
+**Year**: 2022
+**Outcome description**: In 2022, at least 41 people defected from or escaped the Lord's Resistance Army (LRA) armed group in the border area between the DRC and <LOC>.
+**Significance of the outcome**: These <redacted> further weakened two remaining LRA groups at the border zone, and obviously had a major impact on the lives' of the people who fled the LRA group. The reintegration of former defectors and their reconciliation with the communities (through shared commemorations) contributes to the <redacted> of the recycling of violence in the area.  Since 2021, over a hundred defectors of the LRA were reintegrated in <redacted> society. The reintegrated defectors participated in the commemoration of the violence in the affected communities. 
+**Additional information (use if needed) **: These defections allowed PAX and APRu to gain further insights on the remaining LRA groups and led to direct contact with their commander, opening a dialogue on demobilisation of the whole group and repatriation for foreign nationals among them.
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: <redacted> and <redacted>, APRu distributed messages by radio, flyers, video (through telephone messages) and memory cards (for the telephone), destined to the remnant LRA groups. The flyers and memory cards were distributed by hunters and fishermen in the forest areas. The programme also provided educational and psycho-social support to recent LRA defectors, which contributed to making defection an appealing decision.
+**Contribution of other actors and factors**: Yes, other actors might have played a role here. In particular, international NGO Invisible Children also worked on promoting defection from the LRA with similar strategies. We know however from discussions with (former) LRA members that our programme's messages did reach the group and played a role in promoting defection.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Internal APRu reports; interviews with former LRA members and APRu staff.
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 2.7
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In 2022, at least 41 people defected from or escaped the Lord's <redacted> Army (LRA) armed group in the border area between the DRC and <LOC>.  Significance description: These <redacted> further weakened two remaining LRA groups at the border zone, and obviously had a major impact on the lives' of the people who fled the LRA group. The reintegration of former defectors and their reconciliation with the communities (through shared commemorations) contributes to the <redacted> of the recycling of violence in the area.  Since 2021, over a hundred defectors of the LRA were reintegrated in <redacted> society. The reintegrated defectors participated in the commemoration of the violence in the affected communities.   Contribution of the programme: <redacted> and <redacted>, APRu distributed messages by radio, flyers, video (through telephone messages) and memory cards (for the telephone), destined to the remnant LRA groups. The flyers and memory cards were distributed by hunters and fishermen in the forest areas. The programme also provided educational and psycho-social support to recent LRA defectors, which contributed to making defection an appealing decision.  Additional information: These defections allowed PAX and APRu to gain further insights on the remaining LRA groups and led to direct contact with their commander, opening a dialogue on demobilisation of the whole group and repatriation for foreign nationals among them.  Contribution of other actors and factors: Yes, other actors might have played a role here. In particular, international NGO Invisible Children also worked on promoting defection from the LRA with similar strategies. We know however from discussions with (former) LRA members that our programme's messages did reach the group and played a role in promoting defection.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

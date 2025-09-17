@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/<redacted>
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: South Sudan
+**Year**: 2022
+**Outcome description**: In <redacted>, justice was served for the rape and brutal killing of <redacted> <LOC> from (Sexual) Gender Based Violence in <LOC> town
+**Significance of the outcome**: The rape and brutal killing of the juvenile was the first of its kind in Aweil. Rape cases were handled by the customary chiefs and not prosecutors of statutory courts. Most of women in <LOC> are ignorant of women rights and Gender Based Violence <redacted>annel of reporting rape cases in Aweil is negatively influenced by customs and culture. There is fear of stigma from the public and not no protection.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: Contacted the relatives of the late victim of Conflict Related Gender Based Violence, Late Abuk Lual Lual in Aweil. Offered free legal service to the relatives of the late. Cooperated with 13 lawyers interested participate in the case. Interacted with the communities in <LOC>, Media houses. 13 lawyers attended the 6 legal hearings. WAASS and 13 lawyers influenced the prosecutor, investigators and judge to prioritise in concluding the cases as result of consistent demonstration by the public.
+**Contribution of other actors and factors**: The fact that the public was demanding for justice for the young girl has given a lot of priotity to this process.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Report of the case and extended documentation on the process in the partner report.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 3.3
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In <redacted>, justice was served for the rape and brutal killing of <redacted> <LOC> from (Sexual) Gender Based Violence in <LOC> town  Significance description: The rape and brutal killing of the juvenile was the first of its kind in Aweil. Rape cases were handled by the customary chiefs and not prosecutors of statutory courts. Most of women in <LOC> are ignorant of women rights and Gender Based Violence <redacted>annel of reporting rape cases in Aweil is negatively influenced by customs and culture. There is fear of stigma from the public and not no protection.  Contribution of the programme: Contacted the relatives of the late victim of Conflict Related Gender Based Violence, Late Abuk Lual Lual in Aweil. Offered free legal service to the relatives of the late. Cooperated with 13 lawyers interested participate in the case. Interacted with the communities in <LOC>, Media houses. 13 lawyers attended the 6 legal hearings. WAASS and 13 lawyers influenced the prosecutor, investigators and judge to prioritise in concluding the cases as result of consistent demonstration by the public.  Additional information:   Contribution of other actors and factors: The fact that the public was demanding for justice for the young girl has given a lot of priotity to this process.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Gender transformative
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Gender

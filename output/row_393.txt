@@ -1,0 +1,23 @@
+**FragmentID**: SCC-BUR2508/CIV005
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Burundi
+**Year**: 2023
+**Outcome description**: In April 2023, the Burundian governement released 5 HRDs arrested on February 14, 2023 following advocacy  engagements with the government in Burundi. 
+**Significance of the outcome**: With the continued civic sp[ace decline, several HRDs have been abducted, arrested and detained arbitrarily without trial. At the begining of April 2023, 5 HRDs were arrested and jailed on tramped up charges. Following this, CBDDH released a joint statement with other CSOs condemning the arrest and called for an unconditional release. The HRDs were released following a joint statement by CBDDH, and other CSOs. The EU also lobbied the government in the background to release the HRDs. 
+**Additional information (use if needed) **: The program partners engaged in advocacy with the government and published a joint letter asking the government of Burundi to unconditionally release the HRDs. The HRDs were released in April 2023 and in May 2023, they also fled the country for safety. The HRDs were arrested at the airport on their way to Kampala to attend a workshop organised by Amnesty International. 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: The program contributed to advocacy and the press statement. The program also lobbied the National Human Rights Commission to put pressure on government to release the HRDS. 
+**Contribution of other actors and factors**: Yes, the Burundian National Human Rights Commission and the European Union also contributed to lobbying the government to honouur the asks of CSOs and release the HRDs. 
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: https://burundihrdcoalition.org/lettre-au-president-du-burundi-par-les-femmes-burundaises-defenseuses-des-droits-humains/  https://burundihrdcoalition.org/declaration-de-la-cbddh-sur-la-liberation-de-cinq-defenseurs-des-droits-humains-injustement-detenus/?  https://www.iwacu-burundi.org/les-cinq-defenseurs-des-droits-humains-liberes/ 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.3                                             Output 1.3.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In April 2023, the Burundian governement released 5 HRDs arrested on February 14, 2023 following advocacy  engagements with the government in Burundi.   Significance description: With the continued civic sp[ace decline, several HRDs have been abducted, arrested and detained arbitrarily without trial. At the begining of April 2023, 5 HRDs were arrested and jailed on tramped up charges. Following this, CBDDH released a joint statement with other CSOs condemning the arrest and called for an unconditional release. The HRDs were released following a joint statement by CBDDH, and other CSOs. The EU also lobbied the government in the background to release the HRDs.   Contribution of the programme: The program contributed to advocacy and the press statement. The program also lobbied the National Human Rights Commission to put pressure on government to release the HRDS.   Additional information: The program partners engaged in advocacy with the government and published a joint letter asking the government of Burundi to unconditionally release the HRDs. The HRDs were released in April 2023 and in May 2023, they also fled the country for safety. The HRDs were arrested at the airport on their way to Kampala to attend a workshop organised by Amnesty International.   Contribution of other actors and factors: Yes, the Burundian National Human Rights Commission and the European Union also contributed to lobbying the government to honouur the asks of CSOs and release the HRDs. 
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Creating space for CSOs
+**TypeOfChangeCluster**: Empowering citizens and CSOs

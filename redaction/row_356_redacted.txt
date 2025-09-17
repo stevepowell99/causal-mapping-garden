@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR001
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: DR Congo
+**Year**: 2023
+**Outcome description**: In <redacted>, the Governor of <LOC> asked election <redacted> working in the services of the Governorate of the Province to send him proof of their request to temporarily cease their role as civil servant until after the elections, in order to ensure respect for the principle of equality between election <redacted>. His request was done through a  circular, no. <redacted>/1853/CAB/GP-NK/2023 dated <redacted>, 2023 addressed to political and administrative staff, as well as to managers and employees of other government departments attached to his office, who were standing as candidates in the elections.  
+**Significance of the outcome**: Such positions were not so formal in the past, with the result that officials from the <LOC> and related departments were competing with others without respecting the obligation of the Independent National Electoral Commission to ensure equality between candidates. Pressure on the authorities is leading them to enforce compliance with the principles, in this case that of equality between candidates. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Regional
+**Contribution of the programme**: The program supports MDR activities and the use of this information in lobby and advocacy activities. In this context, ASSODIP had published a press release on the inequalities between candidates (civil servants and others) in the elections which led to the Governor's action. 
+**Contribution of other actors and factors**: The local press is involved in publishing information.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Press release of ASSODIP available 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.2, 2.2
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In <redacted>, the Governor of <LOC> asked election <redacted> working in the services of the Governorate of the Province to send him proof of their request to temporarily cease their role as civil servant until after the elections, in order to ensure respect for the principle of equality between election <redacted>. His request was done through a  circular, no. <redacted>/1853/CAB/GP-NK/2023 dated <redacted>, 2023 addressed to political and administrative staff, as well as to managers and employees of other government departments attached to his office, who were standing as candidates in the elections.    Significance description: Such positions were not so formal in the past, with the result that officials from the <LOC> and related departments were competing with others without respecting the obligation of the Independent National Electoral Commission to ensure equality between candidates. Pressure on the authorities is leading them to enforce compliance with the principles, in this case that of equality between candidates.   Contribution of the programme: The program supports MDR activities and the use of this information in lobby and advocacy activities. In this context, ASSODIP had published a press release on the inequalities between candidates (civil servants and others) in the elections which led to the Governor's action.   Additional information:   Contribution of other actors and factors: The local press is involved in publishing information.
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

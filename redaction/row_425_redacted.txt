@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV011
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Palestine
+**Year**: 2023
+**Outcome description**: in <LOC> in <redacted>, <redacted> lobbyists took a picture of CAC staff <person> inside a side event by the Special rapporteur on Palestine. 
+**Significance of the outcome**: Shrinking of space and shows risk of advocacy for staff members of Alliance partners. Intimidation and potential future consequences. Negative outcome. Special rapporteur showed support for staff member. 
+**Additional information (use if needed) **: Further deterioration of civic space and potential future repercussions/smear campaigns
+**Rating significance**: 
+**Social actor**: Civic change agents
+**Scale**: Individual
+**Contribution of the programme**: PAX supported the trip to <LOC>
+**Contribution of other actors and factors**: 
+**Rating contribution**: 
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: in <LOC> in <redacted>, <redacted> lobbyists took a picture of CAC staff <person> inside a side event by the Special rapporteur on Palestine.   Significance description: Shrinking of space and shows risk of advocacy for staff members of Alliance partners. Intimidation and potential future consequences. Negative outcome. Special rapporteur showed support for staff member.   Contribution of the programme: PAX supported the trip to <LOC>  Additional information: Further deterioration of civic space and potential future repercussions/smear campaigns  Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Creating space for CSOs
+**TypeOfChangeCluster**: Empowering citizens and CSOs

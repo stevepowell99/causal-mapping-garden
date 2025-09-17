@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR005
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Syria
+**Year**: 2025
+**Outcome description**: In <redacted>, the <redacted> government reached out to JLF with the request to organise a similar conference as the one organized in <LOC> addressing the integration of NES with the Syrian Government
+**Significance of the outcome**: This is a significant change and unintended outcome because this marks an interest of the <redacted> government to organise a conference to discuss the relations/integration of <LOC> Syria with the rest of Syria.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: National 
+**Contribution of the programme**: JFL organised a <redacted> in <redacted> in Qamishli, NE Syria, bringing together civil society and community leaders to discuss integration of NES in the <redacted> <person>. 
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: Yes (minutes of meetings of JFL)
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In <redacted>, the <redacted> <redacted> reached out to JLF with the request to organise a similar <redacted> as the one organized in <LOC> <redacted> the integration of NES with the Syrian <redacted> Significance:  This is a significant change and <redacted> outcome because this marks an interest of the <redacted> <redacted> to organise a <redacted> to discuss the relations/integration of <LOC> Syria with the rest of Syria. Contribution:  JFL organised a <redacted> in <redacted> in Qamishli, NE Syria, bringing together civil society and community leaders to discuss integration of NES in the <redacted> <person>.  Additional <redacted>:   Contribution of Other factors:  None
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

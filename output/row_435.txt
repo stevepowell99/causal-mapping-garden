@@ -1,0 +1,23 @@
+**FragmentID**: SCC-LEB2508/GEQ029
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 3
+**coutnry**: Lebanon
+**Year**: 2024
+**Outcome description**: In April 2024, Doha, a 42-year-old woman from Tripoli, Lebanon referred her husband, daughters, and other women from her community to ABAAD's psychosocial support programs.
+**Significance of the outcome**: Through her continued engagement with the ABAAD program, Doha experienced a major shift in her personal confidence, family relationships, and community engagement. After participating in psychosocial support sessions, she became more assertive, referred her husband and daughters to program activities, reduced the violence she faced, and began referring other women from her community to ABAAD. Doha’s journey illustrates a powerful transformation from silence and isolation to confidence, agency, and leadership in a conservative context where women are discouraged from seeking support. Her ability to influence her family and connect other women to services reflects a ripple effect of empowerment. The outcome aligns strongly with the program’s objectives of reducing gender-based violence and fostering women’s agency and peer support networks.
+**Additional information (use if needed) **:  
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: Doha joined ABAAD’s sessions after discovering them by chance. The safe space, group trust, and content of the sessions helped her regain her voice, build confidence, and break her long silence about the violence she was experiencing. This led to active participation and engagement of her family and community.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: No
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 3.1
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In April 2024, Doha, a 42-year-old woman from Tripoli, Lebanon referred her husband, daughters, and other women from her community to ABAAD's psychosocial support programs.  Significance description: Through her continued engagement with the ABAAD program, Doha experienced a major shift in her personal confidence, family relationships, and community engagement. After participating in psychosocial support sessions, she became more assertive, referred her husband and daughters to program activities, reduced the violence she faced, and began referring other women from her community to ABAAD. Doha’s journey illustrates a powerful transformation from silence and isolation to confidence, agency, and leadership in a conservative context where women are discouraged from seeking support. Her ability to influence her family and connect other women to services reflects a ripple effect of empowerment. The outcome aligns strongly with the program’s objectives of reducing gender-based violence and fostering women’s agency and peer support networks.  Contribution of the programme: Doha joined ABAAD’s sessions after discovering them by chance. The safe space, group trust, and content of the sessions helped her regain her voice, build confidence, and break her long silence about the violence she was experiencing. This led to active participation and engagement of her family and community.  Additional information:    Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Gender transformative
+**TypeOfChangeCluster**: Gender

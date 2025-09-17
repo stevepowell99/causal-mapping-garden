@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV003
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Kenya
+**Year**: 2024
+**Outcome description**: In <redacted> in Banjul, the Chairperson of the African Commission for Human and Peoples Rights was able to speak about the discrimination against LGBTIQ people in Kenya. 
+**Significance of the outcome**: There has been a reduction in civic space and freedoms of <redacted> in Kenya. In 2023, the Kenyan Parliament tabled the "Family Protection Bill" aimed at protecting the family against homosexuality and also a lot of attacks on the LGBTIQ community. So the ability of the ACHPR chairperson to speak about the discrimination was a step in calling on the Kenyan Government to respect and uphold rights of all persons. 
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: International community
+**Scale**: International 
+**Contribution of the programme**: The program supported HRDs to attend the commision and also organised 2 side events in which the issues were presented. The HRDs presented the issues at the NGO Forum at the ACHPRs
+**Contribution of other actors and factors**: Possibly other actors also influenced the Chairperson's point of view.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.3 (SCS 041)
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Outcome description:  In <redacted> in Banjul, the Chairperson of the African <redacted> for Human and Peoples Rights was able to speak about the discrimination against LGBTIQ people in Kenya.  Significance:  There has been a reduction in civic space and freedoms of <redacted> in Kenya. In 2023, the Kenyan Parliament tabled the "Family Protection Bill" aimed at protecting the family against homosexuality and also a lot of attacks on the LGBTIQ community. So the ability of the ACHPR chairperson to speak about the discrimination was a step in calling on the Kenyan Government to respect and uphold rights of all persons.  Contribution:  The program supported HRDs to attend the commision and also organised 2 side events in which the issues were presented. The HRDs presented the issues at the NGO Forum at the ACHPRs Additional <redacted>:   Contribution of Other factors:  Possibly other actors also influenced the Chairperson's point of view.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

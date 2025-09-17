@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR013
+**Outcome status**: Outcome Lead
+**OH-harvesting period**: harvest 3
+**coutnry**: Iraq
+**Year**: 2025
+**Outcome description**: <redacted>, several civil society organizations (as a result of their engagement in the MDR process) became active leaders in advocacy and policy discussions on return and reintegration. 
+**Significance of the outcome**: it establishes a foundation for sustained, locally driven advocacy on return and reintegration issues. By moving CSOs from passive participants to informed, strategic actors, the MDR process has helped embed knowledge and momentum within local structures. This reduces dependency on external actors and ensures that advocacy and policy engagement can continue beyond the project's timeline, increasing the likelihood of more responsive, inclusive, and durable solutions for affected populations. Their improved understanding of legal frameworks and community needs enabled them to take on more strategic roles in shaping durable solutions, positioning them as credible actors who will continue to influence policy and advocacy efforts beyond the scope of the project.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: The programme facilitated targeted engagement with CSOs throughout the MDR process, providing them with tools, case insights, and spaces for dialogue with communities and authorities. This approach enabled CSOs to better understand the legal and social dimensions of return, strengthen their advocacy messages, and become active contributors in policy discussions at local and national levels. 
+**Contribution of other actors and factors**: no
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes- MDR cases and developed policy breifs 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  <redacted>, several civil society organizations (as a result of their engagement in the MDR process) became active leaders in advocacy and policy discussions on return and reintegration.  Significance:  it establishes a foundation for sustained, locally driven advocacy on return and reintegration issues. By moving CSOs from passive participants to informed, strategic actors, the MDR process has helped embed knowledge and momentum within local structures. This reduces dependency on external actors and ensures that advocacy and policy engagement can continue beyond the project's timeline, increasing the likelihood of more responsive, inclusive, and durable solutions for affected populations. Their improved understanding of legal frameworks and community needs enabled them to take on more strategic roles in shaping durable solutions, positioning them as credible actors who will continue to influence policy and advocacy efforts beyond the scope of the project. Contribution:  The programme facilitated targeted engagement with CSOs throughout the MDR process, providing them with tools, case insights, and spaces for dialogue with communities and authorities. This approach enabled CSOs to better understand the legal and social dimensions of return, strengthen their advocacy messages, and become active contributors in policy discussions at local and national levels.  Additional <redacted>:   Contribution of Other factors:  no
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-YEM2508/PHR003
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 3
+**coutnry**: Yemen
+**Year**: 2025
+**Outcome description**: In September 2025, Harmony Development Foundation in Aden a small NGO showed an intrest and became an implementing partner of Resonate! Yemen. 
+**Significance of the outcome**: Previously, Harmony Development Foundation had limited technical and financial capacities. This partnership enhanced their institutional performance and opened doors for wider engagement.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: The partnership emerged due to the operational and practical reputation of the Impact Maker program. In 2023, Resonate! Yemen partnered with Harmony for Development, a local CSO based in Aden, to implement youth capacity-building trainings under the Impact Maker 3 project. This collaboration supported the launch of three youth-led initiatives, contributing to a growing culture of youth-focused programming in the region. The initiative helped position the program as a reference for best practices, while also reinforcing the credibility of local civil society actors.
+**Contribution of other actors and factors**: no
+**Rating contribution**: great
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: Yes – MOU, reports, contracts are available
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In September 2025, Harmony Development Foundation in Aden a small NGO showed an intrest and became an implementing partner of Resonate! Yemen.  Significance:  Previously, Harmony Development Foundation had limited technical and financial capacities. This partnership enhanced their institutional performance and opened doors for wider engagement. Contribution:  The partnership emerged due to the operational and practical reputation of the Impact Maker program. In 2023, Resonate! Yemen partnered with Harmony for Development, a local CSO based in Aden, to implement youth capacity-building trainings under the Impact Maker 3 project. This collaboration supported the launch of three youth-led initiatives, contributing to a growing culture of youth-focused programming in the region. The initiative helped position the program as a reference for best practices, while also reinforcing the credibility of local civil society actors. Additional Info:   Contribution of Other factors:  no
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging
+**TypeOfChangeCluster**: Community bridging

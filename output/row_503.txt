@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SSU2508/CIV002
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: South Sudan
+**Year**: 2024
+**Outcome description**: On 15 July 2024, the protocol on Trust and Confidence-building measures in the Tumaini peace negotiation process was adopted in Nairobi.
+**Significance of the outcome**: CCNP was able to influence this protocal; it opens up a new political dispensation. It brought together parties that were not yet part of R-ARCSS. So this process brings in a more inclusive and sustainble process.
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: Multiple
+**Scale**: National 
+**Contribution of the programme**: CCNP was able to send two of its members of the network to the Tumaini meeting. 
+**Contribution of other actors and factors**: The other actors that contributed were the government and the non-political stakeholders.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Advisory notes and policy briefs (strictly confidential, this will not be shared)
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.3 CSO's and networks proactively monitor and advocate for implementation of R-ARCSS and human rights.
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: On 15 July 2024, the protocol on Trust and Confidence-building measures in the Tumaini peace negotiation process was adopted in Nairobi.  Significance description: CCNP was able to influence this protocal; it opens up a new political dispensation. It brought together parties that were not yet part of R-ARCSS. So this process brings in a more inclusive and sustainble process.  Contribution of the programme: CCNP was able to send two of its members of the network to the Tumaini meeting.   Additional information:   Contribution of other actors and factors: The other actors that contributed were the government and the non-political stakeholders.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

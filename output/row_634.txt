@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SAH2508/CIV008
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 3
+**coutnry**: Sahel
+**Year**: 2023
+**Outcome description**: Since 2023, the CBDDH, COMADDH, and RNDDH have improved the protection of HRDs in distress in Burkina Faso, Mali, and Niger.
+**Significance of the outcome**: Before 2023, the number of cases involving the protection of human rights defenders was insignificant, and management was less technical and less secure.
+**Additional information (use if needed) **: The CBDDH, COMADDH, and RNDDH have dealt with cases involving defenders from several countries, namely Senegal, Togo, Congo Brazzaville, Burkina Faso, Niger, and Mali.
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: DefendDefenders trained members of national coalitions of human rights defenders (CBDDH, COMADDH, RNDDH) in effectively handling requests for protection from human rights defenders.
+**Contribution of other actors and factors**: No
+**Rating contribution**: 
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Reports and photos 
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 1.4                                                            Output 1.4.2
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Outcome description:  Since 2023, the CBDDH, COMADDH, and RNDDH have improved the protection of HRDs in distress in Burkina Faso, Mali, and Niger. Significance:  Before 2023, the number of cases involving the protection of human rights defenders was insignificant, and management was less technical and less secure. Contribution:  DefendDefenders trained members of national coalitions of human rights defenders (CBDDH, COMADDH, RNDDH) in effectively handling requests for protection from human rights defenders. Additional Info:  The CBDDH, COMADDH, and RNDDH have dealt with cases involving defenders from several countries, namely Senegal, Togo, Congo Brazzaville, Burkina Faso, Niger, and Mali. Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change  Safety and Security
+**TypeOfChangeCluster**: Capacity change

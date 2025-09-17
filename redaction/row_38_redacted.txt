@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV013
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Ethiopia
+**Year**: 2021
+**Outcome description**: Following the development of the Human Resource Manual and <redacted> and Safeguarding Policy in <redacted>, Association for Human Rights in Ethiopia has had an improvement in its organizational effectiveness, efficiency and compliance.
+**Significance of the outcome**: Before the documents were developed the organisation was lacking a concerted system to manage human resources and the safety and protection of its beneficiaries. The lack of such documents has prevented the organization from having proper human resource operation, safeguarding and protection procedures and measures to properly operate and work as per the requirement of the labour law.
+**Additional information (use if needed) **:  The manual was developed with the facilatation of external consultants. Association of Human Rights in Ethiopia has had an  improvement in the process of recruitment and the managment of its staff and its employement process. Association for Human Rights in Ethiopia has also been able to develop its ability to gain funds and hire people who are more competent for its vacant positions. In addition safeguarding and protection of vulnerable persons was also of concern. 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: In <redacted>, Association for Human Rights in Ethiopia received institutional support from DefendDefenders to develop a Human Resource Manual, Protection and Safeguarding Policy. 
+**Contribution of other actors and factors**: No
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes, hard copies of the document are availabe at Association for Human Rights in Ethiopia's office. 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Output 1.2.2 also Output 3.2.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Following the development of the Human Resource Manual and <redacted> and Safeguarding Policy in <redacted>, Association for Human Rights in Ethiopia has had an improvement in its organizational effectiveness, <redacted> and <redacted>.  Significance description: Before the documents were developed the organisation was lacking a concerted system to manage human resources and the safety and <redacted> of its beneficiaries. The lack of such documents has prevented the organization from having proper human resource operation, safeguarding and <redacted> and measures to properly operate and work as per the requirement of the labour law.  Contribution of the programme: In <redacted>, Association for Human Rights in Ethiopia received institutional support from DefendDefenders to develop a Human Resource Manual, Protection and Safeguarding Policy.   Additional information:  The manual was developed with the facilatation of external consultants. Association of Human Rights in Ethiopia has had an  improvement in the process of recruitment and the managment of its staff and its employement process. Association for Human Rights in Ethiopia has also been able to develop its ability to gain funds and hire people who are more competent for its vacant positions. In addition safeguarding and protection of vulnerable persons was also of concern.   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Other
+**TypeOfChangeCluster**: Other

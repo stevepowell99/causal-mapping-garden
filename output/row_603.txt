@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SSU2508/CIV038
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: South Sudan
+**Year**: 2025
+**Outcome description**: On January 26th 2025, the director of National Communication Authority (NCA) lifted the ban blocking access to social media in South Sudan. 
+**Significance of the outcome**: The National Communication Authority (NCA) Director's action is a positive step towards opening up civic space in South Sudan. It is also a step towards building a relationship between the Civil Society and the state.  
+**Additional information (use if needed) **: In his statement broadcasted live on the national broadcasting corporation on the 25th January 2025, the director promised to lift the ban within 72 hours after admitting to have been influenced by key stakeholders including the human rights defenders. The lift was done the following day.
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: National 
+**Contribution of the programme**: The Head of Secretariat prepared and signed a Press release condemning the act of banning the social media.+
+**Contribution of other actors and factors**: SSHRDN sent the press release to the media for public consumption on the 23rd of January 2025.Media outlets amplified the press release by posting them online and in print media. Presurre from the general public and diplomatic community also contributed to the director's decision.  
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: https://www.eyeradio.org/watchdog-demands-revocation-of-ncas-social-media-ban/                                     https://kingmediassd.com/government-to-lift-facebook-and-tiktok-ban-within-72-hours/    
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.2 SSHRDN comprehensively & strategically documents civic-space-related violations and effectively advocates to end repression of (W)HRDs
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Outcome description:  On January 26th 2025, the director of National Communication Authority (NCA) lifted the ban blocking access to social media in South Sudan.  Significance:  The National Communication Authority (NCA) Director's action is a positive step towards opening up civic space in South Sudan. It is also a step towards building a relationship between the Civil Society and the state.   Contribution:  The Head of Secretariat prepared and signed a Press release condemning the act of banning the social media.+ Additional Info:  In his statement broadcasted live on the national broadcasting corporation on the 25th January 2025, the director promised to lift the ban within 72 hours after admitting to have been influenced by key stakeholders including the human rights defenders. The lift was done the following day. Contribution of Other factors:  SSHRDN sent the press release to the media for public consumption on the 23rd of January 2025.Media outlets amplified the press release by posting them online and in print media. Presurre from the general public and diplomatic community also contributed to the director's decision.  
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

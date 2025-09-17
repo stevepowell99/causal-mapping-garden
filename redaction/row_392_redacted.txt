@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR012
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: <LOC>/Burkina Faso
+**Year**: 2023
+**Outcome description**: In BF in 2023, the monitors were able to obtain on at least 2 occasions (26 <redacted>) the release of at least 25 people who had been kidnapped or arbitrarily arrested by Volunteers for the Defence of the Homeland in <LOC> in the <LOC> region 
+**Significance of the outcome**: In the northern region, the Volunteers for the Defence of the Homeland are often responsible for the illegal arrest of people. Many of the people they have arrested have been victims of enforced disappearance. Others are later found dead.   By obtaining the release of these 25 people, the monitors have made it possible to protect their right to life.
+**Additional information (use if needed) **: Monitors from the northern region, supported by the MBDHP representation in <LOC>, were able to secure the release of 05 <person> women and 10 children who had been held captive for <redacted> by <redacted> for the Defence of the Homeland (VDP) in the <LOC> bus station while fleeing their village under terrorist threat to go to Koudougou.  <redacted>, the MBDHP obtained the release of at least 10 people, including 3 children under <redacted>, after they had been arrested by the VDP.
+**Rating significance**: medium
+**Social actor**: Non-state authorities
+**Scale**: Local
+**Contribution of the programme**: As part of the monitoring activities financed by <LOC>, the monitors often accompany victims when they file complaints with the courts. This interaction with the judiciary has enabled them to develop important relations with the public prosecutor at the Ouahigouya Tribunal de Grande Instance. As a result, they have been able to secure the release of people arbitrarily arrested by the Volunteers for the Defence of the Homeland.
+**Contribution of other actors and factors**: No
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Testimonials from instructors
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Output 2.2.3 (and therefore Outcome 2.2)
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In BF in 2023, the monitors were able to obtain on at least 2 occasions (26 <redacted>) the release of at least 25 people who had been kidnapped or arbitrarily arrested by <redacted> for the Defence of the Homeland in <LOC> in the <LOC> region   Significance description: In the northern region, the <redacted> for the Defence of the Homeland are often responsible for the illegal arrest of people. Many of the people they have arrested have been victims of enforced disappearance. Others are later found dead.   By obtaining the release of these 25 people, the monitors have made it possible to protect their right to life.  Contribution of the programme: As part of the <redacted> financed by <LOC>, the monitors often accompany victims when they file <redacted> with the courts. This interaction with the judiciary has enabled them to develop important relations with the public <redacted> at the <redacted> Tribunal de Grande Instance. As a result, they have been able to secure the release of people arbitrarily arrested by the <redacted> for the Defence of the Homeland.  <redacted> information: Monitors from the northern region, supported by the MBDHP representation in <LOC>, were able to secure the release of 05 <person> women and 10 children who had been held captive for <redacted> by <redacted> for the Defence of the Homeland (VDP) in the <LOC> bus station while fleeing their village under terrorist threat to go to Koudougou.  <redacted>, the MBDHP obtained the release of at least 10 people, including 3 children under <redacted>, after they had been arrested by the VDP.  Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

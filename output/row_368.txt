@@ -1,0 +1,23 @@
+**FragmentID**: SCC-INT2312/ESF001
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: International / External Stress Factors
+**Year**: 2023
+**Outcome description**: In August 2023, during the 9th Conference of States Parties to the Arms Trade Treaty (CSP9), it was decided to start a new sub-working group focused on initiating discussions on practical Treaty implementation in 2024.
+**Significance of the outcome**: Over the years, until very recently, there was practically no space in plenary sessions to discuss specific arms transfers, often countered by claiming it would 'politicise' the debate (often an argument to kill debate), whereas civil society especially has repeatedly emphasised the importance of discussing specific arms transfers for the treaty to be relevant. Slowly, since 2019, a shift was emerging, recognising this need (as well as recognising that it became time to talk about substance, rather than only guidelines). So, in August 2023, for the first time, after nine years, it was decided that in future plenary ATT meetings a platform will be created to start discussions on 'emerging issues', such as specifically relevant arms exports. This is about the  main purpose of the Treaty: to make sure that behaviour of States is changing to more responsible arms trade, with the aim to reduce human suffering.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: International community
+**Scale**: International
+**Contribution of the programme**: Positive and intended: Control Arms (of which PAX is a long-time and very active member) has repeatedly stressed to start such discussions, in statements deleivered at ATT meetings, as well as in bilateral talks. Similarly, PAX has consistently stressed with Dutch delegates that this is important and long overdue, which has been recognised by the NL delegation since 2019.
+**Contribution of other actors and factors**: Yes: other Control Arms members have also contributed to this.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes, see under 25.: ATT_CSP9_ATTS_Final Report_ rev2_EN.pdf
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In August 2023, during the 9th Conference of States Parties to the Arms Trade Treaty (CSP9), it was decided to start a new sub-working group focused on initiating discussions on practical Treaty implementation in 2024.  Significance description: Over the years, until very recently, there was practically no space in plenary sessions to discuss specific arms transfers, often countered by claiming it would 'politicise' the debate (often an argument to kill debate), whereas civil society especially has repeatedly emphasised the importance of discussing specific arms transfers for the treaty to be relevant. Slowly, since 2019, a shift was emerging, recognising this need (as well as recognising that it became time to talk about substance, rather than only guidelines). So, in August 2023, for the first time, after nine years, it was decided that in future plenary ATT meetings a platform will be created to start discussions on 'emerging issues', such as specifically relevant arms exports. This is about the  main purpose of the Treaty: to make sure that behaviour of States is changing to more responsible arms trade, with the aim to reduce human suffering.  Contribution of the programme: Positive and intended: Control Arms (of which PAX is a long-time and very active member) has repeatedly stressed to start such discussions, in statements deleivered at ATT meetings, as well as in bilateral talks. Similarly, PAX has consistently stressed with Dutch delegates that this is important and long overdue, which has been recognised by the NL delegation since 2019.  Additional information:   Contribution of other actors and factors: Yes: other Control Arms members have also contributed to this.
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

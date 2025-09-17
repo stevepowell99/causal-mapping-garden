@@ -1,0 +1,23 @@
+**FragmentID**: SCC-INT2508/ESF031
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: International / External Stress Factors
+**Year**: 2024
+**Outcome description**: During 2024 and 2025, the Austrian Public Porsecution Office investigated our complaint against the national oil company OMV for complicity in international crimes
+**Significance of the outcome**: The Austrian Public Prosecution was unaware of OMV's alleged criminal legacy in Sudan. Preparing and bringing the case by PAX and CEHRi in April 2024 has changed that. The application of existing legal systems to hold international companies accountable for international crimes strengthens the international rule of law and its impact of peace and justice for all. 
+**Additional information (use if needed) **: The application of existing legal systems to hold international companies accountable for international crimes strengthens the international rule of law and its impact of peace and justice for all. The OMV case is potentially a game changer as it would be only the second time since Nuremberg that a listed company is investigated to international crimes, this time an oil major. This will impact legal and political risk assessments of corporate lawyers and governing boards towards enhanced respect for international legal principles. 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: International 
+**Contribution of the programme**: 100%. PAX initiated, guided, commissioned and funded the drafting of the criminal complaint, and filed it with the Austrian Prosecutor's Office, together with the drafters of the complaint, the Austrial lawyers' group CEHRI, and the South Sudanese victims' representatives of Leech Victims Voices. In response, the prosecutor decided to assessing the complaint.
+**Contribution of other actors and factors**: Yes. CEHRI drafted the criminal complaint.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: https://unpaiddebt.org/omv-ag-executives-accused-of-complicity-in-war-crimes/
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: SO2, new actor
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: During 2024 and 2025, the Austrian Public Porsecution Office investigated our complaint against the national oil company OMV for complicity in international crimes  Significance description: The Austrian Public Prosecution was unaware of OMV's alleged criminal legacy in Sudan. Preparing and bringing the case by PAX and CEHRi in April 2024 has changed that. The application of existing legal systems to hold international companies accountable for international crimes strengthens the international rule of law and its impact of peace and justice for all.   Contribution of the programme: 100%. PAX initiated, guided, commissioned and funded the drafting of the criminal complaint, and filed it with the Austrian Prosecutor's Office, together with the drafters of the complaint, the Austrial lawyers' group CEHRI, and the South Sudanese victims' representatives of Leech Victims Voices. In response, the prosecutor decided to assessing the complaint.  Additional information: The application of existing legal systems to hold international companies accountable for international crimes strengthens the international rule of law and its impact of peace and justice for all. The OMV case is potentially a game changer as it would be only the second time since Nuremberg that a listed company is investigated to international crimes, this time an oil major. This will impact legal and political risk assessments of corporate lawyers and governing boards towards enhanced respect for international legal principles.   Contribution of other actors and factors: Yes. CEHRI drafted the criminal complaint.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, New structure
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Mobilizing citizens and organizations

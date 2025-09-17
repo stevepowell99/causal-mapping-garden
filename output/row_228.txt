@@ -1,0 +1,23 @@
+**FragmentID**: SCC-LEB2312/Civ002
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 2
+**coutnry**: Lebanon
+**Year**: 2023
+**Outcome description**: Participants have been starting self initiatives due to the trainings which is a crucial objective of the project. One of the participants KK started the photography initiatives including under a participatory action research program he participated with Peace of Art led by the Human Security Collective, which focused on safe and open spaces in Fakiha and he/she posts on social media using Canva that he/she learnt during the due to the computer science trainings in Fakiha.
+**Significance of the outcome**: There is a lack of computer scence skills in Northern Bekaa area due to the disconnect between the rural areas and big cities
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: Through the project, Peace of Art provided the equipment, the skill building trainings related to content creation, photography, film making, and editing, as well as the space for the trainings
+**Contribution of other actors and factors**: No: The individual initiative of the participants were also impotant factors to be considered.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: https://www.instagram.com/reel/CxyB--xt6J4/?utm_source=ig_web_copy_link   https://www.linkedin.com/posts/human-security-collective_fakiha-photovoice-activity-7054806862340222976-R0Yi?utm_source=li_share&utm_content=feedcontent&utm_medium=g_dt_web&utm_campaign=copy
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.2.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Participants have been starting self initiatives due to the trainings which is a crucial objective of the project. One of the participants KK started the photography initiatives including under a participatory action research program he participated with Peace of Art led by the Human Security Collective, which focused on safe and open spaces in Fakiha and he/she posts on social media using Canva that he/she learnt during the due to the computer science trainings in Fakiha.  Significance description: There is a lack of computer scence skills in Northern Bekaa area due to the disconnect between the rural areas and big cities  Contribution of the programme: Through the project, Peace of Art provided the equipment, the skill building trainings related to content creation, photography, film making, and editing, as well as the space for the trainings  Additional information:   Contribution of other actors and factors: No: The individual initiative of the participants were also impotant factors to be considered.
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

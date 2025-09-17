@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR003
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: <LOC>/Burkina Faso
+**Year**: 2024
+**Outcome description**: On <redacted>, after reconciliation efforts, members of the <redacted> and <redacted> religious communities in the village of <LOC> in the province of <person>, who had been at odds after a <redacted> son of the village targeted the <redacted> community during the distribution of food aid, decided to set up a community committee <person>, responsible for collecting and distributing food in an inclusive and participatory manner.
+**Significance of the outcome**: In <redacted>, an imam from <LOC> living in <LOC> generously sent two tonnes of food to support vulnerable people in his home village. However, when the donations arrived, a crisis quickly arose over the identification of the beneficiaries. Peace and stability within the intervention communities contribute to the achievement of the SCC programme's objectives.
+**Additional information (use if needed) **: Reconciliation efforts enabled the community to set up a community committee responsible for collecting and distributing food in an inclusive and participatory manner.
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: <person> supported the establishment of Local Dialogue and Mediation <redacted> (CLDM) in the villages of <LOC>, <LOC> and <person>. These <redacted> received in-depth training in mediation <redacted> organised by OCADES in <redacted> in Fada.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Activity report Testimonials
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.4
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  On <redacted>, after reconciliation efforts, members of the <redacted> and <redacted> religious communities in the village of <LOC> in the province of <person>, who had been at odds after a <redacted> son of the village targeted the <redacted> community during the distribution of food aid, decided to set up a community committee <person>, responsible for <redacted> and distributing food in an inclusive and participatory manner. Significance:  In <redacted>, an imam from <LOC> living in <LOC> <redacted> sent two tonnes of food to support <redacted> people in his home village. However, when the donations arrived, a crisis quickly arose over the identification of the beneficiaries. Peace and stability within the intervention communities <redacted> to the achievement of the SCC programme's <redacted>. Contribution:  <person> supported the establishment of Local Dialogue and Mediation <redacted> (CLDM) in the villages of <LOC>, <LOC> and <person>. These <redacted> received in-depth training in mediation <redacted> organised by OCADES in <redacted> in Fada. Additional <redacted>:  Reconciliation efforts enabled the community to set up a community committee responsible for collecting and distributing food in an inclusive and participatory manner. Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging, New structure
+**TypeOfChangeCluster**: Community bridging, Mobilizing citizens and organizations

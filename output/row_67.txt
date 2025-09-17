@@ -1,0 +1,23 @@
+**FragmentID**: SCC-PAL2305/CIV017
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Palestine
+**Year**: 2022
+**Outcome description**: Several meetings during the second half of 2022 between Mitvim and EEAS and MEPs in Brussels Increased EU network of Mitvim including EEAS and MEPs as a result of joint report and Brussels event 
+**Significance of the outcome**: New connections. Increased EU network of Mitvim including EEAS and MEPs as a result of joint report and Brussels event. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: International
+**Contribution of the programme**: As part of the programme PAX, SWP and Mitvim produced a research and conducted an event in Brussels in July 2022, providing opportunities for networking. Mitvim planned meetings with relevant stakeholders in Brussels after the event 
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: https://www.jpost.com/opinion/article-712042 and https://paxforpeace.nl/news/overview/liberal-values-under-pressure-in-europe-and-israel
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes, outcome 1.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Several meetings during the second half of 2022 between Mitvim and EEAS and MEPs in Brussels Increased EU network of Mitvim including EEAS and MEPs as a result of joint report and Brussels event   Significance description: New connections. Increased EU network of Mitvim including EEAS and MEPs as a result of joint report and Brussels event.   Contribution of the programme: As part of the programme PAX, SWP and Mitvim produced a research and conducted an event in Brussels in July 2022, providing opportunities for networking. Mitvim planned meetings with relevant stakeholders in Brussels after the event   Additional information:   Contribution of other actors and factors: NA
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

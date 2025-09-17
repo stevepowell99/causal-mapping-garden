@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/ESF006
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: International / External Stress Factors
+**Year**: 2024
+**Outcome description**: In <redacted>, UN Special <redacted> on the Right to Food <redacted> environmental issues (and PAX’s contribution) in his new thematic report on <redacted>, which he later presented at UNGA session in <redacted>.
+**Significance of the outcome**: SR's new report on the right to food , with an emphasis on Palestine, included references to the negative impacts of conflict-linked environmental destruction on food security, specifically mentioning environmental pollution, destruction of agro-food facilities and water resources in various conflict contexts, including Palestine, Ukraine, Syria and Lebanon, thus reaffirming the linkage between environmental aspects of conflicts (EPS issues) and food security. This is significant, as such recognition helps to break siloes between different agenda and  to mainstream EPS concerns across a variety of policy processes.
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: International community
+**Scale**: International 
+**Contribution of the programme**: PAX's contribution is direct but small. PAX provided a written submission following the SR's call for input, which got published on the OCHCR website and referenced in the report itself.
+**Contribution of other actors and factors**: The report istself was initiated by the Special Rapporteur, with many inputs received on food security in general, but PAX's contribution was uniquely focused on environmental dimensions of conflicts.
+**Rating contribution**: little
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: SR's report: <redacted>.pdf (PAX is referenced under point 33)
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: SO1, outcome 1.2
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In <redacted>, UN Special <redacted> on the Right to Food <redacted> environmental issues (and PAX’s contribution) in his new thematic report on <redacted>, which he later presented at UNGA session in <redacted>.  Significance description: SR's new report on the right to food , with an emphasis on Palestine, included references to the negative impacts of conflict-linked environmental destruction on food security, specifically mentioning environmental pollution, destruction of agro-food facilities and water resources in various conflict contexts, including Palestine, Ukraine, Syria and Lebanon, thus reaffirming the linkage between environmental aspects of conflicts (EPS issues) and food security. This is significant, as such recognition helps to break siloes between different agenda and  to mainstream EPS concerns across a variety of policy processes.  Contribution of the programme: PAX's contribution is direct but small. PAX provided a written submission following the SR's call for input, which got published on the OCHCR website and referenced in the report itself.  Additional information:   Contribution of other actors and factors: The report istself was initiated by the Special Rapporteur, with many inputs received on food security in general, but PAX's contribution was uniquely focused on environmental dimensions of conflicts.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Seeking public support
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Mobilizing citizens and organizations

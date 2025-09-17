@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR014
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Syria
+**Year**: 2025
+**Outcome description**: In the first part of 2025, Ahimsa Centre extended its outreach to train non-violent activists in the city of Raqqa and Deirezzor as a means to building an inclusive network of non-violent activists in <LOC>.
+**Significance of the outcome**: Ahimsa Centre was formed in <LOC> in 2023 and focused on training and working with non-violent activists in this city. As part of <redacted> its work strategy, it <redacted> the need to diversify its network of activists and to include activists originating from other regions in NES to provide opportunities for a more diverse dialogue. In 2025, Ahimsa Centre reached out to youth groups operating in <LOC> and Deirezzor seeking cooperation in order to provide opportunity for young women and men originating from these 2 cities to join Ahimsa Centre's activities. 
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: Through the SCC project, PAX provided mentoring and coaching to Ahimsa Centre towards institutional development and strategy development. Ahimsa Centre recognized the need to expand its networks and seek to work with young women and men from other areas in NES. 
+**Contribution of other actors and factors**: D&P funds a project of PAX called <person>. It is through this project that Ahimsa has been able to propose organizing non-violent action trainings to young women and men living in <LOC> and Deirezzor.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes (MoUs signed between Ahimsa and youth groups working in <LOC> and Raqqa)
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In the first part of 2025, Ahimsa Centre extended its outreach to train non-violent activists in the city of Raqqa and Deirezzor as a means to building an inclusive network of non-violent activists in <LOC>. Significance:  Ahimsa Centre was formed in <LOC> in 2023 and focused on training and working with non-violent activists in this city. As part of <redacted> its work strategy, it <redacted> the need to diversify its network of activists and to include activists originating from other regions in NES to provide opportunities for a more diverse dialogue. In 2025, Ahimsa Centre reached out to youth groups operating in <LOC> and Deirezzor seeking cooperation in order to provide opportunity for young women and men originating from these 2 cities to join Ahimsa Centre's activities.  Contribution:  Through the SCC project, PAX provided mentoring and coaching to Ahimsa Centre towards institutional development and strategy development. Ahimsa Centre recognized the need to expand its networks and seek to work with young women and men from other areas in NES.  Additional <redacted>:   Contribution of Other factors:  D&P funds a project of PAX called <person>. It is through this project that Ahimsa has been able to propose organizing non-violent action trainings to young women and men living in <LOC> and Deirezzor.
+**Outcome is negative**: NO
+**MCQType of change**: New structure
+**TypeOfChangeCluster**: Mobilizing citizens and organizations

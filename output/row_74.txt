@@ -1,0 +1,23 @@
+**FragmentID**: SCC-INT2305/ESF025
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: International / External Stress Factors
+**Year**: 2022
+**Outcome description**: In May 2022, the members of the Voluntary Principles Initiative (32 major energy and mining companies, 8 home and host countries and 14 international NGOs) adopted a gender sensitive Conflict Analysis Tool and Guidance at the VPI Plenary meeting.
+**Significance of the outcome**: Endorsement of due diligence criteria in conflict affected areas by a very large group of major listed companies and their home and host countries is a major breakthrough. The adoption of an implementation tool and guidance strengthens its practical signifcance. The tool, that is based on the UNGP and the OECD Guidelines, sets a high international best practice for multinational companies with large footprints. The integration of gender sensitivity in the process of gathering evidence for analysis further enhances its transformative potental.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Multiple
+**Scale**: International
+**Contribution of the programme**: PAX initiatied the VPI Conflict Working Group, convinced major energy and mining companies to take up the challenge, financed and co-steered the drafting of the tool, contributed actively in the discussions and the finalisation of the tool and its guidance document, and presented and defended the tool during the decisive 2022 VPI Plenary Meeting.
+**Contribution of other actors and factors**: Yes, 11 companies, governments and NGOs participated in the Conflict Working Group, that was admirably chaired by Jonathan Drimmer. CDA Collaborative drafted the tool and guidance document.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: www.voluntaryprinciples.org
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.3
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In May 2022, the members of the Voluntary Principles Initiative (32 major energy and mining companies, 8 home and host countries and 14 international NGOs) adopted a gender sensitive Conflict Analysis Tool and Guidance at the VPI Plenary meeting.  Significance description: Endorsement of due diligence criteria in conflict affected areas by a very large group of major listed companies and their home and host countries is a major breakthrough. The adoption of an implementation tool and guidance strengthens its practical signifcance. The tool, that is based on the UNGP and the OECD Guidelines, sets a high international best practice for multinational companies with large footprints. The integration of gender sensitivity in the process of gathering evidence for analysis further enhances its transformative potental.  Contribution of the programme: PAX initiatied the VPI Conflict Working Group, convinced major energy and mining companies to take up the challenge, financed and co-steered the drafting of the tool, contributed actively in the discussions and the finalisation of the tool and its guidance document, and presented and defended the tool during the decisive 2022 VPI Plenary Meeting.  Additional information:   Contribution of other actors and factors: Yes, 11 companies, governments and NGOs participated in the Conflict Working Group, that was admirably chaired by Jonathan Drimmer. CDA Collaborative drafted the tool and guidance document.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs
