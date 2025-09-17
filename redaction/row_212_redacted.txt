@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/ESF002
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Palestine
+**Year**: 2022
+**Outcome description**: General mills withdrew from illegal settlements in <redacted>
+**Significance of the outcome**: New practise, pulled out of specific joint-venture
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Companies
+**Scale**: Organisation
+**Contribution of the programme**: PAX is a leading member in the DBIO coalition, one of the publication that led to the decision
+**Contribution of other actors and factors**: Yes, potentially other campaigns and reports (for example <redacted>) 
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: SO4, UN Database companies
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: General mills withdrew from illegal settlements in <redacted>  Significance description: New practise, pulled out of specific joint-venture  Contribution of the programme: PAX is a leading member in the DBIO coalition, one of the publication that led to the decision  Additional information:   Contribution of other actors and factors: Yes, potentially other campaigns and reports (for example <redacted>) 
+**Outcome is negative**: NO
+**MCQType of change**: Policy implementation
+**TypeOfChangeCluster**: Policy

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ024
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 3
+**coutnry**: Lebanon
+**Year**: 2025
+**Outcome description**: On <redacted>, a group of 23 youth boys from Sarafand Public School in the South of Lebanon, who participated in life skills sessions with ABAAD, organized a recreational day for displaced children and facilitated an awareness session for parents on sexual harassment in public spaces.
+**Significance of the outcome**: The youth come from a conservative area in <LOC>, where young people are often discouraged from engaging in topics like protection, gender-based violence, or community support. Youth are usually not seen or encouraged as active contributors to social cohesion or public awareness efforts. Boys are often limited to traditional masculine roles.
+**Additional information (use if needed) **: These students come from a conservative community where young men are often discouraged from engaging in social or protection-related roles, especially those involving women and children. Before the intervention, their involvement in such issues was minimal or non-existent.
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: The 12 awareness sessions provided by ABAAD helped youth recognize their role in community engagement and protection. Inspired by the sessions’ focus on positive masculinities and active citizenship, the group initiated and coordinated a recreational event for displaced children and requested ABAAD’s support to deliver an awareness session for parents on sexual harassment. 
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: No
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 3.2
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: On <redacted>, a group of 23 youth boys from Sarafand Public School in the South of Lebanon, who participated in life skills sessions with ABAAD, organized a recreational day for displaced children and facilitated an awareness session for parents on sexual harassment in public spaces.  Significance description: The youth come from a conservative area in <LOC>, where young people are often discouraged from engaging in topics like protection, gender-based violence, or community support. Youth are usually not seen or encouraged as active contributors to social cohesion or public awareness efforts. Boys are often limited to traditional masculine roles.  Contribution of the programme: The 12 awareness sessions provided by ABAAD helped youth recognize their role in community engagement and protection. Inspired by the sessions’ focus on positive masculinities and active citizenship, the group initiated and coordinated a recreational event for displaced children and requested ABAAD’s support to deliver an awareness session for parents on sexual harassment.   Additional information: These students come from a conservative community where young men are often discouraged from engaging in social or protection-related roles, especially those involving women and children. Before the intervention, their involvement in such issues was minimal or non-existent.  Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging, Gender sensitive
+**TypeOfChangeCluster**: Gender, Community bridging

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV013
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Palestine
+**Year**: 2022
+**Outcome description**: 7amleh became trusted partner of YouTube
+**Significance of the outcome**: Easier to flag content that should be taken down or restore content that is falsely taken down.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Media
+**Scale**: Organisation
+**Contribution of the programme**: Programme activities contributed towards the relation with YouTube (PDAF)
+**Contribution of other actors and factors**: 
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes, outcome 1.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: 7amleh became trusted partner of YouTube  Significance description: Easier to flag content that should be taken down or restore content that is falsely taken down.  Contribution of the programme: Programme activities contributed towards the relation with <person> (PDAF)  Additional information:   Contribution of other actors and factors: NA
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

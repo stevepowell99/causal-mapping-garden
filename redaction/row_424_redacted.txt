@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR007
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Palestine
+**Year**: 2023
+**Outcome description**: On <redacted>, the Permanent Mission of Pakistan, on behalf of the Organisation of Islamic Cooperation, delivered an oral statement under agenda item 7 at the UN Human Rights Council in <LOC>, and addressed the illegal transfer of the house of <LOC> (a <redacted> <redacted> woman who lived in her house in <LOC>’s old city since she was born in 1952) into the hand of the Galitsia Trust (a settler association based in <LOC> with the objectives of <LOC> through redeeming the land and the imposition of <redacted> ownership over it). 
+**Significance of the outcome**: The intervention was essential in the sense that it was meant to bring to the attention of state parties to the council an issue that has not received the attention it merits, the “settling in the hearts” ideology, which refers to the illegal settling in the center of predominantly <redacted> neighborhoods through the dispossession of <redacted> immovable properties; and gender-inclusive and timely, as <person>, a <redacted> woman, was able to bring her case to the council <redacted> after the dispossession was completed and to represent hundreds of other <redacted> families that had been enduring this abhorrent practice.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: International
+**Contribution of the programme**: As part of the international advocacy capacity building project with AINL, the advocacy officer and legal research of CAC, as well as <person> were able to join the 54th session of the UNHRC to present her case and to raise the issue of the “settling in the hearts ideology”. During their visit, they were able to meet with the spokesperson of the Permanent Mission of Pakistan, <person>, who was touched by <person>’s case and included her case in the oral statement of the Organisation of Islamic States to the HRC session. 
+**Contribution of other actors and factors**: 
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.1 - Local partners have stronger capacities in monitoring and reporting economic, social and cultural rights and conducting L&A towards international duty bearers
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: On <redacted>, the Permanent Mission of Pakistan, on behalf of the Organisation of Islamic Cooperation, delivered an oral statement under agenda item 7 at the UN Human Rights Council in <LOC>, and addressed the illegal transfer of the house of <LOC> (a <redacted> <redacted> woman who lived in her house in <LOC>’s old city since she was born in 1952) into the hand of the Galitsia Trust (a settler association based in <LOC> with the objectives of <LOC> through redeeming the land and the imposition of <redacted> ownership over it).   Significance description: The intervention was essential in the sense that it was meant to bring to the attention of state parties to the council an issue that has not received the attention it merits, the “settling in the hearts” ideology, which refers to the illegal settling in the center of predominantly <redacted> neighborhoods through the dispossession of <redacted> immovable properties; and gender-inclusive and timely, as <person>, a <redacted> woman, was able to bring her case to the council <redacted> after the dispossession was completed and to represent hundreds of other <redacted> families that had been enduring this abhorrent practice.  Contribution of the programme: As part of the international advocacy capacity building project with AINL, the advocacy officer and legal research of CAC, as well as <person> were able to join the 54th session of the UNHRC to present her case and to raise the issue of the “settling in the hearts ideology”. During their visit, they were able to meet with the spokesperson of the Permanent Mission of Pakistan, <person>, who was touched by <person>’s case and included her case in the oral statement of the Organisation of Islamic States to the HRC session.   Additional information:   Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Gender sensitive
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Gender

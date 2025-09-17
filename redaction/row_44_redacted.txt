@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV013
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Burundi
+**Year**: 2022
+**Outcome description**: In <redacted>, a member of the Inamahoro movement living in Mahama refugee resettlement supported a victim of GBV to file a complaint to the local court, in collaboration with " Femmes Volontaires", a local association that fights against  Gender Based Violences after attending a training on Advocacy.
+**Significance of the outcome**: For such cases, there was lack of solidarity and appropriate support from the camp authorities, family and community members coupled with limited knowledge and skills on the legal processes. The training on advocacy is important because it equips HRDs with skills on how to support victims of violence and advocate for them. 
+**Additional information (use if needed) **: The member mobilised the camp authorities who showed solidarity to the victim by pronouncing that such cases should be reported to their office. The case is still being processed.
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: Through the programme, funds were provided to conduct an advocacy training from <redacted>. The training was attended by 5 members of Inamahoro Movement. The training was facilitated by the president of the movement.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <person> testimony would be used as no documentation is available
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: OUTPUT 1.1.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In <redacted>, a member of the Inamahoro movement living in Mahama refugee resettlement supported a victim of GBV to file a complaint to the local court, in collaboration with " Femmes Volontaires", a local association that fights against  Gender Based Violences after attending a training on Advocacy.  Significance description: For such cases, there was lack of <redacted> and appropriate support from the camp authorities, family and community members coupled with limited knowledge and skills on the legal processes. The training on advocacy is important because it equips HRDs with skills on how to support victims of violence and advocate for them.   Contribution of the programme: Through the programme, funds were provided to conduct an advocacy training from <redacted>. The training was attended by 5 members of Inamahoro Movement. The training was facilitated by the president of the movement.  Additional information: The member mobilised the camp authorities who showed solidarity to the victim by pronouncing that such cases should be reported to their office. The case is still being processed.  Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Capacity change L and A, Gender transformative
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Gender, Capacity change

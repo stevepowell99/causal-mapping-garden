@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ015
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Ethiopia
+**Year**: 2022
+**Outcome description**: In 2022, following the training in gender integration and Prevention of Sexual Exploitation and Abuse, Accountability towards the affected population and prevention of corruption case for 15 Civil Society Organizations, they were able to incorporate issues of gender and accountability for gender based violence in program design, application of gender balance in overall activities and registered aphone number for safeguarding and assigned a staff to respond to complaints.  
+**Significance of the outcome**: Before the training, Civil society Organizations lacked tools for accountability, gender integration, and prevention of sexual exploitation and abuse mechanisms. 
+**Additional information (use if needed) **: The trainings also allowed Civil Society Organisations to create space to analyze how accountability mechanism, sexual exploitation and accountability impact their own programs and the contexts where they work. In addition, the training provided participants with tools to integrate accountability in their project cycle management. <person> from All developed a gender policy for the institution. 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: In 2022, ABAAD delivered trainings for gender integration and Prevention of Sexual Exploitation and Abuse and Accountability towards the affected population and prevention of corruption case for 15 Civil Society Organizations .  
+**Contribution of other actors and factors**: None 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Social media, Phone number, Gender policy (<person> from All)
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Output 3.2.2 and Outcome 3.2
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In 2022, following the training in gender integration and <redacted> of Sexual Exploitation and Abuse, Accountability towards the affected <redacted> and <redacted> of <redacted> case for 15 Civil Society Organizations, they were able to incorporate issues of gender and accountability for gender based violence in program design, application of gender balance in overall <redacted> and <redacted> aphone number for safeguarding and assigned a staff to respond to <redacted>.    Significance description: Before the training, Civil society Organizations lacked tools for accountability, gender integration, and <redacted> of sexual exploitation and abuse <redacted>.   Contribution of the programme: In 2022, ABAAD delivered trainings for gender integration and Prevention of Sexual Exploitation and Abuse and Accountability towards the affected population and prevention of corruption case for 15 Civil Society Organizations .    Additional information: The trainings also allowed Civil Society Organisations to create space to analyze how accountability mechanism, sexual exploitation and accountability impact their own programs and the contexts where they work. In addition, the training provided participants with tools to integrate accountability in their project cycle management. <person> from All developed a gender policy for the institution.   Contribution of other actors and factors: None 
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A, Gender transformative
+**TypeOfChangeCluster**: Gender, Capacity change

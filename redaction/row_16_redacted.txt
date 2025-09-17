@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV041
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: South Sudan
+**Year**: 2021
+**Outcome description**: In <redacted>, the South Sudan Youth Constitution Review Working Group members developed a lobby and advocacy strategy on civic space and youth rights in <LOC>, to guide their advocacy activities on the constitution making process.
+**Significance of the outcome**: The lobby and advocacy strategy will help the SSYCW to effectively advocate for their participation in the constitution making process.
+**Additional information (use if needed) **: There is no youth group in South Sudan with an advocacy strategy. The document contains activities/ strategies, allies, potential spoliers, budget
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: National
+**Contribution of the programme**: Under the SCC programme,AHD conducted a <redacted> training on lobby and advocacy which included a session on how to design lobby and advocacy strategies.
+**Contribution of other actors and factors**: This was drafted by South Sudan Youth Constitution Review Working Group with the help of AHD.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: The SSYCW Lobby and Advocacy Plan
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In <redacted>, the South Sudan Youth Constitution Review Working Group members developed a lobby and advocacy strategy on civic space and youth rights in <LOC>, to guide their advocacy activities on the constitution making process.  Significance description: The lobby and advocacy strategy will help the SSYCW to effectively advocate for their participation in the constitution making process.  Contribution of the programme: Under the SCC programme,AHD conducted a <redacted> training on lobby and advocacy which included a session on how to design lobby and advocacy strategies.  Additional information: There is no youth group in South Sudan with an advocacy strategy. The document contains activities/ strategies, allies, potential spoliers, budget  Contribution of other actors and factors: This was drafted by South Sudan Youth Constitution Review Working Group with the help of AHD.
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

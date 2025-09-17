@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR003
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Lebanon
+**Year**: 2022
+**Outcome description**: In <redacted>, the <redacted>, DG NEAR, and DG ECHO, for the first time voiced (verbal) support for a monitoring mechanism as recommended by RPW.
+**Significance of the outcome**: RPW has been <redacted> UNHCR to take an active role in the establishment of an independent multi-stakeholder mechanism, with an international mandate, to monitor the <redacted> for safe, voluntary, informed and dignified return to Syria (as outlined in the 2018 UNHCR <redacted> and <redacted> for Refugee Return to Syria). Also, to ensure that the updated ROF includes a clear <redacted> to start, in the short term, a work stream to identify concrete options and <redacted> for such a <redacted> mechanism. RPW will continue engaging with EU actors to include this recommendation in the key note speech of the <LOC> 7 <redacted> in 2023. 
+**Additional information (use if needed) **:  
+**Rating significance**: large
+**Social actor**: International community
+**Scale**: National
+**Contribution of the programme**: The RPW coalition has set up various online and in-person meetings with both the EU and UNHCR officals to present our findings and share our recommendations.
+**Contribution of other actors and factors**: Other internaitonal and local organisaitons have been advocating the EU on <redacted> refugee protection.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: No
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.1 - EU and EU member states take actions to protect the principle of non-refoulement and pressure the <redacted> authorities to increase the protection space for <redacted> refugees in Lebanon.
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In <redacted>, the <redacted>, DG NEAR, and DG ECHO, for the first time voiced (verbal) support for a <redacted> mechanism as recommended by RPW.  Significance description: RPW has been <redacted> UNHCR to take an active role in the establishment of an independent multi-stakeholder mechanism, with an international mandate, to monitor the <redacted> for safe, voluntary, informed and dignified return to Syria (as outlined in the 2018 UNHCR <redacted> and <redacted> for Refugee Return to Syria). Also, to ensure that the updated ROF includes a clear <redacted> to start, in the short term, a work stream to identify concrete options and <redacted> for such a <redacted> mechanism. RPW will continue engaging with EU actors to include this recommendation in the key note speech of the <LOC> 7 <redacted> in 2023.   Contribution of the programme: The RPW coalition has set up various online and in-person meetings with both the EU and UNHCR officals to present our findings and share our recommendations.  Additional information:    Contribution of other actors and factors: Other internaitonal and local organisaitons have been advocating the EU on <redacted> refugee protection.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

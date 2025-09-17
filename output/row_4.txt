@@ -1,0 +1,23 @@
+**FragmentID**: SCC-DRC2305/CIV009
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: DR Congo
+**Year**: 2021
+**Outcome description**: In April 2021, 12 civil society non-governmental organizations in Maniema who were trained in physical and digital security management, created a human rights defenders protection network called Haki Na Sheria Maniema (REHASHEMA). This network was created to harmonize and coordinate the protection of human rights defenders in the province of Maniema.
+**Significance of the outcome**: The current networks for the protection of human rights defenders in Maniema are inactive, making their services for the protection of human rights defenders ineffective. The establishment of REHASHEMA will strengthen the local capacity of human rights defenders in Maniema in mechanisms for the protection of human rights defenders.   
+**Additional information (use if needed) **:  Maniema province is among the provinces with a large number of human rights violations and abuses. The group Mai Mai Malaika has ordered the beating of all women and girls wearing miniskirts, cullottes and trousers. Human rights defenders who have been denouncing these abuses are targeted by Mai Mai Malaika.
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Local
+**Contribution of the programme**: DefendDefenders provided funding to Protection de Partenariat Integrée (PPI) to train 18 (W)HRDs from 12 organisations in Kindu, Maniema in physical and digital security management in March 2021 for five days. 
+**Contribution of other actors and factors**: None 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: REHASHEMA Charter, Report on 55 cases handled by REHASHEMA, REHASHEMA Action Plan 2023. 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.5
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In April 2021, 12 civil society non-governmental organizations in Maniema who were trained in physical and digital security management, created a human rights defenders protection network called Haki Na Sheria Maniema (REHASHEMA). This network was created to harmonize and coordinate the protection of human rights defenders in the province of Maniema.  Significance description: The current networks for the protection of human rights defenders in Maniema are inactive, making their services for the protection of human rights defenders ineffective. The establishment of REHASHEMA will strengthen the local capacity of human rights defenders in Maniema in mechanisms for the protection of human rights defenders.     Contribution of the programme: DefendDefenders provided funding to Protection de Partenariat Integrée (PPI) to train 18 (W)HRDs from 12 organisations in Kindu, Maniema in physical and digital security management in March 2021 for five days.   Additional information:  Maniema province is among the provinces with a large number of human rights violations and abuses. The group Mai Mai Malaika has ordered the beating of all women and girls wearing miniskirts, cullottes and trousers. Human rights defenders who have been denouncing these abuses are targeted by Mai Mai Malaika.  Contribution of other actors and factors: None 
+**Outcome is negative**: NO
+**MCQType of change**: New structure, Capacity change  Safety and Security
+**TypeOfChangeCluster**: Capacity change, Mobilizing citizens and organizations

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-PAL2508/PHR017
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Palestine
+**Year**: 2025
+**Outcome description**: In May 2025, three staff members of the Community Action Centre (CAC), Yasmeen Sbeih, Mounir Marjieh, and Reema Riziq, participated in a specialized online training on open-source investigation and geo-location analysis, offered free of charge by a specialized organization. This opportunity emerged following Yasmeen’s participation in the 58th session of the UN Human Rights Council in Geneva in March 2025, where she engaged with this organisation during a programme-supported mission. 
+**Significance of the outcome**: Before this, CAC’s research team had limited exposure to advanced open-source investigation tools and geo-spatial analysis techniques. Submissions were based primarily on qualitative data and lacked visual or spatial components. This outcome is significant because it enhances the technical capacity (capacity building outcome) of CAC’s research and advocacy team, enabling them to produce more precise, evidence-based, and visually compelling submissions. It also reflects a commitment to empowering junior and female staff, particularly Yasmeen, by investing in their professional development and integrating them into international advocacy spaces.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: As part of the programme, CAC supported Yasmeen Sbeih’s participation in the 58th session of the UN Human Rights Council in March 2025. During this mission, she engaged with an organization that later offered a free training opportunity. 
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: Signal coordination messages (if archived) Training agenda or materials (if available) Internal notes or reflections from participants CAC’s upcoming submissions incorporating new techniques (once published)
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 2.1 - Local partners have stronger capacities in monitoring and reporting economic, social and cultural rights and conducting L&A towards international duty bearers
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In May 2025, three staff members of the Community Action Centre (CAC), Yasmeen Sbeih, Mounir Marjieh, and Reema Riziq, participated in a specialized online training on open-source investigation and geo-location analysis, offered free of charge by a specialized organization. This opportunity emerged following Yasmeen’s participation in the 58th session of the UN Human Rights Council in Geneva in March 2025, where she engaged with this organisation during a programme-supported mission.  Significance:  Before this, CAC’s research team had limited exposure to advanced open-source investigation tools and geo-spatial analysis techniques. Submissions were based primarily on qualitative data and lacked visual or spatial components. This outcome is significant because it enhances the technical capacity (capacity building outcome) of CAC’s research and advocacy team, enabling them to produce more precise, evidence-based, and visually compelling submissions. It also reflects a commitment to empowering junior and female staff, particularly Yasmeen, by investing in their professional development and integrating them into international advocacy spaces. Contribution:  As part of the programme, CAC supported Yasmeen Sbeih’s participation in the 58th session of the UN Human Rights Council in March 2025. During this mission, she engaged with an organization that later offered a free training opportunity.  Additional Info:   Contribution of Other factors:  
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

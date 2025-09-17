@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV018
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 2
+**coutnry**: South Sudan
+**Year**: 2023
+**Outcome description**: On <redacted>, the Secretary General of South Sudan Youth Constitutional Working Group, Mr. <person>, was appointed a speaker of the East African Youth Parliament in <LOC>, Tanzania. 
+**Significance of the outcome**: Though this outcome is more beneficial to Mr. <person>, it is equally significant to our project goal because it enables us to easily garner youth voices and support from the regional level.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: International community
+**Scale**: Regional
+**Contribution of the programme**: This outcome was partly a result of his active engagement in <LOC> constitution making process through our project activities such as radio talk shows among others because, Mr. <person> is a member of the East African Youth Network, a space which could have played a greater role thereof. However, in his appreciation post on WhatsApp and Facebook, Mr. <person> said that his role as Secretary General of South Sudan Youth Constitutional Working Group played a significant part in his appointment.
+**Contribution of other actors and factors**: 
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Facebook page, whatsapp channel, website East African Youth Parliament.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.1 Youth and women's groups effectively advocate for participation in the constitution making process and for their needs and rights to be included in the constitution.                         
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: On <redacted>, the Secretary General of South Sudan Youth Constitutional Working Group, Mr. <person>, was appointed a speaker of the East African Youth Parliament in <LOC>, Tanzania.   Significance description: Though this outcome is more beneficial to Mr. <person>, it is equally significant to our project goal because it enables us to easily garner youth voices and support from the regional level.  Contribution of the programme: This outcome was partly a result of his active engagement in <LOC> constitution making process through our project activities such as radio talk shows among others because, Mr. <person> is a member of the East African Youth Network, a space which could have played a greater role thereof. However, in his appreciation post on WhatsApp and Facebook, Mr. <person> said that his role as Secretary General of South Sudan Youth Constitutional Working Group played a significant part in his appointment.  Additional information:   Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Other
+**TypeOfChangeCluster**: Other

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV003
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Ethiopia
+**Year**: 2021
+**Outcome description**: In 2021, following the virtual scenario building workshop conducted by DefendDefenders, local partner CSOs in Ethiopia were able to conduct voter education and election observation without harassments and interference of the state.
+**Significance of the outcome**: Without the scenario building workshop Civil Society Organisations were not able to effectively particiapate in election observation. Additionally, Civil Society Organisations didn’t have an election manual to guide election observation and voter education.
+**Additional information (use if needed) **: A draft election manual and hotline system were developed during the election.
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: In 2021, DefendDefenders facilitated a scenario building workshop for local CSOs in Ethiopia in the run up to the elections
+**Contribution of other actors and factors**: Consortium of Ethiopian Human Rights Organisation, Ethiopia Human Rights Council,  Coalition of Ethiopian Civil Society Organisations for Elections, Lawyers for Human Rights, Center for Advancement of Rights and Democracy, Ethiopia Human Rights Council, Vision Ethiopia Congress for Democracy, Access for Women an Persons with Disabilities, Association for Human Rights in Ethiopia, <LOC>. Consortium of Ethiopia Human Rights Organisation developed a manual and provide a voter education. Coalition of Ethiopian Civil Society Organisations for Elections developed a hotline system for the election.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Election Manual, Hotline system, Brochure on voter education
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Output 1.3.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In 2021, following the virtual scenario building workshop conducted by DefendDefenders, local partner CSOs in Ethiopia were able to conduct voter education and election observation without harassments and interference of the state.  Significance description: Without the scenario building workshop Civil Society Organisations were not able to effectively particiapate in election observation. Additionally, Civil Society Organisations didn’t have an election manual to guide election observation and voter education.  Contribution of the programme: In 2021, DefendDefenders facilitated a scenario building workshop for local CSOs in Ethiopia in the run up to the elections  Additional information: A draft election manual and hotline system were developed during the election.  Contribution of other actors and factors: Consortium of Ethiopian Human Rights Organisation, Ethiopia Human Rights Council,  Coalition of Ethiopian Civil Society Organisations for Elections, Lawyers for Human Rights, Center for Advancement of Rights and Democracy, Ethiopia Human Rights Council, Vision Ethiopia Congress for Democracy, Access for Women an Persons with Disabilities, Association for Human Rights in Ethiopia, <LOC>. Consortium of Ethiopia Human Rights Organisation developed a manual and provide a voter education. Coalition of Ethiopian Civil Society Organisations for Elections developed a hotline system for the election.
+**Outcome is negative**: NO
+**MCQType of change**: Other
+**TypeOfChangeCluster**: Other

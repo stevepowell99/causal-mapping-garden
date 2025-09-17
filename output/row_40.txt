@@ -1,0 +1,23 @@
+**FragmentID**: SCC-INT2305/ESF015
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: International / External Stress Factors
+**Year**: 2021
+**Outcome description**: Between 2021 and 2011 the ten largest Dutch pension funds hav improved their investment policies on 118 points, including 20 on human rights, and no improvements on weapons policy.
+**Significance of the outcome**: Policy improvement is the first step towards improvement of practice around preventing, mitigating and remediating human rights violations
+**Additional information (use if needed) **: (-) 
+**Rating significance**: medium
+**Social actor**: Companies
+**Scale**: Organisation
+**Contribution of the programme**: The Fair Pension Guide of which PAX is part (with a focus on arms and human rights) assesses and scores the investment policies of the largest 10 Dutch pension funds since 2019. In doing so it helps create a race to the top, which incentives pension funds to improve their policies
+**Contribution of other actors and factors**: PAX also participates in the tripartite agreements with the government and pension sector, focuses on implementation of international human rights standards (UNGPs and OECD Guidelines). This also helped improve policy. And: other CSO's also push for policy improvements, though often on other issues (e.g. climate)
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: https://eerlijkegeldwijzer.nl/media/497670/2022-02-beleidsupdate-pensioenen.pdf
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.1
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: Between 2021 and 2011 the ten largest Dutch pension funds hav improved their investment policies on 118 points, including 20 on human rights, and no improvements on weapons policy.  Significance description: Policy improvement is the first step towards improvement of practice around preventing, mitigating and remediating human rights violations  Contribution of the programme: The Fair Pension Guide of which PAX is part (with a focus on arms and human rights) assesses and scores the investment policies of the largest 10 Dutch pension funds since 2019. In doing so it helps create a race to the top, which incentives pension funds to improve their policies  Additional information: (-)   Contribution of other actors and factors: PAX also participates in the tripartite agreements with the government and pension sector, focuses on implementation of international human rights standards (UNGPs and OECD Guidelines). This also helped improve policy. And: other CSO's also push for policy improvements, though often on other issues (e.g. climate)
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-YEM2305/ESF002
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Yemen
+**Year**: 2021
+**Outcome description**: During 2021 and 2022, one Dutch investor (Actiam) leads a critical dialogue (company engagement, in jargon) with a US arms producer that supplies Saudi Arabia with weapon systems.
+**Significance of the outcome**: This is the first engagement by the financial institution with an arms company that we know of, and it focuses directly on the war in Yemen. 
+**Additional information (use if needed) **: To clarify: engagement means that a financial institution opens a dialogue with a company it invests in, to change its behaviour and/or policy. 
+**Rating significance**: large
+**Social actor**: Companies
+**Scale**: National
+**Contribution of the programme**: The engagement by the investor is based directly on a report PAX published in 2020. 
+**Contribution of other actors and factors**: No other actors contributed to this outcome. 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: In this radio-clip, an Actiam representative explains the engagement (in Dutch): https://www.nporadio1.nl/fragmenten/geld-of-je-leven/0caf4e31-06e1-4830-bdbc-aae5fce4ef7c/2022-05-03-beleggers-over-investeren-in-de-defensieindustrie. And the PAX report: https://eerlijkegeldwijzer.nl/verzekeringswijzer/nieuws/2020/aegon-allianz-en-nn-group-investeren-volop-in-foute-wapenleveranciers/
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 3.1
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: During 2021 and 2022, one Dutch investor (Actiam) leads a critical dialogue (company engagement, in jargon) with a US arms producer that supplies Saudi Arabia with weapon systems.  Significance description: This is the first engagement by the financial institution with an arms company that we know of, and it focuses directly on the war in Yemen.   Contribution of the programme: The engagement by the investor is based directly on a report PAX published in 2020.   Additional information: To clarify: engagement means that a financial institution opens a dialogue with a company it invests in, to change its behaviour and/or policy.   Contribution of other actors and factors: No other actors contributed to this outcome. 
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

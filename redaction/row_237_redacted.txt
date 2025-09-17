@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/Civ013
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Lebanon
+**Year**: 2023
+**Outcome description**: I. and activists from southern of Chouf and now is part of an opponent political group and active in his area was invited by Dekent El Nes (economic <redacted>) from the Northern of Chouf after meeting in the Chouf Activists academy. Activists started communicating together and coordinating their <redacted> together. In 2023, I and activists from southern of Chouf became a part of an opponent political group after being invited by Dekent El Nes (economic initiative) from <LOC>"
+**Significance of the outcome**: Activists of different areas of Chouf had little to zero connection or communication. After the academy, the communication and building networks and discussions together has been started which breaks the barriers and the isolation of the areas and the opponent political groups.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: <person> brought the activists together in <redacted> and opened the space for them to network and discuss different issues.
+**Contribution of other actors and factors**: No: They met in the DAA community
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: No evidence
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.2.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: I. and activists from southern of Chouf and now is part of an opponent political group and active in his area was invited by Dekent El Nes (economic <redacted>) from the Northern of Chouf after meeting in the Chouf Activists academy. Activists started communicating together and coordinating their <redacted> together. In 2023, I and activists from southern of Chouf became a part of an opponent political group after being invited by Dekent El Nes (economic <redacted>) from <LOC>"  Significance description: Activists of different areas of Chouf had little to zero <redacted> or communication. After the academy, the communication and building networks and discussions together has been started which breaks the barriers and the isolation of the areas and the opponent political groups.  Contribution of the programme: <person> brought the activists together in <redacted> and opened the space for them to network and discuss different issues.  Additional information:   Contribution of other actors and factors: No: They met in the DAA community
+**Outcome is negative**: NO
+**MCQType of change**: Other
+**TypeOfChangeCluster**: Other

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR004
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 3
+**coutnry**: Yemen
+**Year**: 2025
+**Outcome description**: In <redacted>, Resonate! Yemen developed a youth-focused project on the basis of the militarization and masculinities capacity training efforts from pax and abaad .
+**Significance of the outcome**: Previously, such gender-transformative concepts were not embedded in Resonate!'s youth programming. This new application reflects a deeper understanding and institutional uptake of inclusive approaches.
+**Additional information (use if needed) **: project proposal with other international partner
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: The program helped to prepare the ground through its general focus on youth and social cohesion, but the direct change was catalyzed by <person> training and PAX coordination.
+**Contribution of other actors and factors**: No
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: project proposal with other international partner
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In <redacted>, Resonate! Yemen developed a youth-focused project on the basis of the militarization and masculinities capacity training efforts from pax and abaad . Significance:  Previously, such gender-transformative concepts were not embedded in Resonate!'s youth programming. This new application reflects a deeper understanding and institutional uptake of inclusive approaches. Contribution:  The program helped to prepare the ground through its general focus on youth and social cohesion, but the direct change was catalyzed by <person> training and PAX coordination. Additional <redacted>:  project proposal with other international partner Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR037
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 2
+**coutnry**: Lebanon
+**Year**: 2023
+**Outcome description**: In 2023, INGOs, think tanks and NGOs working on <redacted> refugee protection explored possibilities for collaboration with the Refugee Protection Watch coalition.
+**Significance of the outcome**: RPW has become a 'household name' in the sector
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: International community
+**Scale**: National
+**Contribution of the programme**: RPW has built legitimacy and credibility over <redacted>.
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.3.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In 2023, INGOs, think tanks and NGOs working on <redacted> refugee protection explored possibilities for collaboration with the Refugee Protection Watch coalition.  Significance description: RPW has become a 'household name' in the sector  Contribution of the programme: RPW has built legitimacy and credibility over <redacted>.  Additional information:   Contribution of other actors and factors: N/A
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

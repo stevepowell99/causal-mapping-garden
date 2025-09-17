@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR006
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Sahel/Mali
+**Year**: 2023
+**Outcome description**: In Mali in 2023, after being requested by the Public <redacted> at the Mopti Court of Appeal, during the work of the first ordinary session of the Mopti Court of Assizes held from <redacted>, TRIJEUD was able to provide legal counsel and support to 5 victims of abuse and <redacted>, including three cases of paedophilia, one case of rape and one case of murder, during the <redacted> session of the Mopti Court of <person>
+**Significance of the outcome**: Prior to the TRIJEUD's intervention, victims were faced with a lack of adequate legal support, which often left them without recourse before the courts, especially in cases as sensitive as paedophilia and rape, which constitute GBV. TRIJEUD's intervention not only ensured legal representation for the victims, but also reinforced the objectives of SCC's programme by promoting access to justice and fighting impunity for survivors of GBV and human rights abuses.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: Thanks to the advocacy, lobbying and human rights monitoring work carried out by TRIJEUD Mali on access to justice and the protection of victims of human rights abuses and violations, the Public Prosecutor at the Mopti Court of Appeal referred a number of cases to TRIJEUD-Mali in order to support the civil parties at the trials in <LOC>.
+**Contribution of other actors and factors**: The CBSA (Lawyers Without Borders Canada) played a role in achieving this by providing financial support to TRIJEUD Mali.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Ref rapport TRIJEUD assises <person> . <person>:  <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Output 2.2.1 and outcome 2.2
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In Mali in 2023, after being requested by the Public <redacted> at the Mopti Court of Appeal, during the work of the first ordinary session of the Mopti Court of Assizes held from <redacted>, TRIJEUD was able to provide legal counsel and support to 5 victims of abuse and <redacted>, including three cases of paedophilia, one case of rape and one case of murder, during the <redacted> session of the Mopti Court of Assizes  Significance description: Prior to the TRIJEUD's intervention, victims were faced with a lack of adequate legal support, which often left them without recourse before the courts, especially in cases as sensitive as paedophilia and rape, which constitute GBV. TRIJEUD's intervention not only ensured legal representation for the victims, but also reinforced the objectives of SCC's programme by promoting access to justice and fighting impunity for survivors of GBV and human rights abuses.  Contribution of the programme: Thanks to the advocacy, lobbying and human rights monitoring work carried out by TRIJEUD Mali on access to justice and the protection of victims of human rights abuses and violations, the Public Prosecutor at the Mopti Court of Appeal referred a number of cases to TRIJEUD-Mali in order to support the civil parties at the trials in <LOC>.  Additional information:   Contribution of other actors and factors: The CBSA (Lawyers Without Borders Canada) played a role in achieving this by providing financial support to TRIJEUD Mali.
+**Outcome is negative**: NO
+**MCQType of change**: Policy implementation, Policy change, Gender transformative
+**TypeOfChangeCluster**: Policy, Gender

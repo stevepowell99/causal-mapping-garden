@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR006
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Yemen
+**Year**: 2024
+**Outcome description**:  In <redacted>, A team of seven members from Taiz, developed project proposals and successfully secured funding from other civil society organizations.
+**Significance of the outcome**: Youth moved from beneficiaries to civic leaders, using what they learned to fundraise independently.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Organisation
+**Contribution of the programme**: In 2023, seven members from Taiz, trained under Resonate! Yemen’s “Impact Maker 2” program, launched the “Impact Maker Youth <redacted>” in <LOC>. In 2024, the team developed and submitted project proposals, successfully securing funding from other civil society organizations. This marked a significant step in empowering locally trained youth to lead and sustain community-driven initiatives.
+**Contribution of other actors and factors**: no
+**Rating contribution**: moderate
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: Yes – Proposals, initiative social media 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**:  In <redacted>, A team of seven members from Taiz, developed project proposals and successfully secured funding from other civil society organizations.  Significance description: Youth moved from beneficiaries to civic leaders, using what they learned to fundraise independently.  Contribution of the programme: In 2023, seven members from Taiz, trained under Resonate! Yemen’s “Impact Maker 2” program, launched the “Impact Maker Youth <redacted>” in <LOC>. In 2024, the team developed and submitted project proposals, successfully securing funding from other civil society organizations. This marked a significant step in empowering locally trained youth to lead and sustain community-driven initiatives.  Additional information:   Contribution of other actors and factors: no
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

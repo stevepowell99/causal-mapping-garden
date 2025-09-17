@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR002
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Syria
+**Year**: 2025
+**Outcome description**: In <redacted>, JFL organised an meeting between SDF and representatives of civil society organisations allowing civil society to voice opinions and concerns to local authorities regarding situation in <redacted>-majority areas in <LOC> (NES)
+**Significance of the outcome**: No communication channel existed before between leadership of SDF and civil society organizations working in <LOC>.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Regional
+**Contribution of the programme**: JFL organized a conference in <LOC> during which a person closely collaborating with local authorities recognizing <person> as an actor with adequate capacity to lead this dialogue effort between civil society working in <redacted>-majority areas and local authorities. it is the first time that such dialogue has taken place.
+**Contribution of other actors and factors**: While the conference allowed to make direct connections with the person closely collaborating with local authorities, <person> has developed their profile in addressing issues related to inclusive governance by regularly producing reports on the situation in <LOC> and hilighting shortcomings in terms of governance in <LOC>. 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes (minute of meetings of <person> with local authorities)
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In <redacted>, JFL organised an meeting between SDF and representatives of civil society organisations allowing civil society to voice opinions and concerns to local authorities regarding situation in <redacted>-majority areas in <LOC> (NES) Significance:  No communication channel existed before between leadership of SDF and civil society organizations working in <LOC>. Contribution:  JFL organized a conference in <LOC> during which a person closely collaborating with local authorities recognizing <person> as an actor with adequate capacity to lead this dialogue effort between civil society working in <redacted>-majority areas and local authorities. it is the first time that such dialogue has taken place. Additional <redacted>:   Contribution of Other factors:  While the conference allowed to make direct connections with the person closely collaborating with local authorities, <person> has developed their profile in addressing issues related to inclusive governance by regularly producing reports on the situation in <LOC> and hilighting shortcomings in terms of governance in <LOC>. 
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Creating space for CSOs
+**TypeOfChangeCluster**: Empowering citizens and CSOs

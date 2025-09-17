@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/<redacted>
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: South Sudan
+**Year**: 2023
+**Outcome description**: In <redacted>, two women from the Strengthening Civil courage advocacy group in Aweil were appointed as chief in Aweil- northern <LOC> state.
+**Significance of the outcome**: Cultural norms and traditions in <LOC> – northern Bhar’- <person> as in the rest of SS, deny the right of women to be appointed in the traditional law. Customary Laws are mostly used in a subjective manner by local authorities that are traditionally men. In most of the cases the results of this system benefit men over women and children
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: As part of PoV, Lawanci trained a group of women to know and advocate for their rights. Consultative meetings with the local community leaders, we meet the head of the High Court- representative women to discuss the importance of women taking part in the case hearings and they responded by appointed these women
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Partners data
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 3.4 More women leaders fulfill leadership roles and participate in decision making processes 
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In <redacted>, two women from the Strengthening Civil courage advocacy group in Aweil were appointed as chief in Aweil- northern <LOC> state.  Significance description: Cultural norms and traditions in <LOC> – northern Bhar’- <person> as in the rest of SS, deny the right of women to be appointed in the traditional law. Customary Laws are mostly used in a subjective manner by local authorities that are traditionally men. In most of the cases the results of this system benefit men over women and children  Contribution of the programme: As part of PoV, Lawanci trained a group of women to know and advocate for their rights. Consultative meetings with the local community leaders, we meet the head of the High Court- representative women to discuss the importance of women taking part in the case hearings and they responded by appointed these women  Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Gender transformative, <redacted> participation, Other
+**TypeOfChangeCluster**: Gender, Other

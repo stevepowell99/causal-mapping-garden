@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ020
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: South Sudan
+**Year**: 2023
+**Outcome description**: In <redacted>, women in <LOC> village, <LOC> in <LOC> state expressed openly that men stopped their wives to participate in community meetings and other peace dialogues activities during leadership mentorship outreach by Torit women advocacy group.
+**Significance of the outcome**: It was the first time for Motti village women to receive knowledge on peace buildng mentorship skills. Male community leaders, chiefs, line minsitries directors were also invited to the community meetings. Normally, women don't speak up in front of those people.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: torit women advocacy group with support of justice and peace <redacted> of catholic diocese of torit conducted a <redacted> <redacted> skill on peace building for women in <LOC> villages. Justice and peace <redacted> <redacted> of tori built the capacity of women advocacy group by training them in peace building, <redacted> and advoacy in 2022.
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: meeting reports
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.1  Women, youth, local traditional leaders and local politicians from conflicting communities reconcile through regional peace-building processes and adhere to local level peace agreements
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In <redacted>, women in <LOC> village, <LOC> in <LOC> state expressed openly that men stopped their wives to participate in community meetings and other peace dialogues <redacted> during <redacted> outreach by Torit women advocacy group.  Significance description: It was the first time for Motti village women to receive knowledge on peace buildng <redacted> skills. Male community leaders, chiefs, line <redacted> directors were also invited to the community meetings. Normally, women don't speak up in front of those people.  Contribution of the programme: torit women advocacy group with support of justice and peace <redacted> of catholic diocese of torit conducted a <redacted> <redacted> skill on peace building for women in <LOC> villages. Justice and peace <redacted> <redacted> of tori built the capacity of women advocacy group by training them in peace building, <redacted> and advoacy in 2022.  Additional information:   Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

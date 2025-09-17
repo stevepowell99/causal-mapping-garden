@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR008
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: South Sudan
+**Year**: 2023
+**Outcome description**: On <redacted>, 32 members of youth from Malakal and protection of civilians site, in presence of two ministers of Peacebuilding and Information, agreed publically that they will denounce violence and live peacefully in <redacted> town.
+**Significance of the outcome**: For the first time since 2016 incident in Protection of Civilians site the youth group from <person> on one side and Shilluk-Nure on the other side gather together in <redacted> town to discuss issues of peaceful co-existence.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: Justice and Peace Commission of the Catholic Diocese of Malakal facilitated a youth roundtable meeting for both youth representatives of the Malakal and Protection of Civilian site. This meeting took place at the Ministry of Information and Telecommunication and services of the Upper Nile State Malakal. There were representatives of the <LOC> present at the meeting which shows importance of the meeting.
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: partners data
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.2  Pastoralist Youth groups increase their engagement in/ initiate peace building-activities to end child-abduction, revenge killing, cattle-raiding and ambushes 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: On <redacted>, 32 members of youth from Malakal and <redacted> of civilians site, in presence of two ministers of Peacebuilding and Information, agreed <redacted> that they will denounce violence and live <redacted> in <redacted> town.  Significance description: For the first time since 2016 incident in Protection of Civilians site the youth group from <person> on one side and Shilluk-Nure on the other side gather together in <redacted> town to discuss issues of peaceful co-existence.  Contribution of the programme: Justice and Peace Commission of the Catholic Diocese of Malakal facilitated a youth roundtable meeting for both youth representatives of the Malakal and Protection of Civilian site. This meeting took place at the Ministry of Information and Telecommunication and services of the Upper Nile State Malakal. There were representatives of the <LOC> present at the meeting which shows importance of the meeting.  Additional information:   Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Other
+**TypeOfChangeCluster**: Other

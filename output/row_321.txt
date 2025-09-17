@@ -1,0 +1,23 @@
+**FragmentID**: SCC-LEB2312/GEQ006
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Lebanon
+**Year**: 2023
+**Outcome description**: In December 2023, ABAAD's Militarized Masculinities Training Curiculum was revised and adapted by the technical team based on findings from the pilot trainings for ABAAD staff and Yemeni partners.
+**Significance of the outcome**: This outcome is significant because no other tool like this exists in the peacebuilding and humanitarian space. It is the first to address militarized masculinities in a targeted and action-oriented way. This tool will now be used by ABAAD with select SCC partners to influence their work to better address militarized masculinities as a tool for peacebuilding, as well as a building block for advocacy with the Gender Working Group, as well as for future proposal / program development by ABAAD and partners.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: As part of ABAAD's capacity building plan in Lebanon, ABAAD staff received a training on Militarized Masculinities in June 2023. As a result of the training, the staff shared their concerns regarding the content and its relevance, which did not take into consideration the complexities of the Lebanese context as it related to gender, militarization and other related topics. This was a positive and unintended change.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 3.4, Output 3.4.5
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In December 2023, ABAAD's Militarized Masculinities Training Curiculum was revised and adapted by the technical team based on findings from the pilot trainings for ABAAD staff and Yemeni partners.  Significance description: This outcome is significant because no other tool like this exists in the peacebuilding and humanitarian space. It is the first to address militarized masculinities in a targeted and action-oriented way. This tool will now be used by ABAAD with select SCC partners to influence their work to better address militarized masculinities as a tool for peacebuilding, as well as a building block for advocacy with the Gender Working Group, as well as for future proposal / program development by ABAAD and partners.  Contribution of the programme: As part of ABAAD's capacity building plan in Lebanon, ABAAD staff received a training on Militarized Masculinities in June 2023. As a result of the training, the staff shared their concerns regarding the content and its relevance, which did not take into consideration the complexities of the Lebanese context as it related to gender, militarization and other related topics. This was a positive and unintended change.  Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Policy change, Gender transformative
+**TypeOfChangeCluster**: Policy, Gender

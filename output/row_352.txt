@@ -1,0 +1,23 @@
+**FragmentID**:  SCC-SUD2312/PHR005
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Sudan
+**Year**: 2023
+**Outcome description**: On the 1st of June, 7 September 2023 & 31 January 2024 The U.S. Treasury Department announced that it would be sanctioning targeted entities aligned to the Sudanese warring parties that are currently engaged in the war (RSF & SAF)
+**Significance of the outcome**: This is a significant outcome for the Sudan SCC programme because part of our work is to support evidence-based research on how the military actors engaged in the war in Sudan have captured the economy through the monopoly of the various sectors, especially gold, and how this is aiding the war. The idea is for this work to support any redress efforts or  targeted sanctions
+**Additional information (use if needed) **: d
+**Rating significance**: early/small
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: Mr. Suliman Baldo of STPT our PAX partner who conducted the research on gold mining participated in a number of meetings in New York, DC, Amsterdam, and Brussels with the office of the US Treasury, EU and other European national governments representatives such as the Netherlands, Belgium, and Germany. He spoke about the importance of controlling funding for the belligerents and the role of gold in this context, drawing on the Pax research even before that was published. They expressed some views on specific potential sanctions targets (including Al Khaleeg) in these meetings which were recently sanctioned by the US in 2024. They also published an op-ed on sanctions on May 2. 
+**Contribution of other actors and factors**: Yes, of course, organisations like Clingendael and C4DS have been instrumental also from the INGO in advocating for these targeted sanctions
+**Rating contribution**: little
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: https://www.reuters.com/world/africa/us-questions-sudan-parties-commitment-truce-clashes-continue-2023-06-01/   https://www.hrw.org/news/2023/09/07/us-imposes-sanctions-abusive-commanders-sudan   https://home.treasury.gov/news/press-releases/jy2066
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Output 2.2.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: On the 1st of June, 7 September 2023 & 31 January 2024 The U.S. Treasury Department announced that it would be sanctioning targeted entities aligned to the Sudanese warring parties that are currently engaged in the war (RSF & SAF)  Significance description: This is a significant outcome for the Sudan SCC programme because part of our work is to support evidence-based research on how the military actors engaged in the war in Sudan have captured the economy through the monopoly of the various sectors, especially gold, and how this is aiding the war. The idea is for this work to support any redress efforts or  targeted sanctions  Contribution of the programme: Mr. Suliman Baldo of STPT our PAX partner who conducted the research on gold mining participated in a number of meetings in New York, DC, Amsterdam, and Brussels with the office of the US Treasury, EU and other European national governments representatives such as the Netherlands, Belgium, and Germany. He spoke about the importance of controlling funding for the belligerents and the role of gold in this context, drawing on the Pax research even before that was published. They expressed some views on specific potential sanctions targets (including Al Khaleeg) in these meetings which were recently sanctioned by the US in 2024. They also published an op-ed on sanctions on May 2.   Additional information: d  Contribution of other actors and factors: Yes, of course, organisations like Clingendael and C4DS have been instrumental also from the INGO in advocating for these targeted sanctions
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

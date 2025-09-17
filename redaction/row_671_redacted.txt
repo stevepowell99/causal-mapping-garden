@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR013
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 3
+**coutnry**: Ethiopia
+**Year**: 2024
+**Outcome description**: Following a panel <redacted>, organized by CARD on <redacted> in <LOC> on their first-ever consolidated human rights report addressing the violations occurring in <LOC>, three community members expressed their intention to use the report as an advocacy tool to raise awareness about the situation in their communities.   
+**Significance of the outcome**: This outcome lead is significant as the report launch enabled locals to define their own priorities, directly supporting the project's objective of amplifying civilian voices in decision-making and ensuring community-led advocacy. 
+**Additional information (use if needed) **: The report launch was held on <redacted> in <LOC>. A total of 53 people have participated, amongst which community representatives, local human rights organizations, the EHRC, the Ministry of Justice, and media outlets. Following the event, three community members have expressed their intention to use the report for awareness raising activities, even though CARD is not yet aware whether they organized awareness creation after (hence, this can be considered an outcome lead). 
+**Rating significance**: early/small
+**Social actor**: Engaged citizens
+**Scale**: National 
+**Contribution of the programme**: With the support of AINL, under the SCC programme, CARD convened, facilitated, and ensured inclusive participation at the report launch. In addition, already in <redacted>, CARD held a consultation workshop in <LOC> with thirty community members including women, community leaders, pastoralists, and academics to identify key human rights issues in <LOC>. The participants that now expressed their intention to use local advocacy to raise awareness on the situation in <LOC> also participated in this event. 
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.1 and 2.2 Output 2.2.2
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  Following a panel <redacted>, organized by CARD on <redacted> in <LOC> on their <redacted> consolidated human rights report <redacted> the <redacted> occurring in <LOC>, three community members expressed their intention to use the report as an advocacy tool to raise awareness about the situation in their communities.    Significance:  This outcome lead is significant as the report launch enabled locals to define their own <redacted>, directly <redacted> the project's objective of <redacted> civilian voices in decision-making and ensuring <redacted>led advocacy.  Contribution:  With the support of AINL, under the SCC programme, CARD convened, facilitated, and ensured inclusive participation at the report launch. In addition, already in <redacted>, CARD held a consultation workshop in <LOC> with thirty community members including women, community leaders, pastoralists, and academics to identify key human rights issues in <LOC>. The participants that now expressed their intention to use local advocacy to raise awareness on the situation in <LOC> also participated in this event.  <redacted> <redacted>:  The report launch was held on <redacted> in <LOC>. A total of 53 people have participated, amongst which community representatives, local human rights organizations, the EHRC, the Ministry of Justice, and media outlets. Following the event, three community members have expressed their intention to use the report for awareness raising activities, even though CARD is not yet aware whether they organized awareness creation after (hence, this can be considered an outcome lead).  Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Seeking public support
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Mobilizing citizens and organizations

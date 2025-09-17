@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ029
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: South Sudan
+**Year**: 2022
+**Outcome description**: In <redacted> leadership of women association participating in lobbing and advocacy overcame tension with the ministry of Gender and women politicians. 
+**Significance of the outcome**: The ministry and women politicians wanted any activity for women groups should be implemented by the ministry as a way of political control. Allowing the ministry and women politicians to control their activity, would mean some women in the groups would not be allowed to speak. The women association had a meeting and invited ministry of gender, the women association asked why they were not allowed to speak up and act together. The women dared to speak up and explained that their fora is not a government fora but rather church-based, which now convinced ministry of gender allow the activities to take place. The minister accepted not to intervere with their activities.
+**Additional information (use if needed) **: UNMISS support the women by constructing their fence.
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Organisation
+**Contribution of the programme**: The women gained speaking skills by attending the women fora. Empowerement and awareness enabled the women to speak up. CDOT-JPC gave guidance to the women groups and accompany them in the activities. This enabled the women to learn and gain skills. 
+**Contribution of other actors and factors**: UNMISS
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes, the reports of the women fora.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 3.1
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In <redacted> leadership of women association participating in lobbing and advocacy overcame tension with the ministry of Gender and women politicians.   Significance description: The ministry and women politicians wanted any activity for women groups should be implemented by the ministry as a way of political control. Allowing the ministry and women politicians to control their activity, would mean some women in the groups would not be allowed to speak. The women association had a meeting and invited ministry of gender, the women association asked why they were not allowed to speak up and act together. The women dared to speak up and explained that their fora is not a government fora but rather church-based, which now convinced ministry of gender allow the activities to take place. The minister accepted not to intervere with their activities.  Contribution of the programme: The women gained speaking skills by attending the women fora. Empowerement and awareness enabled the women to speak up. CDOT-JPC gave guidance to the women groups and accompany them in the activities. This enabled the women to learn and gain skills.   Additional information: UNMISS support the women by constructing their fence.  Contribution of other actors and factors: UNMISS
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A, Gender transformative, <redacted> participation
+**TypeOfChangeCluster**: Gender, Capacity change

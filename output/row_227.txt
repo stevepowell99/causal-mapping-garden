@@ -1,0 +1,23 @@
+**FragmentID**: SCC-LEB2312/GEQ004
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Lebanon
+**Year**: 2023
+**Outcome description**: Mrs. "X", a participant in community group sessions focused on positive communication, problem-solving and decision-making skills, held in August 2023 in the south, for the first time expressed her love and commitment as a mother to her daughters by writing them a heartfelt letter.
+**Significance of the outcome**: Initially burdened by emotional pain and self-blame stemming from a difficult childhood, Mrs. "X" exhibited violent behavior towards her daughters, straining their relationship. However, by participating in sessions positive communication, problem-solving and decision-making skills, this fostered her self-awareness and insight into the need to be a more present mother. This profound internal shift occurred during the eighth session. Embracing self-compassion, she found inner peace, prompting her to express love and commitment to her daughters through a heartfelt letter. This outcome is significant because Mrs. "X" resolved to empower her daughters and protect them from harm and towards safety and security.
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: As part of ABAAD's implementation of community groups trainings and specially positive communication, problem-solving and decision-making skills sessions in Lebanon, women in the south participated in 12 community group sessions where they are strengthened their skills and self-confidence on different topics related to gender and gender-based violence. Mrs. "X" was inspired by her participation in those sessions. This is a positive, intended change.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Link
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 3.1, Output 3.1.1
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: Mrs. "X", a participant in community group sessions focused on positive communication, problem-solving and decision-making skills, held in August 2023 in the south, for the first time expressed her love and commitment as a mother to her daughters by writing them a heartfelt letter.  Significance description: Initially burdened by emotional pain and self-blame stemming from a difficult childhood, Mrs. "X" exhibited violent behavior towards her daughters, straining their relationship. However, by participating in sessions positive communication, problem-solving and decision-making skills, this fostered her self-awareness and insight into the need to be a more present mother. This profound internal shift occurred during the eighth session. Embracing self-compassion, she found inner peace, prompting her to express love and commitment to her daughters through a heartfelt letter. This outcome is significant because Mrs. "X" resolved to empower her daughters and protect them from harm and towards safety and security.  Contribution of the programme: As part of ABAAD's implementation of community groups trainings and specially positive communication, problem-solving and decision-making skills sessions in Lebanon, women in the south participated in 12 community group sessions where they are strengthened their skills and self-confidence on different topics related to gender and gender-based violence. Mrs. "X" was inspired by her participation in those sessions. This is a positive, intended change.  Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change Mental health resilience
+**TypeOfChangeCluster**: Capacity change

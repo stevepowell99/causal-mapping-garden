@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV034
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: South Sudan
+**Year**: 2025
+**Outcome description**: In <redacted>, in <LOC> the members of the South Sudan Constitution working group conducted research and submitted a position paper on the permenent constitution making process to the policy makers.
+**Significance of the outcome**: This is significant because this is the first time for youth in South Sudan to conduct a research alone and with limited guidance from AHD. The research was on governance structure and efficiency, fair representation and power balance, fiscal federatlism and resource sharing and land, employment and citizens rights
+**Additional information (use if needed) **: This is the first time youth are conducting research and writing position papers. They learnt that advocacy and lobbying requiring information and data which can be accessed through conducting research
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: National 
+**Contribution of the programme**: AHD provided mentorship in research and position paper writing which are both important for lobbbying
+**Contribution of other actors and factors**: non
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.1 Youth and women's groups effectively advocate for participation in the constitution making process and for their needs and rights to be included in the constitution.                         
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Outcome description:  In <redacted>, in <LOC> the members of the South Sudan Constitution working group conducted research and submitted a position paper on the permenent constitution making process to the policy makers. Significance:  This is significant because this is the first time for youth in South Sudan to conduct a research alone and with limited guidance from AHD. The research was on governance structure and efficiency, fair representation and power balance, fiscal federatlism and resource sharing and land, employment and citizens rights Contribution:  AHD provided mentorship in research and position paper writing which are both important for lobbbying Additional <redacted>:  This is the first time youth are conducting research and writing position papers. They learnt that advocacy and lobbying requiring information and data which can be accessed through conducting research Contribution of Other factors:  non
+**Outcome is negative**: NO
+**MCQType of change**: Creating space for CSOs, Seeking public support
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Mobilizing citizens and organizations

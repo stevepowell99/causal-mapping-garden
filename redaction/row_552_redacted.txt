@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR016
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Iraq
+**Year**: 2025
+**Outcome description**: In <redacted>, the IT department in the Ninewa Governorate Office, designed and submitted (as  the first governorate in Iraq)  a comprehensive digital transformation program in <person>, and got the approval from the Mayor in <person> to request the required budget for this project from PM and the ministry of planning.
+**Significance of the outcome**: Vulnerable and marginalized groups, survivors, both male and female, stated that developing government departments and easing the complexity of administrative procedures is a priority and a basic need for them to protect their safety, dignity, and protecting from corruption and extortion, especially women. people named the official departments with the term " insult windows" 
+**Additional information (use if needed) **: even though the required budget is 14 Millier Dollar, which might be the 60% of the <redacted> governorate budget, but the Mayor promised to do his best to provide this important budget. Anyhow as the first step, there is a budget allocated for first stage of the program, which focus on the rural areas
+**Rating significance**: early/small
+**Social actor**: State authorities
+**Scale**: National 
+**Contribution of the programme**: the head of IT <redacted> in <LOC> office (highest level of decision making in IT in <person>) attended 5 workshops, 2 conferences and coordination meetings in <redacted>, 2025, with PFO through the <person> project
+**Contribution of other actors and factors**: no
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: supported by goverement letter through this link
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In <redacted>, the IT <redacted> in the Ninewa Governorate Office, designed and submitted (as  the first governorate in Iraq)  a comprehensive digital transformation program in <person>, and got the approval from the Mayor in <person> to request the required budget for this project from PM and the ministry of planning. Significance:  <redacted> and marginalized groups, survivors, both male and female, stated that <redacted> departments and easing the <redacted> of administrative <redacted> is a priority and a basic need for them to protect their safety, dignity, and <redacted> from <redacted> and extortion, <redacted> women. people named the official departments with the term " insult windows"  Contribution:  the head of IT <redacted> in <LOC> office (highest level of decision making in IT in <person>) attended 5 workshops, 2 conferences and coordination meetings in <redacted>, 2025, with PFO through the <person> project Additional Info:  even though the required budget is 14 Millier Dollar, which might be the 60% of the <redacted> governorate budget, but the Mayor promised to do his best to provide this important budget. Anyhow as the first step, there is a budget allocated for first stage of the program, which focus on the rural areas Contribution of Other factors:  no
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Gender sensitive
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Gender

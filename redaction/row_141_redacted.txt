@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR004
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Syria
+**Year**: 2022
+**Outcome description**: After <redacted> the advocacy strategy in 2022, <person> took the decision to integrate research and the collection of evidence into all programmes of Kesh Malek since it is an important step needed to better understand context before undertaking any advocacy or social change process. 
+**Significance of the outcome**: <person> has reviewed its process and took the decision to integrate the conduction of research as an important step to conduct advocacy or designing programme. They recognize the importance to collect evidence, analyze previous impact whether positive or negative, better understanding context and needs, before engaging further in program design, so as to make sure that processes engaged will allow the maximization of impact and possibly limit negative impact
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: During trainings and working sessions organized by PAX, <person> recognized the importance of the collection of evidence and therefore of research before engaging in any advocacy or social change process
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes <person>
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: After <redacted> the advocacy strategy in 2022, <person> took the decision to integrate research and the collection of evidence into all programmes of Kesh Malek since it is an important step needed to better understand context before undertaking any advocacy or social change process.   Significance description: <person> has reviewed its process and took the decision to integrate the conduction of research as an important step to conduct advocacy or designing programme. They recognize the importance to collect evidence, analyze previous impact whether positive or negative, better understanding context and needs, before engaging further in program design, so as to make sure that processes engaged will allow the maximization of impact and possibly limit negative impact  Contribution of the programme: During trainings and working sessions organized by PAX, <person> recognized the importance of the collection of evidence and therefore of research before engaging in any advocacy or social change process  Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

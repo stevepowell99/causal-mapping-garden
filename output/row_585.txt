@@ -1,0 +1,23 @@
+**FragmentID**: SCC-INT2508/ESF035
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: International / External Stress Factors
+**Year**: 2025
+**Outcome description**: On July 12th 2025, the Norwegian Pension Fund Global, excluded 11 companies based in Israel, over involvement in the war in Gaza, citing its policy to exclude companies facilitating states in violating IHL.
+**Significance of the outcome**: The Norwegian Pension Fund Global is one of the largest investors in the world. Its policy (and practice) is seen as a benchmark.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: International 
+**Contribution of the programme**: PAX lobbyed the Fund's ethical committee (that advices on policy) early 2020 for inclusion of exactly this policy element, and the committee incorporated some of our recommendations (including this one) in an advice published in July 2020. 
+**Contribution of other actors and factors**: The fund made this current decision based on public pressure in Norway itself, in which PAX was not involved. To our knowledge, PAX was the only actor to have lobbied for this policy in 2020.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: On the policy: https://paxvoorvrede.nl/nieuws/noors-staatspensioenfonds-geen-autonome-wapens-strenger-op-wapenhandel/. On the decision now: https://www.nu.nl/economie/6365385/noors-staatsfonds-stoot-israelische-bedrijven-af-wegens-gaza.html en https://www.bloomberg.com/news/articles/2025-08-11/norway-s-1-9-trillion-wealth-fund-sells-off-israeli-assets
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: SO2, outcome 2.1
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: Outcome description: On July 12th 2025, the Norwegian Pension Fund Global, excluded 11 companies based in Israel, over involvement in the war in Gaza, citing its policy to exclude companies facilitating states in violating IHL.  Significance: The Norwegian Pension Fund Global is one of the largest investors in the world. Its policy (and practice) is seen as a benchmark.  Contribution: PAX lobbyed the Fund's ethical committee (that advices on policy) early 2020 for inclusion of exactly this policy element, and the committee incorporated some of our recommendations (including this one) in an advice published in July 2020.  Additional info (if any): Contribution of other actors and factors (if any):  Yes, the fund made this current decision based on public pressure in Norway itself, in which PAX was not involved. To our knowledge, PAX was the only actor to have lobbied for this policy in 2020.  
+**Outcome is negative**: NO
+**MCQType of change**: Policy implementation, Supportive action
+**TypeOfChangeCluster**: Policy, Empowering citizens and CSOs

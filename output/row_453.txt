@@ -1,0 +1,23 @@
+**FragmentID**: SCC-YEM2508/GEQ001
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Yemen
+**Year**: 2024
+**Outcome description**: During the year 2024,  the Martyr Bin Habrish Foundation for Development in the Seiyun District in Hadramawt Governorate, Yemen, realized a dedicated room for women inside the court of Justice with a complaints box and a clear procedural guide to deal with their complaints.  
+**Significance of the outcome**: The importance of this room lies in providing a safe and sensitive environment for the privacy of more than 10,000 women, which allowed more than 140  women's sessions to be held in less than a year, and strengthened women's confidence in the judicial system and raised their satisfaction with judicial services to more than 95%, 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: The Foundation, in partnership with CAP and funded by PAX,  implemented an advocacy campaign through which funds were mobilized for the construction of the hall and a clear mechanism was developed to receive their complaints. The level of contribution to this result is also (partial) as the project contributed to training and advocacy activity. On the other hand, it contributed to financing the construction of the hall and providing a mechanism for receiving complaints.  
+**Contribution of other actors and factors**: yes
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Nadra: do you have supporting docs?
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.1
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: During the year 2024,  the Martyr Bin Habrish Foundation for Development in the Seiyun District in Hadramawt Governorate, Yemen, realized a dedicated room for women inside the court of Justice with a complaints box and a clear procedural guide to deal with their complaints.    Significance description: The importance of this room lies in providing a safe and sensitive environment for the privacy of more than 10,000 women, which allowed more than 140  women's sessions to be held in less than a year, and strengthened women's confidence in the judicial system and raised their satisfaction with judicial services to more than 95%,   Contribution of the programme: The Foundation, in partnership with CAP and funded by PAX,  implemented an advocacy campaign through which funds were mobilized for the construction of the hall and a clear mechanism was developed to receive their complaints. The level of contribution to this result is also (partial) as the project contributed to training and advocacy activity. On the other hand, it contributed to financing the construction of the hall and providing a mechanism for receiving complaints.    Additional information:   Contribution of other actors and factors: yes
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Gender sensitive
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Gender

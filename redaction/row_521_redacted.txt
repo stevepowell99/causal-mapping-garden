@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ035
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 3
+**coutnry**: Lebanon
+**Year**: 2025
+**Outcome description**: In <redacted>, during ABAAD’s “Expression Through Art in Times of Crisis” training, frontline staff and facilitators used artistic tools—such as drawing, collage, and color mapping—to express war-related stress and emotional burden. 
+**Significance of the outcome**: The training became a safe space for emotional release and reflection, contributing to staff’s emotional resilience and strengthening their capacity to lead psychosocial support sessions. This outcome reflects a critical shift: the training moved beyond technical capacity-building to become a therapeutic space for frontline staff themselves. Amid widespread emotional fatigue following the war, it allowed staff to process secondary trauma, regain emotional balance, and reconnect with their role as facilitators. This emotional grounding directly enhanced the quality, empathy, and effectiveness of psychosocial support services offered to communities.
+**Additional information (use if needed) **:  
+**Rating significance**: early/small
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: ABAAD designed and implemented the training using experiential, art-based methods to foster emotional expression and healing. The module not only introduced creative techniques, but also modeled a reflective, supportive environment. This direct experience empowered staff to adapt and replicate similar art-based sessions with beneficiaries, ensuring continuity and emotional depth in service delivery.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: No
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **:  
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In <redacted>, during ABAAD’s “Expression Through Art in Times of Crisis” training, frontline staff and facilitators used artistic tools—such as drawing, collage, and color mapping—to express war-related stress and emotional burden.   Significance description: The training became a safe space for emotional release and reflection, contributing to staff’s emotional resilience and strengthening their capacity to lead psychosocial support sessions. This outcome reflects a critical shift: the training moved beyond technical capacity-building to become a therapeutic space for frontline staff themselves. Amid widespread emotional fatigue following the war, it allowed staff to process secondary trauma, regain emotional balance, and reconnect with their role as facilitators. This emotional grounding directly enhanced the quality, empathy, and effectiveness of psychosocial support services offered to communities.  Contribution of the programme: ABAAD designed and implemented the training using experiential, art-based methods to foster emotional expression and healing. The module not only introduced creative techniques, but also modeled a reflective, supportive environment. This direct experience empowered staff to adapt and replicate similar art-based sessions with beneficiaries, ensuring continuity and emotional depth in service delivery.  Additional information:    Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Gender sensitive
+**TypeOfChangeCluster**: Gender

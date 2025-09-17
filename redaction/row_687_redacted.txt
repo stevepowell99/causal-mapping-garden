@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV008
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Kenya
+**Year**: 2025
+**Outcome description**: In <redacted> HURIA and HSI developed and adopted a comprehensive digital security policy and measures for their respective organisations responding to emerging digital threats targeting CSOs in Kenya.
+**Significance of the outcome**: There has been an increased targeting of Human Rights Defenders (HRDs), especially in the digital and online spaces. As institutions, HURIA and HSI have previously experienced cyberattacks affecting the organizations' operations. Their limited knowledge and capacity to safeguard against cyber threats and risks, coupled with a inappropriate equipment and tools has left the institutions vulnerable to such attacks.  
+**Additional information (use if needed) **: In <redacted>, HURIA and HSI participated in a digital security training supported by Amnesty International Netherlands. Additionally, HURIA had an in-house digital security audit to assess on its vulnerability' gaps in both the <LOC> and Mombasa Offices. Based on the outcome of the assessmnt HURIA received support from DefendDefenders in <LOC>, which included equipments to fortify the ICT infrastructure .
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: The SCC program supported the digital security training for the staff  that built the capacity and empowered staff to operate confidently and securely in diverse operational contexts. The program supported the purchase of ICT equipments and installations. 
+**Contribution of other actors and factors**: Through the connection of the program, HURIA was supported by DefendDefenders, based in <LOC>, with equipment that secured network, device security and data storage. Amnesty hired an expert who facilitated the Digital Training Workshop and provided tools to draft the policy.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**:  (see folder with necessary attachments)
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Outcome description:  In <redacted> HURIA and HSI developed and adopted a comprehensive digital security policy and measures for their <redacted> organisations <redacted> to emerging digital threats targeting CSOs in Kenya. Significance:  There has been an increased targeting of Human Rights Defenders (HRDs), <redacted> in the digital and online spaces. As institutions, HURIA and HSI have <redacted> experienced cyberattacks affecting the organizations' <redacted>. Their limited knowledge and capacity to safeguard against cyber threats and risks, coupled with a inappropriate equipment and tools has left the institutions <redacted> to such attacks.   Contribution:  The SCC program supported the digital security training for the staff  that built the capacity and empowered staff to operate confidently and securely in diverse operational contexts. The program supported the purchase of ICT <redacted> and installations.  <redacted> <redacted>:  In <redacted>, HURIA and HSI participated in a digital security training supported by Amnesty International Netherlands. Additionally, HURIA had an in-house digital security audit to assess on its vulnerability' gaps in both the <LOC> and Mombasa Offices. Based on the outcome of the assessmnt HURIA received support from DefendDefenders in <LOC>, which included equipments to fortify the ICT infrastructure . Contribution of Other factors:  Through the connection of the program, HURIA was supported by DefendDefenders, based in <LOC>, with equipment that secured network, device security and data storage. Amnesty hired an expert who facilitated the Digital Training Workshop and provided tools to draft the policy.
+**Outcome is negative**: NO
+**MCQType of change**: Policy change, Capacity change  Safety and Security
+**TypeOfChangeCluster**: Policy, Capacity change

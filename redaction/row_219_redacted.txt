@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV009
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Burundi
+**Year**: 2023
+**Outcome description**: In <redacted>, 60% of the trained <redacted> HRDs and CSOs in exile in Rwanda trained in security management implemented the security protocols, and reduced the risk of potential security breaches on their organisations' data.
+**Significance of the outcome**: Before the training, participants had minimal experience in both HRD work and in digital security management. The HRDs were not mindful of the security risks associated with using public equipment like computers to do confidential HRD work as there was a lack of  awareness of these potential risks. The training allowed them to; gain a deeper understanding of digital threats and vulnerabilities, acquire practical skills and tools to protect digital assets, and cultivate a security-conscious culture. Following the training, they only used private equipment for their HRD work. For example, several participants were found to have transitioned to using their personal laptops or phones rather than public ones, to develop organization reports, enhancing data security. This shift minimizes the risk of unauthorized access to the HRDs’ information, and other potential security breaches. 
+**Additional information (use if needed) **: The change was observed during a follow-up <redacted> conducted in <redacted>. 
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: DefendDefenders <LOC> coordinator and the facilitator planned for and conducted the  training and follow up with funds from the program.
+**Contribution of other actors and factors**: NO
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Training report, follow-up report 
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 1.2, Output 1.2.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In <redacted>, 60% of the trained <redacted> HRDs and CSOs in exile in Rwanda trained in security <redacted> implemented the security protocols, and reduced the risk of potential security breaches on their organisations' data.  Significance description: Before the training, participants had minimal <redacted> in both HRD work and in digital security <redacted>. The HRDs were not mindful of the security risks <redacted> with using public equipment like computers to do confidential HRD work as there was a lack of  awareness of these potential risks. The training allowed them to; gain a deeper understanding of digital threats and vulnerabilities, acquire practical skills and tools to protect digital assets, and cultivate a security<redacted> culture. Following the training, they only used private equipment for their HRD work. For example, several participants were found to have transitioned to using their personal laptops or phones rather than public ones, to develop organization reports, enhancing data security. This shift minimizes the risk of unauthorized access to the HRDs’ information, and other potential security breaches.   Contribution of the programme: DefendDefenders Great Lakes coordinator and the facilitator planned for and conducted the  training and follow up with funds from the program.  <redacted> information: The change was observed during a follow-up <redacted> conducted in <redacted>.   Contribution of other actors and factors: NO
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change  Safety and Security
+**TypeOfChangeCluster**: Capacity change

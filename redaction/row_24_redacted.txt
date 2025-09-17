@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV004
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Ethiopia
+**Year**: 2021
+**Outcome description**: Following the training in physical and digital security in <redacted>, HRDs and CSOs in Ethiopia have developed protection guidelines, manuals and use secure devices and communication systems
+**Significance of the outcome**: Before the training there was less security vigilance among Civil Society Organisations. The training was an eye opener for Civil Society Organisations on the importance of being physically and digitally secure. Without the training Civil Society Organisations would have continued operating with higher risk.
+**Additional information (use if needed) **: In <redacted>,  following Physical and Digital security training, Civil Society Orgnaisations are able to use secured devices and communication systems, develop guidelines, a manual, office file arrangement and some of them installed security devices in their office. The participants understood the importance of online safety, security and tools. The organizations also assigned a social media manager responsible for digital data safety. They also conducted a risk assessment, are more cautious of their surroundings and developed a risk mitigation strategy. 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: DefendDefenders supported EHRDC in the development of a digital security manual, protection guidelines and self protection guideline. ( These were developed after the training)
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**:  It is uploaded on our website.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Output 1.1.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Following the training in physical and digital security in <redacted>, HRDs and CSOs in Ethiopia have developed <redacted>, manuals and use secure devices and communication systems  Significance description: Before the training there was less security vigilance among Civil Society Organisations. The training was an eye opener for Civil Society Organisations on the <redacted> of being <redacted> and digitally secure. Without the training Civil Society Organisations would have continued operating with higher risk.  Contribution of the programme: DefendDefenders supported EHRDC in the development of a digital security manual, <redacted> and self <redacted> guideline. ( These were developed after the training)  <redacted> information: In <redacted>,  following Physical and Digital security training, Civil Society Orgnaisations are able to use secured devices and communication systems, develop guidelines, a manual, office file arrangement and some of them installed security devices in their office. The participants understood the importance of online safety, security and tools. The organizations also assigned a social media manager responsible for digital data safety. They also conducted a risk assessment, are more cautious of their surroundings and developed a risk mitigation strategy.   Contribution of other actors and factors: N/A
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change  Safety and Security
+**TypeOfChangeCluster**: Capacity change

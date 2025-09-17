@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR017
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: DR Congo
+**Year**: 2023
+**Outcome description**: In <redacted>, 7 illegal military roadblocks out of 16  (subjecting civilians to illegal taxes and extortion) were closed by Colonel <person>. 
+**Significance of the outcome**: The effect is that military authorities acknowledge the HR violations and acted accordingly, through ordering the closure of the illegal roadblocks so that civilians can travel freely which is their human right. If one colonel does this, it might influence others as well, hence influencing the peace process. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Individual
+**Contribution of the programme**: MDR activitities supported by the programme lead to UFAREP management using information on illegal roadblocks collected by the monitors to write and publish a press release on these illegal roadblocks and discuss the situation with military authorities in order to stop the illegal tax collection at illegal roadblocks.  
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Press release of UFAREP
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.1, 2.2, 2.3
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In <redacted>, 7 illegal military roadblocks out of 16  (subjecting civilians to illegal taxes and extortion) were closed by Colonel <person>.   Significance description: The effect is that military authorities acknowledge the HR violations and acted accordingly, through ordering the closure of the illegal roadblocks so that civilians can travel freely which is their human right. If one colonel does this, it might influence others as well, hence influencing the peace process.   Contribution of the programme: MDR activitities supported by the programme lead to UFAREP management using information on illegal roadblocks collected by the monitors to write and publish a press release on these illegal roadblocks and discuss the situation with military authorities in order to stop the illegal tax collection at illegal roadblocks.    Additional information:   Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Policy implementation
+**TypeOfChangeCluster**: Policy

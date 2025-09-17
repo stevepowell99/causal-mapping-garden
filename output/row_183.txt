@@ -1,0 +1,23 @@
+**FragmentID**: SCC-IRQ2305/GEQ005
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Iraq
+**Year**: 2022
+**Outcome description**: In Ramadan of 2022, Yazidis and Christians participated for the first time in a joint Iftar banquet organized in Bashiqa.
+**Significance of the outcome**: It was the first time that members of these communities participate in an Iftar banquet following ISIS rule of Ninewa. The organizers facilitated storytelling discussions during the dinner to break preconceived notions around fasting and religious norms of each religious component. The organizers insured gender representation and inclusion through out the process and the activities that followed the dinner.
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: The Local peace committee in Bashiqa organized this iftar. The Bashiqa LPC was a volunteer group of our previous project in Ninewa, and are currently part of the grantees for the PoV project. Members of the LPC participated in a workshop organized by PAX on storytelling and dealing with the past tools. They also participated in trainings organized by PFO on gender inclusion.
+**Contribution of other actors and factors**: Yes The Bashiqa LPC was part of PAX' LPC project from 2015 to 2021 and its members participated in various trainings and workshops on conflict transformation and storytelling
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: No
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.2
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In Ramadan of 2022, Yazidis and Christians participated for the first time in a joint Iftar banquet organized in Bashiqa.  Significance description: It was the first time that members of these communities participate in an Iftar banquet following ISIS rule of Ninewa. The organizers facilitated storytelling discussions during the dinner to break preconceived notions around fasting and religious norms of each religious component. The organizers insured gender representation and inclusion through out the process and the activities that followed the dinner.  Contribution of the programme: The Local peace committee in Bashiqa organized this iftar. The Bashiqa LPC was a volunteer group of our previous project in Ninewa, and are currently part of the grantees for the PoV project. Members of the LPC participated in a workshop organized by PAX on storytelling and dealing with the past tools. They also participated in trainings organized by PFO on gender inclusion.  Additional information:   Contribution of other actors and factors: Yes The Bashiqa LPC was part of PAX' LPC project from 2015 to 2021 and its members participated in various trainings and workshops on conflict transformation and storytelling
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging, Gender sensitive
+**TypeOfChangeCluster**: Gender, Community bridging

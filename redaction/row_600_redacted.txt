@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR017
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Iraq
+**Year**: 2025
+**Outcome description**: In <redacted>, Real-estate department, provincial council, <LOC>, <person> Member, and the IT department in <LOC> governorate office, offcially made decisions related to digital transformation in the governmental institutions, allocating budget to conduct trainings, session, coordination meetings, providing logistic needs, and orders for digitalization 
+**Significance of the outcome**: Vulnerable and marginalized groups, survivors, both male and female, stated that developing government departments and easing the complexity of administrative procedures is a priority and a basic need for them to protect their safety, dignity, and protecting from corruption and extortion, especially women. people named the official departments with the term " insult windows"
+**Additional information (use if needed) **:  for example, buildings are not safe under the hot sun, or the risk of crowded halls, beside the other challenges of transportations and bureaucracy
+**Rating significance**: early/small
+**Social actor**: State authorities
+**Scale**: National 
+**Contribution of the programme**: about 25 activities, some were advocacy campaigns and other were initiatives, some with recommendations papers, to raise awareness about protecting citizens dignity, safety and security inside governmental offices through administrative procedures. Governmental employees were the main targeted participants in these activities
+**Contribution of other actors and factors**: yes: there is official letter from the prime minister for all the governmental institutions to go through digital transformation, which encouraged and offered resources for the institutions, but there is a big resilience from the employees and lack of comm
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: To be submitted by PFO at a later date
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In <redacted>, Real-estate department, provincial council, <LOC>, <person> Member, and the IT department in <LOC> governorate office, offcially made decisions related to digital transformation in the governmental institutions, allocating budget to conduct trainings, session, coordination meetings, providing logistic needs, and orders for digitalization  Significance:  Vulnerable and marginalized groups, survivors, both male and female, stated that developing government departments and easing the complexity of administrative procedures is a priority and a basic need for them to protect their safety, dignity, and protecting from corruption and extortion, especially women. people named the official departments with the term " insult windows" Contribution:  about 25 activities, some were advocacy campaigns and other were initiatives, some with recommendations papers, to raise awareness about protecting citizens dignity, safety and security inside governmental offices through administrative procedures. Governmental employees were the main targeted participants in these activities Additional <redacted>:   for example, buildings are not safe under the hot sun, or the risk of crowded halls, beside the other challenges of transportations and bureaucracy Contribution of Other factors:  yes: there is official letter from the prime minister for all the governmental institutions to go through digital transformation, which encouraged and offered resources for the institutions, but there is a big resilience from the employees and lack of comm
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

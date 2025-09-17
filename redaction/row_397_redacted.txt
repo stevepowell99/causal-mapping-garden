@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR011
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Kenya
+**Year**: 2023
+**Outcome description**: IPOA has taken the statement of 03 torture victims in <redacted>, and refered the case to the Garissa Officer Commanding Station (OCS), following intervention by HSI.
+**Significance of the outcome**: IPOA has initiatlly refused, then convinced by HSI staff to register statement of victims during a second visit. 
+**Additional information (use if needed) **: Cases illustrated the trends of retaliation by Kenya Defense Forces exercising policing powers in <LOC>. Retaliations are carried out as collective punishment to community members, mostly following an IED attack in which security officers are the main target.  
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: Cases have been documented by HSI under the SCC Programme.
+**Contribution of other actors and factors**: No 
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Letters, media coverage
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: outcome 2.1 and 2.2
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: IPOA has taken the statement of 03 torture victims in <redacted>, and refered the case to the Garissa Officer Commanding Station (OCS), following intervention by HSI.  Significance description: IPOA has initiatlly refused, then convinced by HSI staff to register statement of victims during a second visit.   Contribution of the programme: Cases have been documented by HSI under the SCC Programme.  Additional information: Cases illustrated the trends of retaliation by Kenya Defense Forces exercising policing powers in <LOC>. Retaliations are carried out as collective punishment to community members, mostly following an IED attack in which security officers are the main target.    Contribution of other actors and factors: No 
+**Outcome is negative**: NO
+**MCQType of change**: Policy implementation, Policy change
+**TypeOfChangeCluster**: Policy

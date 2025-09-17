@@ -1,0 +1,23 @@
+**FragmentID**: SCC-ETH2508/PHR011
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Ethiopia
+**Year**: 2025
+**Outcome description**: On 13 May 2025, one HRD trained by AI sent four interview reports which largely adhered to the standards for proper interview reports with victims of human rights violations
+**Significance of the outcome**: The HRD, who is a university lecturer, produced a field investigation plan that was revised several times and contained general academic, abstract statements. The much more concrete interview reports submitted after his field missions were much more useful for evidence-based advocacy purposes. The HRD gained experience in such concrete documentation that can be tapped for future purposes, whether by Amnesty International or other organizations (including SCC partner CARD).
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: From 14 to 18 October 2024, AINL and AI's researcher and campaigner from the Regional Office in Nairobi held a training in documenting human rights violations for 12 HRDs from various conflict areas of Ethiopia. This was followed up by various online engagements (audio calls and text messages) with the concerned HRD(s) to enable and coach them to do proper and useful documentation, from Nov-Dec 2024 through June 2025.
+**Contribution of other actors and factors**: Not really. Though this HRD has good knowledge of human rights standards and methods, the change since the training shows that we (AI) have had at least a major influence. 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes, the interview reports, with comments by AINL, are available with AINL. However, they are confidential and cannot be shared with others (maybe only to evaluators under strict confidentiality clauses, or when we remove or hide details).
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.1.,  Output 2.1.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  On 13 May 2025, one HRD trained by AI sent four interview reports which largely adhered to the standards for proper interview reports with victims of human rights violations Significance:  The HRD, who is a university lecturer, produced a field investigation plan that was revised several times and contained general academic, abstract statements. The much more concrete interview reports submitted after his field missions were much more useful for evidence-based advocacy purposes. The HRD gained experience in such concrete documentation that can be tapped for future purposes, whether by Amnesty International or other organizations (including SCC partner CARD). Contribution:  From 14 to 18 October 2024, AINL and AI's researcher and campaigner from the Regional Office in Nairobi held a training in documenting human rights violations for 12 HRDs from various conflict areas of Ethiopia. This was followed up by various online engagements (audio calls and text messages) with the concerned HRD(s) to enable and coach them to do proper and useful documentation, from Nov-Dec 2024 through June 2025. Additional Info:   Contribution of Other factors:  Not really. Though this HRD has good knowledge of human rights standards and methods, the change since the training shows that we (AI) have had at least a major influence. 
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change Mental health resilience, Gender sensitive
+**TypeOfChangeCluster**: Gender, Capacity change

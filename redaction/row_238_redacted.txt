@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV009
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Palestine
+**Year**: 2023
+**Outcome description**: In <redacted>, 10 new (academic) volunteers (2 males and 8 females) joined Khazaeen increasing its capacity to organise events
+**Significance of the outcome**: <LOC> largely runs on volunteers. Having more volunteers therefore increases to possibilities to organise events and reach more people
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: PAX supported <LOC> in organising an interactive workshop for 10 academics in its office about the importance of digitizing materials and the importance of digitizing their researches, articles, etc. they have worked in groups on how to digitize, how to write a content related to digitized materials and to briefly explain what the material is about. After the workshop all 10 asked to be part of <person> Voluntary team and as a first activity organised a seminar in <redacted>. 
+**Contribution of other actors and factors**: No 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Pictures and report available upon request
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.1 - Local partners have strengthened their capacities in L&A, including enlarging their networks     
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In <redacted>, 10 new (academic) volunteers (2 males and 8 females) joined Khazaeen increasing its capacity to organise events  Significance description: <LOC> largely runs on volunteers. Having more volunteers therefore increases to possibilities to organise events and reach more people  Contribution of the programme: PAX supported <LOC> in organising an interactive workshop for 10 academics in its office about the importance of digitizing materials and the importance of digitizing their researches, articles, etc. they have worked in groups on how to digitize, how to write a content related to digitized materials and to briefly explain what the material is about. After the workshop all 10 asked to be part of <person> Voluntary team and as a first activity organised a seminar in <redacted>.   Additional information:   Contribution of other actors and factors: No 
+**Outcome is negative**: NO
+**MCQType of change**: New structure
+**TypeOfChangeCluster**: Mobilizing citizens and organizations

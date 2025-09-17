@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR002
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Burundi
+**Year**: 2021
+**Outcome description**: In <redacted> a trained monitor(from RCP, AINL partner) got a paid job with a local organisation (<redacted>) to do MDR work for an international (IOM) project (on human/child trafficking) in <LOC> as a result of the MDR training. 
+**Significance of the outcome**: This is a sign that the MDR capacity-building was of good quality, though it did not immediately benefit the local organisation (RCP). Indirectly, it benefits the organisation (RCP) too, as the monitor now has more income security to be able to continue his volunteer work for the local organisation (RCP). Also, through the international (IOM) project the <redacted> government is also called upon/kept in check.
+**Additional information (use if needed) **: The monitor applied for a job at the organisation for a UNICEF project; he did not expect to get the job, as he was told that the job was already reserved for a Hutu who is a member of the ruling party. However, his result was so good and the UNICEF representative (a <redacted>) on the recruitment panel was so impressed that they hired him for another project, also an MDR project but then funded by IOM, aside from the designated candidate, who got the job for the original UNICEF project.
+**Rating significance**: early/small
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: As of <redacted> AINL and its trainers' network trained 10 RCP monitors in MDR, through 4 online modules followed by practical exercises and coaching calls. Especially after Module 3, RCP felt that they gained the skills to improve their reports substantially.
+**Contribution of other actors and factors**: IOM, UNICEF
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: If need be, we can request the monitor's job application (letter, CV) and his appointment letter
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 2.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In <redacted> a trained monitor(from RCP, AINL partner) got a paid job with a local organisation (<redacted>) to do MDR work for an international (IOM) project (on human/child trafficking) in <LOC> as a result of the MDR training.   Significance description: This is a sign that the MDR capacity-building was of good quality, though it did not immediately benefit the local organisation (RCP). <redacted>, it benefits the organisation (RCP) too, as the monitor now has more income security to be able to continue his volunteer work for the local organisation (RCP). Also, through the international (IOM) project the <redacted> <redacted> is also called upon/kept in check.  Contribution of the programme: As of <redacted> AINL and its trainers' network trained 10 RCP monitors in MDR, through 4 online modules followed by practical exercises and coaching calls. Especially after Module 3, RCP felt that they gained the skills to improve their reports substantially.  Additional information: The monitor applied for a job at the organisation for a UNICEF project; he did not expect to get the job, as he was told that the job was already reserved for a Hutu who is a member of the ruling party. However, his result was so good and the UNICEF representative (a <redacted>) on the recruitment panel was so impressed that they hired him for another project, also an MDR project but then funded by IOM, aside from the designated candidate, who got the job for the original UNICEF project.  Contribution of other actors and factors: IOM, UNICEF
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

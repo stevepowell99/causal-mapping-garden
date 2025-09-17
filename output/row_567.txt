@@ -1,0 +1,23 @@
+**FragmentID**: SCC-LEB2508/PHR020
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Lebanon
+**Year**: 2025
+**Outcome description**: In May 2025, Refugees International (RI) agreed to co-develop advocacy efforts with RPW on direct funding to refugee-led organizations, including planning a donor convening around the UN General Assembly (UNGA) to highlight the importance of supporting RLOs amid international aid cuts.
+**Significance of the outcome**: RLOs have historically faced major obstacles in accessing direct funding, with donors typically channeling funds through INGOs and bypassing refugee-led actors. Despite ongoing advocacy, major donors and international organizations had shown limited willingness to change this dynamic. This outcome is critical for shifting entrenched funding power dynamics and advancing RPW’s strategic goal of empowering RLOs through equitable access to resources. It also addresses the urgency of funding gaps in light of broader aid cuts. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: Regional
+**Contribution of the programme**: RPW directly influenced this outcome through sustained advocacy, including targeted outreach to RI’s head of financing and engagement in co-developing joint advocacy strategies. These actions positioned RPW as a key partner in shaping funding narratives and mobilizing donor attention to RLO financing needs. Moreover, one of the key priorities of RPW is to strengthen local civil society and RLOs through sustained funding and capacity-building.
+**Contribution of other actors and factors**: NO
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: No
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: No, SO2 - international donors.
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In May 2025, Refugees International (RI) agreed to co-develop advocacy efforts with RPW on direct funding to refugee-led organizations, including planning a donor convening around the UN General Assembly (UNGA) to highlight the importance of supporting RLOs amid international aid cuts. Significance:  RLOs have historically faced major obstacles in accessing direct funding, with donors typically channeling funds through INGOs and bypassing refugee-led actors. Despite ongoing advocacy, major donors and international organizations had shown limited willingness to change this dynamic. This outcome is critical for shifting entrenched funding power dynamics and advancing RPW’s strategic goal of empowering RLOs through equitable access to resources. It also addresses the urgency of funding gaps in light of broader aid cuts.  Contribution:  RPW directly influenced this outcome through sustained advocacy, including targeted outreach to RI’s head of financing and engagement in co-developing joint advocacy strategies. These actions positioned RPW as a key partner in shaping funding narratives and mobilizing donor attention to RLO financing needs. Moreover, one of the key priorities of RPW is to strengthen local civil society and RLOs through sustained funding and capacity-building. Additional Info:   Contribution of Other factors:  NO
+**Outcome is negative**: NO
+**MCQType of change**: Creating space for CSOs, Capacity change L and A
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Capacity change

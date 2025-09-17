@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ032
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Lebanon
+**Year**: 2025
+**Outcome description**: In <redacted>, AMEL Association has enhanced its engagement of men in sexual and reproductive health (SRH) and gender-based violence (GBV) prevention by adopting innovative, participatory methods such as game-based awareness activities (“Play for Change”).
+**Significance of the outcome**: This outcome represents an important shift in how AMEL Association designs and implements its programs by integrating innovative, participatory approaches to male engagement in SRH and GBV prevention. The change reflects a strengthening of the CSO’s capacity to deliver more inclusive and effective interventions, improving the quality and relevance of their programming.
+**Additional information (use if needed) **:  
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: Through targeted training and technical assistance, the Men Engage Network empowered AMEL staff with the knowledge and tools needed to adopt creative engagement methods. The network also facilitated learning exchanges, encouraging AMEL to adapt strategies that respond effectively to community contexts.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: No
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 3.4
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: Outcome description:  In <redacted>, AMEL Association has enhanced its engagement of men in sexual and reproductive health (SRH) and gender-based violence (GBV) prevention by adopting innovative, participatory methods such as game-based awareness activities (“Play for Change”). Significance:  This outcome represents an important shift in how AMEL Association designs and implements its programs by integrating innovative, participatory approaches to male engagement in SRH and GBV prevention. The change reflects a strengthening of the CSO’s capacity to deliver more inclusive and effective interventions, improving the quality and relevance of their programming. Contribution:  Through targeted training and technical assistance, the Men Engage Network empowered AMEL staff with the knowledge and tools needed to adopt creative engagement methods. The network also facilitated learning exchanges, encouraging AMEL to adapt strategies that respond effectively to community contexts. Additional <redacted>:    Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change  Safety and Security, Gender sensitive
+**TypeOfChangeCluster**: Gender, Capacity change

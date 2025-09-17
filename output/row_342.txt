@@ -1,0 +1,23 @@
+**FragmentID**: SCC-DRC2312/PHR004
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: DR Congo
+**Year**: 2023
+**Outcome description**: From May 29 to June 1, 2023, in Kisangani, the managers of the Lomami National Park organized for the first time a meeting of the enlarged Site Coordination Committee (CoCoSi), with the participation of NGOs.
+**Significance of the outcome**: This is the first time since the creation of the Lomami National Park in 2016 that a meeting of this consultation framework has taken place. It's an important step in bringing the various stakeholders to the table, and discussing in particular the tensions between local communities and the park, issues linked to the buffer zone and possible solutions to improve the situation.
+**Additional information (use if needed) **: Among the participants was CDJP-Kisangani, PAX's partner in the SCC program.
+**Rating significance**: early/small
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: During meetings in previous years, PAX and CDJP-Kis had stressed to Lomami National Park managers the importance of holding such meetings, and of including NGOs.
+**Contribution of other actors and factors**: Yes, other NGOs and other stakeholders - notably donors - contributed to the effectiveness of this meeting.
+**Rating contribution**: little
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Meeting notes, CoCoSi minutes, available in the PAX archives.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.5
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: From May 29 to June 1, 2023, in Kisangani, the managers of the Lomami National Park organized for the first time a meeting of the enlarged Site Coordination Committee (CoCoSi), with the participation of NGOs.  Significance description: This is the first time since the creation of the Lomami National Park in 2016 that a meeting of this consultation framework has taken place. It's an important step in bringing the various stakeholders to the table, and discussing in particular the tensions between local communities and the park, issues linked to the buffer zone and possible solutions to improve the situation.  Contribution of the programme: During meetings in previous years, PAX and CDJP-Kis had stressed to Lomami National Park managers the importance of holding such meetings, and of including NGOs.  Additional information: Among the participants was CDJP-Kisangani, PAX's partner in the SCC program.  Contribution of other actors and factors: Yes, other NGOs and other stakeholders - notably donors - contributed to the effectiveness of this meeting.
+**Outcome is negative**: NO
+**MCQType of change**: Creating space for CSOs
+**TypeOfChangeCluster**: Empowering citizens and CSOs

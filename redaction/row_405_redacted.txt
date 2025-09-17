@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR008
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Kenya
+**Year**: 2023
+**Outcome description**: In <redacted>, HURIA issued its first written submission to the United Nations Working Group on Enforced or Involuntary disappearances on the state of Enforced Disappearances in Kenya. In the submission, HURIA detailed the overall patterns on EJE and ED cases documented in <LOC> and its impact on family members.
+**Significance of the outcome**: The change is significant as it shows HURIA'S  improved capacity to engage in international  advocacy efforts to push for redress for families impacted by EJK and ED in <LOC>, in line with one of the objectives of the SCC project
+**Additional information (use if needed) **: In <redacted> and <redacted>, 2023 HURIA participated in 2 Advocacy trainings supported through the project. In the trainings, HURIA gained knowledge of the existing international avenues available to seek redress for EJE and ED concerns. In <redacted>, Amnesty provided information on the WGEID interest to receive submissions on ED cases in Kenya. As such, Amnesty convened the <redacted> advocacy training where we drafted the submission to the WGEID.
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: National
+**Contribution of the programme**: SCC project provided financial and technical resources for the Advocacy trainings, and the writeshop to write the submission. <person> provided the contacts to the WGEID for submission of the petition
+**Contribution of other actors and factors**: Amnesty's EARO has linked up <person> of HURICAP with members of the working group on enforced dissapearance
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Link to submission, Agenda of the Advocacy training
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: outcome 2.1. and 2.4
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In <redacted>, HURIA issued its first written <redacted> to the United Nations Working Group on Enforced or Involuntary disappearances on the state of Enforced Disappearances in Kenya. In the <redacted>, HURIA detailed the overall patterns on EJE and ED cases <redacted> in <LOC> and its impact on family members.  Significance description: The change is significant as it shows HURIA'S  improved capacity to engage in international  advocacy efforts to push for redress for families impacted by EJK and ED in <LOC>, in line with one of the <redacted> of the SCC project  Contribution of the programme: SCC project provided financial and technical resources for the Advocacy trainings, and the writeshop to write the <redacted>. <person> provided the contacts to the WGEID for <redacted> of the petition  <redacted> information: In <redacted> and <redacted>, 2023 HURIA participated in 2 Advocacy trainings supported through the project. In the trainings, HURIA gained knowledge of the existing international avenues available to seek redress for EJE and ED concerns. In <redacted>, Amnesty provided information on the WGEID interest to receive submissions on ED cases in Kenya. As such, Amnesty convened the <redacted> advocacy training where we drafted the submission to the WGEID.  Contribution of other actors and factors: Amnesty's EARO has linked up <person> of HURICAP with members of the working group on enforced dissapearance
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

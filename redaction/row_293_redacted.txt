@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/ESF023
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: International / External Stress Factors
+**Year**: 2023
+**Outcome description**: In <redacted>, a representative of the victims of war crimes in <LOC> in Sudan engaged in dialogue with representatives of Aker BP, a <redacted> oil company that merged with (and thus absorbed) Lundin Energy (the company that contributed to war crimes and severe human rights violations during the oil wars in Sudan and whose former executives are currently standing trial for aiding and abetting these crimes).
+**Significance of the outcome**: The outcome was significant in the sense that it was the first time that a representative of the victims engaged in direct dialogue with the company (now) (co-)responsible for remediating the adverse impacts in <LOC>, expressing the grievances and directly voicing the ask of the victims towards this company.
+**Additional information (use if needed) **: The dialogue was part of a mediation process offered by the Norwegian National Contact Point for the OECD Guidelines, after PAX, together with 7 other <redacted> and <redacted> civil society organisations (including victims' organisations) filed a complaint with this NCP against Aker BP for failing its responsibilities under the OECD Guidelines and contributing to an adverse impact, namely the perpetuation of the ongoing denial of remedy to the victims. The mediation failed to lead to a joint agreement, so the <redacted> NCP will now publish an independent final assessment of the issues raised in the complaint. 
+**Rating significance**: early/small
+**Social actor**: Companies
+**Scale**: National
+**Contribution of the programme**: PAX and 7 other civil society organisations filed the complaint that led to the mediation between the complainants and the company.
+**Contribution of other actors and factors**: Yes, the NCP procedure was started by PAX and seven other civil society organisations. PAX has a leading role.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.2.1
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In <redacted>, a representative of the victims of war crimes in <LOC> in Sudan engaged in dialogue with representatives of Aker BP, a <redacted> oil company that merged with (and thus absorbed) Lundin Energy (the company that contributed to war crimes and severe human rights violations during the oil wars in Sudan and whose former executives are currently standing trial for aiding and abetting these crimes).  Significance description: The outcome was significant in the sense that it was the first time that a representative of the victims engaged in direct dialogue with the company (now) (co-)responsible for remediating the adverse impacts in <LOC>, expressing the grievances and directly voicing the ask of the victims towards this company.  Contribution of the programme: PAX and 7 other civil society organisations filed the complaint that led to the mediation between the complainants and the company.  Additional information: The dialogue was part of a mediation process offered by the Norwegian National Contact Point for the OECD Guidelines, after PAX, together with 7 other <redacted> and <redacted> civil society organisations (including victims' organisations) filed a complaint with this NCP against Aker BP for failing its responsibilities under the OECD Guidelines and contributing to an adverse impact, namely the perpetuation of the ongoing denial of remedy to the victims. The mediation failed to lead to a joint agreement, so the <redacted> NCP will now publish an independent final assessment of the issues raised in the complaint.   Contribution of other actors and factors: Yes, the NCP procedure was started by PAX and seven other civil society organisations. PAX has a leading role.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Seeking public support
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Mobilizing citizens and organizations

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SAH2508/PHR002
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Sahel/Burkina Faso
+**Year**: 2025
+**Outcome description**: Driven by a common desire to preserve the newfound peace and build a collective future, the inhabitants of the villages in Nagré and Natiabouani in the province of Gourma have set up an inter-community association on 24 May 2025, bringing together the two communities. 
+**Significance of the outcome**: The appointment of the chiefs of Natiabouani and Nagré had created a climate of mistrust and division, with serious consequences for social stability and local development. Living together, solidarity and cooperation for harmonious development are key factors in achieving the objectives of the SCC programme. Hence, since November 2024, the populations of the villlages of Nagré and Natiabouani have been trying to build mutual trust and understanding, recognizing the differnet leaders in the communities. The newly established association is a concrete result of these efforts. 
+**Additional information (use if needed) **: Restoring mutual trust and respect between the communities has prevented the escalation of violence and division between them. 
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: In 2023, OCADES organised training in Fada on endogenous mechanisms for community conflict management, prevention of ethnic and religious stigmatisation, and non-violent communication techniques for community leaders in the villages of Nagré, Tanwalbougou and Yamba. In addition, since 2021, OCADES, with the support of PAX, has organised large-scale awareness-raising campaigns targeting the populations of the province of Gourma. 
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Testimonials Activity reports 2023 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.4
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  Driven by a common desire to preserve the newfound peace and build a collective future, the inhabitants of the villages in Nagré and Natiabouani in the province of Gourma have set up an inter-community association on 24 May 2025, bringing together the two communities.  Significance:  The appointment of the chiefs of Natiabouani and Nagré had created a climate of mistrust and division, with serious consequences for social stability and local development. Living together, solidarity and cooperation for harmonious development are key factors in achieving the objectives of the SCC programme. Hence, since November 2024, the populations of the villlages of Nagré and Natiabouani have been trying to build mutual trust and understanding, recognizing the differnet leaders in the communities. The newly established association is a concrete result of these efforts.  Contribution:  In 2023, OCADES organised training in Fada on endogenous mechanisms for community conflict management, prevention of ethnic and religious stigmatisation, and non-violent communication techniques for community leaders in the villages of Nagré, Tanwalbougou and Yamba. In addition, since 2021, OCADES, with the support of PAX, has organised large-scale awareness-raising campaigns targeting the populations of the province of Gourma.  Additional Info:  Restoring mutual trust and respect between the communities has prevented the escalation of violence and division between them.  Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging, New structure
+**TypeOfChangeCluster**: Community bridging, Mobilizing citizens and organizations

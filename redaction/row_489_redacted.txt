@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV032
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: South Sudan
+**Year**: 2024
+**Outcome description**: In <redacted>, In <LOC>, Mr. <person> of the South Sudan constitution working group was elected speaker of <redacted> youth parliament where the youth of EAC shape decisions on matters affecting EAC members such as illegal visa fees at borders and capacity building for youth in enterprise development
+**Significance of the outcome**: This is significant because the youth are in regional positions where they are able to influence the other regional leaders to lobby for changes in South Sudan especially relating to the implementation of the constitution making process and peace agreement
+**Additional information (use if needed) **: Members of the South Sudan Youth Constitution working group have increased capacity to advocate for changes in South Sudan at regional level.
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: International 
+**Contribution of the programme**: The program provided the youth with mentorship and coaching by training them in leadership, advocacy and public speaking. The program also provided the members with seed grants to finance theirr awareness raising initiatives on the constitution making process
+**Contribution of other actors and factors**: UNMISS and UNDP also lobby for the enactment of the R-ARCSS and constitution making process
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.1 Youth and women's groups effectively advocate for participation in the constitution making process and for their needs and rights to be included in the constitution.                         
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In <redacted>, In <LOC>, Mr. <person> of the South Sudan constitution working group was elected speaker of <redacted> youth parliament where the youth of EAC shape decisions on matters affecting EAC members such as illegal visa fees at borders and capacity building for youth in enterprise development  Significance description: This is significant because the youth are in regional positions where they are able to influence the other regional leaders to lobby for changes in South Sudan especially relating to the implementation of the constitution making process and peace agreement  Contribution of the programme: The program provided the youth with mentorship and coaching by training them in leadership, advocacy and public speaking. The program also provided the members with seed grants to finance theirr awareness raising initiatives on the constitution making process  Additional information: Members of the South Sudan Youth Constitution working group have increased capacity to advocate for changes in South Sudan at regional level.  Contribution of other actors and factors: UNMISS and UNDP also lobby for the enactment of the R-ARCSS and constitution making process
+**Outcome is negative**: NO
+**MCQType of change**: Creating space for CSOs
+**TypeOfChangeCluster**: Empowering citizens and CSOs

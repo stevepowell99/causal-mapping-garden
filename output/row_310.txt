@@ -1,0 +1,23 @@
+**FragmentID**: SCC-IRQ2312/PHR024
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Iraq
+**Year**: 2023
+**Outcome description**: On August 31, 2023, the Iraqi Minister of Culture, Dr. Ahmed Al-Badrani vowed to urgently provide comprehensive transitional justice reparations to the victims in Ninewa
+**Significance of the outcome**: Decision makers showing interst in such a memorial event and providing supportive statement for victims is important recognition that victims and surviors appreciated at that event 
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: On August 31, 2023, in the Nineveh Governorate, Mosul District, in the Engineers Union Hall, the Al-Masala Organization, in cooperation with the Ministry of Culture, Tourism and Antiquities, organized a forum to celebrate the National Day of Women Survivors and commemorate the victims of violence based on religion or belief, and under the slogan “In honor of those who left a mark on our hearts.. “Your memory is everlasting,” in the presence of the Minister of Culture, the Governor of Nineveh, the Director of Survivors’ Affairs, representatives of civil society organizations, civil activists, media figures, representatives of government departments, families of victims, survivors, and specialists in issues of peacebuilding and transformative justice. During his speech delivered by the Minister of Culture, he stressed the need to bring justice to the victims of all Iraqi components who have suffered over the past decades until now.
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.4
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: On August 31, 2023, the Iraqi Minister of Culture, Dr. Ahmed Al-Badrani vowed to urgently provide comprehensive transitional justice reparations to the victims in Ninewa  Significance description: Decision makers showing interst in such a memorial event and providing supportive statement for victims is important recognition that victims and surviors appreciated at that event   Contribution of the programme: On August 31, 2023, in the Nineveh Governorate, Mosul District, in the Engineers Union Hall, the Al-Masala Organization, in cooperation with the Ministry of Culture, Tourism and Antiquities, organized a forum to celebrate the National Day of Women Survivors and commemorate the victims of violence based on religion or belief, and under the slogan “In honor of those who left a mark on our hearts.. “Your memory is everlasting,” in the presence of the Minister of Culture, the Governor of Nineveh, the Director of Survivors’ Affairs, representatives of civil society organizations, civil activists, media figures, representatives of government departments, families of victims, survivors, and specialists in issues of peacebuilding and transformative justice. During his speech delivered by the Minister of Culture, he stressed the need to bring justice to the victims of all Iraqi components who have suffered over the past decades until now.  Additional information:   Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-IRQ2508/PHR008
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Iraq
+**Year**: 2025
+**Outcome description**: In May 2025, the Department of Media and Communication at the Matyor Directorate in Ninewa revised their communication and social media protocols to better protect victims’ data and information during announcements and information dissemination. 
+**Significance of the outcome**: Protecting victim data is vital to safeguard their privacy, dignity, and safety. Previously, the directorate’s announcements publicly shared victims’ names and information, risking further harm. After advocacy and capacity building for 12 communication and management staff, the new protocol ensures sensitive information is handled with care, preventing misuse or exposure. Strengthening data protection reinforces victims’ trust in institutions and supports ethical, responsible justice processes. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: National 
+**Contribution of the programme**: Through a digital security training supported by Al-Mesalla and the advocay team the government staff built their technical capacity to handle sensitive documentation. The training directly led to the improved internal practices now in place.
+**Contribution of other actors and factors**: Yes, there was local organzation also worked on this topic
+**Rating contribution**: great
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: staff testimonies, before/after practices comparison
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Yes
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In May 2025, the Department of Media and Communication at the Matyor Directorate in Ninewa revised their communication and social media protocols to better protect victims’ data and information during announcements and information dissemination.  Significance:  Protecting victim data is vital to safeguard their privacy, dignity, and safety. Previously, the directorate’s announcements publicly shared victims’ names and information, risking further harm. After advocacy and capacity building for 12 communication and management staff, the new protocol ensures sensitive information is handled with care, preventing misuse or exposure. Strengthening data protection reinforces victims’ trust in institutions and supports ethical, responsible justice processes.  Contribution:  Through a digital security training supported by Al-Mesalla and the advocay team the government staff built their technical capacity to handle sensitive documentation. The training directly led to the improved internal practices now in place. Additional Info:   Contribution of Other factors:  Yes, there was local organzation also worked on this topic
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

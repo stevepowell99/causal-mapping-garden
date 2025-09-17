@@ -1,0 +1,23 @@
+**FragmentID**: SCC-LEB2508/CIV003
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Lebanon
+**Year**: 2024
+**Outcome description**: In December 2024, both displaced women (from Syria and South Lebanon) and Tripoli residents created a WhatsApp group to serve as a space for emotional support during the conflict.
+**Significance of the outcome**: Tripoli has a very divided, sectarian and complex social fabric. Many people have fled to Lebanon from Syria after the fall of the Assad regime, and this has led to a lot of mistrust within communities. Many Syrian refugees are facing discrimination and hatred amongst arrival. For people displaced from the South, it is a highly traumatic and difficult period. The fact that women from these communities came together and created a mutual support system shows that they are themselves overcoming these divisions and showing that humanity, empathy and support trump them. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: SADA provided emergency response which in turn brought members from different communities together.
+**Contribution of other actors and factors**: No
+**Rating contribution**: moderate
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes - Outcome 1.2
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In December 2024, both displaced women (from Syria and South Lebanon) and Tripoli residents created a WhatsApp group to serve as a space for emotional support during the conflict.  Significance description: Tripoli has a very divided, sectarian and complex social fabric. Many people have fled to Lebanon from Syria after the fall of the Assad regime, and this has led to a lot of mistrust within communities. Many Syrian refugees are facing discrimination and hatred amongst arrival. For people displaced from the South, it is a highly traumatic and difficult period. The fact that women from these communities came together and created a mutual support system shows that they are themselves overcoming these divisions and showing that humanity, empathy and support trump them.   Contribution of the programme: SADA provided emergency response which in turn brought members from different communities together.  Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging
+**TypeOfChangeCluster**: Community bridging

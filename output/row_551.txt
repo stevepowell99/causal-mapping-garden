@@ -1,0 +1,23 @@
+**FragmentID**: SCC-INT2508/ESF012
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: International / External Stress Factors
+**Year**: 2025
+**Outcome description**: In 2024/5, Dutch society (individuals, groups) and media have been mobilizing attention for the topic of financial institutions' involvement with the illegal settlement enterprise (and calling on financial institutions to act) following the publication of the DBIO report
+**Significance of the outcome**: 1) in the first years of the project, pressure on financial institutions was mainly done by the members of the DBIO coalition (as well as other ngo's). In 2024 and 2025, many people informed us that following the publication of the DBIO report they reached out to their bank, pension fund or insurer to call for action, either independently or through the Fair Finance Guide complaints mechanism and multiple individuals/groups have started their own campaign initiatives based on the data provided in the DBIO report. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: National 
+**Contribution of the programme**: The publication of the (late) 2023 and 2024 reports was accompanied by social media campaigning, calling upon people to contact their financial institution and call for action. Contextual changes (war and genocide in Gaza) also led to increased attention and action by individuals and groups, and to more media attention to the issue of European/Dutch complicity in the Israeli occupation in general, including through the financial sector. 
+**Contribution of other actors and factors**: Yes, the other Dutch DBIO members also contributed to the campaign. Follow the Money also garnered attention with its own investigation in Dutch pension funds' investments in companies active in the OPT. 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: https://paxvoorvrede.nl/wat-wij-doen/programmas/dont-buy-into-occupation/; https://eerlijkegeldwijzer.nl/campagnes/banken-verzekeraars-en-pensioenfondsen-investeren-in-bedrijven-betrokken-bij-illegale-nederzettingen-in-bezet-palestijns-gebied/; PAX instagram account; e-mails from individuals who informed us they had contacted their bank/insurer/pension fund; posts on social media and webpages from individuals/groups calling upon their FI or on others to take action, e.g. https://stopfundinggenocide.nl/; https://www.nietmijnaanslag.nl/; https://actie.degoedezaak.org/petitions/abp-nederzetting-vrij.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: SO2, new actor
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: Outcome description: In 2024/5, Dutch society (individuals, groups) and media have been mobilizing attention for the topic of financial institutions' involvement with the illegal settlement enterprise (and calling on financial institutions to act) following the publication of the DBIO report  Significance: in the first years of the project, pressure on financial institutions was mainly done by the members of the DBIO coalition (as well as other ngo's). In 2024 and 2025, many people informed us that following the publication of the DBIO report they reached out to their bank, pension fund or insurer to call for action, either independently or through the Fair Finance Guide complaints mechanism and multiple individuals/groups have started their own campaign initiatives based on the data provided in the DBIO report.  Contribution: The publication of the (late) 2023 and 2024 reports was accompanied by social media campaigning, calling upon people to contact their financial institution and call for action. Contextual changes (war and genocide in Gaza) also led to increased attention and action by individuals and groups, and to more media attention to the issue of European/Dutch complicity in the Israeli occupation in general, including through the financial sector.  Additional info (if any): Contribution of other actors and factors (if any): Yes, the other Dutch DBIO members also contributed to the campaign. Follow the Money also garnered attention with its own investigation in Dutch pension funds' investments in companies active in the OPT. 
+**Outcome is negative**: NO
+**MCQType of change**: New structure, Seeking public support
+**TypeOfChangeCluster**: Mobilizing citizens and organizations

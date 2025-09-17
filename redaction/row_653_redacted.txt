@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR027
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Sahel/Mali
+**Year**: 2025
+**Outcome description**: In <redacted>, during their advocacy mission in <LOC>, TRIJEUD and ADD (<person>) submitted the latest MDR report to the United Nations Independent Expert on the situation of human rights in Mali and to the AI Regional Office.
+**Significance of the outcome**: Before <redacted>, organisations were unable to disseminate MDR reports to regional or international bodies due to restrictions on civic space preventing organisations from bringing this information to national and regional levels. This development is important because it enables <redacted> civil society to document and bring human rights violations beyond the national level, thereby increasing the visibility of <redacted> issues and international pressure in favour of human rights. 
+**Additional information (use if needed) **: This change marks a first in the capacity of TRIJEUD and ADD to collaborate directly with regional and international human rights protection mechanisms, which is a major strategic advance.
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: In 2025 in <LOC>, TRIJEUD and ADD benefited from capacity building on advocacy in a context of restricted civic space. <redacted> was marked by the consolidation of SDR reports in line with international standards and on advocacy strategies and effective communication procedures. These activities enabled the organisations to gain the confidence and skills necessary to submit their reports directly to regional and international bodies.
+**Contribution of other actors and factors**: Yes. The United Nations Independent Expert on <person> himself encouraged the submission of information by civil society.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: The mission report.
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 2.3 Output 2.3.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In <redacted>, during their advocacy mission in <LOC>, TRIJEUD and ADD (<person>) submitted the latest MDR report to the United Nations Independent Expert on the situation of human rights in Mali and to the AI Regional Office. Significance:  Before <redacted>, organisations were unable to disseminate MDR reports to regional or international bodies due to restrictions on civic space <redacted> organisations from bringing this information to national and regional levels. This development is important because it enables <redacted> civil society to document and bring human rights <redacted> beyond the national level, thereby <redacted> the <redacted> of <redacted> issues and international pressure in favour of human rights.  Contribution:  In 2025 in <LOC>, TRIJEUD and ADD benefited from capacity building on advocacy in a context of restricted civic space. <redacted> was marked by the consolidation of SDR reports in line with international standards and on advocacy strategies and effective communication procedures. These activities enabled the organisations to gain the confidence and skills necessary to submit their reports directly to regional and international bodies. Additional <redacted>:  This change marks a first in the capacity of TRIJEUD and ADD to collaborate directly with regional and international human rights protection mechanisms, which is a major strategic advance. Contribution of Other factors:  Yes. The United Nations Independent Expert on <person> himself encouraged the submission of information by civil society.
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

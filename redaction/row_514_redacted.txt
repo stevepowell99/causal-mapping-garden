@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR025
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 3
+**coutnry**: South Sudan
+**Year**: 2024
+**Outcome description**: In <redacted>, The <redacted> of Unity State provided support to DRI on the survivors referral pathway through mobile courts as result of sensitization of <redacted> redress of traumatised survivors of  conflict related sexual violence in the after math of the 2014 conflict.
+**Significance of the outcome**: Some of the conflict related sexual voilence had been pending in the local court since 2014, through the advocacy work of DRI together with the state government these cases are now being addressed through the mobile court hence increasing the legal respresentation of the survivors in the local courts.
+**Additional information (use if needed) **: Small group of local community actors were organised as advocacy group for TJ in Bentiu Unity State, (30 people comprises of 10 men, 10 women, and 2 local authroity, 2 chief and 6 youth were moblised for TJ volunteers in the States)
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Regional
+**Contribution of the programme**: DRI has linked the project to other humanitairan aid whereas survivors who need medical care are referred to health services, food aid, economic recovery activities were initiated 
+**Contribution of other actors and factors**: 
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.3 CSO's and networks proactively monitor and advocate for implementation of R-ARCSS and human rights.
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In <redacted>, The <redacted> of Unity State provided support to DRI on the survivors referral pathway through mobile courts as result of sensitization of <redacted> redress of traumatised survivors of  conflict related sexual violence in the after math of the 2014 conflict.  Significance description: Some of the conflict related sexual voilence had been pending in the local court since 2014, through the advocacy work of DRI together with the state government these cases are now being addressed through the mobile court hence increasing the legal respresentation of the survivors in the local courts.  Contribution of the programme: DRI has linked the project to other humanitairan aid whereas survivors who need medical care are referred to health services, food aid, economic recovery activities were initiated   Additional information: Small group of local community actors were organised as advocacy group for TJ in Bentiu Unity State, (30 people comprises of 10 men, 10 women, and 2 local authroity, 2 chief and 6 youth were moblised for TJ volunteers in the States)  Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/<redacted>
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Iraq
+**Year**: 2024
+**Outcome description**: In <redacted>, the Dean of the College of Education at the University of Mosul asked the Ninewa Women’s Organization to sign a memorandum of understanding to <redacted> celebrate International Women’s Day and highlight the role of <person>'s women in peacebuilding
+**Significance of the outcome**: In <person>, the <redacted> of Women's Day and the organization of <redacted> that <redacted> women's participation, issues, and human rights, have been uncommon among <redacted> and civil institutions. The Ninewa Women's Organization, a feminist group focused on transitional justice, has seized greater opportunities since becoming involved in the project. It has played a pivotal role in <redacted> the voices of women from marginalized communities to policymakers and governmental spheres. The MoU with the <redacted> of <LOC> <redacted> a potential shift in the behavior and attitude of academics towards more feminist <redacted>, despite the overall gender backlash experienced in Iraq in 2023.
+**Additional information (use if needed) **: The Ninewa Women's Organization is one of the grant recipients and was established at the beginning of the project by a group of female volunteers with similar feminist principles. It relies on the financial support provided by the project. It is a feminist organization and is led by a young woman with a team of young feminist women from multiple components.
+**Rating significance**: medium
+**Social actor**: Non-state authorities
+**Scale**: Local
+**Contribution of the programme**: On <redacted> in both 2022 and 2023, the Ninewa Women’s Organization, with the support of the Peace and Freedom Organization, held a celebration on the occasion of International Women’s Day at the University of Mosul, during which women leaders from marginalized community groups were given awards. Several dialogues and round tables on gender equality and intersectional gender-sensitive programming were held during the two annual events, including representatives from the university.
+**Contribution of other actors and factors**: no
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: no
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.2 and 2.4
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In <redacted>, the Dean of the College of Education at the <redacted> of Mosul asked the Ninewa Women’s Organization to sign a <redacted> of understanding to <redacted> celebrate International Women’s Day and highlight the role of <person>'s women in peacebuilding  Significance description: In <person>, the <redacted> of Women's Day and the organization of <redacted> that <redacted> women's participation, issues, and human rights, have been uncommon among <redacted> and civil institutions. The Ninewa Women's Organization, a feminist group focused on transitional justice, has seized greater opportunities since becoming involved in the project. It has played a pivotal role in <redacted> the voices of women from marginalized communities to policymakers and governmental spheres. The MoU with the <redacted> of <LOC> <redacted> a potential shift in the behavior and attitude of academics towards more feminist <redacted>, despite the overall gender backlash experienced in Iraq in 2023.  Contribution of the programme: On <redacted> in both 2022 and 2023, the Ninewa Women’s Organization, with the support of the Peace and Freedom Organization, held a celebration on the occasion of International Women’s Day at the University of Mosul, during which women leaders from marginalized community groups were given awards. Several dialogues and round tables on gender equality and intersectional gender-sensitive programming were held during the two annual events, including representatives from the university.  Additional information: The Ninewa Women's Organization is one of the grant recipients and was established at the beginning of the project by a group of female volunteers with similar feminist principles. It relies on the financial support provided by the project. It is a feminist organization and is led by a young woman with a team of young feminist women from multiple components.  Contribution of other actors and factors: no
+**Outcome is negative**: NO
+**MCQType of change**: Policy change, Gender transformative
+**TypeOfChangeCluster**: Policy, Gender

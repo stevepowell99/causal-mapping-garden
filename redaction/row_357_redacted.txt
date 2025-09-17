@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV004
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 2
+**coutnry**: Ethiopia
+**Year**: 2023
+**Outcome description**: Since the HRD Award ceremony and recognition for <person> in <redacted>, Ibsa has expanded the provision of pro bono services to prisoners in <LOC> and <LOC> region.
+**Significance of the outcome**: HRDs continue to be at risk and receive threats due to their human rights work in Ethiopia. For <person>, the situation was not different as he was severally arrested and charged for his work. After the award and recognition of Mr. <person> as a HRD, <person> has remained steadfast in promoting and protecting human rights. The visibility arising from the award has improved his allies and support of CSOs and media. Moreover the award empowered him to expand his work beyond legal defense, fostering collaboration with various stakeholders.
+**Additional information (use if needed) **: Before the award he provided pro bono legal representation to more than 565 litigants before courts of law in <LOC>. These litigants included, HRDs and Journalists.  Despite facing arrest and a <redacted> sentence in prison in <redacted>,  the civil society organizations and fellow human rights defenders were able to greatly condem the arrest and secured his release within <redacted>. <person> was <redacted> as an outstanding HRD of <redacted> in 2023. Since the awarding ceremony, he has expanded the scope of the provision of probono legal representation to prisoners in <LOC>, <LOC> and <LOC> regions. He facilitated book donations to the prison administration. Furthermore, the award instilled courage for continued activism in the future. This award has increased his visibility on media platforms to dialogue on transitional justice, civil and political rights.
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: The SCC program supported the EHRDC 2nd <redacted> celebrations and HRD award ceremony for HRDs  on <redacted>, 2023 at <LOC>, <LOC>.
+**Contribution of other actors and factors**: Borkena News and Wolkait Media conducted interviews with <person> amplified the visibility of his work.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: HRD award: <redacted>
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Output 1.3.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Since the HRD Award ceremony and recognition for <person> in <redacted>, Ibsa has expanded the provision of pro bono services to prisoners in <LOC> and <LOC> region.  Significance description: HRDs continue to be at risk and receive threats due to their human rights work in Ethiopia. For <person>, the situation was not different as he was severally arrested and charged for his work. After the award and recognition of Mr. <person> as a HRD, <person> has remained steadfast in promoting and <redacted> human rights. The <redacted> arising from the award has improved his allies and support of CSOs and media. Moreover the award empowered him to expand his work beyond legal defense, fostering collaboration with various stakeholders.  Contribution of the programme: The SCC program supported the EHRDC 2nd <redacted> celebrations and HRD award ceremony for HRDs  on <redacted>, 2023 at <LOC>, <LOC>.  <redacted> information: Before the award he provided pro bono legal representation to more than 565 litigants before courts of law in <LOC>. These litigants included, HRDs and Journalists.  Despite facing arrest and a <redacted> sentence in prison in <redacted>,  the civil society organizations and fellow human rights defenders were able to greatly condem the arrest and secured his release within <redacted>. <person> was <redacted> as an outstanding HRD of <redacted> in 2023. Since the awarding ceremony, he has expanded the scope of the provision of probono legal representation to prisoners in <LOC>, <LOC> and <LOC> regions. He facilitated book donations to the prison administration. Furthermore, the award instilled courage for continued activism in the future. This award has increased his visibility on media platforms to dialogue on transitional justice, civil and political rights.  Contribution of other actors and factors: Borkena News and Wolkait Media conducted interviews with <person> amplified the visibility of his work.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

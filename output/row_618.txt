@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SYR2508/PHR013
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Syria
+**Year**: 2025
+**Outcome description**: In March 2025, the local municipality of Hassake issued a decision indicating that shops located in the city centre should install planter boxes in front of their promises in order to contribute to decrease air pollution.
+**Significance of the outcome**: The city of Hassake is impacted by a great amount of air pollution due to the use of generators and low quality fuel and petrol. Little care is given to the environment. Ahimsa Centre organized a campaign using non-violent strategies to promote environment protection by distributing planter boxes to a number of shops in a large commercial street of Hassake, as a means to promote the message that a green city would combat air pollution. The environmental authority, recognizing the positive impact of this campaign, addressed the municipality, requesting them to issue a decision to pressure shops in the city centre to install such planter boxes in the street in front of their shop. The municipality approved the request and officially issued the decision, making it compulsory for shops to install planter boxes.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: Regional
+**Contribution of the programme**: During 2023 and 2024, Ahimsa Centree trained its members on the use of non-violent strategies to influence policy making. In a view to gain practical experience, members of Ahimsa design and implemented a campaign to address environmental issues which including the distribution of planter boxes and dialogue with local authorities in order to influence their policy making. 
+**Contribution of other actors and factors**: D&P funds a project of PAX called Kulluna Muwatinun. This environmental campaign was implemented as part of this project.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes (the decision issued by the municipality)
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In March 2025, the local municipality of Hassake issued a decision indicating that shops located in the city centre should install planter boxes in front of their promises in order to contribute to decrease air pollution. Significance:  The city of Hassake is impacted by a great amount of air pollution due to the use of generators and low quality fuel and petrol. Little care is given to the environment. Ahimsa Centre organized a campaign using non-violent strategies to promote environment protection by distributing planter boxes to a number of shops in a large commercial street of Hassake, as a means to promote the message that a green city would combat air pollution. The environmental authority, recognizing the positive impact of this campaign, addressed the municipality, requesting them to issue a decision to pressure shops in the city centre to install such planter boxes in the street in front of their shop. The municipality approved the request and officially issued the decision, making it compulsory for shops to install planter boxes. Contribution:  During 2023 and 2024, Ahimsa Centree trained its members on the use of non-violent strategies to influence policy making. In a view to gain practical experience, members of Ahimsa design and implemented a campaign to address environmental issues which including the distribution of planter boxes and dialogue with local authorities in order to influence their policy making.  Additional Info:   Contribution of Other factors:  D&P funds a project of PAX called Kulluna Muwatinun. This environmental campaign was implemented as part of this project.
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

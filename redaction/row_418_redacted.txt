@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR001
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Sahel/Niger
+**Year**: 2023
+**Outcome description**: In Niger, on <redacted>, the national mechanism responsible for drafting reports due to the treaty bodies and the Universal Periodic Review invited ROTAB to the UPR mid-term report production session to enrich the report with evidence of human rights violations from the monitoring work carried out in the <LOC> area
+**Significance of the outcome**: Prior to 2023, ROTAB was involved in <redacted> the implementation of recommendations relating to <redacted>. Since 2023, following the MDR work carried out in the <LOC> region, ROTAB has been called upon to implement and monitor recommendations on human rights violations in conflict zones, and more specifically in the <LOC> area.
+**Additional information (use if needed) **: This interest in ROTAB is explained by the fact that in conflict zones access to information is not always easy, whereas the organisation has trained local monitors equipped with digital data collection tools.
+**Rating significance**: early/small
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: Direct contribution: The SCC programme deployed financial, human and material resources to document the cases, which contributed to the enrichment of the report  Positive contribution: The programme made it possible to monitor, document and report cases of human rights violations in conflict zones that are difficult to access  Intentional: The MDR work was done deliberately to protect and promote human rights in conflict zones
+**Contribution of other actors and factors**: As part of the triangulation of information, ROTAB contacts other civil society organisations and other players in the field, in particular local elected representatives, community leaders and government officials.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**:  - The report document, which will be available in <redacted>;  - The monitoring data are available in the database;  - Minutes of the session;
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 2.3
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In Niger, on <redacted>, the national mechanism responsible for drafting reports due to the treaty bodies and the Universal Periodic Review invited ROTAB to the UPR mid-term report <redacted> session to enrich the report with evidence of human rights <redacted> from the <redacted> work carried out in the <LOC> area  Significance description: Prior to 2023, ROTAB was involved in <redacted> the implementation of recommendations relating to <redacted>. Since 2023, following the MDR work carried out in the <LOC> region, ROTAB has been called upon to implement and monitor recommendations on human rights violations in conflict zones, and more specifically in the <LOC> area.  Contribution of the programme: Direct contribution: The SCC programme deployed financial, human and material resources to document the cases, which contributed to the enrichment of the report  Positive contribution: The programme made it possible to monitor, document and report cases of human rights violations in conflict zones that are difficult to access  Intentional: The MDR work was done deliberately to protect and promote human rights in conflict zones  Additional information: This interest in ROTAB is explained by the fact that in conflict zones access to information is not always easy, whereas the organisation has trained local monitors equipped with digital data collection tools.  Contribution of other actors and factors: As part of the triangulation of information, ROTAB contacts other civil society organisations and other players in the field, in particular local elected representatives, community leaders and government officials.
+**Outcome is negative**: NO
+**MCQType of change**: Creating space for CSOs
+**TypeOfChangeCluster**: Empowering citizens and CSOs

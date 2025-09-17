@@ -1,0 +1,23 @@
+**FragmentID**: SCC-IRQ2508/PHR010
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 3
+**coutnry**: Iraq
+**Year**: 2025
+**Outcome description**: In February 2025, Iraqi partrner Al-Mesalla together with the grantees have established Transformative Justice Forum in Ninewa, creating the first formal coordination platform for civil society and government actors to collaborate on justice and reconciliation. 
+**Significance of the outcome**: The forum created the first dedicated platform in Ninewa focused on transformative justice. The forum enabled joint planning, policy engagement, and inclusion of victim voices in post-conflict recovery efforts as well as It fostered collaboration across civil society and governmental stakeholders, enhancing shared understanding and joint action on post-conflict justice and reconciliation.  
+**Additional information (use if needed) **: The forum became a visible space for strategizing around policy gaps, advocacy priorities, and inclusion of victim voices, laying the groundwork for institutional follow-up on justice processes. 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: Al-Mesalla initiated and facilitated the formation of the forum as part of its transformative justice project in close coordination with its network of grantees and local stakeholders. 
+**Contribution of other actors and factors**: No
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes — forum membership list, meeting minutes, 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: no
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In February 2025, Iraqi partrner Al-Mesalla together with the grantees have established Transformative Justice Forum in Ninewa, creating the first formal coordination platform for civil society and government actors to collaborate on justice and reconciliation.  Significance:  The forum created the first dedicated platform in Ninewa focused on transformative justice. The forum enabled joint planning, policy engagement, and inclusion of victim voices in post-conflict recovery efforts as well as It fostered collaboration across civil society and governmental stakeholders, enhancing shared understanding and joint action on post-conflict justice and reconciliation.   Contribution:  Al-Mesalla initiated and facilitated the formation of the forum as part of its transformative justice project in close coordination with its network of grantees and local stakeholders.  Additional Info:  The forum became a visible space for strategizing around policy gaps, advocacy priorities, and inclusion of victim voices, laying the groundwork for institutional follow-up on justice processes.  Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging, Creating space for CSOs
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Community bridging

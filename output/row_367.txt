@@ -1,0 +1,23 @@
+**FragmentID**: SCC-BUR2312/PHR005
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Burundi
+**Year**: 2023
+**Outcome description**: On 23 July 2023, the Burundian Minister of Justice suspended three judges for two months for negligence and error in handling a case in which a victim of sexual harassment was arrested and detained.
+**Significance of the outcome**: The change is significant in that, in addition to the release of the victim, it was followed by the mobilisation of the highest authorities and the imposition of sanctions on the judges. Such direct intervention by the President and his government in a controversial justice case does not happen often. It only happens when there is a massive reaction from the general public and if the case does not affect the upper echelons of power. However, it remains deplorable that political or legislative measures are not taken to ensure that this kind of practice is not repeated in the future.
+**Additional information (use if needed) **: On 16 July 2023, a young female student who had been threatened by the headmaster of the Mugendo local high school to give him sexual favours and was then accused by him, arrested and tried for "revealing professional secrecy", was provisionally released. On 18 July, the President of the Republic openly criticised the handling of the case, calling on the judges to resign. Following this, the Minister of Justice suspended the three judges for two months.
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Individual
+**Contribution of the programme**: It was FOCODE which sounded the alarm and followed up very closely, which prompted the other players to get involved. 
+**Contribution of other actors and factors**: Other human rights defenders, the media, digital platforms, etc. And the President and Minister themselves.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: The alerts by FOCODE: https://www.facebook.com/share/p/F4h7UT1QwoSZCCw1/ https://m.facebook.com/story.php?story_fbid=300405592500948&id=100075945282086  The imprisonment order of the girl: https://www.facebook.com/share/p/ZKAGiYN2EtWsnKnE/  The suspension of the judges: https://www.iwacu-burundi.org/justice-affaire-christelle-ndayishimiye-un-dossier-entache-dirregularites-et-entoure-de-zones-dombre/ 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.4
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: On 23 July 2023, the Burundian Minister of Justice suspended three judges for two months for negligence and error in handling a case in which a victim of sexual harassment was arrested and detained.  Significance description: The change is significant in that, in addition to the release of the victim, it was followed by the mobilisation of the highest authorities and the imposition of sanctions on the judges. Such direct intervention by the President and his government in a controversial justice case does not happen often. It only happens when there is a massive reaction from the general public and if the case does not affect the upper echelons of power. However, it remains deplorable that political or legislative measures are not taken to ensure that this kind of practice is not repeated in the future.  Contribution of the programme: It was FOCODE which sounded the alarm and followed up very closely, which prompted the other players to get involved.   Additional information: On 16 July 2023, a young female student who had been threatened by the headmaster of the Mugendo local high school to give him sexual favours and was then accused by him, arrested and tried for "revealing professional secrecy", was provisionally released. On 18 July, the President of the Republic openly criticised the handling of the case, calling on the judges to resign. Following this, the Minister of Justice suspended the three judges for two months.  Contribution of other actors and factors: Other human rights defenders, the media, digital platforms, etc. And the President and Minister themselves.
+**Outcome is negative**: NO
+**MCQType of change**: Policy implementation, Gender transformative
+**TypeOfChangeCluster**: Policy, Gender

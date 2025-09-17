@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/ESF017
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: International / External Stress Factors
+**Year**: 2024
+**Outcome description**: In <redacted>, the Norwegian National Contact Point for the OECD <redacted> issued a <redacted> final statement on the complaint that PAX and others had filed against Aker BP in <redacted>, affirming HRDD requirements during mergers and acquisitions
+**Significance of the outcome**: 1) The OECD Guidelines are the soft law standard for businesses on how to identify, address and remediate human rights impacts they are involved with throughout their value chains. Sometimes there can be gaps when it comes to how to interpret/apply the guidelines in specific situations, which can create loopholes for companies. This was the case for what companies should do when they merge with or acquire a significant part of another company that has contributed to human rights violations and that still has an unfulfilled remedy responsibility. 2) NCP statements on individual cases can act as jurisprudence as they clarify what companies in general should be doing in certain kinds of situation. These are authoritative statements that help in supporting the implementation of the OECD Guidelines. The statement on the <person> BP case explicitly affirmed that during mergers and acquisitions the involved parties need to include the wider human rights impacts of these mergers and/or acquistions in their due diligence process. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Solidarity networks - international
+**Scale**: International 
+**Contribution of the programme**: PAX, together with 7 other <redacted> and <redacted> CSOs filed a complaint against Aker BP in 2022 with the <redacted> NCP. It is in the final statement on this complaint that the NCP sets a new standard for HRDD in mergers and acquisitions in general. 
+**Contribution of other actors and factors**: Yes, the NCP based its final statement on its own internal deliberations and submissions and expert opinions handed in by the complainants (led by PAX) and the company. 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: The <redacted> NCP finds shortcomings in human rights due diligence by <person> – Ansvarlig Næringsliv
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: SO2, outcome 2.3
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In <redacted>, the Norwegian National Contact Point for the OECD <redacted> issued a <redacted> final statement on the complaint that PAX and others had filed against Aker BP in <redacted>, affirming HRDD requirements during mergers and acquisitions  Significance description: 1) The OECD <redacted> are the soft law standard for <redacted> on how to identify, address and remediate human rights impacts they are involved with <redacted> their value chains. Sometimes there can be gaps when it comes to how to interpret/apply the <redacted> in specific <redacted>, which can create loopholes for companies. This was the case for what companies should do when they merge with or acquire a significant part of another company that has contributed to human rights <redacted> and that still has an unfulfilled remedy responsibility. 2) NCP <redacted> on <redacted> cases can act as jurisprudence as they clarify what companies in general should be doing in certain kinds of situation. These are authoritative <redacted> that help in <redacted> the implementation of the OECD <redacted>. The statement on the <person> BP case <redacted> affirmed that during mergers and acquisitions the involved parties need to include the wider human rights impacts of these mergers and/or acquistions in their due diligence process.   Contribution of the programme: PAX, together with 7 other <redacted> and <redacted> CSOs filed a complaint against Aker BP in 2022 with the <redacted> NCP. It is in the final statement on this complaint that the NCP sets a new standard for HRDD in mergers and acquisitions in general.   Additional information:   Contribution of other actors and factors: Yes, the NCP based its final statement on its own internal deliberations and submissions and expert opinions handed in by the complainants (led by PAX) and the company. 
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Seeking public support
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Mobilizing citizens and organizations

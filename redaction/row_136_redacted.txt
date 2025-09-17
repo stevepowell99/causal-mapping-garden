@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ032
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Lebanon
+**Year**: 2022
+**Outcome description**: As a result of a training on Gender Integration with ABAAD staff (e.g. program managers, project coordinators, technical team members), staff were able to develop and submit subsequent project proposals that more effectively integrated a gender-sensitive and transformative lens by being more repsonsive, inclusive and responsive to the gender needs and gaps in the community. In addition, they were also able to share their knowledge and expertise from the training with other organizations and programs they manage, influencing them to adopt similar approaches.
+**Significance of the outcome**: The gender integration training provided to ABAAD staff had a significant impact on their ability to use the toolkit for proposal development and influence other projects, programs, and organizations. The training equipped the staff with the tools, knowledge and skills necessary to integrate a gender lens  in their work, and to ensure that all ABAAD's programs and activities were gender-sensitive.
+**Additional information (use if needed) **:  
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: ABAAD main intervention in the SCC program is to make sure that gender is integrated into the program activities across different countries.  Gender integration toolkit/training is the main toolkit that Creates a space for the staff to analyze how  gender norms impact their own programs and the contexts where they work; and to provide them with tools to integrate a gender perspective across the program cycle.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: SO3: Output 3.4.5 Capacity building for ABAAD staff on GBV, Masculinities, and related topcs. 
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: As a result of a training on Gender Integration with ABAAD staff (e.g. program managers, project coordinators, technical team members), staff were able to develop and submit subsequent project proposals that more effectively integrated a gender-sensitive and transformative lens by being more repsonsive, inclusive and responsive to the gender needs and gaps in the community. In addition, they were also able to share their knowledge and expertise from the training with other organizations and programs they manage, influencing them to adopt similar approaches.  Significance description: The gender integration training provided to ABAAD staff had a significant impact on their ability to use the toolkit for proposal development and influence other projects, programs, and organizations. The training equipped the staff with the tools, knowledge and skills necessary to integrate a gender lens  in their work, and to ensure that all ABAAD's programs and activities were gender-sensitive.  Contribution of the programme: ABAAD main intervention in the SCC program is to make sure that gender is integrated into the program activities across different countries.  Gender integration toolkit/training is the main toolkit that Creates a space for the staff to analyze how  gender norms impact their own programs and the contexts where they work; and to provide them with tools to integrate a gender perspective across the program cycle.  Additional information:    Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A, Gender transformative
+**TypeOfChangeCluster**: Gender, Capacity change

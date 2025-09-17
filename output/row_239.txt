@@ -1,0 +1,23 @@
+**FragmentID**: SCC-PAL2312/ESF002
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Palestine
+**Year**: 2023
+**Outcome description**: On the 18th of December 2023, two members of the Dutch Parliament (Kati Piri and Jan Paternotte) asked parliamentary questions to the minister about investments of Dutch financial institutions in the Israeli settlement industry based on the Don't Buy Into Occupation report. 
+**Significance of the outcome**: Both members of parliament didn't ask questions about this before, so a change in behaviour. Keeps the topic on the agenda of the Parliament also by parties towards the center.
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: PAX is one of the leading members of the coalition and shared the report with the MPs. Positive and intended outcome
+**Contribution of other actors and factors**: Report was published by a coalition, so also the other members contributed.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Het rapport van Don’t Buy into Occupation (DBIO) aangaande investeringen in nederzettingen op de Westelijke Jordaanoever | Tweede Kamer der Staten-Generaal
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 4.1 - Members of the Dutch parliament (specifically SP, PvdD, GL, PvdA, CDA and D66) have asked relevant Parliamentary Questions and adopted relevant motions for binding legislation in terms of consequences for Dutch companies and FIs involved in activities related to illegal settlements
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: On the 18th of December 2023, two members of the Dutch Parliament (Kati Piri and Jan Paternotte) asked parliamentary questions to the minister about investments of Dutch financial institutions in the Israeli settlement industry based on the Don't Buy Into Occupation report.   Significance description: Both members of parliament didn't ask questions about this before, so a change in behaviour. Keeps the topic on the agenda of the Parliament also by parties towards the center.  Contribution of the programme: PAX is one of the leading members of the coalition and shared the report with the MPs. Positive and intended outcome  Additional information:   Contribution of other actors and factors: Report was published by a coalition, so also the other members contributed.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

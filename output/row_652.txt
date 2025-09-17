@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SAH2508/PHR026
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Sahel/Mali
+**Year**: 2024
+**Outcome description**: In March 2024, in Gao (Mali), a young man who had been arbitrarily detained for six months by the authorities on unfounded allegations of robbery was released. 
+**Significance of the outcome**: Previously, arbitrary detentions were rarely challenged and detainees often spent long periods of time in unknown locations. The release of this young man has also restored his rights. This is an important factor that demonstrates the monitor's commitment to access to justice and the promotion of human rights.
+**Additional information (use if needed) **: This case illustrates the concrete impact of our advocacy work at the local level, in conjunction with the judicial authorities. This was made possible thanks to the intervention of our field teams and their collaboration with their networks of contacts.
+**Rating significance**: early/small
+**Social actor**: State authorities
+**Scale**: Individual
+**Contribution of the programme**: The programme team mobilised to document the case and then activated its network of influential figures in the human rights field to ensure that a lawyer was assigned to the defendant.
+**Contribution of other actors and factors**: YES – Lawyer, social development worker, retired judge.
+**Rating contribution**: moderate
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: Yes – court decision and monitor's report.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.2 Output 2.2.3
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In March 2024, in Gao (Mali), a young man who had been arbitrarily detained for six months by the authorities on unfounded allegations of robbery was released.  Significance:  Previously, arbitrary detentions were rarely challenged and detainees often spent long periods of time in unknown locations. The release of this young man has also restored his rights. This is an important factor that demonstrates the monitor's commitment to access to justice and the promotion of human rights. Contribution:  The programme team mobilised to document the case and then activated its network of influential figures in the human rights field to ensure that a lawyer was assigned to the defendant. Additional Info:  This case illustrates the concrete impact of our advocacy work at the local level, in conjunction with the judicial authorities. This was made possible thanks to the intervention of our field teams and their collaboration with their networks of contacts. Contribution of Other factors:  YES – Lawyer, social development worker, retired judge.
+**Outcome is negative**: NO
+**MCQType of change**: Policy implementation, Capacity change L and A
+**TypeOfChangeCluster**: Policy, Capacity change

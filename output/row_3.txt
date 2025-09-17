@@ -1,0 +1,23 @@
+**FragmentID**: SCC-DRC2305/CIV002
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: DR Congo
+**Year**: 2021
+**Outcome description**: On November 13, 2021, in Kinshasa and other cities in the DRC, tens of thousands of Congolese, including many Christians as well as political leaders, peacefully marched and filed a memorandum to demand a truly independent and non-politicized National Electoral Commission.
+**Significance of the outcome**: This was probably the largest popular mobilization so far on the electoral process under President Felix Tshisekedi. Prior to this, street mobilization on these issues remained low. 
+**Additional information (use if needed) **: The government felt the pressure of this popular march, which prompted it to engage in more dialogue on these issues with religious leaders from the Church of Christ in Congo (ECC) and the Catholic Church. The march showed also that Catholics and Protestants were joining hands in this struggle for free and fair elections.
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: In the lead-up to the march, PAX worked on developing mobilization strategies with CALCC and MILAPRO and supported capacity-building activities on electoral issues and civic education for the grassroot cells of these organizations. CALCC and MILAPRO took the lead in organizing the march, provided leadership, and coordinated the movement of 'social and political forces' supporting the march through multiple high-level meetings and press briefings to ensure broad mobilization.
+**Contribution of other actors and factors**: Yes, other actors were involved in this dynamic, including other structures within the Catholic Church and the ECC as well as political parties. However, CALCC and MILAPRO played a leadership and coordination role this movement.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Press articles, videos and photos of the march, and the statements made on this occasion. https://www.rfi.fr/fr/afrique/20211113-rdc-premi%C3%A8re-marche-des-forces-politiques-et-sociales-pour-exiger-la-r%C3%A9forme-de-la-c%C3%A9ni; https://twitter.com/TopCongo/status/1459468070796288004?lang=en
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.4
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: On November 13, 2021, in Kinshasa and other cities in the DRC, tens of thousands of Congolese, including many Christians as well as political leaders, peacefully marched and filed a memorandum to demand a truly independent and non-politicized National Electoral Commission.  Significance description: This was probably the largest popular mobilization so far on the electoral process under President Felix Tshisekedi. Prior to this, street mobilization on these issues remained low.   Contribution of the programme: In the lead-up to the march, PAX worked on developing mobilization strategies with CALCC and MILAPRO and supported capacity-building activities on electoral issues and civic education for the grassroot cells of these organizations. CALCC and MILAPRO took the lead in organizing the march, provided leadership, and coordinated the movement of 'social and political forces' supporting the march through multiple high-level meetings and press briefings to ensure broad mobilization.  Additional information: The government felt the pressure of this popular march, which prompted it to engage in more dialogue on these issues with religious leaders from the Church of Christ in Congo (ECC) and the Catholic Church. The march showed also that Catholics and Protestants were joining hands in this struggle for free and fair elections.  Contribution of other actors and factors: Yes, other actors were involved in this dynamic, including other structures within the Catholic Church and the ECC as well as political parties. However, CALCC and MILAPRO played a leadership and coordination role this movement.
+**Outcome is negative**: NO
+**MCQType of change**: Seeking public support
+**TypeOfChangeCluster**: Mobilizing citizens and organizations

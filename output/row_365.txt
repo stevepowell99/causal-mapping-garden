@@ -1,0 +1,23 @@
+**FragmentID**: SCC-YEM2508/PHR005
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 3
+**coutnry**: Yemen
+**Year**: 2023
+**Outcome description**: In June & September 2024, Youth ( Rafa’a Al-Hakimi, Yahya Al-Adimi, Molhem) who trained in 2023 at "Impact Maker 2" became staff in CSOs in Taiz.
+**Significance of the outcome**: These youth had limited access to formal civic work before; now they influence civil society directly.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: In 2023, Rafa’a Al-Hakimi, Yahya Al-Adimi, and Molhem participated in the “Impact Maker 2” training program implemented by Resonate! Yemen in Taiz. The program equipped them with skills in project design, community engagement, and civil society work. As a result, all three youth were recruited as staff members by local civil society organizations in Taiz, contributing directly to ongoing development efforts in their communities.
+**Contribution of other actors and factors**: no
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: it is possible to reach out to the trained candidates and ask for contracts or other documentations 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In June & September 2024, Youth ( Rafa’a Al-Hakimi, Yahya Al-Adimi, Molhem) who trained in 2023 at "Impact Maker 2" became staff in CSOs in Taiz.  Significance description: These youth had limited access to formal civic work before; now they influence civil society directly.  Contribution of the programme: In 2023, Rafa’a Al-Hakimi, Yahya Al-Adimi, and Molhem participated in the “Impact Maker 2” training program implemented by Resonate! Yemen in Taiz. The program equipped them with skills in project design, community engagement, and civil society work. As a result, all three youth were recruited as staff members by local civil society organizations in Taiz, contributing directly to ongoing development efforts in their communities.  Additional information:   Contribution of other actors and factors: no
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

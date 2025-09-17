@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV001
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Yemen
+**Year**: 2022
+**Outcome description**: Two participants in <person> got grants and support from their local councils to expand their peacebuilding initiatives such as fixing lights in the streets, fixing some roads and enrolling disabled people in Hadramout University. 
+**Significance of the outcome**: There was a lack of the space and plaform for youth and women to present their local peacebuilding efforts. R Talks was a platform for them to present their peacebuilding efforts and gain more exposure, therefore better connections and more support from local councils. 
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: 200 people attended the Rtalks event in <person>, which was organised by Resonate Yemen. More than 1 million people interacted in the R Talks social media campaigns, advocating for and discussing local peacebuilding, conflict resolution and social cohesion. 
+**Contribution of other actors and factors**: No other actors contributed to this outcome. 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Questionaires of the RTalks sessions, assessment tool, numbers of social media campaigns. <redacted>
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: yes
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Two participants in <person> got grants and support from their local councils to expand their peacebuilding initiatives such as fixing lights in the streets, fixing some roads and enrolling disabled people in Hadramout University.   Significance description: There was a lack of the space and plaform for youth and women to present their local peacebuilding efforts. R Talks was a platform for them to present their peacebuilding efforts and gain more exposure, therefore better connections and more support from local councils.   Contribution of the programme: 200 people attended the Rtalks event in <person>, which was organised by Resonate Yemen. More than 1 million people interacted in the R Talks social media campaigns, advocating for and discussing local peacebuilding, conflict resolution and social cohesion.   Additional information:   Contribution of other actors and factors: No other actors contributed to this outcome. 
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

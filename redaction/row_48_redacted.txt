@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ008
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Iraq
+**Year**: 2022
+**Outcome description**: In <redacted>, <person> became an official member of the <person> network of advocates in <person> to work towards advocating for the rights of marginalized community members in his community
+**Significance of the outcome**: <person>, is a survivor of human rights violations at the hands of ISIS. He is of the <redacted> component and the common stereotype in <person> is that members of this community are supporters of the existence of ISIS. His inclusion in advocacy work on justice for victims in <person> is a significant step forward in achieving inclusive representation in the governorate.
+**Additional information (use if needed) **:  Upon joining the network he told his story to a wide audience and shared with everyone how every component were affected by the war. Partners reported that audience members were shocked.  <person> had his hand cut off by ISIS militants and his family members were killed during the invasion.
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: Through the project, a safe space was provided for those affected by ISIS, in the form of a forum in the station hall of the city of <LOC>. Approximately 150 people from different components and 6 television channels were invited by PFO and <person>'s speech was broadcasted all over the governorate.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes, video of the speech: <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.1
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In <redacted>, <person> became an official member of the <person> network of advocates in <person> to work towards advocating for the rights of marginalized community members in his community  Significance description: <person>, is a survivor of human rights violations at the hands of ISIS. He is of the <redacted> component and the common stereotype in <person> is that members of this community are supporters of the existence of ISIS. His inclusion in advocacy work on justice for victims in <person> is a significant step forward in achieving inclusive representation in the governorate.  Contribution of the programme: Through the project, a safe space was provided for those affected by ISIS, in the form of a forum in the station hall of the city of <LOC>. Approximately 150 people from different components and 6 television channels were invited by PFO and <person>'s speech was broadcasted all over the governorate.  Additional information:  Upon joining the network he told his story to a wide audience and shared with everyone how every component were affected by the war. Partners reported that audience members were shocked.  <person> had his hand cut off by ISIS militants and his family members were killed during the invasion.  Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging
+**TypeOfChangeCluster**: Community bridging

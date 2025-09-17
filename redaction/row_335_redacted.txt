@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/ESF015
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: International / External Stress Factors
+**Year**: 2023
+**Outcome description**: On <redacted>, 2023, COP28 featured Peace as a thematic convening day for the first time in the annual climate change conference’s history, where the Declaration on Climate, Relief, Recovery, & Peace was presented.
+**Significance of the outcome**: For the first time, peace and conflicts' interplay with the climate crisis and environmental degradation was acknowledged at the UNFCC COP forum, with the Declaration's backing by 80+ States and 40+ organisations. In terms of the narrative shift, this is a significant delevlopment that is helpful for the advancements of our programme's goals. However, it still remains to be seen if the Declaration's provision will be turned into concrete actions, and whether the Peace Day tradition will be taken on board by future <person> hosts.
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: International community
+**Scale**: International
+**Contribution of the programme**: PAX contributed to coordinated advocacy towards COP28 by the <redacted> community of practice, providing concrete language on emvironmental impacts of armed conflicts, to the policy document that <redacted> produced to target COP28 negotiators and the broader public. These policy recommendations were signed by over 40 NGO from different regions. Moreover, the ECCP was consulted by the drafters of the Declaration on Climate, Relief, Recovery, & Peace, and its language might have been influenced by the language in ECCP's recommendations, including by PAX's paragraphs (although this cannot be proven). 
+**Contribution of other actors and factors**: Yes, many other organisations were involved in bringing the peace and conflict angle to climate negotiations. The <redacted> community and its members played a crucial role, but stakeholders beyond the civil society were in the driving seat to shape this agenda.
+**Rating contribution**: little
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: COP28 Declaration On Climate, Relief, Recovery And Peace ; <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: On <redacted>, 2023, COP28 featured Peace as a thematic convening day for the first time in the annual climate change conference’s history, where the Declaration on Climate, Relief, Recovery, & Peace was presented.  Significance description: For the first time, peace and conflicts' interplay with the climate crisis and environmental degradation was acknowledged at the UNFCC COP forum, with the Declaration's backing by 80+ States and 40+ organisations. In terms of the narrative shift, this is a significant delevlopment that is helpful for the advancements of our programme's goals. However, it still remains to be seen if the Declaration's provision will be turned into concrete actions, and whether the Peace Day tradition will be taken on board by future <person> hosts.  Contribution of the programme: PAX contributed to coordinated advocacy towards COP28 by the <redacted> community of practice, providing concrete language on emvironmental impacts of armed conflicts, to the policy document that <redacted> produced to target COP28 negotiators and the broader public. These policy recommendations were signed by over 40 NGO from different regions. Moreover, the ECCP was consulted by the drafters of the Declaration on Climate, Relief, Recovery, & Peace, and its language might have been influenced by the language in ECCP's recommendations, including by PAX's paragraphs (although this cannot be proven).   Additional information:   Contribution of other actors and factors: Yes, many other organisations were involved in bringing the peace and conflict angle to climate negotiations. The <redacted> community and its members played a crucial role, but stakeholders beyond the civil society were in the driving seat to shape this agenda.
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR042
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 3
+**coutnry**: South Sudan
+**Year**: 2024
+**Outcome description**: On <redacted>, Juba Massacre Widows and Orphans Association (JMWOA), launched a documentary of the Juba Massacre of the 1992 to widows and orphans, representatives from the <LOC> and policy makers from the Revitalised Transitional National Legislative Assembley of South Sudan
+**Significance of the outcome**: This is the first time, the Juba Massacre Widows and Orphans Association launched to the public the <redacted> of profiles of the victims of 1992.  
+**Additional information (use if needed) **: The documentary depicted a collection of photos, profiles and testimonies by surviving family members including widows, orphans and friends of the families. under the theme: “Echoes of silence, Voices of Resilience for Justice”.
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: National 
+**Contribution of the programme**: The Association has been actively gathering collections of photos, and testimonies from widows and orphans of the victims for <redacted><redacted><person> sourced for expertise from a <redacted> to make a <redacted> from all these collections into a documentary for public  screening during <redacted> commemoration of the <redacted>
+**Contribution of other actors and factors**: no
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Documentary videos (3)
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.3 CSO's and networks proactively monitor and advocate for implementation of R-ARCSS and human rights.
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: On <redacted>, Juba Massacre Widows and Orphans Association (JMWOA), launched a documentary of the Juba Massacre of the 1992 to widows and orphans, representatives from the <LOC> and policy makers from the Revitalised Transitional National Legislative Assembley of South Sudan  Significance description: This is the first time, the Juba Massacre Widows and Orphans Association launched to the public the <redacted> of profiles of the victims of 1992.    Contribution of the programme: The Association has been actively gathering collections of photos, and testimonies from widows and orphans of the victims for <redacted><redacted><person> sourced for expertise from a <redacted> to make a <redacted> from all these collections into a documentary for public  screening during <redacted> commemoration of the <redacted>  Additional information: The documentary depicted a collection of photos, profiles and testimonies by surviving family members including widows, orphans and friends of the families. under the theme: “Echoes of silence, Voices of Resilience for Justice”.  Contribution of other actors and factors: no
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

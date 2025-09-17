@@ -1,0 +1,23 @@
+**FragmentID**: SCC-ETH2508/PHR018
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Ethiopia
+**Year**: 2025
+**Outcome description**: Throughout 2025, two HRDs trained by Amnesty International have integrated their newly gained knowledge and skills in their trainings to others in areas such as gender-based violence (GBV) and GBV case management; digital security and safety, including online GBV.
+**Significance of the outcome**: The initial aim of the training provided to Ehtiopian HRDs by Amnesty International was to ensure safe and secure monitoring, documentation and reporting of human rights violations/abuses in conflict areas in Ethiopia. The fact that HRDs use elements from the training within their own training and coaching activities to others is a welcoming development, but not necessarily foreseen. 
+**Additional information (use if needed) **: One HRD has used elements from the training in training other stakeholders, including survivors of GBV, on GBV management. This was in the context of a project sponsored by Center of Concern (NGO). Another HRD delivered a digital security and safety session for 6 members of Gorzo’s executive team and later conducted a training for 13 young female activists under a FempeaceEA project, covering digital security, online gender-based violence (OGBV), and gendered disinformation. 
+**Rating significance**: early/small
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: From 14 to 18 October 2024, AINL and AI's researcher and campaigner from the Regional Office in Nairobi held a training in documenting human rights violations for 12 HRDs from various conflict areas of Ethiopia. This was followed up by various online engagements (audio calls and text messages) with the concerned HRD(s) to enable and coach them to do proper and useful documentation, from Nov-Dec 2024 through June 2025.
+**Contribution of other actors and factors**: Yes
+**Rating contribution**: moderate
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: Referrals made for survivors, Advocacy initiatives supported.  
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: SO2
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  One HRD who participated in the Amnesty International training in October 2024, applied the training directly when working with Amnesty International to document the brutal U.S. airstrike in Yemen that killed and injured Ethiopian detainees. I interviewed 15 survivors (13 Tigrigna speakers, 2 Amharic speakers), applying trauma-sensitive and ethical interviewing skills, following safeguarding policies, and ensuring the sessions were conducted with empathy and without retraumatization. I then carefully transcribed and translated the interviews into English, adding contextual notes to clarify cultural elements and observations for staff. Significance:  He interviewed 15 survivors (13 Tigrigna speakers, 2 Amharic speakers), applying trauma-sensitive and ethical interviewing skills, following safeguarding policies, and ensuring the sessions were conducted with empathy and without retraumatization. He then carefully transcribed and translated the interviews into English, adding contextual notes to clarify cultural elements and observations for staff. Contribution:  From 14 to 18 October 2024, AINL and AI's researcher and campaigner from the Regional Office in Nairobi held a training in documenting human rights violations for 12 HRDs from various conflict areas of Ethiopia. This was followed up by various online engagements (audio calls and text messages) with the concerned HRD(s) to enable and coach them to do proper and useful documentation, from Nov-Dec 2024 through June 2025. Additional Info:   Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change  Safety and Security, Gender sensitive
+**TypeOfChangeCluster**: Gender, Capacity change

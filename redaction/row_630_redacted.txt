@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV004
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Sahel
+**Year**: 2023
+**Outcome description**: In Burkina Faso, Mali, and Niger, since 2023, the CBDDH, COMADDH, and RNDDH use more secure communication tools.
+**Significance of the outcome**: Before 2023, CBDDH, COMADDH and RNDDH used less secure communication tools in their <redacted> activities. 
+**Additional information (use if needed) **: Following the physical and digital security training held in <redacted> in <LOC>, Togo, human rights defenders from Burkina Faso, Mali, and Niger and the digital security audits conducted in the offices of national HRDs Coalitions in Burkina Faso, Mali and <redacted>, CBDDH, COMADDH and RNDDH changed practices to use more secure communication tools such Secure Private Messenger and ProtonMail. 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: Program and partners covered all expenses linked to the capacity building in security management and provision of secure communication tools. 
+**Contribution of other actors and factors**: No
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Reports and secure communication tools 
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 1.2                                                             Output 1.2.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Outcome description:  In Burkina Faso, Mali, and Niger, since 2023, the CBDDH, COMADDH, and RNDDH use more secure communication tools. Significance:  Before 2023, CBDDH, COMADDH and RNDDH used less secure communication tools in their <redacted> <redacted>.  Contribution:  Program and partners covered all expenses linked to the capacity building in security <redacted> and provision of secure communication tools.  <redacted> <redacted>:  Following the physical and digital security training held in <redacted> in <LOC>, Togo, human rights defenders from Burkina Faso, Mali, and Niger and the digital security audits conducted in the offices of national HRDs Coalitions in Burkina Faso, Mali and <redacted>, CBDDH, COMADDH and RNDDH changed practices to use more secure communication tools such Secure Private Messenger and ProtonMail.  Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change  Safety and Security
+**TypeOfChangeCluster**: Capacity change

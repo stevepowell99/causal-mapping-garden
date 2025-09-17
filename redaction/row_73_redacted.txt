@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/ESF001
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Syria
+**Year**: 2022
+**Outcome description**: Increased coverage in international media and interest from policy makers how the conflict-linked water scarcity impacted pastoralists after PAX published an analysis of this issue in <redacted>.
+**Significance of the outcome**: This has been the first large report on the specific impact on marginalized groups such as pastoralists and highlight these concerns, where most coverage on the droughts in <LOC> Syria has been linked to farmers. 
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Media
+**Scale**: International
+**Contribution of the programme**: Based on field work (<redacted> with pastoralists, local authorities, traders and NGOs) conducted in <redacted> in <LOC> Syria published this report in <redacted> and shared this with global media outlets to gain attention on this topic
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes <redacted>.1
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: Increased coverage in international media and interest from policy makers how the conflict-linked water scarcity impacted pastoralists after PAX published an analysis of this issue in <redacted>.  Significance description: This has been the first large report on the specific impact on marginalized groups such as pastoralists and highlight these concerns, where most coverage on the droughts in <LOC> Syria has been linked to farmers.   Contribution of the programme: Based on field work (<redacted> with pastoralists, local authorities, traders and NGOs) conducted in <redacted> in <LOC> Syria published this report in <redacted> and shared this with global media outlets to gain attention on this topic  Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SAH2508/PHR003
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Sahel/Burkina Faso
+**Year**: 2024
+**Outcome description**: On 14 December 2024, after reconciliation efforts, members of the Christian and Muslim religious communities in the village of Nagré in the province of Gourma, who had been at odds after a Muslim son of the village targeted the Christian community during the distribution of food aid, decided to set up a community committee Sougrimani, responsible for collecting and distributing food in an inclusive and participatory manner.
+**Significance of the outcome**: In May 2025, an imam from Nagré living in Ouagadougou generously sent two tonnes of food to support vulnerable people in his home village. However, when the donations arrived, a crisis quickly arose over the identification of the beneficiaries. Peace and stability within the intervention communities contribute to the achievement of the SCC programme's objectives.
+**Additional information (use if needed) **: Reconciliation efforts enabled the community to set up a community committee responsible for collecting and distributing food in an inclusive and participatory manner.
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: OCADES supported the establishment of Local Dialogue and Mediation Committees (CLDM) in the villages of Nagré, Tanwalbougou and Yamba. These committees received in-depth training in mediation techniques organised by OCADES in March 2025 in Fada.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Activity report Testimonials
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.4
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  On 14 December 2024, after reconciliation efforts, members of the Christian and Muslim religious communities in the village of Nagré in the province of Gourma, who had been at odds after a Muslim son of the village targeted the Christian community during the distribution of food aid, decided to set up a community committee Sougrimani, responsible for collecting and distributing food in an inclusive and participatory manner. Significance:  In May 2025, an imam from Nagré living in Ouagadougou generously sent two tonnes of food to support vulnerable people in his home village. However, when the donations arrived, a crisis quickly arose over the identification of the beneficiaries. Peace and stability within the intervention communities contribute to the achievement of the SCC programme's objectives. Contribution:  OCADES supported the establishment of Local Dialogue and Mediation Committees (CLDM) in the villages of Nagré, Tanwalbougou and Yamba. These committees received in-depth training in mediation techniques organised by OCADES in March 2025 in Fada. Additional Info:  Reconciliation efforts enabled the community to set up a community committee responsible for collecting and distributing food in an inclusive and participatory manner. Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging, New structure
+**TypeOfChangeCluster**: Community bridging, Mobilizing citizens and organizations

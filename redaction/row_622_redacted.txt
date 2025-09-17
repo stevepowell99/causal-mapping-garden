@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV009
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Lebanon
+**Year**: 2025
+**Outcome description**: <redacted>, youth activists from different and conflicting political parties engaged in dialogue with each other on controversial issues in <LOC> and <LOC>, Lebanon. 
+**Significance of the outcome**: Due to the polarization in the alternative groups and parties at the national level there was a lack of dialogue among them, and initiatives have failed to build a bridge. This in fact has a positive correlation to the failure of the movement and that’s why creating this space for smooth constructive dialogue is relevant because it increase the tolerance among opposing sides.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: <person> Provided tools ( dialogue techniques negotiation skills historical overviews roots of sectarianism in and division in Lebanon) and training materials (manuals, access to networks and building linkages) and connecting activists who are from same region but different political parties through districts activists’ academies.
+**Contribution of other actors and factors**: Yes: During the rising of <redacted> movement a rise in awareness and opening spaces for youth to be part of political sphere and the need of having a one strong power against the traditional political parties to engage youth in the decision-making process.
+**Rating contribution**: 
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes - Outcome 1.2
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Outcome description:  <person>: <redacted>, youth activists from different and conflicting political parties engaged in dialogue with each other on controversial issues in <LOC> and <LOC>, Lebanon.  Significance:  Due to the polarization in the alternative groups and parties at the national level there was a lack of dialogue among them, and initiatives have failed to build a bridge. This in fact has a positive correlation to the failure of the movement and that’s why creating this space for smooth constructive dialogue is relevant because it increase the tolerance among opposing sides. Contribution:  <person> Provided tools ( dialogue techniques negotiation skills historical overviews roots of sectarianism in and division in Lebanon) and training materials (manuals, access to networks and building linkages) and connecting activists who are from same region but different political parties through districts activists’ academies. Additional <redacted>:   Contribution of Other factors:  Yes: During the rising of <redacted> movement a rise in awareness and opening spaces for youth to be part of political sphere and the need of having a one strong power against the traditional political parties to engage youth in the decision-making process.
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging, Capacity change L and A
+**TypeOfChangeCluster**: Capacity change, Community bridging

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR014
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: South Sudan
+**Year**: 2022
+**Outcome description**: In <redacted>, the <LOC> counsellors together with <LOC> Commissioner agreed to form working <redacted> to supervise the service delivery in <LOC> after <redacted> <redacted> training on the South Sudan Local <redacted> Act: 2009 in <LOC>.  
+**Significance of the outcome**: For the first time county counsellor were appointed in <LOC> based on their boma’s. The counsellors had no idea how to fulfil their role. 
+**Additional information (use if needed) **: The County Peace Desk in <LOC> came up with the idea of appointing the county counsellor. An Member of Parliamant was hired to facilitate the training. The The Revitalized Agreement for  Resolution of Conflict in South  Sudan (R-ARCSS) indicates that appointment of county counsellors should take place.  
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: Local
+**Contribution of the programme**: Reconcile trained the counsellors on the proceedings of the parliament. Peacebuilding, conflict transformation, local government act, enacting bylaws. The commissioner was present to close the session. Agreements were made to form committees, consisting out of different political parties. 
+**Contribution of other actors and factors**: the <LOC> counsellors together with <LOC> Commissioner
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: yes, in the partnr reportof Reconcile.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In <redacted>, the <LOC> counsellors together with <LOC> Commissioner agreed to form working <redacted> to supervise the service delivery in <LOC> after <redacted> <redacted> training on the South Sudan Local <redacted> Act: 2009 in <LOC>.    Significance description: For the first time county counsellor were appointed in <LOC> based on their boma’s. The counsellors had no idea how to fulfil their role.   Contribution of the programme: Reconcile trained the counsellors on the proceedings of the parliament. Peacebuilding, conflict transformation, local government act, enacting bylaws. The commissioner was present to close the session. Agreements were made to form committees, consisting out of different political parties.   Additional information: The County Peace Desk in <LOC> came up with the idea of appointing the county counsellor. An Member of Parliamant was hired to facilitate the training. The The Revitalized Agreement for  Resolution of Conflict in South  Sudan (R-ARCSS) indicates that appointment of county counsellors should take place.    Contribution of other actors and factors: the <LOC> counsellors together with <LOC> Commissioner
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging, New structure
+**TypeOfChangeCluster**: Community bridging, Mobilizing citizens and organizations

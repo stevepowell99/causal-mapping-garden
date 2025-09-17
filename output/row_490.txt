@@ -1,0 +1,23 @@
+**FragmentID**: SCC-BUR2508/CIV006
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Burundi
+**Year**: 2024
+**Outcome description**: In October 2024, the Special Rapporteur' mandate was renewed at a  Human Rights Council session in Geneva.
+**Significance of the outcome**: Due to the recurrence of cases of human rights violations and the impunity that plagues the judicial system, Burundi remains in the sights of the international community regarding the respect of its commitments in terms of respect for human rights.
+**Additional information (use if needed) **:  In view of the persistence of cases of human rights violations and the unwillingness of the authorities, independent civil society continue mobilizing the international community/human rights protection mechanisms for the restoration of the rule of law.
+**Rating significance**: medium
+**Social actor**: International community
+**Scale**: International 
+**Contribution of the programme**: The SCC program contributed through Human Rights Violations  documentation/monitoring to advocate for renewal.
+**Contribution of other actors and factors**: Synergy of other actors including civil society, the media and partner organizations (DD, FIACAT, CBDDH, OMCT, etc.)
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: https://www.acatburundi.org/les-organisations-fiacat-et-acat-burundi-encouragent-le-conseil-des-droits-de-lhomme-a-renouveler-le-mandat-du-rapporteur-special/
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.3                                             Output 1.3.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In October 2024, the Special Rapporteur' mandate was renewed at a  Human Rights Council session in Geneva.  Significance description: Due to the recurrence of cases of human rights violations and the impunity that plagues the judicial system, Burundi remains in the sights of the international community regarding the respect of its commitments in terms of respect for human rights.  Contribution of the programme: The SCC program contributed through Human Rights Violations  documentation/monitoring to advocate for renewal.  Additional information:  In view of the persistence of cases of human rights violations and the unwillingness of the authorities, independent civil society continue mobilizing the international community/human rights protection mechanisms for the restoration of the rule of law.  Contribution of other actors and factors: Synergy of other actors including civil society, the media and partner organizations (DD, FIACAT, CBDDH, OMCT, etc.)
+**Outcome is negative**: NO
+**MCQType of change**: Policy implementation
+**TypeOfChangeCluster**: Policy

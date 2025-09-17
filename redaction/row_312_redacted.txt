@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR034
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Lebanon
+**Year**: 2023
+**Outcome description**: In <redacted>, the <redacted> government committed to 10 million euros extra for 'Protection in Region initiatives'
+**Significance of the outcome**: The <redacted> government remains as a key ally and donor for <redacted> refugee protection efforts. Also, there is increased awareness amongst the donor community on the importance of resourcing <redacted> refugee protection.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: PAX partner, <redacted> is a primary actor in advocating for these funds
+**Contribution of other actors and factors**: Organisations working on <redacted> refugee protection have been calling for the same asks.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.3.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In <redacted>, the <redacted> government committed to 10 million euros extra for 'Protection in Region initiatives'  Significance description: The <redacted> government remains as a key ally and donor for <redacted> refugee protection efforts. Also, there is increased awareness amongst the donor community on the importance of resourcing <redacted> refugee protection.  Contribution of the programme: PAX partner, <redacted> is a primary actor in advocating for these funds  Additional information:   Contribution of other actors and factors: Organisations working on <redacted> refugee protection have been calling for the same asks.
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

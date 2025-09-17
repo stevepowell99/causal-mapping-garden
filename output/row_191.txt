@@ -1,0 +1,23 @@
+**FragmentID**: SCC-YEM2305/CIV008
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Yemen
+**Year**: 2022
+**Outcome description**: In December 2022, one of the particpants of Impact Maker in Hajar, conducted his first training in advocacy and initiatives managment.
+**Significance of the outcome**: There is a lack of qualified trainers in Hajar district who can provide youth with advocacy training.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: He was one of the particpants of Impact maker and part of the capcity building trainings. Thes training sessions were organized by Resonate during Q3-4 2022, aimed to strengthen the participants' capacities in designing advocacy and lobby activities, collaboration with local councils, and understanding peacebuilding concepts. 
+**Contribution of other actors and factors**: 
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: No
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In December 2022, one of the particpants of Impact Maker in Hajar, conducted his first training in advocacy and initiatives managment.  Significance description: There is a lack of qualified trainers in Hajar district who can provide youth with advocacy training.  Contribution of the programme: He was one of the particpants of Impact maker and part of the capcity building trainings. Thes training sessions were organized by Resonate during Q3-4 2022, aimed to strengthen the participants' capacities in designing advocacy and lobby activities, collaboration with local councils, and understanding peacebuilding concepts.   Additional information:   Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

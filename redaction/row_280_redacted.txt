@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ015
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Iraq
+**Year**: 2023
+**Outcome description**: In <redacted>, the director of Education in <LOC> stated that the department of education of the district will double its efforts in ensuring young people who became disabled due to HR violations will be assisted to fully reintegrate schools
+**Significance of the outcome**: Young people with disabilities in <LOC>, particularly those who were affected by the ISIS invasion, have been neglected by local authorities. Due to a lack of proper accommodations for people with disabilities within schools, these young people have been unable to return to school, which has exacerbated their marginalization in society. 
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: In <redacted>, the local peace organization of <person>, a grantee trained and coached by <person>, organized a campaign entitled "With you I can", led by people with disabilities who were affected by war crimes. During the campaign, people with disabilities had the opportunity to share their stories and experiences with a wider audience, and to directly raise their concerns and priorities with national and local authorities who attended the events. The issue issue of the education barrier and access to their right to reparations where highlighted as the top priorities necessary for their rehabilitation into society.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <LOC>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 1.1, 2.1 and 2.4
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In <redacted>, the director of Education in <LOC> stated that the <redacted> of education of the district will double its efforts in ensuring young people who became disabled due to HR <redacted> will be assisted to fully reintegrate schools  Significance description: Young people with disabilities in <LOC>, particularly those who were affected by the ISIS invasion, have been neglected by local authorities. Due to a lack of proper accommodations for people with disabilities within schools, these young people have been unable to return to school, which has exacerbated their marginalization in society.   Contribution of the programme: In <redacted>, the local peace organization of <person>, a grantee trained and coached by <person>, organized a campaign entitled "With you I can", led by people with disabilities who were affected by war crimes. During the campaign, people with disabilities had the opportunity to share their stories and experiences with a wider audience, and to directly raise their concerns and priorities with national and local authorities who attended the events. The issue issue of the education barrier and access to their right to reparations where highlighted as the top priorities necessary for their rehabilitation into society.  Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

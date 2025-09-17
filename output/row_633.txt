@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SAH2508/CIV007
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Sahel
+**Year**: 2025
+**Outcome description**: Since January 2025, the CBDDH, COMADDH, and RNDDH have developed and integrated gender policy in order to take this dimension into account in their projects and programs in Burkina Faso, Mali, and Niger.
+**Significance of the outcome**: Prior to 2025, the CBDDH, COMADDH, and RNDDH did not have a gender policy.  
+**Additional information (use if needed) **: The program sponsored diagnostic studies on gender mainstreaming for the benefit of the CBDDH, COMADDH, and RNDDH. These studies led to the development and adoption of gender policies by the national coalitions (CBDDH, COMADDH, and RNDDH).
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: The SCC program has funded gender diagnostics and policy development through ABAAD in collaboration with its partners.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Policies , reports ,photos
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 1.2                                                            
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Outcome description:  Since January 2025, the CBDDH, COMADDH, and RNDDH have developed and integrated gender policy in order to take this dimension into account in their projects and programs in Burkina Faso, Mali, and Niger. Significance:  Prior to 2025, the CBDDH, COMADDH, and RNDDH did not have a gender policy.   Contribution:  The SCC program has funded gender diagnostics and policy development through ABAAD in collaboration with its partners. Additional Info:  The program sponsored diagnostic studies on gender mainstreaming for the benefit of the CBDDH, COMADDH, and RNDDH. These studies led to the development and adoption of gender policies by the national coalitions (CBDDH, COMADDH, and RNDDH). Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Policy change, Gender sensitive
+**TypeOfChangeCluster**: Policy, Gender

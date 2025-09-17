@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV039
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: South Sudan
+**Year**: 2024
+**Outcome description**: In <redacted>,  South Sudan Human Rights Defenders Networ (SSHRDN) fully integrated the use of Kobo ToolBox into its programming across South Sudan.
+**Significance of the outcome**: The use of Kobo ToolBox has enhanced the safety and secure collection of  confidential/risky information as well as analysis of the data collected by the human rights defenders of the SSHRDN and monitors.
+**Additional information (use if needed) **: In <redacted>, 2 network secretariat staff with 15 monitors were trained on <redacted> documentation and reporting (MDR) <redacted> and human rights <redacted> documentation. A follow up training in <redacted> supporting 2 network secretariat staff who later provided a refresher yet advanced training for the 15 monitors.
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: With financial support from the program, DefendDefenders with its consultants conducted an expert guided KoboToolbox and KoboCollect advanced workshop in <redacted> in <LOC> (Uganda). 2 network staff members who attended the training later trained the 15 monitors. Additionally the Kobo experts provided continous coaching on form customization to the SSHRDN secretariat.    
+**Contribution of other actors and factors**: no
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.2 SSHRDN comprehensively & strategically documents civic-space-related violations and effectively advocates to end repression of (W)HRD
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In <redacted>,  South Sudan Human Rights Defenders Networ (SSHRDN) fully <redacted> the use of Kobo ToolBox into its programming across South Sudan.  Significance description: The use of Kobo ToolBox has enhanced the safety and secure <redacted> of  confidential/risky information as well as analysis of the data collected by the human rights defenders of the SSHRDN and monitors.  Contribution of the programme: With financial support from the program, DefendDefenders with its consultants conducted an expert guided KoboToolbox and KoboCollect advanced workshop in <redacted> in <LOC> (Uganda). 2 network staff members who attended the training later trained the 15 monitors. Additionally the Kobo experts provided continous coaching on form customization to the SSHRDN secretariat.      <redacted> information: In <redacted>, 2 network secretariat staff with 15 monitors were trained on <redacted> documentation and reporting (MDR) <redacted> and human rights <redacted> documentation. A follow up training in <redacted> supporting 2 network secretariat staff who later provided a refresher yet advanced training for the 15 monitors.  Contribution of other actors and factors: no
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change  Safety and Security
+**TypeOfChangeCluster**: Capacity change

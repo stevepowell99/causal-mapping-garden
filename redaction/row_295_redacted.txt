@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/ESF003
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 2
+**coutnry**: Palestine
+**Year**: 2023
+**Outcome description**: In <redacted> there was increased <redacted> public pressure on <redacted> banks (specifically ING and Rabobank) that are investing in the <redacted> settlement industry to take action, including people who contacted the banks and/or changed banks.
+**Significance of the outcome**: Increase of pressure (hopefully) contributing to a change in behaviour of the bank and opening opportunities for more engagement by PAX as well as inspire other costumers to do the same, increasing the pressure. 
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: Engaged citizens
+**Scale**: National
+**Contribution of the programme**: PAX is one of the leading members of the DBIO coalition and published about the report targeting <redacted> audiances. Social media posts of PAX around this topic were liked and shared a lot. 
+**Contribution of other actors and factors**: Also the two other <redacted> coalition members published about the report, Bank Track and The Rights Forum
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Next to mentions in other posts and different channels, the PAX posts on instagram about this topic were shared almost 3000 times and got more than 5000 likes.  <redacted> en <redacted> 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Output 4.2.2 -  L&A initiatives targeting <redacted> FIs investing in <redacted> companies on the UN Database  
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In <redacted> there was increased <redacted> public pressure on <redacted> banks (specifically ING and Rabobank) that are investing in the <redacted> settlement industry to take action, including people who contacted the banks and/or changed banks.  Significance description: Increase of pressure (hopefully) contributing to a change in behaviour of the bank and opening opportunities for more engagement by PAX as well as inspire other costumers to do the same, increasing the pressure.   Contribution of the programme: PAX is one of the leading members of the DBIO coalition and published about the report targeting <redacted> audiances. Social media posts of PAX around this topic were liked and shared a lot.   Additional information:   Contribution of other actors and factors: Also the two other <redacted> coalition members published about the report, Bank Track and The Rights Forum
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SSU2312/CIV011
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: South Sudan
+**Year**: 2023
+**Outcome description**: In December 2023, the National Transitional Legislative Assembly adopted the scenario report to be part of their policy in Juba. 
+**Significance of the outcome**: This is the first time the National Transitional Legislative Assembly directly adopted a report from civil society into their policy to influence the debates and agendas within parliamant. Before the government received the scenario report, Concerned Citizens Network for Peace was seen as a national scurity threat. After receiving the document they had a change of perception about Concerned Citizens Network for Peace. From a threat to a group that can help shape the national policy of the government. There was a big ask for receiving more copies of the report.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: Concerned Citizens Network for Peace are the only actors who are engaged in the creation of scenario reports in South Sudan, therefore they play a central role in this change.
+**Contribution of other actors and factors**: Chair person of the Peace Comittee in the Parlimant has been the person who introduced the Concerned Citizens Network for Peace in Parlement
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: P
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.3 CSO's and networks proactively monitor and advocate for implementation of R-ARCSS and human rights.
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In December 2023, the National Transitional Legislative Assembly adopted the scenario report to be part of their policy in Juba.   Significance description: This is the first time the National Transitional Legislative Assembly directly adopted a report from civil society into their policy to influence the debates and agendas within parliamant. Before the government received the scenario report, Concerned Citizens Network for Peace was seen as a national scurity threat. After receiving the document they had a change of perception about Concerned Citizens Network for Peace. From a threat to a group that can help shape the national policy of the government. There was a big ask for receiving more copies of the report.  Contribution of the programme: Concerned Citizens Network for Peace are the only actors who are engaged in the creation of scenario reports in South Sudan, therefore they play a central role in this change.  Additional information:   Contribution of other actors and factors: Chair person of the Peace Comittee in the Parlimant has been the person who introduced the Concerned Citizens Network for Peace in Parlement
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

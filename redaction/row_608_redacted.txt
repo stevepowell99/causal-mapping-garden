@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR013
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Yemen
+**Year**: 2025
+**Outcome description**: In 2025, 16 human rights defenders trained by Mwatana's Training & Development Unit  have actively started documenting protection concerns and human rights violations, reaching a total of 20 cases. 
+**Significance of the outcome**: Building the MDR capacities of local civil society organizations and human rights defenders is key to sustainably promoting human rights in Yemen.
+**Additional information (use if needed) **: With the support of <LOC>/HURICAP Mwatana’s Training & Development Unit has developed different resources (MDR guide / Legal Support Guide / Trainers' Manual) to help them develop specialized training materials for human rights defenders under other projects. For example, in 2025, under a European Union-funded project implemented with Oxfam, the guides (MDR in particular) were used in three training workshops targeting around 41 participants (lawyers, CSO members, and human rights defenders) outside the <person> team. Trainees have been submitting their plans to document incidents of violations in their areas after the training, and have already implemented several missions and documented several violations. To date, 16 of these defenders have actively started documenting protection concerns and human rights violations. Thus, the guides effectively contributed to building the capacity of the Training & Development Unit and are being used as foundational tools for designing future capacity-building programs.
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: With the support of <LOC>/HURICAP, <person> developed and utilized three core tools between <redacted>: 1-	MDR Guide 2-	Legal Support Guide 3-	Trainer’s Manual These were used to design and deliver capacity-building sessions for local organizations and rights defenders. 
+**Contribution of other actors and factors**: yes, other donors also support <person> in training local human rights defenders and civil society organisations
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: The three manuals; the training report; follow up collected through Mwatana's own monitoring system
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.1. Output 2.1.1.
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In 2025, 16 human rights defenders trained by Mwatana's Training & Development Unit  have actively started documenting <redacted> concerns and human rights <redacted>, reaching a total of 20 cases.  Significance:  Building the MDR <redacted> of local civil society organizations and human rights defenders is key to sustainably promoting human rights in Yemen. Contribution:  With the support of <LOC>/HURICAP, <person> developed and utilized three core tools between <redacted>: 1-	MDR Guide 2-	Legal Support Guide 3-	Trainer’s Manual These were used to design and deliver capacity-building sessions for local organizations and rights defenders.  <redacted> <redacted>:  With the support of <LOC>/HURICAP Mwatana’s Training & Development Unit has developed different resources (MDR guide / Legal Support Guide / Trainers' Manual) to help them develop specialized training materials for human rights defenders under other projects. For example, in 2025, under a European Union-funded project implemented with Oxfam, the guides (MDR in particular) were used in three training workshops targeting around 41 participants (lawyers, CSO members, and human rights defenders) outside the <person> team. Trainees have been submitting their plans to document incidents of violations in their areas after the training, and have already implemented several missions and documented several violations. To date, 16 of these defenders have actively started documenting protection concerns and human rights violations. Thus, the guides effectively contributed to building the capacity of the Training & Development Unit and are being used as foundational tools for designing future capacity-building programs. Contribution of Other factors:  yes, other donors also support <person> in training local human rights defenders and civil society organisations
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

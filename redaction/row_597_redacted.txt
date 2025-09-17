@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/GEQ023
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 3
+**coutnry**: South Sudan
+**Year**: 2025
+**Outcome description**: In <redacted>, Women  Association in South Sudan, convened 39 local chiefs representing 17 ethnic groups in <LOC> who  agreed for the first time  to  administer balance between the customary laws and the statutory laws and constitution in administration of law in their customary courts in <LOC> in a changing <redacted> modern society. This resulted in a call for a National conference on customary laws to be organised by the Council of Traditional Leaders (COTAL) together with the council of chiefs (and other stakeholders) pertaining to early and enforced marriage to be conducted before <redacted>. 
+**Significance of the outcome**: Bringing toghter a group of traditional chiefs representing 17 ethnic groups customary courts in <LOC> to discuss join strategy to bend customary courts rules with statutary laws was very important to address growing need for women and girls rights before the customary courts jurisdictions
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Non-state authorities
+**Scale**: National 
+**Contribution of the programme**: WAASS provision of a space  for dialogue for 34 local chiefs on safegaurding women rights before the chiefs' courts in <LOC> brought together 96 participants from different governmental institutions working in the field of law enforcement and that was significant as it enabled the chiefs to understand the impact of thier work on social cohesion and nation building. 
+**Contribution of other actors and factors**: 
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 3.3 Victims of (S)GBV  and CRSV know their rights and have access to receive justice 
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: Outcome description:  In <redacted>, Women  Association in South Sudan, convened 39 local chiefs representing 17 ethnic groups in <LOC> who  agreed for the first time  to  administer balance between the customary laws and the statutory laws and constitution in administration of law in their customary courts in <LOC> in a changing <redacted> modern society. This resulted in a call for a National conference on customary laws to be organised by the Council of Traditional Leaders (COTAL) together with the council of chiefs (and other stakeholders) pertaining to early and enforced marriage to be conducted before <redacted>.  Significance:  Bringing toghter a group of traditional chiefs representing 17 ethnic groups customary courts in <LOC> to discuss join strategy to bend customary courts rules with statutary laws was very important to address growing need for women and girls rights before the customary courts jurisdictions Contribution:  WAASS provision of a space  for dialogue for 34 local chiefs on safegaurding women rights before the chiefs' courts in <LOC> brought together 96 participants from different governmental institutions working in the field of law enforcement and that was significant as it enabled the chiefs to understand the impact of thier work on social cohesion and nation building.  Additional <redacted>:   Contribution of Other factors:  
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, Gender transformative
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Gender

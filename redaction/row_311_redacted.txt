@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR031
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Lebanon
+**Year**: 2023
+**Outcome description**: During a briefing by the Refugee <redacted> Watch coalition (RPW) for the Dutch Ministry of Foreign Affairs (MFA) in <redacted>, the MFA stated they would publish a new grant directly for Refugee Led Organisations in 2023. The <redacted> MFA also highlighted that this new grant is a result of the advocacy efforts of RPW.
+**Significance of the outcome**: One of RPW's strategic objectives is promoting the role & work of Refugee-Led Organizations (RLOs) among international donors. This outcome demonstrates that the <redacted> government remains a key ally and donor for <redacted> refugee protection efforts. Also, it shows that there is increased awareness amongst the donor community on the importance of resourcing Refugee Led Organisations (RLOs).
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: RPW has been advocating for increased RLO funding over <redacted>. During the briefing, <redacted> MFA officials stated that this is due to the efforts of RPW.
+**Contribution of other actors and factors**: Organisations working on <redacted> refugee protection have been calling for the same asks.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.3.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: During a briefing by the Refugee <redacted> Watch coalition (RPW) for the Dutch Ministry of Foreign Affairs (MFA) in <redacted>, the MFA stated they would publish a new grant directly for Refugee Led Organisations in 2023. The <redacted> MFA also highlighted that this new grant is a result of the advocacy efforts of RPW.  Significance description: One of RPW's strategic objectives is promoting the role & work of Refugee-Led Organizations (RLOs) among international donors. This outcome demonstrates that the <redacted> government remains a key ally and donor for <redacted> refugee protection efforts. Also, it shows that there is increased awareness amongst the donor community on the importance of resourcing Refugee Led Organisations (RLOs).  Contribution of the programme: RPW has been advocating for increased RLO funding over <redacted>. During the briefing, <redacted> MFA officials stated that this is due to the efforts of RPW.  Additional information:   Contribution of other actors and factors: Organisations working on <redacted> refugee protection have been calling for the same asks.
+**Outcome is negative**: NO
+**MCQType of change**: Policy change, Creating space for CSOs
+**TypeOfChangeCluster**: Policy, Empowering citizens and CSOs

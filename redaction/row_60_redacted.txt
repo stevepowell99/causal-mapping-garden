@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/<redacted>
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Palestine
+**Year**: 2022
+**Outcome description**: 14 young <redacted> engaged actively in discussions during public screenings. 
+**Significance of the outcome**: 14 youth with no previous experience in this field and hesitation to openly engage on sensitive topics 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: The program (MEND) provided the relevant capacity strengthening during 2022 both live in different locations in <LOC> and <LOC> as well as online and supported with organizing the public screenings  
+**Contribution of other actors and factors**: Cooperation with other organizations including <person>
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes, outcome 3.1
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: 14 young <redacted> engaged actively in discussions during public <redacted>.   Significance description: 14 youth with no previous <redacted> in this field and <redacted> to openly engage on sensitive topics   Contribution of the programme: The program (MEND) provided the relevant capacity strengthening during 2022 both live in different locations in <LOC> and <LOC> as well as online and supported with organizing the public screenings    Additional information:   Contribution of other actors and factors: Cooperation with other organizations including <person>
+**Outcome is negative**: NO
+**MCQType of change**: Other
+**TypeOfChangeCluster**: Other

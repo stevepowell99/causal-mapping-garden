@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR020
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: South Sudan
+**Year**: 2021
+**Outcome description**: Apirl 2021 two widows were trained on First Aid by Juba Teaching Hospital to support the Widows and Orphans 
+**Significance of the outcome**: Through the Lobby and Advocacy <redacted> that is held by the Juba Massacre of the 1992 Widows and orphans Association (JMWOA),captured attension of other stakeholders for example Juba Teaching Hospital, that picked interest in training the widows in First Aid Service provision.
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: Non-state authorities
+**Scale**: Local
+**Contribution of the programme**: Through the Lobby and Advocacy <redacted> that is held by the Juba Massacre of the 1992 Widows and orphans Association (JMWOA),captured attension of other stakeholders for example Juba Teaching Hospital, that picked interest in training the widows in First Aid Service provision.
+**Contribution of other actors and factors**: Stakeholders like Juba Teaching Hospital.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: In the partner reports.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.3
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Apirl 2021 two widows were trained on First Aid by Juba Teaching Hospital to support the Widows and Orphans   Significance description: Through the Lobby and Advocacy <redacted> that is held by the Juba Massacre of the 1992 Widows and orphans Association (JMWOA),captured attension of other stakeholders for example Juba Teaching Hospital, that picked interest in training the widows in First Aid Service provision.  Contribution of the programme: Through the Lobby and Advocacy <redacted> that is held by the Juba Massacre of the 1992 Widows and orphans Association (JMWOA),captured attension of other stakeholders for example Juba Teaching Hospital, that picked interest in training the widows in First Aid Service provision.  Additional information:   Contribution of other actors and factors: Stakeholders like Juba Teaching Hospital.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

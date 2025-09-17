@@ -1,0 +1,23 @@
+**FragmentID**: SCC-ETH2305/CIV014
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Ethiopia
+**Year**: 2021
+**Outcome description**: In 2021, TIMRAN was able to strengthen it's social media engagement and media advocacy, secure the safety of documents, and improve it's Information and Technology infrastructure following a security audit in Ethiopia.
+**Significance of the outcome**: Before this intervention, TIMRAN had no website, computer and hard disk. The organization had not taken measures in information security management priorly. Overall TIMRAN was facing challenges in safe keeping of data and visibility. The changes of the digital security audit are immediate. An audit is done, IT vulnerabilities are identified. Through fix-up support in about 2 months after the audit, systems and equipment is purchased to improved the IT infrastructure
+**Additional information (use if needed) **: TIMRAN (working to advance women's participation in politics and public decision making roles) reached out to Ethiopia Human Rights Defender Center with DefendDefenders to conduct a security audit for the organization. The Audit recommended the development of a website, need for a Laptop and an off-site backup hard disk. Hence, Ethiopia Human Rights Defenders Center with DefendDefenders purchased a laptop and developed a website. The development of this website has helped TIMRAN better reachout to women politicians, community members, government and other stakeholders in advocating women's advancement in politics and public decision making roles. 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: DefendDefenders hired a consultant to conduct a digital security audit for TIRMAN in 2021
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Website (https://timran-et.org/about-us/), a laptop and a harddisk
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Output 1.2.3
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In 2021, TIMRAN was able to strengthen it's social media engagement and media advocacy, secure the safety of documents, and improve it's Information and Technology infrastructure following a security audit in Ethiopia.  Significance description: Before this intervention, TIMRAN had no website, computer and hard disk. The organization had not taken measures in information security management priorly. Overall TIMRAN was facing challenges in safe keeping of data and visibility. The changes of the digital security audit are immediate. An audit is done, IT vulnerabilities are identified. Through fix-up support in about 2 months after the audit, systems and equipment is purchased to improved the IT infrastructure  Contribution of the programme: DefendDefenders hired a consultant to conduct a digital security audit for TIRMAN in 2021  Additional information: TIMRAN (working to advance women's participation in politics and public decision making roles) reached out to Ethiopia Human Rights Defender Center with DefendDefenders to conduct a security audit for the organization. The Audit recommended the development of a website, need for a Laptop and an off-site backup hard disk. Hence, Ethiopia Human Rights Defenders Center with DefendDefenders purchased a laptop and developed a website. The development of this website has helped TIMRAN better reachout to women politicians, community members, government and other stakeholders in advocating women's advancement in politics and public decision making roles.   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change  Safety and Security
+**TypeOfChangeCluster**: Capacity change

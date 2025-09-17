@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR001
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Yemen
+**Year**: 2023
+**Outcome description**: In 2023, as a result of its expanded capacity and expertise to train on human rights monitoring and documentation (MDR), <person> conducted five MDR capacity-building workshops and trained a total of 70 human rights defenders in Sana'a and <LOC>, compared to zero workshops in <redacted>. 
+**Significance of the outcome**: Prior to building the capacity of Mwatana's team in monitoring and documentation (MDR) and providing legal support, as well as establishing the training unit, Mwatana wasn't able to train other CBOs and Human Rights defenders beyond its team. Those trainings were not part of the SCC programme's activities and the capacity gained in the programme allowed Mwatana to expand its scope of work in MDR using other projects and funds.
+**Additional information (use if needed) **: in 2023, <person> was able to  conduct five capacity-building workshops under funding from EU and German Embassy targeting around  70  participants of local civil society organizations and human rights defenders in Sana'a and <LOC>.
+**Rating significance**: early/small
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: The capacity building programme with AINL enabled Mwatana to successfully enhance the capabilities of its team. The team's skills were improved through the development of manuals, training packages, ToT training workshops, and the establishment of a training unit. With these measures in place, <person> was able to effectively implement capacity-building workshops with other funds from EU and Germany Embassy.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Reports of workshops and attande sheets -Visual Reports
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.1 - Output 2.1.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In 2023, as a result of its expanded capacity and expertise to train on human rights <redacted> and documentation (MDR), <person> conducted five MDR capacity-building workshops and trained a total of 70 human rights defenders in Sana'a and <LOC>, compared to zero workshops in <redacted>.   Significance description: Prior to building the capacity of Mwatana's team in <redacted> and documentation (MDR) and providing legal support, as well as establishing the training unit, Mwatana wasn't able to train other CBOs and Human Rights defenders beyond its team. Those trainings were not part of the SCC programme's <redacted> and the capacity gained in the programme allowed Mwatana to expand its scope of work in MDR using other projects and funds.  Contribution of the programme: The capacity building programme with AINL enabled Mwatana to successfully enhance the capabilities of its team. The team's skills were improved through the development of manuals, training packages, ToT training workshops, and the establishment of a training unit. With these measures in place, <person> was able to effectively implement capacity-building workshops with other funds from EU and Germany Embassy.  <redacted> information: in 2023, <person> was able to  conduct five capacity-building workshops under funding from EU and German Embassy targeting around  70  participants of local civil society organizations and human rights defenders in Sana'a and <LOC>.  Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change  Safety and Security
+**TypeOfChangeCluster**: Capacity change

@@ -1,0 +1,16 @@
+[build]
+  # Build command - generate the static site
+  command = "chmod +x build.sh && ./build.sh"
+  
+  # Directory to publish (where the generated site files are)
+  publish = "site"
+
+[build.environment]
+  # Python version for Netlify
+  PYTHON_VERSION = "3.9"
+
+# Optional: Set up redirects or headers if needed
+# [[redirects]]
+#   from = "/old-path"
+#   to = "/new-path"
+#   status = 301

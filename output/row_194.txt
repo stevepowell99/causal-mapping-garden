@@ -1,0 +1,23 @@
+**FragmentID**: SCC-DRC2305/PHR006
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: DR Congo
+**Year**: 2022
+**Outcome description**: In 2022, in Kinshasa, the Congolese Ministry of Defense decided to send additional troops to better protect and control the border area between the DRC and the Central African Republic.
+**Significance of the outcome**: This area has long been neglected by the Congolese security forces and the UN peacekeeping mission is also absent  there. However, armed groups and criminal gangs often cross the border, posing a serious threat to civilians in the area. 
+**Additional information (use if needed) **: A stronger presence from the Congolese army in the border area should play a deterrent effect and limit the number of illegal border crossings by armed groups and criminal gangs. A stronger control of the border is generally supported by the local Congolese communities, local authorities and also by the Mbororo leaders, who fear attacks by Central African groups crossing into the DRC.
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: PAX and APRu conducted advocacy on this issue in Kinshasa and in the border area, urging the Congolese government and army to strengthen control and security at the DRC-CAR border. We also provided factual information in a 2021 PAX report on the presence of Mbororo herders in that area. PAX developed a map with the entry point of illegal armed groups into the DRC, which was used for both the strengthening of the civil resilience as well for border protection purposes.
+**Contribution of other actors and factors**: Yes, other actors also pushed for the same advocacy asks, including  civil society from the Uele region and some parlementarians.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: PAX 2021 report on the presence of Mbororo herders and PAX map of entry points at the DRC/CAR border.
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 2.6
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In 2022, in Kinshasa, the Congolese Ministry of Defense decided to send additional troops to better protect and control the border area between the DRC and the Central African Republic.  Significance description: This area has long been neglected by the Congolese security forces and the UN peacekeeping mission is also absent  there. However, armed groups and criminal gangs often cross the border, posing a serious threat to civilians in the area.   Contribution of the programme: PAX and APRu conducted advocacy on this issue in Kinshasa and in the border area, urging the Congolese government and army to strengthen control and security at the DRC-CAR border. We also provided factual information in a 2021 PAX report on the presence of Mbororo herders in that area. PAX developed a map with the entry point of illegal armed groups into the DRC, which was used for both the strengthening of the civil resilience as well for border protection purposes.  Additional information: A stronger presence from the Congolese army in the border area should play a deterrent effect and limit the number of illegal border crossings by armed groups and criminal gangs. A stronger control of the border is generally supported by the local Congolese communities, local authorities and also by the Mbororo leaders, who fear attacks by Central African groups crossing into the DRC.  Contribution of other actors and factors: Yes, other actors also pushed for the same advocacy asks, including  civil society from the Uele region and some parlementarians.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

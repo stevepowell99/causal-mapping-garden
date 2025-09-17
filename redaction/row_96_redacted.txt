@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR014
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: DR Congo
+**Year**: 2022
+**Outcome description**: The authorities consider the concerns of victims of human rights violations by inviting local monitors to security meetings, <redacted> in <LOC>, and occasionally in <LOC> and <LOC>, and have granted access to 57 monitors to official and illegal places of detention. The authorities have made commitments on human rights issues in discussions with local civil society organisations during advocacy panels in 8 urban areas: <LOC>, Sake, Kibati, <LOC>, <LOC>, <LOC>-centre, Beni-Ville and Kibumba.
+**Significance of the outcome**: Authorities now recognise the victims needs whereas they did not do this before.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: * ASSODIP and UFAREP, supported by HURICAP, organised local advocacy panels in <redacted> (8 panels) and in <redacted> (4 panels) in <LOC>, Sake,Kibati, <LOC>, <LOC>, <LOC>-centre, <redacted> and Kibumba. * During 2022, ASSODIP and UFAREP and the 57 monitors contacted local authorities and victims, both formally and informally.
+**Contribution of other actors and factors**: <redacted> organisation VNG.Other local civil society organisations.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Witness statements of authorities. Presence lists of meetings. Reports of prison investigations.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.3
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: The authorities consider the concerns of victims of human rights <redacted> by inviting local monitors to security meetings, <redacted> in <LOC>, and occasionally in <LOC> and <LOC>, and have granted access to 57 monitors to official and illegal places of detention. The authorities have made commitments on human rights issues in discussions with local civil society organisations during advocacy panels in 8 urban areas: <LOC>, Sake, Kibati, <LOC>, <LOC>, <LOC>-centre, <redacted> and Kibumba.  Significance description: Authorities now recognise the victims needs whereas they did not do this before.  Contribution of the programme: * ASSODIP and UFAREP, supported by HURICAP, organised local advocacy panels in <redacted> (8 panels) and in <redacted> (4 panels) in <LOC>, Sake,Kibati, <LOC>, <LOC>, <LOC>-centre, <redacted> and Kibumba. * During 2022, ASSODIP and UFAREP and the 57 monitors contacted local authorities and victims, both formally and informally.  Additional information:   Contribution of other actors and factors: <redacted> organisation VNG.Other local civil society organisations.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

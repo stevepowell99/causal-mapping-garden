@@ -1,0 +1,23 @@
+**FragmentID**: SCC-INT2305/ESF010
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: International / External Stress Factors
+**Year**: 2021
+**Outcome description**: In November 2021, the Colombian subsidiary of Glencore (Prodeco) published its Human Rights Impact Assessment on its operations in the César mining region (this was something that the victims of human rights violations in this region had been asking for for a long time).
+**Significance of the outcome**: One of the central asks of the representatives of the victims to the company is for the company to engage in a formal dialogue with the victims regarding the human rights impacts of the company's coal mining activities in the context of the violent conflict in the early 2000s. The publication of the HRIA (with information on the company's assessment and contribution to negative human rights impact) is an important condition for such a dialogue to be effective.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Companies
+**Scale**: Organisation
+**Contribution of the programme**: Engaging with the investors in Glencore might have contributed to the outcome, if the investors indeed engaged with the company after meeting with the victims' representatives.
+**Contribution of other actors and factors**: The victims' organization, NGOs in the bloadcoal campaign and the Swiss National Contact Point of the OECD have been pressing for the publication of this HRIA for a long time.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: https://www.grupoprodeco.com.co/en/sostenibilidad/derechos-humanos https://paxforpeace.nl/news/overview/prodeco-publishes-human-rights-due-diligence-report-but-is-not-clear-on-its-role-in-the-colombian-conflict
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: In November 2021, the Colombian subsidiary of Glencore (Prodeco) published its Human Rights Impact Assessment on its operations in the César mining region (this was something that the victims of human rights violations in this region had been asking for for a long time).  Significance description: One of the central asks of the representatives of the victims to the company is for the company to engage in a formal dialogue with the victims regarding the human rights impacts of the company's coal mining activities in the context of the violent conflict in the early 2000s. The publication of the HRIA (with information on the company's assessment and contribution to negative human rights impact) is an important condition for such a dialogue to be effective.  Contribution of the programme: Engaging with the investors in Glencore might have contributed to the outcome, if the investors indeed engaged with the company after meeting with the victims' representatives.  Additional information:   Contribution of other actors and factors: The victims' organization, NGOs in the bloadcoal campaign and the Swiss National Contact Point of the OECD have been pressing for the publication of this HRIA for a long time.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR007
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: <LOC>/Burkina Faso
+**Year**: 2025
+**Outcome description**: Since <redacted>, a <redacted> man who was kidnapped by terrorists has gradually regained psychological stability and a normal mental state and has agreed to reintegrate into society.
+**Significance of the outcome**: <person>, <redacted>, was kidnapped and held captive for <redacted> by <redacted> in 2024. After his release, <person>, traumatised by the fear and treatment he suffered during his captivity, lost the ability to speak and no longer socialises with anyone, including members of his family with whom he does not live. The identification and care of victims of violent extremism are activities that contribute to the achievement of SDG 2. 
+**Additional information (use if needed) **: Caring for victims of violent extremism enables them to reintegrate into society and prevents them from being recruited. This care has given them a new life with less trauma and enabled them to reintegrate into the community.
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: Trained in 2022 by <LOC> in <LOC> on the detection of early signs of radicalisation and violent extremism, the heroes and heroines organised awareness-raising sessions in their communities (<LOC>, <person>, <person>) to identify and refer victims to psychosocial care centres. Thanks to the skills they acquired, the situation of young <person> was detected and he was referred for psychological care. This was not done before.
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Activity report Testimonial Reference and counter-reference sheet 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: SO 2: Conflict and human rights - State actors increasingly respond to citizens' aspirations in conflict areas to build inclusive communities by upholding the rule of law and improving respect for human rights by acknowledging, investigating and taking action to address human rights abuses and violations.
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  Since <redacted>, a <redacted> man who was kidnapped by <redacted> has gradually regained psychological stability and a normal mental state and has agreed to reintegrate into society. Significance:  <person>, <redacted>, was kidnapped and held captive for <redacted> by <redacted> in 2024. After his release, <person>, traumatised by the fear and treatment he suffered during his captivity, lost the ability to speak and no longer <redacted> with anyone, including members of his family with whom he does not live. The identification and care of victims of violent extremism are <redacted> that <redacted> to the achievement of SDG 2.  Contribution:  Trained in 2022 by <LOC> in <LOC> on the detection of early signs of radicalisation and violent extremism, the heroes and heroines organised awareness-raising sessions in their communities (<LOC>, <person>, <person>) to identify and refer victims to psychosocial care centres. Thanks to the skills they acquired, the situation of young <person> was detected and he was referred for psychological care. This was not done before. Additional Info:  Caring for victims of violent extremism enables them to reintegrate into society and prevents them from being recruited. This care has given them a new life with less trauma and enabled them to reintegrate into the community. Contribution of Other factors:  No
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change Mental health resilience
+**TypeOfChangeCluster**: Capacity change

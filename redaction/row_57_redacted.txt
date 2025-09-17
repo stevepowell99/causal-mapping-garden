@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV023
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Lebanon
+**Year**: 2022
+**Outcome description**: At <redacted>, a community member who participated in <person> community workshop established and registered his theater band in <LOC>. He also performed his first show alongside other participants from Bayt Sada community workshops.  
+**Significance of the outcome**: Being creative in the current socio-economic status quo in <LOC> is challenging. Additionally, there is a lack of artistic and cultural spaces in <LOC>. Such initiatives inspired by SADA open spaces for community members from diverse sectarian to be creative and provide new opportunities for the youth.
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: He was one of the participants of the ‘Follow your Dream’ workshop under the community workshop program. The objectives of the workshop were to develop self-esteem and confidence skills of the participants through theatre, as well as to work on acting and creative expression skills.
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: No
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.2  <redacted> partner CSOs have fostered greater social cohesion through bringing people together from diverse backgrounds.  
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: At <redacted>, a community member who participated in <person> community workshop established and registered his theater band in <LOC>. He also performed his first show alongside other participants from Bayt Sada community workshops.    Significance description: Being creative in the current socio-economic status quo in <LOC> is challenging. Additionally, there is a lack of artistic and cultural spaces in <LOC>. Such initiatives inspired by SADA open spaces for community members from diverse sectarian to be creative and provide new opportunities for the youth.  Contribution of the programme: He was one of the participants of the ‘Follow your Dream’ workshop under the community workshop program. The objectives of the workshop were to develop self-esteem and confidence skills of the participants through theatre, as well as to work on acting and creative expression skills.  Additional information:   Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Other
+**TypeOfChangeCluster**: Other

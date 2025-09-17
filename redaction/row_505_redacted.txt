@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV037
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: South Sudan
+**Year**: 2024
+**Outcome description**: On <redacted>, during an interview on Eye Radio, the director of public relation of the National Security Service (NSS) of South Sudan publicly announced an establishment of a non-summary tribunal to discipline members of the NSS who are suspected of committing violations on human rights. 
+**Significance of the outcome**: In the past, Human Rights Defenders faced frequent attacks, often carried out by National security service officers acting independently and without fear of consequences. However, since the establishment of the tribunal, HRDs, journalists, and activists now have a reliable mechanism to hold these officers accountable.
+**Additional information (use if needed) **: The tribunal has been operational but behind close <redacted>e Director in his <redacted> interview confirmed previous prosecutions of a number of NSS officers where a number of them had already been dismissed.
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: National 
+**Contribution of the programme**: The South Sudan Human Rights Defenders Network (SSHRDN) organized and conducted multi-stakeholder dialogues during the commemoration of the International Day of Democracy (IDD) on <redacted>. In the dialogue,  cases <redacted> by 15 monitors on civic space <redacted> space were presented by the SSHRDN secretariat, implicating NSS officers. The NSS director of public relation was a guest speaker and he made the the announcement during the event. He later made a public announcement during his on-air interview with Eye Radio in <redacted>.
+**Contribution of other actors and factors**: <redacted> that highlighted the NSS gross levels of <redacted> on the <redacted> human rights defenders. other interventions include;<redacted> and international community’s joint <redacted> regarding the <redacted> state of civic space since 2023 calling for the amendment of the National Security Service Act. Additionally, the IDD commemoration day was funded by the SSHRDN main project funded by the Juba-Embassy.
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Eye Radio speaks to National Security spokesperson - David John
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: Outcome 1.2 SSHRDN comprehensively & strategically documents civic-space-related violations and effectively advocates to end repression of (W)HRDs
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: On <redacted>, during an interview on Eye Radio, the director of public relation of the National Security Service (NSS) of South Sudan publicly announced an establishment of a non-summary tribunal to <redacted> members of the NSS who are suspected of <redacted> on human rights.   Significance description: In the past, Human Rights Defenders faced frequent attacks, often carried out by National security service officers acting independently and without fear of consequences. However, since the establishment of the tribunal, HRDs, journalists, and activists now have a reliable mechanism to hold these officers accountable.  Contribution of the programme: The South Sudan Human Rights Defenders Network (SSHRDN) organized and conducted multi-stakeholder dialogues during the commemoration of the International Day of Democracy (IDD) on <redacted>. In the dialogue,  cases <redacted> by 15 monitors on civic space <redacted> space were presented by the SSHRDN secretariat, implicating NSS officers. The NSS director of public relation was a guest speaker and he made the the announcement during the event. He later made a public announcement during his on-air interview with Eye Radio in <redacted>.  <redacted> information: The tribunal has been operational but behind close <redacted>e Director in his <redacted> interview confirmed previous prosecutions of a number of NSS officers where a number of them had already been dismissed.  Contribution of other actors and factors: <redacted> that highlighted the NSS gross levels of <redacted> on the <redacted> human rights defenders. other interventions include;<redacted> and international community’s joint <redacted> regarding the <redacted> state of civic space since 2023 calling for the amendment of the National Security Service Act. Additionally, the IDD commemoration day was funded by the SSHRDN main project funded by the Juba-Embassy.
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

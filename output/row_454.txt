@@ -1,0 +1,23 @@
+**FragmentID**: SCC-DRC2508/PHR010
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: DR Congo
+**Year**: 2024
+**Outcome description**: On 31 August 2024, the National Minister of the Interior sent a telegram (No. 124) to all governors asking them to report on cases of illegal roadblocks and those maintaining them following a complaint by the Secretary General of ASSODIP.
+**Significance of the outcome**: Prior to this complaint, the national dimension of the problem of illegal roadblocks had not yet been officially recognised by the national authorities and had never been given such attention. Roadblocks are often illegal, serving to extort and harrass passersby, and are frequently associated with human rights abuses.
+**Additional information (use if needed) **: This reaction from the Minister of the Interior came after a complaint was made on 27 August 2024 by the Secretary General of ASSODIP to Congolese officials representing the Government at the pre-session meetings of the Universal Periodic Review in Geneva about violations of freedom of movement and arbitrary arrests at illegal roadblocks. On that occasion, the President of the National Human Rights Commission promised to refer the matter urgently to the competent government authority. It should be noted that the complaint was also made to the diplomatic missions accredited to the United Nations present at the meeting. 
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: The appeal was made by ASSODIP
+**Contribution of other actors and factors**: Yes, denunciation of illegal roadblocks by the North Kivu civil society coordination group, following in the footsteps of ASSODIP
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Advocacy note and telegram from the national minister
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes, Outcome 2.3
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: On 31 August 2024, the National Minister of the Interior sent a telegram (No. 124) to all governors asking them to report on cases of illegal roadblocks and those maintaining them following a complaint by the Secretary General of ASSODIP.  Significance description: Prior to this complaint, the national dimension of the problem of illegal roadblocks had not yet been officially recognised by the national authorities and had never been given such attention. Roadblocks are often illegal, serving to extort and harrass passersby, and are frequently associated with human rights abuses.  Contribution of the programme: The appeal was made by ASSODIP  Additional information: This reaction from the Minister of the Interior came after a complaint was made on 27 August 2024 by the Secretary General of ASSODIP to Congolese officials representing the Government at the pre-session meetings of the Universal Periodic Review in Geneva about violations of freedom of movement and arbitrary arrests at illegal roadblocks. On that occasion, the President of the National Human Rights Commission promised to refer the matter urgently to the competent government authority. It should be noted that the complaint was also made to the diplomatic missions accredited to the United Nations present at the meeting.   Contribution of other actors and factors: Yes, denunciation of illegal roadblocks by the North Kivu civil society coordination group, following in the footsteps of ASSODIP
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action, New structure
+**TypeOfChangeCluster**: Empowering citizens and CSOs, Mobilizing citizens and organizations

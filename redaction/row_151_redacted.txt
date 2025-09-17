@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR009
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Syria
+**Year**: 2022
+**Outcome description**: In <redacted>, one of the former students of AUNHOR established a civil society organization, 'Ahimsa' that  focuses on spreading the culture of non-violence within the youth community in <LOC> in Syria by launching trainings and activities for youths.  
+**Significance of the outcome**: There is a lack of organizations that focus on the culture and methodology of non-violence among the youth-activists community in <LOC>. Ahimsa is an added value to the community as there is a high need to counter the culture of violence in north Syria. 
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Regional
+**Contribution of the programme**: The founder, <person>, has followed the courses in the university of non-violence AUNOHR which inspired her to take what she learned into her community by establishing Ahimsa. 
+**Contribution of other actors and factors**: Yes- the founder is also one of the youths who followed trainings offered by <person> project. Her experience through this project and joining AUNOHR courses empowered her to take the step and establish 'Ahimsa'
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In <redacted>, one of the former students of AUNHOR established a civil society organization, 'Ahimsa' that  focuses on spreading the culture of non-violence within the youth community in <LOC> in Syria by launching trainings and activities for youths.    Significance description: There is a lack of organizations that focus on the culture and methodology of non-violence among the youth-activists community in <LOC>. Ahimsa is an added value to the community as there is a high need to counter the culture of violence in north Syria.   Contribution of the programme: The founder, <person>, has followed the courses in the university of non-violence AUNOHR which inspired her to take what she learned into her community by establishing Ahimsa.   Additional information:   Contribution of other actors and factors: Yes- the founder is also one of the youths who followed trainings offered by <person> project. Her experience through this project and joining AUNOHR courses empowered her to take the step and establish 'Ahimsa'
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR013
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: DR Congo
+**Year**: 2022
+**Outcome description**: During 2022, the legitimacy of the monitors of ASSODIP and UFAREP was consolidated, expressed by an active rapprochement by the victims in request for help.
+**Significance of the outcome**: Communities now have a voice to raise the issue of human rights violations against them. Before, people, because of political speeches criminalizing human rights work, had a mistrust of human rights defenders. Thanks to the interventions made in favor of the victims, in particular those arbitrarily arrested, their work is more appreciated by the community, which finds in them help in the event of a problem.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: ASSODIP and UFAREP, supported by HURICAP, organised the following for the human rights monitors:  * 2 training courses in MDR in <redacted> and <redacted> ; * 4 training courses in physical and digital security and managing stress in <redacted>.  * 8 community meetings about basic knowledge of human rights in <redacted> * 12 local advocacy panels in <redacted> (8 panels) and in <redacted> (4 panels) in <LOC>, Sake,Kibati, <LOC>, <LOC>, <LOC>-centre, Beni-Ville andKibumba.
+**Contribution of other actors and factors**: <redacted> organisation VNG that also worked with local civil society organisations and municipalities on similar issues.  Other local civil society organisations. The Provincial Government which had initiated, at the time, a joint verification mission on the ground.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Witness statements of local authorities and victims.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.2
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: During 2022, the <redacted> of the monitors of ASSODIP and UFAREP was consolidated, expressed by an active rapprochement by the victims in request for help.  Significance description: Communities now have a voice to raise the issue of human rights <redacted> against them. Before, people, because of political speeches criminalizing human rights work, had a mistrust of human rights defenders. Thanks to the interventions made in favor of the victims, in <redacted> those arbitrarily arrested, their work is more appreciated by the community, which finds in them help in the event of a problem.  Contribution of the programme: ASSODIP and UFAREP, supported by HURICAP, organised the following for the human rights monitors:  * 2 training courses in MDR in <redacted> and <redacted> ; * 4 training courses in physical and digital security and managing stress in <redacted>.  * 8 community meetings about basic knowledge of human rights in <redacted> * 12 local advocacy panels in <redacted> (8 panels) and in <redacted> (4 panels) in <LOC>, Sake,Kibati, <LOC>, <LOC>, <LOC>-centre, Beni-Ville andKibumba.  Additional information:   Contribution of other actors and factors: <redacted> organisation VNG that also worked with local civil society organisations and municipalities on similar issues.  Other local civil society organisations. The Provincial Government which had initiated, at the time, a joint verification mission on the ground.
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

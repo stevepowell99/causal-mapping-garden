@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/ESF022
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: International / External Stress Factors
+**Year**: 2023
+**Outcome description**: On <redacted>, in response to questions from MPs, Prime Minister <person> publicly stated that the <redacted> government is in favour of inclusion of the arms sector in the upcoming <redacted> due diligence legislation (CSDDD)
+**Significance of the outcome**: Inclusion of the arms sector in the CSDDD was under a lot of pressure during the negotiations on the legislation within the Council. This was the first time that the <redacted> government publicly stated that due to the risks in the downstream value chain of arms companies, this sector should be included in due diligence legislation. In the end the arms sector was -mostly due to France being against it- excluded. However, for future discussions on the review of the legislation, similar kinds of (national level) legislation or on the due diligence responsibilities of arms companies an sich, this statement by the prime minister is meaningful and useful as it strenghtens our advocacy and leverage. 
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: State authorities
+**Scale**: National
+**Contribution of the programme**: PAX, together with other civil society organisations, drafted and published a statement calling on EU policymakers to ensure inclusion of arms sector in the CSDDD. PAX engaged with the <redacted> representatives in the Council to ask the <redacted> government to state their support during the negotiations in the Council. PAX also engaged with MPs on the issue, who followed-up and asked questions to the government, which led to prime minister <person> explicitly stating the <redacted> government's position of being in favour of inclusion. 
+**Contribution of other actors and factors**: Yes, the statement was drafted together with other civil society organizations active in the field of business, conflict, human rights and the arms sector. The advocacy and engagement with the <redacted> government and politicians was the work of PAX.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Plenaire verslagen | Tweede Kamer der Staten-Generaal
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 2.3.2.
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: On <redacted>, in response to questions from MPs, Prime Minister <person> publicly stated that the <redacted> government is in favour of inclusion of the arms sector in the upcoming <redacted> due diligence legislation (CSDDD)  Significance description: Inclusion of the arms sector in the CSDDD was under a lot of pressure during the negotiations on the legislation within the Council. This was the first time that the <redacted> government publicly stated that due to the risks in the downstream value chain of arms companies, this sector should be included in due diligence legislation. In the end the arms sector was -mostly due to France being against it- excluded. However, for future discussions on the review of the legislation, similar kinds of (national level) legislation or on the due diligence responsibilities of arms companies an sich, this statement by the prime minister is meaningful and useful as it strenghtens our advocacy and leverage.   Contribution of the programme: PAX, together with other civil society organisations, drafted and published a statement calling on EU policymakers to ensure inclusion of arms sector in the CSDDD. PAX engaged with the <redacted> representatives in the Council to ask the <redacted> government to state their support during the negotiations in the Council. PAX also engaged with MPs on the issue, who followed-up and asked questions to the government, which led to prime minister <person> explicitly stating the <redacted> government's position of being in favour of inclusion.   Additional information:   Contribution of other actors and factors: Yes, the statement was drafted together with other civil society organizations active in the field of business, conflict, human rights and the arms sector. The advocacy and engagement with the <redacted> government and politicians was the work of PAX.
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

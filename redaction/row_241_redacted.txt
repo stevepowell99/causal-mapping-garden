@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR008
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: Sahel/Mali
+**Year**: 2023
+**Outcome description**: In 2023, following the documentation of a case of rape in the <LOC> cercle, the victim's family sought the assistance of the MDR project monitor, after which a complaint was drawn up with the support of the TRIJEUD legal clinic in <LOC> and the case is currently before the <LOC> court.
+**Significance of the outcome**: Prior to the effect, victims of sexual violence in <LOC> were reluctant to report assaults because of the social stigma associated with these crimes. This development is important for the objectives of the MDR programme, as it demonstrates significant progress towards holding perpetrators of sexual violence accountable and protecting the rights of victims in the <LOC> region.
+**Additional information (use if needed) **: By encouraging the reporting of acts of violence, the programme helps to break the silence surrounding these crimes, thereby promoting access to justice and the emergence of a more informed and supportive community against gender-based violence.
+**Rating significance**: medium
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: The MDR project monitor made a direct contribution to change by helping the victim's family to draw up a complaint following the documentation of a case of rape in the <LOC> cercle in 2023. In collaboration with TRIJEUD's legal clinic in <LOC>, this intervention enabled the case to be brought before the courts, which is currently underway at the <LOC> court. This direct contribution from the MDR programme has fostered positive change by offering concrete support to the victim's family and facilitating the legal process to combat sexual violence in the region.
+**Contribution of other actors and factors**: In addition to the MDR project monitor, TRIJEUD's legal clinic played a key role in providing legal and judicial assistance to the rape victim. This contribution strengthened the process of bringing the case to court, providing specialist support that made a significant contribution to combating sexual violence in the region.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: The complaint drawn up to bring the case before the <LOC> court
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In 2023, following the documentation of a case of rape in the <LOC> cercle, the victim's family sought the <redacted> of the MDR project monitor, after which a complaint was drawn up with the support of the TRIJEUD legal clinic in <LOC> and the case is currently before the <LOC> court.  Significance description: Prior to the effect, victims of sexual violence in <LOC> were reluctant to report assaults because of the social stigma <redacted> with these crimes. This development is important for the <redacted> of the MDR programme, as it demonstrates significant progress towards holding perpetrators of sexual violence accountable and <redacted> the rights of victims in the <LOC> region.  Contribution of the programme: The MDR project monitor made a direct contribution to change by helping the victim's family to draw up a complaint following the documentation of a case of rape in the <LOC> cercle in 2023. In collaboration with TRIJEUD's legal clinic in <LOC>, this intervention enabled the case to be brought before the courts, which is currently underway at the <LOC> court. This direct contribution from the MDR programme has fostered positive change by offering concrete support to the victim's family and facilitating the legal process to combat sexual violence in the region.  Additional information: By encouraging the reporting of acts of violence, the programme helps to break the silence surrounding these crimes, thereby promoting access to justice and the emergence of a more informed and supportive community against gender-based violence.  Contribution of other actors and factors: In addition to the MDR project monitor, TRIJEUD's legal clinic played a key role in providing legal and judicial assistance to the rape victim. This contribution strengthened the process of bringing the case to court, providing specialist support that made a significant contribution to combating sexual violence in the region.
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change  Safety and Security, Gender transformative
+**TypeOfChangeCluster**: Gender, Capacity change

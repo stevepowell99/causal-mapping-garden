@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SSU2305/GEQ008
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: South Sudan
+**Year**: 2022
+**Outcome description**: In October 2022, people with disabilities advocated for their participation in decision making in various institutions in Juba, South Sudan.
+**Significance of the outcome**: There is lack of inclusivity in major institutions for people with disabilities. There is limited awareness on rights of people with disabilities. 
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Local
+**Contribution of the programme**: 2 preparatory meeting with people with disabilities. 1 workshop for people with disabilities on their rights and inclusivity in decision making. Created awareness on implementation policies that include people with disabilities.
+**Contribution of other actors and factors**: no
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Reports of the 2 prepatory meetings and of the workshop. 
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 3.3
+**Link to SCC Specific Objectives**: GEQ: More equal gender roles and relationships and transformation of harmful gender norms
+**StoryFragment_Merged**: In October 2022, people with disabilities advocated for their participation in decision making in various institutions in Juba, South Sudan.  Significance description: There is lack of inclusivity in major institutions for people with disabilities. There is limited awareness on rights of people with disabilities.   Contribution of the programme: 2 preparatory meeting with people with disabilities. 1 workshop for people with disabilities on their rights and inclusivity in decision making. Created awareness on implementation policies that include people with disabilities.  Additional information:   Contribution of other actors and factors: no
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

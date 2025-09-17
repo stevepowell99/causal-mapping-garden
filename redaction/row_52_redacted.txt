@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV015
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Lebanon
+**Year**: 2022
+**Outcome description**: In 2022 in <LOC>, young participants who previously did not feel safe interacting with other youth from different backgrounds and the trainers, built their confidence to speak more openly and established built strong relationships with other youth. This included a young participant with autism and young <redacted> refugees.
+**Significance of the outcome**: Fakeqha in <LOC> is an under resourced area of Lebanon lacking basic services for youths. This is specially the case for young <redacted> refugees and youth with disabilities. For some youth with disabilities, the sessions were the only opportunity outside their home to learn and interact with others. Peace of Art was able to create a safe space for people to build confidence and trust with others.
+**Additional information (use if needed) **: The youth still communicate and meet informally. 
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Individual
+**Contribution of the programme**: Peace of Art implemented the Innovation Academy project which allowed 18 young participants from different religious and cultural backgrounds to follow 16 sessions of basic computer skills, 16 English session and 4 storytelling session. These sessions also included many ice breaker and energizers using music, accepting others, nonviolence and gender equality concepts
+**Contribution of other actors and factors**:  
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: No
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.2  <redacted> partner CSOs have fostered greater social cohesion through bringing people together from diverse backgrounds.  
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: In 2022 in <LOC>, young participants who previously did not feel safe interacting with other youth from different backgrounds and the trainers, built their confidence to speak more openly and established built strong relationships with other youth. This included a young participant with autism and young <redacted> refugees.  Significance description: Fakeqha in <LOC> is an under resourced area of Lebanon lacking basic services for youths. This is specially the case for young <redacted> refugees and youth with disabilities. For some youth with disabilities, the sessions were the only opportunity outside their home to learn and interact with others. Peace of Art was able to create a safe space for people to build confidence and trust with others.  Contribution of the programme: Peace of Art implemented the Innovation Academy project which allowed 18 young participants from different religious and cultural backgrounds to follow 16 sessions of basic computer skills, 16 English session and 4 storytelling session. These sessions also included many ice breaker and energizers using music, accepting others, nonviolence and gender equality concepts  Additional information: The youth still communicate and meet informally.   Contribution of other actors and factors:  
+**Outcome is negative**: NO
+**MCQType of change**: Community bridging
+**TypeOfChangeCluster**: Community bridging

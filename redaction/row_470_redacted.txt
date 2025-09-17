@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR008
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Syria
+**Year**: 2024
+**Outcome description**: In 2024, male-dominated media in the <redacted> region started to talk about forced displacement in Syria using feminist/gender sensitive language based on the book published by WND 
+**Significance of the outcome**: This is an important change because it provided additional coverage to the plight and narrative of women who experienced forced displacement in Syria while the experience of women especially <redacted> women who have experienced various human rights violations have not been widely talked about in male dominated media in <LOC>
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Media
+**Scale**: Organisation
+**Contribution of the programme**: WND produced the book as part of its work under the programme and further presented the book at several event (during a launch event in <LOC> in 2024 and invited to an event organized by <person> in <LOC> in 2025) and sent the book to various personalities from the civil society which helped to disseminate the book including to media and journalists
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Yes  <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In 2024, male<redacted> media in the <redacted> region started to talk about forced displacement in Syria using feminist/gender sensitive language based on the book published by WND   Significance description: This is an important change because it provided <redacted> coverage to the plight and narrative of women who experienced forced displacement in Syria while the <redacted> of women <redacted> <redacted> women who have experienced various human rights <redacted> have not been widely talked about in male dominated media in the WANA Region  Contribution of the programme: WND produced the book as part of its work under the programme and further presented the book at several event (during a launch event in <LOC> in 2024 and invited to an event organized by <person> in <LOC> in 2025) and sent the book to various personalities from the civil society which helped to disseminate the book including to media and journalists  Additional information:   Contribution of other actors and factors: None
+**Outcome is negative**: NO
+**MCQType of change**: Seeking public support, Gender transformative
+**TypeOfChangeCluster**: Gender, Mobilizing citizens and organizations

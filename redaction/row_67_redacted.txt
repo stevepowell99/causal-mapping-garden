@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV017
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Palestine
+**Year**: 2022
+**Outcome description**: Several meetings during <redacted> between <person> and <redacted> and MEPs in <LOC> Increased EU network of <LOC> including EEAS and MEPs as a result of joint report and <LOC> event 
+**Significance of the outcome**: New connections. Increased EU network of <LOC> including EEAS and MEPs as a result of joint report and <LOC> event. 
+**Additional information (use if needed) **: 
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: International
+**Contribution of the programme**: As part of the programme PAX, SWP and <person> produced a research and conducted an event in <LOC> in <redacted>, providing opportunities for networking. <LOC> planned meetings with relevant stakeholders in <LOC> after the event 
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted> and <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes, outcome 1.1
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: Several meetings during <redacted> between <person> and <redacted> and MEPs in <LOC> Increased EU network of <LOC> including EEAS and MEPs as a result of joint report and <LOC> event   Significance description: New connections. Increased EU network of <LOC> including EEAS and MEPs as a result of joint report and <LOC> event.   Contribution of the programme: As part of the programme PAX, SWP and <person> produced a research and conducted an event in <LOC> in <redacted>, providing opportunities for networking. <LOC> planned meetings with relevant stakeholders in <LOC> after the event   Additional information:   Contribution of other actors and factors: NA
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

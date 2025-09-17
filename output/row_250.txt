@@ -1,0 +1,23 @@
+**FragmentID**: SCC-DRC2312/PHR005
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 2
+**coutnry**: DR Congo
+**Year**: 2023
+**Outcome description**: In January 2023, in Zemio, Central African Republic, a high-ranking LRA commander signed a declaration expressing the wish of dozens of LRA fighters to lay down their arms and be repatriated to Uganda.
+**Significance of the outcome**: This commitment was a key element in the effective demobilization of the remaining LRA groups in CAR. It subsequently enabled PAX and APRu to lobby the Ugandan government to get the DDR process underway.
+**Additional information (use if needed) **: The demobilization of the LRA was a major issue. Firstly, it offered better prospects for the combatants and their families, who were living in very precarious conditions in the CAR. Secondly, the demobilization of the LRA marked the end of this armed group's presence in the area. The LRA had committed enormous atrocities against civilians, and its presence was a permanent threat.
+**Rating significance**: medium
+**Social actor**: Non-state authorities
+**Scale**: Individual
+**Contribution of the programme**: In December 2022, APRu and PAX received authorization from the Central African authorities to initiate a peace dialogue with the LRA groups in Zemio. PAX and APRu held several meetings with LRA commanders from Zemio in the village, and in January 2023, the NGOs visited the group's base camp in the Haut-Mbomou prefecture for two days. The LRA signed a document expressing their wish to demobilize and authorizing PAX and APRu to present their intention to the authorities of the three countries involved.
+**Contribution of other actors and factors**: Yes, some local authorities in the CAR had begun to build trust with the LRA. However, their dialogue had failed due to a lack of prospects for the LRA, a lack of trust and a lack of contact with the governments involved.
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Statement signed by the LRA commander. Notes and internal reports from PAX and APRu. Testimonies of PAX and APRu staff present at the signing.
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.7
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In January 2023, in Zemio, Central African Republic, a high-ranking LRA commander signed a declaration expressing the wish of dozens of LRA fighters to lay down their arms and be repatriated to Uganda.  Significance description: This commitment was a key element in the effective demobilization of the remaining LRA groups in CAR. It subsequently enabled PAX and APRu to lobby the Ugandan government to get the DDR process underway.  Contribution of the programme: In December 2022, APRu and PAX received authorization from the Central African authorities to initiate a peace dialogue with the LRA groups in Zemio. PAX and APRu held several meetings with LRA commanders from Zemio in the village, and in January 2023, the NGOs visited the group's base camp in the Haut-Mbomou prefecture for two days. The LRA signed a document expressing their wish to demobilize and authorizing PAX and APRu to present their intention to the authorities of the three countries involved.  Additional information: The demobilization of the LRA was a major issue. Firstly, it offered better prospects for the combatants and their families, who were living in very precarious conditions in the CAR. Secondly, the demobilization of the LRA marked the end of this armed group's presence in the area. The LRA had committed enormous atrocities against civilians, and its presence was a permanent threat.  Contribution of other actors and factors: Yes, some local authorities in the CAR had begun to build trust with the LRA. However, their dialogue had failed due to a lack of prospects for the LRA, a lack of trust and a lack of contact with the governments involved.
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

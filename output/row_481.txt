@@ -1,0 +1,23 @@
+**FragmentID**: SCC-IRQ2508/PHR021
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Iraq
+**Year**: 2024
+**Outcome description**: In July, 2024,  parliament members from Ninewa (Naif Al-Shmamari) and the provincial council of Ninewa started holding weekly listening sessions with families of female victims.
+**Significance of the outcome**: There is a widespread lack of trust in the legal system, coupled with limited public awareness of protected rights. This contributes to the continued exclusion of women and weakens efforts to uphold and protect their rights. These listening sessions prompted a group of marginalized women in rural Ninewa plain to engaged in legal processes with the High committee for HR to claim their rights, visiting the governmental offices to advocate and present their issues.
+**Additional information (use if needed) **: A group of young Yezidi women organized themselves and conducted an advocacy visit to the Provincial Council. During other activity, five women reported cases of extortion and corruption to the High Committee for Human Rights. local authorities began paying greater attention to the voices and concerns of women, marking a shift toward more inclusive engagement
+**Rating significance**: medium
+**Social actor**: State authorities
+**Scale**: Local
+**Contribution of the programme**: in 2024, about 5 listening sessions were held through the project with authorities, and decision makers realized the need to listen more to women and their specific issues.
+**Contribution of other actors and factors**: yes, CSOs work on awareness
+**Rating contribution**: little
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: Letter realsed by parlimentary member 
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In July, 2024,  parliament members from Ninewa (Naif Al-Shmamari) and the provincial council of Ninewa started holding weekly listening sessions with families of female victims.  Significance description: There is a widespread lack of trust in the legal system, coupled with limited public awareness of protected rights. This contributes to the continued exclusion of women and weakens efforts to uphold and protect their rights. These listening sessions prompted a group of marginalized women in rural Ninewa plain to engaged in legal processes with the High committee for HR to claim their rights, visiting the governmental offices to advocate and present their issues.  Contribution of the programme: in 2024, about 5 listening sessions were held through the project with authorities, and decision makers realized the need to listen more to women and their specific issues.  Additional information: A group of young Yezidi women organized themselves and conducted an advocacy visit to the Provincial Council. During other activity, five women reported cases of extortion and corruption to the High Committee for Human Rights. local authorities began paying greater attention to the voices and concerns of women, marking a shift toward more inclusive engagement  Contribution of other actors and factors: yes, CSOs work on awareness
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

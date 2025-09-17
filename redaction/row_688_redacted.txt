@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR009
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Kenya
+**Year**: 2024
+**Outcome description**: In <redacted>, HURIA developed and institutionalized a Safeguarding and Reporting Mechanism policy, aligned with other <redacted> internal policies. 
+**Significance of the outcome**: Before this outcome, HURIA had no PSEAH Policy and staff had limited awareness of safeguarding standards. The training, policy adoption, and awareness-raising now strengthen mechanisms to report and account for misconduct, improve staff and beneficiary protection, and align the organization with international safeguarding standards and donor requirements.    
+**Additional information (use if needed) **: HURIA developed and adopted an internal PSEAH Policy alongside a reporting mechanism, ensured that all staff completed mandatory PSEAH training through UNICEF Agora, and integrated safeguarding awareness into beneficiary sensitization during project activities. Furthermore, this has created enforceable standards for all <redacted> staff, volunteers, consultants, and partners—minimizing risks while strengthening trust among project beneficiaries, donors, and stakeholders. 
+**Rating significance**: medium
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: The program organized and facilitated a safeguarding training for HURIA staff and further supported the review and fine-tuning of the safeguarding and reporting mechanism policy. This process also ensured its integration into other internal policies and provided valuable insights that helped strengthen and finalize the policies.
+**Contribution of other actors and factors**: No other actors were involved
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Not linked to the Results Framework, but an important outcome in SCC general objectives on SEAH
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Outcome description:  In <redacted>, HURIA developed and institutionalized a Safeguarding and Reporting Mechanism policy, aligned with other <redacted> internal policies.  Significance:  Before this outcome, HURIA had no PSEAH Policy and staff had limited awareness of safeguarding standards. The training, policy adoption, and awareness-raising now strengthen mechanisms to report and account for misconduct, improve staff and beneficiary protection, and align the organization with international safeguarding standards and donor requirements.     Contribution:  The program organized and facilitated a safeguarding training for HURIA staff and further supported the review and fine-tuning of the safeguarding and reporting mechanism policy. This process also ensured its integration into other internal policies and provided valuable insights that helped strengthen and finalize the policies. Additional Info:  HURIA developed and adopted an internal PSEAH Policy alongside a reporting mechanism, ensured that all staff completed mandatory PSEAH training through UNICEF Agora, and integrated safeguarding awareness into beneficiary sensitization during project activities. Furthermore, this has created enforceable standards for all <redacted> staff, volunteers, consultants, and partners—minimizing risks while strengthening trust among project beneficiaries, donors, and stakeholders.  Contribution of Other factors:  No other actors were involved
+**Outcome is negative**: NO
+**MCQType of change**: Policy change
+**TypeOfChangeCluster**: Policy

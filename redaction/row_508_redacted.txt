@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/CIV007
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 3
+**coutnry**: Palestine
+**Year**: 2024
+**Outcome description**: in <redacted>, Dr. <person> was appointed as <person>’s first <redacted> Policy Fellow, enhancing access to authentic <redacted> perspectives.
+**Significance of the outcome**: <person>’s appointment of Dr. <person> as its first-ever <redacted> Policy Fellow marks a historic milestone for <redacted> think tanks. Made possible through the groundwork laid by the PAX project, his addition revolutionized <person>’s engagement with the <LOC>. He authored key policy papers such as '<redacted> Perspective: The <redacted> Issue Cannot Be Pushed Aside' and 'Exaggerations, Obstacles and Opportunities: The Saudi Arabian Position in the Gaza War.' Dr. <person> also represented <person> at its <redacted> conference and other public initiatives, sharing direct <redacted> insights with <redacted> audiences.
+**Additional information (use if needed) **: 
+**Rating significance**: early/small
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: <person>’s prior work under the project laid the <redacted> for the appointment of Dr. <person> in <redacted> by fostering a new relationships with the <LOC> actor and elevating the strategic importance of regional expertise. The program created the institutional vision and framework needed to formally engage a <redacted> expert—an unprecedented step for an <redacted> think tank. This decision enabled <person> to directly introduce authentic <redacted> voices into <redacted> policy discourse countering efforts to reduce civic space 
+**Contribution of other actors and factors**: Yes, Dr. <person>, project network and publications
+**Rating contribution**: moderate
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: <redacted>
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 1.1 - Local partners have strengthened their capacities in L&A, including enlarging their networks   
+**Link to SCC Specific Objectives**: CIV: Less suppression of civic space
+**StoryFragment_Merged**: in <redacted>, Dr. <person> was appointed as <person>’s first <redacted> Policy Fellow, enhancing access to authentic <redacted> perspectives.  Significance description: <person>’s appointment of Dr. <person> as its <redacted> <redacted> Policy Fellow marks a historic milestone for <redacted> think tanks. Made possible through the <redacted> laid by the PAX project, his addition revolutionized <person>’s <redacted> with the <LOC>. He authored key policy papers such as '<redacted> Perspective: The <redacted> Issue Cannot Be Pushed Aside' and 'Exaggerations, Obstacles and Opportunities: The Saudi Arabian Position in the Gaza War.' Dr. <person> also represented <person> at its <redacted> <redacted> and other public initiatives, sharing direct <redacted> insights with <redacted> audiences.  Contribution of the programme: <person>’s prior work under the project laid the <redacted> for the appointment of Dr. <person> in <redacted> by fostering a new relationships with the <LOC> actor and elevating the strategic importance of regional expertise. The program created the institutional vision and framework needed to formally engage a <redacted> expert—an unprecedented step for an <redacted> think tank. This decision enabled <person> to directly introduce authentic <redacted> voices into <redacted> policy discourse countering efforts to reduce civic space   Additional information:   Contribution of other actors and factors: Yes, Dr. <person>, project network and publications
+**Outcome is negative**: NO
+**MCQType of change**: Creating space for CSOs
+**TypeOfChangeCluster**: Empowering citizens and CSOs

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-<redacted>/PHR001
+**Outcome status**: Outcome
+**OH-harvesting period**: harvest 1
+**coutnry**: Burundi
+**Year**: 2021
+**Outcome description**: Since <redacted>, after completing the third module of the AINL online training on MDR, the monitors of RCP in Burundi have been producing credible and verifiable reports on human rights violations, in accordance with MDR standards (such as sufficient evidence and details to verify the events and classify them as violations).
+**Significance of the outcome**: Before the training, monitors were not following the principles and standards of MDR while reporting human rights issues and as a result their reports were capturing security incidents/issues. The MDR training increased the capacity of monitors on human rights violations reporting standards. The reports produced by the monitors are a source of evidence to hold <redacted> authorities accountable for grave human rights violations by the International human rights community.
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Civic change agents
+**Scale**: Organisation
+**Contribution of the programme**: As of <redacted> AINL and its trainers' network trained 10 RCP monitors in MDR, through 4 online modules followed by practical exercises and coaching calls. Especially after Module 3, RCP felt that they gained the skills to improve their reports substantially.
+**Contribution of other actors and factors**: No other actors or factors
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: "Cas de rapports des moniteurs en formation" de septembre 2021, octobre 2021 et janvier 2022 (unpublished, available through <email> )
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Outcome 2.1
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: Since <redacted>, after <redacted> the third module of the AINL online training on MDR, the monitors of RCP in Burundi have been producing credible and <redacted> reports on human rights <redacted>, in <redacted> with MDR standards (such as <redacted> evidence and details to verify the events and classify them as <redacted>).  Significance description: Before the training, monitors were not following the <redacted> and standards of MDR while reporting human rights issues and as a result their reports were capturing security incidents/issues. The MDR training increased the capacity of monitors on human rights <redacted> reporting standards. The reports produced by the monitors are a source of evidence to hold <redacted> authorities accountable for grave human rights <redacted> by the International human rights community.  Contribution of the programme: As of <redacted> AINL and its trainers' network trained 10 RCP monitors in MDR, through 4 online modules followed by practical exercises and coaching calls. Especially after Module 3, RCP felt that they gained the skills to improve their reports substantially.  Additional information: NA  Contribution of other actors and factors: No other actors or factors
+**Outcome is negative**: NO
+**MCQType of change**: Capacity change L and A
+**TypeOfChangeCluster**: Capacity change

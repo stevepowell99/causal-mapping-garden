@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SYR2305/ESF001
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Syria
+**Year**: 2022
+**Outcome description**: Increased coverage in international media and interest from policy makers how the conflict-linked water scarcity impacted pastoralists after PAX published an analysis of this issue in February 2022.
+**Significance of the outcome**: This has been the first large report on the specific impact on marginalized groups such as pastoralists and highlight these concerns, where most coverage on the droughts in NE Syria has been linked to farmers. 
+**Additional information (use if needed) **: 
+**Rating significance**: large
+**Social actor**: Media
+**Scale**: International
+**Contribution of the programme**: Based on field work (interviews with pastoralists, local authorities, traders and NGOs) conducted in September 2021 in NE Syria published this report in February 2022 and shared this with global media outlets to gain attention on this topic
+**Contribution of other actors and factors**: No
+**Rating contribution**: great
+**The change was unintended**: NO
+**Evidence supporting the outcome statement**: https://www.waterdiplomat.org/story/2022/02/syria-water-scarcity-assessed-granular-level;  https://www.government.nl/binaries/government/documenten/reports/2022/05/31/country-of-origin-information-report-syria-of-may-2022/Country+of+origin+information+report+Syria.pdf
+**Outcome statements is CONFIDENTIAL**: 
+**Link to Outcomes in Results Framework **: Yes O2.1
+**Link to SCC Specific Objectives**: ESF: Less impact of external stress factors that harm peace and justice
+**StoryFragment_Merged**: Increased coverage in international media and interest from policy makers how the conflict-linked water scarcity impacted pastoralists after PAX published an analysis of this issue in February 2022.  Significance description: This has been the first large report on the specific impact on marginalized groups such as pastoralists and highlight these concerns, where most coverage on the droughts in NE Syria has been linked to farmers.   Contribution of the programme: Based on field work (interviews with pastoralists, local authorities, traders and NGOs) conducted in September 2021 in NE Syria published this report in February 2022 and shared this with global media outlets to gain attention on this topic  Additional information:   Contribution of other actors and factors: No
+**Outcome is negative**: NO
+**MCQType of change**: Supportive action
+**TypeOfChangeCluster**: Empowering citizens and CSOs

@@ -1,0 +1,23 @@
+**FragmentID**: SCC-SAH2305/PHR030
+**Outcome status**: Outcome lead
+**OH-harvesting period**: harvest 1
+**coutnry**: Sahel/Burkina Faso
+**Year**: 2022
+**Outcome description**: In 2022 in particular, MDR work led to higher and increased risks for monitors based in the northern, central-northern and Sahel regions of Burkina Faso, which have been severely affected by armed conflict.
+**Significance of the outcome**: Because of the work of collecting and documenting cases of abuse and human rights violations perpetrated by the FDS & VDP, monitors are identified and perceived as people who support or defend criminals/terrorists and prevent the fight against terrorism by certain authorities but also by the population. This creates a stigma or an environment of insecurity towards them.
+**Additional information (use if needed) **: Some monitors and human rights defenders are subject to intimidation and threats of abduction in their own communities.
+**Rating significance**: large
+**Social actor**: Engaged citizens
+**Scale**: Regional
+**Contribution of the programme**: Training in monitoring techniques has increased their skills and abilities in collecting and documenting cases of abuse and violations in their environments. This has led to greater exposure and visibility for the monitors in the field, despite the fact that they have received training in physical and digital security.
+**Contribution of other actors and factors**: 
+**Rating contribution**: great
+**The change was unintended**: YES
+**Evidence supporting the outcome statement**: Testimonies from monitors in the Sahel
+**Outcome statements is CONFIDENTIAL**: 1.0
+**Link to Outcomes in Results Framework **: 
+**Link to SCC Specific Objectives**: PHR: More effective efforts of society and authorities to pursue peace and human rights
+**StoryFragment_Merged**: In 2022 in particular, MDR work led to higher and increased risks for monitors based in the northern, central-northern and Sahel regions of Burkina Faso, which have been severely affected by armed conflict.  Significance description: Because of the work of collecting and documenting cases of abuse and human rights violations perpetrated by the FDS & VDP, monitors are identified and perceived as people who support or defend criminals/terrorists and prevent the fight against terrorism by certain authorities but also by the population. This creates a stigma or an environment of insecurity towards them.  Contribution of the programme: Training in monitoring techniques has increased their skills and abilities in collecting and documenting cases of abuse and violations in their environments. This has led to greater exposure and visibility for the monitors in the field, despite the fact that they have received training in physical and digital security.  Additional information: Some monitors and human rights defenders are subject to intimidation and threats of abduction in their own communities.  Contribution of other actors and factors: 
+**Outcome is negative**: NO
+**MCQType of change**: Other
+**TypeOfChangeCluster**: Other
