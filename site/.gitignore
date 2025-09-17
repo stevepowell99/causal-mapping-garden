@@ -1,0 +1,12 @@
+# Obsidian files - we only want the generated HTML
+.obsidian/
+*.md
+*.gdoc
+config.json
+
+# Keep only HTML, CSS, JS and assets
+!*.html
+!*.css
+!*.js
+!*.json
+!assets/

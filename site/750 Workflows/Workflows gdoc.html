@@ -1,0 +1,613 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Workflows gdoc · causal mapping</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+      /* layout: sticky left sidebar */
+      :root {
+        --cm-body-bg: #fcfcfc;
+        --cm-text: #222;
+        --cm-muted: #6c757d;
+        --cm-border: #e5e5e5;
+      }
+      body {
+        overflow-y: scroll;
+        background: var(--cm-body-bg);
+        color: var(--cm-text);
+        font-size: 1.0625rem; /* ~17px, slightly larger */
+      }
+      .layout-container {
+        display: grid;
+        grid-template-columns: 200px 1fr 260px; /* narrow sidebar by default */
+        column-gap: 2.25rem;
+        min-height: 100vh;
+        transition: grid-template-columns 0.3s ease;
+      }
+      .layout-container.sidebar-expanded {
+        grid-template-columns: 540px 1fr 260px; /* expand when triggered by JS */
+      }
+      .sidebar {
+        border-right: 1px solid var(--cm-border);
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow: hidden; /* hide overflow when narrow */
+        background: #fafafa;
+        padding: 1.25rem 1.25rem 2rem 1.25rem; /* more padding */
+        transition: overflow 0.3s ease;
+      }
+      .layout-container.sidebar-expanded .sidebar {
+        overflow: auto; /* show scrollbar when expanded */
+      }
+      aside.sidebar .p-2 {
+        opacity: .55 !important; /* 55% opacity by default */
+        transition: opacity .2s ease;
+      }
+      aside.sidebar:hover .p-2 {
+        opacity: .8 !important; /* more visible on sidebar hover */
+      }
+      aside.sidebar .p-2 summary {
+        opacity: inherit; /* ensure folder headers inherit the fade */
+      }
+      aside.sidebar .nav-link {
+        padding: .2rem .4rem;
+        color: var(--cm-text);
+        font-size: 1.025rem; /* slightly larger */
+      }
+      aside.sidebar .nav-link:hover {
+        background: #eef2f6;
+        border-radius: .25rem;
+      }
+      details > summary {
+        cursor: pointer;
+        list-style: none;
+        transition: opacity .15s ease;
+      }
+      details > summary::marker {
+        display: none;
+      }
+      aside.sidebar details:hover > summary {
+        opacity: 1 !important; /* full visibility on section hover */
+      }
+      aside.sidebar .nav-link:hover {
+        opacity: 1 !important; /* full visibility on link hover */
+      }
+      details > summary .chev {
+        transition: transform .15s ease, opacity .2s ease;
+        opacity: 0; /* invisible by default */
+        font-size: 1.2em; /* smaller */
+        margin-left: .5rem;
+      }
+      aside.sidebar:hover details > summary .chev {
+        opacity: .6; /* visible on sidebar hover */
+      }
+      details[open] > summary .chev {
+        transform: rotate(90deg);
+      }
+      .content {
+        padding: 3rem 4rem; /* more padding */
+        max-width: 980px;  /* a bit wider */
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+        line-height: 1.7;
+        letter-spacing: .2px;
+        background: white;
+        box-shadow: 0 1px 2px rgba(0,0,0,.03);
+        border: 1px solid var(--cm-border);
+        border-radius: 8px;
+        margin: 2.5rem 2.5rem 5rem 0; /* more breathing room */
+      }
+      .content img { max-width: 100%; height: auto; }
+      .content h1, .content h2, .content h3, .content h4 {
+        margin-top: 2rem;
+        font-weight: 600;
+      }
+      .content p {
+        margin-bottom: 1.1rem;
+      }
+      .content pre, .content code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      }
+      .content pre {
+        background: #f7f7f7;
+        border: 1px solid var(--cm-border);
+        border-radius: 6px;
+        padding: .75rem 1rem;
+      }
+      .content hr {
+        border-top: 1px solid var(--cm-border);
+        margin: 1.5rem 0;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover { text-decoration: underline; }
+      /* Wikilink embed blocks */
+      .embed-block {
+        border: 1px dashed var(--cm-border);
+        background: #fafafa;
+        border-radius: 6px;
+        padding: .5rem .75rem;
+      }
+      .embed-block > summary {
+        font-weight: 500;
+        user-select: none;
+      }
+      .embed-block > summary .chev {
+        transition: transform .15s ease;
+        opacity: .6;
+        font-size: 1.2em; /* smaller */
+        margin-left: .5rem;
+      }
+      .embed-block[open] > summary .chev {
+        transform: rotate(90deg);
+      }
+      .embed-block > summary::before {
+        content: "Relevant page: ";
+        font-size: 0.75rem;
+        color: var(--cm-muted);
+        opacity: 0.7;
+        margin-right: 0.5rem;
+      }
+      /* Active nav link */
+      aside.sidebar .nav-link.active {
+        background: #e7effa;
+        border-radius: .25rem;
+        font-weight: 600;
+      }
+      /* Right ToC */
+      .rightbar {
+        position: sticky;
+        top: 2.5rem; /* align with main content's top margin */
+        align-self: start; /* start at top of grid row */
+        max-height: calc(100vh - 2.5rem);
+        overflow: auto;
+        margin: 2.5rem 0 5rem 0; /* match main content vertical margins */
+        padding: 3rem 2rem; /* similar vertical padding to content */
+        background: white;
+        border: 1px solid var(--cm-border);
+        border-radius: 8px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.03);
+      }
+      .rightbar h2 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        color: var(--cm-muted);
+      }
+      .rightbar .toc ul {
+        padding-left: 1rem;
+      }
+      .rightbar .toc {
+        opacity: .55; /* paler by default */
+        transition: opacity .15s ease;
+      }
+      .rightbar:hover .toc {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout-container">
+      <aside class="sidebar"><div class="p-2"><form class="mb-2" action="../search.html" method="get">  <div class="input-group input-group-sm">    <input class="form-control" type="text" name="q" placeholder="Search…" />    <button class="btn btn-outline-secondary" type="submit">Search</button>  </div></form><a class="btn btn-outline-primary w-100 mb-2" href="../index.html">Home</a><ul class="list-unstyled"><li class="nav-item"><a class="nav-link" href="../index.html">index</a></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>reference articles</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../000 reference articles/010 better-evaluation.html">better-evaluation</a></li><li class="nav-item"><a class="nav-link" href="../000 reference articles/eval2024.html">eval2024</a></li><li class="nav-item"><a class="nav-link" href="../000 reference articles/eval2025.html">eval2025</a></li><li class="nav-item"><a class="nav-link" href="../000 reference articles/trash.html">trash</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>unpublished</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../005 unpublished/! Knowledge graphs.html">! Knowledge graphs</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/! meaning but not epistemology.html">! meaning but not epistemology</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/! Questions you can answer.html">! Questions you can answer</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!350 is there a hidden vocabulary.html">!350 is there a hidden vocabulary</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!400 Being realist about causation.html">!400 Being realist about causation</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!500 nuance.html">!500 nuance</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!700 Retraceable, reconstructable, operationalisable.html">!700 Retraceable, reconstructable, operationalisable</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!Humans are the best detectors of causation.html">!Humans are the best detectors of causation</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!qual causal models.html">!qual causal models</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/!Transitivity as the fundamental property.html">!Transitivity as the fundamental property</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/600 bricolage.html">bricolage</a></li><li class="nav-item"><a class="nav-link" href="../005 unpublished/650 OH plus Attitudes.html">OH plus Attitudes</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Causal mapping</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0.10 What is causal mapping.html">What is causal mapping</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0.130 Causal mapping has been used for over 50 years in many disciplines.html">Causal mapping has been used for over 50 years in many disciplines</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/011 Causal mapping distinguishes evidence from facts and does not make ca-7f2975.html">Causal mapping distinguishes evidence from facts and does not make causal inferences</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/012 When to use and not to use causal mapping.html">When to use and not to use causal mapping</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/013 History of the Causal Map app.html">History of the Causal Map app</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0130.0 Causal mapping approaches differ in application, construction, ana-39069f.html">Causal mapping approaches differ in application, construction, analysis and how they deal with multiple sources</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0132 Causal mappers believe that humans are good at thinking in terms of -c87577.html">Causal mappers believe that humans are good at thinking in terms of causal nuggets</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0132 Causal mappers believe that humans are hardwired to perceive causation.html">Causal mappers believe that humans are hardwired to perceive causation</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0132 Causal mapping is part of the qualitative branch of the new causal r-d0ad71.html">Causal mapping is part of the qualitative branch of the new causal revolution</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0133 Six ways causal mapping differs from related approaches.html">Six ways causal mapping differs from related approaches</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/01331 What is the difference between outcome harvesting, contribution ana-9cd115.html">What is the difference between outcome harvesting, contribution analysis and causal mapping</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0134 Janus - Causal mappers face in two directions.html">Janus - Causal mappers face in two directions</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0135 Epistemic logic.html">Epistemic logic</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0136 Causal mapping in evaluation - Three tasks.html">Causal mapping in evaluation - Three tasks</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/01361 Task 1 - Gathering narrative data.html">Task 1 - Gathering narrative data</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0137 Task 2 - Coding causal claims as causal qualitative data analysis.html">Task 2 - Coding causal claims as causal qualitative data analysis</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/0138 Task 3 - Answering questions, specifically evaluation questions.html">Task 3 - Answering questions, specifically evaluation questions</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/01381 Limitations - data quality.html">Limitations - data quality</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/01382 Dangers - granularity and generalisability.html">Dangers - granularity and generalisability</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/Advantages of causal mapping - coping with messiness.html">Advantages of causal mapping - coping with messiness</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/Causal maps are knowledge graphs, but with wings.html">Causal maps are knowledge graphs, but with wings</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/Contribution criteria in advance.html">Contribution criteria in advance</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/Layout.html">Layout</a></li><li class="nav-item"><a class="nav-link" href="../010 Causal mapping/There has always been complexity.html">There has always been complexity</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Algorithms and questions</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Answering EVALUATION questions (1).html">Answering EVALUATION questions (1)</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Distinguishing between factors which make causal claims about different groups.html">Distinguishing between factors which make causal claims about different groups</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Etiograph - robustness.html">Etiograph - robustness</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Reporting global and local network statistics.html">Reporting global and local network statistics</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Simplification - co-terminal link bundles.html">Simplification - co-terminal link bundles</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Simplification - factor and link frequency.html">Simplification - factor and link frequency</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Simplification - hierarchical zooming.html">Simplification - hierarchical zooming</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Source clustering.html">Source clustering</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/Source thread tracing.html">Source thread tracing</a></li><li class="nav-item"><a class="nav-link" href="../011 Algorithms and questions/The transitivity trap.html">The transitivity trap</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Causal Map app</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../012 Causal Map app/500 Open-source causal mapping functions.html">Open-source causal mapping functions</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Causal QDA</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../014 Causal QDA/210 Why do causal mapping rather than ordinary QDA.html">Why do causal mapping rather than ordinary QDA</a></li><li class="nav-item"><a class="nav-link" href="../014 Causal QDA/220 where do the labels come from.html">where do the labels come from</a></li><li class="nav-item"><a class="nav-link" href="../014 Causal QDA/250 causal mapping turns QDA on its head.html">causal mapping turns QDA on its head</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Causal mapping in evaluation</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../015 Causal mapping in evaluation/610 The elephant in the room.html">The elephant in the room</a></li><li class="nav-item"><a class="nav-link" href="../015 Causal mapping in evaluation/650 Qual versus quant impact evaluation strength vs modelling.html">Qual versus quant impact evaluation strength vs modelling</a></li><li class="nav-item"><a class="nav-link" href="../015 Causal mapping in evaluation/Reconstructing program theory empirically.html">Reconstructing program theory empirically</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>AI reaction</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../400 AI reaction/! words - bodies.html">! words - bodies</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/! words - perspective.html">! words - perspective</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/200 Causal QDA 1.html">Causal QDA 1</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/210 Causal QDA 2Break the AI coding roadblock with causal coding.html">Causal QDA 2Break the AI coding roadblock with causal coding</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/300 flawed brains.html">flawed brains</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/ChatGPT - causal, of course.html">ChatGPT - causal, of course</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/ChatGPT is changing how we do evaluation The view  1b634167ad4081bfb541ca-ffce43.html">ChatGPT is changing how we do evaluation The view  1b634167ad4081bfb541ca66a3655094</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/How hard is evaluation actually.html">How hard is evaluation actually</a></li><li class="nav-item"><a class="nav-link" href="../400 AI reaction/READY Yes, there are AI-shaped holes in organisations-8304bf.html">READY Yes, there are AI-shaped holes in organisations.</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>AI - rigour - black box</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/! modelling.html">! modelling</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/! Tips.html">! Tips</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/AI in evaluation actually show your working!.html">AI in evaluation actually show your working!</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/black box.html">black box</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/Just add rigour Three do’s and don’ts.html">Just add rigour Three do’s and don’ts</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/problem difficulty.html">problem difficulty</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/responsibility.html">responsibility</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/rigour.html">rigour</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/Take responsibility Another DO and another DON’T w.html">Take responsibility Another DO and another DON’T w</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/Tiny black boxes.html">Tiny black boxes</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/Trust the algorithm, not the AI.html">Trust the algorithm, not the AI</a></li><li class="nav-item"><a class="nav-link" href="../500 AI - rigour - black box/What’s your positionality, robot.html">What’s your positionality, robot</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Bias in AI</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../550 Bias in AI/400 bias.html">bias</a></li><li class="nav-item"><a class="nav-link" href="../550 Bias in AI/Hofman.html">Hofman</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>AI techniques - specific</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/!Using genAI to generate labels for clusters for use as magnets.html">!Using genAI to generate labels for clusters for use as magnets</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/coding polarity and sentiment in causal mapping -- opposites.html">coding polarity and sentiment in causal mapping -- opposites</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/coding polarity and sentiment in causal mapping -- overview.html">coding polarity and sentiment in causal mapping -- overview</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/coding polarity and sentiment in causal mapping -- sentiment.html">coding polarity and sentiment in causal mapping -- sentiment</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/Comparing a Fine-Tuned Model to an Engineered.html">Comparing a Fine-Tuned Model to an Engineered</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/Concrete and Memorable labels.html">Concrete and Memorable labels</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/interview-instructions.html">interview-instructions</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/Reconstructing program theory empirically.html">Reconstructing program theory empirically</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/Solving polarity ambiguity with sentiment.html">Solving polarity ambiguity with sentiment</a></li><li class="nav-item"><a class="nav-link" href="../600 AI techniques - specific/Why nxn magnetising is a bad idea.html">Why nxn magnetising is a bad idea</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Qualia</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../700 Qualia/01 The seamless workflow succeeds in practice.html">The seamless workflow succeeds in practice</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/AI interviewing - beware of sensitive data.html">AI interviewing - beware of sensitive data</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/AI interviewing - beware of suitability.html">AI interviewing - beware of suitability</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/AI interviewing - the evaluator retains responsibility.html">AI interviewing - the evaluator retains responsibility</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/AI interviewing has potential - scalability, reach, reproducibility, causality.html">AI interviewing has potential - scalability, reach, reproducibility, causality</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/AI interviewing needs further work.html">AI interviewing needs further work</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/An AI interviewer can successfully gather causal information at scale.html">An AI interviewer can successfully gather causal information at scale</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/CASA.html">CASA</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Introducing Seamless Stories From Qualia to Causal.html">Introducing Seamless Stories From Qualia to Causal</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/It is possible to gather evidence at scale about program theory and contr-6a9b6e.html">It is possible to gather evidence at scale about program theory and contribution simultaneously - three steps</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Our seamless stories workflow in practice.html">Our seamless stories workflow in practice</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Qualia -security- languages.html">Qualia -security- languages</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Qualia-USA.html">Qualia-USA</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Step 1 Conducting the chat interviews.html">Step 1 Conducting the chat interviews</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Step 2a Coding the interviews  Constructing a guideline.html">Step 2a Coding the interviews  Constructing a guideline</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Step 2b Coding the interviews  Coding.html">Step 2b Coding the interviews  Coding</a></li><li class="nav-item"><a class="nav-link" href="../700 Qualia/Step 2c Coding the interviews  Clustering.html">Step 2c Coding the interviews  Clustering</a></li></ul></details></li><li><details class="mb-1" open><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Workflows</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="Workflows - Barbara.html">Workflows - Barbara</a></li><li class="nav-item"><a class="nav-link" href="Workflows description at bullet.html">Workflows description at bullet</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="Workflows gdoc.html">Workflows gdoc</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Applications</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../800 Applications/Evaluator niche in AI.html">Evaluator niche in AI</a></li><li class="nav-item"><a class="nav-link" href="../800 Applications/Full - Strengthening OH with causal mapping.html">Full - Strengthening OH with causal mapping</a></li><li class="nav-item"><a class="nav-link" href="../800 Applications/Strengthening OH with causal mapping.html">Strengthening OH with causal mapping</a></li><li class="nav-item"><a class="nav-link" href="../800 Applications/Using AI to facilitate feedback on the learning experiences of doctoral s-762280.html">Using AI to facilitate feedback on the learning experiences of doctoral students.</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>After AI</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>philosophy</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../9100 philosophy/Existentialists.html">Existentialists</a></li></ul></details></li><li><details class="mb-1"><summary class="fw-semibold d-flex align-items-center justify-content-between"><span>Beyond causal mapping</span><span class="chev" aria-hidden="true">▸</span></summary><ul class="list-unstyled ms-3 my-1"><li class="nav-item"><a class="nav-link" href="../930 Beyond causal mapping/! Beyond causal mapping - teleology, stories.html">! Beyond causal mapping - teleology, stories</a></li><li class="nav-item"><a class="nav-link" href="../930 Beyond causal mapping/storytelling overview from gemini.html">storytelling overview from gemini</a></li></ul></details></li></ul></div></aside>
+      <main class="content">
+        <h1 class="h3">Workflows gdoc</h1>
+        <hr />
+        <p>https://docs.google.com/document/d/1nexgcqgtK-nTThCot7f35An1TRi3tdp4i4ZrHoPnfbc/edit?tab=t.0</p>
+<p>**</p>
+<h1 id="making-sense-of-mountains-of-text">Making sense of mountains of text:</h1>
+<p>The Causal Map <a href="http://workflows.causalmap.app">Workflows</a> app.</p>
+<p>What is Workflows?</p>
+<p>Workflows is a tool used by Causal Map Ltd to make sense of large amounts of text data (interviews, reports) supported by generative AI. </p>
+<p>At the moment, use of Workflows is not open for public use. Instead, we use it internally to provide verifiable and transparent analysis and reporting to clients. Clients can then access their workflows in the app to view and, if they wish, verify each step.<img alt="" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeaS6rg5snUVaL-NqsMQkNFMaDu4ppVBMWwvHDSY9j-SLX7CzLtioYKcs-sRVZhKvNEbmtX1L8CfaLH23eopq1C61dBOeAMTW0IlAvvZNlA5uIf_Og1fYJ0PJtFnKZLF2Bj_Xys?key=Q7dwC6InT9tXgtIdnfT2wuym" /></p>
+<p>Which questions can Workflows help answer?</p>
+<ul>
+<li>
+<p>Project impact through the eyes of stakeholders and other sources</p>
+</li>
+<li>
+<p>New, emerging and unexpected factors and outcomes</p>
+</li>
+<li>
+<p>Causal pathways</p>
+</li>
+<li>
+<p>OH: Synthesis of Outcome Harvesting processes</p>
+</li>
+<li>
+<p>MSC: Synthesis of stories collected for Most Significant Change processes</p>
+</li>
+<li>
+<p>QuIP: Synthesis of Qualitative Impact Protocol evaluations</p>
+</li>
+<li>
+<p>Contribution of projects to outcomes</p>
+</li>
+<li>
+<p>Stakeholders’ mental models</p>
+</li>
+<li>
+<p>Comparisons between groups and time-points</p>
+</li>
+<li>
+<p>Vignettes: which stories are both remarkable and frequent?</p>
+</li>
+</ul>
+<p>What do you get?</p>
+<ul>
+<li>
+<p>Scalable Analysis: Process large amounts of text data quickly and efficiently.</p>
+</li>
+<li>
+<p>Transparent &amp; Verifiable Results: Based on a clear, reproducible audit trail.</p>
+</li>
+<li>
+<p>Include more voices: Not just small samples of the easily accessible ones.</p>
+</li>
+</ul>
+<p>For Evaluators and Contractors</p>
+<ul>
+<li>
+<p>Enhanced Bids: Offer state-of-the-art techniques to make your proposals more competitive.</p>
+</li>
+<li>
+<p>Time &amp; Cost Savings: Reduce manual coding and analysis efforts.</p>
+</li>
+<li>
+<p>Reproducible Workflows: Guarantee that analysis steps are documented and repeatable.</p>
+</li>
+</ul>
+<p>Why Causal Map Ltd? <img alt="" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdPRge_e7kK3PiWZj5n_CKmPEFV5TV70CLwoRY6PbKrKV0xJWUCNwNiXFHFC0eqfppGb4bXQ-1ZSdRLY6Prenv3GBMPAwjLelku7uiqiRg41yfAm654j6FXKY6aQWIhQ1wJNZ1A?key=Q7dwC6InT9tXgtIdnfT2wuym" /></p>
+<ul>
+<li>
+<p>Innovation in qualitative analysis and reporting </p>
+</li>
+<li>
+<p>Broad experience in evaluation and social science research.</p>
+</li>
+</ul>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="what-does-it-cost">What does it cost?</h3>
+<p>We charge by day of our time, £695+VAT/day. </p>
+<p>Most of the work isn’t using the app. Most of our time is spent finding out what you want to know and what findings can help you, and iterating our reports until you are happy. </p>
+<h3 id="caveats">Caveats</h3>
+<p>Like humans, the AI processor makes mistakes and needs to be monitored. If you want an overall picture, the "noise" it can produce probably won't matter and you can get very good results almost out of the box. However at the moment, if you want to be sure that each individual piece of coding is correct, you'll probably need to tweak a not insignificant proportion of the coding it produces. </p>
+<h3 id="why-causal-mapping">Why causal mapping?</h3>
+<p>At Causal Map Ltd., we promote causal mapping as a really useful and effective way of processing text which can be applied with surprisingly little adjustment to a great variety of evaluation tasks. Our Workflows software provides ready-made causal mapping steps, which can be used alone or seamlessly alongside other text processing tasks like thematic analysis. And the software can of course produce graphical causal maps. As the software can also be used without any causal mapping steps or visualisations, it could In principle be seen as also occupying a similar space to any of the market-leader CAQDAS applications which now offer AI assistance, but with more explicit, transparent workflows. However it is not our intention to compete directly with this kind of general-use software.</p>
+<h1 id="what-is-wrong-with-using-ai-as-a-black-box">What is wrong with using AI as a "black box"?</h1>
+<p>At Causal Map Ltd, we use AI to both collect and analyse qualitative data. 🤖 We believe that the use of AI should also follow published guidelines to ensure transparent and valid results.</p>
+<p><a href="https://www.causalmap.app/post/ai-in-evaluation-show-your-working">We are not comfortable</a> with procedures which rely on giving the AI the freedom to make evaluative judgements. So we do not, for example, ask the AI “what are the main or most important causal stories in the document”. We do not ask the AI to make summaries. Instead, we use the AI only as a tireless low-level assistant to exhaustively and transparently identify large numbers of individual causal claims (ideally, every single one of them) within the texts.</p>
+<p>🔍 We follow <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4487768">established qualitative social science procedures</a> for coding, with the aim that each step of the process from coding to analysis is <a href="https://www.causalmap.app/post/large-language-models-intersubjectivity">transparent and verifiable</a>. We don’t rely on AI to simplify the coded data or decide, for example, which themes are most important.</p>
+<h2 id="ai-powered-automatic-causal-coding">AI-Powered automatic causal coding</h2>
+<p>The app is enabled with OpenAI's GPT-4o and 4o-mini and other models to automatically identify causal claims and connections within qualitative data like interview transcripts and documents.</p>
+<ul>
+<li>
+<p>The AI follows detailed coding guidelines to exhaustively extract individual causal links, which are then verified against the original text.</p>
+</li>
+<li>
+<p>This AI-powered functionality allows for automated coding of qualitative data, significantly speeding up the process of identifying causal connections in texts.</p>
+</li>
+</ul>
+<h2 id="the-story-of-workflows">The Story of Workflows</h2>
+<p>An app for making sense of text (interviews, reports …) at scale. Using the power of genAI to synthesise and visualise the meaning of texts and answer high-level questions about them but with a verifiable data audit trail, step by step from text to final analysis.</p>
+<p>A lot of evaluation work involves making sense of texts (interviews, reports…). </p>
+<p>That’s hard to do at any kind of scale, which often means using the most convenient and easy-to-reach sources and ignoring the rest. And it can involve weeks or months of work to create a coding framework and to code say 100 pages of text. </p>
+<p>Generative AI seems to provide a solution to scaling. </p>
+<p>That’s a big challenge and a big opportunity. But there is a big problem to solve first.</p>
+<p>To allow an AI to make evaluative judgements on its own is to rely on a big black box which is not transparent, or reproducible, or trustworthy, or verifiable. We may as well ask some random person we meet on the street to write our report for us.</p>
+<h2 id="the-solution-should-have-these-three-parts">The solution should have these three parts.</h2>
+<h3 id="first-keep-track-using-reproducible-workflows">First: keep track using reproducible workflows.</h3>
+<p>Real-life research and evaluation assignments involve multiple tasks and sub-tasks. Traditionally, quantitative scientists have used workflows to keep track of their working in a reproducible way. No more “I found the graph but it needs updating and I can’t find which version of the code produces it”. </p>
+<p>For example we can construct a documented workflow like a Jupytr workbook or an R-markdown document: a text document which includes the instructions for importing data, carrying out tasks and displaying output. It’s like a human-readable computer program which when run produces outputs like charts and tables reproducibly. </p>
+<p>Qualitative scientists too have been strong on documenting their research process, but as most of the steps involve human labour and human judgement, you can’t just “rerun” a qualitative researcher’s notebook and see the results reappear somewhere. </p>
+<p>Now, AI is blurring the boundaries between qualitative and quantitative work. Some "qualitative" processes like thematic coding can now be carried out by machine, with some caveats. But, hacking around on the prompt until we get some sort of an answer and pasting the answer into a document somewhere – that’s ok while we are learning and exploring, but it isn’t reproducible or verifiable. An evaluation commissioner wouldn’t accept quantitative work which we gave to a random person who claimed to be a statistician but who sent us some tables and graphs. And nor should they accept the results of “using an AI” if the working is not documented and verifiable. </p>
+<p>Some evaluators are <a href="https://www.linkedin.com/pulse/repeatable-reliable-transparent-graduating-from-ai-workflows-robert-nb4ge/?trackingId=2t4GmNpJQhGss6v4if%2B2gA%3D%3D">already exploring</a> how to apply reproducible, workflow-based procedures to AI-supported work, mainly with Python.</p>
+<p>However, just because an AI workflow is documented does not mean it is transparent. Which brings us to the second demand.</p>
+<h3 id="second-breaking-down-big-vague-tasks-into-small-easy-ones-so-that-we-dont-leave-the-ai-to-make-big-judgements-all-on-its-own">Second: breaking down big, vague tasks into small, easy ones so that we don’t leave the AI to make big judgements all on its own</h3>
+<p>How can we reformulate hard tasks into easy ones, so we don’t let the AI make significant evaluative judgements for us in an unverifiable way? Here’s how.  </p>
+<ul>
+<li>
+<p>Break it down. Break down complex, poorly defined tasks (e.g. is this project effective?) into many smaller more clearly-defined tasks (e.g. does this paragraph mention behaviour change?) These tasks could be carried out by an army of trained human assistants, but we can use generative AI instead, and monitor its work. </p>
+</li>
+<li>
+<p>Build it up. Use agreed procedures to reconstruct higher-level evaluative judgements from the results of the simpler tasks using, and document the workflow transparently. Be clear about what parts of this reconstruction rely on human judgement. </p>
+</li>
+</ul>
+<p>The use of <a href="https://www.betterevaluation.org/methods-approaches/methods/rubrics">rubrics</a> is a good example of this break-it-down-then-build-it-up strategy - usually rubrics are applied by humans, but when we have many cases, rubric assignment is a great task to hand off to AIs because we can easily monitor their performance and tweak the prompt and the rubric until the AI becomes as good as a human.  </p>
+<p>But how should I break down big tasks into smaller steps, and exactly which ones, and where and how should I employ an AI for the low-level steps, and when I am going to learn all that Python? This brings us to the third demand. </p>
+<h3 id="third-providing-a-set-of-basic-tools-for-the-small-easy-to-automate-steps">Third: providing a set of basic tools for the small, easy-to-automate steps</h3>
+<p>Workflow-based solutions are already being supported by AI service providers. Sort of. But if you ask, say, Google’s NotebookLM to process a large table, it may or may not really produce results for each row. </p>
+<p>Tools like this may produce plausible reports of their “thinking” which is a big step forward, but we don’t really know exactly what steps were really carried out, only what it feels like telling us. </p>
+<p>To do this properly, we need to learn to use genAI APIs and something like LangChain or Python and construct their own reproducible workflows using say a Jupytr notebook and selecting appropriate packages. But each kind of solution is different and can be time-consuming. It can be difficult to ensure or check that there are no black boxes left anywhere in the workflow. </p>
+<p>So the third part of the solution we need is:</p>
+<ul>
+<li>A toolkit of the most common low-level tasks and recombination steps so that workflows for making sense of texts (including AI-powered steps such as coding, clustering similar texts and finding labels for clusters) can be presented as simply the application of tasks from this toolkit, one after the other.</li>
+</ul>
+<p>Each step, whether AI-powered steps or ordinary data manipulation steps like sorting and filtering could also in principle be understood and followed by an army of human assistants. For example:</p>
+<p>“Take these documents and break them up into paragraph-sized chunks. To each paragraph, add information about the age and role of the speaker. Ask the AI to decide whether each paragraph mentions changes in health behaviour. Reassemble all the examples into a single text, prepending each with the age and role of the speaker. Next, …”</p>
+<h2 id="all-the-work-of-handing-off-tasks-to-the-ai-reconstructing-the-results-saving-versions-of-the-prompts-and-the-workflow-etc-should-not-be-carried-out-by-a-black-box-ai-but-by-ordinary-computer-software-with-published-code-only-specific-low-level-coding-tasks-should-be-given-to-the-ai">All the work of handing off tasks to the AI, reconstructing the results, saving versions of the prompts and the workflow etc should not be carried out by a black-box AI but by ordinary computer software with published code. Only specific, low-level coding tasks should be given to the AI.</h2>
+<p>So at Causal Map Ltd we looked around for alternatives but in the end decided we had to build our own solution.</p>
+<h2 id="our-solution-workflowscausalmapapp">Our solution: workflows.causalmap.app</h2>
+<p>We present software (workflows.causalmap.app) which enables users to construct their own workflows for making sense of text, step by step from raw text to final outputs. Each workflow is simply a stored piece of text: a list of steps, one per line, described in a basic scripting language which is more or less human-readable.</p>
+<p>Each line in the command editor has a data table associated with it. </p>
+<p>The workflow starts by importing data from storage, from a web page or a Qualia interview, or from a previously uploaded set of documents, resulting in a table of data. </p>
+<p>Each subsequent line operates on the current data table and applies a verb (pivot, filter, sort, code …) to that table, resulting in another table (or an output like a chart or a map). </p>
+<p>The user can click on any line to see the result of the workflow up to that point, usually the data table itself or alternatively a visualisation of it, like a causal map.</p>
+<p><img alt="" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXf_77VbldBEDYkVOIJSU7SGzJ4x8x0MEmHIhvdyDzmVb_9WFO0J4MVYLEKeskzWRMlmLQjeYlQqvx-A6MOBwSchb2AcE8H7VjS8aZCB5d8QBi5EA_HhHSFvLvbZK4ThyjjU4TB7lQ?key=Q7dwC6InT9tXgtIdnfT2wuym" /></p>
+<p>We can insert AI operations into the workflow at any point. We can save and re-use prompts which work line by line on the current data table. Each prompt returns one or more rows with whichever columns we ask for, which are reassembled into a new table. Using AI prompts becomes just like any other manipulation of a data table.<img alt="" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfXbRORzYg5TV1o9z2V6Xt3QhFUViTcfT0Z8Cs95RydtbMfM_LLPGXkIemnwB4LUn-UdU_dAYGQ3EzeQ_-V2d_IGe_QDWjwVKynnljddfzLchH0GMCRLUZvsZLWJhjV6qj-MTDh?key=Q7dwC6InT9tXgtIdnfT2wuym" /></p>
+<h3 id="features">Features</h3>
+<p>Currently, the following features are implemented:</p>
+<p>Data input:</p>
+<ul>
+<li>
+<p>Loading text from a database or a Qualia interview or directly by scraping a URL</p>
+</li>
+<li>
+<p>Uploading one or more PDF or Excel (xlsx) documents</p>
+</li>
+</ul>
+<p>Steps useful for AI processing:</p>
+<ul>
+<li>
+<p>Chunking and unchunking text eg combining shorter texts into longer ones</p>
+</li>
+<li>
+<p>Managing and editing different AI prompts and sequences of prompts, processing them in parallel, and caching the results in a noSQL database. The user does not need to explicitly “save” different analyses: if it’s been done before, the app will find the results and present them without need for reprocessing.</p>
+</li>
+<li>
+<p>Repeating multiple steps in a loop</p>
+</li>
+<li>
+<p>Clustering individual texts into groups with a similar meaning and finding labels for them</p>
+</li>
+<li>
+<p>"Magnetising" texts: given a set of text labels designated as “magnets”, relabelling each of a large set of individual texts with its closest magnet, if any are close.  </p>
+</li>
+</ul>
+<p>Causal mapping steps: All the same functionality as in the <a href="http://guide.causalmap.app">Causal Map app</a>, e.g.</p>
+<ul>
+<li>
+<p>Filtering links in a causal map, for example to show the most frequently mentioned factors or links, </p>
+</li>
+<li>
+<p>Zooming in or out when using hierarchical coding</p>
+</li>
+<li>
+<p>Tracing paths and threads from one set of factors to another</p>
+</li>
+<li>
+<p>Focusing on a particular set of factors</p>
+</li>
+<li>
+<p>Relabelling factors e.g. with cluster labels</p>
+</li>
+<li>
+<p>Calculating and displaying differences between groups</p>
+</li>
+</ul>
+<p>Common steps for manipulating tables:</p>
+<ul>
+<li>Selecting and renaming columns, filtering by value or meaning, sorting, performing simple calculations, combining columns, appending, merging and pivoting tables</li>
+</ul>
+<p>Output steps:</p>
+<ul>
+<li>
+<p>Printing tables in text format, using templates if required</p>
+</li>
+<li>
+<p>Providing tables which can be manually filtered, sorted and exported</p>
+</li>
+<li>
+<p>Displaying causal maps</p>
+</li>
+<li>
+<p>Storing individual results for use later in the workflow.</p>
+</li>
+</ul>
+<h3 id="evaluative-judgements-and-evaluator-responsibility">Evaluative judgements and evaluator responsibility</h3>
+<p>A clarification: We are not saying that breaking down evaluation tasks into this kind of workflow frees evaluation from human judgement. Quite the opposite. We think the discipline of being more explicit about how evaluative judgements are made is a good thing, whether the steps are carried out by humans (as in the past) or with AI assistance. If you didn’t have a clear workflow from data to judgements before AI, DON’T lean on the black box of the AI to cover that up. Instead, make the workflow explicit / human-verifiable and then use the AI to speed up the process. </p>
+<p>Even where a workflow does not include explicit human input at any stage, the decision to use this particular workflow, the details of its design, quality assurance checks, and, crucially, interpreting the results so they will be correctly interpreted by the evaluation audience - these are all the responsibility of the evaluator.</p>
+<h2 id="current-status-of-the-app">Current status of the app</h2>
+<ul>
+<li>
+<p>We don’t have immediate plans to open up the app for general use. </p>
+</li>
+<li>
+<p>The backend - the Python code which implements the steps asynchronously to deal with long tasks. </p>
+</li>
+<li>
+<p>Documentation is still <a href="https://workflows.causalmap.app/readme">work in progress</a>, the causal mapping steps are already covered in the <a href="http://guide.causalmap.app">Causal Map Guide</a>.</p>
+</li>
+<li>
+<p>The frontend UI provides:</p>
+</li>
+<li>
+<p>A powerpoint-like presentation mode so that external viewers can step through a workflow and view intermediate and final results, together with comments, section headings etc.</p>
+</li>
+<li>
+<p>Ability to save and recall different workflows and individual custom texts e.g. prompts, lists of magnets, with good versioning, to address the problem of “how did we get that particular map?”</p>
+</li>
+<li>
+<p>A searchable gallery of workflows</p>
+</li>
+<li>
+<p>Full-screen mode</p>
+</li>
+<li>
+<p>Authentication via Google Firebase and Authorisation based on Causal Map permissions to access the files stored there</p>
+</li>
+<li>
+<p>Coming soon: an AI assistant to write the steps for you.</p>
+</li>
+</ul>
+<h2 id="technical-details">Technical details</h2>
+<p>Backend: Python, Quart (asynchronous server for time-consuming processes), hosted at Heroku. NoSQL caching at MongoDB. SQL data stored at Heroku. Access to Causal Map SQL data. OpenAI API with various models available. Implicit generation of embeddings using OpenAI’s text-embedding-3-small, cached at MongoDB.</p>
+<p>Frontend: Alpine, Axios, CodeMirror editor, Tabulator tables …</p>
+<h2 id="why-a-new-app">Why a new app?</h2>
+<p>Causal Map 3 is written in R-Shiny which is not a platform of choice for AI. CM3 is a user-focused platform with lots of buttons and sliders and a fixed approach to applying filters. </p>
+<p>Whereas Workflows: </p>
+<ul>
+<li>
+<p>Uses Python which is where all the new things are being created. It is much easier to scale and maintain</p>
+</li>
+<li>
+<p>It is easy to write new functions without having to provide additional UI (corresponding buttons, sliders, etc). </p>
+</li>
+<li>
+<p>Functions aka commands can be arbitrarily chained</p>
+</li>
+<li>
+<p>We can experiment and optimize new approaches without having to rewrite the UI every time</p>
+</li>
+<li>
+<p>Common patterns of commands can be easily combined into templates</p>
+</li>
+<li>
+<p>Prompts and workflows have version numbers</p>
+</li>
+<li>
+<p>There is no need to save different versions of coding results. Thanks to noSQL caching, if a particular prompt has been run before, the app will find the cached results. </p>
+</li>
+<li>
+<p>No restriction on multiple users working with the same data at the same time</p>
+</li>
+<li>
+<p>AI tasks and other tasks can be arbitrarily mixed and chained. </p>
+</li>
+<li>
+<p>Applying an AI step should feel no different from adding any other filter in Causal Map</p>
+</li>
+</ul>
+<h1 id="how-we-do-automated-causal-mapping">How we do automated causal mapping</h1>
+<p>We import the texts to be coded, together where appropriate with meta-data (such as age and gender of respondent etc) into Causal Map Workflows.</p>
+<p>We agree on an approach for the coding e.g. </p>
+<ul>
+<li>
+<p>Purely “zero-shot” coding which allows the app to develop its own generic factor labels (“empirical codebook”). </p>
+</li>
+<li>
+<p>This can be augmented by a “global orientation” for example telling the AI to pay particular attention to power relations between people, and code them in the light of a particular theory of power relations. </p>
+</li>
+<li>
+<p>We may need to provide background information to the text. Or say that a particular organisation might be referred to in different ways, and to code all mentions in the same way.</p>
+</li>
+<li>
+<p>Or we might say that we are particularly interested in chains in which some intervention (someone or some organisation intervening or trying to provide help in some way) is at (or near) the beginning of the chain, and in which important outcomes (like people's lives getting better or worse) are at (or near) the end of the chain. </p>
+</li>
+<li>
+<p>We will usually test an initial set of instructions on a subset of the text and possibly then revise them.</p>
+</li>
+<li>
+<p>After each actual wave of coding, we conduct auto-clustering. Your tests reach the AI broken up into many separate batches. When employing open coding, with zero-shot, the factor labels will probably form a pile of overlapping concepts, with similar ideas expressed in different ways. So we use auto-clustering to form the factors into clusters of very similar ideas, and find a shared label for all of them. This process of auto-clustering is very useful to get a sorted overview of the kind of material the AI is identifying. When applying automatic clustering, we take care to set the “height” aka “strictness” parameter to balance the desire to have only a small number of large, simple factors with the caveat that the clusters should not contain any pairs of factors with importantly different meaning. </p>
+</li>
+<li>
+<p>We will usually also, after each wave of coding, produce some simple causal maps to give an overview of what the AI is finding with the current instructions.</p>
+</li>
+<li>
+<p>Zero-shot coding can be followed by a second phase in which the list of factors from the empirical codebook, probably auto-clustered as described above, and possibly adjusted by the client, are given as suggestions in a new semi-closed set of instructions. The coding is re-run with this new codebook. This ensures more thorough and consistent coding of the factors of particular interest. We can tweak the instruction to insist more or less strongly that only the suggested codes should be used.</p>
+</li>
+<li>
+<p>Alternatively you can skip zero-shot coding and start with your own codebook. This can be simpler and is more suited to more focused, closed research questions; but it does also hinder identification of unexpected concepts. </p>
+</li>
+<li>
+<p>We recommend that your codebook is a simple list of relevant causal factors. It is also possible to provide more detailed examples of the target factors, but this can hinder identification of unexpected details. </p>
+</li>
+<li>
+<p>In theory it is even possible to start by getting an expert to hand-code some of the texts and then producing a customised instruction based on this coding as an example. However in practice this can be complicated and is only really suitable if you are looking for some very specific information (and in this case it might be easier for you to use a tool like Ailyze instead).</p>
+</li>
+<li>
+<p>At each step we will keep an eye on the quality of the coding:</p>
+</li>
+<li>
+<p>Recall (is the AI finding a sufficient proportion of all the causal claims in the text?)</p>
+</li>
+<li>
+<p>Precision (is the proportion of inaccurate AI coding sufficiently low?)</p>
+</li>
+<li>
+<p>Is there any evidence of any kind of bias (the AI is consistently missing some codings of a certain type, or is consistently miscoding in a particular way).  Otherwise we can assume that even if the recall and precision are not very high, the overview causal maps will be accurate in aggregate. </p>
+</li>
+<li></li>
+<li>
+<p>If you need a high degree of accuracy of causal coding (identification of causal claims), it is possible to manually check and if necessary correct each coding. We can help you to do this yourself. This can take a long time, from many hours to many days.</p>
+</li>
+</ul>
+<p>Assuming we were successful in helping you turn your research aims into an appropriate research design, producing the results should now be quite straightforward, producing: </p>
+<ul>
+<li>
+<p>overview maps to answer research questions (see above)</p>
+</li>
+<li>
+<p>corresponding quotes to illustrate the maps</p>
+</li>
+<li>
+<p>corresponding tables of frequencies</p>
+</li>
+</ul>
+<p>We can produce additional and more detailed outputs for you, but this will mean additional time.</p>
+<h2 id="_1"></h2>
+<p>**</p>
+      </main>
+      <aside class="rightbar"><h2>On this page</h2><div class="toc"><div class="toc">
+<ul>
+<li><a href="#making-sense-of-mountains-of-text">Making sense of mountains of text:</a><ul>
+<li><a href="#frequently-asked-questions">Frequently Asked Questions</a><ul>
+<li><a href="#what-does-it-cost">What does it cost?</a></li>
+<li><a href="#caveats">Caveats</a></li>
+<li><a href="#why-causal-mapping">Why causal mapping?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#what-is-wrong-with-using-ai-as-a-black-box">What is wrong with using AI as a "black box"?</a><ul>
+<li><a href="#ai-powered-automatic-causal-coding">AI-Powered automatic causal coding</a></li>
+<li><a href="#the-story-of-workflows">The Story of Workflows</a></li>
+<li><a href="#the-solution-should-have-these-three-parts">The solution should have these three parts.</a><ul>
+<li><a href="#first-keep-track-using-reproducible-workflows">First: keep track using reproducible workflows.</a></li>
+<li><a href="#second-breaking-down-big-vague-tasks-into-small-easy-ones-so-that-we-dont-leave-the-ai-to-make-big-judgements-all-on-its-own">Second: breaking down big, vague tasks into small, easy ones so that we don’t leave the AI to make big judgements all on its own</a></li>
+<li><a href="#third-providing-a-set-of-basic-tools-for-the-small-easy-to-automate-steps">Third: providing a set of basic tools for the small, easy-to-automate steps</a></li>
+</ul>
+</li>
+<li><a href="#all-the-work-of-handing-off-tasks-to-the-ai-reconstructing-the-results-saving-versions-of-the-prompts-and-the-workflow-etc-should-not-be-carried-out-by-a-black-box-ai-but-by-ordinary-computer-software-with-published-code-only-specific-low-level-coding-tasks-should-be-given-to-the-ai">All the work of handing off tasks to the AI, reconstructing the results, saving versions of the prompts and the workflow etc should not be carried out by a black-box AI but by ordinary computer software with published code. Only specific, low-level coding tasks should be given to the AI.</a></li>
+<li><a href="#our-solution-workflowscausalmapapp">Our solution: workflows.causalmap.app</a><ul>
+<li><a href="#features">Features</a></li>
+<li><a href="#evaluative-judgements-and-evaluator-responsibility">Evaluative judgements and evaluator responsibility</a></li>
+</ul>
+</li>
+<li><a href="#current-status-of-the-app">Current status of the app</a></li>
+<li><a href="#technical-details">Technical details</a></li>
+<li><a href="#why-a-new-app">Why a new app?</a></li>
+</ul>
+</li>
+<li><a href="#how-we-do-automated-causal-mapping">How we do automated causal mapping</a><ul>
+<li><a href="#_1"></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div></aside>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      // Handle sidebar expand/collapse with delay
+      let sidebarTimeout;
+      const layoutContainer = document.querySelector('.layout-container');
+      const sidebar = document.querySelector('.sidebar');
+      
+      sidebar.addEventListener('mouseenter', () => {
+        clearTimeout(sidebarTimeout);
+        layoutContainer.classList.add('sidebar-expanded');
+      });
+      
+      sidebar.addEventListener('mouseleave', () => {
+        sidebarTimeout = setTimeout(() => {
+          layoutContainer.classList.remove('sidebar-expanded');
+        }, 500); // 500ms delay before collapsing
+      });
+    </script>
+  </body>
+ </html>
