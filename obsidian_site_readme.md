@@ -11,3 +11,9 @@ obsidian's internal links like: [[link]]. present them as a light collapsible di
 
 on clicking a file in sidebar, don't close folder, leave it open and highlight the file. 
 for pages with more than one heading, add a On this Page right sidebar with clickable ToC
+
+NEW: in fact, change this so we DO use the filenames as page titles in page and in sidebar, just stripping initial numbers. 
+
+add a ::before to the wikilinked pages to say sth like "Relevant page:" small & subtle.
+
+also let's make the left sidebar less intrusive by showing only say 200px of it, and then expand to its current full width on mouse over and back again on clicking on a page
