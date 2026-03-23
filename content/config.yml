@@ -1,0 +1,5 @@
+site_label: "💐 Causal Mapping: A garden of ideas"
+site_subtitle: "(⚒️ Work in progress!)"
+sidebar_footer_links:
+  - { text: "Causal Map Ltd", href: "https://causalmap.app" }
+  - { text: "Causal Map app", href: "https://app.causalmap.app" }

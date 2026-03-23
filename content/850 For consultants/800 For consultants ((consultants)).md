@@ -1,0 +1,1 @@
+This chapter explains how individual consultants and agencies can include Causal Map and/or Qualia in their next bid.

@@ -1,0 +1,15 @@
+﻿Title,Path,Page Type,Meta Title,Meta Description,Category,Date,Last edited time,Meta Keywords,Next Page,Previous Page,Publish,Tag,order
+"6️⃣ Section 6: Technical reference ",,,,This section contains technical reference for the Causal Map app.,6: Technical reference,,"March 24, 2025 10:35 AM","technical reference; overview ",,🆕 What is new (%F0%9F%86%95%20What%20is%20new%201bb34167ad4080d7b5d0f22a8ef1095f.md),Yes,Overview,1100
+🆕 What is new,,,,"Causal Map 3 has a more user-friendly interface with many new features that will make your user experience faster, smoother and more enjoyable.",6: Technical reference,,"March 24, 2025 10:35 AM",differences; Causal Map 2; transfer; Causal Map 3; new; changes.,6️⃣ Section 6: Technical reference  (6%EF%B8%8F%E2%83%A3%20Section%206%20Technical%20reference%2073dc6a23b4f044feac5c6c97093bde02.md),,Yes,,1110
+⚒️ Fields reference,,,,,6: Technical reference,,"March 24, 2025 10:35 AM",fields; factors table; links table; sources table; questions table; mentions table,,,Yes,Theory,1120
+Causal mapping with kumu,,,,,6: Technical reference,,"March 27, 2025 3:33 PM",fields; factors table; links table; sources table; questions table; mentions table,,,Yes,Theory,1130
+📝 Conventions,,,,,6: Technical reference,,"March 27, 2025 2:37 PM","conventions; formatting; ",,,Yes,,1140
+📚 Glossary,,,,,6: Technical reference,,"March 27, 2025 2:37 PM",glossary; terminology; causal mapping; causal links; bundle; Hierarchical coding,,,Yes,Theory,1150
+📚 Transitivity trap,,,,,6: Technical reference,,"March 27, 2025 2:38 PM",glossary; terminology; causal mapping; causal links; bundle; Hierarchical coding,,,Yes,Theory,1160
+🔎 Widget: text search,,,,,6: Technical reference,,"March 27, 2025 2:38 PM",glossary; terminology; causal mapping; causal links; bundle; Hierarchical coding,,,Yes,Theory,1170
+⚒️ Core tables in Causal Map,,,,,6: Technical reference,,"March 27, 2025 2:38 PM",tables; Causal Map; columns; links; sources; questions; statements,,,Yes,Theory,1180
+⚙ Functions for Causal Map,,,,,6: Technical reference,,"March 27, 2025 2:38 PM",functions; opensource R package; vignette,,,Yes,Theory,1190
+🧑‍💻 Admin,,,,,6: Technical reference,,"March 27, 2025 2:38 PM","admin permissions; ",,,Yes,,1200
+How Causal Map is hosted,,,,,6: Technical reference,,"March 27, 2025 2:39 PM","hosted; Causal Map; ",,,Yes,,1210
+❓ FAQs,,,,Frequent Asked Questions.,6: Technical reference,,"March 27, 2025 2:39 PM",Frequent Asked Questions; FAQ; special characters; security audit ; import; export; coding; bugs,,,Yes,,1220
+📝How to cite Causal Map,,,,,6: Technical reference,,"March 27, 2025 2:39 PM",,,,Yes,,1230

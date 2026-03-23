@@ -1,0 +1,16 @@
+input: "C:/Users/Zoom/My Drive (hello@causalmap.app)/Causal Map/10-19 Outreach - marketing - presentations - academic - theory/19aCMgarden/content"
+output: "./dist"  # If commented out, will auto-generate from input path hash
+readme: "C:/dev/causal-map-extension/webapp/README.md"  # External README to split into 999 folder
+site_url: "https://garden.causalmap.app"
+og_image_path: "https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&token=a03afb3c-0ee2-4cc1-9e3a-3762983da685"
+site_label: "💐 Causal Mapping"
+site_subtitle: "Garden of Ideas"
+sidebar_footer_links:
+  - { text: "Causal Map Ltd", href: "https://causalmap.app" }
+  - { text: "Causal Map app", href: "https://app.causalmap.app" }
+
+# Optional analytics (GoatCounter). Paste the exact URL from your GoatCounter install snippet.
+# Example: goatcounter: "https://YOUR.goatcounter.com/count"
+# Note: disabled automatically on file:// so local previews/PDF builds don't pollute analytics.
+goatcounter: "https://causal-mapping-garden.goatcounter.com/count"
+  

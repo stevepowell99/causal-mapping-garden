@@ -1,0 +1,1 @@
+There is a host of other analytical lenses available, for example, are there relatively isolated islands within the network? Are there sub-systems which operate more on their own? How sparse or dense is it?

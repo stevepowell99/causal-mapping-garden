@@ -1,0 +1,9 @@
+
+See also [[0.130 Causal mapping has been used for over 50 years in many disciplines]]
+
+> From [Powell, Copestake, et al. (2023]()
+
+Renewed interest in causal mapping may also be reinforced by the ‘causal revolution’ in quantitative data science initiated by Judea Pearl (Pearl, 2000; Pearl and Mackenzie, 2018), which has fundamentally challenged the almost total taboo placed on making or assessing explicit causal claims, which was dominant in statistics for much of the twentieth century (Powell, 2018), and this has in turn helped rekindle interest in explicitly addressing causation using qualitative methods.
+
+Causal mapping and most related approaches share the basic idea that causal knowledge – whether generalised or about a specific case or context – can be at least partially captured in small, relatively portable ‘nuggets’ of information (Powell, 2018: 52). These can be assembled into larger models of how things worked, or might work, in some cases. More ambitiously, they may contribute to constructing ‘middle-level theory’ theory, useful for understanding causal processes in other contexts, without necessarily reaching the level of overarching scientific laws (Cartwright, 2020). Causal nuggets are also related to the mechanisms that help to explain how people behave in different contexts (Pawson and Tilley, 1997; Schmitt, 2020). These can be thought of as causal schema and linked to the hypothesis that human knowledge is stored in chunks that are activated and combined with others in relevant circumstances. This would suggest that we humans do not have a comprehensive set of causal maps in our heads at any one time, but we do have a set of more basic components and the ability to assemble them when the situation calls for it, including when prompted by a researcher.
+

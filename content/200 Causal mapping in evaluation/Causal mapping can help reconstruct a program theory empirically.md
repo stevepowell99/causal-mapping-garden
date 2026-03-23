@@ -1,0 +1,10 @@
+---
+date: 2025-08-22
+---
+
+To evaluate a program, the evaluator can use Contribution Analysis (CA) [@mayneMakingCausalClaims2012]. We start with a program logic or Theory of Change (ToC), consisting of possible pathways from interventions to outcomes, and collect existing or new evidence for each link. However evaluators can often not assume that the ToC underpinning a program aligns with the realities on the ground, or they may uncover outcomes not anticipated in the original program design - see Koleros & Mayne [(2019)](https://www.zotero.org/google-docs/?CY0JAD). We have argued [(Powell, Copestake, et al., 2023](https://www.zotero.org/google-docs/?v391Z7), p. 114) for a generalisation of CA in which evidence relevant to constructing a program theory, as well as evidence for the causal influences flowing through it, are both collected at the same time, without the evaluator (necessarily) having a prior theory. In this sense, following Mayne, “program theory” need not be something that any person necessarily possessed or articulated at the time, but is something which can be approximated and improved during the evaluation process.
+
+(Re-)constructing program theory empirically in this way is an essentially open-ended, qualitative problem. Closed data collection methods are not suitable because we cannot measure what we do not yet know. Open-ended, qualitative methods to (re-)construct a theory are notoriously time-consuming and are usually heavily influenced by researcher positionality [(Copestake et al., 2019)](https://www.zotero.org/google-docs/?RXnwkL).
+
+[Powell, Copestake, et al (2023](https://www.zotero.org/google-docs/?A2dhGE), p. 108) present this task as gathering and synthesising evidence about "what influenced what", evidence which is simultaneously about theory or structure and contribution. Each piece of evidence may be of differing quality and reliability and about different sections of a longer pathway, or multiple interlocking pathways, and may come from different sources who see and value different things.
+

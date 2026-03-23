@@ -1,0 +1,253 @@
+---
+title: "Lonely in London"
+subtitle: "An AI-written qualitative paper on loneliness among young adults </br>Steve Powell, steve@causalmap.app"
+format:
+  revealjs:
+    theme: dark
+    transition: slide
+    slide-number: true
+    chalkboard: false
+    smaller: true
+    css: slides-mermaid.css
+    mermaid:
+      theme: dark
+---
+
+## My motivation {.center}
+
+::: {.r-fit-text}
+A bit of scepticism
+:::
+
+- Background 
+  - Reproducible/verifiable qual and quant research for project evaluation
+  - Qualitative causal mapping
+  - AI for qualitative research
+- Impressed by Susanne's case for conversational approach as a way to build theory and get reflexive depth
+- But, do you need a human? 
+
+---
+
+# The experiment {.center}
+
+::: {.r-fit-text}
+Human wrapper + AI inner paper
+:::
+
+Topic: Loneliness among young adults in London
+
+- 48 interviews, 4 deprived London boroughs, reflexive thematic analysis
+- I have no "skin in the game"
+
+- Final paper: https://garden.causalmap.app/lonely
+
+- Public GitHub repository: https://github.com/stevepowell99/agents4qual2
+
+
+![](static/img/image-20260313081631653.png)
+
+
+
+---
+
+![](static/img/image-20260312220455877.png)
+---
+
+---
+
+### The Cursor workspace (a coding app, not QDA software)
+
+![](static/img/image-20260313080851739.png)
+
+Cursor provides a single agent within the workspace, which can access the source files and create and update memo files. In this case its model was GPT-5.1.
+
+---
+
+
+# Substantive findings (AI paper)
+
+## Themes and mechanisms
+
+| Theme | Mechanism | Example |
+|-------|-----------|---------|
+| **Misrecognition** | Near others yet unseen | "I've always had people around me physically, but I haven't felt like they can understand" |
+| **Place** | Crowded anonymity, threat | "Better lonely than scared" |
+| **Infrastructure** | Low-judgement repeated contact | "I sometimes prefer opening up to strangers because they don't know me as much" |
+| **Filters** | Money, apps | "They know that I don't have money" |
+
+**Implication**: Build low-cost, low-judgement spaces; address safety and mobility as gating conditions.
+
+---
+
+## Connection infrastructure
+
+::: {.columns}
+::: {.column width="50%"}
+**Thick**
+- Teams, centres, faith communities
+- Ongoing ties, advice networks
+
+**Thin**
+- Everyday third spaces
+- Known strangers (gym, hairdresser)
+:::
+::: {.column width="50%"}
+```{mermaid}
+%%| fig-width: 320
+flowchart LR
+    A[Structure] --> B[Shared purpose]
+    A --> C[Predictable norms]
+    A --> D[Repeated contact]
+    B --> E[Lower judgement cost]
+    C --> E
+    D --> E
+```
+:::
+:::
+
+Relief ≠ deep intimacy. Minimal unit: recognisability, low-stakes talk.
+
+---
+
+# Evaluation
+
+
+---
+
+## Reflection
+
+::: {.r-stack}
+::: {.fragment .current-visible}
+> It worked 🎇🎇! It really developed a theory iteratively!
+:::
+::: {.fragment .current-visible}
+> I enjoyed watching Cursor work, step by step creating and updating its memos.
+:::
+::: {.fragment .current-visible}
+> I find the paper unreadable.
+:::
+::: {.fragment .current-visible}
+> Lack of skin in the game: I don't care.
+:::
+::: {.fragment}
+> Easy to think 'it looks systematic, so it must be right'.
+:::
+:::
+
+
+---
+
+## WEIRD 
+
+Like all such methods, extremely exposed to the WEIRDness of the training data.
+
+---
+
+## (Alternative approach: causal mapping)
+
+![](static/img/image-20260312221338890.png)
+
+Top 30 links. Completely automated/generic approach. 30 minutes to auto-code. 5 minutes to filter. Much less exposure to LLM world-view.
+
+Bookmark [#1319](https://app.causalmap.app/?bookmark=1319) 
+
+
+---
+
+## Finally
+
+- Yes an AI can iterate a theory using memos
+- You don't need a human to generate a theory
+- The process was lacking "skin in the game"
+- Could we give the AI some skin in the game? Not at the moment.
+- Could we give the AI the opportunity to reflect? Absolutely.
+- This automated approach is a bit more reproducible and auditable
+- Still very exposed to WEIRDness
+
+steve@causalmap.app
+
+app.causalmap.app
+
+**GitHub**: [github.com/stevepowell99/agents4qual2](https://github.com/stevepowell99/agents4qual2)
+
+
+
+
+
+--------
+
+# Appendix 
+
+--------
+
+
+
+## Four mechanism themes {#four-mechanism-themes}
+
+```{mermaid}
+%%| fig-width: 500
+%%| fig-height: 4.5
+flowchart TB
+    subgraph Themes
+        T1[Misrecognition]
+        T2[Place constraint]
+        T3[Connection infrastructure]
+        T4[Digital and material filters]
+    end
+    
+    T1 --> T3
+    T2 --> T3
+    T4 -.-> T1
+    T4 -.-> T3
+```
+
+Boundary conditions matter: same place/platform → opposite outcomes across accounts.
+
+
+---
+
+## Response to reviewers (1)
+
+**Errors in AI's inner paper — already reported**
+
+- Journal not maintained as claimed; two quote misattributions
+- I will *not* correct the inner paper: the experiment presents AI output as written; reflection documents its errors
+
+**Errors I did not notice — will add to wrapper**
+
+- n=16 per borough vs 48 total (arithmetic: 16×4=64)
+
+**Errors/omissions in my wrapper**
+
+- Anonymity, checklist, formatting, authorship note, model transparency, ethics of AI processing, autoethnographic depth
+
+---
+
+## Response to reviewers (2)
+
+**Where both I and reviewers were wrong**
+
+- Inner paper says "**deliberate** negative-case search" (3.3, 3.4) — never "systematic"
+- My reflection incorrectly stated it claimed systematic; reviewers echoed that
+- I will correct my reflection
+
+**Incorrect reviewer criticisms**
+
+- Distinguishing AI inner paper vs human wrapper avoids absurdity of "correcting" what I already disclosed
+
+---
+
+![](static/img/image-20260312213237815.png)
+
+
+---
+
+## Takeaways
+
+1. **Cursor's affordance**: Self-updating memo files enable iterative thematic analysis beyond single-prompt approaches
+2. **Substantive contribution**: Loneliness as infrastructure + constraint, not individual deficit
+3. **Transparency**: Quote-checking and methodology audit revealed overclaiming — valuable for AI-in-research reporting
+4. **Design target**: "Safer and more predictable interaction with lower judgement costs"
+
+
+**Filename:** lonely-in-london. **Coverage:** Citations - 1099 / 3392 (32%). Sources - 50 / 50 (100%). **Factors** — size: citation count; numbers: source count; colour: outcomeness; border: avg incoming sentiment (blue=positive, grey=neutral, red=negative). **Links** — width: citation count; labels: source count; arrowheads: effect sentiment (blue=positive, grey=neutral, red=negative). **Filters applied:** Soft recode: 28 magnets, similarity >= 0.48; Link freq: top 30 by citation count. 
