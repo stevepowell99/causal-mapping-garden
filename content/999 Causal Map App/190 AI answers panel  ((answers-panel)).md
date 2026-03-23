@@ -196,11 +196,12 @@ Tech details:
 - URL state keys:
   - ragSourceBySourcePayloadColumns / ragSourceBySourceRowsPerCall
   - ragLinkByLinkPayloadColumns / ragLinkByLinkRowsPerCall
-  - ragLinkByLinkTargetSuffix / ragLinkByLinkOverwriteNonBlank / ragLinkByLinkCopyUnfilteredLabels
-  - ragFactorByFactorPayloadColumns / ragFactorByFactorRowsPerCall / ragFactorByFactorTargetSuffix / ragFactorByFactorOverwriteNonBlank / ragFactorByFactorCopyUnfilteredLabels
+  - ragLinkByLinkOverwriteNonBlank / ragLinkByLinkCopyUnfilteredLabels
+  - ragFactorByFactorPayloadColumns / ragFactorByFactorRowsPerCall / ragFactorByFactorOverwriteNonBlank / ragFactorByFactorCopyUnfilteredLabels
   - ragAnswersSubtab
   - ragSourceBySourceAnswerMode / ragLinkByLinkAnswerMode / ragFactorByFactorAnswerMode
   - ragFactorByFactorQuestion
+  - factorLabelSet / fls (Sources bar; targets for link-by-link writes + factor-by-factor relabels)
 - Mode toggles:
   - #rag-source-by-source-answer-mode
   - #rag-link-by-link-answer-mode

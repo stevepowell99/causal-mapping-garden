@@ -4,6 +4,19 @@
 - Selecting these sources also fetches only their links and no others, starting off the [Links Pipeline](../links-pipeline/): only the links from the currently selected sources are available for further filtering, and are finally shown in the output tabs.
 </div>
 
+### Factor label set (global) {#factor-label-set}
+
+Treat **label sets** like **different versions of the same document**: you keep a **default** “main” version (the usual factor labels on each link) and you can spin up **extra named versions** to experiment—try a different coding scheme, run [Simple AI Recode](../simple-ai-recode/) on a copy, or compare schemes—without changing the main story until you choose to. **Most people** finish by **copying one experimental version back into the default** so the map and tables show that version as the “real” one, while the other versions stay in the project if you need them later.
+
+- **Which version am I using?** The **Label set** row sits under the Sources bar. Pick **default** for the standard labels; pick or create another name to view and edit **that** version’s labels in the [Links Pipeline](../links-pipeline/), map, links table, and link editor. Switching sets refreshes those outputs so they match.
+- **New experimental version:** type a new name and confirm. The app fills a new column-pair for **every link** from what you were just looking at, then switches you to it — handy before Recode so the AI writes into the experiment, not the default.
+- **Done experimenting — make it “official”:** if you want, open the **⋯** menu (only when a non-default set is selected) and choose **Promote to default**. That copies the **current** experimental set into the **default** columns for every link. Your other named versions are **not** deleted; they remain available if you switch back.
+- **Temporary Factor Labels** (old filter in the pipeline): **deprecated** for new work—use this control instead; old bookmarks may still reference the filter.
+
+<!--
+Technical (implementers): URL state `factorLabelSet` / `fls`. Non-default labels live in `links.metadata.custom_columns` as `cause{suffix}` / `effect{suffix}`; enriched rows expose `l_cause{suffix}` / `l_effect{suffix}`. Top-level `links.cause` / `links.effect` hold the default pair (may be empty when a link was only coded in a suffix). `DataService.applyFactorLabelSetView` runs at the start of `applyAllPipelineFilters`; alternate sets do not fall back to top-level when suffix columns are empty. Output cache keys (`_computePipelineHash`) include the active suffix. `copyFactorLabelSet(project, from, to)` with `to === ''` implements Promote. Bulk label-set writes emit `linksUpdated` from the widget after `suppressLinksUpdatedEvent` batch updates.
+-->
+
 ### Sources Dropdown {#sources-dropdown}
 
 - 👉🏼 **Sources** (multi-select dropdown): pick one or more sources from the current project (typing searches the list).  

@@ -43,15 +43,13 @@ The workflow is broken down into six straightforward sections:
    - The header progress bar is segmented: grey = empty recoded fields, orange = recoded equals original cause/effect, green = recoded non-empty and different.
    - Default model in Simple AI is **Qwen Flash**.
 6. **Filter links**: The normal Filter Links panel appears as the final section of the same accordion, so filtering is part of one continuous simple flow.
-   - After a successful **Run all**, filters are auto-set to: **Temporary Factor Labels** (`_recoded`) → **Factor Frequency** (top `12`) → **Link Frequency** (top `30`).
+   - After a successful **Run all**, filters are auto-set to: **Factor Frequency** (top `12`) → **Link Frequency** (top `30`). The global [Label set](../factor-label-set/) controls which `cause`/`effect` columns Recode writes to (no separate “recode suffix” in this panel).
 
 ### Run all (Simple AI) {#simple-ai-runner}
 - Optional sequencer for the three main AI actions.
 - When enabled, **Go** runs Auto-code → Revise codebook → Recode, stopping on the first non-successful stage.
 - Before running, it clears filters, enables pipeline, and deletes all existing links (if any) after one confirmation — so you always start from a clean slate.
-- **Recode target suffix** (saved per project): After raw coding and Revise codebook, Recode applies synthesised factor labels. You can either:
-  - **Blank**: Write the synthesised labels straight into cause/effect. Simpler, but you lose the raw labels.
-  - **_recoded** (or another suffix): Keep the raw labels in cause/effect; write synthesised labels to temp columns (e.g. cause_recoded, effect_recoded). Lets you compare raw vs synthesised and switch between them via the Temporary Factor Labels filter.
+- **Recode target**: Use the global [Label set](../factor-label-set/) below the Sources bar. Create a new suffix there first if you want Recode to fill `cause_suffix` / `effect_suffix` instead of only the default columns.
 
 ### Background (Simple AI) {#simple-ai-background}
 - Sets shared project context used by AI coding prompts.
@@ -75,15 +73,15 @@ The workflow is broken down into six straightforward sections:
 
 ### Recode (Simple AI) {#simple-ai-recode}
 - Applies your codebook back onto existing links, turning raw factor labels into cleaner synthesised ones.
-- **Recode target** (set in Run all card): Blank = write straight to cause/effect (simpler). A suffix like _recoded = keep raw labels, write synthesised to temp columns (more flexible — compare raw vs synthesised).
-- Supports sampled recoding and skip-recoded behavior (skip-recoded only applies when using a suffix).
+- **Recode target**: the global [Label set](../factor-label-set/) (`default` = standard `cause`/`effect`; a suffix = read/write `cause_suffix` / `effect_suffix` in `metadata.custom_columns`, with top-level `cause`/`effect` holding the default-set pair).
+- Supports sampled recoding and skip-recoded behavior (skip-recoded only applies when using a non-default label set).
 - Header bar shows recode coverage mix across all cause/effect recoded fields.
 - Default model is **Qwen Flash**.
 
 ### Filter links (Simple AI) {#simple-ai-filter-links}
 - This is the same Filter Links workflow, embedded as the final simple-ai accordion section.
 - Use it to refine/select links before reviewing outputs on the right.
-- Run-all completion auto-applies `_recoded` temp labels, top-12 factor frequency, then top-30 link frequency.
+- Run-all completion auto-applies top-12 factor frequency, then top-30 link frequency (no longer injects the deprecated Temporary Factor Labels filter).
 
 ### Advanced Settings
 Each section header is clickable and opens/collapses its settings panel. Section headers also include contextual **Help** buttons. The advanced sections are inline (not flyouts), and only one section is expanded at a time.

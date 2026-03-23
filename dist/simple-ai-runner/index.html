@@ -1332,16 +1332,14 @@
 <li>The header progress bar is segmented: grey = empty recoded fields, orange = recoded equals original cause/effect, green = recoded non-empty and different.</li>
 <li>Default model in Simple AI is <strong>Qwen Flash</strong>.</li>
 <li><strong>Filter links</strong>: The normal Filter Links panel appears as the final section of the same accordion, so filtering is part of one continuous simple flow.</li>
-<li>After a successful <strong>Run all</strong>, filters are auto-set to: <strong>Temporary Factor Labels</strong> (<code>_recoded</code>) → <strong>Factor Frequency</strong> (top <code>12</code>) → <strong>Link Frequency</strong> (top <code>30</code>).</li>
+<li>After a successful <strong>Run all</strong>, filters are auto-set to: <strong>Factor Frequency</strong> (top <code>12</code>) → <strong>Link Frequency</strong> (top <code>30</code>). The global <a href="../factor-label-set/">Label set</a> controls which <code>cause</code>/<code>effect</code> columns Recode writes to (no separate “recode suffix” in this panel).</li>
 </ol>
 <h3 id="simple-ai-runner">Run all (Simple AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-runner/#simple-ai-runner">#</a></h3>
 <ul>
 <li>Optional sequencer for the three main AI actions.</li>
 <li>When enabled, <strong>Go</strong> runs Auto-code → Revise codebook → Recode, stopping on the first non-successful stage.</li>
 <li>Before running, it clears filters, enables pipeline, and deletes all existing links (if any) after one confirmation — so you always start from a clean slate.</li>
-<li><strong>Recode target suffix</strong> (saved per project): After raw coding and Revise codebook, Recode applies synthesised factor labels. You can either:</li>
-<li><strong>Blank</strong>: Write the synthesised labels straight into cause/effect. Simpler, but you lose the raw labels.</li>
-<li><strong>_recoded</strong> (or another suffix): Keep the raw labels in cause/effect; write synthesised labels to temp columns (e.g. cause_recoded, effect_recoded). Lets you compare raw vs synthesised and switch between them via the Temporary Factor Labels filter.</li>
+<li><strong>Recode target</strong>: Use the global <a href="../factor-label-set/">Label set</a> below the Sources bar. Create a new suffix there first if you want Recode to fill <code>cause_suffix</code> / <code>effect_suffix</code> instead of only the default columns.</li>
 </ul>
 <h3 id="simple-ai-background">Background (Simple AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-runner/#simple-ai-background">#</a></h3>
 <ul>
@@ -1369,8 +1367,8 @@
 <h3 id="simple-ai-recode">Recode (Simple AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-runner/#simple-ai-recode">#</a></h3>
 <ul>
 <li>Applies your codebook back onto existing links, turning raw factor labels into cleaner synthesised ones.</li>
-<li><strong>Recode target</strong> (set in Run all card): Blank = write straight to cause/effect (simpler). A suffix like _recoded = keep raw labels, write synthesised to temp columns (more flexible — compare raw vs synthesised).</li>
-<li>Supports sampled recoding and skip-recoded behavior (skip-recoded only applies when using a suffix).</li>
+<li><strong>Recode target</strong>: the global <a href="../factor-label-set/">Label set</a> (<code>default</code> = standard <code>cause</code>/<code>effect</code>; a suffix = read/write <code>cause_suffix</code> / <code>effect_suffix</code> in <code>metadata.custom_columns</code>, with top-level <code>cause</code>/<code>effect</code> holding the default-set pair).</li>
+<li>Supports sampled recoding and skip-recoded behavior (skip-recoded only applies when using a non-default label set).</li>
 <li>Header bar shows recode coverage mix across all cause/effect recoded fields.</li>
 <li>Default model is <strong>Qwen Flash</strong>.</li>
 </ul>
@@ -1378,7 +1376,7 @@
 <ul>
 <li>This is the same Filter Links workflow, embedded as the final simple-ai accordion section.</li>
 <li>Use it to refine/select links before reviewing outputs on the right.</li>
-<li>Run-all completion auto-applies <code>_recoded</code> temp labels, top-12 factor frequency, then top-30 link frequency.</li>
+<li>Run-all completion auto-applies top-12 factor frequency, then top-30 link frequency (no longer injects the deprecated Temporary Factor Labels filter).</li>
 </ul>
 <h3 id="advanced-settings">Advanced Settings<a aria-label="Permalink" class="anchor-link" href="/simple-ai-runner/#advanced-settings">#</a></h3>
 <p>Each section header is clickable and opens/collapses its settings panel. Section headers also include contextual <strong>Help</strong> buttons. The advanced sections are inline (not flyouts), and only one section is expanded at a time.</p>
