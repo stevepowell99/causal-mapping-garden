@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Not Found</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <h1 class="h3 mb-3">Page not found</h1>
+    <p class="text-muted mb-3">Redirecting to search…</p>
+    <p class="mb-0">
+      <a id="searchLink" class="btn btn-primary" href="/search.html">Go to search</a>
+    </p>
+  </div>
+
+  <script>
+    // Turn /some/missing/page into a reasonable search term.
+    (function () {
+      var pathname = window.location.pathname || '';
+      try { pathname = decodeURIComponent(pathname); } catch (e) {}
+
+      // Remove leading slashes and pick last segment; fall back to whole path if needed.
+      var clean = pathname.replace(/^\/+/, '');
+      var parts = clean.split('/').filter(function (x) { return !!x; });
+      var slug = (parts.length ? parts[parts.length - 1] : clean) || '';
+      slug = slug.replace(/\.html$/i, '').replace(/[-_]+/g, ' ').trim();
+
+      var dest = new URL('/search.html', window.location.origin);
+      dest.searchParams.set('q', slug);
+
+      var a = document.getElementById('searchLink');
+      if (a) a.href = dest.toString();
+
+      window.location.replace(dest.toString());
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+---
+description: "Project memory routing for causalmap-garden content"
+globs: ["**/*"]
+alwaysApply: true
+---
+
+## Purpose
+Treat this workspace as canonical conceptual memory content. This repo is part of a system; central entry point: `@cursor-memory/memory-central/repos-and-expertise.md`.
+
+## Repo-specific rules
+- `.cursor/rules/00-project-memory.mdc` (this file)
+- `../.cursor/rules/paper-writer.mdc` — for long-form writing (blog posts, articles)
+
+## Before starting complicated tasks
+Read `@cursor-memory/memory-central/repos-and-expertise.md` (or `c:\dev\cursor-memory\memory-central\repos-and-expertise.md`). From there, read project indexes needed and how to update rules.
+
+## Memory sources first
+1. Check existing notes (starting with `index.md`) before creating any new summary note.
+2. Do not duplicate existing Obsidian content into separate copies.
+
+## Where project memory lives
+Workspace content = canonical conceptual detail (Obsidian vault). Central index for cross-repo use: `c:\dev\cursor-memory\memory-central\projects\causalmap-garden\index.md`, `c:\dev\cursor-memory\memory-central\obsidian-index\19aCMgarden.md`. Repo has rules; do not duplicate memory in rules.
+
+## Constraints
+- Add only short index/signal notes outside Obsidian.
+- Keep central store as pointers + summaries, not full content clones.
+
+## Memory command shortcuts
+- If user says `save memory <text>`, save to:
+  - `c:\\dev\\cursor-memory\\memory-central\\projects\\causalmap-garden\\index.md`
+  - and update `c:\\dev\\cursor-memory\\memory-central\\obsidian-index\\19aCMgarden.md` when relevant.
+- If user says `save global memory <text>`, auto-route to:
+  - `c:\\dev\\cursor-memory\\memory-central\\coding-style.md` (coding/workflow preferences)
+  - `c:\\dev\\cursor-memory\\memory-central\\narrative-style.md` (writing/narrative preferences)
+  - `c:\\dev\\cursor-memory\\memory-central\\bio\\` (stable profile facts)
+  - `c:\\dev\\cursor-memory\\memory-central\\general-knowledge\\` (reusable concepts; default when unclear)
+  - `c:\\dev\\cursor-memory\\memory-central\\personal\\` (non-project personal preferences)

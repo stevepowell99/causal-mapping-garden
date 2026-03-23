@@ -1,0 +1,2015 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Research on the ability of LLMs to detect causal claims</title>
+    <meta name="description" content="11 Dec 2025 Summary # This note explains why modern Large Language Models (LLMs) — especially since instruction-tuned chat models — often seem to have a “native” ordinary-language grasp of causation: they can spot, gener">
+    <link rel="canonical" href="https://garden.causalmap.app/007 Task 2 -- Causal coding -- minimalist style/850 Research on the ability of LLMs to-4a5896.html">
+    <meta property="og:title" content="Research on the ability of LLMs to detect causal claims">
+    <meta property="og:description" content="11 Dec 2025 Summary # This note explains why modern Large Language Models (LLMs) — especially since instruction-tuned chat models — often seem to have a “native” ordinary-language grasp of causation: they can spot, gener">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://garden.causalmap.app/007 Task 2 -- Causal coding -- minimalist style/850 Research on the ability of LLMs to-4a5896.html">
+    <meta property="og:site_name" content="">
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Research on the ability of LLMs to detect causal claims">
+    <meta name="twitter:description" content="11 Dec 2025 Summary # This note explains why modern Large Language Models (LLMs) — especially since instruction-tuned chat models — often seem to have a “native” ordinary-language grasp of causation: they can spot, gener">
+    <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='8' fill='%2390c3c6'/></svg>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Analytics loader (optional, generated at build time from config.yml) -->
+    <script defer src="../assets/analytics.js"></script>
+    <!-- MathJax v3: inline ($...$, \(...\)) and display (\[...\]); ignored in <code>/<pre> -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          displayMath: [['\\[','\\]']],
+          processEscapes: true
+        },
+        options: {
+          skipHtmlTags: ['script','noscript','style','textarea','pre','code']
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <style>
+      /* layout: sticky left sidebar */
+      :root {
+        --cm-body-bg: #fcfcfc;
+        --cm-text: #222;
+        --cm-muted: #6c757d;
+        --cm-border: #e5e5e5;
+        --bs-link-color: #79bb93; /* default link colour */
+        --bs-link-hover-color: #647779; /* link hover colour */
+        /* Showcase accents (aligned to existing site palette + requested highlights) */
+        --cm-accent-primary: #79bb93;
+        --cm-accent-secondary: #90c3c6;
+        --cm-accent-ink: #1f1f36;
+        --cm-accent-teal: #6dc4c8;
+        --cm-accent-cyan: #76f7ff;
+        --cm-accent-pink: #ff8fb8;
+        --cm-accent-highlight: #f7ed73;
+        --cm-accent-neon: #00ffaf;
+      }
+      a {
+        color: #79bb93; /* default link colour */
+      }
+      a:hover, a:focus {
+        color: #647779; /* hover/link focus colour */
+      }
+      ul li::marker {
+        color: #79bb93; /* default bullet colour */
+      }
+      body {
+        overflow-y: scroll;
+        background: var(--cm-body-bg);
+        color: var(--cm-text);
+        font-size: 1.2rem; /* ~18px, slightly larger */
+      }
+      .layout-container {
+        display: grid;
+        grid-template-columns: 462px minmax(0, 980px) 390px; /* sidebar, fixed content width, wider rightbar */
+        column-gap: 2.25rem;
+        min-height: 100vh;
+        background-color: #eee;
+        transition: grid-template-columns 0.3s ease;
+      }
+      /* Page-level layout override (YAML: layout: fullscreen / showcase) */
+      body.layout-fullscreen .layout-container {
+        grid-template-columns: minmax(0, 1fr);
+        column-gap: 0;
+        background: var(--cm-body-bg);
+      }
+      body.layout-fullscreen aside.sidebar,
+      body.layout-fullscreen aside.rightbar,
+      body.layout-fullscreen .breadcrumb-nav,
+      body.layout-fullscreen #hamburgerBtn {
+        display: none !important;
+      }
+      body.layout-fullscreen .content .edge-nav-box {
+        left: max(0px, calc(50% - min(700px, 50vw))) !important;
+        right: max(0px, calc(50% - min(700px, 50vw))) !important;
+        max-width: none !important;
+      }
+      body.layout-fullscreen .content {
+        max-width: min(1400px, 100vw);
+        margin: 0 auto 4rem auto;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        --cm-content-pad-y: clamp(1rem, 3vw, 3rem);
+        --cm-content-pad-x: clamp(1rem, 5vw, 4rem);
+      }
+      .fullscreen-footer { display: none; }
+      body.layout-fullscreen .fullscreen-footer {
+        display: block;
+        margin-top: 4rem;
+        padding: 1.25rem 1.5rem;
+        font-size: 0.8rem;
+        color: #6b7280;
+        border-top: 1px solid #e5e7eb;
+        background: #fafafa;
+      }
+      body.layout-fullscreen .fullscreen-footer a { color: #6b7280; text-decoration: none; }
+      body.layout-fullscreen .fullscreen-footer a:hover { color: #374151; }
+      body.layout-fullscreen .fullscreen-footer .sidebar-footer {
+        background: none; border: none; padding: 0; margin: 0;
+      }
+      .fullscreen-nav { display: none; }
+      body.layout-fullscreen .fullscreen-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: .75rem;
+        margin: 0 0 1rem 0;
+        padding: .35rem .25rem;
+        border-bottom: 1px solid #e7eaf1;
+      }
+      body.layout-fullscreen .fullscreen-nav a {
+        color: #344054;
+        font-size: .95rem;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+      body.layout-fullscreen .fullscreen-nav a:hover {
+        color: #1d4ed8;
+      }
+      /* Page title (filename) as full-bleed hero in fullscreen */
+      body.layout-fullscreen .page-title-row {
+        width: 100vw;
+        max-width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        background: linear-gradient(135deg, #f0f9f9 0%, #e8f6f7 50%, #f4faf9 100%);
+        padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 5vw, 4rem);
+        text-align: center;
+        justify-content: center !important;
+      }
+      body.layout-fullscreen .page-title-row .page-title {
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 800;
+      }
+      /* Generic showcase components (can be used in any page, with/without layout: showcase) */
+      .content .cm-hero {
+        background: linear-gradient(135deg, #f0f9f9 0%, #e8f6f7 50%, #f4faf9 100%);
+        color: var(--cm-accent-ink);
+        border: 1px solid rgba(144, 195, 198, 0.4);
+        border-left: 8px solid var(--cm-accent-secondary);
+        border-radius: 16px;
+        padding: clamp(1.25rem, 3vw, 3rem);
+        margin: .25rem 0 1.6rem 0;
+        box-shadow: 0 8px 20px rgba(144, 195, 198, 0.12);
+      }
+      .content .cm-hero h1 {
+        margin: 0 0 .45rem 0;
+        color: var(--cm-accent-ink);
+        font-size: clamp(2rem, 5.2vw, 4.4rem);
+        line-height: 1.08;
+        font-weight: 800;
+      }
+      .content .cm-hero .cm-hero-accent {
+        color: var(--cm-accent-teal);
+      }
+      .content .cm-hero p {
+        margin: 0;
+        color: #475467;
+        font-size: clamp(1rem, 1.5vw, 1.2rem);
+      }
+      .content .cm-intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+        margin: 1rem 0 2rem 0;
+      }
+      .content .cm-panel {
+        background: linear-gradient(180deg, #ffffff 0%, #f7f9fd 100%);
+        border: 1px solid #dfe6f3;
+        border-radius: 14px;
+        padding: 1.25rem 1.4rem;
+        box-shadow: 0 8px 20px rgba(35, 64, 129, 0.06);
+      }
+      .content .cm-steps {
+        display: grid;
+        gap: 1rem;
+        margin: 0.5rem 0 2rem 0;
+      }
+      .content .cm-step {
+        display: grid;
+        grid-template-columns: 56px 1fr;
+        gap: 1rem;
+        align-items: center;
+        background: linear-gradient(180deg, #f8f9fc 0%, #f1f4fb 100%);
+        border: 1px solid #e0e6f5;
+        border-radius: 12px;
+        padding: 1rem 1.1rem;
+      }
+      .content .cm-step-num {
+        width: 48px;
+        height: 48px;
+        border-radius: 999px;
+        background: #dfe4ff;
+        color: #4338ca;
+        font-weight: 700;
+        font-size: 1.45rem;
+        line-height: 48px;
+        text-align: center;
+      }
+      .content .cm-step h3 {
+        margin: 0 0 .25rem 0;
+        font-size: 1.85rem;
+        color: #101828;
+      }
+      .content .cm-step p {
+        margin: 0 0 .6rem 0;
+        color: #344054;
+      }
+      .content .cm-win {
+        display: inline-block;
+        background: #dcfce7;
+        border: 1px solid #86efac;
+        color: #166534;
+        border-radius: 6px;
+        padding: .28rem .55rem;
+        font-weight: 600;
+        font-size: .95rem;
+      }
+      @media (max-width: 980px) {
+        .content .cm-intro-grid {
+          grid-template-columns: 1fr;
+        }
+        .content .cm-step {
+          grid-template-columns: 1fr;
+        }
+      }
+      .sidebar {
+        border-right: 1px solid var(--cm-border);
+        position: sticky;
+        top: 0;
+        max-height: 100vh; /* constrain sidebar to viewport height */
+        overflow: hidden; /* no scroll on sidebar itself */
+        background: #fefefe;
+        padding: 0 5px; /* remove vertical padding so footer remains in view */
+        transition: overflow 0.3s ease;
+      }
+      aside.sidebar > div {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        padding: 2.5rem 1rem 0 1rem !important;
+      }
+      aside.sidebar .sidebar-header {
+        padding .5rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      }
+      aside.sidebar .nav-fade {
+        flex: 1;
+        overflow-y: auto; /* scrollable TOC */
+        overflow-x: hidden;
+        padding: 20px;
+        opacity: .10; /* dimmer by default */
+        transition: opacity .2s ease;
+      }
+      aside.sidebar:hover .nav-fade {
+        opacity: .8; /* more visible on sidebar hover */
+      }
+      aside.sidebar .nav-fade summary {
+        opacity: inherit; /* ensure folder headers inherit the fade */
+      }
+      aside.sidebar .nav-link {
+        padding: .2rem .4rem;
+        color: var(--cm-text);
+        font-size: 1.025rem; /* slightly larger */
+      }
+      aside.sidebar .nav-link:hover {
+        background: #eef2f6;
+        border-radius: .25rem;
+      }
+      details > summary {
+        cursor: pointer;
+        list-style: none;
+        transition: opacity .35s ease;
+      }
+      details > summary::marker {
+        display: none;
+      }
+      aside.sidebar details:hover > summary {
+        opacity: 1 !important; /* full visibility on section hover */
+      }
+      aside.sidebar .nav-link:hover {
+        opacity: 1 !important; /* full visibility on link hover */
+      }
+      details > summary .chev {
+        transition: transform .35s ease, opacity .35s ease;
+        opacity: 0; /* invisible by default */
+        font-size: 1.2em; /* smaller */
+        margin-left: .5rem;
+      }
+      aside.sidebar:hover details > summary .chev {
+        opacity: .6; /* visible on sidebar hover */
+      }
+      details[open] > summary .chev {
+        transform: rotate(90deg);
+      }
+      .content {
+        position: relative; /* needed for positioned inner elements */
+        /* Use vars so overlays (logo) can align with text margins */
+        --cm-content-pad-y: 3rem;
+        --cm-content-pad-x: 4rem;
+        padding: var(--cm-content-pad-y) var(--cm-content-pad-x); /* more padding */
+        max-width: 980px;  /* a bit wider */
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+        line-height: 1.7;
+        letter-spacing: .2px;
+        background: white;
+        box-shadow: 0 1px 2px rgba(0,0,0,.03);
+        border: 1px solid var(--cm-border);
+        border-radius: 8px;
+        margin: 2.5rem 0 5rem 0; /* remove right margin so rightbar hugs content */
+      }
+      /* Containing box for edge nav buttons to constrain positioning */
+      .content .edge-nav-box {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 462px; /* left sidebar width */
+        right: 280px; /* right sidebar width when present */
+        max-width: calc(980px + 8rem); /* content max-width + padding */
+        pointer-events: none; /* allow clicks through to content */
+      }
+      .content .edge-nav-box a {
+        pointer-events: auto; /* restore clicks on nav buttons */
+      }
+      @media (max-width: 1799.98px) {
+        .content .edge-nav-box {
+          right: 0; /* no right sidebar */
+          max-width: none; /* content expands, no max-width */
+        }
+      }
+      @media (max-width: 1199.98px) {
+        .content .edge-nav-box {
+          left: 0; /* no left sidebar */
+        }
+        .content .edge-nav.prev { left: 8px !important; }
+        .content .edge-nav.next { right: 8px !important; }
+      }
+      .content img { max-width: 100%; height: auto; margin: 20px 0; }
+      .content h1, .content h2, .content h3, .content h4 {
+        margin-top: 2rem;
+        font-weight: 600;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      }
+      /* Larger H1 on Home (index.md) */
+      .content.home h1:first-of-type {
+        font-size: 5rem;
+      }
+      /* Floating PDF links inside content container */
+      .content .pdf-links {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 5;
+      }
+      .content .pdf-links a { margin-left: .5rem; white-space: nowrap; }
+      .content .fullscreen-enter { font-size: 1.1rem; color: #6c757d; text-decoration: none; margin-left: .35rem; }
+      .content .fullscreen-enter:hover { color: #1d4ed8; }
+      body.layout-fullscreen .fullscreen-enter { display: none !important; }
+      /* Tighter hierarchy for lower headings */
+      .content h2 { font-size: 1.6rem; font-weight: 600; }
+      .content h3 { font-size: 1.25rem; font-weight: 600; }
+      .content h4 { font-size: 1.1rem; font-weight: 600; }
+      .content h5 { font-size: 1rem; font-weight: 600; }
+      .content h6 { font-size: .95rem; font-weight: 600; }
+      /* Heading self-link icon (revealed on hover) */
+      .content .anchor-link {
+        visibility: hidden;
+        text-decoration: none;
+        color: #adb5bd;
+        margin-left: .5rem;
+        font-weight: normal;
+      }
+      .content h1:hover .anchor-link, .content h2:hover .anchor-link,
+      .content h3:hover .anchor-link, .content h4:hover .anchor-link,
+      .content h5:hover .anchor-link, .content h6:hover .anchor-link {
+        visibility: visible;
+      }
+      .content .anchor-link:hover { color: #6c757d; }
+      /* Hide anchor links in print/PDF */
+      @media print {
+        .anchor-link {
+          display: none !important;
+        }
+        /* Ensure multi-column blocks render as columns in PDF even if Bootstrap CSS isn't loaded (wider gutter: +50%) */
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          page-break-inside: avoid;
+          margin-left: -1.125rem;
+          margin-right: -1.125rem;
+        }
+        .row [class*="col-"] {
+          page-break-inside: avoid;
+          padding-left: 1.125rem;
+          padding-right: 1.125rem;
+          flex: 0 0 auto;
+        }
+        .row .col-md-1 { width: 8.33333333%; }
+        .row .col-md-2 { width: 16.66666667%; }
+        .row .col-md-3 { width: 25%; }
+        .row .col-md-4 { width: 33.33333333%; }
+        .row .col-md-5 { width: 41.66666667%; }
+        .row .col-md-6 { width: 50%; }
+        .row .col-md-7 { width: 58.33333333%; }
+        .row .col-md-8 { width: 66.66666667%; }
+        .row .col-md-9 { width: 75%; }
+        .row .col-md-10 { width: 83.33333333%; }
+        .row .col-md-11 { width: 91.66666667%; }
+        .row .col-md-12 { width: 100%; }
+      }
+      /* Prominent page title (sans, larger than in-page headings) */
+      .content h1{
+        margin-bottom: 2rem;
+      }
+      /* Prominent page title (sans, larger than in-page headings) */
+      .page-title {
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        font-size: 2rem; /* ~32px: not smaller than default h1 */
+        font-weight: 700;
+        line-height: 1.25;
+        letter-spacing: .04em; /* slightly wider tracking */
+        font-variant-caps: small-caps; /* subtle distinction from h1/h2 */
+        margin: 0 0 2.25rem 0;
+        position: relative; /* For anchor link positioning */
+      }
+      .page-title .anchor-link {
+        visibility: hidden;
+        text-decoration: none;
+        color: #adb5bd;
+        margin-left: .5rem;
+        font-weight: normal;
+      }
+      .page-title:hover .anchor-link {
+        visibility: visible;
+      }
+      .page-title .anchor-link:hover {
+        color: #6c757d;
+      }
+      .page-title .page-subtitle {
+        display: block;
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: var(--cm-muted);
+        margin-top: .35rem;
+      }
+      .content p {
+        margin-bottom: 1.1rem;
+      }
+      .content pre, .content code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      }
+      .content pre {
+        background: #f7f7f7;
+        border: 1px solid var(--cm-border);
+        border-radius: 6px;
+        padding: .75rem 1rem;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+      .content pre code {
+        white-space: inherit;
+        overflow-wrap: inherit;
+        word-break: inherit;
+      }
+      .content hr {
+        border-top: 1px solid var(--cm-border);
+        margin: 1.5rem 0;
+      }
+      /* Blockquotes */
+      .content blockquote {
+        border-left: 4px solid var(--cm-border);
+        background: #f8f9fa;
+        padding: .75rem 1rem;
+        margin: 1.25rem 0;
+        color: #495057;
+      }
+      .content blockquote p:last-child {
+        margin-bottom: 0;
+      }
+      .content blockquote cite {
+        display: block;
+        margin-top: .5rem;
+        color: var(--cm-muted);
+        font-style: normal;
+      }
+      /* Tables */
+      .content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+        background: white;
+      }
+      .content thead th {
+        background: #f1f3f5;
+        color: #343a40;
+        font-weight: 600;
+        border-bottom: 2px solid var(--cm-border);
+      }
+      .content th, .content td {
+        padding: .5rem .75rem;
+        border: 1px solid var(--cm-border);
+        vertical-align: top;
+      }
+      .content tbody tr:nth-child(odd) {
+        background: #fcfcfc;
+      }
+      .content caption {
+        caption-side: bottom;
+        color: var(--cm-muted);
+        font-size: .875rem;
+        padding-top: .25rem;
+      }
+      /* Alternative heading styles */
+      .content h1.rounded, .content h1.rounded-left, .content h1.banner {
+        font-size: inherit; /* Use h1 base size */
+      }
+      .content h2.rounded, .content h2.rounded-left, .content h2.banner {
+        font-size: inherit; /* Use h2 base size */
+      }
+      .content h3.rounded, .content h3.rounded-left, .content h3.banner {
+        font-size: inherit; /* Use h3 base size */
+      }
+      .content h1.rounded, .content h2.rounded, .content h3.rounded {
+        background: rgba(121,187,147,0.08);
+        border-left: 4px solid #79bb93;
+        padding: 0.75rem 1rem 0.75rem 1.5rem;
+        border-radius: 6px;
+        margin-left: -1rem;
+        margin-right: -1rem;
+      }
+      .content h1.rounded-left, .content h2.rounded-left, .content h3.rounded-left {
+        border-left: 4px solid #79bb93;
+        padding-left: 1.5rem;
+        background: rgba(121,187,147,0.12);
+      }
+      .content h1.banner, .content h2.banner, .content h3.banner {
+        background: #79bb93;
+        color: white;
+        padding: 0.75rem 1rem 0.75rem 1.5rem;
+        border-radius: 6px;
+        margin-left: -1rem;
+        margin-right: -1rem;
+      }
+      /* Heading colour variants (Bootstrap-ish palette). Usage: add class ".rounded-info" etc to the heading */
+      .content h1.rounded-info, .content h2.rounded-info, .content h3.rounded-info { background: rgba(13,202,240,0.10); border-left-color: #0dcaf0; }
+      .content h1.rounded-warning, .content h2.rounded-warning, .content h3.rounded-warning { background: rgba(255,193,7,0.14); border-left-color: #ffc107; }
+      .content h1.rounded-danger, .content h2.rounded-danger, .content h3.rounded-danger { background: rgba(220,53,69,0.10); border-left-color: #dc3545; }
+      .content h1.rounded-tip, .content h2.rounded-tip, .content h3.rounded-tip { background: rgba(25,135,84,0.10); border-left-color: #198754; }
+      .content h1.rounded-left-info, .content h2.rounded-left-info, .content h3.rounded-left-info { border-left-color: #0dcaf0; background: rgba(13,202,240,0.12); }
+      .content h1.rounded-left-warning, .content h2.rounded-left-warning, .content h3.rounded-left-warning { border-left-color: #ffc107; background: rgba(255,193,7,0.16); }
+      .content h1.rounded-left-danger, .content h2.rounded-left-danger, .content h3.rounded-left-danger { border-left-color: #dc3545; background: rgba(220,53,69,0.12); }
+      .content h1.rounded-left-tip, .content h2.rounded-left-tip, .content h3.rounded-left-tip { border-left-color: #198754; background: rgba(25,135,84,0.12); }
+      .content h1.banner-info, .content h2.banner-info, .content h3.banner-info { background: #0dcaf0; color: #083944; }
+      .content h1.banner-warning, .content h2.banner-warning, .content h3.banner-warning { background: #ffc107; color: #3b2c00; }
+      .content h1.banner-danger, .content h2.banner-danger, .content h3.banner-danger { background: #dc3545; color: #fff; }
+      .content h1.banner-tip, .content h2.banner-tip, .content h3.banner-tip { background: #198754; color: #fff; }
+      /* Showcase hero heading: use on H1 with class "hero" */
+      .content h1.hero {
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        background: #f0f9f9;
+        color: var(--cm-accent-ink);
+        border: 1px solid rgba(144, 195, 198, 0.4);
+        border-left: 8px solid var(--cm-accent-secondary);
+        border-radius: 16px;
+        padding: clamp(1.25rem, 3vw, 3rem);
+        margin: .25rem 0 1rem 0;
+        box-shadow: 0 6px 16px rgba(144, 195, 198, 0.12);
+        font-size: clamp(2rem, 5.2vw, 4.4rem);
+        line-height: 1.08;
+        font-weight: 800;
+      }
+      .content h1.hero + p {
+        margin: 0 0 1.5rem 0;
+        color: #475467;
+        font-size: 1.08rem;
+      }
+      /* Paper styling (YAML tag: paper) — slightly more academic, not fusty */
+      .content .paper { font-size: 1.12rem; line-height: 1.75; }
+      .content .paper h1 { font-size: 1.55rem; }
+      .content .paper h3 { margin-top: 1.25rem; margin-bottom: 0.75rem; } /* tighter headings in paper mode */
+      .content .paper a { text-decoration: underline; text-underline-offset: 2px; }
+      .content .paper .callout, .content .paper .callout-note {
+        border-left: none;
+        border: 1px solid #90c3c6;
+        background: rgba(144,195,198,0.08);
+      }
+      .content .paper h1.banner-info, .content .paper h2.banner-info, .content .paper h3.banner-info {
+        background: transparent;
+        color: #2c3e50;
+        border-left: 4px solid #90c3c6;
+        padding: 0.55rem 0.9rem 0.55rem 1.2rem;
+        border-radius: 4px;
+        margin-left: -1rem;
+        margin-right: -1rem;
+      }
+      .content .paper h1.rounded-info, .content .paper h2.rounded-info, .content .paper h3.rounded-info {
+        background: rgba(144,195,198,0.10);
+        border-left-color: #90c3c6;
+      }
+      /* Callout styles */
+      .content .callout {
+        border-left: 4px solid #6c757d;
+        background: #f8f9fa;
+        padding: 1rem 1.25rem;
+        margin: 1.5rem 0;
+        border-radius: 4px;
+      }
+      .content .callout p:last-child,
+      .content .callout ul:last-child,
+      .content .callout ol:last-child {
+        margin-bottom: 0;
+      }
+      .content .callout ul,
+      .content .callout ol {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .content .callout-info {
+        border-left-color: #0dcaf0;
+        background: #e7f5f8;
+      }
+      .content .callout-warning {
+        border-left-color: #ffc107;
+        background: #fff8e1;
+      }
+      .content .callout-tip {
+        border-left-color: #198754;
+        background: #e8f5e9;
+      }
+      .content .callout-note {
+        border-left-color: #6c757d;
+        background: #f8f9fa;
+      }
+      /* Hero callout: full-bleed in showcase mode */
+      .content .callout-hero {
+        background: linear-gradient(135deg, #f0f9f9 0%, #e8f6f7 50%, #f4faf9 100%);
+        border: none;
+        border-radius: 0;
+        padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem);
+        margin: 0;
+        box-shadow: none;
+      }
+      .content .callout-hero h1 {
+        margin: 0 0 .5rem 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 800;
+        color: var(--cm-accent-ink);
+      }
+      /* Showcase-style generic callouts for panel/step blocks */
+      .content .callout-panel {
+        border-left-color: var(--cm-accent-secondary);
+        background: linear-gradient(180deg, #ffffff 0%, rgba(144, 195, 198, 0.10) 100%);
+        border: 1px solid rgba(144, 195, 198, 0.45);
+        border-left-width: 4px;
+        border-radius: 14px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+      }
+      .content .callout-step {
+        border-left-color: var(--cm-accent-primary);
+        background: linear-gradient(180deg, #f8f9fc 0%, rgba(121, 187, 147, 0.12) 100%);
+        border: 1px solid rgba(121, 187, 147, 0.35);
+        border-left-width: 4px;
+        border-radius: 12px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+      }
+      .content .callout-step h1,
+      .content .callout-step h2,
+      .content .callout-step h3 {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 500;
+      }
+      .content .callout-step .step-content {
+        flex: 1;
+        min-width: 0;
+      }
+      .content .callout-step h1 strong,
+      .content .callout-step h2 strong,
+      .content .callout-step h3 strong {
+        font-weight: 700;
+      }
+      .content .callout-step .step-num {
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.5rem;
+        border-radius: 50%;
+        background: #E8E6F8;
+        color: #5D3FD3;
+        font-weight: 700;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      }
+      /* Popular web elements: card, stat, testimonial, cta, alert */
+      .content .callout-card {
+        border-left-color: var(--cm-accent-secondary);
+        background: #fff;
+        border: 1px solid rgba(144, 195, 198, 0.4);
+        border-left-width: 4px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      }
+      .content .callout-stat {
+        border-left: none;
+        border: 1px solid rgba(144, 195, 198, 0.35);
+        background: rgba(144, 195, 198, 0.08);
+        border-radius: 10px;
+        text-align: center;
+        padding: 1.25rem;
+      }
+      .content .callout-stat p:first-child {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--cm-accent-ink);
+        margin: 0 0 0.25rem 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      }
+      .content .callout-testimonial {
+        border-left: 4px solid var(--cm-accent-primary);
+        background: #fafcf9;
+        font-style: italic;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        padding: 1.25rem 1.5rem;
+      }
+      .content .callout-testimonial p:last-child {
+        font-style: normal;
+        font-size: 0.95rem;
+        color: var(--cm-muted);
+        margin-top: 0.5rem;
+      }
+      .content .callout-cta {
+        border: 2px solid var(--cm-accent-primary);
+        background: rgba(121, 187, 147, 0.12);
+        border-radius: 10px;
+        text-align: center;
+        padding: 1.5rem;
+      }
+      .content .callout-cta a {
+        font-weight: 600;
+      }
+      .content .callout-alert {
+        border-left: 4px solid #ffc107;
+        background: #fffbf0;
+        border-radius: 6px;
+      }
+      /* Callout layout/style modifiers (can be combined) */
+      .content .callout-narrow {
+        max-width: 66%;
+      }
+      .content .callout-right {
+        margin-left: auto;
+        display: block;
+      }
+      .content .callout-center {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .content .callout-heavy {
+        border-left-width: 6px !important;
+        border-radius: 0;
+      }
+      .content .callout-left-border {
+        border-top: none;
+        border-right: none;
+        border-bottom: none;
+      }
+      /* Rounded style - like a box, no left border, rounded border */
+      .content .callout-rounded {
+        border-left: none;
+        border: 2px solid var(--cm-border);
+        border-radius: 6px;
+      }
+      /* Inverted style - override background but preserve border colors */
+      .content .callout-inverted {
+        background: #79bb93 !important;
+        color: #ffffff;
+      }
+      /* Ensure type-specific border colors work with inverted */
+      .content .callout-info.callout-inverted {
+        border-left-color: #0dcaf0 !important;
+      }
+      .content .callout-warning.callout-inverted {
+        border-left-color: #ffc107 !important;
+      }
+      .content .callout-tip.callout-inverted {
+        border-left-color: #198754 !important;
+      }
+      .content .callout-note.callout-inverted {
+        border-left-color: #6c757d !important;
+      }
+      /* Highlight style */
+      mark {
+        background: var(--cm-accent-highlight);
+        color: var(--cm-accent-ink);
+        padding: 0.1em 0.2em;
+        border-radius: 2px;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover { text-decoration: underline; }
+      aside.sidebar .site-title {
+          flex-shrink: 0;
+          background-color: #f3f8f9;
+          border-radius: 6px;
+          width: 100%;
+          margin-bottom: 1rem;
+          text-align: left;
+          padding: 1rem;
+      }
+      aside.sidebar form {
+          flex-shrink: 0;
+      }
+      aside.sidebar .site-title {
+        display: block;
+        color: var(--cm-text);
+        font-size: larger;
+        cursor: pointer; /* make whole box feel clickable */
+        text-decoration: none;
+        /* Align subtitle under the title text (not under the emoji/icon). */
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        column-gap: .35rem;
+      }
+      aside.sidebar .site-title:hover {
+        font-size: larger;
+        color: var(--cm-text);
+        text-decoration: none;
+      }
+      /* Smaller subtitle (e.g., Work in progress) under site title */
+      aside.sidebar .site-title .site-title-sub {
+        grid-column: 2;
+        font-size: .9rem;
+        font-style: italic;
+        color: var(--cm-muted);
+        margin-top: .25rem;
+      }
+      aside.sidebar .site-title .site-title-icon {
+        grid-column: 1;
+      }
+      aside.sidebar .site-title .site-title-text {
+        grid-column: 2;
+      }
+      /* Wikilink embed blocks */
+      .embed-block {
+        border: 1px dashed var(--cm-border);
+        background: #fafafa;
+        border-radius: 6px;
+        padding: .5rem .75rem;
+      }
+      .embed-block > summary {
+        font-weight: 500;
+        user-select: none;
+      }
+      .embed-block > summary .chev {
+        transition: transform .15s ease;
+        opacity: .6;
+        font-size: 1.2em; /* smaller */
+        margin-left: .5rem;
+      }
+      .embed-block[open] > summary .chev {
+        transform: rotate(90deg);
+      }
+      .embed-block > summary::before {
+        content: "Relevant page: ";
+        font-size: 0.75rem;
+        color: var(--cm-muted);
+        opacity: 0.7;
+        margin-right: 0.5rem;
+      }
+      /* Video embeds - responsive container */
+      .video-embed {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+      }
+      .video-embed iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .video-embed video {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      /* Active nav link */
+      aside.sidebar .nav-link.active {
+        background: #e7effa;
+        border-radius: .25rem;
+        font-weight: 600;
+      }
+      /* Sidebar footer at bottom of flex container */
+      aside.sidebar .sidebar-footer {
+        flex-shrink: 0;
+        background: #fafafa;
+        padding: 1rem;
+        border-top: 1px solid var(--cm-border);
+        margin-top: 1rem;
+        background-color: #f3f8f9;
+      }
+      /* Hamburger button (hidden by default) */
+      .hamburger {
+        display: none;
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 1100;
+      }
+      /* Desktop ToC toggle: only on wide screens */
+      .toc-toggle {
+        display: none;
+      }
+      @media (min-width: 1200px) {
+        .toc-toggle {
+          display: inline-flex;
+          align-items: center;
+          gap: .4rem;
+          width: 100%;
+        }
+        aside.sidebar .nav-fade.toc-collapsed {
+          display: none;
+        }
+      }
+      /* Desktop sidebar toggle button (hidden by default; shown on wide screens) */
+      .desktop-toggle {
+        display: none;
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 1100;
+      }
+      @media (min-width: 1200px) {
+        .desktop-toggle {
+          display: inline-flex;
+          align-items: center;
+          gap: .4rem;
+        }
+        .hamburger {
+          display: none; /* hamburger only for <1200px */
+        }
+      }
+      /* Reference list */
+      .content .references {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--cm-border);
+      }
+      .content .references h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+      .content .references .reference {
+        margin-left: 2em;
+        text-indent: -2em;
+        margin-bottom: 0.8rem;
+        line-height: 1.5;
+      }
+      /* Chapter start styling */
+      .content.chapter-start {
+        background: linear-gradient(to bottom, #f8feff 0%, var(--cm-body-bg) 300px);
+      }
+      .content.chapter-start .page-title {
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 3px solid #90c3c6;
+        font-weight: 600;
+      }
+      .content.chapter-start > p:first-of-type {
+        font-size: 1.35rem;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 2.5rem;
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: #f0f8f9;
+        border-left: 4px solid #90c3c6;
+        border-radius: 4px;
+      }
+      .content.chapter-start a:not(.edge-nav) {
+        position: relative;
+        z-index: 1;
+      }
+      /* Ensure edge nav is always on top and positioned correctly */
+      .content .edge-nav-box {
+        z-index: 10 !important;
+      }
+      .content .edge-nav {
+        z-index: 11 !important;
+      }
+      .content .edge-nav.prev {
+        left: -52px !important;
+      }
+      .content .edge-nav.next {
+        right: -52px !important;
+      }
+      /* Chapter page links styling */
+      .chapter-page-link {
+        display: inline-block;
+        transition: all 0.2s ease;
+      }
+      .chapter-page-link:hover {
+        transform: translateX(4px);
+        color: #0d6efd !important;
+      }
+      .chapter-page-link:hover i {
+        color: #0d6efd !important;
+      }
+      /* Right ToC */
+      .rightbar {
+        position: sticky;
+        top: 2.5rem; /* align with main content's top margin */
+        align-self: start; /* start at top of grid row */
+        max-height: calc(100vh - 2.5rem);
+        overflow: auto;
+        margin: 2.5rem 0 5rem 0; /* match main content vertical margins */
+        padding: 1.5rem; /* consistent padding for TOC */
+        background: white;
+        border: 1px solid var(--cm-border);
+        border-radius: 8px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.03);
+      }
+      .rightbar h2 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        color: var(--cm-muted);
+      }
+      .rightbar .toc ul {
+        padding-left: 1rem;
+      }
+      .rightbar .toc {
+        opacity: .55; /* paler by default */
+        transition: opacity .15s ease;
+      }
+      .rightbar:hover .toc {
+        opacity: 1;
+      }
+      @media (max-width: 1199.98px) {
+        .rightbar .toc {
+          opacity: 1 !important;
+        }
+      }
+      .rightbar .toc a.active {
+        font-weight: 600;
+        color: #0d6efd;
+        opacity: 1;
+      }
+      /* Edge previous/next chevrons (inside content) */
+      .edge-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        background: #fff;
+        border: 1px solid #d5d5d5;
+        color: #495057;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        opacity: .8;
+        box-shadow: 0 2px 6px rgba(0,0,0,.08);
+        transition: opacity .15s ease, background .15s ease, box-shadow .15s ease;
+        z-index: 5;
+      }
+      .edge-nav:hover {
+        opacity: 1;
+        box-shadow: 0 3px 10px rgba(0,0,0,.12);
+      }
+      .edge-nav.prev { left: -52px; }  /* outside content, in left gutter */
+      .edge-nav.next { right: -52px; }  /* outside content, in right gutter */
+
+      /* Breadcrumb navigation */
+      .breadcrumb-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--cm-muted);
+        margin-bottom: 1rem;
+        padding: 0.5rem 0;
+        flex-wrap: wrap;
+      }
+      .breadcrumb-nav a {
+        color: #555;
+        text-decoration: none;
+      }
+      .breadcrumb-nav a:hover {
+        color: var(--cm-text);
+        text-decoration: underline;
+      }
+      .breadcrumb-item {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+      }
+      .breadcrumb-item .bc-dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .breadcrumb-item .bc-current-link {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        transition: background 0.15s ease;
+        text-decoration: none;
+      }
+      .breadcrumb-item .bc-current-link:hover {
+        background: #f0f0f0;
+        text-decoration: none;
+      }
+      .breadcrumb-item .bc-label {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        user-select: none;
+      }
+      .breadcrumb-item .bc-label:hover {
+        background: #f0f0f0;
+      }
+      .breadcrumb-item .bc-chevron {
+        font-size: 0.7em;
+        opacity: 0.6;
+        transition: transform 0.15s ease;
+      }
+      .breadcrumb-item .bc-dropdown.open .bc-chevron {
+        transform: rotate(180deg);
+      }
+      .breadcrumb-item .bc-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid var(--cm-border);
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0,0,0,.1);
+        min-width: 675px;
+        max-width: 900px;
+        max-height: 800px;
+        overflow-y: auto;
+        z-index: 1000;
+        margin-top: 0.25rem;
+      }
+      .breadcrumb-item .bc-dropdown.open .bc-menu {
+        display: block;
+      }
+      .breadcrumb-item .bc-menu a {
+        display: block;
+        padding: 0.5rem 0.75rem;
+        color: var(--cm-text);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .breadcrumb-item .bc-menu a:hover {
+        background: #f5f5f5;
+        text-decoration: none;
+      }
+      .breadcrumb-item .bc-menu a.current {
+        background: #e7effa;
+        font-weight: 600;
+      }
+      .breadcrumb-item .bc-menu .bc-heading {
+        padding: 0.35rem 0.75rem 0.25rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--cm-muted);
+        text-transform: uppercase;
+        letter-spacing: .06em;
+      }
+      /* Tags dropdown (nested lists) */
+      .breadcrumb-item .bc-menu-tags .bc-tag {
+        padding: 0.4rem 0.75rem 0.2rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--cm-muted);
+        border-top: 1px solid #eee;
+        /* keep tag labels in normal case (e.g. "Papers and Drafts") */
+      }
+      .breadcrumb-item .bc-menu-tags .bc-tag-pages {
+        list-style: none;
+        margin: 0;
+        padding: 0 0 0.15rem 0;
+      }
+      .breadcrumb-item .bc-menu-tags .bc-tag-pages a {
+        padding-left: 1.25rem;
+      }
+      .breadcrumb-separator {
+        opacity: 0.4;
+        margin: 0 0.25rem;
+      }
+
+      /* < 1800px: hide right sidebar, let content expand */
+      @media (max-width: 1799.98px) {
+        .layout-container {
+          grid-template-columns: 462px minmax(0, 1fr);
+        }
+        .rightbar {
+          display: none !important;
+        }
+        .content {
+          max-width: none;
+        }
+      }
+
+      /* < 1200px: hide left sidebar behind hamburger; single-column layout */
+      @media (max-width: 1199.98px) {
+        .hamburger {
+          display: inline-flex;
+          align-items: center;
+          gap: .4rem;
+        }
+        .layout-container {
+          grid-template-columns: 1fr;
+          column-gap: 0;
+        }
+        aside.sidebar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 100vh;
+          width: 86vw;
+          max-width: 360px;
+          transform: translateX(-100%);
+          transition: transform .2s ease;
+          z-index: 1040;
+          box-shadow: 0 0 16px rgba(0,0,0,.12);
+        }
+        body.sidebar-open aside.sidebar {
+          transform: translateX(0);
+        }
+        .content {
+          margin: 1rem 0 4rem 0;
+          --cm-content-pad-y: 1.25rem;
+          --cm-content-pad-x: 1rem;
+          padding: var(--cm-content-pad-y) var(--cm-content-pad-x);
+        }
+      }
+    </style>
+  </head>
+  <body data-fullscreen-default="false">
+    <button id="hamburgerBtn" class="btn btn-outline-secondary btn-sm hamburger" type="button" aria-label="Toggle navigation">☰ Menu</button>
+    <div class="layout-container">
+      <aside class="sidebar"></aside>
+      <main class="content">
+        <div class="edge-nav-box"><a href="800 Link metadata -- quality of evidence.html" class="edge-nav prev" aria-label="Previous: Link metadata -- quality of evidence">‹</a><a href="../007.0 Task 2 -- Coding with AI/000 Intro -- auto-coding with AI ((aut-3bc7c8.html" class="edge-nav next" aria-label="Next: Intro -- auto-coding with AI">›</a></div>
+        <nav class="fullscreen-nav"><a href="?fullscreen=0" id="exitFullscreenBtn" class="fullscreen-exit">⊟ Exit fullscreen</a></nav>
+        <nav class="breadcrumb-nav"><span class="breadcrumb-item"><a href="../index.html">Home</a></span><span class="breadcrumb-separator">/</span><span class="breadcrumb-item"><div class="bc-dropdown"><span class="bc-label">Chapters</span><span class="bc-chevron">▼</span><div class="bc-menu"><div class="bc-heading">Chapters</div><a href="../index.html">Home</a><a href="../000 Articles/001 Intro.html">Articles</a><a href="../000 Glossary/1150- Glossary.html">Glossary</a><a href="../001 Working Papers/000 Working Papers ((working-papers)).html">Working Papers</a><a href="../005 Causal mapping -- overview/0.01 Intro.html">Causal mapping – overview</a><a href="../006 Task 1 -- Gathering causal mapping data/000 Task 1 -- Introduction.html">Task 1 – Gathering causal mapping data</a><a href="0.001 Task 2 -- Introduction.html">Task 2 – Causal coding – minimalist style</a><a href="../007.0 Task 2 -- Coding with AI/000 Intro -- auto-coding with AI ((aut-3bc7c8.html">Task 2 – Coding with AI</a><a href="../008 Task 2 &amp; 3 -- Extensions/000 Tasks 2 &amp; 3 --  Extensions -- Intr-2815bf.html">Task 2 &amp; 3 – Extensions</a><a href="../010 Task 3 -- Answering questions -- General/010 Causal mapping produces models you-611be4.html">Task 3 – Answering questions – General</a><a href="../100 Task 3 -- Answering questions -- Individual questions/010 Individual questions -- introducti-7c4997.html">Task 3 – Answering questions – Individual questions</a><a href="../200 Causal mapping in evaluation/000 Intro.html">Causal mapping in evaluation</a><a href="../250 Causal Mapping as QDA/000 Intro.html">Causal Mapping as QDA</a><a href="../290 Causal Map app and alternatives/1130-Causal mapping with kumu ((kumu)).html">Causal Map app and alternatives</a><a href="../500 AI in qualitative social science/000 Intro.html">AI in qualitative social science</a><a href="../600 How to -- in the Causal Map app/001 How to -- in the Causal Map app. I-4d7553.html">How to – in the Causal Map app</a><a href="../700 Qualia/010 Background on data collection with-c2eb42.html">Qualia</a><a href="../800 Case studies/000 Some Case Studies ((case-studies)).html">Case studies</a><a href="../850 For consultants/800 For consultants ((consultants)).html">For consultants</a><a href="../910 AI and the wider world/000 Intro.html">AI and the wider world</a><a href="../990 Finally/1140 About.html">Finally</a><a href="../999 Causal Map App/000 Contents.html">Causal Map App</a></div></div></span><span class="breadcrumb-separator">/</span><span class="breadcrumb-item"><div class="bc-dropdown"><span class="bc-label">Pages</span><span class="bc-chevron">▼</span><div class="bc-menu"><div class="bc-heading">Pages in this chapter</div><a href="0.001 Task 2 -- Introduction.html" class="">Task 2 – Introduction</a><a href="010 Our approach is minimalist -- we c-e9c9d2.html" class="">Our approach is minimalist – we code only bare causation</a><a href="011 Our approach clearly distinguishes-18c679.html" class="">Our approach clearly distinguishes evidence from facts and does not automatically warrant causal inferences</a><a href="0130.1 Our approach is minimalist -- f-edd07c.html" class="">Our approach is minimalist – factors are not variables</a><a href="0130.1a A minimalist approach to codin-c36357.html" class="">A minimalist approach to coding helps capture what people actually say</a><a href="0130.1b A minimalist approach to codin-568754.html" class="">A minimalist approach to coding makes aggregation easier</a><a href="0130.1c A minimalist approach to codin-177773.html" class="">A minimalist approach to coding does not code absences</a><a href="0130.2 Our approach is minimalist -- w-99f6a1.html" class="">Our approach is minimalist – we do not code the strength of a link</a><a href="200 In a causal mapping dataset there -20d6b7.html" class="">In a causal mapping dataset there is no need for a special table of factors</a><a href="220 Factor labels -- a creative challenge.html" class="">Factor labels – a creative challenge</a><a href="300 Factor label tags -- coding factor-475abe.html" class="">Factor label tags – coding factor metadata within its label</a><a href="580 Factor labels -- semi-quantitative-613659.html" class="">Factor labels – semi-quantitative formulations can help</a><a href="610 Causal mapping looks for linearity first.html" class="">Causal mapping looks for linearity first</a><a href="610 Factor labels -- do not over-generalise.html" class="">Factor labels – do not over-generalise</a><a href="700 Coding with and using link metadata.html" class="">Coding with and using link metadata</a><a href="720 Link metadata -- Sentiment.html" class="">Link metadata – Sentiment</a><a href="730 Link metadata -- Time reference.html" class="">Link metadata – Time reference</a><a href="800 Link metadata -- quality of evidence.html" class="">Link metadata – quality of evidence</a><a href="850 Research on the ability of LLMs to-4a5896.html" class="current">Research on the ability of LLMs to detect causal claims</a></div></div></span><span class="breadcrumb-separator">/</span><span class="breadcrumb-item"><div class="bc-dropdown"><span class="bc-label">Tags</span><span class="bc-chevron">▼</span><div class="bc-menu bc-menu-tags"><div class="bc-heading">Tags</div><div class="bc-tag">Case Studies</div><ul class="bc-tag-pages"><li><a href="../850 For consultants/9193 Add Qualia to your next bid.html">Add Qualia to your next bid</a></li><li><a href="../800 Case studies/AI-assisted causal mapping. Uncovering-2038a3.html">AI-assisted causal mapping. Uncovering causal pathways with INTRAC</a></li><li><a href="../800 Case studies/Can AI accurately map causal claims - -d9f61e.html">Can AI accurately map causal claims - A validation study</a></li><li><a href="../700 Qualia/205 Case study -- our &#x27;seamless storie-92bf8f.html">Case study – our &#x27;seamless stories&#x27; workflow in practice</a></li><li><a href="../700 Qualia/210 Case study -- Qualia asks about US-ce3252.html">Case study – Qualia asks about USA problems, again</a></li><li><a href="../800 Case studies/DUOC UC. Evaluating Gender Equity in S-d76c54.html">DUOC UC. Evaluating Gender Equity in STEM with AI-Driven Interviews</a></li><li><a href="../850 For consultants/9191 Include Causal Map and QualiaInte-5d2511.html">Include Causal Map and QualiaInterviews in your next bid</a></li><li><a href="../800 Case studies/Strengthening OH with causal mapping.html">Strengthening OH with causal mapping</a></li><li><a href="../800 Case studies/Tree Aid - Empowering Communities Thro-bbcd40.html">Tree Aid - Empowering Communities Through Forest Management in Burkina Faso</a></li><li><a href="../800 Case studies/Using AI to facilitate feedback on the-c3508e.html">Using AI to facilitate feedback on the learning experiences of doctoral students</a></li></ul><div class="bc-tag">Filters</div><ul class="bc-tag-pages"><li><a href="../008 Task 2 &amp; 3 -- Extensions/300 Path tracing and source tracing ((-caae88.html">Path tracing and source tracing</a></li></ul><div class="bc-tag">Papers and Drafts</div><ul class="bc-tag-pages"><li><a href="../001 Working Papers/006 A formalisation of causal mapping.html">A formalisation of causal mapping</a></li><li><a href="../001 Working Papers/900 A simple measure of the goodness o-de16cb.html">A simple measure of the goodness of fit of a causal theory to a text corpus</a></li><li><a href="../001 Working Papers/910 Animated social map around Donald Trump.html">Animated social map around Donald Trump</a></li><li><a href="../001 Working Papers/910 Animated social map of US news ((trump)).html">Animated social map of US news</a></li><li><a href="../001 Working Papers/Assessing change in (cognitive models -7218c0.html">Assessing change in (cognitive models of) systems over time</a></li><li><a href="../001 Working Papers/040 Causal mapping as causal QDA.html">Causal mapping as causal QDA</a></li><li><a href="../001 Working Papers/015 Combining opposites, sentiment.html">Combining opposites, sentiment</a></li><li><a href="../001 Working Papers/016 Despite-claims.html">Despite-claims</a></li><li><a href="../001 Working Papers/980 Lonely in London ((lonely)).html">Lonely in London</a></li><li><a href="../001 Working Papers/982 Lonely in London response ((lonely2)).html">Lonely in London response</a></li><li><a href="../001 Working Papers/985 Lonely in London with causal mappi-de2373.html">Lonely in London with causal mapping</a></li><li><a href="../001 Working Papers/900 Magnetisation.html">Magnetisation</a></li><li><a href="../001 Working Papers/005 Minimalist coding for causal mappi-92df1f.html">Minimalist coding for causal mapping</a></li><li><a href="../700 Qualia/120 Our paper on an inductive workflow-538051.html">Our paper on an inductive workflow to gather and analyse evidence at scale.</a></li></ul><div class="bc-tag">Transforms Filters</div><ul class="bc-tag-pages"><li><a href="../008 Task 2 &amp; 3 -- Extensions/270 Collapsing factor labels and exclu-8f0f90.html">Collapsing factor labels and excluding brackets</a></li></ul><div class="bc-tag">{&#x27;Date&#x27;: &#x27;27/02/2025&#x27;}</div><ul class="bc-tag-pages"><li><a href="../700 Qualia/210 Case study -- Qualia asks about US-ce3252.html">Case study – Qualia asks about USA problems, again</a></li></ul></div></div></span></nav>
+        <div class="pdf-links"><a class="tr-float link-secondary small" href="850 Research on the ability of LLMs to-4a5896.pdf" download>PDF</a> <a href="?fullscreen=1" class="fullscreen-enter" aria-label="Fullscreen" title="Fullscreen">⛶</a></div>
+        <div class="page-title-row d-flex justify-content-between align-items-center"><div class="page-title" id="">🌻 Research on the ability of LLMs to detect causal claims</div></div><hr />
+        <div class="mb-3"><span class="badge text-bg-light border"><i class="far fa-calendar"></i> 11 Dec 2025</span></div>
+<h2 id="summary">Summary<a aria-label="Permalink" class="anchor-link" href="#summary">#</a></h2>
+<p>This note explains why modern Large Language Models (LLMs) — especially since instruction-tuned chat models — often seem to have a “native” ordinary-language grasp of causation: they can spot, generate, and elaborate “A influences B” talk even when it is informal, implicit, or socially framed.</p>
+<p>The core claim is <strong>hybrid</strong>:</p>
+<ul>
+<li><strong>Pre-training (scale) supplies the raw capacity</strong>: these models learn by reading huge amounts of text and trying to predict the next word. Because people constantly write about reasons, consequences, and mechanisms, doing well at prediction pushes the model to absorb many common causal patterns (e.g., “fell” → “broke”).</li>
+<li><strong>“Chat training” makes that capacity usable in conversation</strong>: newer models are additionally trained on lots of question-and-answer style instructions (“why did this happen?”, “what led to that?”), and then refined using human ratings that reward answers that are clear and coherent (often called RLHF). The result is not just better <em>spotting</em> of causal language, but better <em>explaining</em> and <em>rephrasing</em> causal claims on demand.</li>
+</ul>
+<p>Historically, this is framed as a transition from <strong>causality-as-extraction</strong> to <strong>causality-as-generation</strong>:</p>
+<ul>
+<li><strong>2015-2019 (pre-generative)</strong>: “causal understanding” was largely operationalised as Causal Relation Extraction (CRE) — classifying or tagging explicit cause/effect relations in sentences or documents. Methods were feature-heavy (SVMs), then neural (RNN/CNN), and later rule “sieves” (e.g., CATENA). These systems were brittle for <strong>implicit causality</strong> (where the link is inferred rather than marked by words like “caused”).</li>
+<li><strong>2019-2021 (contextual encoders)</strong>: BERT-era models improved extraction by using deep context, but remained primarily <em>discriminative</em> (understand/tag) rather than <em>generative</em> (explain/construct narratives).</li>
+<li><strong>2022-2025 (instruction-following generators)</strong>: chat-oriented models excel at producing causal explanations, counterfactual-style answers, and “influence” talk because their training regimes contain huge amounts of “why/how/what caused what” interactions, plus preference tuning for coherent explanation.</li>
+</ul>
+<p>To ground “ordinary language causation,” this note uses two cognitive-linguistic lenses that match what chat models often do well:</p>
+<ul>
+<li><strong>Force Dynamics (Talmy)</strong>: causal meaning as roles/forces (agonist vs antagonist, enabling vs preventing), which connects to how models handle “let,” “despite,” “kept,” etc.</li>
+<li><strong>Implicit Causality (IC) verbs</strong>: verbs carry pragmatic biases about who is responsible (NP1 vs NP2 bias), and LLM continuations often match human patterns in these explanation contexts.</li>
+</ul>
+<p>This note is also explicit about limits and failure modes that matter for “detecting causal claims” in text:</p>
+<ul>
+<li><strong>Causal fluency ≠ causal truth</strong>: RLHF can encourage plausible-sounding causal stories even when the premise is wrong (“hallucinated causality”) or when a correlation is being misread as a cause.</li>
+<li><strong>Temporal — causal confusion</strong>: models are biased to treat temporal sequence as causal sequence (post hoc fallacy), because narratives in training data often align “then” with “therefore.”</li>
+<li><strong>Surface competence vs intervention-level reasoning</strong>: performance can drop on “fresh” causal probes; this supports the view that some behaviour is pattern-based association rather than robust interventionist reasoning.</li>
+</ul>
+<p>Current frontiers (2024-2025) are framed as attempts to make causal reasoning more checkable and structured, including addressing the above shortcomings: “reasoning models” that perform intermediate causal checks (often hidden) and pipelines where LLMs <strong>extract</strong> candidate causal edges into explicit graphs (DAG-like representations) for downstream formal analysis.</p>
+<h2 id="1-introduction-the-emergence-of-native-causal-fluency">1. Introduction: The Emergence of "Native" Causal Fluency<a aria-label="Permalink" class="anchor-link" href="#1-introduction-the-emergence-of-native-causal-fluency">#</a></h2>
+<p>The capacity of Large Language Models (LLMs) to identify, generate, and reason about causal relationships in ordinary language is a notable (and still debated) development in artificial intelligence over the last decade. Since the release of ChatGPT (based on GPT-3.5) and its successors, these systems have often appeared able to process prompts involving influence, consequence, and mechanism without extensive few-shot examples or rigid schema engineering that characterised previous generations of Natural Language Processing (NLP). This report investigates the trajectory of this capability from 2015 to 2025, asking how much is a by-product of scale versus the result of specific (often implicit) training choices.</p>
+<p>Furthermore, the report explores the philosophical and linguistic dimensions of this capability, using frameworks such as Leonard Talmy’s Force Dynamics and the theory of Implicit Causality (IC) verbs to benchmark LLM performance against human cognitive patterns. The evidence suggests that while LLMs can often handle the <em>linguistic interface</em> of causality — the "language game" of cause and effect — significant questions remain regarding the grounding of these symbols in a genuine world model.</p>
+<hr/>
+<h2 id="2-the-pre-generative-landscape-2015-2019-causality-as-extraction">2. The Pre-Generative Landscape (2015-2019): Causality as Extraction<a aria-label="Permalink" class="anchor-link" href="#2-the-pre-generative-landscape-2015-2019-causality-as-extraction">#</a></h2>
+<p>To appreciate the "native" fluency of 2025-era models, one must first analyse the fragmented and rigid methodologies that dominated the field between 2015 and 2019. During this period, the "ordinary language concept of causation" was operationalised not as a generative understanding, but as a classification task known as Causal Relation Extraction (CRE).</p>
+<h3 id="21-the-legacy-of-semeval-2010-task-8">2.1 The Legacy of SemEval-2010 Task 8<a aria-label="Permalink" class="anchor-link" href="#21-the-legacy-of-semeval-2010-task-8">#</a></h3>
+<p>For much of the decade, the benchmark defining the field was <strong>SemEval-2010 Task 8</strong>, which framed causality as a relationship between two nominals marked by specific directionality. Systems were tasked with identifying whether a sentence like "The fire was triggered by the spark" contained a <em>Cause-Effect(e2, e1)</em> relationship.   </p>
+<p>Research from this era was characterised by a heavy reliance on feature engineering and pipeline architectures. Early approaches used Support Vector Machines (SVMs) and later, Recurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs). These models did not "understand" causality in any holistic sense; rather, they learned to detect explicit lexical triggers — words like "caused," "led to," or "resulted in."   </p>
+<p>The limitation of this paradigm was its inability to handle <strong>implicit causality</strong> — relationships where the causal link is inferred from world knowledge rather than stated explicitly. For instance, in the sentence "The rain stopped; the sun came out," a human reader infers a temporal and potentially causal sequence. Pre-transformer models, lacking a comprehensive probabilistic model of how events co-occur in the world, consistently failed to identify such links, achieving F1 scores that rarely exceeded 0.60 on implicit datasets. This era treated causality as a syntactic puzzle rather than a semantic reality.   </p>
+<h3 id="22-the-shift-to-event-centric-resources-eventstoryline-and-causal-timebank">2.2 The Shift to Event-Centric Resources: EventStoryLine and Causal-TimeBank<a aria-label="Permalink" class="anchor-link" href="#22-the-shift-to-event-centric-resources-eventstoryline-and-causal-timebank">#</a></h3>
+<p>Between 2015 and 2018, the research community began to move beyond sentence-level extraction toward document-level understanding, driven by the creation of corpora like the <strong>EventStoryLine Corpus</strong> and <strong>Causal-TimeBank</strong>.   </p>
+<ul>
+<li>
+<p><strong>EventStoryLine:</strong> This corpus was designed to evaluate "StoryLine Extraction," requiring systems to connect disparate event mentions (e.g., "shooting," "hospitalisation," "death") into a coherent narrative structure. The annotation scheme introduced specific classes like <code>ACTION_CAUSATIVE</code> to distinguish events that initiate change from those that merely describe states.   </p>
+</li>
+<li>
+<p><strong>Causal-TimeBank:</strong> Research using this corpus highlighted the inextricable link between <em>temporality</em> and <em>causality</em>. The "Causal-TempBank" approach demonstrated that knowing "A happened before B" significantly improved the classification of "A caused B".   </p>
+</li>
+</ul>
+<p>Despite these richer datasets, the methods remained fundamentally discriminative. Systems like <strong>CATENA</strong> (2016) used "sieves" — rule-based filters — to extract causal links. These systems could identify likely causal passages, but they did so through rigid, handcrafted logic rather than conversational explanation. They could not generate an explanation or reason about counterfactuals; they could only point to where a human annotator might say a cause existed.   </p>
+<h3 id="23-the-bert-revolution-and-contextual-embeddings">2.3 The BERT Revolution and Contextual Embeddings<a aria-label="Permalink" class="anchor-link" href="#23-the-bert-revolution-and-contextual-embeddings">#</a></h3>
+<p>The release of <strong>BERT (Bidirectional Encoder Representations from Transformers)</strong> in 2018 marked a pivotal transition. BERT introduced deep contextual embeddings, allowing models to distinguish the semantic nuance of causal words based on their surrounding text.</p>
+<p>Comparative studies from this period show a dramatic jump in performance. Fine-tuned BERT models (such as BioBERT) achieved F1-scores of approximately 0.72 on medical causality tasks, significantly outperforming previous architectures. BERT represents a "careful reader" — a model that can attend to the entire sentence simultaneously to resolve ambiguities.   </p>
+<p>However, BERT was still an encoder-only architecture. It was designed to <em>understand</em> (classify/tag), not to <em>speak</em>. While it could identify causal passages with greater accuracy than ever before, it lacked the autoregressive capability to generate causal narratives. The "native ordinary language concept" requires not just recognition, but the ability to formulate causal thoughts — a capability that would only emerge with the Generative Pre-trained Transformer (GPT) series.</p>
+<hr/>
+<h2 id="3-the-generative-era-2020-2025-structural-induction-of-causal-logic">3. The Generative Era (2020-2025): Structural Induction of Causal Logic<a aria-label="Permalink" class="anchor-link" href="#3-the-generative-era-2020-2025-structural-induction-of-causal-logic">#</a></h2>
+<p>The observation that models "since around ChatGPT 3.5" (released late 2022) exhibit a distinct causal proficiency aligns with the industry's shift toward <strong>Instruction Tuning (IT)</strong> and <strong>Reinforcement Learning from Human Feedback (RLHF)</strong>. The analysis of research data suggests that this proficiency is not just a coincidence, but is materially shaped by training methodologies that (often unintentionally) act as a large "causal curriculum."</p>
+<h3 id="31-the-coincidence-of-pre-training-implicit-world-models">3.1 The "Coincidence" of Pre-training: Implicit World Models<a aria-label="Permalink" class="anchor-link" href="#31-the-coincidence-of-pre-training-implicit-world-models">#</a></h3>
+<p>Before discussing specific training, one must acknowledge the foundation: pre-training on web-scale corpora (The Pile, Common Crawl, C4). The primary objective of these models is next-token prediction.</p>
+<p>Theoretical research suggests that optimising for prediction error on a diverse corpus forces the model to learn a compressed representation of the data generating process — effectively, a "world model". Because human language is intrinsically causal (we tell stories of <em>why</em> things happen), a model trained to predict the next word in a narrative must implicitly model causal physics.   </p>
+<ul>
+<li><em>Example:</em> To predict the token "shattered" following the context "The vase fell off the shelf and...", the model must encode the causal relationship between <em>falling (gravity)</em> and <em>shattering (impact)</em>.   </li>
+</ul>
+<p>Recent theoretical work on <strong>Semantic Characterization Theorems</strong> argues that the latent space of these models evolves to map the topological structure of these semantic relationships. Thus, the "native" understanding is partially a coincidence of the data's nature: the model learns causality because causality is the glue of human discourse.   </p>
+<h3 id="32-the-instruction-tuning-hypothesis-specific-training-via-templates">3.2 The Instruction Tuning Hypothesis: Specific Training via Templates<a aria-label="Permalink" class="anchor-link" href="#32-the-instruction-tuning-hypothesis-specific-training-via-templates">#</a></h3>
+<p>The transition from "text completer" (GPT-3) to "helpful assistant" (ChatGPT) was mediated by <strong>Instruction Tuning</strong>. This process involves fine-tuning the model on datasets of (Instruction, Output) pairs. An analysis of major instruction datasets — <strong>FLAN</strong>, <strong>OIG</strong>, and <strong>Dolly</strong> — reveals that they are saturated with causal reasoning tasks.</p>
+<h4 id="321-the-flan-collection-the-template-effect">3.2.1 The FLAN Collection: The Template Effect<a aria-label="Permalink" class="anchor-link" href="#321-the-flan-collection-the-template-effect">#</a></h4>
+<p>The <strong>FLAN (Finetuned Language Net)</strong> project  was instrumental in this development. Researchers took existing NLP datasets (including causal extraction datasets) and converted them into natural language templates.   </p>
+<ul>
+<li>
+<p><strong>The Mechanism:</strong> A classification task from the <em>COPA (Choice of Plausible Alternatives)</em> dataset, which asks for the cause of an event, was transformed into prompts like: <em>"Here is a premise: The man broke his toe. What was the cause?"</em></p>
+</li>
+<li>
+<p><strong>The Scale:</strong> FLAN 2022 aggregated over 1,800 tasks. By training on millions of examples where the input is a scenario and the output is a causal explanation, the model explicitly learned the linguistic patterns of <em>identifying influence</em>.</p>
+</li>
+<li>
+<p><strong>Mixed Prompting:</strong> Crucially, FLAN mixed <strong>Chain-of-Thought (CoT)</strong> templates (which require intermediate reasoning steps using "therefore," "because," "so") with standard prompts. This trained the model not just to guess the answer, but to <em>generate the causal logic</em> leading to it.   </p>
+</li>
+</ul>
+<p>This contradicts the idea that the capability is purely coincidental. The models were specifically drilled on millions of "causal identification" exercises, disguised as instruction following.</p>
+<h4 id="322-open-instruction-generalist-oig-and-dolly">3.2.2 Open Instruction Generalist (OIG) and Dolly<a aria-label="Permalink" class="anchor-link" href="#322-open-instruction-generalist-oig-and-dolly">#</a></h4>
+<p>The <strong>OIG</strong> and <strong>Dolly</strong> datasets  expanded this to open-domain interactions. These datasets contain thousands of "brainstorming" and "advice" prompts.   </p>
+<ul>
+<li>
+<p><em>Data Evidence:</em> An entry from the OIG dataset reads: <em>": I'm having trouble finding a good job, what can I do to improve my chances? : One thing a person could do is..."</em>.   </p>
+</li>
+<li>
+<p><em>Implication:</em> To answer this, the model must access a causal chain: <em>Action (revise resume) -&gt; Effect (better chances).</em> The prevalence of "how-to" and "why" questions in these datasets forces the model to organise its internal knowledge into causal structures (Means-End reasoning).</p>
+</li>
+</ul>
+<h3 id="33-reinforcement-learning-from-human-feedback-rlhf-the-coherence-filter">3.3 Reinforcement Learning from Human Feedback (RLHF): The Coherence Filter<a aria-label="Permalink" class="anchor-link" href="#33-reinforcement-learning-from-human-feedback-rlhf-the-coherence-filter">#</a></h3>
+<p>The final layer of "specific training" is <strong>RLHF</strong>. In this phase, human annotators rank model outputs based on preference.</p>
+<ul>
+<li>
+<p><strong>Preference for Logic:</strong> Research indicates that humans have a strong bias for <strong>causal coherence</strong>. A narrative that flows logically (Cause A -&gt; Effect B) is rated higher than one that is disjointed.   </p>
+</li>
+<li>
+<p><strong>Length and Explanation Bias:</strong> RLHF has been shown to induce a "length bias," where models produce longer, more detailed explanations to secure higher rewards. In the context of causality, this encourages the model to generate elaborate causal chains.   </p>
+</li>
+<li>
+<p><strong>Sycophancy:</strong> However, this training can also lead to "hallucinated causality." If prompted with a leading question that implies a false causation (e.g., "Why does the moon cause earthquakes?"), an RLHF-aligned model might generate a plausible-sounding but scientifically incorrect causal explanation, prioritising "helpfulness" over "truth".   </p>
+</li>
+</ul>
+<p><strong>Conclusion on Training vs. Coincidence:</strong> The capability is a hybrid. The <em>potential</em> to understand causality is a coincidence of pre-training scale (World Models), but the <em>ability to natively identify and articulate</em> it in response to a prompt is the result of specific Instruction Tuning and RLHF regimens that prioritise causal templates and coherent explanation.</p>
+<hr/>
+<h2 id="4-linguistic-frameworks-analysing-ordinary-causation">4. Linguistic Frameworks: Analysing "Ordinary" Causation<a aria-label="Permalink" class="anchor-link" href="#4-linguistic-frameworks-analysing-ordinary-causation">#</a></h2>
+<p>This note emphasises the "native ordinary language concept of causation." To understand this, we must look beyond computer science to <strong>Cognitive Linguistics</strong>. Recent research has benchmarked LLMs against human linguistic theories, particularly <strong>Talmy’s Force Dynamics</strong> and <strong>Implicit Causality (IC)</strong>.</p>
+<h3 id="41-force-dynamics-agonists-and-antagonists-in-latent-space">4.1 Force Dynamics: Agonists and Antagonists in Latent Space<a aria-label="Permalink" class="anchor-link" href="#41-force-dynamics-agonists-and-antagonists-in-latent-space">#</a></h3>
+<p>Leonard Talmy’s theory of <strong>Force Dynamics</strong> posits that human causal understanding is rooted in the interplay of forces: an <strong>Agonist</strong> (the entity with a tendency towards motion or rest) and an <strong>Antagonist</strong> (the opposing force).   </p>
+<ul>
+<li>
+<p><em>Linguistic Patterns:</em> "The ball kept rolling despite the grass" (Agonist: Ball; Antagonist: Grass). "He let the book fall" (Removal of Antagonist).</p>
+</li>
+<li>
+<p><em>LLM Evaluation:</em> Recent studies have tested LLMs on translating and explaining these force-dynamic constructions.   </p>
+<ul>
+<li>
+<p><strong>Findings:</strong> GPT-4 often shows a solid grasp of these concepts. When translating "He let the greatcoat fall" into languages like Finnish or Croatian, the model can select verbs that convey "cessation of impingement" (allowing) rather than "onset of causation" (pushing).   </p>
+</li>
+<li>
+<p><strong>Implication:</strong> This suggests that LLMs have acquired a <strong>schematic semantic structure</strong> of causality. They do not merely predict words; they map the <em>roles</em> of entities in a physical interaction. However, this capability degrades in abstract social contexts. For example, in the sentence "Being at odds with her father made her uncomfortable," models sometimes misidentify the Agonist/Antagonist relationship, struggling to map "emotional force" as accurately as "physical force".   </p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="42-implicit-causality-ic-verbs">4.2 Implicit Causality (IC) Verbs<a aria-label="Permalink" class="anchor-link" href="#42-implicit-causality-ic-verbs">#</a></h3>
+<p>Another major area of inquiry is <strong>Implicit Causality (IC)</strong>, which refers to the bias native speakers have regarding <em>who</em> is the cause of an event based on the verb used.   </p>
+<ul>
+<li>
+<p><em>NP1-Bias (Subject):</em> "John <strong>upset</strong> Mary." (Why? Because <em>John</em> is annoying).</p>
+</li>
+<li>
+<p><em>NP2-Bias (Object):</em> "The teacher <strong>scolded</strong> Mary." (Why? Because <em>Mary</em> did something wrong).</p>
+</li>
+</ul>
+<p>In this sense, "bias" means the useful working expectation of which part of the sentence is the cause. </p>
+<p><strong>Benchmarking Results:</strong> Research comparing LLM continuations to human psycholinguistic data reveals a high degree of alignment.</p>
+<ul>
+<li>
+<p><strong>Coreference:</strong> When prompted with "John amazed Mary because...", LLMs overwhelmingly generate continuations referring to John, matching human NP1 bias.   </p>
+</li>
+<li>
+<p><strong>Coherence:</strong> Humans tend to provide <em>explanations</em> following these verbs. LLMs mirror this "explanation bias," prioritising causal connectives over temporal or elaborative ones in these contexts.   </p>
+</li>
+<li>
+<p><strong>Significance:</strong> This indicates that LLMs have encoded the <strong>pragmatics of blame and credit</strong> inherent in ordinary language. They "know" that "apologizing" implies the subject caused a negative event, while "thanking" implies the object caused a positive one. This is crucial for the "native" feel of their interactions — they navigate the social logic of causality fluently.</p>
+</li>
+</ul>
+<h3 id="43-the-limits-of-native-understanding-the-causal-parrot-debate">4.3 The Limits of "Native" Understanding: The Causal Parrot Debate<a aria-label="Permalink" class="anchor-link" href="#43-the-limits-of-native-understanding-the-causal-parrot-debate">#</a></h3>
+<p>Despite these successes, a vigorous debate persists regarding whether this constitutes "understanding" or merely "stochastic parroting".   </p>
+<ul>
+<li>
+<p><strong>The "Parrot" Argument:</strong> Critics argue that LLMs fail when the linguistic surface form is stripped away. On benchmarks like <strong>CausalProbe</strong> , which uses fresh, non-memorised data, model performance drops significantly. This suggests that LLMs rely on <strong>Level 1 (Association)</strong> reasoning — pattern matching seen examples — rather than <strong>Level 2 (Intervention)</strong> reasoning.   </p>
+</li>
+<li>
+<p><strong>The "Simulacrum" Argument:</strong> Conversely, the <strong>Semantic Characterization Theorem</strong>  proposes that the model's high-dimensional space creates a functional topology that is mathematically equivalent to a discrete symbolic system. Even if the model has never "seen" a glass break, its representation of "glass" and "break" are topologically linked in a way that allows it to simulate the causal outcome efficiently.   </p>
+</li>
+</ul>
+<p>A caution about dated negative findings: many "LLMs cannot do causal reasoning" results from around 2020-2022 are best read as results about a specific model family and evaluation setup (often base models, short prompts, and narrow benchmarks). Newer instruction-tuned models (and more careful prompting protocols) can reduce some of these gaps on standard tests, but the picture remains mixed and sensitive to benchmark design, leakage, and what is being counted as "causal reasoning" versus plausible explanation.</p>
+<hr/>
+<h2 id="5-benchmarking-the-informal-from-social-media-to-counterfactuals">5. Benchmarking the "Informal": From Social Media to Counterfactuals<a aria-label="Permalink" class="anchor-link" href="#5-benchmarking-the-informal-from-social-media-to-counterfactuals">#</a></h2>
+<p>The evaluation of causal understanding has evolved from F1 scores on extraction tasks to sophisticated benchmarks that test the model's ability to handle the messy, informal causality of the real world.</p>
+<h3 id="51-causaltalk-informal-causality-in-social-media">5.1 CausalTalk: Informal Causality in Social Media<a aria-label="Permalink" class="anchor-link" href="#51-causaltalk-informal-causality-in-social-media">#</a></h3>
+<p>The <strong>CausalTalk</strong> dataset focuses on "passages where one thing influences another" in informal contexts.   </p>
+<ul>
+<li>
+<p><em>The Challenge:</em> In social media (e.g., Reddit), causality is often expressed without explicit markers. "I took the vaccine and now I feel sick" contains no "because," yet the causal assertion is clear.</p>
+</li>
+<li>
+<p><em>Findings:</em> LLMs often perform well at identifying these <strong>implicit causal claims</strong>, sometimes outperforming traditional supervised models. They can detect "gist" causality — the overall causal assertion of a post — even when it is buried in sarcasm or non-standard grammar.</p>
+</li>
+<li>
+<p><em>Application:</em> This is critical for <strong>misinformation detection</strong>. Models are being used to identify exaggerated causal claims in science news (e.g., reporting a correlation as a causation). However, LLMs sometimes struggle to distinguish between someone <em>reporting</em> a correlation and <em>asserting</em> a causation, highlighting a nuance gap in informal causal language.   </p>
+</li>
+</ul>
+<h3 id="52-explicit-vs-temporal-confusion-explica">5.2 Explicit vs. Temporal Confusion (ExpliCa)<a aria-label="Permalink" class="anchor-link" href="#52-explicit-vs-temporal-confusion-explica">#</a></h3>
+<p>The <strong>ExpliCa</strong> benchmark  investigates a specific failure mode: the confusion of time and cause.   </p>
+<ul>
+<li>
+<p><em>The Fallacy:</em> <em>Post hoc ergo propter hoc</em> ("After this, therefore because of this").</p>
+</li>
+<li>
+<p><em>LLM Behaviour:</em> Research shows that LLMs are prone to this fallacy. When events are presented in chronological order ("The sun set. The streetlights turned on."), models are statistically more likely to infer a causal link than humans, who might see it as mere sequence. This suggests that the "native" understanding is heavily biased by the <strong>narrative structure</strong> of training data, where chronological sequencing often implies causality.</p>
+</li>
+</ul>
+<p>Again, a caution about dated negative findings: while these weaknesses are interesting, frontier models in 2025 are much less likely to display them.</p>
+<h3 id="53-counterfactuals-and-what-if-crass">5.3 Counterfactuals and "What If" (CRASS)<a aria-label="Permalink" class="anchor-link" href="#53-counterfactuals-and-what-if-crass">#</a></h3>
+<p>The <strong>CRASS</strong> (Counterfactual Reasoning Assessment) benchmark  tests the model's ability to reason about what <em>didn't</em> happen.   </p>
+<ul>
+<li>
+<p><em>Task:</em> "A man drinks poison. What would have happened if he drank water?"</p>
+</li>
+<li>
+<p><em>Results:</em> While base models perform adequately, fine-tuning with techniques like <strong>LoRA (Low-Rank Adaptation)</strong> significantly boosts performance. This reinforces the "training hypothesis" — the capacity for causal reasoning is latent in the weights but requires specific activation (instruction tuning) to be robustly deployed.   </p>
+</li>
+</ul>
+<hr/>
+<h2 id="6-philosophical-dimensions-symbol-grounding-and-world-models">6. Philosophical Dimensions: Symbol Grounding and World Models<a aria-label="Permalink" class="anchor-link" href="#6-philosophical-dimensions-symbol-grounding-and-world-models">#</a></h2>
+<p>The impressive performance of LLMs on causal tasks raises profound philosophical questions about the nature of meaning. Can a system that has never physically interacted with the world truly understand "force," "push," or "cause"?</p>
+<h3 id="61-the-symbol-grounding-problem">6.1 The Symbol Grounding Problem<a aria-label="Permalink" class="anchor-link" href="#61-the-symbol-grounding-problem">#</a></h3>
+<p>Cognitive scientists have long argued that human concepts are <strong>grounded</strong> in sensorimotor experience. We understand "heavy" because we have felt gravity.</p>
+<ul>
+<li>
+<p><strong>The Disembodied Mind:</strong> LLMs are disembodied. Their understanding of "force" is purely distributional — "force" is defined by its mathematical proximity to "push," "move," and "impact" in vector space.   </p>
+</li>
+<li>
+<p><strong>Cognitive Alignment:</strong> Research using the <strong>Brain-Based Componential Semantic Representation (BBSR)</strong>  shows that LLM representations align well with human cognition for concrete concepts but diverge for embodied experiences (e.g., olfaction, gustation) and spatial cognition.   </p>
+</li>
+<li>
+<p><strong>Functional Understanding:</strong> However, proponents of the "Functionalist" view argue that if an LLM can answer "What happens if I drop this?" indistinguishably from a human, it possesses a <strong>functional understanding</strong> of causality. The <strong>Semantic Characterization Theorem</strong>  supports this by demonstrating that continuous learning dynamics can give rise to stable, discrete semantic attractors that behave like symbolic rules.   </p>
+</li>
+</ul>
+<hr/>
+<h2 id="7-current-frontiers-2024-2025-reasoning-models-and-future-directions">7. Current Frontiers (2024-2025): Reasoning Models and Future Directions<a aria-label="Permalink" class="anchor-link" href="#7-current-frontiers-2024-2025-reasoning-models-and-future-directions">#</a></h2>
+<p>The field is currently undergoing another shift with the introduction of "Reasoning Models" (e.g., OpenAI's o1/o3 series, DeepSeek R1).</p>
+<h3 id="71-chain-of-thought-monitoring-and-thinking-tokens">7.1 Chain-of-Thought Monitoring and "Thinking" Tokens<a aria-label="Permalink" class="anchor-link" href="#71-chain-of-thought-monitoring-and-thinking-tokens">#</a></h3>
+<p>Newer models are trained to produce hidden "chains of thought" before generating a final answer.</p>
+<ul>
+<li>
+<p><em>Impact on Causality:</em> This allows the model to perform <strong>intermediate causal checks</strong>. Instead of predicting the effect immediately, the model can "reason" silently: <em>Premise -&gt; Mechanism -&gt; Potential Confounders -&gt; Conclusion</em>.</p>
+</li>
+<li>
+<p><em>Research Findings:</em> Snippet  discusses "CoT Monitoring," showing that these internal reasoning traces can be monitored to detect "reward hacking" or deceptive alignment. This suggests a move toward making the model's implicit causal reasoning <strong>explicit</strong> and <strong>verifiable</strong>.   </p>
+</li>
+</ul>
+<h3 id="72-causal-graph-construction">7.2 Causal Graph Construction<a aria-label="Permalink" class="anchor-link" href="#72-causal-graph-construction">#</a></h3>
+<p>Recent work has moved back to structure, using LLMs to <em>extract</em> and <em>construct</em> <strong>Causal Graphs</strong> (DAGs) from unstructured text, a process sometimes known as causal mapping.   </p>
+<ul>
+<li>
+<p><em>Method:</em> Rather than asking the LLM to just "answer," researchers prompt it to output a graph: <code>Nodes:, Edges:</code>.</p>
+</li>
+<li>
+<p><em>Result:</em> This leverages the LLM's linguistic fluency to structure knowledge, which can then be processed by formal causal inference algorithms, bridging the gap between "informal ordinary language" and "formal causal calculus."</p>
+</li>
+</ul>
+<hr/>
+<h2 id="8-conclusion">8. Conclusion<a aria-label="Permalink" class="anchor-link" href="#8-conclusion">#</a></h2>
+<p>The research of the last decade suggests that the "native" causal understanding of LLMs is a constructed capability, developed through large-scale training on human text and refined by human preference signals. It is not just a coincidence, but a plausible consequence of optimising models to predict a world that is described in strongly causal terms.</p>
+<ol>
+<li>
+<p><strong>Origin:</strong> The capability originates in <strong>pre-training</strong>, where the model learns the distributional "shadow" of causation cast by billions of human sentences.</p>
+</li>
+<li>
+<p><strong>Development:</strong> It is sharpened by <strong>Instruction Tuning</strong> (FLAN, Dolly), which explicitly teaches the model the "language game" of explanation and consequence through millions of templates.</p>
+</li>
+<li>
+<p><strong>Refinement:</strong> It is polished by <strong>RLHF</strong>, which imposes a human preference for logical coherence and narrative flow, effectively pruning non-causal outputs.</p>
+</li>
+<li>
+<p><strong>Nature:</strong> This understanding is <strong>linguistic and schematic</strong>. It often mirrors the force dynamics and implicit biases of human language, but can remain brittle when faced with novel physical interactions or rigorous counterfactual logic.</p>
+</li>
+</ol>
+<p>Overall, these systems can simulate many of the linguistic patterns humans use when describing causes and effects. That makes them useful for drafting, paraphrase, and extraction, but it should not be treated as evidence of intervention-level causal knowledge.</p>
+<hr/>
+<h2 id="9-comparative-data-tables">9. Comparative Data Tables<a aria-label="Permalink" class="anchor-link" href="#9-comparative-data-tables">#</a></h2>
+<h3 id="table-1-evolution-of-causal-tasks-and-metrics-2015-2025">Table 1: Evolution of Causal Tasks and Metrics (2015-2025)<a aria-label="Permalink" class="anchor-link" href="#table-1-evolution-of-causal-tasks-and-metrics-2015-2025">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Era</th>
+<th>Primary Focus</th>
+<th>Methodology</th>
+<th>Dominant Datasets</th>
+<th>Typical Metric</th>
+<th>"Native" Capability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>2015-2018</strong></td>
+<td>Relation Classification</td>
+<td>SVM, RNN, Sieves</td>
+<td>SemEval-2010 Task 8, EventStoryLine</td>
+<td>F1 Score (~0.50-0.60)</td>
+<td>None (Pattern Matching)</td>
+</tr>
+<tr>
+<td><strong>2019-2021</strong></td>
+<td>Span/Context Extraction</td>
+<td>BERT, RoBERTa</td>
+<td>Causal-TimeBank, BioCausal</td>
+<td>F1 Score (~0.72)</td>
+<td>Contextual Recognition</td>
+</tr>
+<tr>
+<td><strong>2022-2025</strong></td>
+<td>Generative Reasoning</td>
+<td>GPT-4, Llama, Instruction Tuning</td>
+<td>CausalTalk, CRASS, ExpliCa</td>
+<td>Accuracy, Human Eval</td>
+<td>Generative/Schematic</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-2-performance-on-causal-benchmarks-selected-studies">Table 2: Performance on Causal Benchmarks (Selected Studies)<a aria-label="Permalink" class="anchor-link" href="#table-2-performance-on-causal-benchmarks-selected-studies">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>Task Description</th>
+<th>Model Class</th>
+<th>Performance Note</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SemEval Task 8</strong></td>
+<td>Classify relation between nominals</td>
+<td>BERT-based (BioBERT)</td>
+<td>~0.72-0.80 F1 (High accuracy on explicit triggers)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>CRASS</strong></td>
+<td>Counterfactual "What if" reasoning</td>
+<td>GPT-3.5 / Llama</td>
+<td>Moderate baseline; significantly improved with LoRA/PEFT</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>CausalProbe</strong></td>
+<td>Causal relations in <em>fresh</em> (unseen) text</td>
+<td>GPT-4 / Claude</td>
+<td>Significant drop compared to training data; suggests memorisation</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Implicit Causality</strong></td>
+<td>Predicting subject/object bias (John amazed Mary)</td>
+<td>GPT-4</td>
+<td>High alignment with human psycholinguistic baselines</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Force Dynamics</strong></td>
+<td>Translating "letting/hindering" verbs</td>
+<td>GPT-4</td>
+<td>High accuracy in preserving agonist/antagonist roles</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-3-key-instruction-tuning-datasets-influencing-causal-capability">Table 3: Key Instruction Tuning Datasets Influencing Causal Capability<a aria-label="Permalink" class="anchor-link" href="#table-3-key-instruction-tuning-datasets-influencing-causal-capability">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Content Type</th>
+<th>Causal Relevance</th>
+<th>Mechanism of Training</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FLAN</strong></td>
+<td>NLP Tasks -&gt; Instructions</td>
+<td>High (COPA, e-SNLI templates)</td>
+<td>Explicitly maps "Premise" -&gt; "Cause/Effect" in mixed prompts</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>OIG</strong></td>
+<td>Open Generalist Dialogues</td>
+<td>High (Advice, How-to)</td>
+<td>Teaches Means-End reasoning (Action -&gt; Result)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Dolly</strong></td>
+<td>Human-generated Q&amp;A</td>
+<td>High (Brainstorming, QA)</td>
+<td>Reinforces human-like explanatory structures</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>CausalTalk</strong></td>
+<td>Social Media Claims</td>
+<td>High (Implicit assertions)</td>
+<td>Captures "gist" causality in informal discourse</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+        <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a href="https://causalmap.app" class="link-secondary">Causal Map Ltd</a> 2026</span> · <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" style="height:18px;opacity:0.7;vertical-align:middle;" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" /></a><a href="https://app.causalmap.app" class="link-secondary ms-2" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>
+      </main>
+      <aside class="rightbar"><h2>On this page</h2><div class="toc"><div class="toc">
+<ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#1-introduction-the-emergence-of-native-causal-fluency">1. Introduction: The Emergence of "Native" Causal Fluency</a></li>
+<li><a href="#2-the-pre-generative-landscape-2015-2019-causality-as-extraction">2. The Pre-Generative Landscape (2015-2019): Causality as Extraction</a><ul>
+<li><a href="#21-the-legacy-of-semeval-2010-task-8">2.1 The Legacy of SemEval-2010 Task 8</a></li>
+<li><a href="#22-the-shift-to-event-centric-resources-eventstoryline-and-causal-timebank">2.2 The Shift to Event-Centric Resources: EventStoryLine and Causal-TimeBank</a></li>
+<li><a href="#23-the-bert-revolution-and-contextual-embeddings">2.3 The BERT Revolution and Contextual Embeddings</a></li>
+</ul>
+</li>
+<li><a href="#3-the-generative-era-2020-2025-structural-induction-of-causal-logic">3. The Generative Era (2020-2025): Structural Induction of Causal Logic</a><ul>
+<li><a href="#31-the-coincidence-of-pre-training-implicit-world-models">3.1 The "Coincidence" of Pre-training: Implicit World Models</a></li>
+<li><a href="#32-the-instruction-tuning-hypothesis-specific-training-via-templates">3.2 The Instruction Tuning Hypothesis: Specific Training via Templates</a><ul>
+<li><a href="#321-the-flan-collection-the-template-effect">3.2.1 The FLAN Collection: The Template Effect</a></li>
+<li><a href="#322-open-instruction-generalist-oig-and-dolly">3.2.2 Open Instruction Generalist (OIG) and Dolly</a></li>
+</ul>
+</li>
+<li><a href="#33-reinforcement-learning-from-human-feedback-rlhf-the-coherence-filter">3.3 Reinforcement Learning from Human Feedback (RLHF): The Coherence Filter</a></li>
+</ul>
+</li>
+<li><a href="#4-linguistic-frameworks-analysing-ordinary-causation">4. Linguistic Frameworks: Analysing "Ordinary" Causation</a><ul>
+<li><a href="#41-force-dynamics-agonists-and-antagonists-in-latent-space">4.1 Force Dynamics: Agonists and Antagonists in Latent Space</a></li>
+<li><a href="#42-implicit-causality-ic-verbs">4.2 Implicit Causality (IC) Verbs</a></li>
+<li><a href="#43-the-limits-of-native-understanding-the-causal-parrot-debate">4.3 The Limits of "Native" Understanding: The Causal Parrot Debate</a></li>
+</ul>
+</li>
+<li><a href="#5-benchmarking-the-informal-from-social-media-to-counterfactuals">5. Benchmarking the "Informal": From Social Media to Counterfactuals</a><ul>
+<li><a href="#51-causaltalk-informal-causality-in-social-media">5.1 CausalTalk: Informal Causality in Social Media</a></li>
+<li><a href="#52-explicit-vs-temporal-confusion-explica">5.2 Explicit vs. Temporal Confusion (ExpliCa)</a></li>
+<li><a href="#53-counterfactuals-and-what-if-crass">5.3 Counterfactuals and "What If" (CRASS)</a></li>
+</ul>
+</li>
+<li><a href="#6-philosophical-dimensions-symbol-grounding-and-world-models">6. Philosophical Dimensions: Symbol Grounding and World Models</a><ul>
+<li><a href="#61-the-symbol-grounding-problem">6.1 The Symbol Grounding Problem</a></li>
+</ul>
+</li>
+<li><a href="#7-current-frontiers-2024-2025-reasoning-models-and-future-directions">7. Current Frontiers (2024-2025): Reasoning Models and Future Directions</a><ul>
+<li><a href="#71-chain-of-thought-monitoring-and-thinking-tokens">7.1 Chain-of-Thought Monitoring and "Thinking" Tokens</a></li>
+<li><a href="#72-causal-graph-construction">7.2 Causal Graph Construction</a></li>
+</ul>
+</li>
+<li><a href="#8-conclusion">8. Conclusion</a></li>
+<li><a href="#9-comparative-data-tables">9. Comparative Data Tables</a><ul>
+<li><a href="#table-1-evolution-of-causal-tasks-and-metrics-2015-2025">Table 1: Evolution of Causal Tasks and Metrics (2015-2025)</a></li>
+<li><a href="#table-2-performance-on-causal-benchmarks-selected-studies">Table 2: Performance on Causal Benchmarks (Selected Studies)</a></li>
+<li><a href="#table-3-key-instruction-tuning-datasets-influencing-causal-capability">Table 3: Key Instruction Tuning Datasets Influencing Causal Capability</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div></aside>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../assets/sidebar.js"></script>
+    <script>
+      // Hamburger toggle for small screens
+      (function(){
+        var btn = document.getElementById('hamburgerBtn');
+        if (btn) {
+          btn.addEventListener('click', function(){
+            document.body.classList.toggle('sidebar-open');
+          });
+        }
+      })();
+
+      // Fullscreen mode: ?fullscreen=1 adds layout-fullscreen, ?fullscreen=0 removes it
+      (function(){
+        var params = new URLSearchParams(window.location.search);
+        var fs = params.get('fullscreen');
+        if (fs === '0') document.body.classList.remove('layout-fullscreen');
+        else if (fs === '1') document.body.classList.add('layout-fullscreen');
+      })();
+
+      // Clamp anchor scrolling so near-top anchors don't shift page up awkwardly
+      (function(){
+        function scrollToClamped(targetId, smooth) {
+          if (!targetId) return;
+          var el = document.getElementById(targetId);
+          if (!el) return;
+          var targetTop = (el.getBoundingClientRect().top || 0) + window.scrollY;
+          var desiredTop = Math.max(0, targetTop - 100); // keep ~100px padding, clamp at 0
+          if (Math.abs(window.scrollY - desiredTop) > 1) {
+            try {
+              window.scrollTo({ top: desiredTop, behavior: smooth ? 'smooth' : 'auto' });
+            } catch(e) {
+              window.scrollTo(0, desiredTop);
+            }
+          }
+        }
+        // On load with a hash, adjust after browser's default jump
+        window.addEventListener('load', function(){
+          if (window.location.hash && window.location.hash.length > 1) {
+            setTimeout(function() {
+              scrollToClamped(window.location.hash.slice(1), false);
+            }, 0);
+          }
+        });
+        // Intercept same-document anchor clicks to apply clamped scrolling
+        document.addEventListener('click', function(e){
+          var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+          if (!a) return;
+          var href = a.getAttribute('href');
+          if (!href || href === '#') return;
+          var id = href.slice(1);
+          var target = document.getElementById(id);
+          if (!target) return; // let browser handle if element not found
+          e.preventDefault();
+          // Update URL hash without reloading
+          try { history.replaceState(null, '', '#' + id); } catch(e) {}
+          scrollToClamped(id, true);
+        }, true);
+      })();
+
+      // Root-level hash routing for page anchors (e.g., domain.com/#new-features)
+      (function(){
+        var pageAnchorMap = {};
+        if (pageAnchorMap && Object.keys(pageAnchorMap).length > 0) {
+          window.addEventListener('load', function(){
+            var hash = window.location.hash;
+            if (hash && hash.length > 1) {
+              var anchorId = hash.slice(1).toLowerCase();
+              var targetUrl = pageAnchorMap[anchorId];
+              if (targetUrl) {
+                window.location.replace(targetUrl);
+              }
+            }
+          });
+        }
+      })();
+
+      // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page
+      (function(){
+        document.addEventListener('keydown', function(e){
+          // Ignore when typing or with modifiers
+          if (e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return;
+          var ae = document.activeElement;
+          if (ae && (ae.tagName === 'INPUT' || ae.tagName === 'TEXTAREA' || ae.tagName === 'SELECT' || ae.isContentEditable)) return;
+          var key = e.key || e.code;
+          if (key === 'ArrowLeft' || key === 'Left') {
+            var prev = document.querySelector('.edge-nav.prev');
+            if (prev && prev.getAttribute('href')) {
+              e.preventDefault();
+              window.location.href = prev.getAttribute('href');
+            }
+          } else if (key === 'ArrowRight' || key === 'Right') {
+            var next = document.querySelector('.edge-nav.next');
+            if (next && next.getAttribute('href')) {
+              e.preventDefault();
+              window.location.href = next.getAttribute('href');
+            }
+          }
+        });
+      })();
+
+      // Restore sidebar scroll position after navigation (for smoother feel)
+      (function(){
+        try {
+          var saved = sessionStorage.getItem('sidebarScroll');
+          if (saved !== null) {
+            var box = document.querySelector('aside.sidebar .nav-fade');
+            if (box) {
+              box.scrollTop = parseInt(saved, 10) || 0;
+            }
+            sessionStorage.removeItem('sidebarScroll');
+          }
+        } catch(e) {}
+      })();
+
+      // Desktop ToC toggle (wide screens): hide/show only the ToC list; default hidden on desktop
+      (function(){
+        var btn = document.getElementById('tocToggle');
+        var list = document.getElementById('tocList');
+        if (!list) return;
+        function setButtonState(collapsed) {
+          if (!btn) return;
+          btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+          btn.textContent = collapsed ? 'Show Contents' : 'Hide Contents';
+        }
+        function applyInitial() {
+          try {
+            var isDesktop = window.matchMedia('(min-width: 1200px)').matches;
+            if (!isDesktop) {
+              list.classList.remove('toc-collapsed');
+              setButtonState(false);
+              return;
+            }
+            var persisted = null;
+            try { persisted = localStorage.getItem('tocCollapsed'); } catch(e) {}
+            var collapsed = true; // default hidden on desktop
+            if (persisted === '0') collapsed = false;
+            if (persisted === '1') collapsed = true;
+            if (collapsed) list.classList.add('toc-collapsed'); else list.classList.remove('toc-collapsed');
+            setButtonState(collapsed);
+            // Flash ToC after navigation when desired
+            var flash = null;
+            try { flash = sessionStorage.getItem('flashToc'); } catch(e) {}
+            if (flash === '1') {
+              try { sessionStorage.removeItem('flashToc'); } catch(e) {}
+              if (list.classList.contains('toc-collapsed')) {
+                // Briefly show ToC, then restore collapsed state
+                list.classList.remove('toc-collapsed');
+                setButtonState(false);
+                setTimeout(function() {
+                  list.classList.add('toc-collapsed');
+                  setButtonState(true);
+                }, 1200);
+              }
+            }
+            // First visit to Home: open ToC then smoothly roll it up (desktop only)
+            try {
+              var isHome = !!document.querySelector('main.content.home');
+              var alreadyAnimated = (localStorage.getItem('initialHomeTocAnimated') === '1');
+              var hasPref = (persisted === '0' || persisted === '1');
+              if (isHome && !alreadyAnimated && !hasPref) {
+                // Show it
+                list.classList.remove('toc-collapsed');
+                setButtonState(false);
+                // After short delay, animate collapse
+                setTimeout(function() {
+                  var full = list.scrollHeight;
+                  list.style.overflow = 'hidden';
+                  list.style.maxHeight = full + 'px';
+                  list.style.opacity = '1';
+                  void list.offsetHeight; // reflow
+                  list.style.transition = 'max-height 450ms ease, opacity 450ms ease';
+                  list.style.maxHeight = '0px';
+                  list.style.opacity = '0';
+                  setTimeout(function() {
+                    list.style.transition = '';
+                    list.style.maxHeight = '';
+                    list.style.opacity = '';
+                    list.style.overflow = '';
+                    list.classList.add('toc-collapsed');
+                    setButtonState(true);
+                    try { localStorage.setItem('tocCollapsed', '1'); } catch(e) {}
+                    try { localStorage.setItem('initialHomeTocAnimated', '1'); } catch(e) {}
+                  }, 480);
+                }, 900);
+              }
+            } catch(e) {}
+          } catch(e) {}
+        }
+        if (btn) {
+          btn.addEventListener('click', function(){
+            var collapsed = list.classList.toggle('toc-collapsed');
+            setButtonState(collapsed);
+            try { localStorage.setItem('tocCollapsed', collapsed ? '1' : '0'); } catch(e) {}
+          });
+        }
+        applyInitial();
+        window.addEventListener('resize', applyInitial);
+      })();
+
+      // Breadcrumb dropdown toggle (click chevron or label to open)
+      document.querySelectorAll('.bc-chevron, .bc-label').forEach(function(trigger) {
+        trigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var dropdown = trigger.closest('.bc-dropdown');
+          if (!dropdown) return;
+          var isOpen = dropdown.classList.contains('open');
+          // Close all other dropdowns
+          document.querySelectorAll('.bc-dropdown.open').forEach(function(d) {
+            d.classList.remove('open');
+          });
+          // Toggle current
+          if (!isOpen) {
+            dropdown.classList.add('open');
+          }
+        });
+      });
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.bc-dropdown')) {
+          document.querySelectorAll('.bc-dropdown.open').forEach(function(d) {
+            d.classList.remove('open');
+          });
+        }
+      });
+
+      // Scroll active sidebar link into view if it sits outside the visible nav area
+      (function() {
+        var activeLink = document.querySelector('aside.sidebar .nav-link.active');
+        if (!activeLink) return;
+        var scrollBox = document.querySelector('aside.sidebar .nav-fade');
+        if (!scrollBox) return;
+        var linkRect = activeLink.getBoundingClientRect();
+        var boxRect = scrollBox.getBoundingClientRect();
+        if (linkRect.bottom > boxRect.bottom || linkRect.top < boxRect.top) {
+          scrollBox.scrollTop += linkRect.top - boxRect.top - 40;
+        }
+      })();
+
+      // Highlight current section in rightbar TOC
+      (function() {
+        var rightbar = document.querySelector('.rightbar .toc');
+        if (!rightbar) return;
+        
+        var tocLinks = rightbar.querySelectorAll('a');
+        if (tocLinks.length === 0) return;
+        
+        function updateActiveSection() {
+          var fromTop = window.scrollY + 100;
+          var current = null;
+          
+          tocLinks.forEach(function(link) {
+            var href = link.getAttribute('href');
+            if (!href || !href.startsWith('#')) return;
+            var section = document.querySelector(href);
+            if (section) {
+              if (section.offsetTop <= fromTop) {
+                current = link;
+              }
+            }
+          });
+          
+          tocLinks.forEach(function(link) {
+            link.classList.remove('active');
+          });
+          
+          if (current) {
+            current.classList.add('active');
+          }
+        }
+        
+        window.addEventListener('scroll', updateActiveSection);
+        window.addEventListener('resize', updateActiveSection);
+        updateActiveSection();
+      })();
+    </script>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+  </body>
+ </html>

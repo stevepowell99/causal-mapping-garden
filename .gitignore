@@ -1,27 +1,12 @@
-# --- Allowlist: only these paths are part of the repo (everything else ignored) ---
-# Tracked: content/, netlify.toml, build inputs for the static site.
-# (Netlify needs the Python build + config to generate dist/ unless you commit dist separately.)
+# Allowlist: only what Netlify needs (publish = dist). content/ stays local — never committed.
+# build_static_site.py, config.yml, content/ are ignored by the * rule below.
 
-# Ignore everything first
 *
 
-# Keep this file and Netlify config
 !.gitignore
 !netlify.toml
+!dist/
+!dist/**
 
-# Source markdown tree
-!content/
-!content/**
-
-# Build (required for `dist/` on Netlify or locally)
-!build_static_site.py
-!config.yml
-
-# --- Exclusions inside content/ (local vault cruft & drafts) ---
-content/.obsidian/
-content/.smart-env/
-content/.cursor/
-content/.trash/
-
-# Draft pages: "!" in Obsidian filename = not published — don’t track
-content/**/*!*.md
+# Build output copies of trash / local junk — never ship
+dist/.trash/
