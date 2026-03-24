@@ -1318,9 +1318,9 @@
 <li>The "Skip coded" switch ensures you don't waste time and money re-processing documents that already have links.</li>
 <li>Default model in Simple AI is <strong>Qwen Flash</strong>.</li>
 <li><strong>Revise codebook</strong>: Once you have some causal links, the AI can review them and suggest a cleaner, more consistent list of factor labels (a "codebook"). The header tick shows whether the Recode codebook area currently contains suggestions.</li>
-<li>Includes a <strong>Target clusters</strong> slider (<code>2</code> to <code>50</code>, default <code>20</code>).</li>
+<li>Includes a <strong>Target clusters</strong> slider; see <a href="../simple-ai-target-clusters/">Target clusters</a>.</li>
 <li>Optional <strong>Use automatic pre-clustering</strong> switch (default OFF).</li>
-<li>When pre-clustering is OFF, the AI tries to find the clusters directly from the factor list using the standard Revise codebook prompt. This prompt supports macro replacement: use <code>[number]</code> (or <code>[cluster_count]</code>) and the slider value is injected at run time.</li>
+<li>When pre-clustering is OFF, the AI tries to find the clusters directly from the factor list using the standard Revise codebook prompt. This prompt supports macro replacement: use <code>[number]</code> (or <code>[cluster_count]</code>) and the <strong>effective</strong> target cluster count is injected at run time (same as the slider logic below).</li>
 <li>When pre-clustering is ON, the app first groups factor labels semantically using embeddings, then sends those clustered groups to the AI with a separate labelling prompt plus a <strong>Representatives per cluster</strong> slider (<code>8</code> to <code>20</code>, default <code>8</code>).</li>
 <li>Pre-clustering is more systematic than asking the AI to find all clusters "in its head" from a long raw list. It reduces the black-box / WEIRD-data risk a bit, and may make it easier to preserve more unusual or divergent concepts instead of collapsing them into whatever the model finds most typical.</li>
 <li>Default model in Simple AI is <strong>Gemini 3 Flash Preview</strong>.</li>
@@ -1350,6 +1350,12 @@
 <ul>
 <li>Runs AI coding across selected/all sources using your prompt and model.</li>
 <li>Use source limit + skip coded options to test quickly and avoid rework.</li>
+<li><strong>Add source prompt</strong> (switch): when ON, each source’s optional <em>Source Prompt</em> (edit above the source text when viewing a source) is prepended to your main Auto-code prompt for that source. Saved per project in the browser. Use when sources need different context; skip when one background prompt in <strong>Background</strong> is enough.</li>
+<li><strong>Status line</strong> under the settings shows progress, per-chunk detail, and stop — same behaviour as the former “Code with AI” card.</li>
+<li><strong>Iterative prompts</strong>: put <code>====</code> alone on a line in your prompt to split into separate iterations; later steps see prior user/assistant turns. Only the last iteration’s result is written to links; all iterations appear in Responses.</li>
+<li><strong>Confirm</strong> before a run shows model, chunking, word count, and cost estimate. <strong>Stop</strong> cancels after current chunk tasks finish.</li>
+<li>Timeouts scale by model and iteration count (cap ~540s total). <strong>Concurrency</strong> (1–5) is in Advanced; raise for speed, lower if you see 429/timeouts.</li>
+<li><a href="../tips-prompts/">Tips on using the prompt history</a> (same chrome as other prompt fields).</li>
 <li>Default model is <strong>Qwen Flash</strong>.</li>
 </ul>
 <h3 id="simple-ai-revise-codebook">Revise codebook (Simple AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-background/#simple-ai-revise-codebook">#</a></h3>
@@ -1357,16 +1363,24 @@
 <li>Suggests a cleaner consolidated codebook from existing links.</li>
 <li>Use this after you have enough coded links for a representative sample.</li>
 <li>Header tick indicates whether the Recode codebook area currently has content.</li>
-<li>Includes <strong>Target clusters</strong> slider (2-50, default 20).</li>
+<li><strong>Target clusters</strong>: see <a href="../simple-ai-target-clusters/">Target clusters</a>.</li>
 <li>Optional <strong>Use automatic pre-clustering</strong> switch (default OFF).</li>
 <li>With pre-clustering OFF, the AI clusters the factor list directly from the Revise codebook prompt. That prompt supports <code>[number]</code> / <code>[cluster_count]</code>.</li>
 <li>With pre-clustering ON, embeddings are used first to group labels semantically, then the AI only has to label those grouped clusters. This is a bit more systematic, less dependent on the AI doing all clustering internally as a black box, and may help preserve unusual or divergent concepts.</li>
 <li>Pre-clustering also adds a <strong>Representatives per cluster</strong> slider (8-20, default 8) and uses a separate labelling prompt.</li>
 <li>Default model is <strong>Gemini 3 Flash Preview</strong>.</li>
 </ul>
+<h4 id="simple-ai-target-clusters">Target clusters (Revise codebook)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-background/#simple-ai-target-clusters">#</a></h4>
+<ul>
+<li>The <strong>Target clusters</strong> control is a slider with <strong>50 positions</strong>. The <strong>far left</strong> is <strong>Default</strong>; moving right sets an explicit target of <strong>2</strong> through <strong>50</strong> clusters (one step per cluster count).</li>
+<li><strong>Default</strong> (far left): the app derives a target count \(K\) from the number of <strong>unique factor labels</strong> \(n\) in the <strong>current filtered pipeline</strong> (same scope as Revise codebook): \(K = \max(\lfloor n/3 \rfloor, 25)\) — at least <strong>25</strong>, or roughly <strong>one label in three</strong> as clusters, whichever is larger.</li>
+<li><strong>Explicit</strong> positions (not Default): the requested \(K\) is the number shown by the slider (<strong>2</strong>–<strong>50</strong>). If \(K\) is <strong>greater than</strong> \(n\), the run uses <strong>\(n\)</strong> instead (you cannot have more clusters than distinct labels); the app may show a short notice when that cap applies.</li>
+<li>Pre-clustering, embedding clustering, and <code>[number]</code> / <code>[cluster_count]</code> in prompts all use this <strong>effective</strong> \(K\).</li>
+</ul>
 <h3 id="simple-ai-recode">Recode (Simple AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-background/#simple-ai-recode">#</a></h3>
 <ul>
 <li>Applies your codebook back onto existing links, turning raw factor labels into cleaner synthesised ones.</li>
+<li><strong>Recoding</strong> (radio buttons): <strong>AI</strong> — the model maps each raw label to a codebook line by index; <strong>Magnetic</strong> — embedding similarity to codebook lines (same magnet machinery as the pipeline’s soft-recode path; similarity threshold). Both write hard updates to links; the names refer to the mapping method, not “soft recoding” in the filter sense.</li>
 <li><strong>Recode target</strong>: the global <a href="../factor-label-set/">Label set</a> (<code>default</code> = standard <code>cause</code>/<code>effect</code>; a suffix = read/write <code>cause_suffix</code> / <code>effect_suffix</code> in <code>metadata.custom_columns</code>, with top-level <code>cause</code>/<code>effect</code> holding the default-set pair).</li>
 <li>Supports sampled recoding and skip-recoded behavior (skip-recoded only applies when using a non-default label set).</li>
 <li>Header bar shows recode coverage mix across all cause/effect recoded fields.</li>
@@ -1395,7 +1409,10 @@
 <li><a href="/simple-ai-background/#simple-ai-runner">Run all (Simple AI)</a></li>
 <li><a href="/simple-ai-background/#simple-ai-background">Background (Simple AI)</a></li>
 <li><a href="/simple-ai-background/#simple-ai-auto-code">Auto-code (Simple AI)</a></li>
-<li><a href="/simple-ai-background/#simple-ai-revise-codebook">Revise codebook (Simple AI)</a></li>
+<li><a href="/simple-ai-background/#simple-ai-revise-codebook">Revise codebook (Simple AI)</a><ul>
+<li><a href="/simple-ai-background/#simple-ai-target-clusters">Target clusters (Revise codebook)</a></li>
+</ul>
+</li>
 <li><a href="/simple-ai-background/#simple-ai-recode">Recode (Simple AI)</a></li>
 <li><a href="/simple-ai-background/#simple-ai-filter-links">Filter links (Simple AI)</a></li>
 <li><a href="/simple-ai-background/#advanced-settings">Advanced Settings</a></li>

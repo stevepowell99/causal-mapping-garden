@@ -1305,7 +1305,7 @@
 <li>Repeat the process in the other box to specify the factors at the<strong>end</strong> of the link (or ends of the links).</li>
 <li>Press the green Save button which is now active.</li>
 <li>The link is created in the Map window.</li>
-<li>When you have finished coding one source, click the right arrow in the source navigator to code the next source.</li>
+<li>When you have finished coding one source, click the right arrow in the <strong>Source text</strong> header to code the next source.</li>
 </ul>
 <h3 id="text-viewer-content">Source Text Viewer<a aria-label="Permalink" class="anchor-link" href="/causal-overlay/#text-viewer-content">#</a></h3>
 <div class="user-guide-callout">
@@ -1313,14 +1313,14 @@
 
 This is where you do the core work of mapping out causal relationships from your source material, a process which we call *coding*
 </div>
-<p>The text viewr shows full text from the selected source. If you have selected multiple sources, it shows the text from the first selected source. You can:</p>
+<p>The text viewer shows full text from one source at a time. The <strong>Source text</strong> header contains source ID, source info toggle, source Prev/Next, highlight navigation, and Help. When you select several sources, it initially shows the first in the selection; with <strong>two or more</strong> selected, a <strong>highlighter</strong> icon on a pill in the Sources dropdown marks which source is on screen. You can:</p>
 <ul>
 <li>Highlight sections to identify causal claims. Highlighting opens the causal link editor.</li>
 <li>Examine and edit existing highlights by clicking on them.</li>
 </ul>
 <p>Inside the header, there is an info ℹ️ icon which toggles open/shut a panel beneath it which shows the values of the custom columns for the current source e.g. gender etc. </p>
 <h4 id="navigation-controls">Navigation Controls<a aria-label="Permalink" class="anchor-link" href="/causal-overlay/#navigation-controls">#</a></h4>
-<p>Navigate sources:</p>
+<p>Navigate sources (buttons in the <strong>Source text</strong> header):</p>
 <ul>
 <li><i class="fas fa-chevron-left"></i> <strong>Previous source</strong></li>
 <li><i class="fas fa-chevron-right"></i> <strong>Next source</strong></li>
@@ -1332,14 +1332,15 @@ This is where you do the core work of mapping out causal relationships from your
 <li><i class="fas fa-step-forward"></i> <strong>Next highlight</strong></li>
 <li><i class="fas fa-fast-forward"></i> <strong>Last highlight in source</strong> (useful if you haven't finished coding the whole text yet and want to see the last highlight)</li>
 </ul>
-<p>Source selection is filtered through the sources selector dropdown. When multiple sources are loaded, the first source is displayed. The next/previous buttons cycle through sources by updating the sources selector to show the next/previous source. </p>
-<p>This is convenient because usually when coding you will want to view the <a href="../map-panel/">Map</a> and <a href="../links-panel/">Links</a> for the same source on the right. </p>
-<p>Clicking these buttons means that if you previously had a multiple selection, you now have only one. </p>
-<h4 id="long-documents-text-viewer">Dealing with long documents in the source text viewer<a aria-label="Permalink" class="anchor-link" href="/causal-overlay/#long-documents-text-viewer">#</a></h4>
-<p>For documents longer than ~30-40 pages, the text viewer automatically splits content into manageable chunks for better performance. Navigation controls appear in the "Source text" header:</p>
+<p>Source selection is controlled by the Sources dropdown. When several sources are selected, the viewer starts on the first; with <strong>two or more</strong> selected, a <strong>highlighter</strong> icon on a pill shows which source is open (hidden when only one source is selected).</p>
 <ul>
-<li>👉🏼 <strong>Chunk selector</strong> (dropdown): e.g. “Chunk 1 of 5” — jump directly to a chunk.</li>
-<li>👉🏼 <strong>Previous / Next chunk</strong> (arrow buttons): move between chunks.</li>
+<li><strong>Multiple sources selected:</strong> Main Previous/Next pages between the selected sources and only changes which source is displayed in the text viewer. It does <strong>not</strong> change the actual selected-sources set.</li>
+<li><strong>Exactly one source selected:</strong> Main Previous/Next pages through <strong>all project sources</strong> (project order). In this mode it <strong>does</strong> change the selected source, so both source selection and text viewer content update together.</li>
+<li><strong>No source selected (empty = all):</strong> Main Previous/Next picks and then pages in project order like the one-source case, so selection changes as you page.</li>
+</ul>
+<h4 id="long-documents-text-viewer">Dealing with long documents in the source text viewer<a aria-label="Permalink" class="anchor-link" href="/causal-overlay/#long-documents-text-viewer">#</a></h4>
+<p>For documents longer than ~30-40 pages, the text viewer automatically splits content into manageable chunks for better performance.</p>
+<ul>
 <li>👉🏼 <strong>Next chunk</strong> (button at end of chunk): appears at the end of each chunk (except the last).</li>
 </ul>
 <h3 id="visual-highlighting">Visual Highlighting<a aria-label="Permalink" class="anchor-link" href="/causal-overlay/#visual-highlighting">#</a></h3>
@@ -1418,46 +1419,6 @@ This is where you do the core work of mapping out causal relationships from your
 </ul>
 </li>
 </ul>
-<h3 id="ai-card">AI Coding<a aria-label="Permalink" class="anchor-link" href="/causal-overlay/#ai-card">#</a></h3>
-<p><span class="badge bg-warning text-dark" style="margin-left:6px;">Requires AI subscription</span></p>
-<ul>
-<li><strong>Model dropdown</strong> - Select AI model</li>
-<li><strong>Prompt box</strong> - Enter coding instructions</li>
-<li><strong>Add source prompt</strong> - Toggle, default ON</li>
-<li><strong>Response displays</strong> - View AI responses and full JSON</li>
-</ul>
-<p>Additional controls hidden behind gear icon (experimental):</p>
-<ul>
-<li><strong>Temperature slider</strong> - Control randomness (default 0)</li>
-</ul>
-<p><strong>Iterative Processing:</strong></p>
-<p>Normally you can put all your tasks to the AI into one iteration. However sometimes you might need to add another task which is best done once the entire original table has been created, for example:</p>
-<pre><code>Give me a links table where each row is a causal claim, with columns for Cause, Effect and Quote
-
-====
-
-Now look at the table and return the same table but with an extra column `Importance` with an integer with which you rank the links according to importance, with 1 being most important.
-
-</code></pre>
-<p>If your prompt contains lines with "====" on their own, each section before and after the line is treated as a separate iteration. . First iteration is normal; subsequent ones include the full prior conversation history (all previous User prompts and AI responses) to build on earlier results. Only the results of the last iteration are added to the links table; all iterations are logged in the responses panel.</p>
-<p><strong>Source prompt</strong>: it is just to describe the context/background info about each source. Not necessary e.g. where all the sources are from the same context which can be described in the main prompt. But important where some differ, e.g. mid-term reports or whatever. </p>
-<p>If Add Source Prompt is ON, then show a text area above #text-viewer-content with usual greenish Save button to edit the corresponding source prompt for the current source. </p>
-<p><strong>Workflow:</strong></p>
-<ul>
-<li>Select one (or more) sources to process using the sources dropdown</li>
-<li>Select "Skip coded sources" if you don't want to recode sources which have already been coded</li>
-<li>Toggle "Add source prompt" to append the new Source Prompt field before the beginning of the main prompt</li>
-<li>Click "Process Sources" button</li>
-<li>Confirmation dialog shows model, word count, and warnings</li>
-<li>AI processes sources in batches</li>
-<li>Results are also logged to the responses table on the right of the screen</li>
-</ul>
-<p><a href="../tips-prompts/">Tips on using the prompt history</a></p>
-<ul>
-<li>Timeouts: per‑iteration budget scales by model and iteration count (cap 540s total): Flash 120s/iteration; Pro 270s/iteration.</li>
-<li>Concurrency: Radio group labeled "Concurrency" (1–5) next to Region in AI settings. Default 1. Increase if you want faster processing but may risk 429/timeouts.</li>
-<li>Logging &amp; Responses: each chunk inserts a pending row in <code>ai_logs</code> (status pending) and updates to success/error on completion; Responses tab auto‑refreshes as rows update.</li>
-</ul>
 <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a class="link-secondary" href="https://causalmap.app">Causal Map Ltd</a> 2026</span> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" style="height:18px;opacity:0.7;vertical-align:middle;"/></a><a class="link-secondary ms-2" href="https://app.causalmap.app" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>
 </main>
 <aside class="rightbar"><h2>On this page</h2><div class="toc"><div class="toc">
@@ -1476,7 +1437,6 @@ Now look at the table and return the same table but with an extra column `Import
 <li><a href="/causal-overlay/#weak-tags">Weak tags</a></li>
 </ul>
 </li>
-<li><a href="/causal-overlay/#ai-card">AI Coding</a></li>
 </ul>
 </div>
 </div></aside>

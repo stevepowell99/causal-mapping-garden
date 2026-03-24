@@ -1412,11 +1412,7 @@ Context: "When teachers receive proper training, we see improvements in..."
 <li><strong>Factors</strong>: does not create factor columns (there is no persisted factors table); it relabels matching values on currently filtered links, writing to either <code>cause</code>/<code>effect</code> (blank suffix) or <code>cause_&lt;suffix&gt;</code>/<code>effect_&lt;suffix&gt;</code> (suffix set).</li>
 <li>Related: <a href="../temporary-cause-effect-filter/">Temporary Factor Labels filter</a>.</li>
 </ul>
-<p><strong>Links + Factors switches (Create/Modify mode):</strong></p>
-<ul>
-<li><strong>Overwrite non-blank target values</strong> (default OFF): when OFF, writes only fill blank/missing target cells and leave existing non-blank values unchanged.</li>
-<li><strong>Copy to filtered-out rows</strong> (default OFF): when ON, and when writing to suffixed cause/effect target columns (<code>cause_*</code> / <code>effect_*</code>), rows excluded by current link filters are also backfilled from base <code>cause</code> / <code>effect</code>.</li>
-</ul>
+<p><strong>Links + Factors (Create/Modify mode):</strong> target columns follow the <strong>Label set</strong> in the toolbar (there is no separate “target set” in Answers). Writes may overwrite existing non-blank values where the run applies; when targets are suffixed <code>cause_*</code> / <code>effect_*</code>, filtered-out rows may be backfilled from base <code>cause</code> / <code>effect</code> in the same run.</p>
 <p><strong>Choose payload columns (optional):</strong></p>
 <ul>
 <li>All three subtabs use checkbox-pill choosers.</li>
