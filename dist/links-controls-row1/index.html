@@ -1303,6 +1303,7 @@
 <li>Sentiment column with numeric values (-1 to 1) and blue/white/red conditional formatting (blue = higher, red = lower, white = mid-range relative to the current view)</li>
 <li><strong>Citation Count</strong> – total number of links in each bundle (cause &gt;&gt; effect pair), with muted green → white conditional formatting (darker green = more links in that bundle relative to the current view)</li>
 <li><strong>Source Count</strong> – number of different sources contributing links to each bundle, with the same muted green → white conditional formatting</li>
+<li><strong>AI run</strong> – short id of the <code>ai_runs</code> row for links created by <a href="../responses-panel/">AI coding</a> (hover for full UUID); empty for manual links or older imports</li>
 <li>Checkbox selection for bulk operations</li>
 <li>Edit functionality opens causal overlay for link modification</li>
 <li>Action button to open coding in the Sources pane and scroll to the corresponding highlight </li>
@@ -1314,6 +1315,7 @@
 <li>Single link click opens editor popup</li>
 <li>Multiple link selection opens chooser interface</li>
 <li>Consistent with coding panel behavior</li>
+<li><strong>AI run id after manual save:</strong> Saving from the link editor replaces the row (delete + insert via the manual link path), so <strong><code>ai_run_id</code> is cleared</strong>. The original AI call is still traceable in <strong>Responses</strong>; only the link row stops pointing at that run. If you need to keep provenance on the link itself, avoid resaving through the editor or treat this as “human-curated, no longer raw AI output.”</li>
 </ul>
 <h3 id="links-controls-row2">Links Utilities<a aria-label="Permalink" class="anchor-link" href="/links-controls-row1/#links-controls-row2">#</a></h3>
 <ul>

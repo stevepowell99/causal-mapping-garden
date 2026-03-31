@@ -1294,7 +1294,7 @@
 <div class="page-title-row d-flex justify-content-between align-items-center"><div class="page-title" id="simple-ai">🌻 Simple AI coding<a aria-label="Permalink" class="anchor-link" href="/simple-ai">#</a></div></div><hr/>
 <p>The <strong>Simple Mode</strong> provides a streamlined AI coding workflow inside the normal left pane. It keeps the app structure familiar while reducing clutter.</p>
 <div class="user-guide-callout">
-<strong>Quick start:</strong> If you have roughly 5–100 pages of text, you can usually **just run everything** and get decent results. Press **Run all** and let it run. You can then go back and adjust the coding (edit links, tweak prompts, re-run specific steps) if you want. For longer texts or high-stakes coding, work incrementally: use the **source limit** in Auto-code (1, 5, 20%, 50%, 100%) and the **Links limit** in Recode to process a sample first, check quality, then scale up.
+<strong>Quick start:</strong> If you have roughly 5–100 pages of text, you can usually **just run everything** and get decent results. Press **One-click coding** and confirm the short set-up modal, then let it run. You can then go back and adjust the coding (edit links, tweak prompts, re-run specific steps) if you want. For longer texts or high-stakes coding, work incrementally: use the **source limit** in Auto-code (1, 5, 20%, 50%, 100%) and the **Links limit** in Recode to process a sample first, check quality, then scale up.
 </div>
 <p>You can activate it with the <strong>"Simple AI coding"</strong> switch just below the Sources bar. When you sign up and choose to have AI options switched on and active, Simple AI is turned on by default. Other users can switch it on later if they wish. </p>
 <p>AI usage consumes <strong>credits</strong> (see <a href="../responses-panel/">Responses Panel</a>); credits renew monthly and do not roll over. Costs depend on model and workflow, but very roughly you might autocode around 30 pages for about 1 credit.</p>
@@ -1308,10 +1308,13 @@
 </ul>
 <p>The workflow is broken down into six straightforward sections:</p>
 <ol>
-<li><strong>Run all</strong>: Optional one-click runner. Press <strong>Run all</strong> to run Auto-code, then Revise codebook, then Recode in order.</li>
-<li>Runner pre-steps: clears Filter Links, turns filter pipeline on, and (if links already exist) asks once whether to delete all links before starting. You always start fresh.</li>
+<li><strong>One-click coding</strong>: Pipeline runner with a <strong>set-up</strong> modal first. Press <strong>One-click coding</strong> to choose <strong>level of effort</strong> (Flash vs Pro for all four model slots), <strong>Code all sources</strong>, <strong>Skip coded</strong>, <strong>Filter on finish</strong>, and (if the project has links) whether to delete <strong>every</strong> link in the project or <strong>only</strong> links on the sources in scope — then confirm <strong>Run</strong>.</li>
+<li>Pre-steps: clears Filter Links and turns the filter pipeline <strong>on</strong> before the modal.</li>
+<li><strong>Scope</strong>: With <strong>Code all sources</strong> off, only the current Sources bar selection counts (empty bar = all sources). The modal explains how many sources Auto-code will run on, including when <strong>Skip coded</strong> removes already-coded sources (and <strong>Run</strong> is disabled if nothing is left).</li>
+<li><strong>Single source</strong> in scope: only <strong>Auto-code</strong> runs (Revise codebook and Recode are skipped so labels are not merged across several AI passes). <strong>Summarise</strong> stays in the intended single-source flow; <strong>Filter on finish</strong> defaults off in that path but you can turn it on.</li>
+<li><strong>Several sources</strong> in scope: <strong>Auto-code</strong>, then <strong>Revise codebook</strong>, then <strong>Recode</strong>; <strong>Summarise</strong> is turned off for that run from the modal so the pipeline matches multi-source coding.</li>
 <li><strong>Recode target suffix</strong>: Choose blank (simpler — synthesised labels go straight into cause/effect) or e.g. _recoded (keeps raw labels, writes synthesised to temp columns so you can compare).</li>
-<li>Runner uses one top-level confirmation and suppresses the extra per-step confirm dialogs.</li>
+<li>Per-step <strong>Run</strong> buttons still work on their own; the modal suppresses the extra confirms for the sequenced run after you confirm <strong>Run</strong>.</li>
 <li><strong>Background</strong>: Give the AI project context before coding. A status tick indicates whether enough background text is set.</li>
 <li><strong>Auto-code</strong>: This is where the AI reads your documents and extracts causal links. </li>
 <li>You can choose to process a small sample first (e.g., <code>1</code> or <code>5</code> sources) to test your prompt, or process <code>100%</code> of them.</li>
@@ -1332,13 +1335,13 @@
 <li>The header progress bar is segmented: grey = empty recoded fields, orange = recoded equals original cause/effect, green = recoded non-empty and different.</li>
 <li>Default model in Simple AI is <strong>Qwen Flash</strong>.</li>
 <li><strong>Filter links</strong>: The normal Filter Links panel appears as the final section of the same accordion, so filtering is part of one continuous simple flow.</li>
-<li>After a successful <strong>Run all</strong>, filters are auto-set to: <strong>Factor Frequency</strong> (top <code>12</code>) → <strong>Link Frequency</strong> (top <code>30</code>). The global <a href="../factor-label-set/">Label set</a> controls which <code>cause</code>/<code>effect</code> columns Recode writes to (no separate “recode suffix” in this panel).</li>
+<li>When <strong>Filter on finish</strong> is <strong>on</strong> in the One-click set-up, completing the run applies these analysis filters to the pipeline: <strong>Factor Frequency</strong> (top <code>12</code>, counted by <strong>citations</strong>) → <strong>Link Frequency</strong> (top <code>30</code>, counted by <strong>citations</strong>). The global <a href="../factor-label-set/">Label set</a> controls which <code>cause</code>/<code>effect</code> columns Recode writes to (no separate “recode suffix” in this panel).</li>
 </ol>
-<h3 id="simple-ai-runner">Run all (Simple AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-revise-codebook/#simple-ai-runner">#</a></h3>
+<h3 id="simple-ai-runner">One-click coding (Simple AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-revise-codebook/#simple-ai-runner">#</a></h3>
 <ul>
-<li>Optional sequencer for the three main AI actions.</li>
-<li>When enabled, <strong>Go</strong> runs Auto-code → Revise codebook → Recode, stopping on the first non-successful stage.</li>
-<li>Before running, it clears filters, enables pipeline, and deletes all existing links (if any) after one confirmation — so you always start from a clean slate.</li>
+<li>Sequencer for the Simple AI pipeline, with one <strong>set-up</strong> modal (see step 1 under <a href="../simple-ai/">The Simple Workflow</a>).</li>
+<li><strong>Run</strong> starts <strong>Auto-code</strong>; with <strong>more than one</strong> source in scope it continues with <strong>Revise codebook</strong> then <strong>Recode</strong>, stopping on the first non-successful stage. With <strong>exactly one</strong> source in scope, it <strong>stops after Auto-code</strong>.</li>
+<li>Optional link deletion is configured <strong>in the modal</strong> (project-wide vs scoped to sources in scope), not only a single “delete everything” confirm.</li>
 <li><strong>Recode target</strong>: Use the global <a href="../factor-label-set/">Label set</a> below the Sources bar. Create a new suffix there first if you want Recode to fill <code>cause_suffix</code> / <code>effect_suffix</code> instead of only the default columns.</li>
 </ul>
 <h3 id="simple-ai-background">Background (Simple AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-revise-codebook/#simple-ai-background">#</a></h3>
@@ -1349,14 +1352,27 @@
 <h3 id="simple-ai-auto-code">Auto-code (Simple AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-revise-codebook/#simple-ai-auto-code">#</a></h3>
 <ul>
 <li>Runs AI coding across selected/all sources using your prompt and model.</li>
+<li><strong>Layout (top → bottom):</strong> <strong>Summarise</strong> (collapsible block, pale gold panel) with its own prompt and controls; then the main <strong>Model</strong>, <strong>Skip coded</strong>, <strong>Add source prompt</strong>, and <strong>source limit</strong> row; then the main <strong>Prompt</strong> textarea; then <strong>Advanced</strong> (main Auto-code chunk size, concurrency, temperature, thinking, etc.).</li>
 <li>Use source limit + skip coded options to test quickly and avoid rework.</li>
 <li><strong>Add source prompt</strong> (switch): when ON, each source’s optional <em>Source Prompt</em> (edit above the source text when viewing a source) is prepended to your main Auto-code prompt for that source. Saved per project in the browser. Use when sources need different context; skip when one background prompt in <strong>Background</strong> is enough.</li>
 <li><strong>Status line</strong> under the settings shows progress, per-chunk detail, and stop — same behaviour as the former “Code with AI” card.</li>
+<li><strong>Summarise</strong> (subsection inside Auto-code): optional pre-step with its own prompt history and controls (<strong>model</strong> and <strong>chunk size</strong> for the summarise phase, plus concurrency/retries/temperature/thinking). When enabled, each chunk is summarised first, then Auto-code runs on that summary text. Main <strong>Auto-code</strong> chunking lives under <strong>Advanced</strong> below the main prompt.</li>
 <li><strong>Iterative prompts</strong>: put <code>====</code> alone on a line in your prompt to split into separate iterations; later steps see prior user/assistant turns. Only the last iteration’s result is written to links; all iterations appear in Responses.</li>
 <li><strong>Confirm</strong> before a run shows model, chunking, word count, and cost estimate. <strong>Stop</strong> cancels after current chunk tasks finish.</li>
 <li>Timeouts scale by model and iteration count (cap ~540s total). <strong>Concurrency</strong> (1–5) is in Advanced; raise for speed, lower if you see 429/timeouts.</li>
 <li><a href="../tips-prompts/">Tips on using the prompt history</a> (same chrome as other prompt fields).</li>
 <li>Default model is <strong>Qwen Flash</strong>.</li>
+</ul>
+<h4 id="simple-ai-auto-code-summarise">Summarise (Auto-code)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-revise-codebook/#simple-ai-auto-code-summarise">#</a></h4>
+<ul>
+<li><strong>What it does</strong>: runs two steps per chunk — first a <strong>Summarise</strong> call (default prompt asks for a <strong>mermaid</strong> diagram of the causal network with verbatim quote edges, loaded from shared <code>prompts.json</code>), then <strong>Auto-code</strong> using that structured output. You can replace the default with any summarise instructions you like.</li>
+<li><strong>When to use it</strong>: helpful when source text is long/noisy and you want an intermediate structured pass before coding; for <strong>multi-source One-click coding</strong> the app turns Summarise off automatically so the pipeline stays a standard table pass.</li>
+<li><strong>Checkbox in Summarise header</strong>:</li>
+<li><strong>ON</strong> = run Summarise before coding.</li>
+<li><strong>OFF</strong> = skip Summarise and use standard one-step Auto-code (main prompt falls back to the default Auto-code prompt from <code>prompts.json</code>).</li>
+<li><strong>Summarise prompt</strong>: separate prompt history from the main Auto-code prompt; defaults are maintained in <strong><code>webapp/prompts/prompts.json</code></strong> (<code>ai_simple_summarise_prompt</code> and <code>ai_coding_prompt</code>).</li>
+<li><strong>Model / Chunk size / Concurrency / Retries / Temperature / Thinking</strong>: apply to the <strong>Summarise</strong> step only (separate from <strong>Advanced</strong> chunk size for Auto-code).</li>
+<li><strong>Chunking</strong>: the summarise phase uses <strong>Summarise → Chunk size</strong>; the coding phase uses <strong>Advanced → Chunk size</strong> under the main prompt. Both can be set independently.</li>
 </ul>
 <h3 id="simple-ai-revise-codebook">Revise codebook (Simple AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-revise-codebook/#simple-ai-revise-codebook">#</a></h3>
 <ul>
@@ -1373,7 +1389,7 @@
 <h4 id="simple-ai-target-clusters">Target clusters (Revise codebook)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-revise-codebook/#simple-ai-target-clusters">#</a></h4>
 <ul>
 <li>The <strong>Target clusters</strong> control is a slider with <strong>50 positions</strong>. The <strong>far left</strong> is <strong>Default</strong>; moving right sets an explicit target of <strong>2</strong> through <strong>50</strong> clusters (one step per cluster count).</li>
-<li><strong>Default</strong> (far left): the app derives a target count \(K\) from the number of <strong>unique factor labels</strong> \(n\) in the <strong>current filtered pipeline</strong> (same scope as Revise codebook): \(K = \max(\lfloor n/3 \rfloor, 25)\) — at least <strong>25</strong>, or roughly <strong>one label in three</strong> as clusters, whichever is larger.</li>
+<li><strong>Default</strong> (far left): the app derives a target count \(K\) from the number of <strong>unique factor labels</strong> \(n\) in the <strong>current filtered pipeline</strong> (same scope as Revise codebook): \(K = \min(\lfloor n/3 \rfloor, 25)\) — at most <strong>25</strong>, or roughly <strong>one label in three</strong> as clusters, whichever is smaller.</li>
 <li><strong>Explicit</strong> positions (not Default): the requested \(K\) is the number shown by the slider (<strong>2</strong>–<strong>50</strong>). If \(K\) is <strong>greater than</strong> \(n\), the run uses <strong>\(n\)</strong> instead (you cannot have more clusters than distinct labels); the app may show a short notice when that cap applies.</li>
 <li>Pre-clustering, embedding clustering, and <code>[number]</code> / <code>[cluster_count]</code> in prompts all use this <strong>effective</strong> \(K\).</li>
 </ul>
@@ -1390,7 +1406,7 @@
 <ul>
 <li>This is the same Filter Links workflow, embedded as the final simple-ai accordion section.</li>
 <li>Use it to refine/select links before reviewing outputs on the right.</li>
-<li>Run-all completion auto-applies top-12 factor frequency, then top-30 link frequency (no longer injects the deprecated Temporary Factor Labels filter).</li>
+<li>When <strong>One-click coding</strong> finishes with <strong>Filter on finish</strong> enabled, the app applies top-12 factor frequency (citations), then top-30 link frequency (citations) (no longer injects the deprecated Temporary Factor Labels filter).</li>
 </ul>
 <h3 id="advanced-settings">Advanced Settings<a aria-label="Permalink" class="anchor-link" href="/simple-ai-revise-codebook/#advanced-settings">#</a></h3>
 <p>Each section header is clickable and opens/collapses its settings panel. Section headers also include contextual <strong>Help</strong> buttons. The advanced sections are inline (not flyouts), and only one section is expanded at a time.</p>
@@ -1406,9 +1422,12 @@
 <aside class="rightbar"><h2>On this page</h2><div class="toc"><div class="toc">
 <ul>
 <li><a href="/simple-ai-revise-codebook/#the-simple-workflow">The Simple Workflow</a></li>
-<li><a href="/simple-ai-revise-codebook/#simple-ai-runner">Run all (Simple AI)</a></li>
+<li><a href="/simple-ai-revise-codebook/#simple-ai-runner">One-click coding (Simple AI)</a></li>
 <li><a href="/simple-ai-revise-codebook/#simple-ai-background">Background (Simple AI)</a></li>
-<li><a href="/simple-ai-revise-codebook/#simple-ai-auto-code">Auto-code (Simple AI)</a></li>
+<li><a href="/simple-ai-revise-codebook/#simple-ai-auto-code">Auto-code (Simple AI)</a><ul>
+<li><a href="/simple-ai-revise-codebook/#simple-ai-auto-code-summarise">Summarise (Auto-code)</a></li>
+</ul>
+</li>
 <li><a href="/simple-ai-revise-codebook/#simple-ai-revise-codebook">Revise codebook (Simple AI)</a><ul>
 <li><a href="/simple-ai-revise-codebook/#simple-ai-target-clusters">Target clusters (Revise codebook)</a></li>
 </ul>
