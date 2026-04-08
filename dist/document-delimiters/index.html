@@ -1325,16 +1325,13 @@
 <h4 id="document-delimiters">Section Separators<a aria-label="Permalink" class="anchor-link" href="/document-delimiters/#document-delimiters">#</a></h4>
 <p>This feature helps you split existing source texts into sections. These separators are <em>soft</em>: they don't permanently change the file and you can add or remove one or more separators on the fly. </p>
 <ul>
-<li><strong>Two-line expandable textArea</strong> for one or more (regex) patterns</li>
-<li><strong>Section header detection</strong> within imported texts</li>
-<li><strong>Special styling</strong> for matching rows in text viewer</li>
-<li>
-<p><strong>Links created in the different sections can be filtered using the <a href="../everything-filter/">Everything Filter</a></strong>. So you can do things like "Show me all the causal claims (links) only in answers to Question 7".</p>
-</li>
-<li>
-<p>Into the box, you type special "regex" patterns to create sections withing source texts. So if you have sections marked with "Section Number 12", "Section Number 13" etc, just put "Section Number.*" in the box. </p>
-</li>
-<li>This will highlight the sections and create fields like "Section Number 12" etc as section ID.</li>
+<li>Into the box, type one <strong>regex pattern per line</strong>. The pattern must match the <em>whole separator line</em> in your source text, so use <code>.*</code> to match the rest of the line. For example, if your text contains lines like <code>statement_id: 42</code> or <code>Question 7: ...</code>, enter <code>statement_id:.*</code> or <code>Question.*</code> respectively.</li>
+<li>Matching lines are styled as <strong>headings</strong> in the text viewer.</li>
+<li>Each link is assigned to the section it falls under. The matched text (e.g. <code>statement_id: 42</code>) becomes the section value, available as a column (e.g. <code>section_statement_id</code>) in:</li>
+<li>The <a href="../everything-filter/">Everything Filter</a> — so you can show only links from specific sections</li>
+<li>The <a href="../sections-filter/">Sections Filter</a></li>
+<li>Pivot tables and statistics</li>
+<li>Links before the first separator in a source get the value <code>Initial Text</code>.</li>
 </ul>
 <h3 id="sources-aggregate-tab">Sample Check<a aria-label="Permalink" class="anchor-link" href="/document-delimiters/#sources-aggregate-tab">#</a></h3>
 <p>You want a table showing your sample: gender * region?</p>

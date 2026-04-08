@@ -1318,6 +1318,9 @@ This is where you do the core work of mapping out causal relationships from your
 <li>Highlight sections to identify causal claims. Highlighting opens the causal link editor.</li>
 <li>Examine and edit existing highlights by clicking on them.</li>
 </ul>
+<h4 id="full-text-search">Full text search (selected sources)<a aria-label="Permalink" class="anchor-link" href="/navigation-controls/#full-text-search">#</a></h4>
+<p>Below the <strong>Sources</strong> bar, <strong>Full text search…</strong> opens a small panel. Type <strong>at least three characters</strong> to search <strong>source text</strong> in the current scope (same rule as the Sources dropdown: <strong>no selection = all sources</strong> in project order; <strong>more than one</strong> source selected = only those; <strong>exactly one</strong> selected still searches <strong>all</strong> project sources for this tool—only the strict multi-select narrows the list). Matches are highlighted in the viewer in a <strong>separate colour</strong> from causal link highlights; they do <strong>not</strong> change the links table or filters.</p>
+<p>Use <strong>First / Previous / Next / Last</strong> to jump between hits. The counter shows <strong>hits</strong> and how many <strong>sources</strong> actually contain a match (out of how many are in scope). When the next hit is in another source, the viewer <strong>loads that source</strong> without changing what is selected in the Sources dropdown (so <strong>empty = all</strong> stays empty). <strong>×</strong> clears the query and closes the panel; <strong>clicking Full text search… again</strong> while the panel is open does the same.</p>
 <p>Inside the header, there is an info ℹ️ icon which toggles open/shut a panel beneath it which shows the values of the custom columns for the current source e.g. gender etc. </p>
 <h4 id="navigation-controls">Navigation Controls<a aria-label="Permalink" class="anchor-link" href="/navigation-controls/#navigation-controls">#</a></h4>
 <p>Navigate sources (buttons in the <strong>Source text</strong> header):</p>
@@ -1337,6 +1340,7 @@ This is where you do the core work of mapping out causal relationships from your
 <li><strong>Multiple sources selected:</strong> Main Previous/Next pages between the selected sources and only changes which source is displayed in the text viewer. It does <strong>not</strong> change the actual selected-sources set.</li>
 <li><strong>Exactly one source selected:</strong> Main Previous/Next pages through <strong>all project sources</strong> (project order). In this mode it <strong>does</strong> change the selected source, so both source selection and text viewer content update together.</li>
 <li><strong>No source selected (empty = all):</strong> Main Previous/Next picks and then pages in project order like the one-source case, so selection changes as you page.</li>
+<li>These navigation rules apply equally when selected sources currently have zero links.</li>
 </ul>
 <h4 id="long-documents-text-viewer">Dealing with long documents in the source text viewer<a aria-label="Permalink" class="anchor-link" href="/navigation-controls/#long-documents-text-viewer">#</a></h4>
 <p>For documents longer than ~30-40 pages, the text viewer automatically splits content into manageable chunks for better performance.</p>
@@ -1424,6 +1428,7 @@ This is where you do the core work of mapping out causal relationships from your
 <aside class="rightbar"><h2>On this page</h2><div class="toc"><div class="toc">
 <ul>
 <li><a href="/navigation-controls/#text-viewer-content">Source Text Viewer</a><ul>
+<li><a href="/navigation-controls/#full-text-search">Full text search (selected sources)</a></li>
 <li><a href="/navigation-controls/#navigation-controls">Navigation Controls</a></li>
 <li><a href="/navigation-controls/#long-documents-text-viewer">Dealing with long documents in the source text viewer</a></li>
 </ul>
