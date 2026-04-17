@@ -9,4 +9,5 @@
 !dist/**
 
 # Build output copies of trash / local junk — never ship
+desktop.ini
 dist/.trash/
