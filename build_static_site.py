@@ -5771,19 +5771,48 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
     except Exception:
         gc_url = None
 
+    umami_script_url: Optional[str] = None
+    umami_website_id: Optional[str] = None
+    try:
+        cfg_umami_script = config.get("umami_script_url")
+        if isinstance(cfg_umami_script, str) and cfg_umami_script.strip():
+            umami_script_url = cfg_umami_script.strip()
+    except Exception:
+        umami_script_url = None
+    try:
+        cfg_umami_id = config.get("umami_website_id")
+        if isinstance(cfg_umami_id, str) and cfg_umami_id.strip():
+            umami_website_id = cfg_umami_id.strip()
+    except Exception:
+        umami_website_id = None
+
     gc_url_js = json.dumps(gc_url)  # safe JS string or "null"
+    umami_script_url_js = json.dumps(umami_script_url)
+    umami_website_id_js = json.dumps(umami_website_id)
     analytics_js = (
         "(function(){\n"
         "  'use strict';\n"
-        "  // GoatCounter analytics. Disabled on file:// to avoid counting local previews/PDF builds.\n"
-        f"  var goatcounter = {gc_url_js};\n"
-        "  if (!goatcounter) return;\n"
+        "  // Analytics are disabled on file:// so local previews/PDF builds don't pollute counts.\n"
         "  if (location.protocol === 'file:') return;\n"
-        "  var s = document.createElement('script');\n"
-        "  s.async = true;\n"
-        "  s.src = 'https://gc.zgo.at/count.js';\n"
-        "  s.setAttribute('data-goatcounter', goatcounter);\n"
-        "  document.head.appendChild(s);\n"
+        "  // GoatCounter.\n"
+        f"  var goatcounter = {gc_url_js};\n"
+        "  if (goatcounter) {\n"
+        "    var goatcounterScript = document.createElement('script');\n"
+        "    goatcounterScript.async = true;\n"
+        "    goatcounterScript.src = 'https://gc.zgo.at/count.js';\n"
+        "    goatcounterScript.setAttribute('data-goatcounter', goatcounter);\n"
+        "    document.head.appendChild(goatcounterScript);\n"
+        "  }\n"
+        "  // Umami Cloud.\n"
+        f"  var umamiScriptUrl = {umami_script_url_js};\n"
+        f"  var umamiWebsiteId = {umami_website_id_js};\n"
+        "  if (umamiScriptUrl && umamiWebsiteId) {\n"
+        "    var umamiScript = document.createElement('script');\n"
+        "    umamiScript.defer = true;\n"
+        "    umamiScript.src = umamiScriptUrl;\n"
+        "    umamiScript.setAttribute('data-website-id', umamiWebsiteId);\n"
+        "    document.head.appendChild(umamiScript);\n"
+        "  }\n"
         "})();\n"
     )
     (assets_dir / "analytics.js").write_text(analytics_js, encoding="utf-8")
@@ -5834,15 +5863,45 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         except Exception:
             pass
 
+    # Reuse one Playwright browser per build run instead of relaunching Chromium for each PDF.
+    _pdf_runtime: Dict[str, Any] = {"playwright": None, "browser": None}
+
+    def _get_pdf_browser() -> Any:
+        browser = _pdf_runtime.get("browser")
+        if browser is None:
+            playwright = sync_playwright().start()
+            browser = playwright.chromium.launch()
+            _pdf_runtime["playwright"] = playwright
+            _pdf_runtime["browser"] = browser
+        return browser
+
+    def _new_pdf_page() -> Any:
+        pagep = _get_pdf_browser().new_page()
+        pagep.set_viewport_size({"width": 1600, "height": 1200})
+        return pagep
+
+    def _close_pdf_runtime() -> None:
+        browser = _pdf_runtime.get("browser")
+        playwright = _pdf_runtime.get("playwright")
+        _pdf_runtime["browser"] = None
+        _pdf_runtime["playwright"] = None
+        try:
+            if browser is not None:
+                browser.close()
+        except Exception:
+            pass
+        try:
+            if playwright is not None:
+                playwright.stop()
+        except Exception:
+            pass
+
     def _generate_page_pdf_from_html(out_html_path: Path, pdf_out_path: Path, md_path: Path, page_title: Optional[str]) -> None:
         """Generate a per-page PDF by printing the already-written HTML file (single path for PDFs)."""
-        from playwright.sync_api import sync_playwright  # type: ignore
         from datetime import date
         print(f"[PDF page] {md_path.relative_to(input_root)} -> {pdf_out_path.relative_to(output_root)}")
-        with sync_playwright() as pweb:
-            browser = pweb.chromium.launch()
-            pagep = browser.new_page()
-            pagep.set_viewport_size({"width": 1600, "height": 1200})
+        pagep = _new_pdf_page()
+        try:
             pagep.goto(out_html_path.as_uri(), wait_until="load")
             try:
                 pagep.emulate_media(media="print")
@@ -5975,7 +6034,11 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                 header_template=header_html,
                 footer_template=footer_html,
             )
-            browser.close()
+        finally:
+            try:
+                pagep.close()
+            except Exception:
+                pass
     
     # enumerate markdown files with inclusion rules
     def _is_included_md(p: Path) -> bool:
@@ -6035,6 +6098,7 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
     # Draft files (with ! in filename) are rendered to HTML for local preview,
     # but should NOT appear in any PDF outputs.
     md_files_no_drafts = [p for p in md_files if "!" not in p.name]
+    chapter_folder_filter = str(getattr(args, "chapter_folder", "") or "").strip() if args else ""
 
     # Titles now derive from filenames (numbers stripped and page anchors removed)
     # In blog mode, use first H1/H2 from content instead
@@ -6333,6 +6397,14 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             print(f"[INCREMENTAL] Pipeline signature also changed.")
         _tmark("write_pages: incremental detect/filter")
 
+    if chapter_folder_filter and args and getattr(args, "chapters_pdf", False):
+        files_to_process = [
+            p for p in files_to_process
+            if len(p.relative_to(input_root).parts) >= 2 and p.relative_to(input_root).parts[0] == chapter_folder_filter
+        ]
+        if not files_to_process:
+            raise ValueError(f"No markdown files found for --chapter-folder '{chapter_folder_filter}'")
+
     # Preflight: fail early if any output paths are too long for Windows.
     _preflight_check_windows_path_lengths(
         input_root=input_root,
@@ -6434,7 +6506,8 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                         chapter_pdf_mtime = chapter_pdf.stat().st_mtime
                     except Exception:
                         chapter_pdf_mtime = None
-                folder_newer = chapter_pdf_mtime is None
+                # A clean build should always rewrite chapter PDFs even though the clean step preserves PDFs.
+                folder_newer = chapter_pdf_mtime is None or bool(getattr(args, "clean", False))
                 if not folder_newer:
                     for m in folder_md:
                         try:
@@ -6565,13 +6638,10 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                     chapter_pdf.parent.mkdir(parents=True, exist_ok=True)
                     try:
                         print(f"[PDF chapter] {top_folder}/{top_folder}.pdf")
-                        from playwright.sync_api import sync_playwright  # type: ignore
                         import tempfile
                         from datetime import date
-                        with sync_playwright() as pweb:
-                            browser = pweb.chromium.launch()
-                            pagep = browser.new_page()
-                            pagep.set_viewport_size({"width": 1600, "height": 1200})
+                        pagep = _new_pdf_page()
+                        try:
                             tmpf = tempfile.NamedTemporaryFile("w", suffix=".html", delete=False, encoding="utf-8")
                             try:
                                 tmpf.write(chapter_html)
@@ -6607,7 +6677,11 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                                 header_template="<div></div>",
                                 footer_template=footer_html,
                             )
-                            browser.close()
+                        finally:
+                            try:
+                                pagep.close()
+                            except Exception:
+                                pass
                     except Exception as e:
                         print(f"[ERROR] Chapter PDF failed for {top_folder}: {e}")
                         import traceback
@@ -7395,12 +7469,10 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
 
             try:
                 print("[PDF all] site.pdf")
-                from playwright.sync_api import sync_playwright  # type: ignore
                 import tempfile
                 from datetime import date
-                with sync_playwright() as pweb:
-                    browser = pweb.chromium.launch()
-                    pagep = browser.new_page()
+                pagep = _new_pdf_page()
+                try:
                     tmpf = tempfile.NamedTemporaryFile("w", suffix=".html", delete=False, encoding="utf-8")
                     try:
                         tmpf.write(combined_html)
@@ -7430,7 +7502,11 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                         f"</span></div></div>"
                     )
                     pagep.pdf(path=str(global_pdf), format="A4", margin={"top":"22mm","right":"18mm","bottom":"24mm","left":"18mm"}, print_background=True, display_header_footer=True, header_template="<div></div>", footer_template=footer_html)
-                    browser.close()
+                finally:
+                    try:
+                        pagep.close()
+                    except Exception:
+                        pass
             except Exception as e:
                 print(f"[PDF all][ERROR] Failed to generate site.pdf: {e}")
                 try:
@@ -7443,6 +7519,8 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         _tmark("write_pages: global site.pdf")
     elif args and args.all_pdf and not _PLAYWRIGHT_AVAILABLE:
         print("[PDF all][SKIP] Playwright unavailable. Install with: pip install playwright && python -m playwright install chromium")
+
+    _close_pdf_runtime()
 
     # Cleanup: remove unused images under output_root/img and any nested img folders
     try:
@@ -7696,6 +7774,12 @@ def parse_args() -> argparse.Namespace:
         "--chapters-pdf",
         action="store_true",
         help="Also build chapter PDFs (first page in each top-level folder)",
+    )
+    parser.add_argument(
+        "--chapter-folder",
+        type=str,
+        default="",
+        help="Only process one top-level folder for chapter-PDF runs (e.g. '800 Case studies')",
     )
     parser.add_argument(
         "--all-pdf",

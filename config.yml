@@ -13,4 +13,9 @@ sidebar_footer_links:
 # Example: goatcounter: "https://YOUR.goatcounter.com/count"
 # Note: disabled automatically on file:// so local previews/PDF builds don't pollute analytics.
 goatcounter: "https://causal-mapping-garden.goatcounter.com/count"
+
+# Optional analytics (Umami Cloud). Paste the website ID from your Umami snippet.
+# Note: disabled automatically on file:// so local previews/PDF builds don't pollute analytics.
+umami_script_url: "https://cloud.umami.is/script.js"
+umami_website_id: "cc6d6b30-1bf8-497f-b38a-7feae109d761"
   
