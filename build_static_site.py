@@ -30,6 +30,7 @@ PIPELINE_VERSION = "2025-10-15-wikilinks-anchors-v1"
 _IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".bmp"}
 _VIDEO_EXTS = {".mp4", ".webm", ".ogg", ".mov", ".m4v"}
 _MEDIA_EXTS = _IMAGE_EXTS | _VIDEO_EXTS
+_IMAGE_NAME_INDEX_CACHE: Dict[Tuple[str, str, Tuple[str, ...]], Dict[str, Path]] = {}
 
 # --- PDF post-processing ---
 def _merge_prefixed_pdfs_in_each_folder(output_root: Path, *, prefix: str, merged_name: str) -> None:
@@ -861,12 +862,41 @@ def copy_project_favicons(output_root: Path) -> None:
 
 def build_image_name_index(input_root: Path, vault_root: Path, image_exts: Set[str]) -> Dict[str, Path]:
     """Build a lowercase filename -> absolute Path index for image files."""
+    # Build the media lookup once per run; rebuilding it per page is the main slowdown.
+    cache_key = (
+        str(input_root.resolve()),
+        str(vault_root.resolve()),
+        tuple(sorted(ext.lower() for ext in image_exts)),
+    )
+    cached = _IMAGE_NAME_INDEX_CACHE.get(cache_key)
+    if cached is not None:
+        return cached
+
     lower_name_to_path: Dict[str, Path] = {}
     for root in (input_root, vault_root):
         for p in root.rglob("*"):
             if p.is_file() and p.suffix.lower() in image_exts:
                 lower_name_to_path.setdefault(p.name.lower(), p)
+    _IMAGE_NAME_INDEX_CACHE[cache_key] = lower_name_to_path
     return lower_name_to_path
+
+
+def build_breadcrumb_folder_index(input_root: Path, md_files: List[Path]) -> Dict[str, List[Path]]:
+    """Group pages by top-level folder once so breadcrumbs do not rescan every page."""
+    folder_pages_no_drafts: Dict[str, List[Path]] = defaultdict(list)
+
+    for p in md_files:
+        rel_parts = p.relative_to(input_root).parts
+        if len(rel_parts) < 2:
+            continue
+        folder = rel_parts[0]
+        if "!" not in p.name:
+            folder_pages_no_drafts[folder].append(p)
+
+    for pages in folder_pages_no_drafts.values():
+        pages.sort(key=_path_file_key)
+
+    return dict(folder_pages_no_drafts)
 
 
 _EXTERNAL_README_PATH_CACHE: Optional[Path] = None
@@ -3561,7 +3591,7 @@ def postprocess_alpha_ol_html(html_text: str) -> str:
     return html_text
 
 
-def build_breadcrumb_data(md_path: Path, input_root: Path, output_root: Path, md_files: List[Path], title_map: Dict[Path, str], current_out_dir: Path) -> List[Dict[str, Any]]:
+def build_breadcrumb_data(md_path: Path, input_root: Path, output_root: Path, folder_pages_no_drafts: Dict[str, List[Path]], title_map: Dict[Path, str], current_out_dir: Path) -> List[Dict[str, Any]]:
     """Build breadcrumb data structure with siblings at each level.
     
     Returns list of breadcrumb items, each containing:
@@ -3577,14 +3607,11 @@ def build_breadcrumb_data(md_path: Path, input_root: Path, output_root: Path, md
     home_siblings = []
     
     # Get all top-level folders as siblings of Home
-    top_folders = sorted({p.relative_to(input_root).parts[0] for p in md_files if len(p.relative_to(input_root).parts) >= 2})
+    top_folders = sorted(folder_pages_no_drafts)
     for folder in top_folders:
-        folder_pages = [p for p in md_files if p.relative_to(input_root).parts[0] == folder]
-        # Exclude draft files (with ! in filename) when determining first page
-        folder_pages_no_drafts = [p for p in folder_pages if '!' not in p.name]
-        folder_pages_no_drafts.sort(key=_path_file_key)
-        if folder_pages_no_drafts:
-            first_page = folder_pages_no_drafts[0]
+        folder_non_drafts = folder_pages_no_drafts.get(folder, [])
+        if folder_non_drafts:
+            first_page = folder_non_drafts[0]
             folder_href = os.path.relpath(relative_output_html(input_root, output_root, first_page), start=current_out_dir).replace(os.sep, "/")
             folder_title = strip_numeric_prefix(folder).replace("--", "–")
             home_siblings.append({"title": folder_title, "href": folder_href, "is_current": False})
@@ -3598,18 +3625,15 @@ def build_breadcrumb_data(md_path: Path, input_root: Path, output_root: Path, md
         # Add folder if present
         if len(rel_parts) >= 2:
             folder = rel_parts[0]
-            folder_pages = [p for p in md_files if p.relative_to(input_root).parts[0] == folder]
-            # Exclude draft files (with ! in filename) when determining first page
-            folder_pages_no_drafts = [p for p in folder_pages if '!' not in p.name]
-            folder_pages_no_drafts.sort(key=_path_file_key)
-            if folder_pages_no_drafts:
-                first_page = folder_pages_no_drafts[0]
+            folder_non_drafts = folder_pages_no_drafts.get(folder, [])
+            if folder_non_drafts:
+                first_page = folder_non_drafts[0]
                 folder_href = os.path.relpath(relative_output_html(input_root, output_root, first_page), start=current_out_dir).replace(os.sep, "/")
                 folder_title = strip_numeric_prefix(folder).replace("--", "–")
                 
                 # Siblings = all non-draft files in this folder
                 folder_siblings = []
-                for p in folder_pages_no_drafts:
+                for p in folder_non_drafts:
                     p_href = os.path.relpath(relative_output_html(input_root, output_root, p), start=current_out_dir).replace(os.sep, "/")
                     p_title = title_map.get(p, strip_numeric_prefix(p.stem)).replace("--", "–")
                     folder_siblings.append({"title": p_title, "href": p_href, "is_current": (p.resolve() == md_path.resolve())})
@@ -6098,6 +6122,7 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
     # Draft files (with ! in filename) are rendered to HTML for local preview,
     # but should NOT appear in any PDF outputs.
     md_files_no_drafts = [p for p in md_files if "!" not in p.name]
+    breadcrumb_folder_pages_no_drafts = build_breadcrumb_folder_index(input_root, md_files)
     chapter_folder_filter = str(getattr(args, "chapter_folder", "") or "").strip() if args else ""
 
     # Titles now derive from filenames (numbers stripped and page anchors removed)
@@ -7075,7 +7100,14 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         assets_href = html.escape(os.path.relpath(output_root / "assets", start=out_dir).replace(os.sep, "/") + "/")
 
         # Build breadcrumb navigation with siblings
-        breadcrumb_data = build_breadcrumb_data(md_path, input_root, output_root, md_files, title_map, out_dir)
+        breadcrumb_data = build_breadcrumb_data(
+            md_path,
+            input_root,
+            output_root,
+            breadcrumb_folder_pages_no_drafts,
+            title_map,
+            out_dir,
+        )
         tags_dropdown_html = render_tags_dropdown_html(tags_index, out_dir, input_root, output_root, title_map)
         breadcrumb_html = render_breadcrumb_html(breadcrumb_data, tags_dropdown_html=tags_dropdown_html)
 
