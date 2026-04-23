@@ -1411,23 +1411,6 @@
 <li>👉🏼 <strong>(<code>Status text</code>)</strong>: shows progress and completion counts (saved / skipped / failed).</li>
 </ol>
 <p>When you save an assessed link, CausalMap stores the prompt text used for that assessment on the assessed row so you can see what instruction produced it.</p>
-<h4 id="technical-note-assessed-mode-pipeline">Technical note (assessed mode + pipeline)<a aria-label="Permalink" class="anchor-link" href="/links-search-replace/#technical-note-assessed-mode-pipeline">#</a></h4>
-<ul>
-<li>The global assessed switch is implemented as <code>assessedLinksMode</code> in the filter pipeline (<code>unassessed</code> or <code>assessed</code>).</li>
-<li>Canonical output (<code>currentFilteredLinks</code>) is always partitioned by that mode at the end of <code>applyAllPipelineFilters</code>, so outputs never mix assessed and unassessed rows.</li>
-<li>Assessment editing still needs bundle context from both sides. The pipeline therefore keeps an in-memory companion set (<code>currentAssessmentLookupLinks</code>) from pre-partition links in the same run.</li>
-<li>The Links assessment card uses that companion set for lookup/update of existing assessed rows while the visible outputs can remain unassessed-only.</li>
-<li>Legacy per-filter <code>assessed</code> widgets are compatibility-only and do not control final canonical membership.</li>
-<li>URL/bookmark state persists this as top-level <code>assessedLinksMode</code> (not as a normal filter row).</li>
-</ul>
-<h4 id="technical-note-assessment-toolbar-ui-where-it-lives-and-how-it-wires">Technical note (Assessment toolbar UI — where it lives and how it wires)<a aria-label="Permalink" class="anchor-link" href="/links-search-replace/#technical-note-assessment-toolbar-ui-where-it-lives-and-how-it-wires">#</a></h4>
-<ul>
-<li><strong>DOM</strong>: The toolbar is <strong>not</strong> inside the Links button bar. It is in <code>index.html</code> under the Project bar in one row with the factor label set: <strong>Label Set first (left), Assessment second (right, <code>ms-auto</code> on <code>#links-assessment-toolbar-wrap</code>)</strong> — <code>#links-assessment-toolbar-wrap</code>, <code>#links-assessment-mode-trigger</code>, <code>#links-assessment-mode-panel</code>. Help/MapCat: <code>ui-reveal-schema.js</code> entry <code>links_assessment_mode</code> → <code>anchorId: 'links-assessment-toolbar-wrap'</code>.</li>
-<li><strong>Popover behaviour</strong>: Shared helper <code>wireAnchoredPopover()</code> in <code>js/dom-utils.js</code> (toggle on trigger, close on outside mousedown + Escape — same interaction class as the factor label set panel; DOM listeners only, not EventBus).</li>
-<li><strong>TableManager</strong>: <code>TableManager._ensureLinksAssessmentControlsWiring()</code> attaches that helper and handles option clicks (<code>data-links-assessment-segment</code>: <code>assessed</code> | <code>unassessed</code> only). Inline label text is synced via <code>_refreshLinksAssessedModeControls()</code> / <code>_linksAssessmentModeInlineLabel()</code> (<strong>Assessed</strong> / <strong>Unassessed</strong>). The <strong>Assess links</strong> sub-tab (left pane, Links) hosts <code>#links-assessment-panel</code> in <code>#links-assessment-tab-mount</code>; bundle editing is shown only when that sub-tab is active (and the global mode is not <strong>Assessed</strong>, which is read-only).</li>
-<li><strong>Boot (important)</strong>: Wiring must run <strong>once at app boot</strong> in <code>app.js</code> (right after <code>initFactorLabelSetControl()</code>), not only from <code>addLinksControls()</code>. Reason: <code>addLinksControls()</code> is scoped to the Links table and can return early if <code>#links-button-bar</code> is not ready or may not run until the Links table is built — users on Sources would otherwise get a dead button. <code>addLinksControls()</code> still calls <code>_ensureLinksAssessmentControlsWiring()</code> for idempotency (<code>data-assessment-toolbar-wired</code> on the wrap prevents double listeners).</li>
-</ul>
-<p>—&gt;</p>
 <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a class="link-secondary" href="https://causalmap.app">Causal Map Ltd</a> 2026</span> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" style="height:18px;opacity:0.7;vertical-align:middle;"/></a><a class="link-secondary ms-2" href="https://app.causalmap.app" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>
 </main>
 <aside class="rightbar"><h2>On this page</h2><div class="toc"><div class="toc">
@@ -1446,8 +1429,6 @@
 <li><a href="/links-search-replace/#assessing-link-evidence-quality">Assessing link evidence quality</a><ul>
 <li><a href="/links-search-replace/#main-controls">Main controls</a></li>
 <li><a href="/links-search-replace/#ai-assisted-bundle-assessment">AI-assisted bundle assessment</a></li>
-<li><a href="/links-search-replace/#technical-note-assessed-mode-pipeline">Technical note (assessed mode + pipeline)</a></li>
-<li><a href="/links-search-replace/#technical-note-assessment-toolbar-ui-where-it-lives-and-how-it-wires">Technical note (Assessment toolbar UI — where it lives and how it wires)</a></li>
 </ul>
 </li>
 </ul>
