@@ -1722,32 +1722,34 @@ There's an alternative, more flexible version:
 </ul>
 <h3 id="map-custom-columns-filter">Map Custom Columns Filter <i class="fas fa-sliders-h"></i><a aria-label="Permalink" class="anchor-link" href="/custom-links-label-filter/#map-custom-columns-filter">#</a></h3>
 <div class="user-guide-callout">
-<strong>🗺️ What this does:</strong> Takes one of your link custom columns and turns it into map display data. Instead of showing the raw column directly everywhere, this filter writes map-only values for <strong>Custom label</strong>, <strong>Custom width</strong>, and <strong>Custom colour</strong>, which you then pick in Map Formatting.
+<strong>🗺️ What this does:</strong> Takes one of your link or source custom columns and turns it into map display data. This filter creates values for <strong>Custom label</strong>, <strong>Custom width</strong>, and <strong>Custom colour</strong>, which are then automatically applied in Map Formatting.
 </div>
-<p>Use this when you want one custom link column to drive the map, for example:</p>
+<p>Use this when you want one custom link or source column to drive the map, for example:</p>
 <ul>
 <li>show <code>confidence</code> or <code>policy_area</code> as a label on each bundled edge</li>
+<li>show source metadata like age group, gender, location, or interview type on each bundled edge</li>
 <li>make edge width reflect a numeric custom score</li>
 <li>colour edges from a custom colour field or other grouped coding</li>
 </ul>
 <p><strong>Controls:</strong></p>
 <ul>
-<li><strong>Label field</strong> - choose which link custom column should feed <strong>Custom label</strong></li>
+<li><strong>Label field</strong> - choose which link or source custom column should feed <strong>Custom label</strong></li>
 <li><strong>Label aggregation</strong> - how bundled links should be combined:</li>
 <li><strong>Unique</strong> - distinct values only</li>
 <li><strong>Tally</strong> - counts by value</li>
 <li><strong>All</strong> - list all values</li>
 <li><strong>Average</strong> - numeric columns only</li>
 <li><strong>Sum</strong> - numeric columns only</li>
-<li><strong>Width field</strong> - choose which link custom column should feed <strong>Custom width</strong></li>
+<li><strong>Width field</strong> - choose which link or source custom column should feed <strong>Custom width</strong></li>
 <li><strong>Width aggregation</strong> - numeric bundle summary, typically <strong>Average</strong>, <strong>Sum</strong>, or <strong>Max</strong></li>
-<li><strong>Colour field</strong> - choose which link custom column should feed <strong>Custom colour</strong></li>
+<li><strong>Colour field</strong> - choose which link or source custom column should feed <strong>Custom colour</strong></li>
 <li><strong>Colour aggregation</strong> - for numeric columns, choose <strong>Mean</strong>, <strong>Max</strong>, or <strong>Mode</strong></li>
 </ul>
+<p>Source custom columns appear with a <strong>Source:</strong> prefix in the field dropdowns. These are the <code>s_*</code> fields from the enriched Links data, so they can be aggregated across all links in the visible bundle just like link custom columns.</p>
 <p><strong>To use:</strong></p>
 <ol>
 <li>Add the Map Custom Columns filter to your pipeline.</li>
-<li>Pick one or more link custom columns for label / width / colour output.</li>
+<li>Pick one or more link or source custom columns for label / width / colour output.</li>
 <li>Choose the aggregation rule for each output.</li>
 <li>In <a href="../map-formatting-card/">Map Formatting</a>, set Link Labels / Link Width / Link Colour to <strong>Custom label</strong>, <strong>Custom width</strong>, or <strong>Custom colour</strong> as needed.</li>
 </ol>
@@ -1755,7 +1757,7 @@ There's an alternative, more flexible version:
 <ul>
 <li>This is a <strong>map-output</strong> filter. It does not create a permanent new data column for general analysis; it prepares reserved map fields for the current pipeline result.</li>
 <li>Bundle aggregation matters because one visible map edge can represent several underlying links.</li>
-<li>Link custom columns stay <strong>typeless</strong>. If a column already looks numeric and you enter a non-numeric value in the Link Editor, the app warns but does not block you.</li>
+<li>Custom columns stay <strong>typeless</strong>. If a link column already looks numeric and you enter a non-numeric value in the Link Editor, the app warns but does not block you.</li>
 <li>For <strong>Custom colour</strong>, the selected column must be numeric. The aggregated value is mapped onto a muted scale: high positive values = muted green, values near zero = whitish, and negative values = muted blue.</li>
 <li>Non-numeric values are ignored for <strong>Custom colour</strong>.</li>
 </ul>
