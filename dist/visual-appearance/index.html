@@ -1325,9 +1325,8 @@
 <li>👉🏼 <strong>Layout</strong> (dropdown): choose how the map is laid out.  </li>
 <li>Interactive and most other layouts are good while you are conducting your research (fast + supports the <a href="../interactive-features/">interactive features</a>).  </li>
 <li>Print/Graphviz is best for static images (reports/journal articles). In Graphviz SVG you can still pan/zoom (mouse wheel, double-click, Shift+double-click).</li>
-<li>👉🏼 <strong>Groups</strong> (switch): layout maps with top-level factors as boxes which group together their "children".</li>
-<li>👉🏼 <strong>Initials</strong> (dropdown): add distinctive coloured badges to factor labels in Interactive and Print layouts. Choose which part of the label is used for the badge: Off / Full label / Level 1 (;) / First colon (:) / Square brackets [] / Round brackets (). Uses the same extraction rules as Groups. In Print layout, badges use a gradient for visual distinctiveness.</li>
-<li>👉🏼 <strong>Direction</strong> (dropdown): LR (default), TB, or BT (for Interactive and Print/Graphviz layouts).</li>
+<li>👉🏼 <strong>Groups</strong> (dropdown): layout maps with top-level factors as boxes which group together their "children". Choose how group titles are extracted from factor text: No groups / Level 1 (;) / First colon (:) / Square brackets [] / Round brackets ().</li>
+<li>👉🏼 <strong>Direction</strong> (radio group): LR, RL, TB, or BT (for Interactive and Print/Graphviz layouts).</li>
 <li>👉🏼 <strong>Link direction</strong> (dropdown): Normal (directed arrows) vs Undirected (dots at both ends).  </li>
 <li>In Undirected mode, dots use the same colours as arrowheads (including sentiment colouring). When sentiment is neutral (0), they use <strong>Link Colour</strong>.  </li>
 <li>Note: when the <a href="../combine-opposites-filter/">Combine Opposites filter</a> is active, tail/head can still have different colours.</li>
@@ -1336,7 +1335,7 @@
 <ul>
 <li>👉🏼 <strong>Factor labels</strong> (dropdown): what to show next to each factor (same data as the <a href="../factors-panel/">Factors Panel</a>).  </li>
 <li>Citation count (default) / Source count / Sentiment (mean incoming) / None</li>
-<li>👉🏼 <strong>Factor colours</strong> (dropdown): Outcomeness (default) / Source count / Citation count / None</li>
+<li>👉🏼 <strong>Factor colours</strong> (dropdown): Outcomeness (default) / Influence / Citation count (total, in, or out) / Source count (total, in, or out) / <strong>Label segment</strong> (full label or the same segment patterns as <strong>Groups</strong>) / None</li>
 <li>👉🏼 <strong>Factor sizes</strong> (dropdown): Citation count (default) / Source count / None</li>
 </ul>
 <p><strong>Links</strong></p>
@@ -1347,7 +1346,7 @@
 <li>👉🏼 <strong>Link label font size</strong> (control): change link label font sizes.</li>
 <li>👉🏼 <strong>Arrowhead size</strong> (control): scale arrowhead size (Interactive + Print/Graphviz). Default 100% keeps current appearance.</li>
 <li>👉🏼 <strong>Link colour</strong> (colour picker): sets the default link line colour (Interactive + Print/Graphviz). When sentiment is neutral (0), this colour is also used for arrowheads and node borders.</li>
-<li>👉🏼 <strong>Links highlight</strong> (dropdown): optional extra highlighting without changing the base colour scheme.  </li>
+<li>👉🏼 <strong>Links highlight</strong> (dropdown): optional extra "halo" highlighting without changing the base colour scheme.  </li>
 <li>Off (default)  </li>
 <li>Reverse (backwards/same-rank in current layout direction)  </li>
 <li>Significant (when Label by Group shows ⬆/⬇)  </li>
@@ -1360,6 +1359,10 @@
 </ul>
 <h4 id="visual-appearance">Fixed visual appearance (things you can't tweak)<a aria-label="Permalink" class="anchor-link" href="/visual-appearance/#visual-appearance">#</a></h4>
 <p>Some parts of the map’s appearance are automatic (i.e. they are not controlled by the Map Formatting widgets above):</p>
+<p><strong>Leading emoji (Print / Graphviz only):</strong></p>
+<ul>
+<li>If a factor label starts with an emoji, the <strong>Print (Graphviz)</strong> SVG post-process moves that emoji to a larger symbol offset near the top of the node and removes it from the inline label text (trivial matches like lone digits are left inline). <strong>Interactive</strong> layout keeps the full label, including any leading emoji, in the normal label position.</li>
+</ul>
 <p><strong>Link geometry (bundling):</strong></p>
 <ul>
 <li>Links are bundled and drawn as curved edges for readability.</li>
@@ -1398,33 +1401,21 @@
 </ul>
 <p>💡Tip: By control-clicking or shift-clicking multiple factors you can easily rename several at once, e.g. you can merge multiple factors as a single factor.</p>
 <h3 id="grid-layout">Grid layout<a aria-label="Permalink" class="anchor-link" href="/visual-appearance/#grid-layout">#</a></h3>
-<p>Factors containing a tag of the form <code>(N.M)</code> or <code>(N,M)</code> anywhere in the label (where N and M are integers) are positioned on a grid layout. The grid coordinate tags are automatically stripped from displayed labels.
-Grid tags can also be <strong>partial</strong>: <code>(N,)</code>, <code>(,M)</code>, <code>[N,M]</code>, <code>[N,]</code>, <code>[,M]</code> (same meaning; first number = rank direction, second = perpendicular).</p>
-<p><strong>Grid layout toggle:</strong> Enable/disable grid layout in Map Formatting. Defaults to enabled. Disabled automatically when no grid tags are present.</p>
-<p><strong>Interactive Layout:</strong></p>
+<p><strong>What this is for:</strong> Sometimes you want factors to appear in a rough <strong>grid</strong>—like “this cause is clearly to the left of that one”—instead of leaving the layout algorithm to guess. You do that by putting a small <strong>coordinate tag</strong> in the factor label (anywhere in the text). The app reads the tag to place the box, and (by default) hides the tag so respondents don’t see a string of numbers.</p>
+<p>This is especially useful when:</p>
 <ul>
-<li>Grid-tagged factors are positioned at their grid coordinates and locked in place</li>
-<li>Other factors with no grid tag are positioned freely within the grid bounds</li>
-<li>Grid bounds: from smallest x -1 to largest x +1, and smallest y -1 to largest y +1</li>
+<li>your factors fit logically into some kind of positional story like a theory of change and you want to keep them there</li>
+<li>you are showing many different versions of a larger map (e.g. districts within a country) and you want them to be more easily comparable.</li>
 </ul>
-<p><strong>Print/Graphviz Layout:</strong></p>
+<p><strong>How to write a tag:</strong> Use two whole numbers: a <strong>column along the main flow</strong> of the map and a <strong>row</strong> across the flow. For example <code>(2,1)</code> or <code>(2.1)</code> in the label means “second step along the story, first slot across.” You can use square brackets instead of parentheses, and you can leave one side blank if you only care about one direction—for example <code>(3,)</code> fixes the step along the flow but not the slot across.</p>
+<p><strong>In Map Formatting</strong></p>
 <ul>
-<li>Grid-tagged factors anchor the initial and final ranks:</li>
-<li>Factors with minimum rank coordinate (first number) are anchored at <code>rank=min</code> (initial rank)</li>
-<li>Factors with maximum rank coordinate are anchored at <code>rank=max</code> (final rank)</li>
-<li>This improves layout stability while allowing Graphviz to position other nodes optimally</li>
-<li>Grid coordinate tags are stripped from labels in the output</li>
-<li>The <strong>perpendicular coordinate</strong> (second number) is not an absolute y-position in Graphviz; it is only used as a <strong>best-effort ordering hint within a fixed rank</strong> (so y-only tags like <code>(,M)</code> cannot be enforced unless the rank coordinate is also specified).</li>
+<li><strong>Grid layout</strong> — Turn this <strong>off</strong> if you want to ignore tags and let the map place everything as usual. It only appears when at least one factor in your current links actually has a tag. Default is <strong>on</strong>.</li>
+<li><strong>Strip grid tags</strong> — Turn this <strong>off</strong> if you want to <strong>see</strong> the <code>(…)</code> or <code>[…]</code> text on the map. Default is <strong>on</strong> (tags still affect layout when <strong>Grid layout</strong> is on, but the numbers are hidden on the label). These two switches work independently.</li>
 </ul>
-<p><strong>Grid coordinates respect layout direction:</strong></p>
-<ul>
-<li><strong>First number (N)</strong> always maps to the rank direction (main flow direction)</li>
-<li><strong>Second number (M)</strong> always maps to the perpendicular direction</li>
-<li><strong>BT (Bottom-Top)</strong>: First number = y (rank), y starts at bottom (flip y), second = x</li>
-<li><strong>TB (Top-Bottom)</strong>: First number = y (rank), y starts at top (normal), second = x</li>
-<li><strong>LR (Left-Right)</strong>: First number = x (rank), x starts at left (normal), second = y, y starts at top</li>
-<li><strong>RL (Right-Left)</strong>: First number = x (rank), x starts at right (flip x), second = y, y starts at top</li>
-</ul>
+<p><strong>Interactive map</strong> (the usual live map): tagged factors snap to a grid; anything without a tag is still laid out automatically, but is kept <strong>near</strong> the grid so the picture stays readable.</p>
+<p><strong>Print / Graphviz</strong> (static SVG): the app can’t pin exact pixel positions like the live map, but it still respects <strong>left‑to‑right order of the first number</strong> along the direction you chose, and does its best to respect the second number <strong>within</strong> each step. If you only give a second number and not the first, Print layout can’t place that factor on the “step” axis—use both numbers when you care about order.</p>
+<p><strong>Heads-up:</strong> The grid helpers only apply to the <strong>default interactive</strong> layout and to <strong>Print</strong>. If you switch the live map to layouts like <strong>Cola</strong>, <strong>Circle</strong>, or <strong>CiSE</strong>, coordinate tags are <strong>not</strong> used for placement.</p>
 <h3 id="vignette-card">Vignettes <i class="fas fa-pen"></i><a aria-label="Permalink" class="anchor-link" href="/visual-appearance/#vignette-card">#</a></h3>
 <div class="user-guide-callout">
 <strong>📝 What you can do here:</strong> Generate AI-powered narrative summaries of your causal maps. Choose between a **whole-map** summary that covers the relationships in your current filtered view, or a **typical-source** story that focuses on one representative respondent. Useful for reports, annexes, and explaining your analysis in plain language.
@@ -1485,7 +1476,7 @@ Use this when you want a <strong>single-respondent case study</strong>: the app 
 </li>
 </ul>
 </div>
-</div></aside>
+</div><hr/><h2>Backlinks</h2><div class="toc"><ul><li><a class="link-secondary" href="../600 How to -- in the Causal Map app/250 Formatting your map for what you w-c3f604.html">Formatting your map for what you want to show</a></li></ul></div></aside>
 </div>
 <script crossorigin="anonymous" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/sidebar.js"></script>
