@@ -1293,6 +1293,88 @@ def render_links_list_html(md_targets: List[Path], current_out_dir: Path, input_
     return f'<ul>{"".join(items)}</ul>'
 
 
+def _read_image_dimensions(src_path: Path) -> Optional[Tuple[int, int]]:
+    """Read pixel dimensions from JPEG, PNG, GIF or WebP file headers using stdlib only."""
+    import struct
+    try:
+        with open(src_path, "rb") as f:
+            head = f.read(32)
+            if len(head) < 8:
+                return None
+            if head[:8] == b"\x89PNG\r\n\x1a\n":
+                w, h = struct.unpack(">II", head[16:24])
+                return int(w), int(h)
+            if head[:6] in (b"GIF87a", b"GIF89a"):
+                w, h = struct.unpack("<HH", head[6:10])
+                return int(w), int(h)
+            if head[:4] == b"RIFF" and head[8:12] == b"WEBP":
+                chunk = head[12:16]
+                if chunk == b"VP8X":
+                    f.seek(24)
+                    b = f.read(6)
+                    w = (b[0] | (b[1] << 8) | (b[2] << 16)) + 1
+                    h = (b[3] | (b[4] << 8) | (b[5] << 16)) + 1
+                    return w, h
+                if chunk == b"VP8L":
+                    f.seek(21)
+                    b = f.read(4)
+                    bits = b[0] | (b[1] << 8) | (b[2] << 16) | (b[3] << 24)
+                    w = (bits & 0x3FFF) + 1
+                    h = ((bits >> 14) & 0x3FFF) + 1
+                    return w, h
+                if chunk == b"VP8 ":
+                    f.seek(26)
+                    b = f.read(4)
+                    w = (b[0] | (b[1] << 8)) & 0x3FFF
+                    h = (b[2] | (b[3] << 8)) & 0x3FFF
+                    return w, h
+            if head[:2] == b"\xff\xd8":
+                f.seek(2)
+                while True:
+                    b = f.read(1)
+                    while b and b != b"\xff":
+                        b = f.read(1)
+                    while b == b"\xff":
+                        b = f.read(1)
+                    if not b:
+                        return None
+                    marker = b[0]
+                    if 0xC0 <= marker <= 0xCF and marker not in (0xC4, 0xC8, 0xCC):
+                        f.read(3)
+                        hb = f.read(2)
+                        wb = f.read(2)
+                        if len(hb) < 2 or len(wb) < 2:
+                            return None
+                        h = struct.unpack(">H", hb)[0]
+                        w = struct.unpack(">H", wb)[0]
+                        return int(w), int(h)
+                    seg_len = f.read(2)
+                    if len(seg_len) < 2:
+                        return None
+                    f.seek(struct.unpack(">H", seg_len)[0] - 2, 1)
+    except Exception:
+        return None
+    return None
+
+
+def _image_size_style(src_path: Path, narrow_max_width: int = 600, max_display_height: int = 600, wide_aspect: float = 1.6) -> str:
+    """Inline style for ![[image]] embeds.
+
+    Wide-shallow images (aspect width/height >= wide_aspect) are unconstrained
+    and may fill the content column. Squarer or tall images get a max-width
+    cap of about two thirds of the content column, plus a max-height cap so
+    very tall images do not dominate the page."""
+    dims = _read_image_dimensions(src_path)
+    if not dims:
+        return ""
+    w, h = dims
+    if w <= 0 or h <= 0:
+        return ""
+    if (w / h) >= wide_aspect:
+        return ""
+    return f' style="max-width: {narrow_max_width}px; max-height: {max_display_height}px; width: auto; height: auto;"'
+
+
 def replace_image_wikilinks(md_text: str, current_md_path: Path, input_root: Path, output_root: Path) -> str:
     """Replace Obsidian media embeds ![[...]] with <img> or <video> tags pointing to copied assets."""
     vault_root = input_root.parent
@@ -1329,7 +1411,8 @@ def replace_image_wikilinks(md_text: str, current_md_path: Path, input_root: Pat
         if ext in _VIDEO_EXTS:
             return f'<div class="video-embed mb-3"><video src="{href}" controls class="w-100">Your browser does not support the video tag.</video></div>'
         # NOTE: Avoid lazy-loading; it breaks Playwright PDF generation (images often won't load before print).
-        return f'<img src="{href}" alt="{alt_attr}" class="img-fluid" />'
+        size_style = _image_size_style(src_file)
+        return f'<img src="{href}" alt="{alt_attr}" class="img-fluid"{size_style} />'
 
     return pattern.sub(_repl, md_text)
 
