@@ -12,11 +12,11 @@
 <meta content="article" property="og:type"/>
 <meta content="https://garden.causalmap.app/kinds/" property="og:url"/>
 <meta content="" property="og:site_name"/>
-<meta content="https://garden.causalmap.app/600 How to -- in the Causal Map app/img/bookmarks-example-original/bookmark-493.png" property="og:image"/>
+<meta content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Different kinds of coding and recoding" name="twitter:title"/>
 <meta content="Hard coding Hard recoding Links recoding Factors recoding Soft recoding Accuracy Highest ... ... ... Lowest Speed Slowest ... ... ... Fastest Manual Just code manually Make a copy of your file, delete links and start aga" name="twitter:description"/>
-<meta content="https://garden.causalmap.app/600 How to -- in the Causal Map app/img/bookmarks-example-original/bookmark-493.png" name="twitter:image"/>
+<meta content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685" name="twitter:image"/>
 <link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'&gt;&lt;circle cx='8' cy='8' r='8' fill='%2390c3c6'/&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet"/>
 <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet">
@@ -1348,8 +1348,8 @@
 <td>AI</td>
 <td>Just code with AI, with/without a codebook</td>
 <td>As above, or just put the switch "skip  coded sources" to off</td>
-<td>AI Answers / Links.<br/>Recode labels permanently or into temporary cause/effect columns.  <br/></td>
-<td>AI Answers / Filters.<br/>Recode labels permanently or into temporary cause/effect columns</td>
+<td>AI Answers / Links.<br/>Writes into whichever Label Set is active in the toolbar.</td>
+<td>AI Answers / Factors.<br/>Writes into whichever Label Set is active in the toolbar.</td>
 <td>Apply magnetic labels in Soft Recode filter</td>
 </tr>
 </tbody>
@@ -1360,7 +1360,7 @@
 <li>Hard recoding can take a long time, is expensive, and does not encourage experimentation</li>
 <li>With Links/Factors recoding, you can:<ul>
 <li>Recode just the currently filtered sources/links (or all links)</li>
-<li>Recode the permanent cause/effect labels or recode into one or more sets of temporary columns, e.g. <code>experiment1_cause</code> and  <code>experiment1_effect</code>, and then use these temporary labels in your maps and tables.</li>
+<li>Recode into whichever Label Set is active. Pick <code>default</code> in the Label Set widget (toolbar, below the Sources bar) to write to the permanent cause/effect labels; create a named set such as <code>experiment1</code> and the AI writes to <code>cause_experiment1</code> / <code>effect_experiment1</code> instead. Flip between sets in the same widget to view either.</li>
 <li>There is also another option Answers which is not about recoding; it is simply a way to send your links and/or factors data to an AI and getting a text answer.</li>
 </ul>
 </li>
@@ -1373,48 +1373,22 @@
 <li>Be careful: it's tempting to say things like "Find 3-8 top-level factor labels which cover the meaning of all these labels and recode them with the new top-level labels", but remember the "Rows per call" slider: with a large set of links and lots of quotes you will probably have to break up your work into multiple chunks, and each call may come up with different labels. In this case you could use the Answers mode (or the Cluster part of Soft Recode filter) first to develop some labels. </li>
 </ul>
 <h2 id="soft-recode-a-useful-contrast">Soft recode: a useful contrast<a aria-label="Permalink" class="anchor-link" href="/kinds/#soft-recode-a-useful-contrast">#</a></h2>
-<p>Soft recode is best treated as an exploratory view, not as a final correction. These two <code>example-original</code> bookmarks show why the settings matter:</p>
-<p><img alt="Soft recode using top-level labels (bookmark #493)" loading="lazy" src="img/bookmarks-example-original/bookmark-493.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #493 — soft recode using all top-level labels from the human-coded file.</em></p>
-<p><img alt="Soft recode with recycled weak matches (bookmark #494)" loading="lazy" src="img/bookmarks-example-original/bookmark-494.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #494 — same setup, but recycling weaker matches.</em></p>
-<p>Use this kind of pair when you want to decide whether the magnetised view is good enough for exploration, or whether you need a more deliberate recoding pass.</p>
-<details class="embed-block mb-3"><summary class="text-muted d-flex align-items-center justify-content-between"><span>Recoding labels temporarily</span><span aria-hidden="true" class="chev">▸</span></summary><div class="mt-2"><h1>Recoding labels temporarily</h1>
-<p>Sometimes you want to improve your factor labels (cause/effect text) without changing the original data. You might want to:</p>
+<p>Soft</p>
+<h2 id="see-also">See also<a aria-label="Permalink" class="anchor-link" href="/kinds/#see-also">#</a></h2>
 <ul>
-<li><strong>Experiment safely</strong> — try different prompts or AI settings without overwriting what you coded</li>
-<li><strong>Iterate</strong> — run factor relabelling several times, refining the prompt each time, until you’re happy</li>
-<li><strong>Compare</strong> — switch between original and improved labels to see the difference</li>
-<li><strong>Review before committing</strong> — only merge into the main cause/effect fields when you’re satisfied</li>
+<li><a class="wikilink" href="/howto-bulk-relabel">Bulk relabelling factors</a> for the manual routes (search/replace, Bulk Edit) in detail.</li>
+<li><a class="wikilink" href="300 Translate factor labels.html">Translate factor labels</a> for a worked AI Answers / Factors example using a <code>french</code> Label Set.</li>
+<li><a class="wikilink" href="500 Recoding labels temporarily.html">Recoding labels temporarily</a> for safe experimentation with the Label Set widget.</li>
 </ul>
-<p>The app supports this with two features that work together: <strong>Temporary Cause/Effect Fields</strong> (a filter) and <strong>Target suffix</strong> (in AI Answers → Factors).</p>
-<h2>How it works</h2>
-<ol>
-<li>
-<p><strong>Create temporary columns.</strong> When you run factor relabelling, you can choose a “Target suffix” (e.g. <code>_temp</code> or <code>_version1</code>). Instead of overwriting <code>cause</code> and <code>effect</code>, the AI writes to <code>cause_temp</code>/<code>effect_temp</code> (or <code>cause_version1</code>/<code>effect_version1</code>). Your original labels stay untouched.</p>
-</li>
-<li>
-<p><strong>Show them on the map.</strong> Add the <strong>Temporary Cause/Effect Fields</strong> filter in the Filter Links tab. Point it at those same columns (e.g. cause_temp, effect_temp). The map will display the recoded labels instead of the originals.</p>
-</li>
-<li>
-<p><strong>Iterate.</strong> With the filter active, you can run factor relabelling again. The AI will work on the <em>current</em> temp labels (what you see on the map), not the originals. So you can refine prompts, fix odd results, and run again — all without touching the underlying data.</p>
-</li>
-<li>
-<p><strong>When you’re happy</strong>, you can</p>
-<ol>
-<li>leave one or more sets of temporary columns as a separate view for analysis. You can switch between different sets and the permanent labels with the Temporary filter.</li>
-<li>or rewrite the permanent cause/effect labels with these temporary labels if you want to make the changes permanent. The easiest way to do that is to apply just the Temporary filter and then Save As Currently Filtered. </li>
-</ol>
-</li>
-</ol>
-<h2>Summary</h2>
-<ul>
-<li><strong>Why:</strong> Experiment, iterate, and compare label improvements without changing your original coding.</li>
-<li><strong>How:</strong> Use a Target suffix when running factor relabelling, then add the Temporary Cause/Effect Fields filter to display those labels on the map. You can then run factor relabelling again to refine the temp labels further.</li>
-</ul><div class="mt-2"><a class="link-secondary" href="500 Recoding labels temporarily.html">Open page →</a></div></div></details>
 <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a class="link-secondary" href="https://causalmap.app">Causal Map Ltd</a> 2026</span> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" style="height:18px;opacity:0.7;vertical-align:middle;"/></a><a class="link-secondary ms-2" href="https://app.causalmap.app" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>
 </main>
-<aside class="rightbar"><hr/><h2>Links</h2><div class="toc"><ul><li><a class="link-secondary" href="500 Recoding labels temporarily.html">Recoding labels temporarily</a></li></ul></div><hr/><h2>Backlinks</h2><div class="toc"><ul><li><a class="link-secondary" href="200 Bulk relabelling factors ((howto-b-300bdb.html">Bulk relabelling factors</a></li><li><a class="link-secondary" href="100 Manually code your first project (-1876c6.html">Manually code your first project</a></li></ul></div></aside>
+<aside class="rightbar"><h2>On this page</h2><div class="toc"><div class="toc">
+<ul>
+<li><a href="/kinds/#soft-recode-a-useful-contrast">Soft recode: a useful contrast</a></li>
+<li><a href="/kinds/#see-also">See also</a></li>
+</ul>
+</div>
+</div><hr/><h2>Links</h2><div class="toc"><ul><li><a class="link-secondary" href="200 Bulk relabelling factors ((howto-b-300bdb.html">Bulk relabelling factors</a></li><li><a class="link-secondary" href="500 Recoding labels temporarily.html">Recoding labels temporarily</a></li><li><a class="link-secondary" href="300 Translate factor labels.html">Translate factor labels</a></li></ul></div><hr/><h2>Backlinks</h2><div class="toc"><ul><li><a class="link-secondary" href="200 Bulk relabelling factors ((howto-b-300bdb.html">Bulk relabelling factors</a></li><li><a class="link-secondary" href="100 Manually code your first project (-1876c6.html">Manually code your first project</a></li><li><a class="link-secondary" href="500 Recoding labels temporarily.html">Recoding labels temporarily</a></li></ul></div></aside>
 </div>
 <script crossorigin="anonymous" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/sidebar.js"></script>
