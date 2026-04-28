@@ -12,11 +12,11 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://garden.causalmap.app/001 Working Papers/005 Minimalist coding for causal mappi-92df1f.html">
     <meta property="og:site_name" content="">
-    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
+    <meta property="og:image" content="https://garden.causalmap.app/600 How to -- in the Causal Map app/img/bookmarks-example-original/bookmark-266.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Minimalist coding for causal mapping">
     <meta name="twitter:description" content="Abstract # This working paper explains our Minimalist / Barefoot approach to coding causal claims in text as simple directed links (“X influenced Y”), developed through extensive experience with large-scale practical cod">
-    <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
+    <meta name="twitter:image" content="https://garden.causalmap.app/600 How to -- in the Causal Map app/img/bookmarks-example-original/bookmark-266.png">
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='8' fill='%2390c3c6'/></svg>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -1313,70 +1313,44 @@ Our approach is notable in particular because it rejects variable-based approach
 </div>
 <p>To the best of our knowledge, all major approaches to causal mapping (Axelrod (1976), Eden et al. (1992), Laukkanen &amp; Wang (2016), Maule et al. (2003)) would most like code (1) as <code>amount eaten</code> —&gt; <code>energy level</code>. And they would treat (2) pretty much the same. </p>
 <p>Nomenclature: we will call all cause and/or effect labels "factor labels", whether in the variable-based or minimalist approaches.</p>
-<p>To make this work, we have to believe there are at least two things called variables which can take different values (higher/lower?) and that causal effects are powered by at some kind of (monotonic?) relationship between them: something like, <em>the more</em> I eat, <em>the more</em> energy I have (in addition to which we have to code the actual, factual claims.</p>
+<p>To make this work, we have to believe there are at least two things called variables which can take different values (higher/lower?) and that causal effects are powered by at some kind of (monotonic?) relationship between them: something like, <em>the more</em> I eat, <em>the more</em> energy I have (in addition to which we have to code the actual, factual claims).</p>
 <p>But is that what the speaker <em>meant</em>? How do we know if the speaker has say a continuous or Boolean (yes/no) model of "eating"? If Boolean, what is the opposite of eating a lot? Eating only a little? Not eating? If continuous, how do we know what kind of function they use in their own internal model?</p>
 <p>In other words, to use the variable-based approach, we mostly have to go way beyond what the speaker actually meant; so it is not really a form of qualitative data analysis with the aim of modelling sources' beliefs. It's not just coding, it's modelling, with an ambiguity about whether we are trying to model the world or individuals' putative internal models of it. </p>
-<p>(Parenthetically, to actually code what the source said, we would in addition we have to code two more facts: I actually ate less (or more), and: Also, I actually did feel lethargic (or lively)). </p>
+<p>(Parenthetically, to actually code what the source said, we would also have to code two more facts: I actually ate less (or more), and: Also, I actually did feel lethargic (or lively)). </p>
 <p>The problem with trying to apply these kinds of sophisticated frameworks is that the application is nearly always <em>ontologically under-determined</em>. </p>
 <p>We have found that it is often over-specified (and often psychologically implausible) to treat ordinary-language causal claims as if they asserted an explicit functional relationship between well-defined variables. Trying to force that kind of structure on everything turns the “easy 90%” of coding into a harder and more arbitrary task. Of course, one can decide to use a particular non-minimalist representation for a particular modelling purpose; our claim is only that this is usually not a faithful representation of what most speakers actually say or imply, most of the time. For example, if we code "I got really tired because I have Long Covid", we could perhaps treat both endpoints as Boolean variables, but what about "I got really tired because it was really hot", and "I got really tired because it was really cold" — how are we going to represent “temperature” as a single variable while preserving the speaker’s intended meaning? If what we want to do is model a system, we can pick a solution. But if we want to model <em>cognition as expressed in text</em>, many “variable semantics” choices are over-committed.</p>
-<p>Most causal mappers are quite conscious that modelling people's causal beliefs is not the same as modelling the real world. Sometimes the approach (Axelrod 1976) is explicitly designed to model someone's thinking. But often it is hard to keep the two worlds separate, what we have called the Janus problem (Powell et al. 2024). Modelling the real world is exciting, and useful. Traditions like Systems Diagrams, Fuzzy Cognitive Maps, Causal Loop Diagrams and Directed Acyclic Graphs all to some extent treat </p>
+<p>Most causal mappers are quite conscious that modelling people's causal beliefs is not the same as modelling the real world. Sometimes the approach (Axelrod 1976) is explicitly designed to model someone's thinking. But often it is hard to keep the two worlds separate, what we have called the Janus problem (Powell et al. 2024). Modelling the real world is exciting, and useful. Traditions like Systems Diagrams, Fuzzy Cognitive Maps, Causal Loop Diagrams and Directed Acyclic Graphs all, to varying degrees, treat the diagram as a model of how the world works rather than a record of what people said. Variables, weights, and (sometimes) functional forms slip in, because the diagram itself is doing the modelling. Our claim is weaker. We are recording what people said about causes, with quotes, and leaving the question of how the world really works to a later step.</p>
 <p>Using variable-based approaches allows one to code linear or even non-linear causal influences of single or even multiple causes on their effects. One can do the "coding" by simply writing down (using appropriate special syntax) the connections, because one is an expert, and/or one can verify such statements statistically on the basis of observational data. Thus armed, one can make predictions or have sophisticated arguments about counterfactuals. </p>
 <h3 class="rounded-info" id="the-minimalist-approach">The minimalist approach<a aria-label="Permalink" class="anchor-link" href="#the-minimalist-approach">#</a></h3>
 <p>But using minimalist coding we cannot do that, because our claims are formally weaker and therefore our inference rules are weaker. What we <em>can</em> do is still really interesting. We can ask and answer many different kinds of useful questions like:</p>
 <ul>
-<li>
-<p>what are the main influences on (or effects of) a particular factor, according to the sources?</p>
-</li>
-<li>
-<p>what are the upstream, indirect influences on (or effects of) a particular factor, bearing in mind <a class="wikilink" href="../010 Task 3 -- Answering questions -- General/The transitivity trap.html">The transitivity trap</a>?</p>
-</li>
-<li>
-<p>how well is a given programme theory validated by the respondents' narratives? (We can do this basically by using embeddings to get measures of semantic similarity between labels and aggregate these as a goodness of fit of theory to data.)</p>
-</li>
+<li>what are the main influences on (or effects of) a particular factor, according to the sources?</li>
+<li>what are the upstream, indirect influences on (or effects of) a particular factor, bearing in mind <a class="wikilink" href="../010 Task 3 -- Answering questions -- General/The transitivity trap.html">The transitivity trap</a>?</li>
+<li>how well is a given programme theory validated by the respondents' narratives? (We can do this basically by using embeddings to get measures of semantic similarity between labels and aggregate these as a goodness of fit of theory to data.)</li>
 </ul>
 <p>That is all exciting and useful. It's a surprisingly simple way to make a lot of sense out of a lot of texts which is, with caveats, almost completely automatable.</p>
 <p><strong>I'll start by describing the "minimalist" approach</strong> to coding causal statements used for QuIP and developed originally by James, Fiona and colleagues at Bath SDR and developed and further formalised at Causal Map Ltd in collaboration with Bath SDR. This formalisation lives inside the <a href="https://app.causalmap.app">Causal Map app</a>. Then we will show how we can extend this approach with useful transformations. Finally I will try to answer the question of whether it can help us deal with more complicated constructions like enabling and blocking and whether this could help us with mid-range theory. As an appendix I'll add a more detailed overview of minimalist causal coding.</p>
 <p>The minimalist approach is notable because it is based in our <strong>joint experience of coding thousands and thousands of stakeholder interviews and other data such as project reports</strong>, mostly from international development and related sectors, as well as coding hundreds of thousands of pages with AI-assisted coding. These have nearly always involved <strong>multiple sources talking about at least partially overlapping subject matter</strong>. So this coding produces individual causal maps for each source, which can then be combined in various ways — rather than constructing single-source maps of expert thinking (Axelrod 1976) or the collective construction of a consensus map (Barbrook-Johnson &amp; Penn 2022).</p>
 <p>As before, we treat causal mapping as three tasks</p>
 <ul>
-<li>
-<p>Task 1, data gathering, not covered here;</p>
-</li>
-<li>
-<p>Task 2, coding: creating <strong>evidence-with-provenance</strong> (a links table)</p>
-</li>
-<li>
-<p>Task 3, analysis: a sequence of transforms of the original links table: the final interpretation of the analysis can be understood as a concatenation of the interpretation rules for each transform.</p>
-</li>
+<li>Task 1, data gathering, not covered here;</li>
+<li>Task 2, coding: creating <strong>evidence-with-provenance</strong> (a links table)</li>
+<li>Task 3, analysis: a sequence of transforms of the original links table: the final interpretation of the analysis can be understood as a concatenation of the interpretation rules for each transform.</li>
 </ul>
 <h2 class="banner-info" id="project-context-how-this-paper-fits">Project context (how this paper fits)<a aria-label="Permalink" class="anchor-link" href="#project-context-how-this-paper-fits">#</a></h2>
 <p>A companion formalisation paper <a class="wikilink" href="006 A formalisation of causal mapping.html">A formalisation of causal mapping</a> makes key parts of the method more precise (data structures, constraints, and conservative inference rules), but the focus here is the narrative rationale and practical coding guidance.</p>
 <p><strong>Unique contribution (what this paper adds):</strong></p>
 <ul>
-<li>
-<p>A definition of the <strong>minimalist/barefoot</strong> coding stance (“X influenced Y, with provenance”) and what it deliberately does <em>not</em> encode.</p>
-</li>
-<li>
-<p>An account of why this stance is useful at scale (including AI-assisted extraction) and where it fails (enablers/blockers; conjunctions/packages).</p>
-</li>
-<li>
-<p>Examples of additional extensions / transforms, called "filters" in the Causal Map app. Both the initial definition of a links table and each additional filter is described in terms of syntax and of semantics (interpretation rules).</p>
-</li>
+<li>A definition of the <strong>minimalist/barefoot</strong> coding stance (“X influenced Y, with provenance”) and what it deliberately does <em>not</em> encode.</li>
+<li>An account of why this stance is useful at scale (including AI-assisted extraction) and where it fails (enablers/blockers; conjunctions/packages).</li>
+<li>Examples of additional extensions / transforms, called "filters" in the Causal Map app. Both the initial definition of a links table and each additional filter is described in terms of syntax and of semantics (interpretation rules).</li>
 </ul>
 <p>This paper is part of a small set of new working papers</p>
 <ul>
-<li>
-<p>Companion formal spec: <a class="wikilink" href="006 A formalisation of causal mapping.html">A formalisation of causal mapping</a></p>
-</li>
-<li>
-<p>QDA positioning: <a class="wikilink" href="/causal-qda">Causal mapping as causal QDA</a></p>
-</li>
-<li>
-<p>Practical transforms/diagnostics: <a class="wikilink" href="900 Magnetisation.html">Magnetisation</a>; <a class="wikilink" href="900 A simple measure of the goodness o-de16cb.html">A simple measure of the goodness of fit of a causal theory to a text corpus</a>; ; other transforms to come later</p>
-</li>
-<li>
-<p>A worked “AI clerk vs human architect” example: </p>
-</li>
+<li>Companion formal spec: <a class="wikilink" href="006 A formalisation of causal mapping.html">A formalisation of causal mapping</a></li>
+<li>QDA positioning: <a class="wikilink" href="/causal-qda">Causal mapping as causal QDA</a></li>
+<li>Practical transforms/diagnostics: <a class="wikilink" href="900 Magnetisation.html">Magnetisation</a>; <a class="wikilink" href="900 A simple measure of the goodness o-de16cb.html">A simple measure of the goodness of fit of a causal theory to a text corpus</a>; ; other transforms to come later</li>
+<li>A worked “AI clerk vs human architect” example: </li>
 </ul>
 <p>This paper sits alongside (and builds on) four related contributions. First, our evaluator-facing account argues that causal mapping is best treated primarily as a way to assemble and organise <strong>evidence-with-provenance</strong>, keeping the subsequent evaluative judgement about “what is really happening” distinct (Powell et al. 2024). We adopt that stance here: a coded link is first and foremost “there is evidence that a source claims X influenced Y”, not a system model with weights or effect sizes. Second, QuIP-style evaluation practice shows how “stories of change” can be elicited in a goal-free / blindfolded style to reduce confirmation bias, yielding narrative data that is natively causal (change plus reasons) and therefore well-suited to parsimonious link coding (Copestake et al. 2019). Third, our ToC comparison case study shows how empirical causal maps can be used as a disciplined way to check a programme’s Theory of Change against beneficiaries’ narratives, and to support evidence-based adjustment of “middle-level theory” rather than just project-level reporting (Powell et al. 2023). Fourth, our AI-assisted causal mapping work shows that this minimalist stance is also a practical entry point for automation: we can use genAI as a low-level assistant — because the minimalist coding task is so relatively easy — while keeping human judgement focused on the few high-leverage decisions (prompt design, verification, and synthesis choices) (Powell &amp; Cabral 2025; Powell et al. 2025). The present paper extracts and clarifies the core “minimalist” coding commitments that make that workflow workable and checkable.</p>
 <p>Our experience has been that the vast majority of causal claims in these kinds of texts are easily and satisfactorily coded in the simplest possible form "X causally influenced Y". Explicit invocation of concepts like enabling/blocking, or necessary and/or sufficient conditions, or linear or even non-linear functions, or packages of causes, or even the strength of a link, are relatively rare. The causes and effects are not conceived of as variables, the causal link is undifferentiated, without even polarity, and if any counterfactual is implied it remains very unclear.</p>
@@ -1400,6 +1374,8 @@ Our approach is notable in particular because it rejects variable-based approach
 <p>That's it.</p>
 <h2 class="banner-info" id="causal-maps">Causal maps<a aria-label="Permalink" class="anchor-link" href="#causal-maps">#</a></h2>
 <p>Crucially, we can then display the coded claims for individuals as a graphical causal map, and we can also display the entire map for all individuals and/or maps filtered in different ways to answer different questions. There is a handful of other applications (Ackermann et al. 1996)   (Laukkanen 2012) for causal mapping which also do this; but as far as we know, only Causal Map also allows direct QDA-style causal coding of texts.</p>
+<p><img alt="Top factors map (bookmark #266)" loading="lazy" src="../600 How to -- in the Causal Map app/img/bookmarks-example-original/bookmark-266.png" style="background-color: #fff;"/></p>
+<p><em>Bookmark #266 — a typical first-pass map: top five factors by frequency, with no further encoding of polarity, weight, or function. The numbers are evidence counts (citations on links, source counts on factors), not effect sizes.</em></p>
 <h2 class="banner-info" id="data-structure">Data structure<a aria-label="Permalink" class="anchor-link" href="#data-structure">#</a></h2>
 <p>Although we have the option of creating additional tags associated with each link (where many approaches would for example code the polarity of a link) this is not central to our approach.</p>
 <p>We don't use a separate native table for factor labels: they are simply derived on the fly from whatever labels happen to be used in the current table of links. This makes data processing simpler and also suggests an ontological stance: causal factors only exist in virtue of being part of causal claims.</p>
@@ -1415,14 +1391,14 @@ Our approach is notable in particular because it rejects variable-based approach
 <h2 class="banner-info" id="staying-on-the-surface">Staying on the surface<a aria-label="Permalink" class="anchor-link" href="#staying-on-the-surface">#</a></h2>
 <p>At Causal Map, we rarely make any effort to get beneath the surface, to try to infer hidden or implicit meanings. This is particularly well-suited to coding at scale and/or with AI. Our colleagues at Bath SDR do this a bit differently, spending more effort to read across an entire source to work out what the source <em>really</em> meant to say.</p>
 <h2 class="banner-info" id="closer-to-the-cognitive-truth">Closer to the cognitive truth<a aria-label="Permalink" class="anchor-link" href="#closer-to-the-cognitive-truth">#</a></h2>
-<p>see above</p>
+<p>People rarely talk about causes as variables. In our experience they say "X made Y happen", or "Y was because of X", and that is most of what they say. They almost never commit to whether X is continuous or Boolean, or to whether the relationship is linear, threshold, or anything else. If we are trying to record what they said, we are better off not adding any machinery they did not specify. That is what we mean by staying close to the cognitive surface: the labels carry whatever the speaker was carrying, and we add nothing else.</p>
 <h2 class="banner-info" id="unclear-counterfactuals">Unclear counterfactuals<a aria-label="Permalink" class="anchor-link" href="#unclear-counterfactuals">#</a></h2>
-<p>See above</p>
+<p>A causal claim in ordinary speech rarely carries a clean counterfactual. "I drank a lot and so I got super happy" doesn't tell us whether the speaker thinks they would have been mildly happy without the drink, or actively miserable, or whether the comparison wouldn't apply because they wouldn't have been at the same event. Variable-based coding has to commit to one of these answers, even if only by default. Minimalist coding doesn't. A coded link says "X influenced Y", and the counterfactual stays where the speaker left it.</p>
 <h2 class="banner-info" id="general-versus-specific">General versus specific<a aria-label="Permalink" class="anchor-link" href="#general-versus-specific">#</a></h2>
 <p>Minimalist coding focuses primarily on <strong>factual causal claims</strong> which also warrant the inference that both X and Y actually happened / were the case.</p>
 <p>Most causal claims in the kinds of texts we have dealt with (interviews and published or internal reports in international development and some other sectors) are factual, about the present or past. Sometimes we see general claims, and we often just code these willy-nilly. In any case, the distinction between general claims and claims about specific events that actually happen is often fractal (a general claim can seem specific in a broader context) and difficult to maintain completely when modelling ordinary language.</p>
 <h2 class="banner-info" id="we-dont-code-absences">We don't code absences<a aria-label="Permalink" class="anchor-link" href="#we-dont-code-absences">#</a></h2>
-<p>Minimalist coding may be reasonably also called <strong>Qualitative Causal Coding</strong> or <strong>Causal QDA coding</strong>. It shares characteristics with some forms of coding within Qualitative Data Analysis (QDA), in particular demonstrating an asymmetry between presence and absence (a specific tag not being applied is not the same as the application of an "oppositely-poled" tag.</p>
+<p>Minimalist coding may be reasonably also called <strong>Qualitative Causal Coding</strong> or <strong>Causal QDA coding</strong>. It shares characteristics with some forms of coding within Qualitative Data Analysis (QDA), in particular demonstrating an asymmetry between presence and absence (a specific tag not being applied is not the same as the application of an "oppositely-poled" tag).</p>
 <p>We do not code absences unless they are specified within the text (e.g. perhaps "because of the barking dog, the owner did not come out of the house".</p>
 <p>While codes may be counted, the concept of a <em>proportion</em> of codes is challenging because the denominator is often unclear.</p>
 <p>If families are talking about reasons for family disputes, and family F mentions social media use, and family G mentions homework, we do not usually interpret this as meaning that family F does <em>not</em> think that homework can also be a cause of family disputes. (This should derive formally from the interpretation of multiple causal claims).</p>
@@ -1432,46 +1408,34 @@ Our approach is notable in particular because it rejects variable-based approach
 <p>Tags can be used to group factors into <strong>themes</strong> which are not themselves causal factors (e.g. health, environment), without making them part of a hierarchy. They can add <strong>lightweight metadata</strong> for later filtering (e.g. <code>(Outcome)</code>, <code>#nutrition</code>, <code>[Work]</code>), while keeping the underlying causal claim as just <code>X -&gt; Y</code>.</p>
 <p>Suitable filters can then be provided to:</p>
 <ul>
-<li>
-<p><strong>Filter by theme/flag</strong>: because tags are just text, any “match start/anywhere/exact” label filter can include or exclude factors containing <code>#health</code>, <code>(Outcome)</code>, etc.</p>
-</li>
-<li>
-<p><strong>Hide tags for display</strong>: to strip tags out for a cleaner map/table view, while retaining them in the underlying data.</p>
-</li>
+<li><strong>Filter by theme/flag</strong>: because tags are just text, any “match start/anywhere/exact” label filter can include or exclude factors containing <code>#health</code>, <code>(Outcome)</code>, etc.</li>
+<li><strong>Hide tags for display</strong>: to strip tags out for a cleaner map/table view, while retaining them in the underlying data.</li>
 </ul>
 <p>Tagging factor labels is different from adding link metadata because it literally creates different causal factors. So <code>Improved health</code> and <code>Improved health [outcome]</code> are formally two different causal factors. However if we apply a filter to strip the <code>[outcome]</code> tag, they then become the same causal factor.</p>
 <p>For a fuller discussion (including examples like <code>#nutrition</code> and <code>(Outcome)</code> and why uniqueness matters), see: <a href="../007%20Task%202%20--%20Causal%20coding%20--%20minimalist%20style/300%20Factor%20label%20tags%20--%20coding%20factor%20metadata%20within%20its%20label.md">Factor label tags — coding factor metadata within its label</a>.</p>
 <h3 class="rounded-info" id="coping-with-many-labels">Coping with many labels<a aria-label="Permalink" class="anchor-link" href="#coping-with-many-labels">#</a></h3>
 <p>We can:</p>
 <ul>
-<li>
-<p>Use human- or AI-powered clustering techniques to consolidate the codes according to some theory or iteratively according to some developing theory</p>
-</li>
-<li>
-<p>Use AI-powered clustering techniques to consolidate the codes according to automated, numerical encoding of their meanings</p>
-</li>
-<li>
-<p>"Hard-recode" the entire dataset using a newly agreed codebook (see above)</p>
-</li>
-<li>
-<p>"Soft-recode" the dataset on the fly using embeddings to recode raw labels into those codebook labels to which they are most similar</p>
-</li>
+<li>Use human- or AI-powered clustering techniques to consolidate the codes according to some theory or iteratively according to some developing theory</li>
+<li>Use AI-powered clustering techniques to consolidate the codes according to automated, numerical encoding of their meanings</li>
+<li>"Hard-recode" the entire dataset using a newly agreed codebook (see above)</li>
+<li>"Soft-recode" the dataset on the fly using embeddings to recode raw labels into those codebook labels to which they are most similar</li>
 </ul>
 <h2 class="banner-info" id="evidence-strength-is-not-causal-effect-size">Evidence strength is not causal effect size<a aria-label="Permalink" class="anchor-link" href="#evidence-strength-is-not-causal-effect-size">#</a></h2>
 <p>Counts (how many times a link is coded; how many sources mention it) measure <em>evidence volume/breadth in the corpus</em>, not causal magnitude in the world. This matters because the outputs can look like a quantitative system model even when they are not one.</p>
 <p>In the app we routinely distinguish:</p>
 <ul>
-<li>
-<p><strong>Citation count</strong>: how many coded mentions support a link (volume).</p>
-</li>
-<li>
-<p><strong>Source count</strong>: how many distinct sources mention it (breadth / rough consensus).</p>
-</li>
+<li><strong>Citation count</strong>: how many coded mentions support a link (volume).</li>
+<li><strong>Source count</strong>: how many distinct sources mention it (breadth / rough consensus).</li>
 </ul>
 <p>These are useful for prioritising what to look at, or for filtering (e.g. keeping only links with <code>min_source_count = 2</code>), but they do not tell you whether a causal influence is “stronger” in any effect-size sense.</p>
 <h2 class="banner-info" id="the-transitivity-trap-and-thread-tracing">The transitivity trap and “thread tracing”<a aria-label="Permalink" class="anchor-link" href="#the-transitivity-trap-and-thread-tracing">#</a></h2>
 <p>It is usually invalid to infer a long causal chain by stitching together links from different sources. A conservative rule is: only treat an indirect pathway \(A \rightarrow B \rightarrow C\) as supported when the <em>same source</em> provides each step (“thread tracing”), unless contexts are explicitly aligned.</p>
 <p>The canonical failure mode is: source 1 says <code>A -&gt; B</code>, source 2 says <code>B -&gt; C</code>, and we mistakenly conclude that anyone told a coherent story <code>A -&gt; B -&gt; C</code>. In practice we handle this by “thread tracing”: for a given query we loop through sources one at a time, construct the valid paths <em>within each source</em>, and then combine only the edges that appear in valid within-source paths.</p>
+<p><img alt="Path tracing without source tracing (bookmark #1129)" loading="lazy" src="../600 How to -- in the Causal Map app/img/bookmarks-example-original/bookmark-1129.png" style="background-color: #fff;"/></p>
+<p><em>Bookmark #1129 — path tracing from <code>Increased knowledge</code> to <code>Improved health</code>: every link on a route between them, across all sources. Easy to misread as a story anyone told.</em></p>
+<p><img alt="Path tracing with source tracing (bookmark #981)" loading="lazy" src="../600 How to -- in the Causal Map app/img/bookmarks-example-original/bookmark-981.png" style="background-color: #fff;"/></p>
+<p><em>Bookmark #981 — same trace with source tracing on. Only routes told within a single source survive: a much smaller, more defensible set of edges.</em></p>
 <h2 class="banner-info" id="the-filter-pipeline-as-a-mental-model-for-analysis">The filter pipeline as a mental model for analysis<a aria-label="Permalink" class="anchor-link" href="#the-filter-pipeline-as-a-mental-model-for-analysis">#</a></h2>
 <p>Most analyses are built by applying a sequence of simple operations (for example: subset links to retain only specific sources; trace paths; rewrite labels; bundle duplicates; then show a map/table). Thinking in terms of a pipeline helps make the meaning of an output explicit: it is always “the result of these filters, in this order”.</p>
 <p>Concretely, you can think of an analysis as “a links table passed through transforms”, where <code>|&gt;</code> is a "pipe" symbol which just passes a result from the left to a new transform on the right.</p>
@@ -1480,7 +1444,7 @@ Our approach is notable in particular because it rejects variable-based approach
 <p>This is also why “the same dataset” can yield very different-looking maps without any contradiction: you are simply looking at different derived views defined by different pipelines.</p>
 <p>So one can think of analysis as a sequence of transforms of the original links table. The final interpretation of the analysis can be understood as a concatenation of the interpretation rules for each transform.</p>
 <h2 class="banner-info" id="positioning-within-qualitative-research-and-likely-critiques">Positioning within qualitative research (and likely critiques)<a aria-label="Permalink" class="anchor-link" href="#positioning-within-qualitative-research-and-likely-critiques">#</a></h2>
-<p>This paper is about a <strong>coding stance</strong> and a corresponding <strong>intermediate representation</strong> (a links table with provenance), not a claim that “coding = analysis”. In standard QDA terms, minimalist causal coding is best understood as a disciplined way to build an auditable evidence base that can later be interpreted, queried, and written up (Miles, Huberman, &amp; Saldaña, 2014; Saldaña, 2021). It is, of course, not the only kind of way to do QDA.</p>
+<p>This paper is about a <strong>coding stance</strong> and a corresponding <strong>intermediate representation</strong> (a links table with provenance), not a claim that “coding = analysis”. In standard QDA terms, minimalist causal coding is best understood as a disciplined way to build an auditable evidence base that can later be interpreted, queried, and written up (Miles, Huberman, &amp; Saldaña, 2014; (Saldaña 2015)). It is, of course, not the only kind of way to do QDA.</p>
 <p>To reduce avoidable points of attack from mainstream qualitative social science readers, we make four explicit commitments up front:</p>
 <ol>
 <li>
@@ -1493,7 +1457,7 @@ Our approach is notable in particular because it rejects variable-based approach
 <p><strong>We trade interpretive depth for auditability and scale, on purpose.</strong> We stay close to surface causal language and preserve provenance (quotes + source ids) so that readers can check what is being claimed. This is a pragmatic stance when working with many sources and/or AI assistance; it does not deny that richer interpretive work can be valuable.</p>
 </li>
 <li>
-<p><strong>Minimalist coding is not a full QDA workflow.</strong> It is one layer that can sit alongside thematic analysis or qualitative content analysis when those are needed (Braun &amp; Clarke, 2006; Mayring, 2000).</p>
+<p><strong>Minimalist coding is not a full QDA workflow.</strong> It is one layer that can sit alongside thematic analysis or qualitative content analysis when those are needed ((Braun &amp; Clarke 2021); Mayring, 2000).</p>
 </li>
 </ol>
 <h3 class="rounded-info" id="how-a-qualitative-methods-reviewer-might-criticise-this-and-our-response">How a qualitative-methods reviewer might criticise this (and our response)<a aria-label="Permalink" class="anchor-link" href="#how-a-qualitative-methods-reviewer-might-criticise-this-and-our-response">#</a></h3>
@@ -1503,9 +1467,9 @@ Our approach is notable in particular because it rejects variable-based approach
 <h4 id="critique-2-you-are-smuggling-in-a-positivist-epistemology-or-a-realist-metaphysics">Critique 2: “You are smuggling in a positivist epistemology (or a realist metaphysics)”<a aria-label="Permalink" class="anchor-link" href="#critique-2-you-are-smuggling-in-a-positivist-epistemology-or-a-realist-metaphysics">#</a></h4>
 <p><strong>Response:</strong> The method’s core object is <strong>reported causal thinking</strong> (surface causal claims), not an ontic causal model. We therefore keep the epistemic claim modest: “this is what sources said, with quotes”, and we separate that from subsequent judgement about what is happening. That separation is consistent with standard qualitative criteria emphasising transparency, audit trails, and reflexive interpretation (Lincoln &amp; Guba, 1985; Charmaz, 2014).</p>
 <h4 id="critique-3-coding-is-not-analysis-links-dont-explain-anything">Critique 3: “Coding is not analysis; links don’t ‘explain’ anything”<a aria-label="Permalink" class="anchor-link" href="#critique-3-coding-is-not-analysis-links-dont-explain-anything">#</a></h4>
-<p><strong>Response:</strong> Agreed. Minimalist causal coding produces a structured evidence base that supports multiple analyses (filters, comparisons, pathway queries) and supports more disciplined writing, but it does not replace interpretation. In practice, it can reduce time spent on low-level organisation of text so that more time can go into interpretation and argument (Saldaña, 2021; Gläser &amp; Laudel, 2013).</p>
+<p><strong>Response:</strong> Agreed. Minimalist causal coding produces a structured evidence base that supports multiple analyses (filters, comparisons, pathway queries) and supports more disciplined writing, but it does not replace interpretation. In practice, it can reduce time spent on low-level organisation of text so that more time can go into interpretation and argument ((Saldaña 2015); Gläser &amp; Laudel, 2013).</p>
 <h4 id="critique-4-you-are-privileging-causal-language-and-missing-other-kinds-of-meaning">Critique 4: “You are privileging causal language and missing other kinds of meaning”<a aria-label="Permalink" class="anchor-link" href="#critique-4-you-are-privileging-causal-language-and-missing-other-kinds-of-meaning">#</a></h4>
-<p><strong>Response:</strong> Yes: by design. Minimalist coding is for projects where the core questions are themselves causal (mechanisms, pathways, theories of change). When non-causal meaning is central (identity work, norms, metaphors), other QDA approaches could lead; minimalist coding can still be a useful <em>additional</em> layer rather than the whole analysis (Braun &amp; Clarke, 2006).</p>
+<p><strong>Response:</strong> Yes: by design. Minimalist coding is for projects where the core questions are themselves causal (mechanisms, pathways, theories of change). When non-causal meaning is central (identity work, norms, metaphors), other QDA approaches could lead; minimalist coding can still be a useful <em>additional</em> layer rather than the whole analysis ((Braun &amp; Clarke 2021)).</p>
 <h4 id="critique-5-automatable-coding-invites-false-precision-and-overclaiming">Critique 5: “Automatable coding invites false precision and overclaiming”<a aria-label="Permalink" class="anchor-link" href="#critique-5-automatable-coding-invites-false-precision-and-overclaiming">#</a></h4>
 <p><strong>Response:</strong> We explicitly constrain what automation is allowed to do: extract candidate links with quotes; keep everything auditable; and avoid treating the resulting network as a system model with polarity/weights “by default”. The transparency of provenance is the main defence against black-box “AI did the analysis” claims.</p>
 <h1 id="extensions">Extensions<a aria-label="Permalink" class="anchor-link" href="#extensions">#</a></h1>
@@ -1517,12 +1481,8 @@ Our approach is notable in particular because it rejects variable-based approach
 <h4 id="motivation">Motivation<a aria-label="Permalink" class="anchor-link" href="#motivation">#</a></h4>
 <p>In any qualitative coding process there is a tension between <strong>detail</strong> (keeping what respondents actually said) and <strong>summarisation</strong> (making patterns visible). Hierarchical factor labels give us a simple way to keep both:</p>
 <ul>
-<li>
-<p>We can keep a detailed factor such as <code>Healthy behaviour; hand washing</code>.</p>
-</li>
-<li>
-<p>We can also treat it as an instance of a higher-level causal factor <code>Healthy behaviour</code> when we want a higher-level view.</p>
-</li>
+<li>We can keep a detailed factor such as <code>Healthy behaviour; hand washing</code>.</li>
+<li>We can also treat it as an instance of a higher-level causal factor <code>Healthy behaviour</code> when we want a higher-level view.</li>
 </ul>
 <p>This is particularly useful in causal mapping because it lets us simplify a complex map <em>without changing the underlying link evidence</em>: we are simply rewriting labels into more general ones.</p>
 <h4 id="coding-conventions">Coding conventions<a aria-label="Permalink" class="anchor-link" href="#coding-conventions">#</a></h4>
@@ -1534,32 +1494,20 @@ Our approach is notable in particular because it rejects variable-based approach
 <p>In AI-assisted coding, a practical way to encourage hierarchical labels is to explicitly instruct the coder (human or AI) to label each factor using the template <strong>“general concept; specific concept”</strong>, and to always provide a verbatim quote for each coded claim so every link remains checkable.</p>
 <p>For example, an AI might produce a single coded link such as:</p>
 <ul>
-<li>
-<p><code>Improved agricultural practices; diversified crops -&gt; Increased icome generation; more sales</code></p>
-</li>
-<li>
-<p>Quote: “with a lot of good product, we are now able to sell more.”</p>
-</li>
+<li><code>Improved agricultural practices; diversified crops -&gt; Increased income generation; more sales</code></li>
+<li>Quote: “with a lot of good product, we are now able to sell more.”</li>
 </ul>
 <p>You can read the separator as:</p>
 <ul>
-<li>
-<p>“A, and in particular B” (forward), or</p>
-</li>
-<li>
-<p>“B, which is an example of / part of A” (reverse).</p>
-</li>
+<li>“A, and in particular B” (forward), or</li>
+<li>“B, which is an example of / part of A” (reverse).</li>
 </ul>
 <p>This can be extended to multiple levels:</p>
 <p><code>Improved hospital skills training; new midwife training; hand washing instructions improved</code></p>
 <p>Two practical conveniences follow immediately:</p>
 <ul>
-<li>
-<p>Searching for the higher-level label (e.g. “Healthy behaviour”) will also find its nested sublabels.</p>
-</li>
-<li>
-<p>Higher-level labels can be created and changed on the fly (they are just the visible prefixes before <code>;</code>), without maintaining a separate “parent code” structure.</p>
-</li>
+<li>Searching for the higher-level label (e.g. “Healthy behaviour”) will also find its nested sublabels.</li>
+<li>Higher-level labels can be created and changed on the fly (they are just the visible prefixes before <code>;</code>), without maintaining a separate “parent code” structure.</li>
 </ul>
 <h4 id="zooming-and-visualisation">Zooming and visualisation<a aria-label="Permalink" class="anchor-link" href="#zooming-and-visualisation">#</a></h4>
 <p>The basic idea of a zoom view is: <strong>rewrite nested labels to a chosen level of abstraction</strong>, then draw the map using the rewritten labels.</p>
@@ -1567,16 +1515,16 @@ Our approach is notable in particular because it rejects variable-based approach
 <ul>
 <li><code>Healthy behaviour; hand washing</code> becomes <code>Healthy behaviour</code>.</li>
 </ul>
+<p><img alt="Focus on farm production, no zoom (bookmark #805)" loading="lazy" src="../600 How to -- in the Causal Map app/img/bookmarks-example-original/bookmark-805.png" style="background-color: #fff;"/></p>
+<p><em>Bookmark #805 — Focus filter on <code>farm production</code> with no zooming: detailed labels remain.</em></p>
+<p><img alt="Focus on farm production, zoom level 1 (bookmark #806)" loading="lazy" src="../600 How to -- in the Causal Map app/img/bookmarks-example-original/bookmark-806.png" style="background-color: #fff;"/></p>
+<p><em>Bookmark #806 — same focus, zoomed to level 1: nested labels collapse to their top-level parents, the map gets more readable, and no underlying coding has changed.</em></p>
 <p>So if we have (at the detailed level):</p>
 <p><code>Improved hospital skills training; improved midwife training; hand washing instructions improved</code></p>
 <p>then we can show higher-level summary links such as:</p>
 <ul>
-<li>
-<p><code>Improved hospital skills training; improved midwife training</code></p>
-</li>
-<li>
-<p>and (at the coarsest level) <code>Improved hospital skills training</code></p>
-</li>
+<li><code>Improved hospital skills training; improved midwife training</code></li>
+<li>and (at the coarsest level) <code>Improved hospital skills training</code></li>
 </ul>
 <h4 id="caveats-dont-use-the-separator-mechanically">Caveats (don’t use the <code>;</code> separator mechanically)<a aria-label="Permalink" class="anchor-link" href="#caveats-dont-use-the-separator-mechanically">#</a></h4>
 <p>Intuitively: by writing <code>A; B</code> you are explicitly licensing the interpretation “for high-level summary purposes, treat this as A”.</p>
@@ -1589,12 +1537,8 @@ Our approach is notable in particular because it rejects variable-based approach
 <p>Don’t use <code>;</code> to express a non-causal <em>topic theme</em>. <code>A; B</code> explicitly licenses: “for high-level summary purposes, treat this as <code>A</code>”, so <code>A</code> must be a real (semi-quantitative) causal factor, not just a theme label like “Health”.</p>
 <p>If something is merely health-related (with no natural roll-up into a single causal factor), use a tag instead:</p>
 <ul>
-<li>
-<p><code>Vaccinations law is passed [Health]</code></p>
-</li>
-<li>
-<p><code>Mortality rate [Health]</code></p>
-</li>
+<li><code>Vaccinations law is passed [Health]</code></li>
+<li><code>Mortality rate [Health]</code></li>
 </ul>
 <p>Only use a hierarchy when the right-to-left label is genuinely a refinement of the left-to-right one (so roll-up makes sense), e.g.:</p>
 <ul>
@@ -1614,21 +1558,19 @@ Our approach is notable in particular because it rejects variable-based approach
 <h2 class="banner-info" id="ai-extensions-optional-stubs">AI extensions (optional; stubs)<a aria-label="Permalink" class="anchor-link" href="#ai-extensions-optional-stubs">#</a></h2>
 <h3 class="rounded-info" id="soft-recoding-magnets-fil-soft">Soft recoding (magnets) (FIL-SOFT)<a aria-label="Permalink" class="anchor-link" href="#soft-recoding-magnets-fil-soft">#</a></h3>
 <p>Many raw in-vivo labels can be aggregated by mapping them to a smaller vocabulary of “magnets” using semantic similarity. This changes labels (a recoding step), not the underlying minimalist meaning of a single coded link.</p>
+<p><img alt="Soft recode using top-level labels (bookmark #493)" loading="lazy" src="../600 How to -- in the Causal Map app/img/bookmarks-example-original/bookmark-493.png" style="background-color: #fff;"/></p>
+<p><em>Bookmark #493 — soft recode using all top-level labels from a human-coded version of the same project as magnets.</em></p>
+<p><img alt="Soft recode with weaker matches recycled (bookmark #494)" loading="lazy" src="../600 How to -- in the Causal Map app/img/bookmarks-example-original/bookmark-494.png" style="background-color: #fff;"/></p>
+<p><em>Bookmark #494 — same setup but recycling weaker matches. The change in settings shifts which raw labels attach to which magnets.</em></p>
 <h3 class="rounded-info" id="auto-recoding-clustering-fil-auto">Auto recoding (clustering) (FIL-AUTO)<a aria-label="Permalink" class="anchor-link" href="#auto-recoding-clustering-fil-auto">#</a></h3>
 <p>Alternatively, labels can be clustered into emergent groups and then rewritten accordingly, again as a recoding/aggregation step rather than a new causal logic.</p>
 <h2 class="banner-info" id="how-other-schools-of-causal-mapping-extend-minimalist-links">How other schools of causal mapping extend minimalist links<a aria-label="Permalink" class="anchor-link" href="#how-other-schools-of-causal-mapping-extend-minimalist-links">#</a></h2>
 <p>The “minimalist” stance in this paper is deliberately radical: we code <em>undifferentiated</em> causal influence claims with provenance, and then do most interpretation work via filters and views. Many other causal mapping traditions extend the representation in the opposite direction: they add more <strong>semantic structure to factors and links</strong>, especially <strong>polarity</strong> (and sometimes strength/weights), often with an implicit assumption that factors behave like <strong>variables</strong> and that a link expresses some kind of monotonic relationship. For a broader overview of these traditions and their differences, see (Powell et al. 2024).</p>
 <h3 class="rounded-info" id="what-these-extensions-usually-add">What these extensions usually add<a aria-label="Permalink" class="anchor-link" href="#what-these-extensions-usually-add">#</a></h3>
 <ul>
-<li>
-<p><strong>Polarity (+/−)</strong>: a link can mean “more of X leads to more of Y” (positive) or “more of X leads to less of Y” (negative).</p>
-</li>
-<li>
-<p><strong>Strength / weights</strong>: a link can be assigned a magnitude (sometimes elicited, sometimes assigned by analysts), which invites quantitative reasoning and simulation-like interpretations.</p>
-</li>
-<li>
-<p><strong>Variable semantics and counterfactual clarity</strong>: polarity and weights usually presuppose that the endpoints are comparable as variables (or at least as ordered states), so that “more/less” (or “increase/decrease”) is meaningful.</p>
-</li>
+<li><strong>Polarity (+/−)</strong>: a link can mean “more of X leads to more of Y” (positive) or “more of X leads to less of Y” (negative).</li>
+<li><strong>Strength / weights</strong>: a link can be assigned a magnitude (sometimes elicited, sometimes assigned by analysts), which invites quantitative reasoning and simulation-like interpretations.</li>
+<li><strong>Variable semantics and counterfactual clarity</strong>: polarity and weights usually presuppose that the endpoints are comparable as variables (or at least as ordered states), so that “more/less” (or “increase/decrease”) is meaningful.</li>
 </ul>
 <p>These extensions can be extremely useful in settings where respondents are explicitly reasoning in those terms, or where the purpose is modelling/simulation. But they also raise the bar: if we write down a signed or weighted link, we are committing not just to “X influenced Y”, but to a stronger claim about <em>how</em> X and Y vary and how changes propagate.</p>
 <h3 class="rounded-info" id="axelrod-style-cognitive-mapping-signed-causal-beliefs">Axelrod-style cognitive mapping (signed causal beliefs)<a aria-label="Permalink" class="anchor-link" href="#axelrod-style-cognitive-mapping-signed-causal-beliefs">#</a></h3>
@@ -1641,21 +1583,14 @@ Our approach is notable in particular because it rejects variable-based approach
 <p>We <em>can</em> extend our links-table logic to incorporate polarity, but doing so is not just “adding a column”; it changes the semantics.</p>
 <p>At minimum, we would need:</p>
 <ul>
-<li>
-<p>A <code>Polarity</code> field per coded link (e.g. <code>+</code>, <code>-</code>, <code>unknown</code>) that is grounded in the source text or elicitation.</p>
-</li>
-<li>
-<p>A rule for how polarity is inferred when it is implicit, ambiguous, or mixed (which is common in narrative material).</p>
-</li>
-<li>
-<p>A clear semantics for what <code>+</code> and <code>-</code> <em>mean</em> (typically: a monotonic relationship between variables), including what counts as “more/less” for a factor label.</p>
-</li>
-<li>
-<p>Aggregation rules for how to deal with disagreement and contradiction across sources, and for how to visualise those disagreements without creating spurious precision.</p>
-</li>
+<li>A <code>Polarity</code> field per coded link (e.g. <code>+</code>, <code>-</code>, <code>unknown</code>) that is grounded in the source text or elicitation.</li>
+<li>A rule for how polarity is inferred when it is implicit, ambiguous, or mixed (which is common in narrative material).</li>
+<li>A clear semantics for what <code>+</code> and <code>-</code> <em>mean</em> (typically: a monotonic relationship between variables), including what counts as “more/less” for a factor label.</li>
+<li>Aggregation rules for how to deal with disagreement and contradiction across sources, and for how to visualise those disagreements without creating spurious precision.</li>
 </ul>
 <p>Because our target corpora typically do <em>not</em> make those commitments explicit (and because we are focused on modelling evidence-with-provenance rather than system dynamics), we do not treat signed links as part of the core method here. Where polarity matters in practice, we prefer to handle it with <strong>label-level devices</strong> (e.g. <code>~Employment</code> vs <code>Employment</code> combined with the <code>combine_opposites</code> transformation.</p>
-<h1 id="what-we-cannot-do-this-is-work-in-progress-not-sure-what-to-do-with-it-yet">What we cannot do (this is work in progress, not sure what to do with it yet)<a aria-label="Permalink" class="anchor-link" href="#what-we-cannot-do-this-is-work-in-progress-not-sure-what-to-do-with-it-yet">#</a></h1>
+<h1 id="where-minimalist-coding-runs-out">Where minimalist coding runs out<a aria-label="Permalink" class="anchor-link" href="#where-minimalist-coding-runs-out">#</a></h1>
+<p>Minimalist coding handles maybe 90% of explicit causal claims in the kinds of texts we work with. The remaining 10% includes a few recognisable types: claims that are really about other claims (enablers and blockers), claims that depend on a combination of factors (causal packages), and claims that pack a sophisticated causal story into a single phrase ("went viral"). We've thought about all three. None of them have led us to add new structure to the coding scheme. Here is why.</p>
 <h2 class="banner-info" id="causation-about-causation-enablers-and-blockers-as-second-order-causal-claims">Causation about causation: enablers and blockers as second-order causal claims<a aria-label="Permalink" class="anchor-link" href="#causation-about-causation-enablers-and-blockers-as-second-order-causal-claims">#</a></h2>
 <p>One natural way to try to go beyond truly minimalist coding is to say that some claims are not about simple factors causing other simple factors, but about one factor influencing (enabling or blocking) a <em>causal connection</em> between two other factors.</p>
 <p>Consider an enabler-style statement:</p>
@@ -1664,12 +1599,8 @@ Our approach is notable in particular because it rejects variable-based approach
 </div>
 <p>In strictly minimalist coding, we might record two undifferentiated links:</p>
 <ul>
-<li>
-<p>Going on holiday to Spain —&gt; Enjoying the holiday</p>
-</li>
-<li>
-<p>Remembering to take my phrase book —&gt; Enjoying the holiday</p>
-</li>
+<li>Going on holiday to Spain —&gt; Enjoying the holiday</li>
+<li>Remembering to take my phrase book —&gt; Enjoying the holiday</li>
 </ul>
 <p>But arguably the second claim is not really “the phrase book caused enjoyment” in the same way as the first. Rather, it enabled the normal causal power of the holiday to produce enjoyment. A more explicit encoding would therefore be:</p>
 <ol>
@@ -1698,13 +1629,10 @@ Our approach is notable in particular because it rejects variable-based approach
 <p>Another class of difficult cases is causal packages: claims in which some <em>combination</em> of factors is said to be needed for an effect.</p>
 <p>For example, “you need an accelerant and a spark to set a fire” is not well represented by coding two separate links (“accelerant causes fire” and “spark causes fire”), because that misses the conjunctive structure. One can code the cause as a single phrase (e.g. “an accelerant and a spark”), but then the phrase is not parsable in a way that lets us relate it to other claims about accelerants or sparks on their own.</p>
 <p>In principle one could introduce special syntax for conjunctions, but the moment we do so we are immediately pushed towards stronger, more model-like commitments (e.g. about truth tables, interaction effects, non-linear combination rules), and it is unclear how much such structures would recur with enough regularity in ordinary language corpora to justify that added complexity.</p>
-<h2 class="banner-info" id="blockers-and-enablers">Blockers and enablers<a aria-label="Permalink" class="anchor-link" href="#blockers-and-enablers">#</a></h2>
-<p>Maybe we could ascend from formally weaker but numerically overwhelming minimalist-coded data to make other rich conclusions, in particular about enablers and blockers like the headphones and the rain. However, I don't think this is really possible. In minimalist coding, at the level of individual claims, you can code "The headphones enabled James to answer the question in the Zoom call" as</p>
-<div class="callout callout-note">
-<p>The headphones —&gt; James was able to answer the question in the Zoom call</p>
-</div>
-<p>... but we cannot easily get inside the <em>contents</em> of the effect. We might like to be able to code this as the effect of the headphones not on a simple causal factor but on <em>another causal connection</em>, namely between the question on the Zoom call and James' answer, but we do not have any way at the moment to do this. It might be possible to extend minimalist coding to cope with this, perhaps ending up with three factors (headphones, question, answer) and some new syntactic rules to code their relationship, and some corresponding new semantic rules to be able to deduce more things about these three factors, but I think this would be <strong>missing the point</strong>. I'm not sure what we could do with these kinds of subtle relationships at any scale. Let's guess that within a given corpus, five percent of causal claims are of this form: what are the chances of such claims then overlapping enough in content that we could then apply our new more specialised deduction rules in more than a handful of cases?</p>
-<p>It might be the case that certain specific more sophisticated causal constructions become <strong>part of ordinary language</strong>. For example: "Her post mocking Farage went viral, so Farage was forced to respond". Here, the concept of <em>going viral</em> is perhaps a kind of shorthand for a quite sophisticated causal claim, yet it might be common enough for us to be able to usefully code it (and reason with it) using only unadulterated minimalist coding, without causally unpacking "her post went viral".  So that's useful, and maybe it is even useful in building some kinds of mid-range theory, but without actually understanding or unpacking what "going viral" means.</p>
+<h2 class="banner-info" id="sophisticated-claims-as-ordinary-language">Sophisticated claims as ordinary language<a aria-label="Permalink" class="anchor-link" href="#sophisticated-claims-as-ordinary-language">#</a></h2>
+<p>A more cheerful note. Some sophisticated causal constructions become part of ordinary language as a single phrase. "Her post mocking Farage went viral, so Farage was forced to respond" packs a fairly elaborate causal story into the verb "went viral", and a minimalist coder can take it as one factor without trying to unpack what "viral" really means. The same trick lets us code "she got cancelled", "the policy backfired", or "the deal fell through" as ordinary minimalist links, deferring the unpacking to wherever it actually matters. The benefit is real: we don't need a new coding apparatus every time the world invents a new causal idiom. We just need labels that hold their meaning long enough to be useful.</p>
+<h2 class="banner-info" id="what-this-section-adds-up-to">What this section adds up to<a aria-label="Permalink" class="anchor-link" href="#what-this-section-adds-up-to">#</a></h2>
+<p>We could in principle extend minimalist coding to handle enablers, blockers, and packages. We have not. The cost of a richer scheme almost never pays back, because the relevant cases are rare and the analyst can usually handle them adequately in the write-up, where they belong. We would rather log a slightly imperfect minimalist record and write nuance into the prose than build it into the data structure.</p>
 <p>See also:</p>
 <p>(Powell et al. 2024)</p>
 <p>(Powell &amp; Cabral 2025)</p>
@@ -1713,16 +1641,16 @@ Our approach is notable in particular because it rejects variable-based approach
 <p>(Remnant et al. 2025)</p>
 <hr/>
 <h1 id="selected-references-apa-7-added-for-qualitative-methods-positioning">Selected references (APA 7; added for qualitative-methods positioning)<a aria-label="Permalink" class="anchor-link" href="#selected-references-apa-7-added-for-qualitative-methods-positioning">#</a></h1>
-<p>Braun, V., &amp; Clarke, V. (2006). Using thematic analysis in psychology. <em>Qualitative Research in Psychology, 3</em>(2), 77–101. https://doi.org/10.1191/1478088706qp063oa</p>
 <p>Charmaz, K. (2014). <em>Constructing grounded theory</em> (2nd ed.). SAGE.</p>
 <p>Gläser, J., &amp; Laudel, G. (2013). Life with and without coding: Two methods for early-stage data analysis in qualitative research aiming at causal explanations. <em>Forum Qualitative Sozialforschung / Forum: Qualitative Social Research, 14</em>(2). https://www.qualitative-research.net/index.php/fqs/article/view/1886</p>
 <p>Gläser, J., &amp; Laudel, G. (2019). The discovery of causal mechanisms: Extractive qualitative content analysis as a tool for process tracing. <em>Forum Qualitative Sozialforschung / Forum: Qualitative Social Research, 20</em>(3). https://doi.org/10.17169/fqs-20.3.3386</p>
 <p>Lincoln, Y. S., &amp; Guba, E. G. (1985). <em>Naturalistic inquiry</em>. SAGE.</p>
 <p>Mayring, P. (2000). Qualitative content analysis. <em>Forum Qualitative Sozialforschung / Forum: Qualitative Social Research, 1</em>(2), Art. 20. https://www.qualitative-research.net/index.php/fqs/article/view/1089</p>
 <p>Miles, M. B., Huberman, A. M., &amp; Saldaña, J. (2014). <em>Qualitative data analysis: A methods sourcebook</em> (3rd ed.). SAGE.</p>
-<p>Saldaña, J. (2021). <em>The coding manual for qualitative researchers</em> (4th ed.). SAGE.</p>
-<p>[Note: we will add at least the formal codes like combine_opposites from the formalism paper]</p>
-<div class="references"><h2>References</h2><p class="reference">Ackermann, Jones, Sweeney, &amp; Eden (1996). <em>Decision Explorer: User Guide</em>. <a href="https://banxia.com/pdf/de/DEGuide.pdf" target="_blank" rel="noopener">https://banxia.com/pdf/de/DEGuide.pdf</a>.</p><p class="reference">Ackermann, Eden, &amp; Cropper (2004). <em>Getting Started with Cognitive Mapping</em>.</p><p class="reference">Axelrod (1976). <em>The Analysis of Cognitive Maps</em>. In <em>Structure of Decision : The Cognitive Maps of Political Elites</em>.</p><p class="reference">Axelrod (1976). <em>Structure of Decision: The Cognitive Maps of Political Elites</em>. Princeton university press.</p><p class="reference">Barbrook-Johnson, &amp; Penn (2022). <em>Participatory Systems Mapping</em>. In <em>Systems Mapping: How to Build and Use Causal Models of Systems</em>. <a href="https://doi.org/10.1007/978-3-031-01919-7_5" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-031-01919-7_5</a>.</p><p class="reference">Britt, Powell, &amp; Cabral (2025). <em>Strengthening Outcome Harvesting with AI-assisted Causal Mapping</em>. <a href="https://5a867cea-2d96-4383-acf1-7bc3d406cdeb.usrfiles.com/ugd/5a867c_ad000813c80747baa85c7bd5ffaf0442.pdf" target="_blank" rel="noopener">https://5a867cea-2d96-4383-acf1-7bc3d406cdeb.usrfiles.com/ugd/5a867c_ad000813c80747baa85c7bd5ffaf0442.pdf</a>.</p><p class="reference">Copestake, Morsink, &amp; Remnant (2019). <em>Attributing Development Impact: The Qualitative Impact Protocol Case Book</em>. March 21, Online.</p><p class="reference">Eden, Ackermann, &amp; Cropper (1992). <em>The Analysis of Cause Maps</em>. <a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6486.1992.tb00667.x" target="_blank" rel="noopener">https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6486.1992.tb00667.x</a>.</p><p class="reference">Hodgkinson, Maule, &amp; Bown (2004). <em>Causal Cognitive Mapping in the Organizational Strategy Field: A Comparison of Alternative Elicitation Procedures</em>.</p><p class="reference">Laukkanen (1994). <em>Comparative Cause Mapping of Organizational Cognitions</em>.</p><p class="reference">Laukkanen (2012). <em>Comparative Causal Mapping and CMAP3 Software in Qualitative Studies</em>. <a href="https://doi.org/10.17169/fqs-13.2.1846" target="_blank" rel="noopener">https://doi.org/10.17169/fqs-13.2.1846</a>.</p><p class="reference">Laukkanen, &amp; Wang (2016). <em>Comparative Causal Mapping: The CMAP3 Method</em>. Routledge.</p><p class="reference">Markiczy, &amp; Goldberg (1995). <em>A Method for Eliciting and Comparing Causal Maps</em>. Sage Publications Sage CA: Thousand Oaks, CA.</p><p class="reference">Maule, Hodgkinson, &amp; Bown (2003). <em>Cognitive Mapping of Causal Reasoning in Strategic Decision Making</em>. In <em>Thinking: Psychological Perspectives on Reasoning, Judgment and Decision Making</em>. <a href="https://doi.org/10.1002/047001332X.ch13" target="_blank" rel="noopener">https://doi.org/10.1002/047001332X.ch13</a>.</p><p class="reference">Powell, Larquemin, Copestake, Remnant, &amp; Avard (2023). <em>Does Our Theory Match Your Theory? Theories of Change and Causal Maps in Ghana</em>. In <em>Strategic Thinking, Design and the Theory of Change. A Framework for Designing Impactful and Transformational Social Interventions</em>.</p><p class="reference">Powell, Copestake, &amp; Remnant (2024). <em>Causal Mapping for Evaluators</em>. <a href="https://doi.org/10.1177/13563890231196601" target="_blank" rel="noopener">https://doi.org/10.1177/13563890231196601</a>.</p><p class="reference">Powell, &amp; Cabral (2025). <em>AI-assisted Causal Mapping: A Validation Study</em>. Routledge. <a href="https://www.tandfonline.com/doi/abs/10.1080/13645579.2025.2591157" target="_blank" rel="noopener">https://www.tandfonline.com/doi/abs/10.1080/13645579.2025.2591157</a>.</p><p class="reference">Powell, Cabral, &amp; Mishan (2025). <em>A Workflow for Collecting and Understanding Stories at Scale, Supported by Artificial Intelligence</em>. SAGE PublicationsSage UK: London, England. <a href="https://doi.org/10.1177/13563890251328640" target="_blank" rel="noopener">https://doi.org/10.1177/13563890251328640</a>.</p><p class="reference">Remnant, Copestake, Powell, &amp; Channon (2025). <em>Qualitative Causal Mapping in Evaluations</em>. In <em>Handbook of Health Services Evaluation: Theories, Methods and Innovative Practices</em>. <a href="https://doi.org/10.1007/978-3-031-87869-5_12" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-031-87869-5_12</a>.</p></div></div>
+<h1 id="conclusion">Conclusion<a aria-label="Permalink" class="anchor-link" href="#conclusion">#</a></h1>
+<p>Minimalist coding is a stance, not a system. We code "X influenced Y, with provenance", and we let the labels do most of the work. We don't code polarity by default, we don't fit functions, and we don't infer counterfactuals the speaker didn't supply. We give up the predictive and simulation-style affordances of more elaborate causal-mapping traditions in exchange for something more practical: an auditable evidence base that scales to thousands of sources, works with AI assistance, and stays close to what people actually said.</p>
+<p>We've used this stance across consultancy and research work for years now, and it keeps repaying its simplicity. The hard cases come up; we usually handle them in the write-up rather than in the data structure. The 90% rule is a working hypothesis: the coding scheme should serve the typical claim, and the analyst should serve the unusual one.</p>
+<div class="references"><h2>References</h2><p class="reference">Ackermann, Jones, Sweeney, &amp; Eden (1996). <em>Decision Explorer: User Guide</em>. <a href="https://banxia.com/pdf/de/DEGuide.pdf" target="_blank" rel="noopener">https://banxia.com/pdf/de/DEGuide.pdf</a>.</p><p class="reference">Ackermann, Eden, &amp; Cropper (2004). <em>Getting Started with Cognitive Mapping</em>.</p><p class="reference">Axelrod (1976). <em>Structure of Decision: The Cognitive Maps of Political Elites</em>. Princeton university press.</p><p class="reference">Axelrod (1976). <em>The Analysis of Cognitive Maps</em>. In <em>Structure of Decision : The Cognitive Maps of Political Elites</em>.</p><p class="reference">Barbrook-Johnson, &amp; Penn (2022). <em>Participatory Systems Mapping</em>. In <em>Systems Mapping: How to Build and Use Causal Models of Systems</em>. <a href="https://doi.org/10.1007/978-3-031-01919-7_5" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-031-01919-7_5</a>.</p><p class="reference">Braun, &amp; Clarke (2021). <em>Thematic Analysis : A Practical Guide</em>. SAGE Publications Ltd. <a href="https://www.torrossa.com/it/resources/an/5282292" target="_blank" rel="noopener">https://www.torrossa.com/it/resources/an/5282292</a>.</p><p class="reference">Britt, Powell, &amp; Cabral (2025). <em>Strengthening Outcome Harvesting with AI-assisted Causal Mapping</em>. <a href="https://5a867cea-2d96-4383-acf1-7bc3d406cdeb.usrfiles.com/ugd/5a867c_ad000813c80747baa85c7bd5ffaf0442.pdf" target="_blank" rel="noopener">https://5a867cea-2d96-4383-acf1-7bc3d406cdeb.usrfiles.com/ugd/5a867c_ad000813c80747baa85c7bd5ffaf0442.pdf</a>.</p><p class="reference">Copestake, Morsink, &amp; Remnant (2019). <em>Attributing Development Impact: The Qualitative Impact Protocol Case Book</em>. March 21, Online.</p><p class="reference">Eden, Ackermann, &amp; Cropper (1992). <em>The Analysis of Cause Maps</em>. <a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6486.1992.tb00667.x" target="_blank" rel="noopener">https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6486.1992.tb00667.x</a>.</p><p class="reference">Hodgkinson, Maule, &amp; Bown (2004). <em>Causal Cognitive Mapping in the Organizational Strategy Field: A Comparison of Alternative Elicitation Procedures</em>.</p><p class="reference">Laukkanen (1994). <em>Comparative Cause Mapping of Organizational Cognitions</em>.</p><p class="reference">Laukkanen (2012). <em>Comparative Causal Mapping and CMAP3 Software in Qualitative Studies</em>. <a href="https://doi.org/10.17169/fqs-13.2.1846" target="_blank" rel="noopener">https://doi.org/10.17169/fqs-13.2.1846</a>.</p><p class="reference">Laukkanen, &amp; Wang (2016). <em>Comparative Causal Mapping: The CMAP3 Method</em>. Routledge.</p><p class="reference">Markiczy, &amp; Goldberg (1995). <em>A Method for Eliciting and Comparing Causal Maps</em>. Sage Publications Sage CA: Thousand Oaks, CA.</p><p class="reference">Maule, Hodgkinson, &amp; Bown (2003). <em>Cognitive Mapping of Causal Reasoning in Strategic Decision Making</em>. In <em>Thinking: Psychological Perspectives on Reasoning, Judgment and Decision Making</em>. <a href="https://doi.org/10.1002/047001332X.ch13" target="_blank" rel="noopener">https://doi.org/10.1002/047001332X.ch13</a>.</p><p class="reference">Powell, Larquemin, Copestake, Remnant, &amp; Avard (2023). <em>Does Our Theory Match Your Theory? Theories of Change and Causal Maps in Ghana</em>. In <em>Strategic Thinking, Design and the Theory of Change. A Framework for Designing Impactful and Transformational Social Interventions</em>.</p><p class="reference">Powell, Copestake, &amp; Remnant (2024). <em>Causal Mapping for Evaluators</em>. <a href="https://doi.org/10.1177/13563890231196601" target="_blank" rel="noopener">https://doi.org/10.1177/13563890231196601</a>.</p><p class="reference">Powell, Cabral, &amp; Mishan (2025). <em>A Workflow for Collecting and Understanding Stories at Scale, Supported by Artificial Intelligence</em>. SAGE PublicationsSage UK: London, England. <a href="https://doi.org/10.1177/13563890251328640" target="_blank" rel="noopener">https://doi.org/10.1177/13563890251328640</a>.</p><p class="reference">Powell, &amp; Cabral (2025). <em>AI-assisted Causal Mapping: A Validation Study</em>. Routledge. <a href="https://www.tandfonline.com/doi/abs/10.1080/13645579.2025.2591157" target="_blank" rel="noopener">https://www.tandfonline.com/doi/abs/10.1080/13645579.2025.2591157</a>.</p><p class="reference">Remnant, Copestake, Powell, &amp; Channon (2025). <em>Qualitative Causal Mapping in Evaluations</em>. In <em>Handbook of Health Services Evaluation: Theories, Methods and Innovative Practices</em>. <a href="https://doi.org/10.1007/978-3-031-87869-5_12" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-031-87869-5_12</a>.</p><p class="reference">Saldaña (2015). <em>The Coding Manual for Qualitative Researchers</em>. Sage.</p></div></div>
         <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a href="https://causalmap.app" class="link-secondary">Causal Map Ltd</a> 2026</span> · <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" style="height:18px;opacity:0.7;vertical-align:middle;" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" /></a><a href="https://app.causalmap.app" class="link-secondary ms-2" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>
       </main>
       <aside class="rightbar"><h2>On this page</h2><div class="toc"><div class="toc">
@@ -1803,13 +1731,15 @@ Our approach is notable in particular because it rejects variable-based approach
 </li>
 </ul>
 </li>
-<li><a href="#what-we-cannot-do-this-is-work-in-progress-not-sure-what-to-do-with-it-yet">What we cannot do (this is work in progress, not sure what to do with it yet)</a><ul>
+<li><a href="#where-minimalist-coding-runs-out">Where minimalist coding runs out</a><ul>
 <li><a href="#causation-about-causation-enablers-and-blockers-as-second-order-causal-claims">Causation about causation: enablers and blockers as second-order causal claims</a></li>
 <li><a href="#causal-packages-conjunctions">Causal packages / conjunctions</a></li>
-<li><a href="#blockers-and-enablers">Blockers and enablers</a></li>
+<li><a href="#sophisticated-claims-as-ordinary-language">Sophisticated claims as ordinary language</a></li>
+<li><a href="#what-this-section-adds-up-to">What this section adds up to</a></li>
 </ul>
 </li>
 <li><a href="#selected-references-apa-7-added-for-qualitative-methods-positioning">Selected references (APA 7; added for qualitative-methods positioning)</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
 </ul>
 </div>
 </div><hr /><h2>Links</h2><div class="toc"><ul><li><a href="006 A formalisation of causal mapping.html" class="link-secondary">A formalisation of causal mapping</a></li><li><a href="900 A simple measure of the goodness o-de16cb.html" class="link-secondary">A simple measure of the goodness of fit of a causal theory to a text corpus</a></li><li><a href="040 Causal mapping as causal QDA ((cau-2db6cc.html" class="link-secondary">Causal mapping as causal QDA</a></li><li><a href="900 Magnetisation.html" class="link-secondary">Magnetisation</a></li><li><a href="../010 Task 3 -- Answering questions -- General/The transitivity trap.html" class="link-secondary">The transitivity trap</a></li></ul></div><hr /><h2>Backlinks</h2><div class="toc"><ul><li><a href="../250 Causal Mapping as QDA/250! causal mapping turns QDA on its head.html" class="link-secondary">! causal mapping turns QDA on its head</a></li><li><a href="../250 Causal Mapping as QDA/030 !!!Qualitative Split-Apply-Combine.html" class="link-secondary">!!!Qualitative Split-Apply-Combine</a></li><li><a href="006 A formalisation of causal mapping.html" class="link-secondary">A formalisation of causal mapping</a></li><li><a href="900 A simple measure of the goodness o-de16cb.html" class="link-secondary">A simple measure of the goodness of fit of a causal theory to a text corpus</a></li><li><a href="040 Causal mapping as causal QDA ((cau-2db6cc.html" class="link-secondary">Causal mapping as causal QDA</a></li><li><a href="015 Combining opposites, sentiment.html" class="link-secondary">Combining opposites, sentiment</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/Hierarchical coding.html" class="link-secondary">Hierarchical coding</a></li><li><a href="900 Magnetisation.html" class="link-secondary">Magnetisation</a></li><li><a href="../007 Task 2 -- Causal coding -- minimalist style/900 Quality assurance in causal mappin-cbed32.html" class="link-secondary">Quality assurance in causal mapping -- ensuring robust and rigorous conclusions and inferences</a></li><li><a href="../008 Task 2 &amp; 3 -- Extensions/000 Tasks 2 &amp; 3 --  Extensions -- Intr-2815bf.html" class="link-secondary">Tasks 2 &amp; 3 --  Extensions -- Introduction</a></li><li><a href="000 Working Papers ((working-papers)).html" class="link-secondary">Working Papers</a></li></ul></div></aside>

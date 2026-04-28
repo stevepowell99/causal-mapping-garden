@@ -1332,12 +1332,8 @@
 <h3 id="22-the-shift-to-event-centric-resources-eventstoryline-and-causal-timebank">2.2 The Shift to Event-Centric Resources: EventStoryLine and Causal-TimeBank<a aria-label="Permalink" class="anchor-link" href="#22-the-shift-to-event-centric-resources-eventstoryline-and-causal-timebank">#</a></h3>
 <p>Between 2015 and 2018, the research community began to move beyond sentence-level extraction toward document-level understanding, driven by the creation of corpora like the <strong>EventStoryLine Corpus</strong> and <strong>Causal-TimeBank</strong>.   </p>
 <ul>
-<li>
-<p><strong>EventStoryLine:</strong> This corpus was designed to evaluate "StoryLine Extraction," requiring systems to connect disparate event mentions (e.g., "shooting," "hospitalisation," "death") into a coherent narrative structure. The annotation scheme introduced specific classes like <code>ACTION_CAUSATIVE</code> to distinguish events that initiate change from those that merely describe states.   </p>
-</li>
-<li>
-<p><strong>Causal-TimeBank:</strong> Research using this corpus highlighted the inextricable link between <em>temporality</em> and <em>causality</em>. The "Causal-TempBank" approach demonstrated that knowing "A happened before B" significantly improved the classification of "A caused B".   </p>
-</li>
+<li><strong>EventStoryLine:</strong> This corpus was designed to evaluate "StoryLine Extraction," requiring systems to connect disparate event mentions (e.g., "shooting," "hospitalisation," "death") into a coherent narrative structure. The annotation scheme introduced specific classes like <code>ACTION_CAUSATIVE</code> to distinguish events that initiate change from those that merely describe states.   </li>
+<li><strong>Causal-TimeBank:</strong> Research using this corpus highlighted the inextricable link between <em>temporality</em> and <em>causality</em>. The "Causal-TempBank" approach demonstrated that knowing "A happened before B" significantly improved the classification of "A caused B".   </li>
 </ul>
 <p>Despite these richer datasets, the methods remained fundamentally discriminative. Systems like <strong>CATENA</strong> (2016) used "sieves" — rule-based filters — to extract causal links. These systems could identify likely causal passages, but they did so through rigid, handcrafted logic rather than conversational explanation. They could not generate an explanation or reason about counterfactuals; they could only point to where a human annotator might say a cause existed.   </p>
 <h3 id="23-the-bert-revolution-and-contextual-embeddings">2.3 The BERT Revolution and Contextual Embeddings<a aria-label="Permalink" class="anchor-link" href="#23-the-bert-revolution-and-contextual-embeddings">#</a></h3>
@@ -1359,39 +1355,23 @@
 <h4 id="321-the-flan-collection-the-template-effect">3.2.1 The FLAN Collection: The Template Effect<a aria-label="Permalink" class="anchor-link" href="#321-the-flan-collection-the-template-effect">#</a></h4>
 <p>The <strong>FLAN (Finetuned Language Net)</strong> project  was instrumental in this development. Researchers took existing NLP datasets (including causal extraction datasets) and converted them into natural language templates.   </p>
 <ul>
-<li>
-<p><strong>The Mechanism:</strong> A classification task from the <em>COPA (Choice of Plausible Alternatives)</em> dataset, which asks for the cause of an event, was transformed into prompts like: <em>"Here is a premise: The man broke his toe. What was the cause?"</em></p>
-</li>
-<li>
-<p><strong>The Scale:</strong> FLAN 2022 aggregated over 1,800 tasks. By training on millions of examples where the input is a scenario and the output is a causal explanation, the model explicitly learned the linguistic patterns of <em>identifying influence</em>.</p>
-</li>
-<li>
-<p><strong>Mixed Prompting:</strong> Crucially, FLAN mixed <strong>Chain-of-Thought (CoT)</strong> templates (which require intermediate reasoning steps using "therefore," "because," "so") with standard prompts. This trained the model not just to guess the answer, but to <em>generate the causal logic</em> leading to it.   </p>
-</li>
+<li><strong>The Mechanism:</strong> A classification task from the <em>COPA (Choice of Plausible Alternatives)</em> dataset, which asks for the cause of an event, was transformed into prompts like: <em>"Here is a premise: The man broke his toe. What was the cause?"</em></li>
+<li><strong>The Scale:</strong> FLAN 2022 aggregated over 1,800 tasks. By training on millions of examples where the input is a scenario and the output is a causal explanation, the model explicitly learned the linguistic patterns of <em>identifying influence</em>.</li>
+<li><strong>Mixed Prompting:</strong> Crucially, FLAN mixed <strong>Chain-of-Thought (CoT)</strong> templates (which require intermediate reasoning steps using "therefore," "because," "so") with standard prompts. This trained the model not just to guess the answer, but to <em>generate the causal logic</em> leading to it.   </li>
 </ul>
 <p>This contradicts the idea that the capability is purely coincidental. The models were specifically drilled on millions of "causal identification" exercises, disguised as instruction following.</p>
 <h4 id="322-open-instruction-generalist-oig-and-dolly">3.2.2 Open Instruction Generalist (OIG) and Dolly<a aria-label="Permalink" class="anchor-link" href="#322-open-instruction-generalist-oig-and-dolly">#</a></h4>
 <p>The <strong>OIG</strong> and <strong>Dolly</strong> datasets  expanded this to open-domain interactions. These datasets contain thousands of "brainstorming" and "advice" prompts.   </p>
 <ul>
-<li>
-<p><em>Data Evidence:</em> An entry from the OIG dataset reads: <em>": I'm having trouble finding a good job, what can I do to improve my chances? : One thing a person could do is..."</em>.   </p>
-</li>
-<li>
-<p><em>Implication:</em> To answer this, the model must access a causal chain: <em>Action (revise resume) -&gt; Effect (better chances).</em> The prevalence of "how-to" and "why" questions in these datasets forces the model to organise its internal knowledge into causal structures (Means-End reasoning).</p>
-</li>
+<li><em>Data Evidence:</em> An entry from the OIG dataset reads: <em>": I'm having trouble finding a good job, what can I do to improve my chances? : One thing a person could do is..."</em>.   </li>
+<li><em>Implication:</em> To answer this, the model must access a causal chain: <em>Action (revise resume) -&gt; Effect (better chances).</em> The prevalence of "how-to" and "why" questions in these datasets forces the model to organise its internal knowledge into causal structures (Means-End reasoning).</li>
 </ul>
 <h3 id="33-reinforcement-learning-from-human-feedback-rlhf-the-coherence-filter">3.3 Reinforcement Learning from Human Feedback (RLHF): The Coherence Filter<a aria-label="Permalink" class="anchor-link" href="#33-reinforcement-learning-from-human-feedback-rlhf-the-coherence-filter">#</a></h3>
 <p>The final layer of "specific training" is <strong>RLHF</strong>. In this phase, human annotators rank model outputs based on preference.</p>
 <ul>
-<li>
-<p><strong>Preference for Logic:</strong> Research indicates that humans have a strong bias for <strong>causal coherence</strong>. A narrative that flows logically (Cause A -&gt; Effect B) is rated higher than one that is disjointed.   </p>
-</li>
-<li>
-<p><strong>Length and Explanation Bias:</strong> RLHF has been shown to induce a "length bias," where models produce longer, more detailed explanations to secure higher rewards. In the context of causality, this encourages the model to generate elaborate causal chains.   </p>
-</li>
-<li>
-<p><strong>Sycophancy:</strong> However, this training can also lead to "hallucinated causality." If prompted with a leading question that implies a false causation (e.g., "Why does the moon cause earthquakes?"), an RLHF-aligned model might generate a plausible-sounding but scientifically incorrect causal explanation, prioritising "helpfulness" over "truth".   </p>
-</li>
+<li><strong>Preference for Logic:</strong> Research indicates that humans have a strong bias for <strong>causal coherence</strong>. A narrative that flows logically (Cause A -&gt; Effect B) is rated higher than one that is disjointed.   </li>
+<li><strong>Length and Explanation Bias:</strong> RLHF has been shown to induce a "length bias," where models produce longer, more detailed explanations to secure higher rewards. In the context of causality, this encourages the model to generate elaborate causal chains.   </li>
+<li><strong>Sycophancy:</strong> However, this training can also lead to "hallucinated causality." If prompted with a leading question that implies a false causation (e.g., "Why does the moon cause earthquakes?"), an RLHF-aligned model might generate a plausible-sounding but scientifically incorrect causal explanation, prioritising "helpfulness" over "truth".   </li>
 </ul>
 <p><strong>Conclusion on Training vs. Coincidence:</strong> The capability is a hybrid. The <em>potential</em> to understand causality is a coincidence of pre-training scale (World Models), but the <em>ability to natively identify and articulate</em> it in response to a prompt is the result of specific Instruction Tuning and RLHF regimens that prioritise causal templates and coherent explanation.</p>
 <hr/>
@@ -1400,53 +1380,33 @@
 <h3 id="41-force-dynamics-agonists-and-antagonists-in-latent-space">4.1 Force Dynamics: Agonists and Antagonists in Latent Space<a aria-label="Permalink" class="anchor-link" href="#41-force-dynamics-agonists-and-antagonists-in-latent-space">#</a></h3>
 <p>Leonard Talmy’s theory of <strong>Force Dynamics</strong> posits that human causal understanding is rooted in the interplay of forces: an <strong>Agonist</strong> (the entity with a tendency towards motion or rest) and an <strong>Antagonist</strong> (the opposing force).   </p>
 <ul>
-<li>
-<p><em>Linguistic Patterns:</em> "The ball kept rolling despite the grass" (Agonist: Ball; Antagonist: Grass). "He let the book fall" (Removal of Antagonist).</p>
-</li>
+<li><em>Linguistic Patterns:</em> "The ball kept rolling despite the grass" (Agonist: Ball; Antagonist: Grass). "He let the book fall" (Removal of Antagonist).</li>
 <li>
 <p><em>LLM Evaluation:</em> Recent studies have tested LLMs on translating and explaining these force-dynamic constructions.   </p>
 <ul>
-<li>
-<p><strong>Findings:</strong> GPT-4 often shows a solid grasp of these concepts. When translating "He let the greatcoat fall" into languages like Finnish or Croatian, the model can select verbs that convey "cessation of impingement" (allowing) rather than "onset of causation" (pushing).   </p>
-</li>
-<li>
-<p><strong>Implication:</strong> This suggests that LLMs have acquired a <strong>schematic semantic structure</strong> of causality. They do not merely predict words; they map the <em>roles</em> of entities in a physical interaction. However, this capability degrades in abstract social contexts. For example, in the sentence "Being at odds with her father made her uncomfortable," models sometimes misidentify the Agonist/Antagonist relationship, struggling to map "emotional force" as accurately as "physical force".   </p>
-</li>
+<li><strong>Findings:</strong> GPT-4 often shows a solid grasp of these concepts. When translating "He let the greatcoat fall" into languages like Finnish or Croatian, the model can select verbs that convey "cessation of impingement" (allowing) rather than "onset of causation" (pushing).   </li>
+<li><strong>Implication:</strong> This suggests that LLMs have acquired a <strong>schematic semantic structure</strong> of causality. They do not merely predict words; they map the <em>roles</em> of entities in a physical interaction. However, this capability degrades in abstract social contexts. For example, in the sentence "Being at odds with her father made her uncomfortable," models sometimes misidentify the Agonist/Antagonist relationship, struggling to map "emotional force" as accurately as "physical force".   </li>
 </ul>
 </li>
 </ul>
 <h3 id="42-implicit-causality-ic-verbs">4.2 Implicit Causality (IC) Verbs<a aria-label="Permalink" class="anchor-link" href="#42-implicit-causality-ic-verbs">#</a></h3>
 <p>Another major area of inquiry is <strong>Implicit Causality (IC)</strong>, which refers to the bias native speakers have regarding <em>who</em> is the cause of an event based on the verb used.   </p>
 <ul>
-<li>
-<p><em>NP1-Bias (Subject):</em> "John <strong>upset</strong> Mary." (Why? Because <em>John</em> is annoying).</p>
-</li>
-<li>
-<p><em>NP2-Bias (Object):</em> "The teacher <strong>scolded</strong> Mary." (Why? Because <em>Mary</em> did something wrong).</p>
-</li>
+<li><em>NP1-Bias (Subject):</em> "John <strong>upset</strong> Mary." (Why? Because <em>John</em> is annoying).</li>
+<li><em>NP2-Bias (Object):</em> "The teacher <strong>scolded</strong> Mary." (Why? Because <em>Mary</em> did something wrong).</li>
 </ul>
 <p>In this sense, "bias" means the useful working expectation of which part of the sentence is the cause. </p>
 <p><strong>Benchmarking Results:</strong> Research comparing LLM continuations to human psycholinguistic data reveals a high degree of alignment.</p>
 <ul>
-<li>
-<p><strong>Coreference:</strong> When prompted with "John amazed Mary because...", LLMs overwhelmingly generate continuations referring to John, matching human NP1 bias.   </p>
-</li>
-<li>
-<p><strong>Coherence:</strong> Humans tend to provide <em>explanations</em> following these verbs. LLMs mirror this "explanation bias," prioritising causal connectives over temporal or elaborative ones in these contexts.   </p>
-</li>
-<li>
-<p><strong>Significance:</strong> This indicates that LLMs have encoded the <strong>pragmatics of blame and credit</strong> inherent in ordinary language. They "know" that "apologizing" implies the subject caused a negative event, while "thanking" implies the object caused a positive one. This is crucial for the "native" feel of their interactions — they navigate the social logic of causality fluently.</p>
-</li>
+<li><strong>Coreference:</strong> When prompted with "John amazed Mary because...", LLMs overwhelmingly generate continuations referring to John, matching human NP1 bias.   </li>
+<li><strong>Coherence:</strong> Humans tend to provide <em>explanations</em> following these verbs. LLMs mirror this "explanation bias," prioritising causal connectives over temporal or elaborative ones in these contexts.   </li>
+<li><strong>Significance:</strong> This indicates that LLMs have encoded the <strong>pragmatics of blame and credit</strong> inherent in ordinary language. They "know" that "apologizing" implies the subject caused a negative event, while "thanking" implies the object caused a positive one. This is crucial for the "native" feel of their interactions — they navigate the social logic of causality fluently.</li>
 </ul>
 <h3 id="43-the-limits-of-native-understanding-the-causal-parrot-debate">4.3 The Limits of "Native" Understanding: The Causal Parrot Debate<a aria-label="Permalink" class="anchor-link" href="#43-the-limits-of-native-understanding-the-causal-parrot-debate">#</a></h3>
 <p>Despite these successes, a vigorous debate persists regarding whether this constitutes "understanding" or merely "stochastic parroting".   </p>
 <ul>
-<li>
-<p><strong>The "Parrot" Argument:</strong> Critics argue that LLMs fail when the linguistic surface form is stripped away. On benchmarks like <strong>CausalProbe</strong> , which uses fresh, non-memorised data, model performance drops significantly. This suggests that LLMs rely on <strong>Level 1 (Association)</strong> reasoning — pattern matching seen examples — rather than <strong>Level 2 (Intervention)</strong> reasoning.   </p>
-</li>
-<li>
-<p><strong>The "Simulacrum" Argument:</strong> Conversely, the <strong>Semantic Characterization Theorem</strong>  proposes that the model's high-dimensional space creates a functional topology that is mathematically equivalent to a discrete symbolic system. Even if the model has never "seen" a glass break, its representation of "glass" and "break" are topologically linked in a way that allows it to simulate the causal outcome efficiently.   </p>
-</li>
+<li><strong>The "Parrot" Argument:</strong> Critics argue that LLMs fail when the linguistic surface form is stripped away. On benchmarks like <strong>CausalProbe</strong> , which uses fresh, non-memorised data, model performance drops significantly. This suggests that LLMs rely on <strong>Level 1 (Association)</strong> reasoning — pattern matching seen examples — rather than <strong>Level 2 (Intervention)</strong> reasoning.   </li>
+<li><strong>The "Simulacrum" Argument:</strong> Conversely, the <strong>Semantic Characterization Theorem</strong>  proposes that the model's high-dimensional space creates a functional topology that is mathematically equivalent to a discrete symbolic system. Even if the model has never "seen" a glass break, its representation of "glass" and "break" are topologically linked in a way that allows it to simulate the causal outcome efficiently.   </li>
 </ul>
 <p>A caution about dated negative findings: many "LLMs cannot do causal reasoning" results from around 2020-2022 are best read as results about a specific model family and evaluation setup (often base models, short prompts, and narrow benchmarks). Newer instruction-tuned models (and more careful prompting protocols) can reduce some of these gaps on standard tests, but the picture remains mixed and sensitive to benchmark design, leakage, and what is being counted as "causal reasoning" versus plausible explanation.</p>
 <hr/>
@@ -1455,36 +1415,22 @@
 <h3 id="51-causaltalk-informal-causality-in-social-media">5.1 CausalTalk: Informal Causality in Social Media<a aria-label="Permalink" class="anchor-link" href="#51-causaltalk-informal-causality-in-social-media">#</a></h3>
 <p>The <strong>CausalTalk</strong> dataset focuses on "passages where one thing influences another" in informal contexts.   </p>
 <ul>
-<li>
-<p><em>The Challenge:</em> In social media (e.g., Reddit), causality is often expressed without explicit markers. "I took the vaccine and now I feel sick" contains no "because," yet the causal assertion is clear.</p>
-</li>
-<li>
-<p><em>Findings:</em> LLMs often perform well at identifying these <strong>implicit causal claims</strong>, sometimes outperforming traditional supervised models. They can detect "gist" causality — the overall causal assertion of a post — even when it is buried in sarcasm or non-standard grammar.</p>
-</li>
-<li>
-<p><em>Application:</em> This is critical for <strong>misinformation detection</strong>. Models are being used to identify exaggerated causal claims in science news (e.g., reporting a correlation as a causation). However, LLMs sometimes struggle to distinguish between someone <em>reporting</em> a correlation and <em>asserting</em> a causation, highlighting a nuance gap in informal causal language.   </p>
-</li>
+<li><em>The Challenge:</em> In social media (e.g., Reddit), causality is often expressed without explicit markers. "I took the vaccine and now I feel sick" contains no "because," yet the causal assertion is clear.</li>
+<li><em>Findings:</em> LLMs often perform well at identifying these <strong>implicit causal claims</strong>, sometimes outperforming traditional supervised models. They can detect "gist" causality — the overall causal assertion of a post — even when it is buried in sarcasm or non-standard grammar.</li>
+<li><em>Application:</em> This is critical for <strong>misinformation detection</strong>. Models are being used to identify exaggerated causal claims in science news (e.g., reporting a correlation as a causation). However, LLMs sometimes struggle to distinguish between someone <em>reporting</em> a correlation and <em>asserting</em> a causation, highlighting a nuance gap in informal causal language.   </li>
 </ul>
 <h3 id="52-explicit-vs-temporal-confusion-explica">5.2 Explicit vs. Temporal Confusion (ExpliCa)<a aria-label="Permalink" class="anchor-link" href="#52-explicit-vs-temporal-confusion-explica">#</a></h3>
 <p>The <strong>ExpliCa</strong> benchmark  investigates a specific failure mode: the confusion of time and cause.   </p>
 <ul>
-<li>
-<p><em>The Fallacy:</em> <em>Post hoc ergo propter hoc</em> ("After this, therefore because of this").</p>
-</li>
-<li>
-<p><em>LLM Behaviour:</em> Research shows that LLMs are prone to this fallacy. When events are presented in chronological order ("The sun set. The streetlights turned on."), models are statistically more likely to infer a causal link than humans, who might see it as mere sequence. This suggests that the "native" understanding is heavily biased by the <strong>narrative structure</strong> of training data, where chronological sequencing often implies causality.</p>
-</li>
+<li><em>The Fallacy:</em> <em>Post hoc ergo propter hoc</em> ("After this, therefore because of this").</li>
+<li><em>LLM Behaviour:</em> Research shows that LLMs are prone to this fallacy. When events are presented in chronological order ("The sun set. The streetlights turned on."), models are statistically more likely to infer a causal link than humans, who might see it as mere sequence. This suggests that the "native" understanding is heavily biased by the <strong>narrative structure</strong> of training data, where chronological sequencing often implies causality.</li>
 </ul>
 <p>Again, a caution about dated negative findings: while these weaknesses are interesting, frontier models in 2025 are much less likely to display them.</p>
 <h3 id="53-counterfactuals-and-what-if-crass">5.3 Counterfactuals and "What If" (CRASS)<a aria-label="Permalink" class="anchor-link" href="#53-counterfactuals-and-what-if-crass">#</a></h3>
 <p>The <strong>CRASS</strong> (Counterfactual Reasoning Assessment) benchmark  tests the model's ability to reason about what <em>didn't</em> happen.   </p>
 <ul>
-<li>
-<p><em>Task:</em> "A man drinks poison. What would have happened if he drank water?"</p>
-</li>
-<li>
-<p><em>Results:</em> While base models perform adequately, fine-tuning with techniques like <strong>LoRA (Low-Rank Adaptation)</strong> significantly boosts performance. This reinforces the "training hypothesis" — the capacity for causal reasoning is latent in the weights but requires specific activation (instruction tuning) to be robustly deployed.   </p>
-</li>
+<li><em>Task:</em> "A man drinks poison. What would have happened if he drank water?"</li>
+<li><em>Results:</em> While base models perform adequately, fine-tuning with techniques like <strong>LoRA (Low-Rank Adaptation)</strong> significantly boosts performance. This reinforces the "training hypothesis" — the capacity for causal reasoning is latent in the weights but requires specific activation (instruction tuning) to be robustly deployed.   </li>
 </ul>
 <hr/>
 <h2 id="6-philosophical-dimensions-symbol-grounding-and-world-models">6. Philosophical Dimensions: Symbol Grounding and World Models<a aria-label="Permalink" class="anchor-link" href="#6-philosophical-dimensions-symbol-grounding-and-world-models">#</a></h2>
@@ -1492,15 +1438,9 @@
 <h3 id="61-the-symbol-grounding-problem">6.1 The Symbol Grounding Problem<a aria-label="Permalink" class="anchor-link" href="#61-the-symbol-grounding-problem">#</a></h3>
 <p>Cognitive scientists have long argued that human concepts are <strong>grounded</strong> in sensorimotor experience. We understand "heavy" because we have felt gravity.</p>
 <ul>
-<li>
-<p><strong>The Disembodied Mind:</strong> LLMs are disembodied. Their understanding of "force" is purely distributional — "force" is defined by its mathematical proximity to "push," "move," and "impact" in vector space.   </p>
-</li>
-<li>
-<p><strong>Cognitive Alignment:</strong> Research using the <strong>Brain-Based Componential Semantic Representation (BBSR)</strong>  shows that LLM representations align well with human cognition for concrete concepts but diverge for embodied experiences (e.g., olfaction, gustation) and spatial cognition.   </p>
-</li>
-<li>
-<p><strong>Functional Understanding:</strong> However, proponents of the "Functionalist" view argue that if an LLM can answer "What happens if I drop this?" indistinguishably from a human, it possesses a <strong>functional understanding</strong> of causality. The <strong>Semantic Characterization Theorem</strong>  supports this by demonstrating that continuous learning dynamics can give rise to stable, discrete semantic attractors that behave like symbolic rules.   </p>
-</li>
+<li><strong>The Disembodied Mind:</strong> LLMs are disembodied. Their understanding of "force" is purely distributional — "force" is defined by its mathematical proximity to "push," "move," and "impact" in vector space.   </li>
+<li><strong>Cognitive Alignment:</strong> Research using the <strong>Brain-Based Componential Semantic Representation (BBSR)</strong>  shows that LLM representations align well with human cognition for concrete concepts but diverge for embodied experiences (e.g., olfaction, gustation) and spatial cognition.   </li>
+<li><strong>Functional Understanding:</strong> However, proponents of the "Functionalist" view argue that if an LLM can answer "What happens if I drop this?" indistinguishably from a human, it possesses a <strong>functional understanding</strong> of causality. The <strong>Semantic Characterization Theorem</strong>  supports this by demonstrating that continuous learning dynamics can give rise to stable, discrete semantic attractors that behave like symbolic rules.   </li>
 </ul>
 <hr/>
 <h2 id="7-current-frontiers-2024-2025-reasoning-models-and-future-directions">7. Current Frontiers (2024-2025): Reasoning Models and Future Directions<a aria-label="Permalink" class="anchor-link" href="#7-current-frontiers-2024-2025-reasoning-models-and-future-directions">#</a></h2>
@@ -1508,22 +1448,14 @@
 <h3 id="71-chain-of-thought-monitoring-and-thinking-tokens">7.1 Chain-of-Thought Monitoring and "Thinking" Tokens<a aria-label="Permalink" class="anchor-link" href="#71-chain-of-thought-monitoring-and-thinking-tokens">#</a></h3>
 <p>Newer models are trained to produce hidden "chains of thought" before generating a final answer.</p>
 <ul>
-<li>
-<p><em>Impact on Causality:</em> This allows the model to perform <strong>intermediate causal checks</strong>. Instead of predicting the effect immediately, the model can "reason" silently: <em>Premise -&gt; Mechanism -&gt; Potential Confounders -&gt; Conclusion</em>.</p>
-</li>
-<li>
-<p><em>Research Findings:</em> Snippet  discusses "CoT Monitoring," showing that these internal reasoning traces can be monitored to detect "reward hacking" or deceptive alignment. This suggests a move toward making the model's implicit causal reasoning <strong>explicit</strong> and <strong>verifiable</strong>.   </p>
-</li>
+<li><em>Impact on Causality:</em> This allows the model to perform <strong>intermediate causal checks</strong>. Instead of predicting the effect immediately, the model can "reason" silently: <em>Premise -&gt; Mechanism -&gt; Potential Confounders -&gt; Conclusion</em>.</li>
+<li><em>Research Findings:</em> Snippet  discusses "CoT Monitoring," showing that these internal reasoning traces can be monitored to detect "reward hacking" or deceptive alignment. This suggests a move toward making the model's implicit causal reasoning <strong>explicit</strong> and <strong>verifiable</strong>.   </li>
 </ul>
 <h3 id="72-causal-graph-construction">7.2 Causal Graph Construction<a aria-label="Permalink" class="anchor-link" href="#72-causal-graph-construction">#</a></h3>
 <p>Recent work has moved back to structure, using LLMs to <em>extract</em> and <em>construct</em> <strong>Causal Graphs</strong> (DAGs) from unstructured text, a process sometimes known as causal mapping.   </p>
 <ul>
-<li>
-<p><em>Method:</em> Rather than asking the LLM to just "answer," researchers prompt it to output a graph: <code>Nodes:, Edges:</code>.</p>
-</li>
-<li>
-<p><em>Result:</em> This leverages the LLM's linguistic fluency to structure knowledge, which can then be processed by formal causal inference algorithms, bridging the gap between "informal ordinary language" and "formal causal calculus."</p>
-</li>
+<li><em>Method:</em> Rather than asking the LLM to just "answer," researchers prompt it to output a graph: <code>Nodes:, Edges:</code>.</li>
+<li><em>Result:</em> This leverages the LLM's linguistic fluency to structure knowledge, which can then be processed by formal causal inference algorithms, bridging the gap between "informal ordinary language" and "formal causal calculus."</li>
 </ul>
 <hr/>
 <h2 id="8-conclusion">8. Conclusion<a aria-label="Permalink" class="anchor-link" href="#8-conclusion">#</a></h2>
