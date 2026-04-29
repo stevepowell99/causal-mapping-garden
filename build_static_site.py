@@ -1883,6 +1883,36 @@ def _short_route_stub_html(
     return prefix + str(html_el)
 
 
+def _site_url_for_output_path(output_path: Path, output_root: Path, site_url: str) -> str:
+    """Return the deployed Garden URL for a generated output file."""
+    try:
+        rel = output_path.relative_to(output_root).as_posix()
+    except ValueError:
+        rel = output_path.name
+    rel_url = "/".join(quote(part, safe="") for part in rel.split("/") if part)
+    return f"{site_url.rstrip('/')}/{rel_url}"
+
+
+def _absolute_site_href_for_pdf(href: str, current_html_path: Path, output_root: Path, site_url: str) -> Optional[str]:
+    """Convert local HTML hrefs into deployed Garden URLs for PDF link targets."""
+    h = (href or "").strip()
+    if not h or h.startswith("#"):
+        return None
+    if re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", h):
+        return None
+    if h.startswith("/"):
+        return f"{site_url.rstrip('/')}{h}"
+    return urljoin(_site_url_for_output_path(current_html_path, output_root, site_url), h)
+
+
+def _rewrite_pdf_links_to_site(soup: Any, current_html_path: Path, output_root: Path, site_url: str) -> None:
+    """Ensure PDF hyperlinks point to Garden, not local file paths."""
+    for link in soup.select("a[href]"):
+        href_abs = _absolute_site_href_for_pdf(str(link.get("href", "")), current_html_path, output_root, site_url)
+        if href_abs:
+            link["href"] = href_abs
+
+
 def strip_yaml_front_matter(text: str) -> str:
     """Remove leading YAML front matter delimited by lines of '---'. Handles BOM and CRLF.
 
@@ -6010,6 +6040,20 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         pagep = _new_pdf_page()
         try:
             pagep.goto(out_html_path.as_uri(), wait_until="load")
+            pagep.evaluate(
+                """({ siteUrl, pageUrl }) => {
+                    const schemeRe = /^[a-zA-Z][a-zA-Z0-9+.-]*:/;
+                    document.querySelectorAll('a[href]').forEach((a) => {
+                        const href = (a.getAttribute('href') || '').trim();
+                        if (!href || href.startsWith('#') || schemeRe.test(href)) return;
+                        a.setAttribute('href', new URL(href, href.startsWith('/') ? siteUrl : pageUrl).href);
+                    });
+                }""",
+                {
+                    "siteUrl": site_url.rstrip("/") + "/",
+                    "pageUrl": _site_url_for_output_path(out_html_path, output_root, site_url),
+                },
+            )
             try:
                 pagep.emulate_media(media="print")
             except Exception:
@@ -6664,6 +6708,8 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                         try:
                             import bs4  # type: ignore
                             soup2 = bs4.BeautifulSoup(thtml, "html.parser")
+                            current_html_path_for_pdf = relative_output_html(input_root, output_root, page_md)
+                            page_out_dir = current_html_path_for_pdf.parent
                             # Process wikilinks - convert to internal anchors if target is in chapter, else online link
                             for link in soup2.select("a.wikilink"):
                                 href = link.get("href", "")
@@ -6676,7 +6722,6 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                                     continue
                                 # Check if target page is in this chapter
                                 target_found = False
-                                page_out_dir = relative_output_html(input_root, output_root, page_md).parent
                                 for target_md in folder_md:
                                     target_out = relative_output_html(input_root, output_root, target_md)
                                     target_rel = os.path.relpath(target_out, start=page_out_dir).replace(os.sep, "/")
@@ -6692,14 +6737,10 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                                         target_found = True
                                         break
                                 if not target_found:
-                                    # Convert to online link
-                                    # Extract page name from href
-                                    page_name = href.split("/")[-1].replace(".html", "").replace("#", "-")
-                                    online_url = f"https://garden.causalmap.app/{page_name}"
-                                    if "#" in href:
-                                        anchor = href.split("#")[-1]
-                                        online_url += f"#{anchor}"
-                                    link["href"] = online_url
+                                    href_abs = _absolute_site_href_for_pdf(href, current_html_path_for_pdf, output_root, site_url)
+                                    if href_abs:
+                                        link["href"] = href_abs
+                            _rewrite_pdf_links_to_site(soup2, current_html_path_for_pdf, output_root, site_url)
                             # Remove anchor links from headings
                             for hx in soup2.select("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]"):
                                 for anchor_link in hx.select("a.anchor-link"):
@@ -7513,6 +7554,7 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                 try:
                     import bs4  # type: ignore
                     soup3 = bs4.BeautifulSoup(thtml, "html.parser")
+                    current_html_path_for_pdf = relative_output_html(input_root, output_root, p)
                     # Process wikilinks - convert to internal anchors if target exists in site, else online link
                     for link in soup3.select("a.wikilink"):
                         href = link.get("href", "")
@@ -7539,13 +7581,10 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                                 target_found = True
                                 break
                         if not target_found:
-                            # Convert to online link
-                            page_name = href.split("/")[-1].replace(".html", "").replace("#", "-")
-                            online_url = f"{site_url}/{page_name}"
-                            if "#" in href:
-                                anchor = href.split("#")[-1]
-                                online_url += f"#{anchor}"
-                            link["href"] = online_url
+                            href_abs = _absolute_site_href_for_pdf(href, current_html_path_for_pdf, output_root, site_url)
+                            if href_abs:
+                                link["href"] = href_abs
+                    _rewrite_pdf_links_to_site(soup3, current_html_path_for_pdf, output_root, site_url)
                     # Remove anchor links from headings
                     for hx in soup3.select("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]"):
                         for anchor_link in hx.select("a.anchor-link"):
