@@ -6228,9 +6228,17 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         folders_999 = {p.relative_to(input_root).parts[0] for p in md_files if len(p.relative_to(input_root).parts) >= 2 and p.relative_to(input_root).parts[0].startswith("999")}
         for folder_999 in folders_999:
             contents_path = input_root / folder_999 / "000 Contents.md"
+            contents_placeholder = "<!-- Auto-generated contents page placeholder. -->\n"
             if not contents_path.exists():
-                contents_path.write_text("", encoding="utf-8")
+                contents_path.write_text(contents_placeholder, encoding="utf-8")
                 print(f"[INFO] Created Contents page for {folder_999}")
+            else:
+                try:
+                    if not contents_path.read_text(encoding="utf-8").strip():
+                        contents_path.write_text(contents_placeholder, encoding="utf-8")
+                        print(f"[INFO] Repaired empty Contents page for {folder_999}")
+                except Exception:
+                    pass
             # Ensure Contents page is included in md_files
             if contents_path not in md_files:
                 md_files.append(contents_path)
