@@ -1322,6 +1322,7 @@
 </ul>
 <h4 id="link-custom-columns">Link Custom Columns<a aria-label="Permalink" class="anchor-link" href="/links-search-replace/#link-custom-columns">#</a></h4>
 <p>Alongside <strong>tags</strong> and <strong>sentiment</strong>, each link can now carry its own named custom fields. Use these when you want more structured information on each causal claim, for example <code>confidence</code>, <code>policy_area</code>, <code>mechanism</code>, <code>evidence_strength</code>, <code>time_horizon</code>, or a numeric score.</p>
+<p>This is also the main place to add QDA-style memos while you code. Create one or more memo columns, for example <code>link_memo</code>, <code>evidence_note</code>, <code>interpretive_note</code>, or <code>coder_reflection</code>, and use them to record why you coded a link in a particular way, doubts about the evidence, or analytic notes you want to revisit later.</p>
 <ul>
 <li>Create/remove column names in <strong>Manage Link Table Columns</strong>.</li>
 <li>Show/hide Links table columns in the same modal (checkbox list), or from the header <strong>⋮</strong> menu.</li>
@@ -1385,6 +1386,7 @@
 <p>Use this when you want one assessed summary row per causal bundle (<code>cause &gt;&gt; effect</code>) while keeping all original unassessed citation rows unchanged.</p>
 <p>The <strong>Assessment</strong> control sits <strong>below the Project bar</strong>, to the <strong>right</strong> of the Label Set widget. The button label is just <strong>Assessed</strong> or <strong>Unassessed</strong>. Click it to toggle modes; its tooltip explains the two modes. <strong>Assessed</strong> is only available once the project has at least one assessed row.</p>
 <p><strong>Bundle assessment UI</strong> lives on the Links pane, sub-tab <strong>Assess links</strong> (next to Create links / Filter links). Open that sub-tab to edit bundle-level assessed rows when the global mode is <strong>Unassessed</strong>; in <strong>Assessed</strong> mode the editor is read-only and the app switches you away from <strong>Assess links</strong> if needed.</p>
+<p>Because assessed rows can use link custom fields, you can add a narrative judgement field as well as, or instead of, a simple score. For example: <code>Solid evidence overall, but more sketchy testimony from younger respondents</code>.</p>
 <p>The card’s header <strong>×</strong> sets <strong>Unassessed</strong>, switches to the <strong>Filter links</strong> sub-tab, and briefly highlights the Assessment control.</p>
 <p>Ideas Garden: <a href="https://garden.causalmap.app/assessing">Assessing quality or robustness of evidence for a causal link</a></p>
 <h4 id="main-controls">Main controls<a aria-label="Permalink" class="anchor-link" href="/links-search-replace/#main-controls">#</a></h4>
