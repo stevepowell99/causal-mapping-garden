@@ -24,7 +24,7 @@ import sys
 import time
 from datetime import date, datetime
 from urllib.parse import quote, urljoin
-PIPELINE_VERSION = "2025-10-15-wikilinks-anchors-v1"
+PIPELINE_VERSION = "2026-05-01-pdf-permalinks-v1"
 
 # Media extensions: images + local video (mp4, webm, etc.)
 _IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".bmp"}
@@ -349,6 +349,12 @@ def _format_parenthetical_author_year(authors: List[str], year: str, locator: st
     return f"{base}, {locator}" if locator else base
 
 
+def _format_parenthetical_year_only(year: str, locator: str = "") -> str:
+    """Format author-suppressed citations: '2005' or '2005, p. 5'."""
+    base = str(year).strip()
+    return f"{base}, {locator}" if locator else base
+
+
 def _format_narrative_author_year(authors: List[str], year: str, locator: str = "") -> str:
     """Format like: 'Smith et al. (2005, p. 5)'."""
     a = _format_author_text(authors)
@@ -358,7 +364,7 @@ def _format_narrative_author_year(authors: List[str], year: str, locator: str = 
 
 
 def _convert_citations_bracket_to_apa(md_text: str, bib_index: Dict[str, Tuple[List[str], str]], bib_links: Optional[Dict[str, str]] = None) -> Tuple[str, Set[str]]:
-    """Convert bracket citations [@key; @key2, p.12] to APA text. Returns (converted_text, set_of_used_keys)."""
+    """Convert bracket citations [@key; -@key2, p.12] to APA text. Returns (converted_text, set_of_used_keys)."""
     pattern = re.compile(r"\[([^\]]*@[^\]]+)\]")
     used_keys: Set[str] = set()
 
@@ -376,7 +382,13 @@ def _convert_citations_bracket_to_apa(md_text: str, bib_index: Dict[str, Tuple[L
                 used_keys.add(key)
 
             authors, year = bib_index.get(key, ([], "n.d."))
-            base_inner = _format_parenthetical_author_year(authors, year, locator=locator)
+            prefix = inner[:km.start()].rstrip()
+            suppress_author = prefix.endswith("-")
+            base_inner = (
+                _format_parenthetical_year_only(year, locator=locator)
+                if suppress_author
+                else _format_parenthetical_author_year(authors, year, locator=locator)
+            )
 
             href = bib_links.get(key) if bib_links else None
             if href:
@@ -2251,45 +2263,62 @@ def replace_wikilinks_with_embeds(
         a = re.sub(r"[^a-z0-9-]", "", a)
         return a
 
+    def _resolve_wikilink_target(target: str) -> Optional[Path]:
+        key = target.lower()
+        return wikilink_index.get(key) or wikilink_index.get(strip_numeric_prefix(target).lower())
+
+    def _page_href(target_md: Path, anchor: Optional[str]) -> str:
+        page_anchor_id = page_anchor_map.get(target_md) if page_anchor_map else None
+        if page_anchor_id and not anchor:
+            return f"/{page_anchor_id}"
+
+        target_out = relative_output_html(input_root, output_root, target_md)
+        href_base = os.path.relpath(target_out, start=current_out_dir).replace(os.sep, "/")
+        if anchor:
+            a = _slug_anchor(anchor)
+            if a:
+                href_base = f"{href_base}#{a}"
+        return href_base
+
+    def _page_title(target_md: Path) -> str:
+        return html.escape(title_map.get(target_md, strip_numeric_prefix(target_md.stem)))
+
+    nested_link_pat = re.compile(r"\[\[([^\]|#]+)(?:#([^\]|]+))?(?:\|([^\]]+))?\]\]")
+
+    def _rewrite_nested_wikilinks(inner_html: str) -> str:
+        # Embedded HTML may still contain raw wikilinks because embed content is lazily rendered.
+        def _rewrite_nested(m: re.Match[str]) -> str:
+            tgt = m.group(1).strip()
+            anch = (m.group(2).strip() if m.group(2) else None)
+            md = _resolve_wikilink_target(tgt)
+            if not md:
+                return m.group(0)
+
+            nested_href = html.escape(_page_href(md, anch))
+            label = _page_title(md)
+            return f'<a href="{nested_href}" class="link-secondary">{label}</a>'
+
+        return nested_link_pat.sub(_rewrite_nested, inner_html)
+
     # Pass 0: handle TOC embeds first (!toc[[...]])
     pat_toc = re.compile(r"!toc\[\[([^\]|#]+)(?:#([^\]|]+))?(?:\|([^\]]+))?\]\]")
 
     def _repl_toc(match: re.Match[str]) -> str:
         target = match.group(1).strip()
         anchor = (match.group(2).strip() if match.group(2) else None)
-        alias = (match.group(3).strip() if match.group(3) else None)
 
         if target.startswith("#"):
             return match.group(0)
 
-        key = target.lower()
-        target_md = wikilink_index.get(key) or wikilink_index.get(strip_numeric_prefix(target).lower())
+        target_md = _resolve_wikilink_target(target)
         
         if not target_md:
             if missing_wikilinks is not None and rel_page is not None and not target.startswith("#"):
                 missing_wikilinks[rel_page].add(f"!toc[[{target}]]")
             return match.group(0)
 
-        title = html.escape(title_map.get(target_md, strip_numeric_prefix(target_md.stem)))
-        
-        # Check if target has a page-level anchor ((shortcut)) and use short route if so
-        page_anchor_id = None
-        if page_anchor_map:
-            page_anchor_id = page_anchor_map.get(target_md)
-        
-        if page_anchor_id and not anchor:
-            # Use short route like /shortcut for pages with page-level anchors
-            href_base = f"/{page_anchor_id}"
-        else:
-            # Use relative path
-            target_out = relative_output_html(input_root, output_root, target_md)
-            href_base = os.path.relpath(target_out, start=current_out_dir).replace(os.sep, "/")
-            if anchor:
-                a = _slug_anchor(anchor)
-                if a:
-                    href_base = f"{href_base}#{a}"
-        
-        href = html.escape(href_base)
+        title = _page_title(target_md)
+        href = html.escape(_page_href(target_md, anchor))
 
         # Generate chapter TOC
         if md_files is not None:
@@ -2302,38 +2331,7 @@ def replace_wikilinks_with_embeds(
         else:
             inner_html = embed_html_map.get(target_md, "")
 
-        # Rewrite nested [[links]] inside embedded HTML to ordinary links
-        nested_link_pat = re.compile(r"\[\[([^\]|#]+)(?:#([^\]|]+))?(?:\|([^\]]+))?\]\]")
-
-        def _rewrite_nested(m: re.Match[str]) -> str:
-            tgt = m.group(1).strip()
-            anch = (m.group(2).strip() if m.group(2) else None)
-            md = wikilink_index.get(tgt.lower()) or wikilink_index.get(strip_numeric_prefix(tgt).lower())
-            if not md:
-                return m.group(0)
-            
-            # Check if target has a page-level anchor ((shortcut)) and use short route if so
-            nested_page_anchor_id = None
-            if page_anchor_map:
-                nested_page_anchor_id = page_anchor_map.get(md)
-            
-            if nested_page_anchor_id and not anch:
-                # Use short route like /shortcut for pages with page-level anchors
-                nested_base = f"/{nested_page_anchor_id}"
-            else:
-                # Use relative path from current output directory
-                out = relative_output_html(input_root, output_root, md)
-                nested_base = os.path.relpath(out, start=current_out_dir).replace(os.sep, "/")
-                if anch:
-                    a2 = _slug_anchor(anch)
-                    if a2:
-                        nested_base = f"{nested_base}#{a2}"
-            
-            nested_href = html.escape(nested_base)
-            label = html.escape(title_map.get(md, strip_numeric_prefix(md.stem)))
-            return f'<a href="{nested_href}" class="link-secondary">{label}</a>'
-
-        inner_html_rewritten = nested_link_pat.sub(_rewrite_nested, inner_html)
+        inner_html_rewritten = _rewrite_nested_wikilinks(inner_html)
 
         return (
             f"<details class=\"embed-block mb-3\">"
@@ -2353,14 +2351,13 @@ def replace_wikilinks_with_embeds(
     def _repl_embed(match: re.Match[str]) -> str:
         target = match.group(1).strip()
         anchor = (match.group(2).strip() if match.group(2) else None)
-        alias = (match.group(3).strip() if match.group(3) else None)
 
         if target.startswith("#"):
             return match.group(0)
 
         key = target.lower()
         stripped_key = strip_numeric_prefix(target).lower()
-        target_md = wikilink_index.get(key) or wikilink_index.get(stripped_key)
+        target_md = _resolve_wikilink_target(target)
         
         if not target_md:
             _debug_embed(f"Target not found: '{target}' (key: '{key}', stripped: '{stripped_key}')")
@@ -2410,62 +2407,13 @@ def replace_wikilinks_with_embeds(
                     missing_wikilinks[rel_page].add(f"![[{target}]]")
             return match.group(0)
 
-        title = html.escape(title_map.get(target_md, strip_numeric_prefix(target_md.stem)))
-        
-        # Check if target has a page-level anchor ((shortcut)) and use short route if so
-        page_anchor_id = None
-        if page_anchor_map:
-            page_anchor_id = page_anchor_map.get(target_md)
-        
-        if page_anchor_id and not anchor:
-            # Use short route like /shortcut for pages with page-level anchors
-            href_base = f"/{page_anchor_id}"
-        else:
-            # Use relative path
-            target_out = relative_output_html(input_root, output_root, target_md)
-            href_base = os.path.relpath(target_out, start=current_out_dir).replace(os.sep, "/")
-            if anchor:
-                a = _slug_anchor(anchor)
-                if a:
-                    href_base = f"{href_base}#{a}"
-        
-        href = html.escape(href_base)
+        title = _page_title(target_md)
+        href = html.escape(_page_href(target_md, anchor))
 
         inner_html = embed_html_map.get(target_md, "")
         _debug_embed(f"Found '{target}' -> {target_md.name}, inner_html length: {len(inner_html)}")
 
-        # Rewrite nested [[links]] inside embedded HTML to ordinary links
-        nested_link_pat = re.compile(r"\[\[([^\]|#]+)(?:#([^\]|]+))?(?:\|([^\]]+))?\]\]")
-
-        def _rewrite_nested(m: re.Match[str]) -> str:
-            tgt = m.group(1).strip()
-            anch = (m.group(2).strip() if m.group(2) else None)
-            md = wikilink_index.get(tgt.lower()) or wikilink_index.get(strip_numeric_prefix(tgt).lower())
-            if not md:
-                return m.group(0)
-            
-            # Check if target has a page-level anchor ((shortcut)) and use short route if so
-            nested_page_anchor_id = None
-            if page_anchor_map:
-                nested_page_anchor_id = page_anchor_map.get(md)
-            
-            if nested_page_anchor_id and not anch:
-                # Use short route like /shortcut for pages with page-level anchors
-                nested_base = f"/{nested_page_anchor_id}"
-            else:
-                # Use relative path from current output directory
-                out = relative_output_html(input_root, output_root, md)
-                nested_base = os.path.relpath(out, start=current_out_dir).replace(os.sep, "/")
-                if anch:
-                    a2 = _slug_anchor(anch)
-                    if a2:
-                        nested_base = f"{nested_base}#{a2}"
-            
-            nested_href = html.escape(nested_base)
-            label = html.escape(title_map.get(md, strip_numeric_prefix(md.stem)))
-            return f'<a href="{nested_href}" class="link-secondary">{label}</a>'
-
-        inner_html_rewritten = nested_link_pat.sub(_rewrite_nested, inner_html)
+        inner_html_rewritten = _rewrite_nested_wikilinks(inner_html)
 
         return (
             f"<details class=\"embed-block mb-3\">"
@@ -2487,8 +2435,7 @@ def replace_wikilinks_with_embeds(
         anchor = (match.group(2).strip() if match.group(2) else None)
         alias = (match.group(3).strip() if match.group(3) else None)
 
-        key = target.lower()
-        target_md = wikilink_index.get(key) or wikilink_index.get(strip_numeric_prefix(target).lower())
+        target_md = _resolve_wikilink_target(target)
         
         if target.startswith("#"):
             slug = _slug_anchor(target[1:])
@@ -2505,26 +2452,8 @@ def replace_wikilinks_with_embeds(
                 missing_wikilinks[rel_page].add(f"[[{target}]]")
             return ""
 
-        title = html.escape(title_map.get(target_md, strip_numeric_prefix(target_md.stem)))
-        
-        # Check if target has a page-level anchor ((shortcut)) and use short route if so
-        page_anchor_id = None
-        if page_anchor_map:
-            page_anchor_id = page_anchor_map.get(target_md)
-        
-        if page_anchor_id and not anchor:
-            # Use short route like /shortcut for pages with page-level anchors
-            href_base = f"/{page_anchor_id}"
-        else:
-            # Use relative path
-            target_out = relative_output_html(input_root, output_root, target_md)
-            href_base = os.path.relpath(target_out, start=current_out_dir).replace(os.sep, "/")
-            if anchor:
-                a = _slug_anchor(anchor)
-                if a:
-                    href_base = f"{href_base}#{a}"
-        
-        href = html.escape(href_base)
+        title = _page_title(target_md)
+        href = html.escape(_page_href(target_md, anchor))
         display_text = html.escape(alias) if alias else title
         return f'<a href="{href}" class="wikilink">{display_text}</a>'
 
@@ -6612,6 +6541,8 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             print(f"[INCREMENTAL] Sidebar signature also changed.")
         if build_changed:
             print(f"[INCREMENTAL] Pipeline signature also changed.")
+            files_to_process = md_files
+            changed_files_for_pdf = set(md_files)
         _tmark("write_pages: incremental detect/filter")
 
     if chapter_folder_filter and args and getattr(args, "chapters_pdf", False):
@@ -7151,7 +7082,7 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             except Exception:
                 pass
 
-        # Chapter intro overview: if this is the first page of a top-level folder, list other pages in that folder
+        # Chapter intro overview: if this is the first page of a top-level folder, list other page titles.
         try:
             if not is_root_index:
                 rel_parts = md_path.relative_to(input_root).parts
@@ -7170,16 +7101,10 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                                 href = os.path.relpath(relative_output_html(input_root, output_root, p), start=out_dir).replace(os.sep, "/")
                                 title_p = title_map.get(p, strip_numeric_prefix(p.stem)) or strip_numeric_prefix(p.stem)
                                 title_p = (title_p or "").replace("--", "–")
-                                try:
-                                    srcp = p.read_text(encoding="utf-8")
-                                except Exception:
-                                    srcp = ""
-                                snippet = _first_non_heading_paragraph_html(srcp) or ""
                                 blocks.append(
                                     f"<div class=\"mb-3 pb-2 border-bottom\">"
                                     f"<a class=\"fw-semibold link-dark text-decoration-none chapter-page-link\" href=\"{html.escape(href)}\">"
                                     f"<i class=\"fas fa-file-alt me-2\" style=\"color:#90c3c6;\"></i>{html.escape(title_p)}</a>"
-                                    + (f"<div class=\"small text-muted mt-1 ps-2 border-start\" style=\"border-color:#e5e5e5!important\">{snippet}</div>" if snippet else "")
                                     + "</div>"
                                 )
                             content_html += (
@@ -7235,8 +7160,10 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             needs_pdf = False
 
         # Only create per-page PDF link if (a) not a draft and (b) PDF exists or will be generated
+        page_id = page_anchor_map.get(md_path)
         if ("!" not in md_path.name) and (pdf_out_path.exists() or (args and args.page_pdf)):
-            pdf_href_rel = os.path.relpath(pdf_out_path, start=out_dir).replace(os.sep, "/")
+            pdf_href_path = (output_root / f"{page_id}.pdf") if page_id else pdf_out_path
+            pdf_href_rel = os.path.relpath(pdf_href_path, start=out_dir).replace(os.sep, "/")
             pdf_link_html = f'<a class="tr-float link-secondary small" href="{html.escape(pdf_href_rel)}" download>PDF</a>'
 
         # Add chapter/global PDF links on special pages (now that per-page link is defined)
@@ -7278,7 +7205,6 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             pass
         # And page-level anchor
         try:
-            page_id = page_anchor_map.get(md_path)
             if page_id:
                 anchor_to_target.setdefault(page_id, out_html_path)
         except Exception:
@@ -7428,8 +7354,34 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             except Exception:
                 pass
 
+        # If the page has a ((foo)) permalink, expose its PDF at /foo.pdf too.
+        try:
+            if ("!" not in md_path.name) and page_id and pdf_out_path.exists():
+                pdf_alias_path = output_root / f"{page_id}.pdf"
+                if pdf_alias_path.resolve() != pdf_out_path.resolve():
+                    if (not pdf_alias_path.exists()) or (pdf_out_path.stat().st_mtime > pdf_alias_path.stat().st_mtime):
+                        shutil.copy2(pdf_out_path, pdf_alias_path)
+        except Exception as e:
+            _warn("pdf_permalink", f"{md_path}: {e}")
+
         # Chapter PDFs are generated above (before cache-hit skips), so we don't do it here.
     _tmark("write_pages: render HTML loop (and per-page PDFs if enabled)")
+
+    # Keep PDF permalinks present even when incremental rendering skips the source page.
+    try:
+        for p, page_id in (page_anchor_map or {}).items():  # type: ignore[union-attr]
+            if not page_id or "!" in p.name:
+                continue
+            pdf_out_path = relative_output_html(input_root, output_root, p).with_suffix(".pdf")
+            if not pdf_out_path.exists():
+                continue
+            pdf_alias_path = output_root / f"{page_id}.pdf"
+            if pdf_alias_path.resolve() == pdf_out_path.resolve():
+                continue
+            if (not pdf_alias_path.exists()) or (pdf_out_path.stat().st_mtime > pdf_alias_path.stat().st_mtime):
+                shutil.copy2(pdf_out_path, pdf_alias_path)
+    except Exception as e:
+        _warn("pdf_permalink", f"Failed refreshing PDF permalinks: {e}")
 
     # After writing content pages, write search index and search page
     write_search_assets(input_root, output_root, title_map)
