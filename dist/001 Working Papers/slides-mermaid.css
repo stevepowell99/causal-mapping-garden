@@ -1,0 +1,45 @@
+/* Base font */
+.reveal { --r-main-font-size: 34px; }
+
+/* Mermaid 1: force fit with scale - SVG ignores max-height so scale it down */
+.reveal #workflow-schematic .cell-output-display {
+  height: 32vh !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+}
+.reveal #workflow-schematic .mermaid,
+.reveal #workflow-schematic .mermaid svg {
+  transform: scale(0.32) !important;
+  transform-origin: top center !important;
+}
+/* Mermaid 2: smaller */
+.reveal #four-mechanism-themes .mermaid svg {
+  max-width: 260px !important;
+  max-height: 220px !important;
+  width: auto !important;
+  height: auto !important;
+}
+/* Dark theme: node backgrounds, strokes, text */
+.reveal .mermaid svg rect {
+  fill: #334155 !important;
+  stroke: #64748b !important;
+}
+.reveal .mermaid svg .cluster rect {
+  fill: #1e293b !important;
+}
+.reveal .mermaid svg path {
+  stroke: #64748b !important;
+}
+.reveal .mermaid svg text {
+  fill: #e2e8f0 !important;
+}
+/* Experiment diagram: larger font, tighter spacing */
+.reveal #experiment .mermaid svg text {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+}
+.reveal #experiment .mermaid svg {
+  max-width: 95% !important;
+}

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Causal Mapping: assisting Contribution Analysis</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-bg: #F8FAFC;
+            --color-card: #FFFFFF;
+            --color-primary: #4F46E5;
+            --color-secondary: #0EA5E9;
+            --color-accent: #EC4899;
+            --color-success: #10B981;
+            --color-text-main: #0F172A;
+            --color-text-light: #64748B;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text-main);
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            height: 300px;
+        }
+
+        .section-header {
+            border-left: 6px solid var(--color-primary);
+            padding-left: 1.5rem;
+        }
+
+        .engine-card {
+            background: #FFFFFF;
+            color: #0F172A;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-pill {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .cm-win-badge {
+            background-color: #dcfce7;
+            color: #166534;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Hover effects */
+        .hover-card {
+            transition: all 0.3s ease;
+        }
+
+        .hover-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-indigo-900 text-white py-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-black mb-4">Causal Mapping:</h1>
+            <h1 class="text-4xl md:text-5xl font-black mb-4">the evaluator's <span class="text-sky-400">engine
+                    room</span></h1>
+            <p class="text-xl text-indigo-200">Marshalling causal evidence at scale for Contribution Analysis and
+                beyond.</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 space-y-12 pb-20">
+
+        <!-- SECTION 1: THE ENGINE ROOM (Supporting CA & Others) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="engine-card flex flex-col justify-center">
+                <div class="mb-8">
+                    <div class="text-xs font-bold tracking-widest text-indigo-600 uppercase mb-2">The Evaluation
+                        Strategy</div>
+                    <div class="bg-orange-500/20 p-6 rounded-xl border-2 border-orange-400 mb-4">
+                        <span class="text-2xl font-bold text-orange-700">Evaluative Judgement</span>
+                        <div class="text-sm mt-2 text-orange-600">(Contribution Analysis, Outcome Harvesting, QuIP)
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center mb-4">
+                        <div class="text-sky-400 text-5xl leading-none" aria-hidden="true">&#8593;</div>
+                    </div>
+
+                    <div class="text-xs font-bold tracking-widest text-indigo-600 uppercase mb-2">The Evidence Engine
+                    </div>
+                    <div class="bg-sky-500/20 p-6 rounded-xl border-2 border-sky-400">
+                        <span class="text-2xl font-bold text-sky-300">Causal Mapping</span>
+                        <p class="text-sm mt-2">Identifying, labelling and synthesising <br> causal links within text --
+                            at scale.
+                        </p>
+                    </div>
+
+                    <div class="flex justify-center mt-4 gap-4">
+                        <div class="px-3 py-1 bg-slate-100 rounded text-xs text-slate-700">Interviews</div>
+                        <div class="px-3 py-1 bg-slate-100 rounded text-xs text-slate-700">Reports</div>
+                        <div class="px-3 py-1 bg-slate-100 rounded text-xs text-slate-700">Stories</div>
+                        sy
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col justify-center">
+                <h2 class="section-header text-2xl font-bold mb-4">A Multi-Method Power Tool</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Causal Mapping isn't primarily an evaluation method; it's a way of <strong>identifying and
+                        organising causal
+                        claims</strong> in the service of evaluative judgement. It fits really well with
+                    <strong>Contribution Analysis (CA)</strong>,
+                    but its systematic approach adds value to any evidence-based framework:
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="text-success text-xl mt-1">&#10004;</div>
+                        <div>
+                            <span class="font-bold">Outcome Harvesting:</span> Strengthening "significance" descriptions
+                            by mapping the precise causal chains from outcome back to intervention.
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="text-success text-xl mt-1">&#10004;</div>
+                        <div>
+                            <span class="font-bold">Realist Evaluation:</span> Helping to identify the specific
+                            Context-Mechanism-Outcome (CMO) linkages mentioned by sources.
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="text-success text-xl mt-1">&#10004;</div>
+                        <div>
+                            <span class="font-bold">Theory of Change:</span> Testing pre-defined theories against
+                            hundreds of empirical "mini-theories" from stakeholders.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: THE "DEEP LINK" CONCEPT -->
+        <section class="bg-white p-8 md:p-12 rounded-2xl shadow-lg hover-card">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold mb-4">1 Link = 100 Claims</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    In a causal map, an arrow from "Training" to "Knowledge" might look simple. But behind that single
+                    arrow sits a database of perhaps dozens or hundreds of specific, auditable claims from different
+                    sources.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="chart-container">
+                    <canvas id="depthChart"></canvas>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl mb-4">Verifiability at Scale</h3>
+                    <p class="text-gray-600 mb-4">
+                        Causal Mapping allows you to "double-click" on any part of your summary map to see the weight of
+                        evidence. It moves evaluation away from cherry-picked quotes toward <strong>systematic evidence
+                            density</strong>.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="w-3 h-3 bg-indigo-500 rounded-full"></span>
+                            Each bar represents the number of unique claims supporting a link.
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="w-3 h-3 bg-pink-500 rounded-full"></span>
+                            Includes diverse sources (Farmers, Staff, Partners).
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="w-3 h-3 bg-emerald-500 rounded-full"></span>
+                            Every claim is linked back to the verbatim quote.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: THE CA 6-STEP ROADMAP -->
+        <section class="bg-white p-8 md:p-12 rounded-2xl shadow-lg">
+            <h2 class="section-header text-3xl font-bold mb-10">Integrating causal mapping into Mayne’s 6 Steps</h2>
+
+            <div class="space-y-6">
+                <!-- Step 1 -->
+                <div
+                    class="flex flex-col md:flex-row gap-4 p-6 border border-gray-100 rounded-xl hover:bg-gray-50 transition-colors">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl">
+                        1</div>
+                    <div class="flex-grow">
+                        <h4 class="font-bold text-lg">Set out the Attribution Problem</h4>
+                        <p class="text-gray-600 text-sm">Define the evaluation questions and the level of evidence
+                            required.</p>
+                        <div class="mt-2 cm-win-badge">CM Win: Identifies all potential causal pathways mentioned in the
+                            data.</div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div
+                    class="flex flex-col md:flex-row gap-4 p-6 border border-gray-100 rounded-xl hover:bg-gray-50 transition-colors">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl">
+                        2</div>
+                    <div class="flex-grow">
+                        <h4 class="font-bold text-lg">Develop the Theory of Change</h4>
+                        <p class="text-gray-600 text-sm">Establish the logic of how the intervention is expected to lead
+                            to results.</p>
+                        <div class="mt-2 cm-win-badge">CM Win: Reconstructs the empirical ToC from hundreds of
+                            stakeholder views.</div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div
+                    class="flex flex-col md:flex-row gap-4 p-6 border border-gray-100 rounded-xl hover:bg-gray-50 transition-colors">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl">
+                        3</div>
+                    <div class="flex-grow">
+                        <h4 class="font-bold text-lg">Gather Evidence on the ToC</h4>
+                        <p class="text-gray-600 text-sm">Collect existing and new evidence to populate the causal links.
+                        </p>
+                        <div class="mt-2 cm-win-badge">CM Win: Catalogues & labels causal claims from texts
+                            systematically.</div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div
+                    class="flex flex-col md:flex-row gap-4 p-6 border border-gray-100 rounded-xl hover:bg-gray-50 transition-colors">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl">
+                        4</div>
+                    <div class="flex-grow">
+                        <h4 class="font-bold text-lg">Assemble the Performance Story</h4>
+                        <p class="text-gray-600 text-sm">Build the narrative of contribution based on the synthesized
+                            evidence.</p>
+                        <div class="mt-2 cm-win-badge">CM Win: Synthesizes individual claims into long, verifiable
+                            chains.</div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div
+                    class="flex flex-col md:flex-row gap-4 p-6 border border-gray-100 rounded-xl hover:bg-gray-50 transition-colors">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl">
+                        5</div>
+                    <div class="flex-grow">
+                        <h4 class="font-bold text-lg">Assess Alternative Explanations</h4>
+                        <p class="text-gray-600 text-sm">Account for external influences and other drivers of the
+                            observed change.</p>
+                        <div class="mt-2 cm-win-badge">CM Win: Explicitly maps non-project influences mentioned by
+                            sources.</div>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div
+                    class="flex flex-col md:flex-row gap-4 p-6 border border-gray-100 rounded-xl hover:bg-gray-50 transition-colors">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl">
+                        6</div>
+                    <div class="flex-grow">
+                        <h4 class="font-bold text-lg">Revise & Strengthen</h4>
+                        <p class="text-gray-600 text-sm">Refine the story based on gaps identified in the evidence base.
+                        </p>
+                        <div class="mt-2 cm-win-badge">CM Win: Highlights "weak links" where evidence count is low.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: RIGOUR AT SCALE -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover-card">
+                <h3 class="text-2xl font-bold mb-4">Scalable Qualitative Analysis</h3>
+                <p class="text-gray-600 text-sm mb-6">
+                    When you move from 10 interviews to 200 reports, "manual coding" fails. Causal mapping uses AI not
+                    to replace the evaluator, but to automate the extraction of <strong>verifiable evidence
+                        nuggets</strong>.
+                </p>
+                <div class="chart-container">
+                    <canvas id="efficiencyChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover-card">
+                <h3 class="text-2xl font-bold mb-4">Transparent Evidence Clusters</h3>
+                <p class="text-gray-600 text-sm mb-6">
+                    Each dot below is a single causal claim. The evaluator uses these clusters to make the final
+                    evaluative judgment—providing donors with a complete audit trail.
+                </p>
+                <div id="plotlyCluster" style="width:100%; height:300px;"></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white rounded-t-3xl p-12 text-center">
+            <h2 class="text-2xl font-bold mb-4">The Evaluator's Back Office</h2>
+            <p class="text-gray-400 max-w-xl mx-auto mb-8">
+                Causal mapping handles the identification, marshalling, and labelling of evidence so you can focus on
+                the final evaluative judgment.
+            </p>
+            <div class="text-xs text-gray-500 uppercase tracking-widest">Systematic &bull; Transparent &bull; Verifiable
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Utility for label wrapping
+        function wrapLabel(label, maxChar = 16) {
+            if (label.length <= maxChar) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length < maxChar) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const tooltipConfig = {
+            callbacks: {
+                title: function (tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    return Array.isArray(label) ? label.join(' ') : label;
+                }
+            }
+        };
+
+        // --- CHART: DEPTH (Evidence per Link) ---
+        const ctxDepth = document.getElementById('depthChart').getContext('2d');
+        new Chart(ctxDepth, {
+            type: 'bar',
+            data: {
+                labels: ['Link: Training -> Skills', 'Link: Access -> Sales', 'Link: Sales -> Income', 'Link: Income -> Schooling'],
+                datasets: [{
+                    label: 'Individual Causal Claims',
+                    data: [142, 89, 115, 64],
+                    backgroundColor: ['#4F46E5', '#0EA5E9', '#EC4899', '#10B981'],
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { ticks: { font: { size: 10 } } },
+                    y: { title: { display: true, text: 'Number of Source Claims' } }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: tooltipConfig,
+                    title: { display: true, text: 'Claims Behind Key Map Links' }
+                }
+            }
+        });
+
+        // --- CHART: EFFICIENCY ---
+        const ctxEff = document.getElementById('efficiencyChart').getContext('2d');
+        new Chart(ctxEff, {
+            type: 'line',
+            data: {
+                labels: [10, 50, 100, 200, 500],
+                datasets: [
+                    {
+                        label: 'Manual Thematic Analysis',
+                        data: [15, 75, 180, 400, 1000],
+                        borderColor: '#94A3B8',
+                        borderDash: [5, 5],
+                        tension: 0.3
+                    },
+                    {
+                        label: 'CM + AI Scaling',
+                        data: [20, 45, 65, 95, 160],
+                        borderColor: '#4F46E5',
+                        backgroundColor: 'rgba(79, 70, 229, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        borderWidth: 3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: { display: true, text: 'Processing Time vs Data Volume' }
+                },
+                scales: {
+                    x: { title: { display: true, text: 'Number of Reports/Interviews' } },
+                    y: { title: { display: true, text: 'Analyst Hours' } }
+                }
+            }
+        });
+
+        // --- PLOTLY: EVIDENCE CLUSTERS ---
+        // Renamed variables to avoid global namespace collisions
+        const nPointsCluster = 250;
+        const xValsCluster = [], yValsCluster = [], markerColorsCluster = [], hoverTextsCluster = [];
+        for (let i = 0; i < nPointsCluster; i++) {
+            const clusterType = Math.random();
+            if (clusterType < 0.4) {
+                xValsCluster.push(Math.random() * 2 + 1); yValsCluster.push(Math.random() * 2 + 1);
+                markerColorsCluster.push('#4F46E5'); hoverTextsCluster.push('Intervention Claim');
+            } else if (clusterType < 0.7) {
+                xValsCluster.push(Math.random() * 2 + 3); yValsCluster.push(Math.random() * 2 + 3);
+                markerColorsCluster.push('#0EA5E9'); hoverTextsCluster.push('Outcome Claim');
+            } else {
+                xValsCluster.push(Math.random() * 4 + 0.5); yValsCluster.push(Math.random() * 4 + 0.5);
+                markerColorsCluster.push('#EC4899'); hoverTextsCluster.push('Context Claim');
+            }
+        }
+        Plotly.newPlot('plotlyCluster', [{
+            x: xValsCluster,
+            y: yValsCluster,
+            mode: 'markers',
+            type: 'scattergl',
+            text: hoverTextsCluster,
+            marker: { size: 6, color: markerColorsCluster, opacity: 0.6 }
+        }], {
+            margin: { t: 10, r: 10, b: 30, l: 30 },
+            showlegend: false,
+            xaxis: { showgrid: false, zeroline: false, showticklabels: false },
+            yaxis: { showgrid: false, zeroline: false, showticklabels: false },
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)'
+        }, { responsive: true, displayModeBar: false });
+
+    </script>
+</body>
+
+</html>
