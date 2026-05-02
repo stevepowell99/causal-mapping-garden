@@ -24,13 +24,14 @@ import sys
 import time
 from datetime import date, datetime
 from urllib.parse import quote, urljoin
-PIPELINE_VERSION = "2026-05-01-pdf-permalinks-v1"
+PIPELINE_VERSION = "2026-05-02-abstract-paragraphs-full-width-v1"
 
 # Media extensions: images + local video (mp4, webm, etc.)
 _IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".bmp"}
 _VIDEO_EXTS = {".mp4", ".webm", ".ogg", ".mov", ".m4v"}
 _MEDIA_EXTS = _IMAGE_EXTS | _VIDEO_EXTS
 _IMAGE_NAME_INDEX_CACHE: Dict[Tuple[str, str, Tuple[str, ...]], Dict[str, Path]] = {}
+DUAL_COLUMN_TAGS = {"dual-column", "dual_column", "two-column", "two_column"}
 
 # --- PDF post-processing ---
 def _merge_prefixed_pdfs_in_each_folder(output_root: Path, *, prefix: str, merged_name: str) -> None:
@@ -1060,6 +1061,20 @@ def _maybe_copy_single_asset(src_path: Path, base_root: Path, output_root: Path)
     shutil.copy2(src_path, dst_path)
 
 
+def _copy_pdf_permalink_alias(src_path: Path, dst_path: Path, *, force: bool = False) -> None:
+    """Expose a page PDF at its short permalink path."""
+    if dst_path.resolve() == src_path.resolve():
+        return
+    if not force and dst_path.exists():
+        try:
+            if src_path.stat().st_mtime <= dst_path.stat().st_mtime:
+                return
+        except Exception:
+            pass
+    dst_path.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(src_path, dst_path)
+
+
 def _map_asset_to_output_path(
     src_path: Path,
     input_root: Path,
@@ -1570,227 +1585,6 @@ def embed_video_links(md_text: str) -> str:
     return md_text
 
 
-def render_compilation_pdf_html(title: str, sections: List[Tuple[str, str]], show_chapter_label: bool = True, highlight_first_section: bool = True) -> str:
-    """Render a combined HTML for chapter/global PDF with ToC and page breaks between sections.
-
-    show_chapter_label controls whether the title page prints the word "Chapter" above the title.
-    """
-    safe_title = html.escape(title)
-    # Build ToC and sections with anchors
-    toc_items: List[str] = []
-    body_items: List[str] = []
-    for idx, (sec_title, sec_html) in enumerate(sections, start=1):
-        anchor = f"s{idx}"
-        toc_items.append(f'<li><a href="#{anchor}">{html.escape(sec_title)}</a></li>')
-        section_classes = "section"
-        if highlight_first_section and idx == 1:
-            section_classes += " section-first"
-        body_items.append(
-            f'<section id="{anchor}" class="{section_classes}">'
-            f'<div class="page-title">{html.escape(sec_title)}</div>'
-            f'{sec_html}'
-            f'</section>'
-        )
-        if idx < len(sections):
-            body_items.append('<div class="page-break"></div>')
-
-    toc_html = '<ul class="list-unstyled">' + "".join(toc_items) + '</ul>' if len(sections) >= 2 else ''
-
-    chapter_label_html = '<div class="chapter-number">Chapter</div>' if show_chapter_label else ''
-    return f"""
-<!doctype html>
-<html lang=\"en\">
-  <head>
-    <meta charset=\"utf-8\"> 
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> 
-    <title>{safe_title}</title>
-    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\"> 
-    <style>
-      @page {{ size: A4; margin: 22mm 18mm; }}
-      body {{ font-family: Georgia, Cambria, \"Times New Roman\", Times, serif; font-size: 11pt; line-height: 1.65; color:#222; }}
-      /* Page titles (match per-page PDF sizing) */
-      /* Move title down ~1cm without moving body: +10mm above, -10mm below (clamped at 0). */
-      .page-title {{ font-family: system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif; font-size: 2.05rem; font-weight: 700; line-height: 1.3; margin: 10mm 0 max(0mm, calc(2.25rem - 10mm)) 0; }}
-      h1, h2, h3, h4, h5, h6 {{
-        page-break-after: avoid;
-        page-break-inside: avoid;
-        line-height: 1.2;
-        font-weight: 600;
-      }}
-      /* Match per-page PDF heading sizes */
-      h1 {{ font-size: 1.65rem; font-weight: 600; margin-top: 1.9rem; margin-bottom: 1rem; }}
-      h2 {{ font-size: 1.4rem; font-weight: 600; margin-top: 1.6rem; margin-bottom: .95rem; }}
-      h3 {{ font-size: 1.2rem; font-weight: 600; margin-top: 1.4rem; margin-bottom: .85rem; }}
-      h4 {{ font-size: 1.05rem; font-weight: 600; margin-top: 1.2rem; margin-bottom: .75rem; }}
-      h5 {{ font-size: .95rem; font-weight: 600; margin-top: 1.05rem; margin-bottom: .65rem; }}
-      h6 {{ font-size: .9rem; font-weight: 600; margin-top: .95rem; margin-bottom: .55rem; }}
-      /* Hide anchor links in headings */
-      h1 a[href^="#"], h2 a[href^="#"], h3 a[href^="#"], h4 a[href^="#"], h5 a[href^="#"], h6 a[href^="#"] {{
-        display: none;
-      }}
-      /* Keep headings with following content together */
-      h1 + *, h2 + *, h3 + *, h4 + *, h5 + *, h6 + * {{ page-break-before: avoid; }}
-      p {{ widows: 2; orphans: 2; margin: 0 0 0.8em 0; }}
-      img {{ max-width: 100%; height: auto; page-break-inside: avoid; }}
-      pre {{
-        background:#f7f7f7;
-        border:1px solid #e5e5e5;
-        border-radius:6px;
-        padding:.6rem .8rem;
-        page-break-inside: avoid;
-        white-space: pre-wrap;
-        overflow-wrap: anywhere;
-        word-break: break-word;
-      }}
-      blockquote {{ border-left:3px solid #e5e5e5; background:#fafafa; padding:.5rem .8rem; margin:1rem 0; color:#495057; page-break-inside: avoid; }}
-      /* Compact tables for PDF (avoid overflow off the page) */
-      table {{ width:100%; border-collapse: collapse; table-layout: fixed; page-break-inside: avoid; font-size: 8.8pt; }}
-      th, td {{ border:1px solid #e5e5e5; padding:.2rem .35rem; font-size: 8.4pt; vertical-align: top; word-break: break-word; }}
-      .title {{ font-size:1.3rem; font-weight:600; margin-bottom:.2rem; }}
-      .toc h2 {{ font-size:.95rem; text-transform: uppercase; letter-spacing:.06em; color:#6c757d; margin:0 0 .4rem 0; }}
-      .toc ul {{ padding-left:1rem; margin:0; }}
-      .page-break {{ page-break-before: always; }}
-      .tr-float {{ position: fixed; right: 10mm; top: 10mm; }}
-      .container {{ max-width: 720px; }}
-      .section-first {{ background: linear-gradient(to bottom, #f8feff 0%, #ffffff 300px); border-left: 4px solid #79bb93; padding: 1.5rem 1.75rem; border-radius: 6px; }}
-      .section-first h2 {{ border-bottom: 3px solid #79bb93; padding-bottom: .75rem; margin-bottom: 1rem; }}
-      .section-first p:first-of-type {{ font-size: 1.1rem; line-height: 1.7; color: #445; margin-bottom: 1.6rem; background: rgba(121,187,147,0.08); padding: 0.85rem 1.1rem; border-left: 3px solid #79bb93; border-radius: 4px; }}
-      /* Alternative heading styles */
-      h1.rounded, h1.rounded-left, h1.banner {{ font-size: inherit; }}
-      h2.rounded, h2.rounded-left, h2.banner {{ font-size: inherit; }}
-      h3.rounded, h3.rounded-left, h3.banner {{ font-size: inherit; }}
-      h1.rounded, h2.rounded, h3.rounded {{ background: rgba(121,187,147,0.08); border-left: 4px solid #79bb93; padding: 0.75rem 1rem 0.75rem 1.5rem; border-radius: 6px; }}
-      h1.rounded-left, h2.rounded-left, h3.rounded-left {{ border-left: 4px solid #79bb93; padding-left: 1.5rem; background: rgba(121,187,147,0.12); }}
-      h1.banner, h2.banner, h3.banner {{ background: #79bb93; color: white; padding: 0.75rem 1rem 0.75rem 1.5rem; border-radius: 6px; }}
-      /* Heading colour variants (Bootstrap-ish palette). Usage: add class ".rounded-info" etc to the heading */
-      h1.rounded-info, h2.rounded-info, h3.rounded-info {{ background: rgba(13,202,240,0.10); border-left: 4px solid #0dcaf0; }}
-      h1.rounded-warning, h2.rounded-warning, h3.rounded-warning {{ background: rgba(255,193,7,0.14); border-left: 4px solid #ffc107; }}
-      h1.rounded-danger, h2.rounded-danger, h3.rounded-danger {{ background: rgba(220,53,69,0.10); border-left: 4px solid #dc3545; }}
-      h1.rounded-tip, h2.rounded-tip, h3.rounded-tip {{ background: rgba(25,135,84,0.10); border-left: 4px solid #198754; }}
-      h1.rounded-left-info, h2.rounded-left-info, h3.rounded-left-info {{ border-left: 4px solid #0dcaf0; background: rgba(13,202,240,0.12); }}
-      h1.rounded-left-warning, h2.rounded-left-warning, h3.rounded-left-warning {{ border-left: 4px solid #ffc107; background: rgba(255,193,7,0.16); }}
-      h1.rounded-left-danger, h2.rounded-left-danger, h3.rounded-left-danger {{ border-left: 4px solid #dc3545; background: rgba(220,53,69,0.12); }}
-      h1.rounded-left-tip, h2.rounded-left-tip, h3.rounded-left-tip {{ border-left: 4px solid #198754; background: rgba(25,135,84,0.12); }}
-      h1.banner-info, h2.banner-info, h3.banner-info {{ background: #0dcaf0; color: #083944; }}
-      h1.banner-warning, h2.banner-warning, h3.banner-warning {{ background: #ffc107; color: #3b2c00; }}
-      h1.banner-danger, h2.banner-danger, h3.banner-danger {{ background: #dc3545; color: #fff; }}
-      h1.banner-tip, h2.banner-tip, h3.banner-tip {{ background: #198754; color: #fff; }}
-      /* Paper styling (YAML tag: paper) — slightly more academic, not fusty */
-      .paper {{ font-size: 11.5pt; line-height: 1.7; }}
-      .paper h1 {{ font-size: 1.55rem; }}
-      .paper a {{ text-decoration: underline; text-underline-offset: 2px; }}
-      .paper .callout, .paper .callout-note {{
-        border-left: none;
-        border: 1px solid #90c3c6;
-        background: rgba(144,195,198,0.08);
-      }}
-      /* Make "banner-info" look like an academic section header (not a loud full banner) */
-      .paper h1.banner-info, .paper h2.banner-info, .paper h3.banner-info {{
-        background: transparent;
-        color: #2c3e50;
-        border-left: 4px solid #90c3c6;
-        padding: 0.55rem 0.9rem 0.55rem 1.7rem;
-        border-radius: 4px;
-      }}
-      .paper h1.rounded-info, .paper h2.rounded-info, .paper h3.rounded-info {{
-        background: rgba(144,195,198,0.10);
-        border-left-color: #90c3c6;
-        padding: 0.35rem 0.9rem 0.35rem 1.7rem;
-        border-radius: 4px;
-      }}
-      /* Callout styles */
-      .callout {{ border-left: 4px solid #6c757d; background: #f8f9fa; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 4px; page-break-inside: avoid; }}
-      .callout p:last-child, .callout ul:last-child, .callout ol:last-child {{ margin-bottom: 0; }}
-      .callout ul, .callout ol {{ margin-top: 0.5rem; margin-bottom: 0.5rem; }}
-      .callout-info {{ border-left-color: #0dcaf0; background: #e7f5f8; }}
-      .callout-warning {{ border-left-color: #ffc107; background: #fff8e1; }}
-      .callout-tip {{ border-left-color: #198754; background: #e8f5e9; }}
-      .callout-note {{ border-left-color: #6c757d; background: #f8f9fa; }}
-      /* Callout layout/style modifiers (can be combined) */
-      .callout-narrow {{ max-width: 66%; }}
-      .callout-right {{ margin-left: auto; }}
-      .callout-center {{ margin-left: auto; margin-right: auto; }}
-      .callout-heavy {{ border-left-width: 6px !important; border-radius: 0; }}
-      .callout-left-border {{ border-top: none; border-right: none; border-bottom: none; }}
-      .callout-rounded {{ border-left: none; border: 2px solid #e5e5e5; border-radius: 6px; }}
-      .callout-inverted {{ background: #79bb93 !important; color: #ffffff; }}
-      .callout-info.callout-inverted {{ border-left-color: #0dcaf0 !important; }}
-      .callout-warning.callout-inverted {{ border-left-color: #ffc107 !important; }}
-      .callout-tip.callout-inverted {{ border-left-color: #198754 !important; }}
-      .callout-note.callout-inverted {{ border-left-color: #6c757d !important; }}
-      /* Highlight style */
-      mark {{ background: #d4edda; padding: 0.1em 0.2em; border-radius: 2px; }}
-      /* References section (generated by citations) */
-      .references {{ margin-top: 2.6rem; padding-top: 1.6rem; border-top: 1px solid #e5e5e5; }}
-      .references h2 {{ font-size: 1.15rem; font-weight: 600; margin-bottom: .85rem; }}
-      /* Column styles for PDF (wider gutter than before: +50%) */
-      .row {{
-        display: flex;
-        flex-wrap: wrap;
-        page-break-inside: avoid;
-        margin-left: -1.125rem;
-        margin-right: -1.125rem;
-      }}
-      .row [class*="col-"] {{
-        page-break-inside: avoid;
-        padding-left: 1.125rem;
-        padding-right: 1.125rem;
-        flex: 0 0 auto;
-      }}
-      .row .col-md-1 {{ width: 8.33333333%; }}
-      .row .col-md-2 {{ width: 16.66666667%; }}
-      .row .col-md-3 {{ width: 25%; }}
-      .row .col-md-4 {{ width: 33.33333333%; }}
-      .row .col-md-5 {{ width: 41.66666667%; }}
-      .row .col-md-6 {{ width: 50%; }}
-      .row .col-md-7 {{ width: 58.33333333%; }}
-      .row .col-md-8 {{ width: 66.66666667%; }}
-      .row .col-md-9 {{ width: 75%; }}
-      .row .col-md-10 {{ width: 83.33333333%; }}
-      .row .col-md-11 {{ width: 91.66666667%; }}
-      .row .col-md-12 {{ width: 100%; }}
-      /* Chapter title page */
-      .chapter-title-page {{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        text-align: center;
-        page-break-after: always;
-        padding: 2rem;
-      }}
-      .chapter-title-page .chapter-number {{
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: #6c757d;
-        margin-bottom: 1.5rem;
-        font-weight: 500;
-      }}
-      .chapter-title-page .chapter-title-text {{
-        font-size: 3rem;
-        font-weight: 300;
-        line-height: 1.2;
-        color: #2c3e50;
-        margin-bottom: 1rem;
-        max-width: 80%;
-      }}
-    </style>
-  </head>
-  <body>
-    <div class="chapter-title-page">
-      {chapter_label_html}
-      <div class="chapter-title-text">{safe_title}</div>
-    </div>
-    <div class=\"container\">
-      {('<section class="toc"><h2>Contents</h2>' + toc_html + '</section><div class="page-break"></div>') if toc_html else ''}
-      {"".join(body_items)}
-    </div>
-  </body>
-</html>
-"""
-
 def strip_numeric_prefix(stem: str) -> str:
     """Strip page-anchor suffix ((id)) and leading numeric ordering from a filename stem.
     Also converts standalone 'qq' tokens to '?' (for convenient title punctuation).
@@ -1852,6 +1646,30 @@ def _short_route_stub_html(
     Injected <base href> is the real output folder so relative href/src resolve like the original.
     Fragment-only links href=\"#...\" are rewritten to /{ident}/#... so <base> does not jump to the long URL.
     """
+    if not target_html.exists():
+        try:
+            rel = target_html.relative_to(output_root).as_posix()
+        except ValueError:
+            rel = target_html.name
+        target_url = f"{site_url.rstrip('/')}/" + "/".join(quote(part, safe="") for part in rel.split("/") if part)
+        safe_ident = html.escape(ident)
+        safe_target = html.escape(target_url)
+        safe_stub = html.escape(stub_url_abs)
+        return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{safe_ident}</title>
+  <link rel="canonical" href="{safe_stub}">
+  <meta property="og:url" content="{safe_stub}">
+  <meta http-equiv="refresh" content="0; url={safe_target}">
+  <script>window.location.replace({json.dumps(target_url)});</script>
+</head>
+<body>
+  <p>Redirecting to <a href="{safe_target}">{safe_target}</a>.</p>
+</body>
+</html>"""
+
     import bs4  # type: ignore
 
     raw = target_html.read_text(encoding="utf-8")
@@ -3107,7 +2925,433 @@ def _metadata_has_tag(metadata: Dict[str, Any], tag: str) -> bool:
         return False
     if isinstance(tags_val, list):
         return any(str(t).strip().lower() == tag for t in tags_val)
-    return str(tags_val).strip().lower() == tag
+    tag_parts = re.split(r"[,;\s]+", str(tags_val).strip().lower())
+    return tag in {part for part in tag_parts if part}
+
+
+def _metadata_is_paper(metadata: Dict[str, Any]) -> bool:
+    """Return True for pages that should use working-paper/article styling."""
+    if not isinstance(metadata, dict):
+        return False
+    type_val = metadata.get("type") if "type" in metadata else metadata.get("Type")
+    return _metadata_has_tag(metadata, "paper") or str(type_val or "").strip().lower() == "article"
+
+
+def _metadata_has_dual_column_tag(metadata: Dict[str, Any]) -> bool:
+    """Return True when YAML explicitly opts into page-level two-column layout."""
+    return any(_metadata_has_tag(metadata, tag) for tag in DUAL_COLUMN_TAGS)
+
+
+def _metadata_uses_pdf_dual_columns(metadata: Dict[str, Any]) -> bool:
+    """PDFs use paper pages and explicit two-column pages as page-level two-column output."""
+    return _metadata_is_paper(metadata) or _metadata_has_dual_column_tag(metadata)
+
+
+def _add_html_class(node: Any, class_name: str) -> None:
+    """Add one CSS class to a BeautifulSoup node without duplicating it."""
+    node["class"] = list(dict.fromkeys((node.get("class") or []) + [class_name]))
+
+
+def _next_element_sibling(node: Any) -> Any:
+    """Return the next non-empty element sibling for a BeautifulSoup node."""
+    sibling = node.next_sibling
+    while sibling is not None:
+        if getattr(sibling, "name", None) is not None:
+            if sibling.get_text(strip=True) == "" and not sibling.find(["img", "table", "pre", "blockquote", "div", "svg"]):
+                sibling = sibling.next_sibling
+                continue
+            return sibling
+        if str(sibling).strip():
+            return sibling
+        sibling = sibling.next_sibling
+    return None
+
+
+def _is_italic_only_paragraph(node: Any) -> bool:
+    """Return True for simple Markdown-style image captions: a paragraph containing only <em> text."""
+    if getattr(node, "name", None) != "p":
+        return False
+    element_children = [child for child in node.children if getattr(child, "name", None) is not None]
+    if not element_children or any(getattr(child, "name", None) != "em" for child in element_children):
+        return False
+    return node.get_text(strip=True) == " ".join(child.get_text(strip=True) for child in element_children).strip()
+
+
+def _wrap_full_width_figure(soup: Any, media_node: Any, caption_node: Any) -> None:
+    """Keep a full-width media node and its Markdown-style caption together."""
+    wrapper = soup.new_tag("div", **{"class": "paper-figure-full"})
+    media_node.insert_before(wrapper)
+    wrapper.append(media_node.extract())
+    wrapper.append(caption_node.extract())
+
+
+def postprocess_two_col_sections(content_html: str) -> str:
+    """Wrap content after a heading marked {.two-col} until the next heading."""
+    try:
+        import bs4  # type: ignore
+    except Exception:
+        return content_html
+
+    try:
+        soup = bs4.BeautifulSoup(content_html, "html.parser")
+        heading_names = {"h1", "h2", "h3", "h4", "h5", "h6"}
+        headings = list(soup.select("h1.two-col, h2.two-col, h3.two-col, h4.two-col, h5.two-col, h6.two-col"))
+
+        for heading in headings:
+            next_node = heading.next_sibling
+            if (
+                getattr(next_node, "name", None) == "div"
+                and "section-two-col" in (next_node.get("class") or [])
+            ):
+                continue
+
+            wrapper = soup.new_tag("div", **{"class": "section-two-col"})
+            heading.insert_after(wrapper)
+            node = wrapper.next_sibling
+            while node is not None:
+                following = node.next_sibling
+                if getattr(node, "name", None) in heading_names:
+                    break
+                wrapper.append(node.extract())
+                node = following
+
+        return str(soup)
+    except Exception:
+        return content_html
+
+
+def postprocess_paper_dual_column_body(content_html: str) -> str:
+    """Wrap paper body content after the opening summary/abstract into two columns."""
+    try:
+        import bs4  # type: ignore
+    except Exception:
+        return content_html
+
+    try:
+        soup = bs4.BeautifulSoup(content_html, "html.parser")
+        if soup.select_one(".paper-dual-column-body"):
+            return content_html
+
+        for img in soup.select("img"):
+            parent = img.parent
+            if getattr(parent, "name", None) != "p":
+                continue
+            img_count = len(parent.select("img"))
+            element_children = [child for child in parent.children if getattr(child, "name", None) is not None]
+            has_only_image_and_caption = (
+                img_count == 1
+                and element_children
+                and all(getattr(child, "name", None) in {"img", "em"} for child in element_children)
+            )
+            if has_only_image_and_caption:
+                _add_html_class(parent, "paper-figure-full")
+                continue
+            if not parent.get_text(strip=True) and img_count == 1:
+                caption = _next_element_sibling(parent)
+                if _is_italic_only_paragraph(caption):
+                    _wrap_full_width_figure(soup, parent, caption)
+                else:
+                    _add_html_class(parent, "paper-figure-full")
+
+        for table in soup.select("table"):
+            caption = _next_element_sibling(table)
+            if _is_italic_only_paragraph(caption):
+                _wrap_full_width_figure(soup, table, caption)
+            else:
+                _add_html_class(table, "paper-figure-full")
+
+        for mermaid in soup.select(".mermaid"):
+            caption = _next_element_sibling(mermaid)
+            if _is_italic_only_paragraph(caption):
+                _wrap_full_width_figure(soup, mermaid, caption)
+            else:
+                _add_html_class(mermaid, "paper-figure-full")
+
+        # Keep a real opening summary/abstract full-width; flow the rest as article body.
+        start_after = soup.select_one("h1 + .callout, h2 + .callout, h3 + .callout")
+        if start_after is None:
+            first_heading = soup.select_one("h1, h2, h3")
+            if first_heading and first_heading.get_text(" ", strip=True).lower().startswith(("abstract", "summary")):
+                start_after = first_heading
+                node = first_heading.next_sibling
+                while node is not None:
+                    following = node.next_sibling
+                    if getattr(node, "name", None) in {"h1", "h2", "h3", "h4", "h5", "h6"}:
+                        break
+                    if getattr(node, "name", None) is not None or str(node).strip():
+                        start_after = node
+                    node = following
+            else:
+                start_after = first_heading
+        start_before = None
+        if start_after is None:
+            paper_root = soup.select_one(".paper")
+            flow_root = paper_root or soup
+            if flow_root:
+                for child in flow_root.children:
+                    if getattr(child, "name", None) is None and not str(child).strip():
+                        continue
+                    if getattr(child, "name", None) == "div" and "mb-3" in (child.get("class") or []):
+                        start_after = child
+                    else:
+                        start_before = child
+                    break
+        if start_after is None and start_before is None:
+            return content_html
+
+        current_wrapper = soup.new_tag("div", **{"class": "paper-dual-column-body"})
+        if start_before is not None:
+            start_before.insert_before(current_wrapper)
+        else:
+            start_after.insert_after(current_wrapper)
+        node = current_wrapper.next_sibling
+        while node is not None:
+            following = node.next_sibling
+            classes = getattr(node, "get", lambda *_: [])("class", []) or []
+            if "references" in classes:
+                break
+            # H1/H2 are major section breaks: keep them outside columns and start a fresh column group.
+            if getattr(node, "name", None) in {"h1", "h2"}:
+                heading = node.extract()
+                current_wrapper.insert_after(heading)
+                next_wrapper = soup.new_tag("div", **{"class": "paper-dual-column-body"})
+                heading.insert_after(next_wrapper)
+                current_wrapper = next_wrapper
+            else:
+                current_wrapper.append(node.extract())
+            node = following
+
+        for wrapper in soup.select(".paper-dual-column-body"):
+            if not wrapper.get_text(strip=True) and not wrapper.find(["img", "table", "pre", "blockquote", "div"]):
+                wrapper.decompose()
+
+        return str(soup)
+    except Exception:
+        return content_html
+
+
+def section_two_col_css(prefix: str = "") -> str:
+    """CSS for heading-scoped two-column sections."""
+    scope = f"{prefix} " if prefix else ""
+    block = f"{scope}.section-two-col"
+    return f"""
+      {block} {{
+        column-count: 2;
+        column-gap: 2rem;
+        column-rule: 1px solid #eee;
+        column-fill: balance;
+        display: block;
+        margin: 0 0 1.25rem 0;
+      }}
+      {block} h1,
+      {block} h2,
+      {block} h3,
+      {block} h4,
+      {block} h5,
+      {block} h6,
+      {block} table,
+      {block} figure,
+      {block} pre,
+      {block} blockquote,
+      {block} .callout {{
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }}
+"""
+
+
+def dual_column_body_css(prefix: str = "") -> str:
+    """CSS for page-level dual-column article bodies."""
+    scope = f"{prefix} " if prefix else ""
+    body = f"{scope}.paper-dual-column-body"
+    return f"""
+      {body} {{
+        column-count: 2;
+        column-gap: 1.45rem;
+        column-rule: 1px solid #d7e3e3;
+        column-fill: balance;
+        margin-top: .95rem;
+      }}
+      {body} h1,
+      {body} h2,
+      {body} h3,
+      {body} h4,
+      {body} h5,
+      {body} h6,
+      {body} table,
+      {body} figure,
+      {body} pre,
+      {body} blockquote,
+      {body} .callout,
+      {body} .mermaid {{
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }}
+      {body} .paper-figure-full {{
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin: 1.4rem 0 1.6rem 0;
+      }}
+      {body} .paper-figure-full img,
+      {body} .paper-figure-full table,
+      {body} table.paper-figure-full,
+      {body} .paper-figure-full .mermaid,
+      {body} .mermaid.paper-figure-full {{
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto 1rem auto !important;
+      }}
+      @media print {{
+        {body} .paper-figure-full img {{
+          max-height: 185mm;
+          object-fit: contain;
+        }}
+      }}
+      @media screen and (max-width: 900px) {{
+        {body} {{
+          column-count: 1;
+          column-rule: none;
+        }}
+      }}
+"""
+
+
+def working_paper_css(
+    prefix: str = "",
+    *,
+    content_selector: Optional[str] = None,
+    content_max_width: str = "820px",
+    page_title_selector: Optional[str] = None,
+    page_title_font_size: str = "2.25rem",
+    page_title_padding_bottom: str = "1rem",
+    page_title_margin: str = "0 0 1.75rem 0",
+    paper_font_size: str = "11pt",
+    paper_line_height: str = "1.62",
+) -> str:
+    """Shared CSS for pages styled as working papers/articles."""
+    scope = f"{prefix} " if prefix else ""
+    paper = f"{scope}.paper"
+    parts: List[str] = []
+
+    if content_selector:
+        parts.append(f"""
+      {content_selector} {{
+        max-width: {content_max_width};
+        box-shadow: none;
+        border-color: transparent;
+      }}
+      {content_selector} .page-title-row + hr {{
+        display: none;
+      }}
+""")
+
+    if page_title_selector:
+        parts.append(f"""
+      {page_title_selector} {{
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: {page_title_font_size};
+        font-weight: 600;
+        font-variant-caps: normal;
+        letter-spacing: 0;
+        text-align: left;
+        line-height: 1.22;
+        border-bottom: 2px solid #111;
+        padding-bottom: {page_title_padding_bottom};
+        margin: {page_title_margin};
+      }}
+""")
+
+    parts.append(f"""
+      {paper} {{
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: {paper_font_size};
+        line-height: {paper_line_height};
+        color: #1f2933;
+      }}
+      {paper} > .mb-3:first-child {{
+        margin: -0.2rem 0 1.1rem 0 !important;
+        text-align: left;
+      }}
+      {paper} > .mb-3:first-child .badge {{
+        border: none !important;
+        background: transparent !important;
+        color: #59636f;
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: .95em;
+        font-weight: 400;
+        padding: 0;
+      }}
+      {paper} h1,
+      {paper} h2,
+      {paper} h3,
+      {paper} h4,
+      {paper} h5,
+      {paper} h6 {{
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+        color: #111;
+        line-height: 1.25;
+      }}
+      {paper} h1 {{
+        font-size: 1.42em;
+        margin-top: 1.25rem;
+        margin-bottom: .65rem;
+      }}
+      {paper} h2 {{
+        font-size: 1.2em;
+        margin-top: 1.15rem;
+        margin-bottom: .55rem;
+        padding-bottom: .18rem;
+        border-bottom: 1px solid #d9dde3;
+      }}
+      {paper} h3 {{
+        font-size: 1.08em;
+        margin-top: .9rem;
+        margin-bottom: .45rem;
+        font-style: italic;
+      }}
+      {paper} a,
+      {paper} code {{
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }}
+      {paper} a {{ text-decoration: underline; text-underline-offset: 2px; }}
+      {paper} .callout,
+      {paper} .callout-note {{
+        border-left: none;
+        border: 1px solid #90c3c6;
+        background: rgba(144,195,198,0.08);
+      }}
+      {paper} h2:first-of-type + .callout,
+      {paper} h2:first-of-type + .callout-note {{
+        border: none;
+        border-bottom: 1px solid #999;
+        border-radius: 0;
+        background: transparent;
+        padding: .55rem 0;
+        margin: .4rem 0 1rem 0;
+        font-size: .98em;
+      }}
+      {paper} h1.banner-info,
+      {paper} h2.banner-info,
+      {paper} h3.banner-info,
+      {paper} h1.rounded-info,
+      {paper} h2.rounded-info,
+      {paper} h3.rounded-info {{
+        background: transparent;
+        color: #111;
+        border-left: none;
+        border-bottom: 1px solid #d9dde3;
+        padding: 0 0 .25rem 0;
+        border-radius: 0;
+        margin-left: 0;
+        margin-right: 0;
+      }}
+""")
+    return "".join(parts)
 
 
 def _format_date_badge_text(date_value: Any) -> Optional[str]:
@@ -3256,7 +3500,7 @@ def preprocess_case_study_styles(md_text: str) -> str:
 def preprocess_paper_styles(md_text: str) -> str:
     """Apply consistent paper styling rules to markdown.
 
-    Enabled by YAML tag: paper
+    Enabled by YAML tag: paper or type: article.
 
     Rules:
     - H2 (##) -> add {.banner-info} unless a class is already specified
@@ -3954,14 +4198,14 @@ def _extract_first_img_src(content_html: str) -> str:
         return ""
 
 
-def render_page_html(page_title: Optional[str], content_html: str, site_title: str, page_anchor: Optional[str] = None, toc_html: Optional[str] = None, links_html: Optional[str] = None, backlinks_html: Optional[str] = None, prev_href: Optional[str] = None, next_href: Optional[str] = None, prev_title: Optional[str] = None, next_title: Optional[str] = None, pdf_link_html: Optional[str] = None, assets_href: str = "assets/", breadcrumb_html: Optional[str] = None, is_chapter_start: bool = False, chapter_subtitle: Optional[str] = None, page_anchor_routing_map: Optional[Dict[str, str]] = None, head_meta_html: str = "", page_icon: Optional[str] = None, page_layout: Optional[str] = None, sidebar_footer_html: str = "") -> str:
+def render_page_html(page_title: Optional[str], content_html: str, site_title: str, page_anchor: Optional[str] = None, toc_html: Optional[str] = None, links_html: Optional[str] = None, backlinks_html: Optional[str] = None, prev_href: Optional[str] = None, next_href: Optional[str] = None, prev_title: Optional[str] = None, next_title: Optional[str] = None, pdf_link_html: Optional[str] = None, assets_href: str = "assets/", breadcrumb_html: Optional[str] = None, is_chapter_start: bool = False, chapter_subtitle: Optional[str] = None, page_anchor_routing_map: Optional[Dict[str, str]] = None, head_meta_html: str = "", page_icon: Optional[str] = None, page_layout: Optional[str] = None, sidebar_footer_html: str = "", is_paper_page: bool = False) -> str:
     """Render full HTML page with Bootstrap layout and left sidebar."""
     title_text = html.escape((f"{page_title} · {site_title}" if site_title else page_title) if page_title else (site_title or ""))
     subtitle_html = f'<div class="page-subtitle">{html.escape(chapter_subtitle)}</div>' if chapter_subtitle else ""
     # Page title icon: default is 🌻 unless overridden by YAML
     icon_prefix_html = ""
     if page_title:
-        icon_to_use = page_icon if page_icon is not None else "🌻"
+        icon_to_use = "" if is_paper_page else (page_icon if page_icon is not None else "🌻")
         icon_to_use = (icon_to_use or "").strip()
         if icon_to_use:
             icon_prefix_html = html.escape(icon_to_use) + " "
@@ -4442,6 +4686,11 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
       .content p {{
         margin-bottom: 1.1rem;
       }}
+      {section_two_col_css(".content")}
+      {dual_column_body_css(".content")}
+      @media (max-width: 900px) {{
+        .content .section-two-col {{ column-count: 1; column-rule: none; }}
+      }}
       .content pre, .content code {{
         font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;
       }}
@@ -4571,29 +4820,8 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         color: #475467;
         font-size: 1.08rem;
       }}
-      /* Paper styling (YAML tag: paper) — slightly more academic, not fusty */
-      .content .paper {{ font-size: 1.12rem; line-height: 1.75; }}
-      .content .paper h1 {{ font-size: 1.55rem; }}
-      .content .paper h3 {{ margin-top: 1.25rem; margin-bottom: 0.75rem; }} /* tighter headings in paper mode */
-      .content .paper a {{ text-decoration: underline; text-underline-offset: 2px; }}
-      .content .paper .callout, .content .paper .callout-note {{
-        border-left: none;
-        border: 1px solid #90c3c6;
-        background: rgba(144,195,198,0.08);
-      }}
-      .content .paper h1.banner-info, .content .paper h2.banner-info, .content .paper h3.banner-info {{
-        background: transparent;
-        color: #2c3e50;
-        border-left: 4px solid #90c3c6;
-        padding: 0.55rem 0.9rem 0.55rem 1.2rem;
-        border-radius: 4px;
-        margin-left: -1rem;
-        margin-right: -1rem;
-      }}
-      .content .paper h1.rounded-info, .content .paper h2.rounded-info, .content .paper h3.rounded-info {{
-        background: rgba(144,195,198,0.10);
-        border-left-color: #90c3c6;
-      }}
+      /* Working paper/article styling */
+      {working_paper_css(".content", content_selector=".content.paper-page", page_title_selector=".content.paper-page .page-title", paper_font_size="1.03rem", paper_line_height="1.68")}
       /* Callout styles */
       .content .callout {{
         border-left: 4px solid #6c757d;
@@ -5260,7 +5488,7 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
     <button id=\"hamburgerBtn\" class=\"btn btn-outline-secondary btn-sm hamburger\" type=\"button\" aria-label=\"Toggle navigation\">☰ Menu</button>
     <div class=\"layout-container\">
       <aside class="sidebar"></aside>
-      <main class=\"content{" chapter-start" if is_chapter_start else ""}{" home" if not page_title else ""}\">
+      <main class=\"content{" chapter-start" if is_chapter_start else ""}{" home" if not page_title else ""}{" paper-page" if is_paper_page else ""}\">
         <div class=\"edge-nav-box\">{(
           f'<a href="{html.escape(prev_href)}" class="edge-nav prev" aria-label="Previous{": " + html.escape(prev_title) if prev_title else ""}">‹</a>'
         ) if prev_href else ''}{(
@@ -6028,12 +6256,38 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             pass
 
     def _generate_page_pdf_from_html(out_html_path: Path, pdf_out_path: Path, md_path: Path, page_title: Optional[str]) -> None:
-        """Generate a per-page PDF by printing the already-written HTML file (single path for PDFs)."""
+        """Generate a per-page PDF, using a PDF-only HTML copy when print layout differs."""
         from datetime import date
         print(f"[PDF page] {md_path.relative_to(input_root)} -> {pdf_out_path.relative_to(output_root)}")
+        try:
+            meta_text = md_path.read_text(encoding="utf-8")
+            meta, _ = extract_yaml_front_matter(meta_text)
+        except Exception:
+            meta = {}
+        pdf_html_path = out_html_path
+        temp_pdf_html_path: Optional[Path] = None
+        if _metadata_uses_pdf_dual_columns(meta):
+            try:
+                import bs4  # type: ignore
+                soup = bs4.BeautifulSoup(out_html_path.read_text(encoding="utf-8"), "html.parser")
+                main = soup.select_one("main.content")
+                if main and not main.select_one(".paper-dual-column-body"):
+                    main_html = "".join(str(child) for child in main.contents)
+                    main.clear()
+                    fragment = bs4.BeautifulSoup(
+                        postprocess_paper_dual_column_body(main_html),
+                        "html.parser",
+                    )
+                    for child in list(fragment.contents):
+                        main.append(child.extract())
+                    temp_pdf_html_path = out_html_path.with_name(f"{out_html_path.stem}.__pdf__.html")
+                    temp_pdf_html_path.write_text(str(soup), encoding="utf-8")
+                    pdf_html_path = temp_pdf_html_path
+            except Exception:
+                pass
         pagep = _new_pdf_page()
         try:
-            pagep.goto(out_html_path.as_uri(), wait_until="load")
+            pagep.goto(pdf_html_path.as_uri(), wait_until="load")
             pagep.evaluate(
                 """({ siteUrl, pageUrl }) => {
                     const schemeRe = /^[a-zA-Z][a-zA-Z0-9+.-]*:/;
@@ -6065,11 +6319,6 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             # Optional PDF header logo (Playwright header_template). This is the correct way to
             # add fixed-position elements without interfering with the page layout.
             header_html = "<div></div>"
-            try:
-                meta_text = md_path.read_text(encoding="utf-8")
-                meta, _ = extract_yaml_front_matter(meta_text)
-            except Exception:
-                meta = {}
             try:
                 logo_file = _extract_logo_overlay_from_metadata(meta) or ""
                 if logo_file:
@@ -6119,12 +6368,6 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                 ".content h1.rounded,.content h2.rounded,.content h3.rounded{background:rgba(121,187,147,0.08);border-left:4px solid #79bb93;padding:0.75rem 1rem 0.75rem 1.5rem;border-radius:6px;margin-left:-1rem;margin-right:-1rem;}"
                 ".content h1.rounded-left,.content h2.rounded-left,.content h3.rounded-left{border-left:4px solid #79bb93;padding-left:1.5rem;background:rgba(121,187,147,0.12);}"
                 ".content h1.banner,.content h2.banner,.content h3.banner{background:#79bb93;color:white;padding:0.75rem 1rem 0.75rem 1.5rem;border-radius:6px;margin-left:-1rem;margin-right:-1rem;}"
-                ".paper{font-size:11.5pt;line-height:1.7;}"
-                ".paper h1{font-size:1.55rem;}"
-                ".paper a{text-decoration:underline;text-underline-offset:2px;}"
-                ".paper .callout,.paper .callout-note{border-left:none;border:1px solid #90c3c6;background:rgba(144,195,198,0.08);}"
-                ".paper h1.banner-info,.paper h2.banner-info,.paper h3.banner-info{background:transparent;color:#2c3e50;border-left:4px solid #90c3c6;padding:0.55rem 0.9rem 0.55rem 1.7rem;border-radius:4px;margin-left:-1rem;margin-right:-1rem;}"
-                ".paper h1.rounded-info,.paper h2.rounded-info,.paper h3.rounded-info{background:rgba(144,195,198,0.10);border-left-color:#90c3c6;padding:0.35rem 0.9rem 0.35rem 1.7rem;border-radius:4px;}"
                 ".content .callout-right{display:block;}"
                 ".content .callout{border-left:4px solid #6c757d;background:#f8f9fa;padding:1rem 1.25rem;margin:1.5rem 0;border-radius:4px;}"
                 ".content .callout p:last-child,.content .callout ul:last-child,.content .callout ol:last-child{margin-bottom:0;}"
@@ -6148,6 +6391,27 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                 ".content blockquote{page-break-inside:avoid;}"
                 "}"
             )
+            pdf_print_css += working_paper_css(
+                prefix=".content",
+                content_selector=".content.paper-page",
+                content_max_width="186mm",
+                page_title_selector=".content.paper-page .page-title",
+                page_title_font_size="15pt",
+                page_title_padding_bottom="3mm",
+                page_title_margin="0 0 4mm 0",
+                paper_font_size="8.2pt",
+                paper_line_height="1.27",
+            )
+            pdf_print_css += (
+                "@media print{"
+                ".content.paper-page .page-title{border-bottom-color:#2f6f73;color:#111;}"
+                ".content .paper h2,.content .paper h2.banner-info,.content .paper h2.rounded-info{color:#173b3f;border-bottom-color:rgba(47,111,115,.55);}"
+                ".content .paper h3,.content .paper h3.rounded-info{color:#2f6f73;}"
+                ".content .paper h2:first-of-type+.callout,.content .paper h2:first-of-type+.callout-note{border-bottom-color:#7aaeb1;}"
+                "}"
+            )
+            pdf_print_css += section_two_col_css()
+            pdf_print_css += dual_column_body_css()
             compact_css = (
                 "table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:8.8pt;}"
                 "th,td{border:1px solid #e5e5e5;padding:.2rem .35rem;font-size:8.4pt;vertical-align:top;word-break:break-word;}"
@@ -6159,21 +6423,46 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
 
             # Footer
             today_str = date.today().strftime("%Y-%m-%d")
-            chapter_label = top_folder_name or (page_title if page_title else strip_numeric_prefix(md_path.stem))
-            chapter_label = (chapter_label or "").replace("--", "–")
-            chapter_span = f"<span>{html.escape(chapter_label)}</span>"
+            page_anchor = extract_page_anchor_from_stem(md_path.stem)
+            if page_anchor:
+                page_url = f"{site_url.rstrip('/')}/{quote(page_anchor.strip('/'), safe='')}"
+                page_url_label = page_url.replace("https://", "").replace("http://", "")
+            else:
+                page_url = _site_url_for_output_path(out_html_path, output_root, site_url)
+                page_url_label = ""
+            garden_link = (
+                f"<a href=\"{html.escape(page_url)}\" style=\"color:#999; text-decoration:none;\">"
+                "🌻 Causal Map Garden</a>"
+            )
+            footer_favicon = (
+                "data:image/svg+xml,"
+                "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E"
+                "%3Ccircle cx='8' cy='8' r='8' fill='%2390c3c6'/%3E%3C/svg%3E"
+            )
+            company_link = (
+                f"<a href=\"https://causalmap.app\" style=\"color:#999; text-decoration:none;\">"
+                f"<img alt=\"\" src=\"{footer_favicon}\" style=\"width:6.5px; height:6.5px; vertical-align:-1px; margin-right:2px;\" />"
+                "Causal Map Ltd</a>"
+            )
+            page_link = (
+                f"<a href=\"{html.escape(page_url)}\" style=\"color:#999; text-decoration:none;\">"
+                f"{html.escape(page_url_label)}</a>"
+                if page_url_label
+                else ""
+            )
+            right_footer = f"{company_link}{' · ' + page_link if page_link else ''}"
             footer_html = (
-                f"<div style=\"width:100%; font-size:8.5px; color:#999; font-family:Georgia, Cambria, 'Times New Roman', Times, serif; padding:0 10mm;\">"
-                f"<div style=\"display:flex; justify-content:space-between; width:100%;\">"
-                f"<span>{html.escape(today_str)}</span>"
-                f"{chapter_span}"
-                f"<span>© Causal Map Ltd {date.today().year} · <a href=\"https://causalmap.app\" style=\"color:#999; text-decoration:none;\">causalmap.app</a> · <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\" style=\"color:#999; text-decoration:none;\">CC BY-NC 4.0</a></span>"
+                f"<div style=\"box-sizing:border-box; width:100%; padding:0 12mm; font-size:6.5px; line-height:1.2; color:#999; font-family:Georgia, Cambria, 'Times New Roman', Times, serif;\">"
+                f"<div style=\"display:grid; grid-template-columns:1fr 1fr 1fr; align-items:center; column-gap:5mm; width:100%;\">"
+                f"<span style=\"text-align:left; white-space:nowrap;\">{html.escape(today_str)}</span>"
+                f"<span style=\"text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;\">{garden_link}</span>"
+                f"<span style=\"text-align:right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;\">{right_footer}</span>"
                 f"</div></div>"
             )
             pagep.pdf(
                 path=str(pdf_out_path),
                 format="A4",
-                margin={"top": "22mm", "right": "18mm", "bottom": "24mm", "left": "18mm"},
+                margin={"top": "14mm", "right": "12mm", "bottom": "18mm", "left": "12mm"},
                 print_background=True,
                 display_header_footer=True,
                 header_template=header_html,
@@ -6184,7 +6473,183 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                 pagep.close()
             except Exception:
                 pass
+            try:
+                if temp_pdf_html_path and temp_pdf_html_path.exists():
+                    temp_pdf_html_path.unlink()
+            except Exception:
+                pass
     
+    def _merge_pdf_paths(pdf_paths: List[Path], out_pdf: Path) -> bool:
+        """Merge already-rendered PDFs in order, preserving each page's own styling."""
+        pdf_paths = [p for p in pdf_paths if p.exists() and p.is_file()]
+        if not pdf_paths:
+            return False
+        try:
+            from pypdf import PdfReader, PdfWriter  # type: ignore
+        except Exception:
+            try:
+                from PyPDF2 import PdfReader, PdfWriter  # type: ignore
+            except Exception:
+                _warn("pdf_merge", "Could not import pypdf or PyPDF2 for chapter/site PDF merging.")
+                return False
+
+        try:
+            writer = PdfWriter()
+            for pdf_path in pdf_paths:
+                reader = PdfReader(str(pdf_path))
+                for page in reader.pages:
+                    writer.add_page(page)
+            out_pdf.parent.mkdir(parents=True, exist_ok=True)
+            tmp_pdf = out_pdf.with_name(f"{out_pdf.stem}.__merge_tmp__.pdf")
+            with open(tmp_pdf, "wb") as f:
+                writer.write(f)
+            try:
+                os.replace(tmp_pdf, out_pdf)
+            except Exception:
+                try:
+                    if out_pdf.exists():
+                        out_pdf.unlink()
+                    os.replace(tmp_pdf, out_pdf)
+                except Exception:
+                    try:
+                        if tmp_pdf.exists():
+                            tmp_pdf.unlink()
+                    except Exception:
+                        pass
+                    raise
+            return True
+        except Exception as e:
+            _warn("pdf_merge", f"Failed to merge aggregate PDF {out_pdf}: {e}")
+            try:
+                print(f"[WARN] pdf_merge: failed to write {out_pdf}: {e}")
+            except Exception:
+                pass
+            return False
+
+    def _page_site_url_for_pdf(md_path: Path) -> str:
+        """Prefer short Garden permalinks in PDF wrapper ToCs."""
+        page_anchor = extract_page_anchor_from_stem(md_path.stem)
+        if page_anchor:
+            return f"{site_url.rstrip('/')}/{quote(page_anchor.strip('/'), safe='')}"
+        return _site_url_for_output_path(relative_output_html(input_root, output_root, md_path), output_root, site_url)
+
+    def _ensure_page_pdf_for_merge(md_path: Path) -> Optional[Path]:
+        """Return the existing normal per-page PDF, if available for aggregate merging."""
+        if "!" in md_path.name:
+            return None
+        out_html_path = relative_output_html(input_root, output_root, md_path)
+        pdf_out_path = out_html_path.with_suffix(".pdf")
+        return pdf_out_path if pdf_out_path.exists() else None
+
+    def _render_pdf_wrapper_pdf(out_pdf: Path, title: str, items: List[Tuple[str, str]], *, kicker: str = "") -> bool:
+        """Render a small title/contents wrapper PDF with Garden-styled ToC links."""
+        import tempfile
+
+        safe_title = html.escape(title)
+        safe_kicker = html.escape(kicker)
+        toc_items = "\n".join(
+            f'<li><a href="{html.escape(href)}">{html.escape(label)}</a></li>'
+            for label, href in items
+        )
+        wrapper_html = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{safe_title}</title>
+  <style>
+    @page {{ size: A4; margin: 18mm 16mm; }}
+    body {{
+      font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      color: #1f2933;
+      font-size: 9pt;
+      line-height: 1.35;
+    }}
+    .title-page {{
+      min-height: 55vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-bottom: 2px solid #2f6f73;
+      margin-bottom: 10mm;
+    }}
+    .kicker {{
+      color: #2f6f73;
+      font-size: 8pt;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 5mm;
+    }}
+    h1 {{
+      font-size: 22pt;
+      line-height: 1.12;
+      margin: 0;
+      font-weight: 600;
+      color: #111;
+    }}
+    .toc h2 {{
+      color: #173b3f;
+      border-bottom: 1px solid rgba(47,111,115,.45);
+      font-size: 12pt;
+      padding-bottom: 2mm;
+      margin: 0 0 5mm 0;
+    }}
+    .toc ul {{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      columns: 2;
+      column-gap: 12mm;
+    }}
+    .toc li {{
+      break-inside: avoid;
+      margin: 0 0 2.2mm 0;
+      padding-bottom: 1.5mm;
+      border-bottom: 1px solid #edf2f2;
+    }}
+    .toc a {{
+      color: #1f2933;
+      text-decoration: none;
+    }}
+  </style>
+</head>
+<body>
+  <section class="title-page">
+    {f'<div class="kicker">{safe_kicker}</div>' if safe_kicker else ''}
+    <h1>{safe_title}</h1>
+  </section>
+  {f'<section class="toc"><h2>Contents</h2><ul>{toc_items}</ul></section>' if toc_items else ''}
+</body>
+</html>"""
+        pagep = _new_pdf_page()
+        tmp_path: Optional[Path] = None
+        try:
+            tmpf = tempfile.NamedTemporaryFile("w", suffix=".html", delete=False, encoding="utf-8")
+            try:
+                tmpf.write(wrapper_html)
+                tmpf.flush()
+                tmp_path = Path(tmpf.name).resolve()
+            finally:
+                tmpf.close()
+            pagep.goto(tmp_path.as_uri(), wait_until="load")
+            pagep.emulate_media(media="print")
+            pagep.pdf(
+                path=str(out_pdf),
+                format="A4",
+                margin={"top": "18mm", "right": "16mm", "bottom": "18mm", "left": "16mm"},
+                print_background=True,
+            )
+            return out_pdf.exists()
+        finally:
+            try:
+                pagep.close()
+            except Exception:
+                pass
+            try:
+                if tmp_path and tmp_path.exists():
+                    tmp_path.unlink()
+            except Exception:
+                pass
+
     # enumerate markdown files with inclusion rules
     def _is_included_md(p: Path) -> bool:
         if p.name.startswith("."):
@@ -6550,7 +7015,6 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         if build_changed:
             print(f"[INCREMENTAL] Pipeline signature also changed.")
             files_to_process = md_files
-            changed_files_for_pdf = set(md_files)
         _tmark("write_pages: incremental detect/filter")
 
     if chapter_folder_filter and args and getattr(args, "chapters_pdf", False):
@@ -6663,6 +7127,7 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                     except Exception:
                         chapter_pdf_mtime = None
                 # A clean build should always rewrite chapter PDFs even though the clean step preserves PDFs.
+                # Pipeline changes only force HTML re-rendering; PDFs are expensive and rebuild only when requested/stale.
                 folder_newer = chapter_pdf_mtime is None or bool(getattr(args, "clean", False))
                 if not folder_newer:
                     for m in folder_md:
@@ -6674,171 +7139,36 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                             folder_newer = True
                             break
                 if folder_newer:
-                    # Compile sections: use already-converted HTML per page, but we need fresh conversions to ensure consistency with image rewriting
-                    sections: List[Tuple[str, str]] = []
+                    page_pdfs: List[Path] = []
+                    toc_items: List[Tuple[str, str]] = []
                     for page_md in folder_md:
-                        try:
-                            ttext = page_md.read_text(encoding="utf-8")
-                        except Exception:
-                            ttext = ""
-                        # Keep YAML metadata (date badge) but strip front matter from body
-                        metadata_sec, body_sec = extract_yaml_front_matter(ttext)
-                        ttext = body_sec
-                        # Auto-styling in chapter PDFs (based on YAML tag)
-                        try:
-                            if _metadata_has_tag(metadata_sec, "case_study"):
-                                ttext = preprocess_case_study_styles(ttext)
-                            elif _metadata_has_tag(metadata_sec, "paper"):
-                                ttext = preprocess_paper_styles(ttext)
-                        except Exception:
-                            pass
-                        ttext = replace_image_wikilinks(ttext, current_md_path=page_md, input_root=input_root, output_root=output_root)
-                        # Convert citations to APA and collect keys
-                        used_keys_sec: Set[str] = set()
-                        try:
-                            bib_path_cfg = args.bib if args else None
-                            if bib_path_cfg and Path(bib_path_cfg).exists():
-                                bib_index = _build_bib_index_simple(Path(bib_path_cfg))
-                                bib_links = _build_bib_link_index(Path(bib_path_cfg))
-                                ttext, used_keys_sec = _convert_citations_bracket_to_apa(ttext, bib_index, bib_links)
-                        except Exception:
-                            used_keys_sec = set()
-                        ttext = replace_wikilinks_with_embeds(ttext, current_md_path=page_md, input_root=input_root, output_root=output_root, title_map=title_map, embed_html_map=embed_html_map, wikilink_index=wikilink_index, md_files=md_files, page_anchor_map=page_anchor_map)
-                        ttext = normalize_alpha_ordered_lists(ttext)
-                        ttext = rewrite_standard_image_refs(ttext, current_md_path=page_md, input_root=input_root, output_root=output_root)
-                        thtml, _ = convert_markdown_with_toc(ttext)
-                        thtml = postprocess_alpha_ol_html(thtml)
-                        # Convert HTML links to internal PDF anchors or online links
-                        try:
-                            import bs4  # type: ignore
-                            soup2 = bs4.BeautifulSoup(thtml, "html.parser")
-                            current_html_path_for_pdf = relative_output_html(input_root, output_root, page_md)
-                            page_out_dir = current_html_path_for_pdf.parent
-                            # Process wikilinks - convert to internal anchors if target is in chapter, else online link
-                            for link in soup2.select("a.wikilink"):
-                                href = link.get("href", "")
-                                if not href or href.startswith("#"):
-                                    continue
-                                # Extract target page from href
-                                # href format: relative/path/to/page.html or /anchor-id
-                                if href.startswith("/") and not href.endswith(".html"):
-                                    # Page-level anchor, keep as is for now
-                                    continue
-                                # Check if target page is in this chapter
-                                target_found = False
-                                for target_md in folder_md:
-                                    target_out = relative_output_html(input_root, output_root, target_md)
-                                    target_rel = os.path.relpath(target_out, start=page_out_dir).replace(os.sep, "/")
-                                    if href.startswith(target_rel) or target_rel in href:
-                                        # Target is in chapter - convert to internal anchor
-                                        if "#" in href:
-                                            anchor = href.split("#")[-1]
-                                            link["href"] = f"#{anchor}"
-                                        else:
-                                            # Link to page title anchor
-                                            page_title_slug = strip_numeric_prefix(target_md.stem).lower().replace(" ", "-")
-                                            link["href"] = f"#{page_title_slug}"
-                                        target_found = True
-                                        break
-                                if not target_found:
-                                    href_abs = _absolute_site_href_for_pdf(href, current_html_path_for_pdf, output_root, site_url)
-                                    if href_abs:
-                                        link["href"] = href_abs
-                            _rewrite_pdf_links_to_site(soup2, current_html_path_for_pdf, output_root, site_url)
-                            # Remove anchor links from headings
-                            for hx in soup2.select("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]"):
-                                for anchor_link in hx.select("a.anchor-link"):
-                                    anchor_link.decompose()
-                            thtml = str(soup2)
-                        except Exception:
-                            pass
-                        # Append references for this section if any
-                        try:
-                            bib_path_cfg = args.bib if args else None
-                            if used_keys_sec and bib_path_cfg and Path(bib_path_cfg).exists():
-                                refs_html = _format_reference_list(used_keys_sec, _build_bib_index_simple(Path(bib_path_cfg)), Path(bib_path_cfg))
-                                if refs_html:
-                                    thtml = thtml + "\n" + refs_html
-                        except Exception:
-                            pass
-                        # Top date badge for this section
-                        try:
-                            badge_html = render_date_badge_html(metadata_sec)
-                            if badge_html:
-                                thtml = badge_html + "\n" + thtml
-                        except Exception:
-                            pass
-                        # Paper pages: wrap section content for paper-specific CSS
-                        try:
-                            if _metadata_has_tag(metadata_sec, "paper"):
-                                thtml = f'<div class="paper">{thtml}</div>'
-                        except Exception:
-                            pass
-                        # Make <img> src absolute file URIs relative to that page's output dir for Playwright
-                        p_out_dir = relative_output_html(input_root, output_root, page_md).parent
-                        thtml_abs = absolutize_img_srcs(thtml, base_dir=p_out_dir)
-                        # Keep title punctuation consistent with HTML output (Obsidian convention: "--" -> "–")
+                        page_pdf = _ensure_page_pdf_for_merge(page_md)
+                        if page_pdf is None:
+                            continue
+                        page_pdfs.append(page_pdf)
                         sec_title = title_map.get(page_md, strip_numeric_prefix(page_md.stem)) or strip_numeric_prefix(page_md.stem)
                         sec_title = sec_title.replace("--", "–")
-                        sections.append((sec_title, thtml_abs))
+                        toc_items.append((sec_title, _page_site_url_for_pdf(page_md)))
 
-                    # Keep title punctuation consistent with HTML output (Obsidian convention: "--" -> "–")
                     chapter_title = strip_numeric_prefix(top_folder).replace("--", "–")
-                    # Chapter PDFs: no "Chapter" label and no special "first section" highlight box
-                    chapter_html = render_compilation_pdf_html(f"{chapter_title}", sections, show_chapter_label=False, highlight_first_section=False)
-
-                    # generate PDF via Playwright
-                    chapter_pdf.parent.mkdir(parents=True, exist_ok=True)
-                    try:
-                        print(f"[PDF chapter] {top_folder}/{top_folder}.pdf")
-                        import tempfile
-                        from datetime import date
-                        pagep = _new_pdf_page()
+                    if page_pdfs:
+                        print(f"[PDF chapter] {top_folder}/{chapter_pdf.name}")
+                        wrapper_pdf = chapter_pdf.with_name(f"{chapter_pdf.stem}.__wrapper__.pdf")
                         try:
-                            tmpf = tempfile.NamedTemporaryFile("w", suffix=".html", delete=False, encoding="utf-8")
-                            try:
-                                tmpf.write(chapter_html)
-                                tmpf.flush()
-                                tmp_path = Path(tmpf.name).resolve()
-                            finally:
-                                tmpf.close()
-                            pagep.goto(tmp_path.as_uri(), wait_until="load")
-                            try:
-                                pagep.emulate_media(media="print")
-                            except Exception:
-                                pass
-                            _wait_for_pdf_assets(pagep)
-                            # Chapter PDFs: include the standard footer (date · chapter · page numbers · copyright)
-                            today_str = date.today().strftime("%Y-%m-%d")
-                            chapter_span = f"<span>{html.escape(chapter_title)}</span>" if chapter_title else "<span></span>"
-                            footer_html = (
-                                f"<div style=\"width:100%; font-size:8.5px; color:#999; font-family:Georgia, Cambria, 'Times New Roman', Times, serif; padding:0 10mm;\">"
-                                f"<div style=\"display:flex; justify-content:space-between; width:100%;\">"
-                                f"<span>{html.escape(today_str)}</span>"
-                                f"{chapter_span}"
-                                f"<span style=\"display:flex; gap:1em;\">"
-                                f"<span><span class=\"pageNumber\"></span> / <span class=\"totalPages\"></span></span>"
-                                f"<span>© Causal Map Ltd {date.today().year} · <a href=\"https://causalmap.app\" style=\"color:#999; text-decoration:none;\">causalmap.app</a> · <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\" style=\"color:#999; text-decoration:none;\">CC BY-NC 4.0</a></span>"
-                                f"</span></div></div>"
-                            )
-                            pagep.pdf(
-                                path=str(chapter_pdf),
-                                format="A4",
-                                margin={"top": "22mm", "right": "18mm", "bottom": "24mm", "left": "18mm"},
-                                print_background=True,
-                                display_header_footer=True,
-                                header_template="<div></div>",
-                                footer_template=footer_html,
-                            )
+                            pdf_parts: List[Path] = []
+                            if _render_pdf_wrapper_pdf(wrapper_pdf, chapter_title, toc_items, kicker="Causal Map Garden"):
+                                pdf_parts.append(wrapper_pdf)
+                            pdf_parts.extend(page_pdfs)
+                            if not _merge_pdf_paths(pdf_parts, chapter_pdf):
+                                print(f"[ERROR] Chapter PDF merge failed for {top_folder}")
                         finally:
                             try:
-                                pagep.close()
+                                if wrapper_pdf.exists():
+                                    wrapper_pdf.unlink()
                             except Exception:
                                 pass
-                    except Exception as e:
-                        print(f"[ERROR] Chapter PDF failed for {top_folder}: {e}")
-                        import traceback
-                        traceback.print_exc()
+                    else:
+                        print(f"[PDF chapter] skipped {top_folder}: no page PDFs available")
 
         # Fast skip: if output HTML exists and is newer than source MD and nav hasn't changed, skip re-rendering
         try:
@@ -6933,7 +7263,7 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             meta = metadata_map.get(md_path, {}) or {}
             if _metadata_has_tag(meta, "case_study"):
                 md_text_fixed_images = preprocess_case_study_styles(md_text_fixed_images)
-            elif _metadata_has_tag(meta, "paper"):
+            elif _metadata_is_paper(meta):
                 md_text_fixed_images = preprocess_paper_styles(md_text_fixed_images)
         except Exception:
             pass
@@ -6987,6 +7317,7 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             content_html = str(soup)
         except Exception:
             pass
+        content_html = postprocess_two_col_sections(content_html)
         
         # Append reference list if citations were used
         if used_citation_keys and bib_index_for_html is not None:
@@ -7024,8 +7355,13 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             pass
 
         # Paper pages: wrap content so CSS can apply a slightly more academic look
+        is_paper_page = _metadata_is_paper(metadata_map.get(md_path, {}) or {})
+        # HTML page-level columns are opt-in; paper pages only imply columns in PDFs.
+        is_dual_column_page = _metadata_has_dual_column_tag(metadata_map.get(md_path, {}) or {})
+        if is_dual_column_page:
+            content_html = postprocess_paper_dual_column_body(content_html)
         try:
-            if _metadata_has_tag(metadata_map.get(md_path, {}) or {}, "paper"):
+            if is_paper_page:
                 content_html = f'<div class="paper">{content_html}</div>'
         except Exception:
             pass
@@ -7157,10 +7493,14 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         # PDF path and stale-check
         pdf_out_path = out_html_path.with_suffix(".pdf")
         pdf_link_html: Optional[str] = None
-        # compute if PDF needs rebuild: if missing or md newer than pdf
+        # PDFs are expensive: rebuild only when missing or when the source md is newer.
+        # A pipeline signature change alone must not mark every PDF stale.
+        # A clean PDF build is explicit user intent, so it should rewrite preserved PDFs.
         needs_pdf = False
         try:
-            if not pdf_out_path.exists():
+            if bool(getattr(args, "clean", False)) and args and getattr(args, "page_pdf", False):
+                needs_pdf = True
+            elif not pdf_out_path.exists():
                 needs_pdf = True
             else:
                 needs_pdf = md_path.stat().st_mtime >= pdf_out_path.stat().st_mtime
@@ -7339,6 +7679,7 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             page_icon=_extract_icon_override_from_metadata(metadata_map.get(md_path, {}) or {}),
             page_layout=_extract_page_layout_from_metadata(metadata_map.get(md_path, {}) or {}),
             sidebar_footer_html=sidebar_footer_html,
+            is_paper_page=is_paper_page,
         )
 
         # Only write if changed to avoid touching timestamps unnecessarily
@@ -7356,9 +7697,11 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         # Incremental: only gen PDF for actually changed files, not deps
         # Note: is_chapter_start is already determined above
         pdf_ok = not (args and getattr(args, "incremental", False)) or (md_path in changed_files_for_pdf)
+        generated_page_pdf = False
         if ("!" not in md_path.name) and args and args.page_pdf and needs_pdf and pdf_ok and _PLAYWRIGHT_AVAILABLE:
             try:
                 _generate_page_pdf_from_html(out_html_path, pdf_out_path, md_path, page_title)
+                generated_page_pdf = True
             except Exception:
                 pass
 
@@ -7366,9 +7709,7 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         try:
             if ("!" not in md_path.name) and page_id and pdf_out_path.exists():
                 pdf_alias_path = output_root / f"{page_id}.pdf"
-                if pdf_alias_path.resolve() != pdf_out_path.resolve():
-                    if (not pdf_alias_path.exists()) or (pdf_out_path.stat().st_mtime > pdf_alias_path.stat().st_mtime):
-                        shutil.copy2(pdf_out_path, pdf_alias_path)
+                _copy_pdf_permalink_alias(pdf_out_path, pdf_alias_path, force=generated_page_pdf)
         except Exception as e:
             _warn("pdf_permalink", f"{md_path}: {e}")
 
@@ -7384,10 +7725,7 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             if not pdf_out_path.exists():
                 continue
             pdf_alias_path = output_root / f"{page_id}.pdf"
-            if pdf_alias_path.resolve() == pdf_out_path.resolve():
-                continue
-            if (not pdf_alias_path.exists()) or (pdf_out_path.stat().st_mtime > pdf_alias_path.stat().st_mtime):
-                shutil.copy2(pdf_out_path, pdf_alias_path)
+            _copy_pdf_permalink_alias(pdf_out_path, pdf_alias_path)
     except Exception as e:
         _warn("pdf_permalink", f"Failed refreshing PDF permalinks: {e}")
 
@@ -7525,7 +7863,9 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         global_pdf = output_root / "site.pdf"
         needs_global = False
         try:
-            if not global_pdf.exists():
+            if bool(getattr(args, "clean", False)):
+                needs_global = True
+            elif not global_pdf.exists():
                 needs_global = True
             else:
                 # Ignore transient missing files during mtime scan; they should not suppress site.pdf generation.
@@ -7542,157 +7882,36 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             needs_global = True
 
         if needs_global:
-            sections: List[Tuple[str, str]] = []
+            page_pdfs: List[Path] = []
+            toc_items: List[Tuple[str, str]] = []
             for p in md_files_no_drafts:
-                try:
-                    ttext = p.read_text(encoding="utf-8")
-                except Exception:
-                    ttext = ""
-                # Keep YAML metadata (date badge) but strip front matter from body
-                metadata_sec, body_sec = extract_yaml_front_matter(ttext)
-                ttext = body_sec
-                # Auto-styling in global PDF (based on YAML tag)
-                try:
-                    if _metadata_has_tag(metadata_sec, "case_study"):
-                        ttext = preprocess_case_study_styles(ttext)
-                    elif _metadata_has_tag(metadata_sec, "paper"):
-                        ttext = preprocess_paper_styles(ttext)
-                except Exception:
-                    pass
-                ttext = replace_image_wikilinks(ttext, current_md_path=p, input_root=input_root, output_root=output_root)
-                # Convert citations to APA and collect keys
-                used_keys_sec: Set[str] = set()
-                try:
-                    bib_path_cfg = args.bib if args else None
-                    if bib_path_cfg and Path(bib_path_cfg).exists():
-                        bib_index = _build_bib_index_simple(Path(bib_path_cfg))
-                        bib_links = _build_bib_link_index(Path(bib_path_cfg))
-                        ttext, used_keys_sec = _convert_citations_bracket_to_apa(ttext, bib_index, bib_links)
-                except Exception:
-                    used_keys_sec = set()
-                ttext = replace_wikilinks_with_embeds(ttext, current_md_path=p, input_root=input_root, output_root=output_root, title_map=title_map, embed_html_map=embed_html_map, wikilink_index=wikilink_index, md_files=md_files_no_drafts, page_anchor_map=page_anchor_map)
-                ttext = normalize_alpha_ordered_lists(ttext)
-                ttext = rewrite_standard_image_refs(ttext, current_md_path=p, input_root=input_root, output_root=output_root)
-                thtml, _ = convert_markdown_with_toc(ttext)
-                thtml = postprocess_alpha_ol_html(thtml)
-                # Convert HTML links to internal PDF anchors or online links
-                try:
-                    import bs4  # type: ignore
-                    soup3 = bs4.BeautifulSoup(thtml, "html.parser")
-                    current_html_path_for_pdf = relative_output_html(input_root, output_root, p)
-                    # Process wikilinks - convert to internal anchors if target exists in site, else online link
-                    for link in soup3.select("a.wikilink"):
-                        href = link.get("href", "")
-                        if not href or href.startswith("#"):
-                            continue
-                        # Extract target page from href
-                        if href.startswith("/") and not href.endswith(".html"):
-                            # Page-level anchor, keep as is
-                            continue
-                        # Check if target page is in md_files (site scope)
-                        target_found = False
-                        for p_target in md_files_no_drafts:
-                            target_out = relative_output_html(input_root, output_root, p_target)
-                            target_rel = os.path.relpath(target_out, start=output_root).replace(os.sep, "/")
-                            if href.startswith(target_rel) or target_rel in href or target_rel.replace("index.html", "") in href:
-                                # Target is in site - convert to internal anchor
-                                if "#" in href:
-                                    anchor = href.split("#")[-1]
-                                    link["href"] = f"#{anchor}"
-                                else:
-                                    # Link to page title anchor
-                                    page_title_slug = strip_numeric_prefix(p_target.stem).lower().replace(" ", "-")
-                                    link["href"] = f"#{page_title_slug}"
-                                target_found = True
-                                break
-                        if not target_found:
-                            href_abs = _absolute_site_href_for_pdf(href, current_html_path_for_pdf, output_root, site_url)
-                            if href_abs:
-                                link["href"] = href_abs
-                    _rewrite_pdf_links_to_site(soup3, current_html_path_for_pdf, output_root, site_url)
-                    # Remove anchor links from headings
-                    for hx in soup3.select("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]"):
-                        for anchor_link in hx.select("a.anchor-link"):
-                            anchor_link.decompose()
-                    thtml = str(soup3)
-                except Exception:
-                    pass
-                # Append references for this section if any
-                try:
-                    bib_path_cfg = args.bib if args else None
-                    if used_keys_sec and bib_path_cfg and Path(bib_path_cfg).exists():
-                        refs_html = _format_reference_list(used_keys_sec, _build_bib_index_simple(Path(bib_path_cfg)), Path(bib_path_cfg))
-                        if refs_html:
-                            thtml = thtml + "\n" + refs_html
-                except Exception:
-                    pass
-                # Top date badge for this section
-                try:
-                    badge_html = render_date_badge_html(metadata_sec)
-                    if badge_html:
-                        thtml = badge_html + "\n" + thtml
-                except Exception:
-                    pass
-                # Paper pages: wrap section content for paper-specific CSS
-                try:
-                    if _metadata_has_tag(metadata_sec, "paper"):
-                        thtml = f'<div class="paper">{thtml}</div>'
-                except Exception:
-                    pass
-                p_out_dir = relative_output_html(input_root, output_root, p).parent
-                thtml_abs = absolutize_img_srcs(thtml, base_dir=p_out_dir)
-                sections.append((title_map.get(p, strip_numeric_prefix(p.stem)), thtml_abs))
+                page_pdf = _ensure_page_pdf_for_merge(p)
+                if page_pdf is None:
+                    continue
+                page_pdfs.append(page_pdf)
+                title = title_map.get(p, strip_numeric_prefix(p.stem)) or strip_numeric_prefix(p.stem)
+                title = title.replace("--", "–")
+                toc_items.append((title, _page_site_url_for_pdf(p)))
 
-            global_title = "Causal Mapping: 97 ideas"
-            combined_html = render_compilation_pdf_html(global_title, sections, highlight_first_section=False)
-
-            try:
+            global_title = "Causal Map Garden"
+            if page_pdfs:
                 print("[PDF all] site.pdf")
-                import tempfile
-                from datetime import date
-                pagep = _new_pdf_page()
+                wrapper_pdf = global_pdf.with_name(f"{global_pdf.stem}.__wrapper__.pdf")
                 try:
-                    tmpf = tempfile.NamedTemporaryFile("w", suffix=".html", delete=False, encoding="utf-8")
-                    try:
-                        tmpf.write(combined_html)
-                        tmpf.flush()
-                        tmp_path = Path(tmpf.name).resolve()
-                    finally:
-                        tmpf.close()
-                    pagep.goto(tmp_path.as_uri(), wait_until="load")
-                    try:
-                        pagep.emulate_media(media="print")
-                    except Exception:
-                        pass
-                    _wait_for_pdf_assets(pagep)
-                    today_str = date.today().strftime("%Y-%m-%d")
-                    global_footer_span = (
-                        f"<span>{html.escape(site_title or global_title)}</span>"
-                        if (site_title or global_title) else "<span></span>"
-                    )
-                    footer_html = (
-                        f"<div style=\"width:100%; font-size:8.5px; color:#999; font-family:Georgia, Cambria, 'Times New Roman', Times, serif; padding:0 10mm;\">"
-                        f"<div style=\"display:flex; justify-content:space-between; width:100%;\">"
-                        f"<span>{html.escape(today_str)}</span>"
-                        f"{global_footer_span}"
-                        f"<span style=\"display:flex; gap:1em;\">"
-                        f"<span><span class=\"pageNumber\"></span> / <span class=\"totalPages\"></span></span>"
-                        f"<span>© Causal Map Ltd {date.today().year} · <a href=\"https://causalmap.app\" style=\"color:#999; text-decoration:none;\">causalmap.app</a> · <a href=\"https://creativecommons.org/licenses/by-nc/4.0/\" style=\"color:#999; text-decoration:none;\">CC BY-NC 4.0</a></span>"
-                        f"</span></div></div>"
-                    )
-                    pagep.pdf(path=str(global_pdf), format="A4", margin={"top":"22mm","right":"18mm","bottom":"24mm","left":"18mm"}, print_background=True, display_header_footer=True, header_template="<div></div>", footer_template=footer_html)
+                    pdf_parts: List[Path] = []
+                    if _render_pdf_wrapper_pdf(wrapper_pdf, global_title, toc_items, kicker="Complete Site PDF"):
+                        pdf_parts.append(wrapper_pdf)
+                    pdf_parts.extend(page_pdfs)
+                    if not _merge_pdf_paths(pdf_parts, global_pdf):
+                        print("[PDF all][ERROR] Failed to merge site.pdf")
                 finally:
                     try:
-                        pagep.close()
+                        if wrapper_pdf.exists():
+                            wrapper_pdf.unlink()
                     except Exception:
                         pass
-            except Exception as e:
-                print(f"[PDF all][ERROR] Failed to generate site.pdf: {e}")
-                try:
-                    import traceback
-                    traceback.print_exc()
-                except Exception:
-                    pass
+            else:
+                print("[PDF all] skipped: no page PDFs available")
         else:
             print("[PDF all] skipped (up to date)")
         _tmark("write_pages: global site.pdf")
