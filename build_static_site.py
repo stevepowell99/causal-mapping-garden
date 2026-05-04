@@ -2418,8 +2418,9 @@ def render_nav_html_shared(
         f"  </div>"
         f"</form>"
         f"</div>"
-        f"<button id=\"tocToggle\" class=\"btn btn-outline-secondary btn-sm mb-2 toc-toggle\" type=\"button\" aria-expanded=\"false\" aria-controls=\"tocList\">Show Contents</button>"
-        f"<div class=\"nav-fade toc-collapsed\" id=\"tocList\"><ul class=\"list-unstyled\">{inner_html}</ul></div>"
+        f"<div class=\"sidebar-section-title\">Contents</div>"
+        f"<div class=\"hover-cue\">Hover to view</div>"
+        f"<div class=\"nav-fade\" id=\"tocList\"><ul class=\"list-unstyled\">{inner_html}</ul></div>"
         f"{footer_html}"
         f"</div>"
     )
@@ -2538,24 +2539,6 @@ def write_sidebar_js(output_root: Path, nav_html: str) -> None:
         "      });\n"
         "      openSet = keep;\n"
         "      saveOpenSet(openSet);\n"
-        "      // If we deep-linked to a page, don't keep the TOC hidden on desktop.\n"
-        "      // Do not override an explicit user preference (tocCollapsed=1) or the Home animation.\n"
-        "      setTimeout(function(){\n"
-        "        try {\n"
-        "          if (document.querySelector('main.content.home')) return;\n"
-        "          var tocList = document.getElementById('tocList');\n"
-        "          if (!tocList || !tocList.classList.contains('toc-collapsed')) return;\n"
-        "          var persisted = null;\n"
-        "          try { persisted = localStorage.getItem('tocCollapsed'); } catch(e) {}\n"
-        "          if (persisted === '1') return;\n"
-        "          tocList.classList.remove('toc-collapsed');\n"
-        "          var btn = document.getElementById('tocToggle');\n"
-        "          if (btn) {\n"
-        "            btn.setAttribute('aria-expanded', 'true');\n"
-        "            btn.textContent = 'Hide Contents';\n"
-        "          }\n"
-        "        } catch(e) {}\n"
-        "      }, 0);\n"
         "    }\n"
         "  }\n"
         "\n"
@@ -3206,9 +3189,17 @@ def dual_column_body_css(prefix: str = "") -> str:
         margin: 0 auto 1rem auto !important;
       }}
       @media print {{
+        {body} p {{
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }}
         {body} .paper-figure-full img {{
           max-height: 185mm;
           object-fit: contain;
+        }}
+        {body} .section-two-col {{
+          column-count: 1;
+          column-rule: none;
         }}
       }}
       @media screen and (max-width: 900px) {{
@@ -3311,6 +3302,25 @@ def working_paper_css(
         font-size: 1.08em;
         margin-top: .9rem;
         margin-bottom: .45rem;
+        font-style: italic;
+      }}
+      {paper} h4 {{
+        font-size: 1em;
+        margin-top: .8rem;
+        margin-bottom: .35rem;
+        font-weight: 600;
+      }}
+      {paper} h5 {{
+        font-size: .95em;
+        margin-top: .7rem;
+        margin-bottom: .3rem;
+        font-weight: 600;
+      }}
+      {paper} h6 {{
+        font-size: .9em;
+        margin-top: .65rem;
+        margin-bottom: .25rem;
+        font-weight: 600;
         font-style: italic;
       }}
       {paper} a,
@@ -4290,8 +4300,12 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
       }}
       .layout-container {{
         display: grid;
-        grid-template-columns: 462px minmax(0, 980px) 390px; /* sidebar, fixed content width, wider rightbar */
-        column-gap: 2.25rem;
+        --cm-left-sidebar-width: 462px;
+        --cm-rightbar-width: 390px;
+        --cm-grid-gap: 1rem;
+        --cm-content-width: 980px;
+        grid-template-columns: var(--cm-left-sidebar-width) fit-content(var(--cm-content-width)) var(--cm-rightbar-width); /* sidebar, content card, rightbar */
+        column-gap: var(--cm-grid-gap);
         min-height: 100vh;
         background-color: #eee;
         transition: grid-template-columns 0.3s ease;
@@ -4307,11 +4321,6 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
       body.layout-fullscreen .breadcrumb-nav,
       body.layout-fullscreen #hamburgerBtn {{
         display: none !important;
-      }}
-      body.layout-fullscreen .content .edge-nav-box {{
-        left: max(0px, calc(50% - min(700px, 50vw))) !important;
-        right: max(0px, calc(50% - min(700px, 50vw))) !important;
-        max-width: none !important;
       }}
       body.layout-fullscreen .content {{
         max-width: min(1400px, 100vw);
@@ -4484,19 +4493,94 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         margin-bottom: 1rem;
         box-shadow: 0 2px 4px rgba(0,0,0,0.08);
       }}
+      .sidebar-section-title,
+      .rightbar h2 {{
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        color: var(--cm-muted);
+      }}
+      .sidebar-section-title {{
+        margin: .25rem 20px .45rem;
+      }}
+      .hover-cue {{
+        color: #adb5bd;
+        font-size: .78rem;
+        letter-spacing: .02em;
+        margin: 0 20px 1rem;
+        transition: opacity .15s ease;
+      }}
+      aside.sidebar:hover .hover-cue,
+      .rightbar:hover .hover-cue {{
+        opacity: 0;
+      }}
       aside.sidebar .nav-fade {{
         flex: 1;
         overflow-y: auto; /* scrollable TOC */
         overflow-x: hidden;
         padding: 20px;
-        opacity: .10; /* dimmer by default */
-        transition: opacity .2s ease;
+        position: relative;
+        scrollbar-width: none;
       }}
       aside.sidebar:hover .nav-fade {{
-        opacity: .8; /* more visible on sidebar hover */
+        scrollbar-width: auto;
+      }}
+      aside.sidebar .nav-fade::-webkit-scrollbar,
+      .rightbar::-webkit-scrollbar {{
+        width: 0;
+        height: 0;
+      }}
+      aside.sidebar:hover .nav-fade::-webkit-scrollbar,
+      .rightbar:hover::-webkit-scrollbar {{
+        width: 10px;
+        height: 10px;
+      }}
+      aside.sidebar .nav-fade::before,
+      .rightbar .toc::before {{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        height: 3.4rem;
+        opacity: 1;
+        pointer-events: none;
+        transition: opacity .15s ease;
+        background:
+          linear-gradient(#eef2f4, #eef2f4) 0 .2rem / 55% .45rem no-repeat,
+          linear-gradient(#f3f6f7, #f3f6f7) 1rem 1.4rem / 72% .4rem no-repeat,
+          linear-gradient(#f3f6f7, #f3f6f7) 1rem 2.45rem / 48% .4rem no-repeat;
+      }}
+      aside.sidebar .nav-fade::before {{
+        left: 20px;
+        right: 20px;
+      }}
+      .rightbar .toc::before {{
+        left: 0;
+        right: 0;
+      }}
+      aside.sidebar .nav-fade > ul,
+      .rightbar .toc > ul {{
+        opacity: 0;
+        transition: opacity .15s ease;
+      }}
+      aside.sidebar:hover .nav-fade::before,
+      .rightbar:hover .toc::before {{
+        opacity: 0;
+      }}
+      aside.sidebar:hover .nav-fade > ul,
+      .rightbar:hover .toc > ul {{
+        opacity: 1;
+      }}
+      @media (hover: none), (max-width: 1199.98px) {{
+        aside.sidebar .nav-fade::before {{
+          display: none;
+        }}
+        aside.sidebar .nav-fade > ul {{
+          opacity: 1;
+        }}
       }}
       aside.sidebar .nav-fade summary {{
-        opacity: inherit; /* ensure folder headers inherit the fade */
+        opacity: inherit;
       }}
       aside.sidebar .nav-link {{
         padding: .2rem .4rem;
@@ -4549,31 +4633,15 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         border-radius: 8px;
         margin: 2.5rem 0 5rem 0; /* remove right margin so rightbar hugs content */
       }}
-      /* Containing box for edge nav buttons to constrain positioning */
       .content .edge-nav-box {{
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 462px; /* left sidebar width */
-        right: 280px; /* right sidebar width when present */
-        max-width: calc(980px + 8rem); /* content max-width + padding */
+        position: sticky;
+        top: 50vh;
+        height: 0;
+        z-index: 5;
         pointer-events: none; /* allow clicks through to content */
       }}
       .content .edge-nav-box a {{
         pointer-events: auto; /* restore clicks on nav buttons */
-      }}
-      @media (max-width: 1799.98px) {{
-        .content .edge-nav-box {{
-          right: 0; /* no right sidebar */
-          max-width: none; /* content expands, no max-width */
-        }}
-      }}
-      @media (max-width: 1199.98px) {{
-        .content .edge-nav-box {{
-          left: 0; /* no left sidebar */
-        }}
-        .content .edge-nav.prev {{ left: 8px !important; }}
-        .content .edge-nav.next {{ right: 8px !important; }}
       }}
       .content img {{ max-width: 100%; height: auto; margin: 20px 0; }}
       .content h1, .content h2, .content h3, .content h4 {{
@@ -4821,7 +4889,7 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         font-size: 1.08rem;
       }}
       /* Working paper/article styling */
-      {working_paper_css(".content", content_selector=".content.paper-page", page_title_selector=".content.paper-page .page-title", paper_font_size="1.03rem", paper_line_height="1.68")}
+      {working_paper_css(".content", content_selector=".content.paper-page", content_max_width="980px", page_title_selector=".content.paper-page .page-title", paper_font_size="1.03rem", paper_line_height="1.68")}
       /* Callout styles */
       .content .callout {{
         border-left: 4px solid #6c757d;
@@ -5142,21 +5210,6 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         left: 12px;
         z-index: 1100;
       }}
-      /* Desktop ToC toggle: only on wide screens */
-      .toc-toggle {{
-        display: none;
-      }}
-      @media (min-width: 1200px) {{
-        .toc-toggle {{
-          display: inline-flex;
-          align-items: center;
-          gap: .4rem;
-          width: 100%;
-        }}
-        aside.sidebar .nav-fade.toc-collapsed {{
-          display: none;
-        }}
-      }}
       /* Desktop sidebar toggle button (hidden by default; shown on wide screens) */
       .desktop-toggle {{
         display: none;
@@ -5217,19 +5270,6 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         position: relative;
         z-index: 1;
       }}
-      /* Ensure edge nav is always on top and positioned correctly */
-      .content .edge-nav-box {{
-        z-index: 10 !important;
-      }}
-      .content .edge-nav {{
-        z-index: 11 !important;
-      }}
-      .content .edge-nav.prev {{
-        left: -52px !important;
-      }}
-      .content .edge-nav.next {{
-        right: -52px !important;
-      }}
       /* Chapter page links styling */
       .chapter-page-link {{
         display: inline-block;
@@ -5249,6 +5289,7 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         align-self: start; /* start at top of grid row */
         max-height: calc(100vh - 2.5rem);
         overflow: auto;
+        scrollbar-width: none;
         margin: 2.5rem 0 5rem 0; /* match main content vertical margins */
         padding: 1.5rem; /* consistent padding for TOC */
         background: white;
@@ -5256,25 +5297,27 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         border-radius: 8px;
         box-shadow: 0 1px 2px rgba(0,0,0,.03);
       }}
+      .rightbar:hover {{
+        scrollbar-width: auto;
+      }}
       .rightbar h2 {{
-        font-size: 1rem;
-        text-transform: uppercase;
-        letter-spacing: .06em;
-        color: var(--cm-muted);
+        margin: 0 0 .45rem;
+      }}
+      .rightbar .hover-cue {{
+        margin: 0 0 1.15rem;
       }}
       .rightbar .toc ul {{
         padding-left: 1rem;
       }}
       .rightbar .toc {{
-        opacity: .55; /* paler by default */
-        transition: opacity .15s ease;
-      }}
-      .rightbar:hover .toc {{
-        opacity: 1;
+        position: relative;
       }}
       @media (max-width: 1199.98px) {{
-        .rightbar .toc {{
-          opacity: 1 !important;
+        .rightbar .toc::before {{
+          display: none;
+        }}
+        .rightbar .toc > ul {{
+          opacity: 1;
         }}
       }}
       .rightbar .toc a.active {{
@@ -5285,7 +5328,7 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
       /* Edge previous/next chevrons (inside content) */
       .edge-nav {{
         position: absolute;
-        top: 50%;
+        top: 0;
         transform: translateY(-50%);
         width: 44px;
         height: 44px;
@@ -5306,8 +5349,20 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         opacity: 1;
         box-shadow: 0 3px 10px rgba(0,0,0,.12);
       }}
-      .edge-nav.prev {{ left: -52px; }}  /* outside content, in left gutter */
-      .edge-nav.next {{ right: -52px; }}  /* outside content, in right gutter */
+      .edge-nav.prev {{
+        left: -52px;
+      }}
+      .edge-nav.next {{
+        right: -52px;
+      }}
+      @media (max-width: 1199.98px) {{
+        .edge-nav.prev {{
+          left: 8px;
+        }}
+        .edge-nav.next {{
+          right: 8px;
+        }}
+      }}
 
       /* Breadcrumb navigation */
       .breadcrumb-nav {{
@@ -5512,9 +5567,9 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
       </main>
       {(
         '<aside class="rightbar">'
-        + (f'<h2>On this page</h2><div class="toc">{toc_html}</div>' if toc_html else '')
-        + (f'<hr /><h2>Links</h2><div class="toc">{links_html}</div>' if links_html else '')
-        + (f'<hr /><h2>Backlinks</h2><div class="toc">{backlinks_html}</div>' if backlinks_html else '')
+        + (f'<h2>On this page</h2><div class="hover-cue">Hover to view</div><div class="toc">{toc_html}</div>' if toc_html else '')
+        + (f'<hr /><h2>Links</h2><div class="hover-cue">Hover to view</div><div class="toc">{links_html}</div>' if links_html else '')
+        + (f'<hr /><h2>Backlinks</h2><div class="hover-cue">Hover to view</div><div class="toc">{backlinks_html}</div>' if backlinks_html else '')
         + '</aside>'
       ) if (toc_html or links_html or backlinks_html) else ''}
     </div>
@@ -5632,91 +5687,6 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
             sessionStorage.removeItem('sidebarScroll');
           }}
         }} catch(e) {{}}
-      }})();
-
-      // Desktop ToC toggle (wide screens): hide/show only the ToC list; default hidden on desktop
-      (function(){{
-        var btn = document.getElementById('tocToggle');
-        var list = document.getElementById('tocList');
-        if (!list) return;
-        function setButtonState(collapsed) {{
-          if (!btn) return;
-          btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
-          btn.textContent = collapsed ? 'Show Contents' : 'Hide Contents';
-        }}
-        function applyInitial() {{
-          try {{
-            var isDesktop = window.matchMedia('(min-width: 1200px)').matches;
-            if (!isDesktop) {{
-              list.classList.remove('toc-collapsed');
-              setButtonState(false);
-              return;
-            }}
-            var persisted = null;
-            try {{ persisted = localStorage.getItem('tocCollapsed'); }} catch(e) {{}}
-            var collapsed = true; // default hidden on desktop
-            if (persisted === '0') collapsed = false;
-            if (persisted === '1') collapsed = true;
-            if (collapsed) list.classList.add('toc-collapsed'); else list.classList.remove('toc-collapsed');
-            setButtonState(collapsed);
-            // Flash ToC after navigation when desired
-            var flash = null;
-            try {{ flash = sessionStorage.getItem('flashToc'); }} catch(e) {{}}
-            if (flash === '1') {{
-              try {{ sessionStorage.removeItem('flashToc'); }} catch(e) {{}}
-              if (list.classList.contains('toc-collapsed')) {{
-                // Briefly show ToC, then restore collapsed state
-                list.classList.remove('toc-collapsed');
-                setButtonState(false);
-                setTimeout(function() {{
-                  list.classList.add('toc-collapsed');
-                  setButtonState(true);
-                }}, 1200);
-              }}
-            }}
-            // First visit to Home: open ToC then smoothly roll it up (desktop only)
-            try {{
-              var isHome = !!document.querySelector('main.content.home');
-              var alreadyAnimated = (localStorage.getItem('initialHomeTocAnimated') === '1');
-              var hasPref = (persisted === '0' || persisted === '1');
-              if (isHome && !alreadyAnimated && !hasPref) {{
-                // Show it
-                list.classList.remove('toc-collapsed');
-                setButtonState(false);
-                // After short delay, animate collapse
-                setTimeout(function() {{
-                  var full = list.scrollHeight;
-                  list.style.overflow = 'hidden';
-                  list.style.maxHeight = full + 'px';
-                  list.style.opacity = '1';
-                  void list.offsetHeight; // reflow
-                  list.style.transition = 'max-height 450ms ease, opacity 450ms ease';
-                  list.style.maxHeight = '0px';
-                  list.style.opacity = '0';
-                  setTimeout(function() {{
-                    list.style.transition = '';
-                    list.style.maxHeight = '';
-                    list.style.opacity = '';
-                    list.style.overflow = '';
-                    list.classList.add('toc-collapsed');
-                    setButtonState(true);
-                    try {{ localStorage.setItem('tocCollapsed', '1'); }} catch(e) {{}}
-                    try {{ localStorage.setItem('initialHomeTocAnimated', '1'); }} catch(e) {{}}
-                  }}, 480);
-                }}, 900);
-              }}
-            }} catch(e) {{}}
-          }} catch(e) {{}}
-        }}
-        if (btn) {{
-          btn.addEventListener('click', function(){{
-            var collapsed = list.classList.toggle('toc-collapsed');
-            setButtonState(collapsed);
-            try {{ localStorage.setItem('tocCollapsed', collapsed ? '1' : '0'); }} catch(e) {{}}
-          }});
-        }}
-        applyInitial();
-        window.addEventListener('resize', applyInitial);
       }})();
 
       // Breadcrumb dropdown toggle (click chevron or label to open)
@@ -7531,13 +7501,6 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                 if chap_pdf_path.exists() or (args and args.chapters_pdf):
                     chap_href_rel = os.path.relpath(chap_pdf_path, start=out_dir).replace(os.sep, "/")
                     extra_links.append(f'<a class="link-secondary small" href="{html.escape(chap_href_rel)}" download>PDF (chapter)</a>')
-        # If root index, link to global PDF (only if exists or will be generated)
-        if is_root_index:
-            site_pdf = output_root / "site.pdf"
-            if site_pdf.exists() or (args and args.all_pdf):
-                site_href_rel = os.path.relpath(site_pdf, start=out_dir).replace(os.sep, "/")
-                extra_links.append(f'<a class="link-secondary small" href="{html.escape(site_href_rel)}" download>PDF (all)</a>')
-
         # Existing per-page PDF link
         if pdf_link_html:
             extra_links.insert(0, pdf_link_html)
@@ -7857,67 +7820,6 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         pass
     _tmark("write_pages: create short-route stubs")
 
-    # Global PDF (compiled from all md_files) at the site root
-    if args and args.all_pdf and _PLAYWRIGHT_AVAILABLE:
-        print("[PDF all] requested")
-        global_pdf = output_root / "site.pdf"
-        needs_global = False
-        try:
-            if bool(getattr(args, "clean", False)):
-                needs_global = True
-            elif not global_pdf.exists():
-                needs_global = True
-            else:
-                # Ignore transient missing files during mtime scan; they should not suppress site.pdf generation.
-                mtimes: List[float] = []
-                for p in md_files_no_drafts:
-                    try:
-                        mtimes.append(p.stat().st_mtime)
-                    except FileNotFoundError:
-                        continue
-                newest_md_mtime = max(mtimes, default=0)
-                needs_global = newest_md_mtime >= global_pdf.stat().st_mtime
-        except Exception as e:
-            print(f"[PDF all][WARN] mtime check failed, forcing rebuild: {e}")
-            needs_global = True
-
-        if needs_global:
-            page_pdfs: List[Path] = []
-            toc_items: List[Tuple[str, str]] = []
-            for p in md_files_no_drafts:
-                page_pdf = _ensure_page_pdf_for_merge(p)
-                if page_pdf is None:
-                    continue
-                page_pdfs.append(page_pdf)
-                title = title_map.get(p, strip_numeric_prefix(p.stem)) or strip_numeric_prefix(p.stem)
-                title = title.replace("--", "–")
-                toc_items.append((title, _page_site_url_for_pdf(p)))
-
-            global_title = "Causal Map Garden"
-            if page_pdfs:
-                print("[PDF all] site.pdf")
-                wrapper_pdf = global_pdf.with_name(f"{global_pdf.stem}.__wrapper__.pdf")
-                try:
-                    pdf_parts: List[Path] = []
-                    if _render_pdf_wrapper_pdf(wrapper_pdf, global_title, toc_items, kicker="Complete Site PDF"):
-                        pdf_parts.append(wrapper_pdf)
-                    pdf_parts.extend(page_pdfs)
-                    if not _merge_pdf_paths(pdf_parts, global_pdf):
-                        print("[PDF all][ERROR] Failed to merge site.pdf")
-                finally:
-                    try:
-                        if wrapper_pdf.exists():
-                            wrapper_pdf.unlink()
-                    except Exception:
-                        pass
-            else:
-                print("[PDF all] skipped: no page PDFs available")
-        else:
-            print("[PDF all] skipped (up to date)")
-        _tmark("write_pages: global site.pdf")
-    elif args and args.all_pdf and not _PLAYWRIGHT_AVAILABLE:
-        print("[PDF all][SKIP] Playwright unavailable. Install with: pip install playwright && python -m playwright install chromium")
-
     _close_pdf_runtime()
 
     # Cleanup: remove unused images under output_root/img and any nested img folders
@@ -8180,11 +8082,6 @@ def parse_args() -> argparse.Namespace:
         help="Only process one top-level folder for chapter-PDF runs (e.g. '800 Case studies')",
     )
     parser.add_argument(
-        "--all-pdf",
-        action="store_true",
-        help="Also build a single global PDF containing all pages",
-    )
-    parser.add_argument(
         "--page-pdf",
         action="store_true",
         help="Also build per-page PDFs for changed files",
@@ -8192,7 +8089,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--pdf",
         action="store_true",
-        help="Build all PDFs (page, chapters, and all-site PDFs)",
+        help="Build page and chapter PDFs",
     )
     parser.add_argument(
         "--config",
@@ -8237,14 +8134,13 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     # parse CLI args
     args = parse_args()
-    # If --pdf flag is set, enable all PDF generation options
+    # If --pdf flag is set, enable useful PDFs. site.pdf is intentionally excluded.
     if args.pdf:
         args.page_pdf = True
         args.chapters_pdf = True
-        args.all_pdf = True
     
     # Debug: show PDF flags
-    print(f"[DEBUG] PDF flags: page_pdf={getattr(args, 'page_pdf', False)}, chapters_pdf={getattr(args, 'chapters_pdf', False)}, all_pdf={getattr(args, 'all_pdf', False)}")
+    print(f"[DEBUG] PDF flags: page_pdf={getattr(args, 'page_pdf', False)}, chapters_pdf={getattr(args, 'chapters_pdf', False)}")
     timing_enabled = bool(getattr(args, "timing", False))
     _main_timings: List[Tuple[str, float]] = []
     _main_start = time.perf_counter()
