@@ -24,7 +24,7 @@ import sys
 import time
 from datetime import date, datetime
 from urllib.parse import quote, urljoin
-PIPELINE_VERSION = "2026-05-02-abstract-paragraphs-full-width-v1"
+PIPELINE_VERSION = "2026-05-11-wikilink-img-no-newline-steal-v1"
 
 # Media extensions: images + local video (mp4, webm, etc.)
 _IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".bmp"}
@@ -752,11 +752,11 @@ def build_nav_tree(input_root: Path, output_root: Path, require_numbered_folders
         current_dir = Path(dirpath)
         if current_dir == input_root:
             if require_numbered_folders:
-                dirnames[:] = [d for d in dirnames if not d.startswith((".","_")) and ('!' not in d) and d.lower() != "img" and (d[:1].isdigit())]
+                dirnames[:] = [d for d in dirnames if not d.startswith((".","_")) and d.lower() != "img" and (d[:1].isdigit())]
             else:
-                dirnames[:] = [d for d in dirnames if not d.startswith((".","_")) and ('!' not in d) and d.lower() != "img"]
+                dirnames[:] = [d for d in dirnames if not d.startswith((".","_")) and d.lower() != "img"]
         else:
-            dirnames[:] = [d for d in dirnames if not d.startswith((".","_")) and ('!' not in d) and d.lower() != "img"]
+            dirnames[:] = [d for d in dirnames if not d.startswith((".","_")) and d.lower() != "img"]
 
         # ensure node exists along the path
         node = root
@@ -813,7 +813,7 @@ def copy_assets(input_root: Path, output_root: Path) -> None:
         # Ignore Obsidian/automation cache folders we never want to publish
         if ".smart-env" in src.parts:
             continue
-        # Files with ! in filename are included (folders with ! are excluded below)
+        # Files with ! in filename are still copied when under normal rules below
         if is_markdown_file(src):
             continue
         # Skip .qmd (source only; we copy the generated .html)
@@ -823,8 +823,8 @@ def copy_assets(input_root: Path, output_root: Path) -> None:
         if src.suffix.lower() == ".html":
             # Copy: Quarto etc. generate .html from .qmd; we don't process .qmd
             pass
-        # Skip .obsidian and any folder path segment containing '!'
-        elif ".obsidian" in src.parts or any('!' in part for part in src.parts[:-1]):
+        # Skip .obsidian (folder names may contain '!' e.g. local notes folders)
+        elif ".obsidian" in src.parts:
             continue
         # Allow all files under 'assets' or Quarto *_files folders
         in_assets = any(part.lower() == "assets" for part in src.parts)
@@ -1320,86 +1320,108 @@ def render_links_list_html(md_targets: List[Path], current_out_dir: Path, input_
     return f'<ul>{"".join(items)}</ul>'
 
 
-def _read_image_dimensions(src_path: Path) -> Optional[Tuple[int, int]]:
-    """Read pixel dimensions from JPEG, PNG, GIF or WebP file headers using stdlib only."""
-    import struct
-    try:
-        with open(src_path, "rb") as f:
-            head = f.read(32)
-            if len(head) < 8:
-                return None
-            if head[:8] == b"\x89PNG\r\n\x1a\n":
-                w, h = struct.unpack(">II", head[16:24])
-                return int(w), int(h)
-            if head[:6] in (b"GIF87a", b"GIF89a"):
-                w, h = struct.unpack("<HH", head[6:10])
-                return int(w), int(h)
-            if head[:4] == b"RIFF" and head[8:12] == b"WEBP":
-                chunk = head[12:16]
-                if chunk == b"VP8X":
-                    f.seek(24)
-                    b = f.read(6)
-                    w = (b[0] | (b[1] << 8) | (b[2] << 16)) + 1
-                    h = (b[3] | (b[4] << 8) | (b[5] << 16)) + 1
-                    return w, h
-                if chunk == b"VP8L":
-                    f.seek(21)
-                    b = f.read(4)
-                    bits = b[0] | (b[1] << 8) | (b[2] << 16) | (b[3] << 24)
-                    w = (bits & 0x3FFF) + 1
-                    h = ((bits >> 14) & 0x3FFF) + 1
-                    return w, h
-                if chunk == b"VP8 ":
-                    f.seek(26)
-                    b = f.read(4)
-                    w = (b[0] | (b[1] << 8)) & 0x3FFF
-                    h = (b[2] | (b[3] << 8)) & 0x3FFF
-                    return w, h
-            if head[:2] == b"\xff\xd8":
-                f.seek(2)
-                while True:
-                    b = f.read(1)
-                    while b and b != b"\xff":
-                        b = f.read(1)
-                    while b == b"\xff":
-                        b = f.read(1)
-                    if not b:
-                        return None
-                    marker = b[0]
-                    if 0xC0 <= marker <= 0xCF and marker not in (0xC4, 0xC8, 0xCC):
-                        f.read(3)
-                        hb = f.read(2)
-                        wb = f.read(2)
-                        if len(hb) < 2 or len(wb) < 2:
-                            return None
-                        h = struct.unpack(">H", hb)[0]
-                        w = struct.unpack(">H", wb)[0]
-                        return int(w), int(h)
-                    seg_len = f.read(2)
-                    if len(seg_len) < 2:
-                        return None
-                    f.seek(struct.unpack(">H", seg_len)[0] - 2, 1)
-    except Exception:
-        return None
-    return None
+_WIKILINK_IMG_ATTRS = frozenset({"width", "height", "style", "id", "title"})
 
 
-def _image_size_style(src_path: Path, narrow_max_width: int = 600, max_display_height: int = 600, wide_aspect: float = 1.6) -> str:
-    """Inline style for ![[image]] embeds.
+def _parse_wikilink_brace_attrs(block: Optional[str]) -> Tuple[List[str], Dict[str, str]]:
+    """Parse `{.cls #id width=5cm style="width:5cm"}` after ![[...]] — same token rules as markdown attr_list."""
+    if not block:
+        return [], {}
+    s = block.strip()
+    if len(s) < 2 or not (s.startswith("{") and s.endswith("}")):
+        return [], {}
+    inner = s[1:-1].strip()
+    if not inner:
+        return [], {}
+    tokens: List[str] = []
+    i, n = 0, len(inner)
+    while i < n:
+        while i < n and inner[i].isspace():
+            i += 1
+        if i >= n:
+            break
+        if inner[i] in "\"'":
+            delim = inner[i]
+            j = i + 1
+            while j < n and inner[j] != delim:
+                j += 1
+            if j >= n:
+                tokens.append(inner[i:])
+                break
+            tokens.append(inner[i : j + 1])
+            i = j + 1
+            continue
+        j = i
+        while j < n and not inner[j].isspace():
+            j += 1
+        tokens.append(inner[i:j])
+        i = j
+    classes: List[str] = []
+    attrs: Dict[str, str] = {}
+    for tok in tokens:
+        if not tok:
+            continue
+        if tok.startswith("#") and "=" not in tok:
+            attrs["id"] = tok[1:]
+        elif tok.startswith("."):
+            classes.append(tok[1:])
+        elif "=" in tok:
+            k, _, v = tok.partition("=")
+            k = k.strip().lower()
+            v = v.strip()
+            if len(v) >= 2 and v[0] == v[-1] and v[0] in "\"'":
+                v = v[1:-1]
+            if k == "class":
+                classes.extend(part for part in v.split() if part)
+            else:
+                attrs[k] = v
+    return classes, attrs
 
-    Wide-shallow images (aspect width/height >= wide_aspect) are unconstrained
-    and may fill the content column. Squarer or tall images get a max-width
-    cap of about two thirds of the content column, plus a max-height cap so
-    very tall images do not dominate the page."""
-    dims = _read_image_dimensions(src_path)
-    if not dims:
-        return ""
-    w, h = dims
-    if w <= 0 or h <= 0:
-        return ""
-    if (w / h) >= wide_aspect:
-        return ""
-    return f' style="max-width: {narrow_max_width}px; max-height: {max_display_height}px; width: auto; height: auto;"'
+
+def _build_wikilink_img_tag(
+    href_escaped: str,
+    alt_escaped: str,
+    classes: List[str],
+    attrs: Dict[str, str],
+) -> str:
+    """Emit <img> with img-fluid plus allowed HTML attributes.
+
+    HTML width/height accept unsigned pixel integers only; `%`, `cm`, `em`, etc. go in style=.
+    """
+    cls_merged = list(dict.fromkeys(classes))
+    class_val = html.escape(" ".join(cls_merged))
+    parts: List[str] = [f'src="{href_escaped}"', f'alt="{alt_escaped}"', f'class="{class_val}"']
+
+    ad = {k: v for k, v in attrs.items() if k in _WIKILINK_IMG_ATTRS}
+    style_parts: List[str] = []
+    user_style = (ad.pop("style", None) or "").strip()
+
+    def _dim_attr(dim_key: str, raw: Optional[str]) -> None:
+        if not raw or not str(raw).strip():
+            return
+        v = str(raw).strip()
+        if re.fullmatch(r"\d+", v):
+            parts.append(f'{dim_key}="{html.escape(v)}"')
+            return
+        mpx = re.fullmatch(r"(\d+(?:\.\d+)?)px", v, flags=re.IGNORECASE)
+        if mpx:
+            parts.append(f'{dim_key}="{html.escape(mpx.group(1))}"')
+            return
+        style_parts.append(f"{dim_key}:{v}")
+
+    _dim_attr("width", ad.pop("width", None))
+    _dim_attr("height", ad.pop("height", None))
+
+    if user_style:
+        style_parts.append(user_style)
+    for k in ("id", "title"):
+        if ad.get(k):
+            parts.append(f'{k}="{html.escape(ad[k])}"')
+
+    if style_parts:
+        parts.append(f'style="{html.escape("; ".join(style_parts))}"')
+
+    return "<img " + " ".join(parts) + " />"
 
 
 def replace_image_wikilinks(md_text: str, current_md_path: Path, input_root: Path, output_root: Path) -> str:
@@ -1410,11 +1432,16 @@ def replace_image_wikilinks(md_text: str, current_md_path: Path, input_root: Pat
     name_index = build_image_name_index(input_root, vault_root, _MEDIA_EXTS)
     out_dir = relative_output_html(input_root, output_root, current_md_path).parent
 
-    pattern = re.compile(r"!\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|([^\]]+))?\]\]")
+    # Only [ \t] after ]] — not \n. Greedy \s* would eat blank lines and glue the next line
+    # (e.g. callout closer "--") onto the same line as the <img> tag.
+    pattern = re.compile(
+        r"!\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|([^\]]+))?\]\][ \t]*(\{[^}]+\})?"
+    )
 
     def _repl(match: re.Match[str]) -> str:
         target = match.group(1).strip()
         alt = match.group(2).strip() if match.group(2) else ""
+        extra_classes, raw_attrs = _parse_wikilink_brace_attrs(match.group(3))
         src_file = resolve_image_src_path(target, current_md_path, input_root, vault_root, name_index, _MEDIA_EXTS)
         if not src_file:
             return match.group(0)
@@ -1437,9 +1464,9 @@ def replace_image_wikilinks(md_text: str, current_md_path: Path, input_root: Pat
         ext = src_file.suffix.lower()
         if ext in _VIDEO_EXTS:
             return f'<div class="video-embed mb-3"><video src="{href}" controls class="w-100">Your browser does not support the video tag.</video></div>'
-        # NOTE: Avoid lazy-loading; it breaks Playwright PDF generation (images often won't load before print).
-        size_style = _image_size_style(src_file)
-        return f'<img src="{href}" alt="{alt_attr}" class="img-fluid"{size_style} />'
+        allowed_attrs = {k: v for k, v in raw_attrs.items() if k in _WIKILINK_IMG_ATTRS}
+        cls_parts = list(dict.fromkeys(["img-fluid"] + [c for c in extra_classes if c]))
+        return _build_wikilink_img_tag(href, alt_attr, cls_parts, allowed_attrs)
 
     return pattern.sub(_repl, md_text)
 
@@ -2930,44 +2957,6 @@ def _metadata_uses_pdf_dual_columns(metadata: Dict[str, Any]) -> bool:
     return _metadata_is_paper(metadata) or _metadata_has_dual_column_tag(metadata)
 
 
-def _add_html_class(node: Any, class_name: str) -> None:
-    """Add one CSS class to a BeautifulSoup node without duplicating it."""
-    node["class"] = list(dict.fromkeys((node.get("class") or []) + [class_name]))
-
-
-def _next_element_sibling(node: Any) -> Any:
-    """Return the next non-empty element sibling for a BeautifulSoup node."""
-    sibling = node.next_sibling
-    while sibling is not None:
-        if getattr(sibling, "name", None) is not None:
-            if sibling.get_text(strip=True) == "" and not sibling.find(["img", "table", "pre", "blockquote", "div", "svg"]):
-                sibling = sibling.next_sibling
-                continue
-            return sibling
-        if str(sibling).strip():
-            return sibling
-        sibling = sibling.next_sibling
-    return None
-
-
-def _is_italic_only_paragraph(node: Any) -> bool:
-    """Return True for simple Markdown-style image captions: a paragraph containing only <em> text."""
-    if getattr(node, "name", None) != "p":
-        return False
-    element_children = [child for child in node.children if getattr(child, "name", None) is not None]
-    if not element_children or any(getattr(child, "name", None) != "em" for child in element_children):
-        return False
-    return node.get_text(strip=True) == " ".join(child.get_text(strip=True) for child in element_children).strip()
-
-
-def _wrap_full_width_figure(soup: Any, media_node: Any, caption_node: Any) -> None:
-    """Keep a full-width media node and its Markdown-style caption together."""
-    wrapper = soup.new_tag("div", **{"class": "paper-figure-full"})
-    media_node.insert_before(wrapper)
-    wrapper.append(media_node.extract())
-    wrapper.append(caption_node.extract())
-
-
 def postprocess_two_col_sections(content_html: str) -> str:
     """Wrap content after a heading marked {.two-col} until the next heading."""
     try:
@@ -3003,6 +2992,101 @@ def postprocess_two_col_sections(content_html: str) -> str:
         return content_html
 
 
+def _img_inside_multicol_region(img: Any) -> bool:
+    """True if img sits under page-level or section-level two-column wrappers."""
+    p = img.parent
+    while p is not None:
+        cls = p.get("class") or []
+        if isinstance(cls, str):
+            cls = [cls]
+        if "paper-dual-column-body" in cls or "section-two-col" in cls:
+            return True
+        p = getattr(p, "parent", None)
+    return False
+
+
+def _wrap_img_cm_figure_span(soup: Any, img: Any) -> None:
+    """Wrap a {.span-cols} image in a block that can column-span in print/CSS."""
+    p = img.parent
+    while p is not None:
+        cls = p.get("class") or []
+        if isinstance(cls, str):
+            cls = [cls]
+        if "cm-figure-span" in cls:
+            return
+        p = getattr(p, "parent", None)
+    parent = img.parent
+    wrapper = soup.new_tag("div", **{"class": "cm-figure-span"})
+    if (
+        parent
+        and parent.name == "p"
+        and len(parent.find_all("img")) == 1
+        and not parent.get_text(strip=True)
+    ):
+        img.extract()
+        parent.replace_with(wrapper)
+        wrapper.append(img)
+        return
+    img.insert_before(wrapper)
+    wrapper.append(img.extract())
+
+
+def _img_has_explicit_sizing(img: Any) -> bool:
+    """True when the author set width/height (attr_list) or CSS width on the img."""
+    if img.get("width") or img.get("height"):
+        return True
+    st = (img.get("style") or "").lower()
+    return "width" in st or "max-width" in st
+
+
+def postprocess_content_image_layout(content_html: str) -> str:
+    """Default image widths: full-bleed in single-column flow; in-column in real two-column regions unless {.span-cols}.
+
+    Works the same for ![[wikilink]] and standard ![](markdown) images after HTML conversion.
+    """
+    try:
+        import bs4  # type: ignore
+    except Exception:
+        return content_html
+    try:
+        soup = bs4.BeautifulSoup(content_html, "html.parser")
+    except Exception:
+        return content_html
+    try:
+        for img in soup.find_all("img"):
+            raw = img.get("class")
+            if raw is None:
+                cls: List[str] = []
+            elif isinstance(raw, str):
+                cls = [raw]
+            else:
+                cls = list(raw)
+            # decorative icons from some pipelines
+            if "emoji" in cls:
+                continue
+            has_span = "span-cols" in cls
+            has_inline = "inline" in cls
+            for rm in ("cm-img-flush", "cm-img-in-col"):
+                while rm in cls:
+                    cls.remove(rm)
+            mc = _img_inside_multicol_region(img)
+            if has_span:
+                _wrap_img_cm_figure_span(soup, img)
+                img["class"] = cls
+                continue
+            if has_inline or _img_has_explicit_sizing(img):
+                img["class"] = cls
+                continue
+            if mc:
+                cls.append("cm-img-in-col")
+            else:
+                cls.append("cm-img-flush")
+            img["class"] = cls
+        return str(soup)
+    except Exception:
+        return content_html
+
+
 def postprocess_paper_dual_column_body(content_html: str) -> str:
     """Wrap paper body content after the opening summary/abstract into two columns."""
     try:
@@ -3014,41 +3098,6 @@ def postprocess_paper_dual_column_body(content_html: str) -> str:
         soup = bs4.BeautifulSoup(content_html, "html.parser")
         if soup.select_one(".paper-dual-column-body"):
             return content_html
-
-        for img in soup.select("img"):
-            parent = img.parent
-            if getattr(parent, "name", None) != "p":
-                continue
-            img_count = len(parent.select("img"))
-            element_children = [child for child in parent.children if getattr(child, "name", None) is not None]
-            has_only_image_and_caption = (
-                img_count == 1
-                and element_children
-                and all(getattr(child, "name", None) in {"img", "em"} for child in element_children)
-            )
-            if has_only_image_and_caption:
-                _add_html_class(parent, "paper-figure-full")
-                continue
-            if not parent.get_text(strip=True) and img_count == 1:
-                caption = _next_element_sibling(parent)
-                if _is_italic_only_paragraph(caption):
-                    _wrap_full_width_figure(soup, parent, caption)
-                else:
-                    _add_html_class(parent, "paper-figure-full")
-
-        for table in soup.select("table"):
-            caption = _next_element_sibling(table)
-            if _is_italic_only_paragraph(caption):
-                _wrap_full_width_figure(soup, table, caption)
-            else:
-                _add_html_class(table, "paper-figure-full")
-
-        for mermaid in soup.select(".mermaid"):
-            caption = _next_element_sibling(mermaid)
-            if _is_italic_only_paragraph(caption):
-                _wrap_full_width_figure(soup, mermaid, caption)
-            else:
-                _add_html_class(mermaid, "paper-figure-full")
 
         # Keep a real opening summary/abstract full-width; flow the rest as article body.
         start_after = soup.select_one("h1 + .callout, h2 + .callout, h3 + .callout")
@@ -3170,30 +3219,16 @@ def dual_column_body_css(prefix: str = "") -> str:
         break-inside: avoid;
         page-break-inside: avoid;
       }}
-      {body} .paper-figure-full {{
-        column-span: all;
-        -webkit-column-span: all;
-        break-inside: avoid;
-        page-break-inside: avoid;
-        margin: 1.4rem 0 1.6rem 0;
-      }}
-      {body} .paper-figure-full img,
-      {body} .paper-figure-full table,
-      {body} table.paper-figure-full,
-      {body} .paper-figure-full .mermaid,
-      {body} .mermaid.paper-figure-full {{
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        margin: 0 auto 1rem auto !important;
-      }}
       @media print {{
         {body} p {{
           break-inside: avoid;
           page-break-inside: avoid;
         }}
-        {body} .paper-figure-full img {{
+        {body} .cm-figure-span img {{
+          max-height: 185mm;
+          object-fit: contain;
+        }}
+        .content .section-two-col .cm-figure-span img {{
           max-height: 185mm;
           object-fit: contain;
         }}
@@ -4644,6 +4679,42 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         pointer-events: auto; /* restore clicks on nav buttons */
       }}
       .content img {{ max-width: 100%; height: auto; margin: 20px 0; }}
+      /* Image layout defaults (postprocess_content_image_layout): full-bleed vs two-column plus span-cols / inline classes */
+      .content img.cm-img-flush {{
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }}
+      .content img.cm-img-in-col {{
+        display: block;
+        max-width: 100%;
+        height: auto;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }}
+      .content img.inline {{
+        width: auto;
+        max-width: 100%;
+        height: auto;
+      }}
+      .content .paper-dual-column-body .cm-figure-span,
+      .content .section-two-col .cm-figure-span {{
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin: 1.2rem 0;
+        width: 100%;
+      }}
+      .content .cm-figure-span img {{
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+      }}
       .content h1, .content h2, .content h3, .content h4 {{
         margin-top: 2rem;
         font-weight: 600;
@@ -5791,22 +5862,14 @@ def write_search_assets(input_root: Path, output_root: Path, title_map: Dict[Pat
         seen.add(key)
         records.append(rec)
 
-    def is_hidden_search_page(md_path: Path) -> bool:
-        # Search must match published navigation/PDF rules: any ! segment is hidden.
-        try:
-            rel = md_path.relative_to(input_root)
-        except Exception:
-            rel = md_path
-        return any("!" in part for part in rel.parts)
-
     def clean_heading_text(raw: str) -> str:
-        # Remove markdown/html syntax so anchor records search by readable heading text.
-        raw = re.sub(r"\s*\{[^}]*\}\s*$", "", raw or "").strip()
-        raw = re.sub(r"<[^>]+>", " ", raw)
-        raw = re.sub(r"\[\[(?:[^|\]]*\|)?([^\]]+)\]\]", r"\1", raw)
-        raw = re.sub(r"\[(.*?)\]\([^)]*\)", r"\1", raw)
-        raw = re.sub(r"[#*_`]+", " ", raw)
-        return re.sub(r"\s+", " ", raw).strip()
+        # Search snippet: strip trailing Pandoc attrs, inline HTML, wikilinks, md markers.
+        s = re.sub(r"\s*\{[^}]*\}\s*$", "", raw or "").strip()
+        s = re.sub(r"<[^>]+>", " ", s)
+        s = re.sub(r"\[\[(?:[^|\]]*\|)?([^\]]+)\]\]", r"\1", s)
+        s = re.sub(r"\[(.*?)\]\([^)]*\)", r"\1", s)
+        s = re.sub(r"[#*_`]+", " ", s)
+        return re.sub(r"\s+", " ", s).strip()
 
     def collect_heading_anchor_text(markdown_text: str, rendered_html: str) -> Dict[str, str]:
         anchor_text: Dict[str, str] = {}
@@ -5846,8 +5909,6 @@ def write_search_assets(input_root: Path, output_root: Path, title_map: Dict[Pat
         return "\n".join(kept_lines)
 
     for md_path, title in title_map.items():
-        if is_hidden_search_page(md_path):
-            continue
         rel_out = relative_output_html(input_root, output_root, md_path)
         # Use path relative to search.html (which is in output_root)
         href = os.path.relpath(rel_out, start=output_root).replace(os.sep, "/")
@@ -6625,10 +6686,6 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         if p.name.startswith("."):
             return False
         rel = p.relative_to(input_root)
-        # exclude folders containing '!' (but allow files with ! in filename)
-        # Check all path segments except the filename itself
-        if any('!' in part for part in rel.parts[:-1]):
-            return False
         # root: only index.md (unless require_numbered_folders is False, then allow all)
         if rel.parent == Path("."):
             return True if not require_numbered_folders else rel.name.lower() == "index.md"
@@ -6809,7 +6866,15 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         prev_hash = ""
     build_changed = (build_hash != prev_hash)
     if build_changed:
-        print("[BUILD] Pipeline signature changed; pages will be re-rendered.")
+        incr = bool(args and getattr(args, "incremental", False))
+        strict_pipe = bool(args and getattr(args, "incremental_strict_pipeline", False))
+        if incr and not strict_pipe:
+            print(
+                "[BUILD] Pipeline signature changed; incremental keeps changed-pages-only "
+                "(use --incremental-strict-pipeline to re-render all HTML after a pipeline bump)."
+            )
+        else:
+            print("[BUILD] Pipeline signature changed; pages will be re-rendered.")
 
     # Sidebar signature: drives generated_site/assets/sidebar.js (paths + titles only).
     sidebar_signature_items: List[Tuple[str, str]] = []
@@ -6984,7 +7049,8 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             print(f"[INCREMENTAL] Sidebar signature also changed.")
         if build_changed:
             print(f"[INCREMENTAL] Pipeline signature also changed.")
-            files_to_process = md_files
+            if getattr(args, "incremental_strict_pipeline", False):
+                files_to_process = md_files
         _tmark("write_pages: incremental detect/filter")
 
     if chapter_folder_filter and args and getattr(args, "chapters_pdf", False):
@@ -7282,8 +7348,13 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                     continue
                 if text_node.parent and "mermaid" in (text_node.parent.get("class") or []):
                     continue
-                if "--" in text_node:
-                    text_node.replace_with(text_node.replace("--", "—"))
+                # Leave standalone callout fences alone if they leaked into HTML (--{.…} closers).
+                if "--" not in text_node:
+                    continue
+                t_strip = text_node.strip()
+                if t_strip == "--" or t_strip.startswith("--{."):
+                    continue
+                text_node.replace_with(text_node.replace("--", "—"))
             content_html = str(soup)
         except Exception:
             pass
@@ -7335,6 +7406,7 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                 content_html = f'<div class="paper">{content_html}</div>'
         except Exception:
             pass
+        content_html = postprocess_content_image_layout(content_html)
         
         # Only show right ToC if there are at least 2 entries
         has_toc = toc_html.count("<a ") >= 2
@@ -8107,6 +8179,12 @@ def parse_args() -> argparse.Namespace:
         "--incremental",
         action="store_true",
         help="Only rebuild changed or new files (skip unchanged files)",
+    )
+    parser.add_argument(
+        "--incremental-strict-pipeline",
+        action="store_true",
+        help="With --incremental: after PIPELINE_VERSION / nav_hash change, rebuild all pages "
+        "(auto-build watcher uses this; omit for fast local iteration)",
     )
     parser.add_argument(
         "--timing",

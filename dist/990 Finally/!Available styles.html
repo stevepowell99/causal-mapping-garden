@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>!Available styles</title>
-    <meta name="description" content="9 Dec 2025 This is just an internal note to remind us what styles are available in the Garden. Columns # Text displayed in column 1. Text displayed in column 2. Heading styles # .rounded - Rounded box with light backgrou">
+    <meta name="description" content="9 Dec 2025 This is just an internal note to remind us what styles are available in the Garden. Page layout (YAML) # layout: showcase or layout: fullscreen — body gets layout-fullscreen (sidebars and breadcrumb hidden by">
     <link rel="canonical" href="https://garden.causalmap.app/990 Finally/!Available styles.html">
     <meta property="og:title" content="!Available styles">
-    <meta property="og:description" content="9 Dec 2025 This is just an internal note to remind us what styles are available in the Garden. Columns # Text displayed in column 1. Text displayed in column 2. Heading styles # .rounded - Rounded box with light backgrou">
+    <meta property="og:description" content="9 Dec 2025 This is just an internal note to remind us what styles are available in the Garden. Page layout (YAML) # layout: showcase or layout: fullscreen — body gets layout-fullscreen (sidebars and breadcrumb hidden by">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://garden.causalmap.app/990 Finally/!Available styles.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="!Available styles">
-    <meta name="twitter:description" content="9 Dec 2025 This is just an internal note to remind us what styles are available in the Garden. Columns # Text displayed in column 1. Text displayed in column 2. Heading styles # .rounded - Rounded box with light backgrou">
+    <meta name="twitter:description" content="9 Dec 2025 This is just an internal note to remind us what styles are available in the Garden. Page layout (YAML) # layout: showcase or layout: fullscreen — body gets layout-fullscreen (sidebars and breadcrumb hidden by">
     <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='8' fill='%2390c3c6'/></svg>">
@@ -1556,7 +1556,13 @@
         <div class="page-title-row d-flex justify-content-between align-items-center"><div class="page-title" id="">🌻 !Available styles</div></div><hr />
         <div class="mb-3"><span class="badge text-bg-light border"><i class="far fa-calendar"></i> 9 Dec 2025</span></div>
 <p>This is just an internal note to remind us what styles are available in the Garden.</p>
-<h2 id="columns">Columns<a aria-label="Permalink" class="anchor-link" href="#columns">#</a></h2>
+<h2 id="page-layout-yaml">Page layout (YAML)<a aria-label="Permalink" class="anchor-link" href="#page-layout-yaml">#</a></h2>
+<ul>
+<li><code>layout: showcase</code> or <code>layout: fullscreen</code> — <code>body</code> gets <code>layout-fullscreen</code> (sidebars and breadcrumb hidden by default; fullscreen nav; wide content). Independent of short URL <code>((…))</code> in the filename.</li>
+<li><strong>HTML typography:</strong> visible <code>--</code> in prose is normalized to an em dash <code>—</code>. Fences for callouts (<code>--</code> on its own line before/after <code>{.panel}</code> etc.) are stripped before that pass; keep closers on their own line after blocks like images.</li>
+</ul>
+<h2 id="multi-column-obsidian">Multi-column (Obsidian)<a aria-label="Permalink" class="anchor-link" href="#multi-column-obsidian">#</a></h2>
+<p>The <code>--- start-multi-column</code> / <code>--- end-column ---</code> / <code>--- end-multi-column</code> syntax becomes a Bootstrap <strong><code>row</code></strong> with <strong><code>col-md-*</code></strong> columns (classes depend on <code>largest column:</code> in <code>column-settings</code>). Callout blocks below work <strong>inside</strong> each column.</p>
 <div class="row g-4 mb-3">
 <div class="col-md-8">
 <p>Text displayed in column 1.</p>
@@ -1591,7 +1597,8 @@
 <h1 class="hero" id="causal-mapping-the-evaluators-engine-room">Causal Mapping: the evaluator's engine room<a aria-label="Permalink" class="anchor-link" href="#causal-mapping-the-evaluators-engine-room">#</a></h1>
 <p>Marshalling causal evidence at scale for Contribution Analysis and beyond.</p>
 <h2 id="box-styles">Box styles<a aria-label="Permalink" class="anchor-link" href="#box-styles">#</a></h2>
-<p>Use <code>-- {.type-modifiers}</code> syntax. Use <code>&lt;mark&gt;label&lt;/mark&gt;</code> for highlighted lead labels (e.g. <code>&lt;mark&gt;CM Win:&lt;/mark&gt;</code>).</p>
+<p>Use <code>-- {.type-modifiers}</code> syntax. Closing line must be <strong><code>--</code></strong> alone on its own line — keep it separate from preceding raw HTML (<code>&lt;img&gt;</code>) or the fence is not recognised. Use <code>&lt;mark&gt;label&lt;/mark&gt;</code> for highlighted lead labels (e.g. <code>&lt;mark&gt;CM Win:&lt;/mark&gt;</code>).</p>
+<p><strong>In generated HTML</strong>, blocks become <code>&lt;div class="callout callout-TYPE …"&gt;…&lt;/div&gt;</code> (e.g. <code>callout-panel</code>, <code>callout-step</code>, <code>callout-tip</code>, <code>callout-info</code>, …).</p>
 <p><strong>Showcase callouts:</strong></p>
 <ul>
 <li><code>--{.panel}</code> ... <code>--</code> - Card/panel (intro blocks)</li>
@@ -1744,7 +1751,8 @@
       </main>
       <aside class="rightbar"><h2>On this page</h2><div class="hover-cue">Hover to view</div><div class="toc"><div class="toc">
 <ul>
-<li><a href="#columns">Columns</a></li>
+<li><a href="#page-layout-yaml">Page layout (YAML)</a></li>
+<li><a href="#multi-column-obsidian">Multi-column (Obsidian)</a></li>
 <li><a href="#heading-styles">Heading styles</a></li>
 <li><a href="#heading-1-rounded">Heading 1 rounded</a><ul>
 <li><a href="#heading-2-rounded">Heading 2 rounded</a></li>
