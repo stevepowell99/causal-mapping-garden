@@ -586,6 +586,17 @@
         break-inside: avoid;
         page-break-inside: avoid;
       }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .section-two-col .span-cols,
+      .content .section-two-col table.span-cols,
+      .content .section-two-col .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
+      }
 
       
       .content .paper-dual-column-body {
@@ -609,6 +620,17 @@
       .content .paper-dual-column-body .mermaid {
         break-inside: avoid;
         page-break-inside: avoid;
+      }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .paper-dual-column-body .span-cols,
+      .content .paper-dual-column-body table.span-cols,
+      .content .paper-dual-column-body .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
       }
       @media print {
         .content .paper-dual-column-body p {
@@ -702,6 +724,20 @@
         color: var(--cm-muted);
         font-size: .875rem;
         padding-top: .25rem;
+        text-align: left;
+      }
+      .content caption em,
+      .content caption i {
+        font-style: italic;
+      }
+      .content figure {
+        margin: 1rem 0;
+      }
+      .content figcaption {
+        color: var(--cm-muted);
+        font-size: .875rem;
+        padding-top: .25rem;
+        text-align: left;
       }
       /* Alternative heading styles */
       .content h1.rounded, .content h1.rounded-left, .content h1.banner {
@@ -928,6 +964,40 @@
       .content .callout-note {
         border-left-color: #6c757d;
         background: #f8f9fa;
+      }
+      /* Foldable callouts: <details>/<summary> from Obsidian [!type]+/- syntax */
+      .content details.callout-foldable > summary {
+        cursor: pointer;
+        font-weight: 600;
+        list-style: none;
+        padding-right: 1rem;
+      }
+      .content details.callout-foldable > summary::-webkit-details-marker {
+        display: none;
+      }
+      .content details.callout-foldable > summary::before {
+        content: "▸";
+        display: inline-block;
+        width: 1em;
+        margin-right: .25em;
+        transition: transform 0.15s ease-in-out;
+      }
+      .content details.callout-foldable[open] > summary::before {
+        transform: rotate(90deg);
+      }
+      .content details.callout-foldable[open] > summary {
+        margin-bottom: .5rem;
+      }
+      @media print {
+        .content details.callout-foldable > *:not(summary) {
+          display: block !important;
+        }
+        .content details.callout-foldable > summary::before {
+          content: none;
+        }
+        .content details.callout-foldable > summary {
+          margin-bottom: .5rem;
+        }
       }
       /* Hero callout: full-bleed in showcase mode */
       .content .callout-hero {
@@ -1576,19 +1646,15 @@
 </ul>
 <p>If none of those is enough, you probably need to ask a narrower question, not show a busier map.</p>
 <p>For example, these two saved views of <code>example-original</code> show two first-pass simplifications: top factors by factor frequency, and top factors by link frequency.</p>
-<p><img alt="Top factors by factor frequency (bookmark #266)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-266.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #266 — main factors map, top 5 by factor frequency.</em></p>
-<p><img alt="Top factors by link frequency (bookmark #1124)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1124.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #1124 — same map, top 5 by link frequency. Note how the surviving factors and links differ.</em></p>
+<figure><img alt="Top factors by factor frequency (bookmark #266)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-266.png" style="background-color: #fff;"/><figcaption><em>Bookmark #266 — main factors map, top 5 by factor frequency.</em></figcaption></figure>
+<figure><img alt="Top factors by link frequency (bookmark #1124)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1124.png" style="background-color: #fff;"/><figcaption><em>Bookmark #1124 — same map, top 5 by link frequency. Note how the surviving factors and links differ.</em></figcaption></figure>
 <h3 id="i-want-to-compare-groups-on-the-map">"I want to compare groups on the map"<a aria-label="Permalink" class="anchor-link" href="#i-want-to-compare-groups-on-the-map">#</a></h3>
 <p>Two related routes, and they answer different questions.</p>
 <p>If the question is "do men and women paint different maps?", filter to one group at a time using the Source Groups filter, save each as a bookmark, and put them side by side. The Statistics panel does the equivalent in tabular form (see ).</p>
 <p>If the question is "on this single map, where do the groups disagree about a given link?", use <strong>Label by Group</strong> (the Custom Links Label filter). It writes per-group counts directly onto each map link: Tally mode shows raw counts, Percentage mode shows shares, Chi-square mode highlights links where the difference is statistically significant. The chi-square arrows ⬆/⬇ pair nicely with the <strong>Links highlight: Significant</strong> option in Map Formatting, which thickens the significantly different links and dims the rest.</p>
-<p><img alt="Factors: significant differences between age groups (bookmark #535)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-535.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #535 — chi-square breakdown for factors mentioned by different age groups.</em></p>
+<figure><img alt="Factors: significant differences between age groups (bookmark #535)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-535.png" style="background-color: #fff;"/><figcaption><em>Bookmark #535 — chi-square breakdown for factors mentioned by different age groups.</em></figcaption></figure>
 <p>You can also switch to a table or heatmap when the comparison is the point:</p>
-<p><img alt="Gender comparison heatmap (bookmark #267)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-267.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #267 — gender comparison as a Statistics-panel heatmap, an alternative to a map for the same question.</em></p>
+<figure><img alt="Gender comparison heatmap (bookmark #267)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-267.png" style="background-color: #fff;"/><figcaption><em>Bookmark #267 — gender comparison as a Statistics-panel heatmap, an alternative to a map for the same question.</em></figcaption></figure>
 <h3 id="i-want-to-follow-one-sources-story">"I want to follow one source's story"<a aria-label="Permalink" class="anchor-link" href="#i-want-to-follow-one-sources-story">#</a></h3>
 <p>Path tracing has a Source Tracing option that constrains the trace to chains within a single source. This stops you reading off transitive stories that nobody actually told. See <a class="wikilink" href="/path-tracing-filter">path tracing</a>.</p>
 <h2 id="decide-how-each-thing-on-the-map-looks">Decide how each thing on the map looks<a aria-label="Permalink" class="anchor-link" href="#decide-how-each-thing-on-the-map-looks">#</a></h2>
@@ -1605,8 +1671,7 @@
 <li><strong>Links highlight: Feedback loop</strong> (2 / ≤3 / ≤4 factors) highlights links that participate in a cycle of that length. Useful when feedback is the point you want to make.</li>
 </ul>
 <p>This example colours factor backgrounds by causal importance:</p>
-<p><img alt="Factor importance colouring (bookmark #1063)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1063.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #1063 — Factor colours set to Influence: factors that influence many onward-important factors are darker.</em></p>
+<figure><img alt="Factor importance colouring (bookmark #1063)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1063.png" style="background-color: #fff;"/><figcaption><em>Bookmark #1063 — Factor colours set to Influence: factors that influence many onward-important factors are darker.</em></figcaption></figure>
 <h3 id="i-cant-tell-positive-from-negative">"I can't tell positive from negative"<a aria-label="Permalink" class="anchor-link" href="#i-cant-tell-positive-from-negative">#</a></h3>
 <p>Two layers, both already on by default.</p>
 <p>Arrowhead colour reflects the mean <strong>sentiment</strong> of that link bundle: muted blue for <code>+1</code>, grey for <code>0</code>, muted red for <code>-1</code>. Factor border colour reflects the mean incoming sentiment, so factors that are mostly the result of bad things get red borders and mostly-good ones get blue.</p>
@@ -1620,10 +1685,8 @@
 <ul>
 <li>The <strong>Groups</strong> dropdown wraps top-level groupings in a box on the map. Choose how the group is identified: hierarchy level 1 (the part before the first <code>;</code>), the part before the first colon, what's in square brackets, or what's in round brackets. Quick way to show structure when zooming would lose too much detail.</li>
 </ul>
-<p><img alt="4ebc92f94957039c7465233c8b85b24d_MD5" class="img-fluid cm-img-flush" loading="lazy" src="img/4ebc92f94957039c7465233c8b85b24d_MD5.jpg" style="background-color: #fff;"/></p>
-<p><em>Top-level groupings shown as boxes on the Interactive map via the Groups dropdown.</em></p>
-<p><img alt="Top-level labels used as groups in Print view (bookmark #1178)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1178.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #1178 — same grouping in Print/Graphviz layout for a report-ready figure.</em></p>
+<figure><img alt="4ebc92f94957039c7465233c8b85b24d_MD5" class="img-fluid cm-img-flush" loading="lazy" src="img/4ebc92f94957039c7465233c8b85b24d_MD5.jpg" style="background-color: #fff;"/><figcaption><em>Top-level groupings shown as boxes on the Interactive map via the Groups dropdown.</em></figcaption></figure>
+<figure><img alt="Top-level labels used as groups in Print view (bookmark #1178)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1178.png" style="background-color: #fff;"/><figcaption><em>Bookmark #1178 — same grouping in Print/Graphviz layout for a report-ready figure.</em></figcaption></figure>
 <ul>
 <li><strong>Factor colours = Label segment</strong> colours each factor by its group using the same patterns as Groups. Use it on its own for a softer visual hierarchy, or pair it with Groups for both shape and colour.</li>
 <li>For deeper tidying, <a class="wikilink" href="/howto-bulk-relabel">bulk relabelling</a> is the right tool. Don't fight the Map Formatting card if the underlying labels are the problem.</li>
@@ -1637,15 +1700,11 @@
 <h2 id="useful-contrasts-to-save-as-bookmarks">Useful contrasts to save as bookmarks<a aria-label="Permalink" class="anchor-link" href="#useful-contrasts-to-save-as-bookmarks">#</a></h2>
 <p>Some map-formatting choices are easiest to understand as a pair. Save both views as bookmarks so you can compare them later.</p>
 <h3 id="focus-with-and-without-zoom">Focus with and without zoom<a aria-label="Permalink" class="anchor-link" href="#focus-with-and-without-zoom">#</a></h3>
-<p><img alt="Focus on farm production, no zoom (bookmark #805)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-805.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #805 — Focus filter on <code>farm production</code>, no zoom. Detailed labels remain.</em></p>
-<p><img alt="Focus on farm production, zoom level 1 (bookmark #806)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-806.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #806 — same focus, zoomed to level 1. Detailed labels collapse to their top-level parents.</em></p>
+<figure><img alt="Focus on farm production, no zoom (bookmark #805)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-805.png" style="background-color: #fff;"/><figcaption><em>Bookmark #805 — Focus filter on <code>farm production</code>, no zoom. Detailed labels remain.</em></figcaption></figure>
+<figure><img alt="Focus on farm production, zoom level 1 (bookmark #806)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-806.png" style="background-color: #fff;"/><figcaption><em>Bookmark #806 — same focus, zoomed to level 1. Detailed labels collapse to their top-level parents.</em></figcaption></figure>
 <h3 id="path-tracing-before-and-after-source-tracing">Path tracing before and after source tracing<a aria-label="Permalink" class="anchor-link" href="#path-tracing-before-and-after-source-tracing">#</a></h3>
-<p><img alt="Path tracing without source tracing (bookmark #1129)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1129.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #1129 — path tracing from Increased knowledge to Improved health: every link on a route between them, across all sources.</em></p>
-<p><img alt="Path tracing with source tracing (bookmark #981)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-981.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #981 — same trace with Source tracing on: only paths actually told within a single source survive.</em></p>
+<figure><img alt="Path tracing without source tracing (bookmark #1129)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1129.png" style="background-color: #fff;"/><figcaption><em>Bookmark #1129 — path tracing from Increased knowledge to Improved health: every link on a route between them, across all sources.</em></figcaption></figure>
+<figure><img alt="Path tracing with source tracing (bookmark #981)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-981.png" style="background-color: #fff;"/><figcaption><em>Bookmark #981 — same trace with Source tracing on: only paths actually told within a single source survive.</em></figcaption></figure>
 <h2 id="make-it-report-ready">Make it report-ready<a aria-label="Permalink" class="anchor-link" href="#make-it-report-ready">#</a></h2>
 <p>For a static image to drop into a deck or a paper:</p>
 <ul>
@@ -1658,8 +1717,7 @@
 <li><strong>Save as a bookmark.</strong> Bookmarks store the entire state of the view: filter pipeline, sources selected, every Map Formatting dropdown, custom column setup, layout, the lot. Send the bookmark URL and the recipient sees exactly what you saw. See <a class="wikilink" href="/bookmarks-reports">Bookmarks and Reports</a>.</li>
 <li>For multi-slide reports (e.g. one map per region), the Report Builder takes a bookmark plus a "variants" custom column and generates an HTML or PDF output with one slide per variant. Same page.</li>
 </ul>
-<p><img alt="Report Builder variants (bookmark #1361)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1361.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #1361 — Report Builder variants in action.</em></p>
+<figure><img alt="Report Builder variants (bookmark #1361)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1361.png" style="background-color: #fff;"/><figcaption><em>Bookmark #1361 — Report Builder variants in action.</em></figcaption></figure>
 <h2 id="a-few-caveats">A few caveats<a aria-label="Permalink" class="anchor-link" href="#a-few-caveats">#</a></h2>
 <p>The Filter Links pipeline runs in order, and each filter sees the output of the previous one. If you have Soft Recode or Combine Opposites running, the labels you see in the Factors panel are transformed labels</p>
 <h2 id="see-also">See also<a aria-label="Permalink" class="anchor-link" href="#see-also">#</a></h2>

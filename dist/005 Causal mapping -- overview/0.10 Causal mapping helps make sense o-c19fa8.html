@@ -586,6 +586,17 @@
         break-inside: avoid;
         page-break-inside: avoid;
       }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .section-two-col .span-cols,
+      .content .section-two-col table.span-cols,
+      .content .section-two-col .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
+      }
 
       
       .content .paper-dual-column-body {
@@ -609,6 +620,17 @@
       .content .paper-dual-column-body .mermaid {
         break-inside: avoid;
         page-break-inside: avoid;
+      }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .paper-dual-column-body .span-cols,
+      .content .paper-dual-column-body table.span-cols,
+      .content .paper-dual-column-body .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
       }
       @media print {
         .content .paper-dual-column-body p {
@@ -702,6 +724,20 @@
         color: var(--cm-muted);
         font-size: .875rem;
         padding-top: .25rem;
+        text-align: left;
+      }
+      .content caption em,
+      .content caption i {
+        font-style: italic;
+      }
+      .content figure {
+        margin: 1rem 0;
+      }
+      .content figcaption {
+        color: var(--cm-muted);
+        font-size: .875rem;
+        padding-top: .25rem;
+        text-align: left;
       }
       /* Alternative heading styles */
       .content h1.rounded, .content h1.rounded-left, .content h1.banner {
@@ -928,6 +964,40 @@
       .content .callout-note {
         border-left-color: #6c757d;
         background: #f8f9fa;
+      }
+      /* Foldable callouts: <details>/<summary> from Obsidian [!type]+/- syntax */
+      .content details.callout-foldable > summary {
+        cursor: pointer;
+        font-weight: 600;
+        list-style: none;
+        padding-right: 1rem;
+      }
+      .content details.callout-foldable > summary::-webkit-details-marker {
+        display: none;
+      }
+      .content details.callout-foldable > summary::before {
+        content: "▸";
+        display: inline-block;
+        width: 1em;
+        margin-right: .25em;
+        transition: transform 0.15s ease-in-out;
+      }
+      .content details.callout-foldable[open] > summary::before {
+        transform: rotate(90deg);
+      }
+      .content details.callout-foldable[open] > summary {
+        margin-bottom: .5rem;
+      }
+      @media print {
+        .content details.callout-foldable > *:not(summary) {
+          display: block !important;
+        }
+        .content details.callout-foldable > summary::before {
+          content: none;
+        }
+        .content details.callout-foldable > summary {
+          margin-bottom: .5rem;
+        }
       }
       /* Hero callout: full-bleed in showcase mode */
       .content .callout-hero {
@@ -1559,8 +1629,7 @@
 <p>From <a href="https://www.betterevaluation.org/methods-approaches/methods/causal-mapping">Better Evaluation</a></p>
 </blockquote>
 <p>Causal mapping helps make sense of the causal claims (about "what causes what") that people make in interviews, conversations, and documents. This data is coded, combined, and displayed in the form of maps. These maps show individuals' and groups' mental models and can support further investigation of causal connections.</p>
-<p><img alt="Pasted image 20251002134948" class="img-fluid cm-img-flush" loading="lazy" src="img/Pasted image 20251002134948.png" style="background-color: #fff;"/></p>
-<p><em>Top: two separate single-source causal maps: Beliefs held by sources P and Q about causal influences between various factors. Bottom: A combined, multi-source causal map about beliefs held by sources P and Q about causal influences between various factors</em></p>
+<figure><img alt="Pasted image 20251002134948" class="img-fluid cm-img-flush" loading="lazy" src="img/Pasted image 20251002134948.png" style="background-color: #fff;"/><figcaption><em>Top: two separate single-source causal maps: Beliefs held by sources P and Q about causal influences between various factors. Bottom: A combined, multi-source causal map about beliefs held by sources P and Q about causal influences between various factors</em></figcaption></figure>
 <p>Causal mapping is designed for the analysis and visualisation of qualitative data about causal links. It can be used to test an existing theory of change or create collective empirical theories of change about how a program works based on stakeholders’ experiences.</p>
 <p>People’s narratives and reflections about their experiences provide qualitative data that can be coded and displayed as maps to present the cognitive structures (<a href="https://www.betterevaluation.org/methods-approaches/methods/articulating-mental-models">mental models</a>) of individuals and groups and to support further exploration to understand actual causal connections.</p>
 <p>These causal maps can help to answer questions about what people think happened and what they think caused this by building links between different factors, such as different kinds of outcomes and inputs. Mapping the chains of results and their linkages builds pictures of causal pathways showing the intermediate steps and connections between them.</p>

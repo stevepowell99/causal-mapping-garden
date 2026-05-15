@@ -5,17 +5,17 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>AI coding overview</title>
-<meta content="2 May 2026 Summary # This page is an overview of the choices you face when doing AI coding (qualitative causal coding with AI) inside the Causal Map app. For step-by-step app docs see AI coding For the broader argument a" name="description"/>
+<meta content="2 May 2026 Summary # You have a stack of documents or interviews and want to code them. You have a few decisions to make. Here is an overview of those choices from the overall perspective of the Causal Map app. For widge" name="description"/>
 <link href="https://garden.causalmap.app/ai-coding/" rel="canonical"/>
 <meta content="AI coding overview" property="og:title"/>
-<meta content="2 May 2026 Summary # This page is an overview of the choices you face when doing AI coding (qualitative causal coding with AI) inside the Causal Map app. For step-by-step app docs see AI coding For the broader argument a" property="og:description"/>
+<meta content="2 May 2026 Summary # You have a stack of documents or interviews and want to code them. You have a few decisions to make. Here is an overview of those choices from the overall perspective of the Causal Map app. For widge" property="og:description"/>
 <meta content="article" property="og:type"/>
 <meta content="https://garden.causalmap.app/ai-coding/" property="og:url"/>
 <meta content="" property="og:site_name"/>
 <meta content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="AI coding overview" name="twitter:title"/>
-<meta content="2 May 2026 Summary # This page is an overview of the choices you face when doing AI coding (qualitative causal coding with AI) inside the Causal Map app. For step-by-step app docs see AI coding For the broader argument a" name="twitter:description"/>
+<meta content="2 May 2026 Summary # You have a stack of documents or interviews and want to code them. You have a few decisions to make. Here is an overview of those choices from the overall perspective of the Causal Map app. For widge" name="twitter:description"/>
 <meta content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685" name="twitter:image"/>
 <link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'&gt;&lt;circle cx='8' cy='8' r='8' fill='%2390c3c6'/&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet"/>
@@ -585,6 +585,17 @@
         break-inside: avoid;
         page-break-inside: avoid;
       }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .section-two-col .span-cols,
+      .content .section-two-col table.span-cols,
+      .content .section-two-col .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
+      }
 
       
       .content .paper-dual-column-body {
@@ -608,6 +619,17 @@
       .content .paper-dual-column-body .mermaid {
         break-inside: avoid;
         page-break-inside: avoid;
+      }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .paper-dual-column-body .span-cols,
+      .content .paper-dual-column-body table.span-cols,
+      .content .paper-dual-column-body .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
       }
       @media print {
         .content .paper-dual-column-body p {
@@ -701,6 +723,20 @@
         color: var(--cm-muted);
         font-size: .875rem;
         padding-top: .25rem;
+        text-align: left;
+      }
+      .content caption em,
+      .content caption i {
+        font-style: italic;
+      }
+      .content figure {
+        margin: 1rem 0;
+      }
+      .content figcaption {
+        color: var(--cm-muted);
+        font-size: .875rem;
+        padding-top: .25rem;
+        text-align: left;
       }
       /* Alternative heading styles */
       .content h1.rounded, .content h1.rounded-left, .content h1.banner {
@@ -927,6 +963,40 @@
       .content .callout-note {
         border-left-color: #6c757d;
         background: #f8f9fa;
+      }
+      /* Foldable callouts: <details>/<summary> from Obsidian [!type]+/- syntax */
+      .content details.callout-foldable > summary {
+        cursor: pointer;
+        font-weight: 600;
+        list-style: none;
+        padding-right: 1rem;
+      }
+      .content details.callout-foldable > summary::-webkit-details-marker {
+        display: none;
+      }
+      .content details.callout-foldable > summary::before {
+        content: "▸";
+        display: inline-block;
+        width: 1em;
+        margin-right: .25em;
+        transition: transform 0.15s ease-in-out;
+      }
+      .content details.callout-foldable[open] > summary::before {
+        transform: rotate(90deg);
+      }
+      .content details.callout-foldable[open] > summary {
+        margin-bottom: .5rem;
+      }
+      @media print {
+        .content details.callout-foldable > *:not(summary) {
+          display: block !important;
+        }
+        .content details.callout-foldable > summary::before {
+          content: none;
+        }
+        .content details.callout-foldable > summary {
+          margin-bottom: .5rem;
+        }
       }
       /* Hero callout: full-bleed in showcase mode */
       .content .callout-hero {
@@ -1556,33 +1626,192 @@
 <div class="paper"><div class="mb-3"><span class="badge text-bg-light border"><i class="far fa-calendar"></i> 2 May 2026</span></div>
 <h2 class="banner-info" id="summary">Summary<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#summary">#</a></h2>
 <div class="callout callout-note">
-<p>This page is an overview of the choices you face when doing AI coding (qualitative causal coding with AI) inside the Causal Map app. </p>
+<p>You have a stack of documents or interviews and want to code them. You have a few decisions to make.
+Here is an overview of those choices from the overall perspective of the Causal Map app.
+For widget-by-widget details on how to do this in the app, see these docs: 030 AI coding ((simple-ai))
+For the broader argument about why we use AI as a low-level coder rather than as a black box, see <a class="wikilink" href="../500 AI in qualitative social science/010 AI in evaluation actually show you-a156f7.html">here</a> and <a class="wikilink" href="/add-rigour">here</a>.</p>
 </div>
+<h2 class="banner-info" id="overview">Overview<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#overview">#</a></h2>
+<div class="callout callout-card">
+<p>Here are some things you need to think about when AI coding.</p>
+</div>
+<p><strong><a href="/ai-coding/#one-click-coding">One-click, or hands-on?</a></strong></p>
 <ul>
-<li>For step-by-step app docs see <a class="wikilink" href="/simple-ai">AI coding</a></li>
-<li>For the broader argument about why we use AI as a low-level coder rather than as a black box, see <a class="wikilink" href="../500 AI in qualitative social science/010 AI in evaluation actually show you-a156f7.html">AI in evaluation actually show your working!</a> and <a class="wikilink" href="/add-rigour">Just add rigour Three do’s and don’ts</a>.</li>
+<li><em>One-click</em>: a single short text, all defaults, one button. Often enough. You don't need to worry about the rest!</li>
+<li><em>Hands-on</em>: everything below.</li>
 </ul>
-<h2 class="banner-info" id="workflow">Workflow<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#workflow">#</a></h2>
-<p>Someone arrives with a stack of documents and asks: can you code these? It depends first on various parallel setup decisions. After coding, you face a separate decision about how, or whether, to recode the labels.</p>
-<h2 class="banner-info" id="decisions-before-coding">Decisions before coding<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#decisions-before-coding">#</a></h2>
-<h3 class="rounded-info" id="random-sample-coding-strategy-with-bigger-corpora">Random-sample coding strategy with bigger corpora<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#random-sample-coding-strategy-with-bigger-corpora">#</a></h3>
+<p><strong><a href="/ai-coding/#coding-style-holistic-or-claim-by-claim">Holistic or claim-by-claim?</a></strong></p>
+<ul>
+<li><em>Holistic</em>: model returns a connected causal diagram per chunk. Cleaner stories, less coverage. Best for one short text.</li>
+<li><em>Claim-by-claim</em>: model returns each link separately. Better coverage, disconnected output, needs recoding to rejoin chains.</li>
+</ul>
+<p><strong><a href="/ai-coding/#chunk-and-sample-strategy">Chunk size and sampling</a></strong></p>
+<ul>
+<li>Smaller chunks, more links per page, higher recall. One page yields about as many links as five.</li>
+<li>Large corpus? Sample first, stratified by the groups you care about. Code 100, review, code 300, review, finish.</li>
+</ul>
+<p><strong><a href="/ai-coding/#ai-model">Model</a></strong></p>
+<ul>
+<li>Gemini Flash is the default and often enough. Bigger or newer is not always better.</li>
+</ul>
+<p><strong><a href="/ai-coding/#codebook-strategy-how-free">Codebook strictness</a></strong> (see <a class="wikilink" href="/zoom-filter">Hierarchical coding</a>)</p>
+<ul>
+<li><em>Forced</em>: only your labels; anything else dropped.</li>
+<li><em>Mostly fixed</em>: tag improvised labels (e.g. <code>[new]</code>) for later review.</li>
+<li><em>Hierarchical compromise</em>: fix the top level, free the rest.</li>
+<li><em>Free</em>: model invents everything.</li>
+</ul>
+<p><strong><a href="/ai-coding/#label-style-many-things-to-think-about">Label style</a></strong></p>
+<ul>
+<li><em>In vivo</em> (close to the text) or <em>abstract</em> (e.g. "talk like a social scientist").</li>
+<li><em>Tags</em> for variants: <code>patients (before surgery)</code>, <code>patients (after surgery)</code>.</li>
+<li><em>Hierarchical</em> labels work even with free coding.</li>
+<li><em>Opposites</em> and <em>sentiment</em>: code both directions or use a sentiment column. See <a class="wikilink" href="/opposites-sentiment">!Opposites and sentiment in AI coding</a>.</li>
+</ul>
+<p><strong><a href="/ai-coding/#custom-columns">Custom columns</a></strong></p>
+<ul>
+<li>Sentiment, significance, certainty, translation, and so on.</li>
+<li>Each extra column costs precision or recall on the links. Push them to a follow-up iteration if they matter.</li>
+</ul>
+<p><strong><a href="/ai-coding/#context">Context and named entities</a></strong></p>
+<ul>
+<li>Tell the model what game it's playing: project, audience, named entities, preferred phrasings, abbreviations.</li>
+<li>Keep it under a page. More background can hurt recall.</li>
+</ul>
+<p><strong><a href="/ai-coding/#using-additional-iterations">Iterations</a></strong></p>
+<ul>
+<li>Use them to mop up missed links, check accuracy, or add columns.</li>
+<li>Two iterations means twice the cost and time. A better first instruction usually beats a second pass.</li>
+</ul>
+<p><strong><a href="/ai-coding/#recoding-style">Recoding</a></strong> (after the first run, see <a class="wikilink" href="/kinds">Different kinds of coding and recoding</a>)</p>
+<ul>
+<li><em>Hard recode</em>: rewrite the codebook, code again. Most work, best results.</li>
+<li><em>Links recode</em> / <em>Factors recode</em>: clean up with AI Answers.</li>
+<li><em>Soft recode</em>: clustering and magnetic labels.</li>
+</ul>
+<h2 class="banner-info" id="one-click-coding">One-click coding?<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#one-click-coding">#</a></h2>
+<p><mark>One-click coding</mark>: If you are not quite sure what to do, or are in a hurry, and you have provided just once source with just a few pages of text (or if you just want to paste in an interesting text, say from a website), Causal Map has a "One-click" coding button which codes your test with all the defaults, all at once, using a "holistic" strategy. If you have several sources or even a single long text, the app will break this into chunks for you and then, because this will usually result in many labels which overlap in meaning, it will then apply additional steps to arrive at a smaller, more useful set of labels.</p>
+<p>That might be all you need! But if you want to tweak those results, or want to have more control over the process, read on. We'll look first at a bunch of things like sampling strategy and model choice, and then look more closely at the coding instruction itself.</p>
+<h2 class="banner-info" id="coding-style-holistic-or-claim-by-claim">Coding style: holistic or claim-by-claim?<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#coding-style-holistic-or-claim-by-claim">#</a></h2>
+<p>Two main approaches. </p>
+<h3 class="rounded-info" id="holistic"><em>Holistic</em>:<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#holistic">#</a></h3>
+<p>The main aim of holistic coding is to get a single, interconnected causal network. This provides clearer and more useful output especially when viewing the output for individual sources with short texts. The disadvantage is that it does allow the AI to have more freedom to make its own decision about what story to tell and how to tell it.</p>
+<p>We ask the model for an overall diagram of the causal network in the current chunk of text<sup id="fnref:inl1"><a class="footnote-ref" href="/ai-coding/#fn:inl1">1</a></sup>. The model decides what the main links are, but we still ask for a quote behind each one. </p>
+<p>Especially when using a holistic style, it can be useful to add a second iteration (see below) to “mop up” anything missed. </p>
+<p><code>Holistic</code> is particularly useful if you are just coding one piece of text like a single (shortish) interview or document. </p>
+<p>Holistic coding may be less good at identifying multiple places in the text where the same claim is asserted but with different underlying quotes.</p>
+<p>The distinction between holistic and claim-by-claim is less clear with a large amount of text.</p>
+<h3 class="rounded-info" id="claim-by-claim"><em>Claim by claim</em>:<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#claim-by-claim">#</a></h3>
+<p>The main aim of claim-by-claim coding is usually to get (more or less) each and every causal link mentioned in the text. </p>
+<p>This gives the AI less "freedom" to decide what story to tell. The output from coding an individual chunk is more likely to consist of individual links which do not connect up as much as you might expect. However when you are coding a lot of texts you will anyway be using a <a class="wikilink" href="/kinds">recoding strategy</a> which will produce more interconnected stories even for individual sources when viewed alone. </p>
+<p>We ask the model to find each individual causal link. Hundreds of tweaks and heuristics later, this style still struggles to tell a connected story even when the text contains one. Suppose the text supports A to B to C to D, but the model lazily codes A to B and C to D, using slightly different labels for B and C. Claim-by-claim coding only really works if you plan to recode afterwards: you hope a later recoding pass spots that B and C mean the same thing and rejoins the chain.</p>
+<p>In the app, this choice is supported by a switch to choose between the two styles. But the instruction itself also tends to be a bit different between the two. </p>
+<div class="span-cols">
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Holistic</th>
+<th>Claim-by-claim</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main aim</td>
+<td>A single, interconnected causal network</td>
+<td>Capture each and every causal link in the text</td>
+</tr>
+<tr>
+<td>What we ask the model</td>
+<td>An overall diagram of the causal network in the chunk</td>
+<td>Each individual causal link, one at a time</td>
+</tr>
+<tr>
+<td>AI freedom</td>
+<td>More: the model decides the main links and how to tell the story</td>
+<td>Less: the model just finds links</td>
+</tr>
+<tr>
+<td>Connectedness of output</td>
+<td>Higher; tells a joined-up story</td>
+<td>Lower; often produces disconnected links even when the claims in the text are connected</td>
+</tr>
+<tr>
+<td>Best suited to</td>
+<td>A single short text (one interview, one document), but can also be used with larger corpora</td>
+<td>Many texts, or any case where you want exhaustive coverage</td>
+</tr>
+<tr>
+<td>Behaviour with long or multiple texts</td>
+<td>Distinction with claim-by-claim fades</td>
+<td>Still works, relies on recoding to rejoin chains</td>
+</tr>
+<tr>
+<td>Recall priority</td>
+<td>Often secondary; you usually want the main picture</td>
+<td>Usually as important as precision</td>
+</tr>
+<tr>
+<td>Precision priority</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Repeated assertions of the same claim</td>
+<td>May miss them (one link, one quote)</td>
+<td>More likely to catch them with different supporting quotes</td>
+</tr>
+<tr>
+<td>Needs a recoding pass?</td>
+<td>Optional second iteration to mop up what was missed</td>
+<td>Effectively required; recoding rejoins broken chains (e.g. A→B, C→D where B and C mean the same)</td>
+</tr>
+<tr>
+<td>Quotes</td>
+<td>One quote per link</td>
+<td>One quote per link</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Comparison between holistic and claim-by-claim coding styles</em></p>
+<h2 class="banner-info" id="key-metrics-precision-and-recall">Key metrics: precision and recall<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#key-metrics-precision-and-recall">#</a></h2>
+<h3 class="rounded-info" id="precision-aka-accuracy">Precision aka Accuracy<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#precision-aka-accuracy">#</a></h3>
+<ul>
+<li>Are the links identified by the AI correct?</li>
+</ul>
+<h3 class="rounded-info" id="recall">Recall<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#recall">#</a></h3>
+<ul>
+<li>Have all the links which should have been coded actually been coded? </li>
+</ul>
+<p>High Precision or accuracy of your links is always important. High Recall is usually an equal priority for claim-by-claim coding, but it may not be important for holistic coding, where we often only want "the main picture".</p>
+<h2 class="banner-info" id="chunk-and-sample-strategy">Chunk and sample strategy<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#chunk-and-sample-strategy">#</a></h2>
+<p>If a single source is short, you can map the whole thing in one go. More often you have either much longer sources, which the app breaks into chunks for you, or many sources. What chunk size to choose?</p>
+<h4 id="balancing-recall-and-precision">Balancing recall and precision<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#balancing-recall-and-precision">#</a></h4>
+<p>A pretty hard rule: the more text you give the model at once, the less dense its coding gets. One page might yield 20 links; 5 pages might also yield 20 links. Sometimes the 20 it picks out of 5 pages really are the most important, but this is not certain, and you are leaving the model to decide. Often you just want better recall, and that means smaller chunks. Don't give the model too much freedom to decide what counts as important.</p>
+<p>There is a "code everything" setting that does not each source at all: the effect depends on how long your sources are. </p>
+<p>This is always a fine balance. You more you give specific instructions e.g. to find longer chains with specific contents, or to flag certain contents e.g. <code>!Safeguarding</code>, the more likely it is that your prompt will miss more of the links.  </p>
+<p>You want the coding to have good Precision, a good true positive rate, to find all the links that are really there in the text. </p>
+<p>But you usually want good link coverage, for your maps include most of the links which are actually in the text, partly because we do not want to miss anything, and partly because we don't want the LLM to make some opaque decision about what to code and what to leave out. </p>
+<p>If you have a prompt which allows too many factor labels which are not in the codebook, you’ll have a lot of work to recode these. If you don’t, you’ll have poor link coverage, and you’ll think, why did I bother crafting a prompt which succeeded in identifying all the links if those links are never actually used on the maps.</p>
+<h2 class="banner-info" id="ai-model">AI Model<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#ai-model">#</a></h2>
+<p>You will need to select which AI model you want to do your coding for you. For relatively straightforward cases, newer or bigger models are not necessarily better for coding. We have had good results with Gemini Flash, for example, and this is the default in the Causal Map app. </p>
+<p>Normally we assume that more capable models, with a bigger context window, will give higher recall (and better accuracy) with larger chunk size. But we have not tested this formally.</p>
+<h2 class="banner-info" id="random-test-coding-strategy-with-bigger-corpora">Random test-coding strategy with bigger corpora<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#random-test-coding-strategy-with-bigger-corpora">#</a></h2>
 <p>We will usually test and improve the instruction(s) on just a small random sample of the material. It's important that it is random, so that you don't waste time fitting an instruction to just one type of material which is maybe not typical for the whole corpus of text. The Causal Map app allows you to <a class="wikilink" href="/sourcesheader">select random samples</a> overall or, even better, random samples from each of relevant groups like women and men.</p>
 <p>If you have more than around 100 pages, work on a sample first. The app has features to take a random sample of sources, or a stratified random sample within source groups. The AI coding panel also offers a sample-only run (see <a class="wikilink" href="/simple-ai">AI coding</a>). Try the sample, review, adjust your strategy, perhaps update the codebook, then run a larger sample. With 1000 pages you might code 100, adjust, code another 300 (deleting the first attempt), and if that looks good, finish with the remaining 700.</p>
-<h4 id="using-additional-iterations">Using additional iterations<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#using-additional-iterations">#</a></h4>
-<p>When <a class="wikilink" href="/create-link-tab">coding with AI</a>, we often use one or more additional AI iterations, e.g. </p>
-<ul>
-<li>Accuracy: to check that the coded links have been coded correctly (and if necessary, then amend/delete them)  <ul>
-<li>according to the original rules</li>
-<li>according to new/additional criteria</li>
-</ul>
-</li>
-<li>Coverage<sup id="fnref:inl1"><a class="footnote-ref" href="/ai-coding/#fn:inl1">1</a></sup>: to check that links which should have been coded were indeed identified and if not to add them.
-Each additional iteration sends the original text and instructions and the results back to the AI, i.e. the "conversation" to date, along with additional specific instructions for this iteration. So if you add two additional iterations, the results will take altogether three times as long (and cost three times as much) as the same task without iterations.</li>
-</ul>
-<p>We often find that our time is better spent improving the original coding instruction than adding additional iterations. </p>
-<h4 id="improving-the-instructions">Improving the instructions<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#improving-the-instructions">#</a></h4>
-<p>The most important trick of all is not just to apply a generic prompt / coding instruction, with or without additional iterations, but in initial testing to examine the results, work out specifically the reasons for any problems with accuracy or coverage, and to <strong>tweak the instruction and try again</strong>, repeating until you are satisfied. We usually do this before adding any additional iterations and then if the additional iteration(s) do improve the results, we check them as above to see if we can improve the <em>iteration</em> instruction. </p>
+<h2 class="banner-info" id="creating-instructions">Creating instructions<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#creating-instructions">#</a></h2>
+<p>Your biggest task is creating instructions for the AI, which is something like writing a prompt for a chatbot, which you paste into a text window. </p>
+<p>The instructions tells the app about the context, and what kind of labels and optionally custom columns to create. </p>
+<p>When creating your instructions, you don’t have to worry about adding text like “The actual text is pasted below” etc as the app will do that for you.</p>
+<h3 class="rounded-info" id="improving-the-instructions-iteratively">Improving the instructions iteratively<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#improving-the-instructions-iteratively">#</a></h3>
+<div class="callout callout-note">
+<p>Most important tip of all: test your instruction on a small, varied sample of texts, work out specifically the reasons for any problems with accuracy or coverage, and <strong>tweak the instruction and try again</strong>, repeating until you are satisfied</p>
+</div>
 <p>When there is a lot of text to process (hundreds or thousands of pages of text) we will sometimes start off with a small sample as described above and then, once we are satisfied, check again on a larger sample before coding the entire corpus.</p>
+<h3 class="rounded-info" id="ensuring-quotes-are-provided">Ensuring quotes are provided<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#ensuring-quotes-are-provided">#</a></h3>
+<p>Make sure there’s always quotes and evidence behind the causal links that you identify. So you could just say to ChatGPT, ‘please find some kind of causal map based on this entire set of transcripts’. And it would come out with something probably quite good, but you wouldn’t know what its evidence was for each of the different links. It would just do its own thing. That’s not really scientific and I’m not sure that as evaluators you could really justify doing that.</p>
+<p>So in our instruction we always insist on getting a quote for each and every link. But the app does not actually enforce this, so you need to specifically ask for a verbatim quote for every link.</p>
 <h3 class="rounded-info" id="codebook-strategy-how-free">Codebook strategy: how free?<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#codebook-strategy-how-free">#</a></h3>
 <p>You can start with a full codebook, a partial codebook, or nothing.</p>
 <p>A <em>forced</em> codebook restricts the model to your labels (for example from a theory of change). If a causal claim mentions a factor not in the codebook, no link is coded.</p>
@@ -1590,14 +1819,21 @@ Each additional iteration sends the original text and instructions and the resul
 <p>Four codebook strategies:</p>
 <ol>
 <li>Stick only to the codebook. Anything that doesn't match is dropped.</li>
-<li>Stick to the codebook mostly, but let the AI code other things too. Tell it to flag the new ones with a tag like <code>[new]</code> or a trailing <code>*</code>, so you can find and review them later.</li>
+<li>Stick to the codebook mostly, but let the AI code other things too. Tell it to flag the new ones with a tag like <code>[new]</code> or a leading or trailing <code>*</code>, so you can find and review them later.</li>
 <li>Compromise. Use only top-level labels from the codebook, but let the AI improvise the second part of a hierarchical label. See <a class="wikilink" href="/zoom-filter">Hierarchical coding</a>.]</li>
 <li>Free coding</li>
 </ol>
 <p>Related to the above...</p>
+<h3 class="rounded-info" id="label-style-many-things-to-think-about">Label style: many things to think about<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#label-style-many-things-to-think-about">#</a></h3>
+<ul>
+<li>Readability for clients </li>
+<li>Ease of recoding</li>
+<li>Suitability for soft recoding: <a class="wikilink" href="/auto-clustering">! Autoclustering with embeddings</a></li>
+</ul>
+<p>These are overlapping tasks with different requirements.</p>
 <h3 class="rounded-info" id="label-style-in-vivo-or-abstract">Label style: In vivo or abstract<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#label-style-in-vivo-or-abstract">#</a></h3>
 <p>When free coding, you can ask for <em>in vivo</em> labels (close to the original text) or for more abstract labels. There are many ways to instruct: "talk like a social scientist" or "talk like a local newspaper editor".</p>
-<p>You can suggest to the AI to use a common “social sciences” vocabulary like:</p>
+<p>You can suggest to the AI to use a common “social sciences” vocabulary (see <a class="wikilink" href="../007 Task 2 -- Causal coding -- minimalist style/580 Factor labels -- semi-quantitative-613659.html">this</a>):</p>
 <ul>
 <li>presence of resources</li>
 <li>lack of resources</li>
@@ -1605,15 +1841,17 @@ Each additional iteration sends the original text and instructions and the resul
 <li>more/better motivation</li>
 <li>more/better support from peers</li>
 </ul>
-<p>W3lcom3!</p>
 <h3 class="rounded-info" id="label-style-using-tags">Label style: Using tags<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#label-style-using-tags">#</a></h3>
 <p>There's often more to a coding task than just labels. <em>Tags</em> are short bits of text in brackets attached to labels: <code>stressed patients (before surgery)</code>, <code>stressed patients (after surgery)</code>. Tags help you build up a system of labels from smaller parts.</p>
 <h3 class="rounded-info" id="label-style-opposites">Label style: Opposites<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#label-style-opposites">#</a></h3>
 <p>See <a class="wikilink" href="/opposites-sentiment">!Opposites and sentiment in AI coding</a> and <a class="wikilink" href="/combine-opposites-filter">Opposites</a>.</p>
 <h3 class="rounded-info" id="label-style-hierarchical">Label style: Hierarchical<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#label-style-hierarchical">#</a></h3>
 <p>You can impose hierarchical labels even when free coding. See <a class="wikilink" href="/zoom-filter">Hierarchical coding</a>.</p>
-<h3 class="rounded-info" id="columns">Columns<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#columns">#</a></h3>
-<p>We also often ask for <em>columns</em> unrelated to the labels, such as a sentiment assessment. Columns can be useful for any systematic attribute you can code consistently across most links. Note the difference: columns code attributes of <em>links</em>; tags code attributes of <em>factors</em>.</p>
+<h3 class="rounded-info" id="custom-columns">Custom columns<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#custom-columns">#</a></h3>
+<p>The table of links has a few fixed columns: the <code>cause</code> column, <code>effect</code> column, the ID of the source and the associated quote as well as some additional columns created by Causal Map. </p>
+<p>We also often ask for <em>custom columns</em> unrelated to the labels, such as a sentiment assessment. Columns can be useful for any systematic attribute you can code consistently across most links. Note the difference: columns code attributes of <em>links</em>; tags code attributes of <em>factors</em>.</p>
+<p>For an overview of custom columns and why they are useful, see  <a class="wikilink" href="../600 How to -- in the Causal Map app/410 Adding and using custom columns fo-4332f3.html">this.</a></p>
+<p>(Actually, Sentiment is in some ways treated as a fixed column internally in Causal Map, but you do not need to worry about that.)</p>
 <p>Asking the model to fill extra columns alongside coding is extra work for it. Expect either coverage (links found) or precision to drop.</p>
 <h4 id="columns-sentiment">Columns: Sentiment<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#columns-sentiment">#</a></h4>
 <p>Zero-codebook coding usually leads on to magnetic soft recoding, and in embedding space <code>decrease in X</code> sits close to <code>increase in X</code>. </p>
@@ -1625,33 +1863,44 @@ Each additional iteration sends the original text and instructions and the resul
 <h3 class="rounded-info" id="other-things-which-are-important-in-the-prompt">Other things which are important in the prompt<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#other-things-which-are-important-in-the-prompt">#</a></h3>
 <p>Often you want to tell the model what the work is for: the context, named entities, the audience. We <em>iterate</em> on the prompt, trying versions and comparing results.</p>
 <h4 id="context">Context<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#context">#</a></h4>
-<p>...</p>
+<p>Of course you need to give the AI some background so it knows what the task is (see <a class="wikilink" href="/game">You have to tell the AI what game we are playing right now</a>). It can be hard to judge just how much context to give it, but as a rule of thumb: </p>
+<ul>
+<li>If you give it more than a page of background context, this may start to reduce its Recall and/or Precision, see below.</li>
+<li>When testing your instructions and you find some problems with the output, ask yourself if some of the problems might be due to lack of context: if so, add it.</li>
+</ul>
 <h4 id="named-entities">Named entities<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#named-entities">#</a></h4>
 <p>We want the coding AI to recognise words or phrases or abbreviations specific to our project which are not general knowledge and also know that there may be different words for the same thing, e.g. different ways of talking about the same project or organisation; and we usually want it to then just use one preferred phrase even if there are alternatives in the text. </p>
 <p>Our preferred phrase should normally be in the same language as the other labels we ask it to make.</p>
-<h3 class="rounded-info" id="coding-style-holistic-or-claim-by-claim">Coding style: holistic or claim-by-claim?<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#coding-style-holistic-or-claim-by-claim">#</a></h3>
-<p>Two main approaches.</p>
-<p><em>Holistic</em>: we ask the model for an overall diagram of the causal network in the current chunk of text<sup id="fnref:inl2"><a class="footnote-ref" href="/ai-coding/#fn:inl2">2</a></sup>. The model decides what the main links are, but we still ask for a quote behind each one. </p>
-<p>Especially when using a holistic style, it can be useful to add a second iteration to “mop up” anything missed. </p>
-<p><em>Claim by claim</em>: we ask the model to find each individual causal link. Hundreds of tweaks and heuristics later, this style still struggles to tell a connected story even when the text contains one. Suppose the text supports A to B to C to D, but the model lazily codes A to B and C to D, using slightly different labels for B and C. Claim-by-claim coding only really works if you plan to recode afterwards: you hope a later recoding pass spots that B and C mean the same thing and rejoins the chain.</p>
-<h3 class="rounded-info" id="model">Model<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#model">#</a></h3>
-<p>For relatively straightforward cases, newer or bigger models are not necessarily better for coding. We have had good results with Gemini Flash, for example.</p>
-<h3 class="rounded-info" id="how-many-iterations">How many iterations?<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#how-many-iterations">#</a></h3>
+<h3 class="rounded-info" id="using-additional-iterations">Using additional iterations<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#using-additional-iterations">#</a></h3>
+<p>When <a class="wikilink" href="/create-link-tab">coding with AI</a>, we often (optionally) use one or more additional AI iterations, </p>
 <p>Additional iterations can be useful:</p>
 <ul>
-<li>For checking and improving quality</li>
-<li>For increasing coverage (finding more actual causal claims)</li>
-<li>For adding additional information (e.g. more columns)</li>
+<li>For checking and improving Accuracy aka Precision: to check that the coded links have been coded correctly (and if necessary, then amend/delete them)  </li>
+<li>For increasing Coverage<sup id="fnref:inl2"><a class="footnote-ref" href="/ai-coding/#fn:inl2">2</a></sup>: to check that links which should have been coded were indeed identified and if not to add them. </li>
+<li>For adding additional information (e.g. more columns), e.g. to add a column scoring "sentiment".<ul>
+<li>according to the original rules</li>
+<li>according to new/additional criteria</li>
 </ul>
-<p>Multi-stage prompts (separated by <code>====</code>) let you split coding into sequential passes. The UI does this for you. Mechanics in <a class="wikilink" href="!1010- Auto-coding.html">!1010- Auto-coding</a> and <a class="wikilink" href="/simple-ai">AI coding</a> under "Prompt sections".</p>
+</li>
+</ul>
+<p>Multi-stage prompts (separated by <code>====</code>) let you split coding into sequential passes. The UI does this for you. Mechanics in <a class="wikilink" href="/auto-clustering">! Autoclustering with embeddings</a> and <a class="wikilink" href="/simple-ai">AI coding</a> under "Prompt sections".</p>
 <p>If you are asking the AI to provide substantial additional coding, such as adding more columns like, say, "significance" or "certainty" or to add a translation or some other text column, we recommend using one or more additional iterations for this because you don't want the AI to miss out or mis-code the actual links, which after all are the most important output of the whole process. </p>
 <p>More advanced models are more capable of doing more things at the same time during coding. </p>
-<h3 class="rounded-info" id="chunk-and-sample-strategy">Chunk and sample strategy<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#chunk-and-sample-strategy">#</a></h3>
-<p>If a single source is short, you can map the whole thing in one go. More often you have either much longer sources, which the app breaks into chunks for you, or many sources.</p>
-<h4 id="recall-and-precision">Recall and precision<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#recall-and-precision">#</a></h4>
-<p>A pretty hard rule: the more text you give the model at once, the less dense its coding gets. One page might yield 20 links; 5 pages might also yield 20 links. Sometimes the 20 it picks out of 5 pages really are the most important, but this is not certain, and you are leaving the model to decide. Often you just want better recall, and that means smaller chunks. Don't give the model too much freedom to decide what counts as important.</p>
-<h4 id="what-does-it-select">What does it select<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#what-does-it-select">#</a></h4>
-<p>Bigger chunks mean sparser coding. There is a "code everything" setting that does not each source at all: the effect depends on how long your sources are. Otherwise, work in smaller chunks. Aiming to pick up <em>every</em> causal claim is unrealistic, but the smaller the chunk, the more you'll catch.</p>
+<p>These multiple stages work something like a conversation thread in ChatGPT or similar: Each additional iteration sends the original text and instructions and the results back to the AI, i.e. the "conversation" to date, along with additional specific instructions for this iteration. So if you add two additional iterations, the results will take altogether three times as long (and cost three times as much) as the same task without iterations.</p>
+<p>The instruction for a follow-up iteration might start something like this:</p>
+<pre><code>Good, but let's check if you made any mistakes. Correct any you find.
+Delete links for which there is insufficient evidence in the text.
+Delete or correct links for which you invented or assumed causes or effects.
+</code></pre>
+<p>Internally, Causal Map stores all the iterations as one single prompt, with each iteration separated by a line with just: <code>====</code>.</p>
+<pre><code>First instruction
+====
+Second, follow-up instruction e.g. "Did you miss some links..."
+====
+Possibly even a third instruction....
+</code></pre>
+<p>You can see the results of each stage in <a href="The%20Responses%20tab%207e9e386ce3b44326be312c30763a7c3f.md">The Responses tab</a>, but only the final result is actually fed into the app to create links.</p>
+<p>We often find that our time is better spent improving the original coding instruction than adding additional iterations. </p>
 <h2 class="banner-info" id="recoding-style">Recoding style<a aria-label="Permalink" class="anchor-link" href="/ai-coding/#recoding-style">#</a></h2>
 <p>Once the first coding run exists, the next question is how to deal with overlapping labels. See <a class="wikilink" href="/kinds">Different kinds of coding and recoding</a></p>
 <p>Recoding from scratch means arriving at a clean revised codebook and then recoding everything from the beginning. That's more expensive and slower, but usually gives better results than magnetically recoded labels alone (see <a class="wikilink" href="/kinds">Different kinds of coding and recoding</a>).</p>
@@ -1666,7 +1915,7 @@ Each additional iteration sends the original text and instructions and the resul
 <li><a class="wikilink" href="/auto-coding">chapter intro</a></li>
 <li><a class="wikilink" href="/simple-ai">AI coding</a>: app docs for the AI Coding panel</li>
 <li><a class="wikilink" href="/answers-panel">AI answers panel</a>: app docs for AI Answers</li>
-<li><a class="wikilink" href="!1010- Auto-coding.html">!1010- Auto-coding</a>: older detailed notes on the auto-coding prompt</li>
+<li><a class="wikilink" href="/auto-clustering">! Autoclustering with embeddings</a>: older detailed notes on the auto-coding prompt</li>
 <li><a class="wikilink" href="/opposites-sentiment">!Opposites and sentiment in AI coding</a></li>
 <li><a class="wikilink" href="/auto-clustering">! Autoclustering with embeddings</a></li>
 <li></li>
@@ -1678,10 +1927,10 @@ Each additional iteration sends the original text and instructions and the resul
 <hr/>
 <ol>
 <li id="fn:inl1">
-<p>Also known as Recall <a class="footnote-backref" href="/ai-coding/#fnref:inl1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p>Internally, we ask it for a Mermaid diagram then convert it into a links table. For some reason, LLMs often do a much better job of creating a connected network if you ask for a diagram than if you ask for a set of connected links <a class="footnote-backref" href="/ai-coding/#fnref:inl1" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:inl2">
-<p>Internally, we ask it for a Mermaid diagram then convert it into a links table. For some reason, LLMs often do a much better job of creating a connected network if you ask for a diagram than if you ask for a set of connected links <a class="footnote-backref" href="/ai-coding/#fnref:inl2" title="Jump back to footnote 2 in the text">↩</a></p>
+<p>Also known as Recall <a class="footnote-backref" href="/ai-coding/#fnref:inl2" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 </ol>
 </div></div>
@@ -1690,19 +1939,34 @@ Each additional iteration sends the original text and instructions and the resul
 <aside class="rightbar"><h2>On this page</h2><div class="hover-cue">Hover to view</div><div class="toc"><div class="toc">
 <ul>
 <li><a href="/ai-coding/#summary">Summary</a></li>
-<li><a href="/ai-coding/#workflow">Workflow</a></li>
-<li><a href="/ai-coding/#decisions-before-coding">Decisions before coding</a><ul>
-<li><a href="/ai-coding/#random-sample-coding-strategy-with-bigger-corpora">Random-sample coding strategy with bigger corpora</a><ul>
-<li><a href="/ai-coding/#using-additional-iterations">Using additional iterations</a></li>
-<li><a href="/ai-coding/#improving-the-instructions">Improving the instructions</a></li>
+<li><a href="/ai-coding/#overview">Overview</a></li>
+<li><a href="/ai-coding/#one-click-coding">One-click coding?</a></li>
+<li><a href="/ai-coding/#coding-style-holistic-or-claim-by-claim">Coding style: holistic or claim-by-claim?</a><ul>
+<li><a href="/ai-coding/#holistic">Holistic:</a></li>
+<li><a href="/ai-coding/#claim-by-claim">Claim by claim:</a></li>
 </ul>
 </li>
+<li><a href="/ai-coding/#key-metrics-precision-and-recall">Key metrics: precision and recall</a><ul>
+<li><a href="/ai-coding/#precision-aka-accuracy">Precision aka Accuracy</a></li>
+<li><a href="/ai-coding/#recall">Recall</a></li>
+</ul>
+</li>
+<li><a href="/ai-coding/#chunk-and-sample-strategy">Chunk and sample strategy</a><ul>
+<li><a href="/ai-coding/#balancing-recall-and-precision">Balancing recall and precision</a></li>
+</ul>
+</li>
+<li><a href="/ai-coding/#ai-model">AI Model</a></li>
+<li><a href="/ai-coding/#random-test-coding-strategy-with-bigger-corpora">Random test-coding strategy with bigger corpora</a></li>
+<li><a href="/ai-coding/#creating-instructions">Creating instructions</a><ul>
+<li><a href="/ai-coding/#improving-the-instructions-iteratively">Improving the instructions iteratively</a></li>
+<li><a href="/ai-coding/#ensuring-quotes-are-provided">Ensuring quotes are provided</a></li>
 <li><a href="/ai-coding/#codebook-strategy-how-free">Codebook strategy: how free?</a></li>
+<li><a href="/ai-coding/#label-style-many-things-to-think-about">Label style: many things to think about</a></li>
 <li><a href="/ai-coding/#label-style-in-vivo-or-abstract">Label style: In vivo or abstract</a></li>
 <li><a href="/ai-coding/#label-style-using-tags">Label style: Using tags</a></li>
 <li><a href="/ai-coding/#label-style-opposites">Label style: Opposites</a></li>
 <li><a href="/ai-coding/#label-style-hierarchical">Label style: Hierarchical</a></li>
-<li><a href="/ai-coding/#columns">Columns</a><ul>
+<li><a href="/ai-coding/#custom-columns">Custom columns</a><ul>
 <li><a href="/ai-coding/#columns-sentiment">Columns: Sentiment</a></li>
 </ul>
 </li>
@@ -1711,21 +1975,14 @@ Each additional iteration sends the original text and instructions and the resul
 <li><a href="/ai-coding/#named-entities">Named entities</a></li>
 </ul>
 </li>
-<li><a href="/ai-coding/#coding-style-holistic-or-claim-by-claim">Coding style: holistic or claim-by-claim?</a></li>
-<li><a href="/ai-coding/#model">Model</a></li>
-<li><a href="/ai-coding/#how-many-iterations">How many iterations?</a></li>
-<li><a href="/ai-coding/#chunk-and-sample-strategy">Chunk and sample strategy</a><ul>
-<li><a href="/ai-coding/#recall-and-precision">Recall and precision</a></li>
-<li><a href="/ai-coding/#what-does-it-select">What does it select</a></li>
-</ul>
-</li>
+<li><a href="/ai-coding/#using-additional-iterations">Using additional iterations</a></li>
 </ul>
 </li>
 <li><a href="/ai-coding/#recoding-style">Recoding style</a></li>
 <li><a href="/ai-coding/#related">Related</a></li>
 </ul>
 </div>
-</div><hr/><h2>Links</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a class="link-secondary" href="850! Autoclustering with embeddings ((-d7db35.html">! Autoclustering with embeddings</a></li><li><a class="link-secondary" href="!1010- Auto-coding.html">!1010- Auto-coding</a></li><li><a class="link-secondary" href="200 !Opposites and sentiment in AI cod-731daa.html">!Opposites and sentiment in AI coding</a></li><li><a class="link-secondary" href="../999 Causal Map App/190 AI answers panel  ((answers-panel)).html">AI answers panel</a></li><li><a class="link-secondary" href="../999 Causal Map App/030 AI coding ((simple-ai)).html">AI coding</a></li><li><a class="link-secondary" href="../500 AI in qualitative social science/010 AI in evaluation actually show you-a156f7.html">AI in evaluation actually show your working!</a></li><li><a class="link-secondary" href="../250 Causal Mapping as QDA/030 Causal mapping is easy to automate-f1376b.html">Causal mapping is easy to automate transparently, so is a great fit for scaling with AI</a></li><li><a class="link-secondary" href="../999 Causal Map App/090 Create Links tab ((create-link-tab)).html">Create Links tab</a></li><li><a class="link-secondary" href="405 Different kinds of coding and reco-86fecc.html">Different kinds of coding and recoding</a></li><li><a class="link-secondary" href="../008 Task 2 &amp; 3 -- Extensions/590 Hierarchical coding ((zoom-filter)).html">Hierarchical coding</a></li><li><a class="link-secondary" href="000 Intro -- auto-coding with AI ((aut-3bc7c8.html">Intro -- auto-coding with AI</a></li><li><a class="link-secondary" href="../500 AI in qualitative social science/050 Just add rigour Three do’s and don-f5ffdc.html">Just add rigour Three do’s and don’ts</a></li><li><a class="link-secondary" href="../008 Task 2 &amp; 3 -- Extensions/630 Opposites ((combine-opposites-filter)).html">Opposites</a></li><li><a class="link-secondary" href="../999 Causal Map App/080 Sources Bar ((sourcesHeader)).html">Sources Bar</a></li></ul></div><hr/><h2>Backlinks</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a class="link-secondary" href="../010 Task 3 -- Answering questions -- General/900 Quality assurance and rigour in ca-459476.html">Quality assurance and rigour in causal mapping -- ensuring robust conclusions and inferences</a></li></ul></div></aside>
+</div><hr/><h2>Links</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a class="link-secondary" href="850! Autoclustering with embeddings ((-d7db35.html">! Autoclustering with embeddings</a></li><li><a class="link-secondary" href="200 !Opposites and sentiment in AI cod-731daa.html">!Opposites and sentiment in AI coding</a></li><li><a class="link-secondary" href="../600 How to -- in the Causal Map app/410 Adding and using custom columns fo-4332f3.html">Adding and using custom columns for your links</a></li><li><a class="link-secondary" href="../999 Causal Map App/190 AI answers panel  ((answers-panel)).html">AI answers panel</a></li><li><a class="link-secondary" href="../999 Causal Map App/030 AI coding ((simple-ai)).html">AI coding</a></li><li><a class="link-secondary" href="../500 AI in qualitative social science/010 AI in evaluation actually show you-a156f7.html">AI in evaluation actually show your working!</a></li><li><a class="link-secondary" href="../250 Causal Mapping as QDA/030 Causal mapping is easy to automate-f1376b.html">Causal mapping is easy to automate transparently, so is a great fit for scaling with AI</a></li><li><a class="link-secondary" href="../999 Causal Map App/090 Create Links tab ((create-link-tab)).html">Create Links tab</a></li><li><a class="link-secondary" href="405 Different kinds of coding and reco-86fecc.html">Different kinds of coding and recoding</a></li><li><a class="link-secondary" href="../007 Task 2 -- Causal coding -- minimalist style/580 Factor labels -- semi-quantitative-613659.html">Factor labels -- semi-quantitative formulations can help</a></li><li><a class="link-secondary" href="../008 Task 2 &amp; 3 -- Extensions/590 Hierarchical coding ((zoom-filter)).html">Hierarchical coding</a></li><li><a class="link-secondary" href="000 Intro -- auto-coding with AI ((aut-3bc7c8.html">Intro -- auto-coding with AI</a></li><li><a class="link-secondary" href="../500 AI in qualitative social science/050 Just add rigour Three do’s and don-f5ffdc.html">Just add rigour Three do’s and don’ts</a></li><li><a class="link-secondary" href="../008 Task 2 &amp; 3 -- Extensions/630 Opposites ((combine-opposites-filter)).html">Opposites</a></li><li><a class="link-secondary" href="../999 Causal Map App/080 Sources Bar ((sourcesHeader)).html">Sources Bar</a></li><li><a class="link-secondary" href="../500 AI in qualitative social science/120 You have to tell the AI what game -3470a7.html">You have to tell the AI what game we are playing right now</a></li></ul></div><hr/><h2>Backlinks</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a class="link-secondary" href="../010 Task 3 -- Answering questions -- General/900 Quality assurance and rigour in ca-459476.html">Quality assurance and rigour in causal mapping -- ensuring robust conclusions and inferences</a></li></ul></div></aside>
 </div>
 <script crossorigin="anonymous" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/sidebar.js"></script>

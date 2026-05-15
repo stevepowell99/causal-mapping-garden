@@ -586,6 +586,17 @@
         break-inside: avoid;
         page-break-inside: avoid;
       }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .section-two-col .span-cols,
+      .content .section-two-col table.span-cols,
+      .content .section-two-col .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
+      }
 
       
       .content .paper-dual-column-body {
@@ -609,6 +620,17 @@
       .content .paper-dual-column-body .mermaid {
         break-inside: avoid;
         page-break-inside: avoid;
+      }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .paper-dual-column-body .span-cols,
+      .content .paper-dual-column-body table.span-cols,
+      .content .paper-dual-column-body .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
       }
       @media print {
         .content .paper-dual-column-body p {
@@ -702,6 +724,20 @@
         color: var(--cm-muted);
         font-size: .875rem;
         padding-top: .25rem;
+        text-align: left;
+      }
+      .content caption em,
+      .content caption i {
+        font-style: italic;
+      }
+      .content figure {
+        margin: 1rem 0;
+      }
+      .content figcaption {
+        color: var(--cm-muted);
+        font-size: .875rem;
+        padding-top: .25rem;
+        text-align: left;
       }
       /* Alternative heading styles */
       .content h1.rounded, .content h1.rounded-left, .content h1.banner {
@@ -928,6 +964,40 @@
       .content .callout-note {
         border-left-color: #6c757d;
         background: #f8f9fa;
+      }
+      /* Foldable callouts: <details>/<summary> from Obsidian [!type]+/- syntax */
+      .content details.callout-foldable > summary {
+        cursor: pointer;
+        font-weight: 600;
+        list-style: none;
+        padding-right: 1rem;
+      }
+      .content details.callout-foldable > summary::-webkit-details-marker {
+        display: none;
+      }
+      .content details.callout-foldable > summary::before {
+        content: "▸";
+        display: inline-block;
+        width: 1em;
+        margin-right: .25em;
+        transition: transform 0.15s ease-in-out;
+      }
+      .content details.callout-foldable[open] > summary::before {
+        transform: rotate(90deg);
+      }
+      .content details.callout-foldable[open] > summary {
+        margin-bottom: .5rem;
+      }
+      @media print {
+        .content details.callout-foldable > *:not(summary) {
+          display: block !important;
+        }
+        .content details.callout-foldable > summary::before {
+          content: none;
+        }
+        .content details.callout-foldable > summary {
+          margin-bottom: .5rem;
+        }
       }
       /* Hero callout: full-bleed in showcase mode */
       .content .callout-hero {
@@ -1587,7 +1657,7 @@
 <li><a href="#non-quantitative-factors">Non-quantitative factors</a></li>
 </ul>
 </div>
-</div><hr /><h2>Links</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a href="220 Factor labels -- a creative challenge.html" class="link-secondary">Factor labels -- a creative challenge</a></li><li><a href="200 In a causal mapping dataset there -20d6b7.html" class="link-secondary">In a causal mapping dataset there is no need for a special table of factors</a></li></ul></div><hr /><h2>Backlinks</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a href="../600 How to -- in the Causal Map app/100 Manually code your first project (-1876c6.html" class="link-secondary">Manually code your first project</a></li></ul></div></aside>
+</div><hr /><h2>Links</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a href="220 Factor labels -- a creative challenge.html" class="link-secondary">Factor labels -- a creative challenge</a></li><li><a href="200 In a causal mapping dataset there -20d6b7.html" class="link-secondary">In a causal mapping dataset there is no need for a special table of factors</a></li></ul></div><hr /><h2>Backlinks</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a href="../007.0 Task 2 -- Coding with AI/100 AI coding overview ((ai-coding)).html" class="link-secondary">AI coding overview</a></li><li><a href="../600 How to -- in the Causal Map app/100 Manually code your first project (-1876c6.html" class="link-secondary">Manually code your first project</a></li></ul></div></aside>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="../assets/sidebar.js"></script>

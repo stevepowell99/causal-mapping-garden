@@ -585,6 +585,17 @@
         break-inside: avoid;
         page-break-inside: avoid;
       }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .section-two-col .span-cols,
+      .content .section-two-col table.span-cols,
+      .content .section-two-col .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
+      }
 
       
       .content .paper-dual-column-body {
@@ -608,6 +619,17 @@
       .content .paper-dual-column-body .mermaid {
         break-inside: avoid;
         page-break-inside: avoid;
+      }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .paper-dual-column-body .span-cols,
+      .content .paper-dual-column-body table.span-cols,
+      .content .paper-dual-column-body .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
       }
       @media print {
         .content .paper-dual-column-body p {
@@ -701,6 +723,20 @@
         color: var(--cm-muted);
         font-size: .875rem;
         padding-top: .25rem;
+        text-align: left;
+      }
+      .content caption em,
+      .content caption i {
+        font-style: italic;
+      }
+      .content figure {
+        margin: 1rem 0;
+      }
+      .content figcaption {
+        color: var(--cm-muted);
+        font-size: .875rem;
+        padding-top: .25rem;
+        text-align: left;
       }
       /* Alternative heading styles */
       .content h1.rounded, .content h1.rounded-left, .content h1.banner {
@@ -927,6 +963,40 @@
       .content .callout-note {
         border-left-color: #6c757d;
         background: #f8f9fa;
+      }
+      /* Foldable callouts: <details>/<summary> from Obsidian [!type]+/- syntax */
+      .content details.callout-foldable > summary {
+        cursor: pointer;
+        font-weight: 600;
+        list-style: none;
+        padding-right: 1rem;
+      }
+      .content details.callout-foldable > summary::-webkit-details-marker {
+        display: none;
+      }
+      .content details.callout-foldable > summary::before {
+        content: "▸";
+        display: inline-block;
+        width: 1em;
+        margin-right: .25em;
+        transition: transform 0.15s ease-in-out;
+      }
+      .content details.callout-foldable[open] > summary::before {
+        transform: rotate(90deg);
+      }
+      .content details.callout-foldable[open] > summary {
+        margin-bottom: .5rem;
+      }
+      @media print {
+        .content details.callout-foldable > *:not(summary) {
+          display: block !important;
+        }
+        .content details.callout-foldable > summary::before {
+          content: none;
+        }
+        .content details.callout-foldable > summary {
+          margin-bottom: .5rem;
+        }
       }
       /* Hero callout: full-bleed in showcase mode */
       .content .callout-hero {
@@ -1915,7 +1985,7 @@ Our approach is notable in particular because it rejects variable-based approach
 <h1 id="conclusion">Conclusion<a aria-label="Permalink" class="anchor-link" href="/minimalist/#conclusion">#</a></h1>
 <p>Minimalist coding is a stance, not a system. We code "X influenced Y, with provenance", and we let the labels do most of the work. We don't code polarity by default, we don't fit functions, and we don't infer counterfactuals the speaker didn't supply. We give up the predictive and simulation-style affordances of more elaborate causal-mapping traditions in exchange for something more practical: an auditable evidence base that scales to thousands of sources, works with AI assistance, and stays close to what people actually said.</p>
 <p>We've used this stance across consultancy and research work for years now, and it keeps repaying its simplicity. The hard cases come up; we usually handle them in the write-up rather than in the data structure. The 90% rule is a working hypothesis: the coding scheme should serve the typical claim, and the analyst should serve the unusual one.</p>
-<div class="references"><h2>References</h2><p class="reference">Ackermann, Jones, Sweeney, &amp; Eden (1996). <em>Decision Explorer: User Guide</em>. <a href="https://banxia.com/pdf/de/DEGuide.pdf" rel="noopener" target="_blank">https://banxia.com/pdf/de/DEGuide.pdf</a>.</p><p class="reference">Ackermann, Eden, &amp; Cropper (2004). <em>Getting Started with Cognitive Mapping</em>.</p><p class="reference">Axelrod (1976). <em>The Analysis of Cognitive Maps</em>. In <em>Structure of Decision : The Cognitive Maps of Political Elites</em>.</p><p class="reference">Axelrod (1976). <em>Structure of Decision: The Cognitive Maps of Political Elites</em>. Princeton university press.</p><p class="reference">Barbrook-Johnson, &amp; Penn (2022). <em>Participatory Systems Mapping</em>. In <em>Systems Mapping: How to Build and Use Causal Models of Systems</em>. <a href="https://doi.org/10.1007/978-3-031-01919-7_5" rel="noopener" target="_blank">https://doi.org/10.1007/978-3-031-01919-7_5</a>.</p><p class="reference">Braun, &amp; Clarke (2021). <em>Thematic Analysis : A Practical Guide</em>. SAGE Publications Ltd. <a href="https://www.torrossa.com/it/resources/an/5282292" rel="noopener" target="_blank">https://www.torrossa.com/it/resources/an/5282292</a>.</p><p class="reference">Britt, Powell, &amp; Cabral (2025). <em>Strengthening Outcome Harvesting with AI-assisted Causal Mapping</em>. <a href="https://5a867cea-2d96-4383-acf1-7bc3d406cdeb.usrfiles.com/ugd/5a867c_ad000813c80747baa85c7bd5ffaf0442.pdf" rel="noopener" target="_blank">https://5a867cea-2d96-4383-acf1-7bc3d406cdeb.usrfiles.com/ugd/5a867c_ad000813c80747baa85c7bd5ffaf0442.pdf</a>.</p><p class="reference">Copestake, Morsink, &amp; Remnant (2019). <em>Attributing Development Impact: The Qualitative Impact Protocol Case Book</em>. March 21, Online.</p><p class="reference">Eden, Ackermann, &amp; Cropper (1992). <em>The Analysis of Cause Maps</em>. <a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6486.1992.tb00667.x" rel="noopener" target="_blank">https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6486.1992.tb00667.x</a>.</p><p class="reference">Hodgkinson, Maule, &amp; Bown (2004). <em>Causal Cognitive Mapping in the Organizational Strategy Field: A Comparison of Alternative Elicitation Procedures</em>.</p><p class="reference">Laukkanen (1994). <em>Comparative Cause Mapping of Organizational Cognitions</em>.</p><p class="reference">Laukkanen (2012). <em>Comparative Causal Mapping and CMAP3 Software in Qualitative Studies</em>. <a href="https://doi.org/10.17169/fqs-13.2.1846" rel="noopener" target="_blank">https://doi.org/10.17169/fqs-13.2.1846</a>.</p><p class="reference">Laukkanen, &amp; Wang (2016). <em>Comparative Causal Mapping: The CMAP3 Method</em>. Routledge.</p><p class="reference">Markiczy, &amp; Goldberg (1995). <em>A Method for Eliciting and Comparing Causal Maps</em>. Sage Publications Sage CA: Thousand Oaks, CA.</p><p class="reference">Maule, Hodgkinson, &amp; Bown (2003). <em>Cognitive Mapping of Causal Reasoning in Strategic Decision Making</em>. In <em>Thinking: Psychological Perspectives on Reasoning, Judgment and Decision Making</em>. <a href="https://doi.org/10.1002/047001332X.ch13" rel="noopener" target="_blank">https://doi.org/10.1002/047001332X.ch13</a>.</p><p class="reference">Powell, Larquemin, Copestake, Remnant, &amp; Avard (2023). <em>Does Our Theory Match Your Theory? Theories of Change and Causal Maps in Ghana</em>. In <em>Strategic Thinking, Design and the Theory of Change. A Framework for Designing Impactful and Transformational Social Interventions</em>.</p><p class="reference">Powell, Copestake, &amp; Remnant (2024). <em>Causal Mapping for Evaluators</em>. <a href="https://doi.org/10.1177/13563890231196601" rel="noopener" target="_blank">https://doi.org/10.1177/13563890231196601</a>.</p><p class="reference">Powell, Cabral, &amp; Mishan (2025). <em>A Workflow for Collecting and Understanding Stories at Scale, Supported by Artificial Intelligence</em>. SAGE PublicationsSage UK: London, England. <a href="https://doi.org/10.1177/13563890251328640" rel="noopener" target="_blank">https://doi.org/10.1177/13563890251328640</a>.</p><p class="reference">Ragin (2008). <em>Measurement Versus Calibration: A Set-Theoretic Approach</em>. <a href="https://doi.org/10.1093/oxfordhb/9780199286546.003.0008" rel="noopener" target="_blank">https://doi.org/10.1093/oxfordhb/9780199286546.003.0008</a>.</p><p class="reference">Remnant, Copestake, Powell, &amp; Channon (2025). <em>Qualitative Causal Mapping in Evaluations</em>. In <em>Handbook of Health Services Evaluation: Theories, Methods and Innovative Practices</em>. <a href="https://doi.org/10.1007/978-3-031-87869-5_12" rel="noopener" target="_blank">https://doi.org/10.1007/978-3-031-87869-5_12</a>.</p><p class="reference">Saldaña (2015). <em>The Coding Manual for Qualitative Researchers</em>. Sage.</p></div></div>
+<div class="references"><h2>References</h2><p class="reference">Ackermann, Jones, Sweeney, &amp; Eden (1996). <em>Decision Explorer: User Guide</em>. <a href="https://banxia.com/pdf/de/DEGuide.pdf" rel="noopener" target="_blank">https://banxia.com/pdf/de/DEGuide.pdf</a>.</p><p class="reference">Ackermann, Eden, &amp; Cropper (2004). <em>Getting Started with Cognitive Mapping</em>.</p><p class="reference">Axelrod (1976). <em>Structure of Decision: The Cognitive Maps of Political Elites</em>. Princeton university press.</p><p class="reference">Axelrod (1976). <em>The Analysis of Cognitive Maps</em>. In <em>Structure of Decision : The Cognitive Maps of Political Elites</em>.</p><p class="reference">Barbrook-Johnson, &amp; Penn (2022). <em>Participatory Systems Mapping</em>. In <em>Systems Mapping: How to Build and Use Causal Models of Systems</em>. <a href="https://doi.org/10.1007/978-3-031-01919-7_5" rel="noopener" target="_blank">https://doi.org/10.1007/978-3-031-01919-7_5</a>.</p><p class="reference">Braun, &amp; Clarke (2021). <em>Thematic Analysis : A Practical Guide</em>. SAGE Publications Ltd. <a href="https://www.torrossa.com/it/resources/an/5282292" rel="noopener" target="_blank">https://www.torrossa.com/it/resources/an/5282292</a>.</p><p class="reference">Britt, Powell, &amp; Cabral (2025). <em>Strengthening Outcome Harvesting with AI-assisted Causal Mapping</em>. <a href="https://5a867cea-2d96-4383-acf1-7bc3d406cdeb.usrfiles.com/ugd/5a867c_ad000813c80747baa85c7bd5ffaf0442.pdf" rel="noopener" target="_blank">https://5a867cea-2d96-4383-acf1-7bc3d406cdeb.usrfiles.com/ugd/5a867c_ad000813c80747baa85c7bd5ffaf0442.pdf</a>.</p><p class="reference">Copestake, Morsink, &amp; Remnant (2019). <em>Attributing Development Impact: The Qualitative Impact Protocol Case Book</em>. March 21, Online.</p><p class="reference">Eden, Ackermann, &amp; Cropper (1992). <em>The Analysis of Cause Maps</em>. <a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6486.1992.tb00667.x" rel="noopener" target="_blank">https://onlinelibrary.wiley.com/doi/10.1111/j.1467-6486.1992.tb00667.x</a>.</p><p class="reference">Hodgkinson, Maule, &amp; Bown (2004). <em>Causal Cognitive Mapping in the Organizational Strategy Field: A Comparison of Alternative Elicitation Procedures</em>.</p><p class="reference">Laukkanen (1994). <em>Comparative Cause Mapping of Organizational Cognitions</em>.</p><p class="reference">Laukkanen (2012). <em>Comparative Causal Mapping and CMAP3 Software in Qualitative Studies</em>. <a href="https://doi.org/10.17169/fqs-13.2.1846" rel="noopener" target="_blank">https://doi.org/10.17169/fqs-13.2.1846</a>.</p><p class="reference">Laukkanen, &amp; Wang (2016). <em>Comparative Causal Mapping: The CMAP3 Method</em>. Routledge.</p><p class="reference">Markiczy, &amp; Goldberg (1995). <em>A Method for Eliciting and Comparing Causal Maps</em>. Sage Publications Sage CA: Thousand Oaks, CA.</p><p class="reference">Maule, Hodgkinson, &amp; Bown (2003). <em>Cognitive Mapping of Causal Reasoning in Strategic Decision Making</em>. In <em>Thinking: Psychological Perspectives on Reasoning, Judgment and Decision Making</em>. <a href="https://doi.org/10.1002/047001332X.ch13" rel="noopener" target="_blank">https://doi.org/10.1002/047001332X.ch13</a>.</p><p class="reference">Powell, Larquemin, Copestake, Remnant, &amp; Avard (2023). <em>Does Our Theory Match Your Theory? Theories of Change and Causal Maps in Ghana</em>. In <em>Strategic Thinking, Design and the Theory of Change. A Framework for Designing Impactful and Transformational Social Interventions</em>.</p><p class="reference">Powell, Copestake, &amp; Remnant (2024). <em>Causal Mapping for Evaluators</em>. <a href="https://doi.org/10.1177/13563890231196601" rel="noopener" target="_blank">https://doi.org/10.1177/13563890231196601</a>.</p><p class="reference">Powell, Cabral, &amp; Mishan (2025). <em>A Workflow for Collecting and Understanding Stories at Scale, Supported by Artificial Intelligence</em>. SAGE PublicationsSage UK: London, England. <a href="https://doi.org/10.1177/13563890251328640" rel="noopener" target="_blank">https://doi.org/10.1177/13563890251328640</a>.</p><p class="reference">Ragin (2008). <em>Measurement Versus Calibration: A Set-Theoretic Approach</em>. <a href="https://doi.org/10.1093/oxfordhb/9780199286546.003.0008" rel="noopener" target="_blank">https://doi.org/10.1093/oxfordhb/9780199286546.003.0008</a>.</p><p class="reference">Remnant, Copestake, Powell, &amp; Channon (2025). <em>Qualitative Causal Mapping in Evaluations</em>. In <em>Handbook of Health Services Evaluation: Theories, Methods and Innovative Practices</em>. <a href="https://doi.org/10.1007/978-3-031-87869-5_12" rel="noopener" target="_blank">https://doi.org/10.1007/978-3-031-87869-5_12</a>.</p><p class="reference">Saldaña (2015). <em>The Coding Manual for Qualitative Researchers</em>. Sage.</p></div></div>
 <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a class="link-secondary" href="https://causalmap.app">Causal Map Ltd</a> 2026</span> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" style="height:18px;opacity:0.7;vertical-align:middle;"/></a><a class="link-secondary ms-2" href="https://app.causalmap.app" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>
 </main>
 <aside class="rightbar"><h2>On this page</h2><div class="hover-cue">Hover to view</div><div class="toc"><div class="toc">

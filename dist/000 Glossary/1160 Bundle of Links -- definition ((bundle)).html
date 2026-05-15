@@ -586,6 +586,17 @@
         break-inside: avoid;
         page-break-inside: avoid;
       }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .section-two-col .span-cols,
+      .content .section-two-col table.span-cols,
+      .content .section-two-col .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
+      }
 
       
       .content .paper-dual-column-body {
@@ -609,6 +620,17 @@
       .content .paper-dual-column-body .mermaid {
         break-inside: avoid;
         page-break-inside: avoid;
+      }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .paper-dual-column-body .span-cols,
+      .content .paper-dual-column-body table.span-cols,
+      .content .paper-dual-column-body .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
       }
       @media print {
         .content .paper-dual-column-body p {
@@ -702,6 +724,20 @@
         color: var(--cm-muted);
         font-size: .875rem;
         padding-top: .25rem;
+        text-align: left;
+      }
+      .content caption em,
+      .content caption i {
+        font-style: italic;
+      }
+      .content figure {
+        margin: 1rem 0;
+      }
+      .content figcaption {
+        color: var(--cm-muted);
+        font-size: .875rem;
+        padding-top: .25rem;
+        text-align: left;
       }
       /* Alternative heading styles */
       .content h1.rounded, .content h1.rounded-left, .content h1.banner {
@@ -928,6 +964,40 @@
       .content .callout-note {
         border-left-color: #6c757d;
         background: #f8f9fa;
+      }
+      /* Foldable callouts: <details>/<summary> from Obsidian [!type]+/- syntax */
+      .content details.callout-foldable > summary {
+        cursor: pointer;
+        font-weight: 600;
+        list-style: none;
+        padding-right: 1rem;
+      }
+      .content details.callout-foldable > summary::-webkit-details-marker {
+        display: none;
+      }
+      .content details.callout-foldable > summary::before {
+        content: "▸";
+        display: inline-block;
+        width: 1em;
+        margin-right: .25em;
+        transition: transform 0.15s ease-in-out;
+      }
+      .content details.callout-foldable[open] > summary::before {
+        transform: rotate(90deg);
+      }
+      .content details.callout-foldable[open] > summary {
+        margin-bottom: .5rem;
+      }
+      @media print {
+        .content details.callout-foldable > *:not(summary) {
+          display: block !important;
+        }
+        .content details.callout-foldable > summary::before {
+          content: none;
+        }
+        .content details.callout-foldable > summary {
+          margin-bottom: .5rem;
+        }
       }
       /* Hero callout: full-bleed in showcase mode */
       .content .callout-hero {
@@ -1555,8 +1625,8 @@
         <div class="pdf-links"><a class="tr-float link-secondary small" href="../bundle.pdf" download>PDF</a> <a href="?fullscreen=1" class="fullscreen-enter" aria-label="Fullscreen" title="Fullscreen">⛶</a></div>
         <div class="page-title-row d-flex justify-content-between align-items-center"><div class="page-title" id="bundle">🌻 Bundle of Links – definition<a aria-label='Permalink' class='anchor-link' href='/bundle'>#</a></div></div><hr />
         <p>At Causal Map, we call the individual links just "links" and we call the collection of multiple "co-terminal" links, i.e. the set of links starting at X and finishing at Y, a "bundle of links" or a "links bundle" or just a "bundle". In the special case where there is only one link in the bundle, then the link = the bundle.</p>
-<p><img alt="d478bf846dfb5b5ea588c6b18f048d63_MD5" class="img-fluid cm-img-flush" loading="lazy" src="../007 Task 2 -- Causal coding -- minimalist style/img/d478bf846dfb5b5ea588c6b18f048d63_MD5.jpg" style="background-color: #fff;"/></p>
-<p><em>Three causal claims making up a bundle</em></p>
+<figure><img alt="d478bf846dfb5b5ea588c6b18f048d63_MD5" class="img-fluid cm-img-flush" loading="lazy" src="../007 Task 2 -- Causal coding -- minimalist style/img/d478bf846dfb5b5ea588c6b18f048d63_MD5.jpg" style="background-color: #fff;"/><figcaption><em>Three causal claims making up a bundle</em></figcaption></figure>
+
         <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a href="https://causalmap.app" class="link-secondary">Causal Map Ltd</a> 2026</span> · <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" style="height:18px;opacity:0.7;vertical-align:middle;" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" /></a><a href="https://app.causalmap.app" class="link-secondary ms-2" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>
       </main>
       <aside class="rightbar"><hr /><h2>Backlinks</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a href="../010 Task 3 -- Answering questions -- General/910 Assessing quality or robustness of-af4c9e.html" class="link-secondary">Assessing quality or robustness of evidence for a causal link based on a bundle of coterminal causal claims</a></li><li><a href="1150- Glossary ((glossary)).html" class="link-secondary">Glossary</a></li><li><a href="../010 Task 3 -- Answering questions -- General/900 Quality assurance and rigour in ca-459476.html" class="link-secondary">Quality assurance and rigour in causal mapping -- ensuring robust conclusions and inferences</a></li></ul></div></aside>

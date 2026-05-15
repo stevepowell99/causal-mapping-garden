@@ -585,6 +585,17 @@
         break-inside: avoid;
         page-break-inside: avoid;
       }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .section-two-col .span-cols,
+      .content .section-two-col table.span-cols,
+      .content .section-two-col .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
+      }
 
       
       .content .paper-dual-column-body {
@@ -608,6 +619,17 @@
       .content .paper-dual-column-body .mermaid {
         break-inside: avoid;
         page-break-inside: avoid;
+      }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .paper-dual-column-body .span-cols,
+      .content .paper-dual-column-body table.span-cols,
+      .content .paper-dual-column-body .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
       }
       @media print {
         .content .paper-dual-column-body p {
@@ -701,6 +723,20 @@
         color: var(--cm-muted);
         font-size: .875rem;
         padding-top: .25rem;
+        text-align: left;
+      }
+      .content caption em,
+      .content caption i {
+        font-style: italic;
+      }
+      .content figure {
+        margin: 1rem 0;
+      }
+      .content figcaption {
+        color: var(--cm-muted);
+        font-size: .875rem;
+        padding-top: .25rem;
+        text-align: left;
       }
       /* Alternative heading styles */
       .content h1.rounded, .content h1.rounded-left, .content h1.banner {
@@ -927,6 +963,40 @@
       .content .callout-note {
         border-left-color: #6c757d;
         background: #f8f9fa;
+      }
+      /* Foldable callouts: <details>/<summary> from Obsidian [!type]+/- syntax */
+      .content details.callout-foldable > summary {
+        cursor: pointer;
+        font-weight: 600;
+        list-style: none;
+        padding-right: 1rem;
+      }
+      .content details.callout-foldable > summary::-webkit-details-marker {
+        display: none;
+      }
+      .content details.callout-foldable > summary::before {
+        content: "▸";
+        display: inline-block;
+        width: 1em;
+        margin-right: .25em;
+        transition: transform 0.15s ease-in-out;
+      }
+      .content details.callout-foldable[open] > summary::before {
+        transform: rotate(90deg);
+      }
+      .content details.callout-foldable[open] > summary {
+        margin-bottom: .5rem;
+      }
+      @media print {
+        .content details.callout-foldable > *:not(summary) {
+          display: block !important;
+        }
+        .content details.callout-foldable > summary::before {
+          content: none;
+        }
+        .content details.callout-foldable > summary {
+          margin-bottom: .5rem;
+        }
       }
       /* Hero callout: full-bleed in showcase mode */
       .content .callout-hero {
@@ -1556,53 +1626,34 @@
 <div class="mb-3"><span class="badge text-bg-light border"><i class="far fa-calendar"></i> 28 Apr 2026</span></div>
 <p>The public <strong><code>example-original</code></strong> project in the Causal Map app is a real, anonymised QuIP-style dataset. It is useful when you want to see what a <strong>busy</strong> map looks like after serious coding, and how filters change the picture. Screenshots below are exported from <strong>saved bookmarks</strong> (stable image files in this vault; open the matching bookmark in the app to reproduce the exact filter state).</p>
 <h2 id="getting-oriented-main-factors">Getting oriented: main factors<a aria-label="Permalink" class="anchor-link" href="/howto-example-original-views/#getting-oriented-main-factors">#</a></h2>
-<p><img alt="Main factors map (bookmark #266)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-266.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #266 — factor-frequency style view: main factors map. <a href="https://app.causalmap.app/?bookmark=266">Open in app</a></em></p>
+<figure><img alt="Main factors map (bookmark #266)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-266.png" style="background-color: #fff;"/><figcaption><em>Bookmark #266 — factor-frequency style view: main factors map. <a href="https://app.causalmap.app/?bookmark=266">Open in app</a></em></figcaption></figure>
 <h2 id="a-focused-consequence-story">A focused consequence story<a aria-label="Permalink" class="anchor-link" href="/howto-example-original-views/#a-focused-consequence-story">#</a></h2>
-<p><img alt="Consequences of increased knowledge (bookmark #262)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-262.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #262 — consequences of increased knowledge. <a href="https://app.causalmap.app/?bookmark=262">Open in app</a></em></p>
-<p><img alt="Immediate consequences of Increased Knowledge (bookmark #272)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-272.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #272 — immediate consequences of Increased Knowledge in the interactive map. <a href="https://app.causalmap.app/?bookmark=272">Open in app</a></em></p>
+<figure><img alt="Consequences of increased knowledge (bookmark #262)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-262.png" style="background-color: #fff;"/><figcaption><em>Bookmark #262 — consequences of increased knowledge. <a href="https://app.causalmap.app/?bookmark=262">Open in app</a></em></figcaption></figure>
+<figure><img alt="Immediate consequences of Increased Knowledge (bookmark #272)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-272.png" style="background-color: #fff;"/><figcaption><em>Bookmark #272 — immediate consequences of Increased Knowledge in the interactive map. <a href="https://app.causalmap.app/?bookmark=272">Open in app</a></em></figcaption></figure>
 <h2 id="frequency-filters-links-vs-factors">Frequency filters (links vs factors)<a aria-label="Permalink" class="anchor-link" href="/howto-example-original-views/#frequency-filters-links-vs-factors">#</a></h2>
-<p><img alt="Link frequency / top links (bookmark #1124)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1124.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #1124 — link frequency style example. <a href="https://app.causalmap.app/?bookmark=1124">Open in app</a></em></p>
+<figure><img alt="Link frequency / top links (bookmark #1124)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1124.png" style="background-color: #fff;"/><figcaption><em>Bookmark #1124 — link frequency style example. <a href="https://app.causalmap.app/?bookmark=1124">Open in app</a></em></figcaption></figure>
 <h2 id="factor-emphasis-and-zoom">Factor emphasis and zoom<a aria-label="Permalink" class="anchor-link" href="/howto-example-original-views/#factor-emphasis-and-zoom">#</a></h2>
-<p><img alt="Factor importance colouring (bookmark #1063)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1063.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #1063 — factor importance colouring. <a href="https://app.causalmap.app/?bookmark=1063">Open in app</a></em></p>
+<figure><img alt="Factor importance colouring (bookmark #1063)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1063.png" style="background-color: #fff;"/><figcaption><em>Bookmark #1063 — factor importance colouring. <a href="https://app.causalmap.app/?bookmark=1063">Open in app</a></em></figcaption></figure>
 <h2 id="factor-label-filter-and-zoom-contrast">Factor Label filter and zoom contrast<a aria-label="Permalink" class="anchor-link" href="/howto-example-original-views/#factor-label-filter-and-zoom-contrast">#</a></h2>
-<p><img alt="Focus: Farm production, no zoom (bookmark #805)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-805.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #805 — factor label focus, no zoom. <a href="https://app.causalmap.app/?bookmark=805">Open in app</a></em></p>
-<p><img alt="Focus: Farm production, zoom level 1 (bookmark #806)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-806.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #806 — same focus with zoom. <a href="https://app.causalmap.app/?bookmark=806">Open in app</a></em></p>
+<figure><img alt="Focus: Farm production, no zoom (bookmark #805)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-805.png" style="background-color: #fff;"/><figcaption><em>Bookmark #805 — factor label focus, no zoom. <a href="https://app.causalmap.app/?bookmark=805">Open in app</a></em></figcaption></figure>
+<figure><img alt="Focus: Farm production, zoom level 1 (bookmark #806)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-806.png" style="background-color: #fff;"/><figcaption><em>Bookmark #806 — same focus with zoom. <a href="https://app.causalmap.app/?bookmark=806">Open in app</a></em></figcaption></figure>
 <h2 id="group-comparisons">Group comparisons<a aria-label="Permalink" class="anchor-link" href="/howto-example-original-views/#group-comparisons">#</a></h2>
-<p><img alt="Village 1 group split (bookmark #259)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-259.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #259 — splitting by group: are different groups impacted in different ways? <a href="https://app.causalmap.app/?bookmark=259">Open in app</a></em></p>
-<p><img alt="Village 1 only group filter (bookmark #260)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-260.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #260 — the same question, filtered to one village. <a href="https://app.causalmap.app/?bookmark=260">Open in app</a></em></p>
-<p><img alt="Gender comparison heatmap (bookmark #267)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-267.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #267 — comparing groups with a heatmap rather than a map. <a href="https://app.causalmap.app/?bookmark=267">Open in app</a></em></p>
+<figure><img alt="Village 1 group split (bookmark #259)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-259.png" style="background-color: #fff;"/><figcaption><em>Bookmark #259 — splitting by group: are different groups impacted in different ways? <a href="https://app.causalmap.app/?bookmark=259">Open in app</a></em></figcaption></figure>
+<figure><img alt="Village 1 only group filter (bookmark #260)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-260.png" style="background-color: #fff;"/><figcaption><em>Bookmark #260 — the same question, filtered to one village. <a href="https://app.causalmap.app/?bookmark=260">Open in app</a></em></figcaption></figure>
+<figure><img alt="Gender comparison heatmap (bookmark #267)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-267.png" style="background-color: #fff;"/><figcaption><em>Bookmark #267 — comparing groups with a heatmap rather than a map. <a href="https://app.causalmap.app/?bookmark=267">Open in app</a></em></figcaption></figure>
 <h2 id="tags-on-the-map">Tags on the map<a aria-label="Permalink" class="anchor-link" href="/howto-example-original-views/#tags-on-the-map">#</a></h2>
-<p><img alt="Link tags visible on the map (bookmark #1126)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1126.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #1126 — hypothetical / doubtful style tags on links. <a href="https://app.causalmap.app/?bookmark=1126">Open in app</a></em></p>
+<figure><img alt="Link tags visible on the map (bookmark #1126)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1126.png" style="background-color: #fff;"/><figcaption><em>Bookmark #1126 — hypothetical / doubtful style tags on links. <a href="https://app.causalmap.app/?bookmark=1126">Open in app</a></em></figcaption></figure>
 <h2 id="path-tracing-and-source-tracing">Path tracing and source tracing<a aria-label="Permalink" class="anchor-link" href="/howto-example-original-views/#path-tracing-and-source-tracing">#</a></h2>
-<p><img alt="Path tracing without source tracing (bookmark #1129)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1129.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #1129 — path tracing from Increased knowledge to Improved health, without source tracing. <a href="https://app.causalmap.app/?bookmark=1129">Open in app</a></em></p>
-<p><img alt="Path tracing with source tracing (bookmark #981)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-981.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #981 — path tracing with source tracing. <a href="https://app.causalmap.app/?bookmark=981">Open in app</a></em></p>
-<p><img alt="Order matters: source tracing then zoom (bookmark #1125)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1125.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #1125 — pipeline order (tracing then zoom). <a href="https://app.causalmap.app/?bookmark=1125">Open in app</a></em></p>
+<figure><img alt="Path tracing without source tracing (bookmark #1129)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1129.png" style="background-color: #fff;"/><figcaption><em>Bookmark #1129 — path tracing from Increased knowledge to Improved health, without source tracing. <a href="https://app.causalmap.app/?bookmark=1129">Open in app</a></em></figcaption></figure>
+<figure><img alt="Path tracing with source tracing (bookmark #981)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-981.png" style="background-color: #fff;"/><figcaption><em>Bookmark #981 — path tracing with source tracing. <a href="https://app.causalmap.app/?bookmark=981">Open in app</a></em></figcaption></figure>
+<figure><img alt="Order matters: source tracing then zoom (bookmark #1125)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1125.png" style="background-color: #fff;"/><figcaption><em>Bookmark #1125 — pipeline order (tracing then zoom). <a href="https://app.causalmap.app/?bookmark=1125">Open in app</a></em></figcaption></figure>
 <h2 id="links-bundles-and-evidence">Links, bundles, and evidence<a aria-label="Permalink" class="anchor-link" href="/howto-example-original-views/#links-bundles-and-evidence">#</a></h2>
-<p><img alt="Links table sorted by bundle (bookmark #1143)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1143.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #1143 — links table sorted by bundle, showing that one visible map edge can contain several links. <a href="https://app.causalmap.app/?bookmark=1143">Open in app</a></em></p>
-<p><img alt="Bundled links on the map (bookmark #1144)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1144.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #1144 — the map corresponding to #1143. <a href="https://app.causalmap.app/?bookmark=1144">Open in app</a></em></p>
-<p><img alt="Narrative evidence print view (bookmark #1185)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1185.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #1185 — print view of links with context, useful for narrative evidence. <a href="https://app.causalmap.app/?bookmark=1185">Open in app</a></em></p>
+<figure><img alt="Links table sorted by bundle (bookmark #1143)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1143.png" style="background-color: #fff;"/><figcaption><em>Bookmark #1143 — links table sorted by bundle, showing that one visible map edge can contain several links. <a href="https://app.causalmap.app/?bookmark=1143">Open in app</a></em></figcaption></figure>
+<figure><img alt="Bundled links on the map (bookmark #1144)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1144.png" style="background-color: #fff;"/><figcaption><em>Bookmark #1144 — the map corresponding to #1143. <a href="https://app.causalmap.app/?bookmark=1144">Open in app</a></em></figcaption></figure>
+<figure><img alt="Narrative evidence print view (bookmark #1185)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-1185.png" style="background-color: #fff;"/><figcaption><em>Bookmark #1185 — print view of links with context, useful for narrative evidence. <a href="https://app.causalmap.app/?bookmark=1185">Open in app</a></em></figcaption></figure>
 <h2 id="soft-recode-examples">Soft recode examples<a aria-label="Permalink" class="anchor-link" href="/howto-example-original-views/#soft-recode-examples">#</a></h2>
-<p><img alt="Soft recode with top-level labels (bookmark #493)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-493.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #493 — soft recode using top-level labels from the human-coded file. <a href="https://app.causalmap.app/?bookmark=493">Open in app</a></em></p>
-<p><img alt="Soft recode with recycled weak matches (bookmark #494)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-494.png" style="background-color: #fff;"/></p>
-<p><em>Bookmark #494 — same soft recode setup, with weak matches recycled. <a href="https://app.causalmap.app/?bookmark=494">Open in app</a></em></p>
+<figure><img alt="Soft recode with top-level labels (bookmark #493)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-493.png" style="background-color: #fff;"/><figcaption><em>Bookmark #493 — soft recode using top-level labels from the human-coded file. <a href="https://app.causalmap.app/?bookmark=493">Open in app</a></em></figcaption></figure>
+<figure><img alt="Soft recode with recycled weak matches (bookmark #494)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/bookmark-494.png" style="background-color: #fff;"/><figcaption><em>Bookmark #494 — same soft recode setup, with weak matches recycled. <a href="https://app.causalmap.app/?bookmark=494">Open in app</a></em></figcaption></figure>
 <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a class="link-secondary" href="https://causalmap.app">Causal Map Ltd</a> 2026</span> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" style="height:18px;opacity:0.7;vertical-align:middle;"/></a><a class="link-secondary ms-2" href="https://app.causalmap.app" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>
 </main>
 <aside class="rightbar"><h2>On this page</h2><div class="hover-cue">Hover to view</div><div class="toc"><div class="toc">

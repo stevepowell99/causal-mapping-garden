@@ -586,6 +586,17 @@
         break-inside: avoid;
         page-break-inside: avoid;
       }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .section-two-col .span-cols,
+      .content .section-two-col table.span-cols,
+      .content .section-two-col .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
+      }
 
       
       .content .paper-dual-column-body {
@@ -609,6 +620,17 @@
       .content .paper-dual-column-body .mermaid {
         break-inside: avoid;
         page-break-inside: avoid;
+      }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .paper-dual-column-body .span-cols,
+      .content .paper-dual-column-body table.span-cols,
+      .content .paper-dual-column-body .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
       }
       @media print {
         .content .paper-dual-column-body p {
@@ -702,6 +724,20 @@
         color: var(--cm-muted);
         font-size: .875rem;
         padding-top: .25rem;
+        text-align: left;
+      }
+      .content caption em,
+      .content caption i {
+        font-style: italic;
+      }
+      .content figure {
+        margin: 1rem 0;
+      }
+      .content figcaption {
+        color: var(--cm-muted);
+        font-size: .875rem;
+        padding-top: .25rem;
+        text-align: left;
       }
       /* Alternative heading styles */
       .content h1.rounded, .content h1.rounded-left, .content h1.banner {
@@ -928,6 +964,40 @@
       .content .callout-note {
         border-left-color: #6c757d;
         background: #f8f9fa;
+      }
+      /* Foldable callouts: <details>/<summary> from Obsidian [!type]+/- syntax */
+      .content details.callout-foldable > summary {
+        cursor: pointer;
+        font-weight: 600;
+        list-style: none;
+        padding-right: 1rem;
+      }
+      .content details.callout-foldable > summary::-webkit-details-marker {
+        display: none;
+      }
+      .content details.callout-foldable > summary::before {
+        content: "▸";
+        display: inline-block;
+        width: 1em;
+        margin-right: .25em;
+        transition: transform 0.15s ease-in-out;
+      }
+      .content details.callout-foldable[open] > summary::before {
+        transform: rotate(90deg);
+      }
+      .content details.callout-foldable[open] > summary {
+        margin-bottom: .5rem;
+      }
+      @media print {
+        .content details.callout-foldable > *:not(summary) {
+          display: block !important;
+        }
+        .content details.callout-foldable > summary::before {
+          content: none;
+        }
+        .content details.callout-foldable > summary {
+          margin-bottom: .5rem;
+        }
       }
       /* Hero callout: full-bleed in showcase mode */
       .content .callout-hero {
@@ -1571,6 +1641,42 @@
 <p>Text displayed in column 2.</p>
 </div>
 </div>
+<h2 id="captions-for-tables-and-images">Captions for tables and images<a aria-label="Permalink" class="anchor-link" href="#captions-for-tables-and-images">#</a></h2>
+<p>An italicised paragraph on the line immediately after a table or image is promoted to a caption:</p>
+<ul>
+<li>after a <code>&lt;table&gt;</code> it becomes a <code>&lt;caption&gt;</code> element inside the table (<code>caption-side: bottom</code>)</li>
+<li>after a standalone image it wraps the image in <code>&lt;figure&gt;</code> with a <code>&lt;figcaption&gt;</code> underneath</li>
+<li>after a <code>.cm-figure-span</code> image (the full-width wrapper) the wrapper is upgraded to <code>&lt;figure class="cm-figure-span"&gt;</code> so the full-width treatment carries through</li>
+</ul>
+<pre><code>| H | H |
+| - | - |
+| c | c |
+*Comparison between holistic and claim-by-claim coding styles*
+</code></pre>
+<pre><code>![alt text](path/to/image.png)
+*Figure 1: what the image shows.*
+</code></pre>
+<p>The italicised line must be the only content of its paragraph (just <code>*text*</code>, nothing else). If you need bold or other inline formatting inside the caption, nest it inside the italics.</p>
+<h2 id="full-width-on-paper-pages-span-cols">Full-width on paper pages: <code>.span-cols</code><a aria-label="Permalink" class="anchor-link" href="#full-width-on-paper-pages-span-cols">#</a></h2>
+<p>Paper pages (YAML <code>tags: paper</code> or <code>type: article</code>) flow body content into two columns. Wide tables squeezed into one column are unreadable. Add an HTML comment marker on a blank line above the table to break it out and span the full page width in HTML and PDF:</p>
+<pre><code>&lt;div class="span-cols" markdown="1"&gt;
+
+| Dimension | Holistic | Claim-by-claim |
+| --------- | -------- | -------------- |
+| ...       | ...      | ...            |
+
+&lt;/div&gt;
+</code></pre>
+<p>The comment is invisible in Obsidian's reading view, so the table still renders natively; the build picks up the marker and wraps the table in <code>&lt;div class="span-cols" markdown="1"&gt;...&lt;/div&gt;</code>.</p>
+<p>Images use a shortcut: add <code>{.span-cols}</code> to an image and the build wraps it in <code>.cm-figure-span</code>, which gets the same treatment.</p>
+<p>For any other block (figure, mermaid diagram, code, custom HTML), use the explicit wrapper:</p>
+<pre><code>&lt;div class="span-cols" markdown="1"&gt;
+
+...your block here...
+
+&lt;/div&gt;
+</code></pre>
+<p>The <code>markdown="1"</code> attribute is required by python-markdown's <code>md_in_html</code> so inner markdown still parses. The build auto-injects it on <code>.span-cols</code> divs if you forget, but it has no effect in Obsidian's reading view, so the inner markdown won't render there. Use the <code>&lt;!--span-cols--&gt;</code> marker if you want Obsidian compatibility.</p>
 <h2 id="heading-styles">Heading styles<a aria-label="Permalink" class="anchor-link" href="#heading-styles">#</a></h2>
 <ul>
 <li><code>.rounded</code> - Rounded box with light background and left border</li>
@@ -1611,7 +1717,54 @@
 </ul>
 <p><strong>Basic callouts:</strong> <code>info</code>, <code>warning</code>, <code>tip</code>, <code>note</code></p>
 <p><strong>Modifiers:</strong> <code>narrow</code>, <code>right</code>, <code>center</code>, <code>heavy</code>, <code>left-border</code>, <code>rounded</code>, <code>inverted</code></p>
+<h3 id="obsidian-callout-syntax-also-works">Obsidian callout syntax (also works)<a aria-label="Permalink" class="anchor-link" href="#obsidian-callout-syntax-also-works">#</a></h3>
+<p>You can also write callouts in Obsidian's native syntax, which the build tool converts to <code>-- {.type}</code> blocks. This is useful because they render natively in Obsidian as well.</p>
+<pre><code>&gt; [!tip] Optional title
+&gt; - bullet
+&gt; - bullet
+</code></pre>
+<p>becomes a <code>.tip</code> callout with <strong>Optional title</strong> as a bold lead and the bullets as body. Drop the title line if you don't want one.</p>
+<p><strong>Foldable variants.</strong> Append <code>+</code> or <code>-</code> to the type to render the callout as a <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> pair:</p>
+<ul>
+<li><code>&gt; [!tip]+ Title</code> opens by default; the title becomes the summary, the body is collapsible.</li>
+<li><code>&gt; [!tip]- Title</code> starts closed; click the summary to expand.</li>
+</ul>
+<p>The title becomes the clickable summary (defaults to the type name if absent). In PDF output, foldable callouts always render fully expanded.</p>
+<p>Plain blockquotes (<code>&gt; ...</code> without <code>[!type]</code>) are left as blockquotes, except on <code>paper</code> pages (where they become <code>.note</code> callouts) and <code>case_study</code> pages (where they become <code>.tip</code> callouts).</p>
+<p><strong>Type aliases.</strong> The four native types pass straight through: <code>note</code>, <code>info</code>, <code>tip</code>, <code>warning</code>, plus <code>alert</code>. Other Obsidian types are mapped to the closest match:</p>
+<ul>
+<li><em>tip</em>: <code>success</code>, <code>done</code>, <code>check</code>, <code>important</code>, <code>hint</code></li>
+<li><em>info</em>: <code>summary</code>, <code>abstract</code>, <code>tldr</code>, <code>todo</code>, <code>question</code>, <code>help</code>, <code>faq</code>, <code>example</code></li>
+<li><em>warning</em>: <code>caution</code>, <code>attention</code></li>
+<li><em>alert</em> (red): <code>failure</code>, <code>fail</code>, <code>missing</code>, <code>danger</code>, <code>error</code>, <code>bug</code></li>
+<li><em>note</em>: <code>quote</code>, <code>cite</code></li>
+</ul>
+<p>Anything not listed falls back to <code>.note</code>. Modifiers (<code>narrow</code>, <code>right</code>, etc.) are only available via the <code>--{.type-mod}</code> syntax, not via Obsidian callouts.</p>
 <p><strong>Examples:</strong></p>
+<div class="callout callout-tip">
+<p><strong>Three rules that always apply</strong></p>
+<ul>
+<li>First rule</li>
+<li>Second rule</li>
+<li>Third rule</li>
+</ul>
+</div>
+<div class="callout callout-warning">
+<p><strong>Watch out</strong></p>
+<p>This will render with a yellow border.</p>
+</div>
+<div class="callout callout-info">
+<p>No title, just an info block.</p>
+</div>
+<details class="callout callout-tip callout-foldable" open="open">
+<summary>Foldable, open by default</summary>
+<p>This block can be collapsed by the reader. The title becomes the summary.</p>
+</details>
+<details class="callout callout-warning callout-foldable">
+<summary>Foldable, closed by default</summary>
+<p>Hidden until the reader clicks the summary line.</p>
+</details>
+<h3 id="showcase-callout-examples">Showcase callout examples<a aria-label="Permalink" class="anchor-link" href="#showcase-callout-examples">#</a></h3>
 <div class="row g-4 mb-3">
 <div class="col-md-4">
 <div class="callout callout-panel">
@@ -1753,6 +1906,8 @@
 <ul>
 <li><a href="#page-layout-yaml">Page layout (YAML)</a></li>
 <li><a href="#multi-column-obsidian">Multi-column (Obsidian)</a></li>
+<li><a href="#captions-for-tables-and-images">Captions for tables and images</a></li>
+<li><a href="#full-width-on-paper-pages-span-cols">Full-width on paper pages: .span-cols</a></li>
 <li><a href="#heading-styles">Heading styles</a></li>
 <li><a href="#heading-1-rounded">Heading 1 rounded</a><ul>
 <li><a href="#heading-2-rounded">Heading 2 rounded</a></li>
@@ -1766,7 +1921,11 @@
 </ul>
 </li>
 <li><a href="#causal-mapping-the-evaluators-engine-room">Causal Mapping: the evaluator's engine room</a><ul>
-<li><a href="#box-styles">Box styles</a></li>
+<li><a href="#box-styles">Box styles</a><ul>
+<li><a href="#obsidian-callout-syntax-also-works">Obsidian callout syntax (also works)</a></li>
+<li><a href="#showcase-callout-examples">Showcase callout examples</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
