@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yes, it&#x27;s ok to say that an AI understands what you say</title>
     <meta name="description" content="7 Oct 2025 Me: &quot;ah ChatGPT misunderstood when I said &#x27;United&#x27; — I meant Sheffield United not Manchester United&quot;. Some pedant: &quot;you shouldn&#x27;t say &#x27;understand&#x27;: an AI is not even a robot. It is just a large language model,">
-    <link rel="canonical" href="https://garden.causalmap.app/910 AI and the wider world/Yes, it&#x27;s ok to say that an AI underst-731be3.html">
+    <link rel="canonical" href="https://garden.causalmap.app/910%20AI%20and%20the%20wider%20world/Yes%2C%20it%27s%20ok%20to%20say%20that%20an%20AI%20underst-731be3.html">
     <meta property="og:title" content="Yes, it&#x27;s ok to say that an AI understands what you say">
     <meta property="og:description" content="7 Oct 2025 Me: &quot;ah ChatGPT misunderstood when I said &#x27;United&#x27; — I meant Sheffield United not Manchester United&quot;. Some pedant: &quot;you shouldn&#x27;t say &#x27;understand&#x27;: an AI is not even a robot. It is just a large language model,">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/910 AI and the wider world/Yes, it&#x27;s ok to say that an AI underst-731be3.html">
+    <meta property="og:url" content="https://garden.causalmap.app/910%20AI%20and%20the%20wider%20world/Yes%2C%20it%27s%20ok%20to%20say%20that%20an%20AI%20underst-731be3.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1717,6 +1723,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

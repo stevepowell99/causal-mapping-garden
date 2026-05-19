@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hofman</title>
     <meta name="description" content="22 Aug 2025 Hofmann et al. - detecting prejudice in language models # March 14, 2024 The study by Hofmann et al. (2024) investigates the presence of dialect prejudice in language models, particularly against speakers of">
-    <link rel="canonical" href="https://garden.causalmap.app/550! Bias in AI/Hofman.html">
+    <link rel="canonical" href="https://garden.causalmap.app/550%21%20Bias%20in%20AI/Hofman.html">
     <meta property="og:title" content="Hofman">
     <meta property="og:description" content="22 Aug 2025 Hofmann et al. - detecting prejudice in language models # March 14, 2024 The study by Hofmann et al. (2024) investigates the presence of dialect prejudice in language models, particularly against speakers of">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/550! Bias in AI/Hofman.html">
+    <meta property="og:url" content="https://garden.causalmap.app/550%21%20Bias%20in%20AI/Hofman.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4E12AQGE6OfjnE2ZwA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1710413193165?e=1747872000&amp;amp;v=beta&amp;amp;t=ii1VasvfizYJDElR8lkbwZAsnClH-Pf5IWa0zPua8s4">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1734,6 +1740,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

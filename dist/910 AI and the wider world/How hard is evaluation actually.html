@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>How hard is evaluation actually</title>
     <meta name="description" content="9 Apr 2025 🏭 When machines replaced much manual labour, white-collar workers thought &quot;I&#x27;m ok, my job is much harder to mechanise&quot;. 🖥 And then when computers came for clerical jobs, university-educated white-collar worker">
-    <link rel="canonical" href="https://garden.causalmap.app/910 AI and the wider world/How hard is evaluation actually.html">
+    <link rel="canonical" href="https://garden.causalmap.app/910%20AI%20and%20the%20wider%20world/How%20hard%20is%20evaluation%20actually.html">
     <meta property="og:title" content="How hard is evaluation actually">
     <meta property="og:description" content="9 Apr 2025 🏭 When machines replaced much manual labour, white-collar workers thought &quot;I&#x27;m ok, my job is much harder to mechanise&quot;. 🖥 And then when computers came for clerical jobs, university-educated white-collar worker">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/910 AI and the wider world/How hard is evaluation actually.html">
+    <meta property="og:url" content="https://garden.causalmap.app/910%20AI%20and%20the%20wider%20world/How%20hard%20is%20evaluation%20actually.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://static.wixstatic.com/media/beec29_f233b615d6f84a5d882ccefe8c4207f0~mv2.png/v1/fill/w_925,h_868,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/beec29_f233b615d6f84a5d882ccefe8c4207f0~mv2.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1718,6 +1724,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

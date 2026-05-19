@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Factor labels – do not over-generalise</title>
     <meta name="description" content="22 Sep 2025 When you are creating factor labels for re-use across different causal claims, you should usually take care to keep them specific: make them no more general than they need to be. So if you are coding cases wh">
-    <link rel="canonical" href="https://garden.causalmap.app/007 Task 2 -- Causal coding -- minimalist style/610 Factor labels -- do not over-generalise.html">
+    <link rel="canonical" href="https://garden.causalmap.app/007%20Task%202%20--%20Causal%20coding%20--%20minimalist%20style/610%20Factor%20labels%20--%20do%20not%20over-generalise.html">
     <meta property="og:title" content="Factor labels – do not over-generalise">
     <meta property="og:description" content="22 Sep 2025 When you are creating factor labels for re-use across different causal claims, you should usually take care to keep them specific: make them no more general than they need to be. So if you are coding cases wh">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/007 Task 2 -- Causal coding -- minimalist style/610 Factor labels -- do not over-generalise.html">
+    <meta property="og:url" content="https://garden.causalmap.app/007%20Task%202%20--%20Causal%20coding%20--%20minimalist%20style/610%20Factor%20labels%20--%20do%20not%20over-generalise.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1712,6 +1718,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

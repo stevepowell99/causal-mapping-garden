@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UNICEF Innocenti. Qualitative Study of the Social Cash Transfer Programme in Urban Zambia</title>
     <meta name="description" content="16 Apr 2025 2025-04-16 Summary # The Social Cash Transfer (SCT) programme in Zambia is a poverty-targeted social protection intervention. It&#x27;s the country&#x27;s largest and most important programme of its category and it was">
-    <link rel="canonical" href="https://garden.causalmap.app/800 Case studies/UNICEF Innocenti. Qualitative Study of-099d25.html">
+    <link rel="canonical" href="https://garden.causalmap.app/800%20Case%20studies/UNICEF%20Innocenti.%20Qualitative%20Study%20of-099d25.html">
     <meta property="og:title" content="UNICEF Innocenti. Qualitative Study of the Social Cash Transfer Programme in Urban Zambia">
     <meta property="og:description" content="16 Apr 2025 2025-04-16 Summary # The Social Cash Transfer (SCT) programme in Zambia is a poverty-targeted social protection intervention. It&#x27;s the country&#x27;s largest and most important programme of its category and it was">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/800 Case studies/UNICEF Innocenti. Qualitative Study of-099d25.html">
+    <meta property="og:url" content="https://garden.causalmap.app/800%20Case%20studies/UNICEF%20Innocenti.%20Qualitative%20Study%20of-099d25.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://imagedelivery.net/IEMzXmjRvW0g933AN5ejrA/assetsbulletsitefiles-1d734167-ad40-80c6-ac8d-e4887feed73a-attachmentbb9271ad-87b0-4b2b-9363-c7cc89186949imagepng/public">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1724,6 +1730,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

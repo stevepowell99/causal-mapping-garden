@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>!!- Context</title>
     <meta name="description" content="22 Sep 2025 Summary # In evaluation work, people often make context-dependent causal claims: “When X holds, A leads to B.” If you code only “A → B”, you may lose what makes the claim true in this setting . This page is a">
-    <link rel="canonical" href="https://garden.causalmap.app/007 Task 2 -- Causal coding -- minimalist style/670!!- Context.html">
+    <link rel="canonical" href="https://garden.causalmap.app/007%20Task%202%20--%20Causal%20coding%20--%20minimalist%20style/670%21%21-%20Context.html">
     <meta property="og:title" content="!!- Context">
     <meta property="og:description" content="22 Sep 2025 Summary # In evaluation work, people often make context-dependent causal claims: “When X holds, A leads to B.” If you code only “A → B”, you may lose what makes the claim true in this setting . This page is a">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/007 Task 2 -- Causal coding -- minimalist style/670!!- Context.html">
+    <meta property="og:url" content="https://garden.causalmap.app/007%20Task%202%20--%20Causal%20coding%20--%20minimalist%20style/670%21%21-%20Context.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://garden.causalmap.app/img/d0070b9a08ad49b688cabe0689412233--Untitled.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1789,6 +1795,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

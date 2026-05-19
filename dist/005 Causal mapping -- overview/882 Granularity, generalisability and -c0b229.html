@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Granularity, generalisability and chunking are coding problems for causal mapping too</title>
     <meta name="description" content="From (Powell et al. 2024) An illustrative example ! A positive feature of causal maps, illustrated by the Figure, is that they capture a lot of information in a way that is quick and easy to understand. This example reve">
-    <link rel="canonical" href="https://garden.causalmap.app/005 Causal mapping -- overview/882 Granularity, generalisability and -c0b229.html">
+    <link rel="canonical" href="https://garden.causalmap.app/005%20Causal%20mapping%20--%20overview/882%20Granularity%2C%20generalisability%20and%20-c0b229.html">
     <meta property="og:title" content="Granularity, generalisability and chunking are coding problems for causal mapping too">
     <meta property="og:description" content="From (Powell et al. 2024) An illustrative example ! A positive feature of causal maps, illustrated by the Figure, is that they capture a lot of information in a way that is quick and easy to understand. This example reve">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/005 Causal mapping -- overview/882 Granularity, generalisability and -c0b229.html">
+    <meta property="og:url" content="https://garden.causalmap.app/005%20Causal%20mapping%20--%20overview/882%20Granularity%2C%20generalisability%20and%20-c0b229.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://imagedelivery.net/IEMzXmjRvW0g933AN5ejrA/wwwnotionso-image-wwwpogolnet-old_guide-_assets-giphygif/public">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1830,6 +1836,24 @@ whether to use “the same” factor to code two different things.</p><div class
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

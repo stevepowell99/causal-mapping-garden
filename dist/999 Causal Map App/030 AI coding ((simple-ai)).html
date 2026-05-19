@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AI coding</title>
     <meta name="description" content="The AI Coding panel provides a streamlined AI coding workflow inside the normal left pane. It keeps the app structure familiar while reducing clutter. Quick start: If you have roughly 5–100 pages of text, you can usually">
-    <link rel="canonical" href="https://garden.causalmap.app/999 Causal Map App/030 AI coding ((simple-ai)).html">
+    <link rel="canonical" href="https://garden.causalmap.app/999%20Causal%20Map%20App/030%20AI%20coding%20%28%28simple-ai%29%29.html">
     <meta property="og:title" content="AI coding">
     <meta property="og:description" content="The AI Coding panel provides a streamlined AI coding workflow inside the normal left pane. It keeps the app structure familiar while reducing clutter. Quick start: If you have roughly 5–100 pages of text, you can usually">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/999 Causal Map App/030 AI coding ((simple-ai)).html">
+    <meta property="og:url" content="https://garden.causalmap.app/999%20Causal%20Map%20App/030%20AI%20coding%20%28%28simple-ai%29%29.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1674,7 +1680,7 @@
 <ul>
 <li>Sequencer for the AI pipeline, with one <strong>set-up</strong> modal (see step 1 under <a href="../simple-ai/">The AI Workflow</a>).</li>
 <li><strong>Run</strong> starts <strong>Auto-code</strong>; with <strong>more than one</strong> source in scope it continues with <strong>Revise codebook</strong> then <strong>Recode</strong>, stopping on the first non-successful stage. With <strong>exactly one</strong> source in scope, it <strong>stops after Auto-code</strong>.</li>
-<li>Auto-code in One-click uses the same Auto-code panel prompt/settings as the separate <strong>Auto-code</strong> Run button, while skipping the extra run confirmation after you confirm the one-click set-up modal.</li>
+<li>One-click uses the same panel prompts/settings as the separate step buttons, while skipping the extra per-step run confirmations after you confirm the one-click set-up modal.</li>
 <li>Optional link deletion is configured <strong>in the modal</strong> (project-wide vs scoped to sources in scope), not only a single “delete everything” confirm.</li>
 <li><strong>Recode target</strong>: Use the global <a href="../factor-label-set/">Label set</a> below the Sources bar. Create a new suffix there first if you want Recode to fill <code>cause_suffix</code> / <code>effect_suffix</code> instead of only the default columns.</li>
 </ul>
@@ -1849,6 +1855,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

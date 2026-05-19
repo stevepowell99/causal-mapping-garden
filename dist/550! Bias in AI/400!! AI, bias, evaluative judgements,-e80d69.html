@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>!! AI, bias, evaluative judgements, guiderails</title>
     <meta name="description" content="26 Nov 2025 September 27, 2023 Linda Raftree just posted a summary of a discussion on &quot;How can we apply feminist frameworks to AI governance?&quot; https://merltech.org/how-can-we-apply-feminist-frameworks-to-ai-governance/#r">
-    <link rel="canonical" href="https://garden.causalmap.app/550! Bias in AI/400!! AI, bias, evaluative judgements,-e80d69.html">
+    <link rel="canonical" href="https://garden.causalmap.app/550%21%20Bias%20in%20AI/400%21%21%20AI%2C%20bias%2C%20evaluative%20judgements%2C-e80d69.html">
     <meta property="og:title" content="!! AI, bias, evaluative judgements, guiderails">
     <meta property="og:description" content="26 Nov 2025 September 27, 2023 Linda Raftree just posted a summary of a discussion on &quot;How can we apply feminist frameworks to AI governance?&quot; https://merltech.org/how-can-we-apply-feminist-frameworks-to-ai-governance/#r">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/550! Bias in AI/400!! AI, bias, evaluative judgements,-e80d69.html">
+    <meta property="og:url" content="https://garden.causalmap.app/550%21%20Bias%20in%20AI/400%21%21%20AI%2C%20bias%2C%20evaluative%20judgements%2C-e80d69.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4E12AQEm1PFXYNWWew/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1695808200609?e=1747872000&amp;amp;v=beta&amp;amp;t=3x4xFSgu4yKUDWQm-luJfArvGGwbW3Dk7S-ms9G2IPs">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1724,6 +1730,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>!Concrete and Memorable labels</title>
     <meta name="description" content="9 Apr 2025 Increasing label coverage and utility: three tweaks # diversity: Concrete and Memorable labels # We use ordinary clustering of text embeddings to get clusters of labels, but then we use a generative AI to find">
-    <link rel="canonical" href="https://garden.causalmap.app/600 How to -- in the Causal Map app/!Concrete and Memorable labels.html">
+    <link rel="canonical" href="https://garden.causalmap.app/600%20How%20to%20--%20in%20the%20Causal%20Map%20app/%21Concrete%20and%20Memorable%20labels.html">
     <meta property="og:title" content="!Concrete and Memorable labels">
     <meta property="og:description" content="9 Apr 2025 Increasing label coverage and utility: three tweaks # diversity: Concrete and Memorable labels # We use ordinary clustering of text embeddings to get clusters of labels, but then we use a generative AI to find">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/600 How to -- in the Causal Map app/!Concrete and Memorable labels.html">
+    <meta property="og:url" content="https://garden.causalmap.app/600%20How%20to%20--%20in%20the%20Causal%20Map%20app/%21Concrete%20and%20Memorable%20labels.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="C:\Users\Zoom\AppData\Roaming\Typora\typora-user-images\image-20250317211238749.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1752,6 +1758,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

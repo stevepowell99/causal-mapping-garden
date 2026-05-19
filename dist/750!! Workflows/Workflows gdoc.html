@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Workflows gdoc</title>
     <meta name="description" content="24 May 2025 https://docs.google.com/document/d/1nexgcqgtK-nTThCot7f35An1TRi3tdp4i4ZrHoPnfbc/edit?tab=t.0 ** Making sense of mountains of text: # The Causal Map Workflows app. What is Workflows? Workflows is a tool used b">
-    <link rel="canonical" href="https://garden.causalmap.app/750!! Workflows/Workflows gdoc.html">
+    <link rel="canonical" href="https://garden.causalmap.app/750%21%21%20Workflows/Workflows%20gdoc.html">
     <meta property="og:title" content="Workflows gdoc">
     <meta property="og:description" content="24 May 2025 https://docs.google.com/document/d/1nexgcqgtK-nTThCot7f35An1TRi3tdp4i4ZrHoPnfbc/edit?tab=t.0 ** Making sense of mountains of text: # The Causal Map Workflows app. What is Workflows? Workflows is a tool used b">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/750!! Workflows/Workflows gdoc.html">
+    <meta property="og:url" content="https://garden.causalmap.app/750%21%21%20Workflows/Workflows%20gdoc.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeaS6rg5snUVaL-NqsMQkNFMaDu4ppVBMWwvHDSY9j-SLX7CzLtioYKcs-sRVZhKvNEbmtX1L8CfaLH23eopq1C61dBOeAMTW0IlAvvZNlA5uIf_Og1fYJ0PJtFnKZLF2Bj_Xys?key=Q7dwC6InT9tXgtIdnfT2wuym">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -2095,6 +2101,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

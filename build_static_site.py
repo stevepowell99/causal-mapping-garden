@@ -2578,6 +2578,107 @@ def write_sidebar_js(output_root: Path, nav_html: str) -> None:
         out_path.write_text(js, encoding="utf-8")
 
 
+# Obsidian callout type names mapped to our build tool's callout types.
+# Anything not in the map falls back to .note.
+OBSIDIAN_CALLOUT_TYPE_MAP = {
+    # passthrough
+    "note": "note",
+    "info": "info",
+    "tip": "tip",
+    "warning": "warning",
+    "alert": "alert",
+    # tip-flavoured
+    "success": "tip", "done": "tip", "check": "tip",
+    "important": "tip", "hint": "tip",
+    # info-flavoured
+    "summary": "info", "abstract": "info", "tldr": "info",
+    "todo": "info", "question": "info", "help": "info",
+    "faq": "info", "example": "info",
+    # warning-flavoured
+    "caution": "warning", "attention": "warning",
+    # alert-flavoured (errors / failures)
+    "failure": "alert", "fail": "alert", "missing": "alert",
+    "danger": "alert", "error": "alert", "bug": "alert",
+    # note-flavoured
+    "quote": "note", "cite": "note",
+}
+
+
+def preprocess_obsidian_callouts(md_text: str) -> str:
+    """Convert Obsidian callout syntax (> [!type] Title ...) into --{.type} blocks.
+
+    Example input:
+        > [!tip] Optional title
+        > Body line 1
+        > - bullet
+
+    Becomes:
+        --{.tip}
+        **Optional title**
+
+        Body line 1
+        - bullet
+        --
+
+    Foldable variants render as <details>/<summary>:
+    - [!tip]+ -> open by default
+    - [!tip]- -> closed by default
+    Plain blockquotes without a [!type] marker are left untouched.
+    Unknown types fall back to .note.
+    """
+    lines = md_text.splitlines()
+    out: List[str] = []
+    in_fence = False
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if line.lstrip().startswith("```"):
+            in_fence = not in_fence
+            out.append(line)
+            i += 1
+            continue
+        if in_fence:
+            out.append(line)
+            i += 1
+            continue
+
+        m = re.match(r"^\s*>\s*\[!([A-Za-z]+)\]([+-]?)\s*(.*)$", line)
+        if not m:
+            out.append(line)
+            i += 1
+            continue
+
+        raw_type = m.group(1).lower()
+        fold_char = m.group(2)
+        title = m.group(3).strip()
+        callout_type = OBSIDIAN_CALLOUT_TYPE_MAP.get(raw_type, "note")
+
+        body_lines: List[str] = []
+        i += 1
+        while i < len(lines) and re.match(r"^\s*>\s?", lines[i]):
+            body_lines.append(re.sub(r"^\s*>\s?", "", lines[i]))
+            i += 1
+
+        if fold_char in ("+", "-"):
+            open_attr = " open" if fold_char == "+" else ""
+            classes = f"callout callout-{callout_type} callout-foldable"
+            summary_text = title or callout_type.capitalize()
+            out.append(f'<details class="{classes}" markdown="1"{open_attr}>')
+            out.append(f"<summary>{summary_text}</summary>")
+            out.append("")
+            out.extend(body_lines)
+            out.append("</details>")
+        else:
+            out.append(f"--{{.{callout_type}}}")
+            if title:
+                out.append(f"**{title}**")
+                out.append("")
+            out.extend(body_lines)
+            out.append("--")
+
+    return "\n".join(out)
+
+
 def preprocess_callout_blocks(md_text: str) -> str:
     """Convert --{.class} blocks to final HTML callout/box divs.
 
@@ -2957,6 +3058,54 @@ def _metadata_uses_pdf_dual_columns(metadata: Dict[str, Any]) -> bool:
     return _metadata_is_paper(metadata) or _metadata_has_dual_column_tag(metadata)
 
 
+def _metadata_wants_pdf_toc(metadata: Dict[str, Any]) -> bool:
+    """Return True if YAML opts into a PDF-only table of contents at the start of the page."""
+    if not isinstance(metadata, dict):
+        return False
+    for key in ("table-of-contents", "table_of_contents", "Table-of-Contents"):
+        if key in metadata:
+            val = metadata.get(key)
+            if isinstance(val, bool):
+                return val
+            return str(val).strip().lower() in {"true", "yes", "1", "on"}
+    return False
+
+
+def _build_pdf_toc_nav(main: Any, soup: Any, bs4_mod: Any) -> Optional[Any]:
+    """Build a `<nav class="pdf-toc">` element from H2/H3 headings inside `main`.
+
+    Skips the page title and any heading without an id. Returns None if no usable headings.
+    """
+    items: List[Tuple[str, str, str]] = []  # (tag_name, id, visible_text)
+    for h in main.select("h2[id], h3[id]"):
+        classes = h.get("class") or []
+        if "page-title" in classes:
+            continue
+        hid = h.get("id")
+        if not hid:
+            continue
+        # Build clean visible text, excluding the trailing "#" anchor-link decoration.
+        parts: List[str] = []
+        for child in h.children:
+            if isinstance(child, bs4_mod.element.Tag) and "anchor-link" in (child.get("class") or []):
+                continue
+            parts.append(child.get_text() if hasattr(child, "get_text") else str(child))
+        text = "".join(parts).strip()
+        if not text:
+            continue
+        items.append((h.name, hid, text))
+    if not items:
+        return None
+    parts_html: List[str] = ['<nav class="pdf-toc" aria-label="Table of contents"><h2>Contents</h2><ul>']
+    for tag_name, hid, text in items:
+        parts_html.append(
+            f'<li class="toc-{tag_name}"><a href="#{html.escape(hid)}">{html.escape(text)}</a></li>'
+        )
+    parts_html.append("</ul></nav>")
+    fragment = bs4_mod.BeautifulSoup("".join(parts_html), "html.parser")
+    return fragment.find("nav")
+
+
 def postprocess_two_col_sections(content_html: str) -> str:
     """Wrap content after a heading marked {.two-col} until the next heading."""
     try:
@@ -3189,6 +3338,17 @@ def section_two_col_css(prefix: str = "") -> str:
         break-inside: avoid;
         page-break-inside: avoid;
       }}
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      {block} .span-cols,
+      {block} table.span-cols,
+      {block} .span-cols > table {{
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
+      }}
 """
 
 
@@ -3218,6 +3378,17 @@ def dual_column_body_css(prefix: str = "") -> str:
       {body} .mermaid {{
         break-inside: avoid;
         page-break-inside: avoid;
+      }}
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      {body} .span-cols,
+      {body} table.span-cols,
+      {body} .span-cols > table {{
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
       }}
       @media print {{
         {body} p {{
@@ -3467,7 +3638,9 @@ def preprocess_case_study_styles(md_text: str) -> str:
     - H3 (###) -> add {.rounded} unless a class is already specified
     - Callouts: --{.note...} -> --{.tip...} (treat default note callouts as tips)
     - Blockquotes (lines starting with '>') are treated as "normal callouts" and rendered as tip callouts
+    - Obsidian-style callouts (> [!type] ...) are pulled out first so the [!type] is honoured.
     """
+    md_text = preprocess_obsidian_callouts(md_text)
     lines = md_text.splitlines()
     out: List[str] = []
     in_fence = False
@@ -3551,7 +3724,9 @@ def preprocess_paper_styles(md_text: str) -> str:
     - H2 (##) -> add {.banner-info} unless a class is already specified
     - H3 (###) -> add {.rounded-info} unless a class is already specified
     - Blockquotes (lines starting with '>') are treated as "normal callouts" and rendered as note callouts
+    - Obsidian-style callouts (> [!type] ...) are pulled out first so the [!type] is honoured.
     """
+    md_text = preprocess_obsidian_callouts(md_text)
     lines = md_text.splitlines()
     out: List[str] = []
     in_fence = False
@@ -3748,6 +3923,66 @@ def preprocess_mathjax_delimiters(md_text: str) -> str:
     return "\n".join(out_lines)
 
 
+# Style wrappers whose inner markdown should still be parsed.
+# md_in_html (part of the 'extra' extension) only descends into HTML elements
+# carrying markdown="1"; without it, content inside a styling <div> renders as
+# raw text. We auto-inject the attribute for the wrapper classes we ship.
+_MD_IN_HTML_WRAPPER_CLASSES = ("span-cols",)
+_MD_IN_HTML_WRAPPER_RE = re.compile(
+    r'<div\b([^>]*\bclass="[^"]*\b(?:'
+    + '|'.join(re.escape(c) for c in _MD_IN_HTML_WRAPPER_CLASSES)
+    + r')\b[^"]*"[^>]*)>'
+)
+
+
+def preprocess_markdown_in_wrapper_divs(md_text: str) -> str:
+    """Add markdown="1" to known wrapper divs so their inner markdown is still parsed."""
+    def _inject(m):
+        attrs = m.group(1)
+        if 'markdown=' in attrs:
+            return m.group(0)
+        return f'<div{attrs} markdown="1">'
+    return _MD_IN_HTML_WRAPPER_RE.sub(_inject, md_text)
+
+
+_SPAN_COLS_MARKER_RE = re.compile(r'^\s*<!--\s*span-cols\s*-->\s*$')
+
+
+def preprocess_span_cols_marker(md_text: str) -> str:
+    """Wrap the next table after a `<!--span-cols-->` marker so it spans both columns.
+
+    The marker is an HTML comment, so it's invisible in any rendered view (including
+    Obsidian). The build picks it up and wraps the next markdown table in
+    <div class="span-cols" markdown="1">...</div>, which the dual-column CSS rule
+    breaks out to full page width on paper pages.
+    """
+    lines = md_text.splitlines()
+    out: List[str] = []
+    i = 0
+    n = len(lines)
+    while i < n:
+        if not _SPAN_COLS_MARKER_RE.match(lines[i]):
+            out.append(lines[i])
+            i += 1
+            continue
+        # consume the marker
+        i += 1
+        # skip blank lines
+        while i < n and not lines[i].strip():
+            i += 1
+        # only wrap if the next non-blank block is a table
+        if i >= n or not lines[i].lstrip().startswith('|'):
+            continue
+        out.append('<div class="span-cols" markdown="1">')
+        out.append('')
+        while i < n and lines[i].lstrip().startswith('|'):
+            out.append(lines[i])
+            i += 1
+        out.append('')
+        out.append('</div>')
+    return '\n'.join(out)
+
+
 def preprocess_mermaid_fences(md_text: str) -> str:
     """Convert fenced Mermaid blocks to Mermaid divs so they render in HTML/PDF."""
     lines = md_text.splitlines()
@@ -3788,8 +4023,10 @@ def markdown_extensions(with_toc: bool = False) -> List[str]:
 
 def convert_markdown_to_html(md_text: str) -> str:
     """Convert markdown to HTML with minimal extensions."""
+    md_text = preprocess_span_cols_marker(md_text)
     md_text = strip_percent_comments(md_text)
     md_text = preprocess_column_blocks(md_text)
+    md_text = preprocess_obsidian_callouts(md_text)
     md_text = preprocess_callout_blocks(md_text)
     md_text = preprocess_heading_attributes(md_text)
     md_text = ensure_blank_lines_before_lists(md_text)
@@ -3797,6 +4034,7 @@ def convert_markdown_to_html(md_text: str) -> str:
     md_text = preprocess_inline_footnotes(md_text)
     md_text = preprocess_mathjax_delimiters(md_text)
     md_text = preprocess_mermaid_fences(md_text)
+    md_text = preprocess_markdown_in_wrapper_divs(md_text)
     # Use 'extra' extension which processes markdown inside HTML blocks
     return markdown.markdown(md_text, extensions=markdown_extensions())
 
@@ -3806,8 +4044,10 @@ def convert_markdown_with_toc(md_text: str) -> Tuple[str, str]:
 
     Returns (content_html, toc_html)
     """
+    md_text = preprocess_span_cols_marker(md_text)
     md_text = strip_percent_comments(md_text)
     md_text = preprocess_column_blocks(md_text)
+    md_text = preprocess_obsidian_callouts(md_text)
     md_text = preprocess_callout_blocks(md_text)
     md_text = preprocess_heading_attributes(md_text)
     md_text = ensure_blank_lines_before_lists(md_text)
@@ -3815,6 +4055,7 @@ def convert_markdown_with_toc(md_text: str) -> Tuple[str, str]:
     md_text = preprocess_inline_footnotes(md_text)
     md_text = preprocess_mathjax_delimiters(md_text)
     md_text = preprocess_mermaid_fences(md_text)
+    md_text = preprocess_markdown_in_wrapper_divs(md_text)
     # Use 'extra' extension which processes markdown inside HTML blocks
     md = markdown.Markdown(extensions=markdown_extensions(with_toc=True))
     content_html = md.convert(md_text)
@@ -3908,6 +4149,119 @@ def normalize_alpha_ordered_lists(md_text: str) -> str:
             in_block = False
             out.append(line)
     return "\n".join(out)
+
+
+def _next_significant_sibling(node: Any) -> Any:
+    """Return the next sibling that is an element or non-blank text node."""
+    nxt = node.next_sibling
+    while nxt is not None and getattr(nxt, "name", None) is None and not str(nxt).strip():
+        nxt = nxt.next_sibling
+    return nxt
+
+
+def _italic_only_paragraph_em(node: Any) -> Any:
+    """If `node` is a `<p>` whose visible content is a single <em>/<i>, return that em; else None."""
+    if node is None or getattr(node, "name", None) != "p":
+        return None
+    em = node.find("em") or node.find("i")
+    if em is None:
+        return None
+    text_outside = "".join(str(c) for c in node.contents if c is not em).strip()
+    other_elements = [c for c in node.contents if getattr(c, "name", None) and c is not em]
+    if text_outside or other_elements:
+        return None
+    return em
+
+
+def postprocess_table_captions(content_html: str) -> str:
+    """Promote a `<p><em>…</em></p>` immediately after a `<table>` to a `<caption>` inside it.
+
+    Convention: an italicised paragraph on the line right after a markdown table is
+    treated as its caption. The em is moved into a <caption> as the first child of the
+    table, so it sits snugly underneath via the existing caption CSS (caption-side: bottom).
+    """
+    try:
+        import bs4  # type: ignore
+    except Exception:
+        return content_html
+    try:
+        soup = bs4.BeautifulSoup(content_html, "html.parser")
+    except Exception:
+        return content_html
+    for table in soup.find_all("table"):
+        if table.find("caption"):
+            continue
+        cap_p = _next_significant_sibling(table)
+        em = _italic_only_paragraph_em(cap_p)
+        if em is None:
+            continue
+        caption = soup.new_tag("caption")
+        caption.append(em.extract())
+        table.insert(0, caption)
+        cap_p.decompose()
+    return str(soup)
+
+
+def postprocess_figure_captions(content_html: str) -> str:
+    """Wrap an image + italic paragraph into <figure>/<figcaption>.
+
+    Two cases handled:
+    1. `<p><img ...></p>` followed by `<p><em>…</em></p>` -> `<figure>` with the
+       image and a `<figcaption>` containing the em.
+    2. `<div class="cm-figure-span"><img ...></div>` (the span-cols image wrapper)
+       followed by `<p><em>…</em></p>` -> `<figure class="cm-figure-span">` so the
+       full-width treatment carries through.
+    """
+    try:
+        import bs4  # type: ignore
+    except Exception:
+        return content_html
+    try:
+        soup = bs4.BeautifulSoup(content_html, "html.parser")
+    except Exception:
+        return content_html
+
+    # Case 1: bare <p><img></p>
+    for p in list(soup.find_all("p")):
+        imgs = p.find_all("img", recursive=False)
+        if len(imgs) != 1:
+            continue
+        other = [
+            c for c in p.contents
+            if c is not imgs[0] and (getattr(c, "name", None) or str(c).strip())
+        ]
+        if other:
+            continue
+        cap_p = _next_significant_sibling(p)
+        em = _italic_only_paragraph_em(cap_p)
+        if em is None:
+            continue
+        figure = soup.new_tag("figure")
+        figure.append(imgs[0].extract())
+        figcaption = soup.new_tag("figcaption")
+        figcaption.append(em.extract())
+        figure.append(figcaption)
+        p.replace_with(figure)
+        cap_p.decompose()
+
+    # Case 2: <div class="cm-figure-span"> wrappers
+    for div in list(soup.select("div.cm-figure-span")):
+        cap_p = _next_significant_sibling(div)
+        em = _italic_only_paragraph_em(cap_p)
+        if em is None:
+            continue
+        figure = soup.new_tag("figure", **{"class": "cm-figure-span"})
+        for child in list(div.contents):
+            if getattr(child, "name", None) is None and not str(child).strip():
+                continue
+            figure.append(child.extract())
+        figcaption = soup.new_tag("figcaption")
+        figcaption.append(em.extract())
+        figure.append(figcaption)
+        div.replace_with(figure)
+        cap_p.decompose()
+
+    return str(soup)
 
 
 def postprocess_alpha_ol_html(html_text: str) -> str:
@@ -4894,6 +5248,20 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         color: var(--cm-muted);
         font-size: .875rem;
         padding-top: .25rem;
+        text-align: left;
+      }}
+      .content caption em,
+      .content caption i {{
+        font-style: italic;
+      }}
+      .content figure {{
+        margin: 1rem 0;
+      }}
+      .content figcaption {{
+        color: var(--cm-muted);
+        font-size: .875rem;
+        padding-top: .25rem;
+        text-align: left;
       }}
       /* Alternative heading styles */
       .content h1.rounded, .content h1.rounded-left, .content h1.banner {{
@@ -4994,6 +5362,40 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
       .content .callout-note {{
         border-left-color: #6c757d;
         background: #f8f9fa;
+      }}
+      /* Foldable callouts: <details>/<summary> from Obsidian [!type]+/- syntax */
+      .content details.callout-foldable > summary {{
+        cursor: pointer;
+        font-weight: 600;
+        list-style: none;
+        padding-right: 1rem;
+      }}
+      .content details.callout-foldable > summary::-webkit-details-marker {{
+        display: none;
+      }}
+      .content details.callout-foldable > summary::before {{
+        content: "▸";
+        display: inline-block;
+        width: 1em;
+        margin-right: .25em;
+        transition: transform 0.15s ease-in-out;
+      }}
+      .content details.callout-foldable[open] > summary::before {{
+        transform: rotate(90deg);
+      }}
+      .content details.callout-foldable[open] > summary {{
+        margin-bottom: .5rem;
+      }}
+      @media print {{
+        .content details.callout-foldable > *:not(summary) {{
+          display: block !important;
+        }}
+        .content details.callout-foldable > summary::before {{
+          content: none;
+        }}
+        .content details.callout-foldable > summary {{
+          margin-bottom: .5rem;
+        }}
       }}
       /* Hero callout: full-bleed in showcase mode */
       .content .callout-hero {{
@@ -5251,6 +5653,12 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         left: 0;
         width: 100%;
         height: 100%;
+      }}
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {{
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
       }}
       .video-embed video {{
         width: 100%;
@@ -5720,6 +6128,24 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
             }}
           }});
         }}
+      }})();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){{
+        document.querySelectorAll('.video-embed > video').forEach(function(v){{
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {{
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }}
+          sync();
+          btn.addEventListener('click', function() {{ v.loop = !v.loop; sync(); }});
+          wrap.appendChild(btn);
+        }});
       }})();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page
@@ -6297,12 +6723,16 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             meta = {}
         pdf_html_path = out_html_path
         temp_pdf_html_path: Optional[Path] = None
-        if _metadata_uses_pdf_dual_columns(meta):
+        # Soup-level PDF-only transforms: dual-column body + optional ToC injection.
+        wants_dual_col = _metadata_uses_pdf_dual_columns(meta)
+        wants_pdf_toc = _metadata_wants_pdf_toc(meta)
+        if wants_dual_col or wants_pdf_toc:
             try:
                 import bs4  # type: ignore
                 soup = bs4.BeautifulSoup(out_html_path.read_text(encoding="utf-8"), "html.parser")
                 main = soup.select_one("main.content")
-                if main and not main.select_one(".paper-dual-column-body"):
+                changed = False
+                if main and wants_dual_col and not main.select_one(".paper-dual-column-body"):
                     main_html = "".join(str(child) for child in main.contents)
                     main.clear()
                     fragment = bs4.BeautifulSoup(
@@ -6311,6 +6741,22 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                     )
                     for child in list(fragment.contents):
                         main.append(child.extract())
+                    changed = True
+                if main and wants_pdf_toc:
+                    toc_nav = _build_pdf_toc_nav(main, soup, bs4)
+                    if toc_nav is not None:
+                        # Insert the ToC after the page-title row + its <hr/>, otherwise at top of main.
+                        title_row = main.select_one(".page-title-row")
+                        insert_after = None
+                        if title_row is not None:
+                            nxt = title_row.find_next_sibling()
+                            insert_after = nxt if (nxt is not None and nxt.name == "hr") else title_row
+                        if insert_after is not None:
+                            insert_after.insert_after(toc_nav)
+                        else:
+                            main.insert(0, toc_nav)
+                        changed = True
+                if changed:
                     temp_pdf_html_path = out_html_path.with_name(f"{out_html_path.stem}.__pdf__.html")
                     temp_pdf_html_path.write_text(str(soup), encoding="utf-8")
                     pdf_html_path = temp_pdf_html_path
@@ -6391,6 +6837,14 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                 ".breadcrumb-nav{display:none!important;}"
                 ".content .references{margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid #e5e5e5;}"
                 ".content .references h2{font-size:1.15rem;font-weight:600;margin-bottom:.85rem;}"
+                # PDF-only table of contents (opt-in via YAML `table-of-contents: true`).
+                ".content .pdf-toc{margin:0 0 10mm 0;padding:4mm 6mm 4mm 7mm;background:rgba(121,187,147,0.08);border-left:4px solid #79bb93;border-radius:6px;page-break-after:always;break-after:page;column-span:all;-webkit-column-span:all;}"
+                ".content .pdf-toc h2{margin:0 0 3mm 0;font-size:1.05rem;font-weight:600;color:#173b3f;background:transparent;border:none;padding:0;}"
+                ".content .pdf-toc ul{list-style:none;margin:0;padding:0;columns:1!important;column-count:1!important;column-gap:0;}"
+                ".content .pdf-toc li{break-inside:avoid;margin:0 0 1.5mm 0;line-height:1.3;font-size:9pt;}"
+                ".content .pdf-toc li.toc-h2{font-weight:600;}"
+                ".content .pdf-toc li.toc-h3{padding-left:5mm;font-size:8.6pt;color:#2f6f73;font-weight:400;}"
+                ".content .pdf-toc a{color:#1f2933;text-decoration:none;}"
                 ".content.chapter-start>p:first-of-type{border-left:none!important;}"
                 ".content > *:last-child{margin-bottom:0!important;}"
                 ".content h1.rounded,.content h1.rounded-left,.content h1.banner{font-size:inherit;}"
@@ -6482,11 +6936,18 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                 else ""
             )
             right_footer = f"{company_link}{' · ' + page_link if page_link else ''}"
+            # Playwright resolves <span class="pageNumber"/> and <span class="totalPages"/> in header/footer templates.
+            page_counter_html = (
+                '<span style="white-space:nowrap;">p. '
+                '<span class="pageNumber"></span> / <span class="totalPages"></span>'
+                '</span>'
+            )
             footer_html = (
                 f"<div style=\"box-sizing:border-box; width:100%; padding:0 12mm; font-size:6.5px; line-height:1.2; color:#999; font-family:Georgia, Cambria, 'Times New Roman', Times, serif;\">"
-                f"<div style=\"display:grid; grid-template-columns:1fr 1fr 1fr; align-items:center; column-gap:5mm; width:100%;\">"
+                f"<div style=\"display:grid; grid-template-columns:1fr 1fr auto 1fr; align-items:center; column-gap:5mm; width:100%;\">"
                 f"<span style=\"text-align:left; white-space:nowrap;\">{html.escape(today_str)}</span>"
                 f"<span style=\"text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;\">{garden_link}</span>"
+                f"<span style=\"text-align:center; white-space:nowrap;\">{page_counter_html}</span>"
                 f"<span style=\"text-align:right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;\">{right_footer}</span>"
                 f"</div></div>"
             )
@@ -7309,6 +7770,10 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         content_html = strip_html_comments(content_html)
         # Set alpha-ordered lists to alphabetic numbering in HTML
         content_html = postprocess_alpha_ol_html(content_html)
+        # Italic line right after a table becomes its <caption>
+        content_html = postprocess_table_captions(content_html)
+        # Italic line right after an image becomes a <figcaption> in a <figure>
+        content_html = postprocess_figure_captions(content_html)
         # Inject per-heading anchor links and add image loading attributes
         try:
             import bs4  # type: ignore
@@ -7646,8 +8111,8 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                 pass
 
         # Page-level meta (Open Graph / Twitter card) for LinkedIn previews.
-        rel_out_html = os.path.relpath(out_html_path, start=output_root).replace(os.sep, "/")
-        page_url = f"{site_url}/{rel_out_html}"
+        # Percent-encode path segments so og:image / canonical never contain raw spaces.
+        page_url = _site_url_for_output_path(out_html_path, output_root, site_url)
         page_desc = _html_text_snippet_for_meta(content_html, max_len=220)
         safe_og_title = html.escape(page_title or site_title or "")
         safe_og_desc = html.escape(page_desc)

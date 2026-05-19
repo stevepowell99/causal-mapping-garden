@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>!!eval2024</title>
     <meta name="description" content="9 Apr 2025 Pre-publication article 2023 Causal mapping for evaluators Steve Powell, Causal Map Ltd James Copestake, Department of Social and Policy Sciences, University of Bath Fiona Remnant, Bath Social and Development">
-    <link rel="canonical" href="https://garden.causalmap.app/000 Articles/!!eval2024.html">
+    <link rel="canonical" href="https://garden.causalmap.app/000%20Articles/%21%21eval2024.html">
     <meta property="og:title" content="!!eval2024">
     <meta property="og:description" content="9 Apr 2025 Pre-publication article 2023 Causal mapping for evaluators Steve Powell, Causal Map Ltd James Copestake, Department of Social and Policy Sciences, University of Bath Fiona Remnant, Bath Social and Development">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/000 Articles/!!eval2024.html">
+    <meta property="og:url" content="https://garden.causalmap.app/000%20Articles/%21%21eval2024.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="file:///C:/Users/Zoom/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1964,6 +1970,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

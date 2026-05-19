@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Task 3 – Analysing data, Answering questions</title>
     <meta name="description" content="21 Sep 2025 From (Powell et al. 2024) The extensive causal mapping literature provides many examples of its use to answer evaluation questions (see Powell, Copestake, et al., 2023 , p. 110), for example: Getting an overv">
-    <link rel="canonical" href="https://garden.causalmap.app/005 Causal mapping -- overview/203 Task 3 -- Analysing data, Answerin-cbe432.html">
+    <link rel="canonical" href="https://garden.causalmap.app/005%20Causal%20mapping%20--%20overview/203%20Task%203%20--%20Analysing%20data%2C%20Answerin-cbe432.html">
     <meta property="og:title" content="Task 3 – Analysing data, Answering questions">
     <meta property="og:description" content="21 Sep 2025 From (Powell et al. 2024) The extensive causal mapping literature provides many examples of its use to answer evaluation questions (see Powell, Copestake, et al., 2023 , p. 110), for example: Getting an overv">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/005 Causal mapping -- overview/203 Task 3 -- Analysing data, Answerin-cbe432.html">
+    <meta property="og:url" content="https://garden.causalmap.app/005%20Causal%20mapping%20--%20overview/203%20Task%203%20--%20Analysing%20data%2C%20Answerin-cbe432.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://garden.causalmap.app/img/bookmark_1124.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1840,6 +1846,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

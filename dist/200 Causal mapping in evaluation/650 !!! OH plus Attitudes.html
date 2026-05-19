@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>!!! OH plus Attitudes</title>
     <meta name="description" content="5 May 2025 I read this by Michelle Garred, Conny Hoitink, Jeph Mathias and other colleagues with much interest. Outcome Harvesting Plus Attitude Change. Ripple Peace Research &amp; Consulting . Retrieved 21 April 2025, from">
-    <link rel="canonical" href="https://garden.causalmap.app/200 Causal mapping in evaluation/650 !!! OH plus Attitudes.html">
+    <link rel="canonical" href="https://garden.causalmap.app/200%20Causal%20mapping%20in%20evaluation/650%20%21%21%21%20OH%20plus%20Attitudes.html">
     <meta property="og:title" content="!!! OH plus Attitudes">
     <meta property="og:description" content="5 May 2025 I read this by Michelle Garred, Conny Hoitink, Jeph Mathias and other colleagues with much interest. Outcome Harvesting Plus Attitude Change. Ripple Peace Research &amp; Consulting . Retrieved 21 April 2025, from">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/200 Causal mapping in evaluation/650 !!! OH plus Attitudes.html">
+    <meta property="og:url" content="https://garden.causalmap.app/200%20Causal%20mapping%20in%20evaluation/650%20%21%21%21%20OH%20plus%20Attitudes.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1737,6 +1743,24 @@ of the centrality of BCs as the anchor of the BC Statement. Ho</p>
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

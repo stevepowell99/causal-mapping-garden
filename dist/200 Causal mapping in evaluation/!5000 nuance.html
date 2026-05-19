@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>!5000 nuance</title>
     <meta name="description" content="9 Apr 2025 it&#x27;s all very well saying ah but quant doesn&#x27;t capture these rich nuanced stories. How much time do you have? Agreeing with most of the above, and a special applause for Florencia and Tom&#x27;s piece. I like the w">
-    <link rel="canonical" href="https://garden.causalmap.app/200 Causal mapping in evaluation/!5000 nuance.html">
+    <link rel="canonical" href="https://garden.causalmap.app/200%20Causal%20mapping%20in%20evaluation/%215000%20nuance.html">
     <meta property="og:title" content="!5000 nuance">
     <meta property="og:description" content="9 Apr 2025 it&#x27;s all very well saying ah but quant doesn&#x27;t capture these rich nuanced stories. How much time do you have? Agreeing with most of the above, and a special applause for Florencia and Tom&#x27;s piece. I like the w">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/200 Causal mapping in evaluation/!5000 nuance.html">
+    <meta property="og:url" content="https://garden.causalmap.app/200%20Causal%20mapping%20in%20evaluation/%215000%20nuance.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1729,6 +1735,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

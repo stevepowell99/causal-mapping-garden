@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Using QuIP and Causal Map in an Evaluation, a WFP interview with DeftEdge</title>
     <meta name="description" content="26 Sep 2024 2024-09-26 Alexandra Priebe (WFP), interviewing Ashley Hollister and Sarang Mangi (DeftEdge) Summary # Earlier this year, the World Food Programme finalized the &quot;Thematic Evaluation of WFP&#x27;s Contribution to M">
-    <link rel="canonical" href="https://garden.causalmap.app/800 Case studies/Using QuIP and Causal Map in an Evalua-dbd38c.html">
+    <link rel="canonical" href="https://garden.causalmap.app/800%20Case%20studies/Using%20QuIP%20and%20Causal%20Map%20in%20an%20Evalua-dbd38c.html">
     <meta property="og:title" content="Using QuIP and Causal Map in an Evaluation, a WFP interview with DeftEdge">
     <meta property="og:description" content="26 Sep 2024 2024-09-26 Alexandra Priebe (WFP), interviewing Ashley Hollister and Sarang Mangi (DeftEdge) Summary # Earlier this year, the World Food Programme finalized the &quot;Thematic Evaluation of WFP&#x27;s Contribution to M">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/800 Case studies/Using QuIP and Causal Map in an Evalua-dbd38c.html">
+    <meta property="og:url" content="https://garden.causalmap.app/800%20Case%20studies/Using%20QuIP%20and%20Causal%20Map%20in%20an%20Evalua-dbd38c.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://imagedelivery.net/IEMzXmjRvW0g933AN5ejrA/wwwnotionso-image-prod-files-secures3us-west-2amazonawscom-840b5abb-8b3c-46fc-90eb-277d93678421-b4f650d5-ea8b-4e72-a4cb-abe765dd36b6-imagepng/public">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1742,6 +1748,24 @@ Alexandra Priebe (WFP), interviewing Ashley Hollister and Sarang Mangi (DeftEdge
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

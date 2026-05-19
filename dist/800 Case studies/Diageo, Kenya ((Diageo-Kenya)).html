@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Diageo, Kenya</title>
     <meta name="description" content="19 Sep 2022 2022-09-19 Summary # Diageo have conducted several evaluations into the impact of their raw materials sourcing and agricultural programmes. Request the report from BSDR (info@bathsdr.org). Related # chapter i">
-    <link rel="canonical" href="https://garden.causalmap.app/800 Case studies/Diageo, Kenya ((Diageo-Kenya)).html">
+    <link rel="canonical" href="https://garden.causalmap.app/800%20Case%20studies/Diageo%2C%20Kenya%20%28%28Diageo-Kenya%29%29.html">
     <meta property="og:title" content="Diageo, Kenya">
     <meta property="og:description" content="19 Sep 2022 2022-09-19 Summary # Diageo have conducted several evaluations into the impact of their raw materials sourcing and agricultural programmes. Request the report from BSDR (info@bathsdr.org). Related # chapter i">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/800 Case studies/Diageo, Kenya ((Diageo-Kenya)).html">
+    <meta property="og:url" content="https://garden.causalmap.app/800%20Case%20studies/Diageo%2C%20Kenya%20%28%28Diageo-Kenya%29%29.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://imagedelivery.net/IEMzXmjRvW0g933AN5ejrA/wwwnotionso-image-prod-files-secures3us-west-2amazonawscom-840b5abb-8b3c-46fc-90eb-277d93678421-6bfd25b9-3def-4950-93e5-c022e13f8c12-untitledpng/public">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1720,6 +1726,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

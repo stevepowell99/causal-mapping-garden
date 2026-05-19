@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>An M&amp;E time machine. Using AI to measure changes in a system across a time period</title>
     <meta name="description" content="19 Sep 2023 2023-09-19 Summary # A proof of concept study about using AI to collect and analyse data in complex systems. See the paper here Related # chapter intro">
-    <link rel="canonical" href="https://garden.causalmap.app/800 Case studies/An M&amp;E time machine. Using AI to measu-bd232e.html">
+    <link rel="canonical" href="https://garden.causalmap.app/800%20Case%20studies/An%20M%26E%20time%20machine.%20Using%20AI%20to%20measu-bd232e.html">
     <meta property="og:title" content="An M&amp;E time machine. Using AI to measure changes in a system across a time period">
     <meta property="og:description" content="19 Sep 2023 2023-09-19 Summary # A proof of concept study about using AI to collect and analyse data in complex systems. See the paper here Related # chapter intro">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/800 Case studies/An M&amp;E time machine. Using AI to measu-bd232e.html">
+    <meta property="og:url" content="https://garden.causalmap.app/800%20Case%20studies/An%20M%26E%20time%20machine.%20Using%20AI%20to%20measu-bd232e.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://imagedelivery.net/IEMzXmjRvW0g933AN5ejrA/wwwnotionso-image-prod-files-secures3us-west-2amazonawscom-840b5abb-8b3c-46fc-90eb-277d93678421-610a081b-82ec-4b1c-9a80-d974e047f7d8-image_15png/public">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1720,6 +1726,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Case study – Qualia asks about USA problems, again</title>
     <meta name="description" content="9 Apr 2025 Feb 27, 2025 at EES # How can we capture and visualise people’s mental models of a complex situation like the state of a nation? This week, as part of an EES webinar demonstrating our automated AI interviewer">
-    <link rel="canonical" href="https://garden.causalmap.app/700 Qualia/210 Case study -- Qualia asks about US-ce3252.html">
+    <link rel="canonical" href="https://garden.causalmap.app/700%20Qualia/210%20Case%20study%20--%20Qualia%20asks%20about%20US-ce3252.html">
     <meta property="og:title" content="Case study – Qualia asks about USA problems, again">
     <meta property="og:description" content="9 Apr 2025 Feb 27, 2025 at EES # How can we capture and visualise people’s mental models of a complex situation like the state of a nation? This week, as part of an EES webinar demonstrating our automated AI interviewer">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/700 Qualia/210 Case study -- Qualia asks about US-ce3252.html">
+    <meta property="og:url" content="https://garden.causalmap.app/700%20Qualia/210%20Case%20study%20--%20Qualia%20asks%20about%20US-ce3252.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://imagedelivery.net/IEMzXmjRvW0g933AN5ejrA/wwwnotionso-image-attachment0deb8ecd-d212-4263-91a7-0c1ba5f9dc85imagepng/public">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1783,6 +1789,24 @@ Deeper red arrowheads: the effect was more negative in significance/sentiment</e
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

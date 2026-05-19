@@ -12,11 +12,11 @@
 <meta content="article" property="og:type"/>
 <meta content="https://garden.causalmap.app/testing-theory-of-change/" property="og:url"/>
 <meta content="" property="og:site_name"/>
-<meta content="https://garden.causalmap.app/100 Task 3 -- Answering questions -- Individual questions/img/Pasted image 20251022202826.png" property="og:image"/>
+<meta content="https://garden.causalmap.app/100%20Task%203%20--%20Answering%20questions%20--%20Individual%20questions/img/Pasted image 20251022202826.png" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Does the evidence support your theory of change ?" name="twitter:title"/>
 <meta content="22 Oct 2025 One way to do this is to use the elements from your theory of change as your codebook and only add other elements when necessary. Validated pathways of change (by showing which mechanisms are observed on the" name="twitter:description"/>
-<meta content="https://garden.causalmap.app/100 Task 3 -- Answering questions -- Individual questions/img/Pasted image 20251022202826.png" name="twitter:image"/>
+<meta content="https://garden.causalmap.app/100%20Task%203%20--%20Answering%20questions%20--%20Individual%20questions/img/Pasted image 20251022202826.png" name="twitter:image"/>
 <link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'&gt;&lt;circle cx='8' cy='8' r='8' fill='%2390c3c6'/&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet"/>
 <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet">
@@ -1255,6 +1255,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1715,6 +1721,24 @@ One way to do this is to use the elements from your theory of change as your cod
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

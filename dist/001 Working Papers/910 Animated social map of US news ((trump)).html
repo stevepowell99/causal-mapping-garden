@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Animated social map of US news</title>
     <meta name="description" content="23 Feb 2026 Data source and processing # Data source # We used Google News RSS search (site-filtered by source domains). Data route: Google News RSS query endpoint ( news.google.com/rss/search ) Scope: US-English ( hl=en">
-    <link rel="canonical" href="https://garden.causalmap.app/001 Working Papers/910 Animated social map of US news ((trump)).html">
+    <link rel="canonical" href="https://garden.causalmap.app/001%20Working%20Papers/910%20Animated%20social%20map%20of%20US%20news%20%28%28trump%29%29.html">
     <meta property="og:title" content="Animated social map of US news">
     <meta property="og:description" content="23 Feb 2026 Data source and processing # Data source # We used Google News RSS search (site-filtered by source domains). Data route: Google News RSS query endpoint ( news.google.com/rss/search ) Scope: US-English ( hl=en">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/001 Working Papers/910 Animated social map of US news ((trump)).html">
+    <meta property="og:url" content="https://garden.causalmap.app/001%20Working%20Papers/910%20Animated%20social%20map%20of%20US%20news%20%28%28trump%29%29.html">
     <meta property="og:site_name" content="">
-    <meta property="og:image" content="https://garden.causalmap.app/001 Working Papers/img/d90473a7f0d8f9b9a3289711b8030ef4_MD5.png">
+    <meta property="og:image" content="https://garden.causalmap.app/001%20Working%20Papers/img/d90473a7f0d8f9b9a3289711b8030ef4_MD5.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Animated social map of US news">
     <meta name="twitter:description" content="23 Feb 2026 Data source and processing # Data source # We used Google News RSS search (site-filtered by source domains). Data route: Google News RSS query endpoint ( news.google.com/rss/search ) Scope: US-English ( hl=en">
-    <meta name="twitter:image" content="https://garden.causalmap.app/001 Working Papers/img/d90473a7f0d8f9b9a3289711b8030ef4_MD5.png">
+    <meta name="twitter:image" content="https://garden.causalmap.app/001%20Working%20Papers/img/d90473a7f0d8f9b9a3289711b8030ef4_MD5.png">
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='8' fill='%2390c3c6'/></svg>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1776,6 +1782,24 @@ Bookmark <a href="https://app.causalmap.app/?bookmark=1209">#1209</a> 2026-02-24
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

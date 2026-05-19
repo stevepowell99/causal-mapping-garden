@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Case study – our &#x27;seamless stories&#x27; workflow in practice</title>
     <meta name="description" content="9 Apr 2025 Automating chat interviews with Qualia . Then using Causal Map to make sense of them. In-depth research was never this easy! A case study from Chile. At Causal Map we&#x27;re thrilled because our seamless AI-suppor">
-    <link rel="canonical" href="https://garden.causalmap.app/700 Qualia/205 Case study -- our &#x27;seamless storie-92bf8f.html">
+    <link rel="canonical" href="https://garden.causalmap.app/700%20Qualia/205%20Case%20study%20--%20our%20%27seamless%20storie-92bf8f.html">
     <meta property="og:title" content="Case study – our &#x27;seamless stories&#x27; workflow in practice">
     <meta property="og:description" content="9 Apr 2025 Automating chat interviews with Qualia . Then using Causal Map to make sense of them. In-depth research was never this easy! A case study from Chile. At Causal Map we&#x27;re thrilled because our seamless AI-suppor">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/700 Qualia/205 Case study -- our &#x27;seamless storie-92bf8f.html">
+    <meta property="og:url" content="https://garden.causalmap.app/700%20Qualia/205%20Case%20study%20--%20our%20%27seamless%20storie-92bf8f.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://garden.causalmap.app/img/Untitled.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1784,6 +1790,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

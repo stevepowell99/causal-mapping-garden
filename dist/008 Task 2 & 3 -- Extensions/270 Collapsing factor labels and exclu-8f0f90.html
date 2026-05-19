@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Collapsing factor labels and excluding brackets</title>
     <meta name="description" content="22 Sep 2025 This extension is about using factor labels to unify many “different-looking” factors into one . Collapse factor labels : define one or more search terms, and any factor label that matches is rewritten to a s">
-    <link rel="canonical" href="https://garden.causalmap.app/008 Task 2 &amp; 3 -- Extensions/270 Collapsing factor labels and exclu-8f0f90.html">
+    <link rel="canonical" href="https://garden.causalmap.app/008%20Task%202%20%26%203%20--%20Extensions/270%20Collapsing%20factor%20labels%20and%20exclu-8f0f90.html">
     <meta property="og:title" content="Collapsing factor labels and excluding brackets">
     <meta property="og:description" content="22 Sep 2025 This extension is about using factor labels to unify many “different-looking” factors into one . Collapse factor labels : define one or more search terms, and any factor label that matches is rewritten to a s">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/008 Task 2 &amp; 3 -- Extensions/270 Collapsing factor labels and exclu-8f0f90.html">
+    <meta property="og:url" content="https://garden.causalmap.app/008%20Task%202%20%26%203%20--%20Extensions/270%20Collapsing%20factor%20labels%20and%20exclu-8f0f90.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://garden.causalmap.app/img/5e57d596bd154b8c8a173b96b704426e--Untitled.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1746,6 +1752,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

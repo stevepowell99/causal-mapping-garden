@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Why causal mapping ?</title>
     <meta name="description" content="What do you think is important in social research? Here&#x27;s what we believe, do you agree? 1 ⏹️ Social research works best when the concepts come from people closest to the subject, not from experts. Quantitative tools can">
-    <link rel="canonical" href="https://garden.causalmap.app/005 Causal mapping -- overview/0.01a Why causal mapping qq ((theses)).html">
+    <link rel="canonical" href="https://garden.causalmap.app/005%20Causal%20mapping%20--%20overview/0.01a%20Why%20causal%20mapping%20qq%20%28%28theses%29%29.html">
     <meta property="og:title" content="Why causal mapping ?">
     <meta property="og:description" content="What do you think is important in social research? Here&#x27;s what we believe, do you agree? 1 ⏹️ Social research works best when the concepts come from people closest to the subject, not from experts. Quantitative tools can">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/005 Causal mapping -- overview/0.01a Why causal mapping qq ((theses)).html">
+    <meta property="og:url" content="https://garden.causalmap.app/005%20Causal%20mapping%20--%20overview/0.01a%20Why%20causal%20mapping%20qq%20%28%28theses%29%29.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://garden.causalmap.app/990 Finally/img/3ff4a70c2f8cfe1926c40bad32c1be3c_MD5.jpg">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1833,6 +1839,24 @@ There is even a <em>metric</em> for that.</p>
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

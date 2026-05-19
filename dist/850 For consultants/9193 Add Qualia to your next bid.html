@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add Qualia to your next bid</title>
     <meta name="description" content="Interviews are deep but expensive . Questionnaires are cheap but shallow . Qualia is our AI interviewer. Qualia can conduct conversational interviews with any number of respondents, in almost any language. We find that r">
-    <link rel="canonical" href="https://garden.causalmap.app/850 For consultants/9193 Add Qualia to your next bid.html">
+    <link rel="canonical" href="https://garden.causalmap.app/850%20For%20consultants/9193%20Add%20Qualia%20to%20your%20next%20bid.html">
     <meta property="og:title" content="Add Qualia to your next bid">
     <meta property="og:description" content="Interviews are deep but expensive . Questionnaires are cheap but shallow . Qualia is our AI interviewer. Qualia can conduct conversational interviews with any number of respondents, in almost any language. We find that r">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/850 For consultants/9193 Add Qualia to your next bid.html">
+    <meta property="og:url" content="https://garden.causalmap.app/850%20For%20consultants/9193%20Add%20Qualia%20to%20your%20next%20bid.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://garden.causalmap.app/700 Qualia/img/Pasted image 20251230163438.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1727,6 +1733,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

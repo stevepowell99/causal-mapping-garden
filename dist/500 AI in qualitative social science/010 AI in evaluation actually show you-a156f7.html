@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AI in evaluation actually show your working!</title>
     <meta name="description" content="9 Apr 2025 There&#x27;s been a lot of talk about using AI and in particular large language models in evaluation and specifically in coding and processing texts. Here at Causal Map we&#x27;ve been working very hard on just that (an">
-    <link rel="canonical" href="https://garden.causalmap.app/500 AI in qualitative social science/010 AI in evaluation actually show you-a156f7.html">
+    <link rel="canonical" href="https://garden.causalmap.app/500%20AI%20in%20qualitative%20social%20science/010%20AI%20in%20evaluation%20actually%20show%20you-a156f7.html">
     <meta property="og:title" content="AI in evaluation actually show your working!">
     <meta property="og:description" content="9 Apr 2025 There&#x27;s been a lot of talk about using AI and in particular large language models in evaluation and specifically in coding and processing texts. Here at Causal Map we&#x27;ve been working very hard on just that (an">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/500 AI in qualitative social science/010 AI in evaluation actually show you-a156f7.html">
+    <meta property="og:url" content="https://garden.causalmap.app/500%20AI%20in%20qualitative%20social%20science/010%20AI%20in%20evaluation%20actually%20show%20you-a156f7.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://static.wixstatic.com/media/beec29_0770e99c8e4e4582a487056951ec3f82~mv2.png/v1/fill/w_851,h_604,al_c,lg_1,q_90,enc_auto/beec29_0770e99c8e4e4582a487056951ec3f82~mv2.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1724,6 +1730,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page

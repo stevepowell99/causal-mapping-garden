@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>!050 Coding with Excel</title>
     <meta name="description" content="22 Sep 2025 Summary # Most people will probably skip this page, but if you are interested in learning about the basic ideas of causal mapping without using our app at all, but just using a spreadsheet program, read on! Y">
-    <link rel="canonical" href="https://garden.causalmap.app/290 Causal Map app and alternatives/!050 Coding with Excel.html">
+    <link rel="canonical" href="https://garden.causalmap.app/290%20Causal%20Map%20app%20and%20alternatives/%21050%20Coding%20with%20Excel.html">
     <meta property="og:title" content="!050 Coding with Excel">
     <meta property="og:description" content="22 Sep 2025 Summary # Most people will probably skip this page, but if you are interested in learning about the basic ideas of causal mapping without using our app at all, but just using a spreadsheet program, read on! Y">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://garden.causalmap.app/290 Causal Map app and alternatives/!050 Coding with Excel.html">
+    <meta property="og:url" content="https://garden.causalmap.app/290%20Causal%20Map%20app%20and%20alternatives/%21050%20Coding%20with%20Excel.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://garden.causalmap.app/img/f5d2ea5542004d28882f67613bef1850--Untitled.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -1256,6 +1256,12 @@
         width: 100%;
         height: 100%;
       }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
       .video-embed video {
         width: 100%;
         max-width: 100%;
@@ -1754,6 +1760,24 @@
             }
           });
         }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
       })();
 
       // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page
