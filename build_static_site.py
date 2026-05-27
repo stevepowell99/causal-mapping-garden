@@ -766,11 +766,11 @@ def build_nav_tree(input_root: Path, output_root: Path, require_numbered_folders
         current_dir = Path(dirpath)
         if current_dir == input_root:
             if require_numbered_folders:
-                dirnames[:] = [d for d in dirnames if not d.startswith((".","_")) and d.lower() != "img" and (d[:1].isdigit())]
+                dirnames[:] = [d for d in dirnames if not d.startswith((".","_")) and ('!' not in d) and d.lower() != "img" and (d[:1].isdigit())]
             else:
-                dirnames[:] = [d for d in dirnames if not d.startswith((".","_")) and d.lower() != "img"]
+                dirnames[:] = [d for d in dirnames if not d.startswith((".","_")) and ('!' not in d) and d.lower() != "img"]
         else:
-            dirnames[:] = [d for d in dirnames if not d.startswith((".","_")) and d.lower() != "img"]
+            dirnames[:] = [d for d in dirnames if not d.startswith((".","_")) and ('!' not in d) and d.lower() != "img"]
 
         # ensure node exists along the path
         node = root
@@ -837,8 +837,8 @@ def copy_assets(input_root: Path, output_root: Path) -> None:
         if src.suffix.lower() == ".html":
             # Copy: Quarto etc. generate .html from .qmd; we don't process .qmd
             pass
-        # Skip .obsidian (folder names may contain '!' e.g. local notes folders)
-        elif ".obsidian" in src.parts:
+        # Skip .obsidian and any folder path segment containing '!' (folders with ! are not built)
+        elif ".obsidian" in src.parts or any('!' in part for part in src.parts[:-1]):
             continue
         # Allow all files under 'assets' or Quarto *_files folders
         in_assets = any(part.lower() == "assets" for part in src.parts)
@@ -6348,7 +6348,18 @@ def write_search_assets(input_root: Path, output_root: Path, title_map: Dict[Pat
             kept_lines.append(line)
         return "\n".join(kept_lines)
 
+    def is_hidden_search_page(md_path: Path) -> bool:
+        # Search must match published navigation/PDF rules: any '!' segment is hidden
+        # (folders with '!' are not built; files with '!' are drafts excluded from search).
+        try:
+            rel = md_path.relative_to(input_root)
+        except ValueError:
+            rel = md_path
+        return any("!" in part for part in rel.parts)
+
     for md_path, title in title_map.items():
+        if is_hidden_search_page(md_path):
+            continue
         rel_out = relative_output_html(input_root, output_root, md_path)
         # Use path relative to search.html (which is in output_root)
         href = os.path.relpath(rel_out, start=output_root).replace(os.sep, "/")
@@ -7162,6 +7173,9 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         if p.name.startswith("."):
             return False
         rel = p.relative_to(input_root)
+        # exclude folders containing '!' (but allow files with ! in filename)
+        if any('!' in part for part in rel.parts[:-1]):
+            return False
         # root: only index.md (unless require_numbered_folders is False, then allow all)
         if rel.parent == Path("."):
             return True if not require_numbered_folders else rel.name.lower() == "index.md"
