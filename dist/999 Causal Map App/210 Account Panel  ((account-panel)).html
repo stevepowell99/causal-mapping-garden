@@ -1637,6 +1637,16 @@
 <p>User account management and project settings.</p>
 <p><strong>Onboarding (first sign-up):</strong> When you sign up, we ask a few questions including whether you want AI options switched on and active right at the start, and what you want to do first in the app. If you choose an AI-first workflow, AI is switched on automatically. If AI is off, there are no AI services at all (except basic MapCat help); you can change this anytime in Account settings. If AI is on, you get 10 free AI credits per month, and the AI switch is turned on by default; you can turn it off later in Account settings.</p>
 <p><strong>AI coding toggle ("AI options switched on and active"):</strong> Turn on to use AI; turn off and there are no AI services at all (except basic MapCat help). You can change this anytime in Account settings. When you turn it <strong>on</strong>, a warning modal appears: your data is sent to AI providers when you use AI; it is <strong>not</strong> used to train models; OpenAI (GPT) may retain data for up to 30 days for abuse monitoring; Vertex AI and DashScope do not retain data; see our <a href="https://www.causalmap.app/privacy-policy/">privacy policy</a>. Credits when on depend on your plan (Free: 10, Private: 100, Pro: 1000, Team: 2000/month). <strong>Plans without AI</strong> (e.g. Private Manual) can turn on to try with 10 credits/month (free credits do not stack with paid AI plans).</p>
+<p><strong>Where AI runs is a project setting, not a user setting.</strong> Each project has an <strong>AI Processing Region</strong> (Project → Edit project → AI Processing Region) with three options: <strong>EU (Belgium, europe-west1)</strong>, <strong>UK (London, europe-west2)</strong>, or <strong>US (Virginia, us-east5)</strong>. New projects default to EU.</p>
+<p>When the region is <strong>EU or UK</strong>, the app guarantees every AI call stays in Europe:</p>
+<ul>
+<li>The model picker is filtered to <strong>Gemini 2.5 Pro</strong> and <strong>Gemini 2.5 Flash</strong> only. Faster models like Gemini 3.5 Flash and Gemini 3.1 Pro are hidden because they route through Google's global endpoint, not a European region.</li>
+<li>Any AI request that would process data outside Europe is blocked client-side before it leaves the browser. A notification explains which model or region caused the block and how to fix it.</li>
+<li>Document embeddings (used by RAG and similarity search) automatically route to <code>europe-west1</code> (or <code>europe-west2</code> for UK), instead of the default <code>us-central1</code>.</li>
+</ul>
+<p>When the region is <strong>US</strong>, the model picker shows the full list, including Gemini 3.5 Flash, Gemini 3.1 Pro Preview, GPT-5, Qwen and others. These are faster or more capable, but they process your prompts and data outside Europe.</p>
+<p>Switching the region for an existing project takes effect immediately — the dropdowns re-render and the gate updates without a reload.</p>
+<p>You can change this toggle anytime.</p>
 <p><strong>Account Features:</strong></p>
 <ul>
 <li><i class="fas fa-user"></i> project information and settings</li>
