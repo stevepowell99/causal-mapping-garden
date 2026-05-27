@@ -206,6 +206,17 @@ def _debug_embed(msg: str) -> None:
 
 # Windows-safe text read for long paths / sync providers.
 # Some Windows setups still hit MAX_PATH-ish issues without the \\?\ prefix.
+def _windows_extended_path(p: Path) -> str:
+    ap = p.resolve()
+    s = str(ap)
+    if s.startswith("\\\\?\\"):
+        return s
+    if s.startswith("\\\\"):
+        # UNC path: \\server\share\path -> \\?\UNC\server\share\path
+        return "\\\\?\\UNC\\" + s.lstrip("\\")
+    return "\\\\?\\" + s
+
+
 def _read_text_windows_safe(p: Path, *, encoding: str = "utf-8", errors: str = "ignore") -> str:
     try:
         return p.read_text(encoding=encoding, errors=errors)
@@ -214,17 +225,20 @@ def _read_text_windows_safe(p: Path, *, encoding: str = "utf-8", errors: str = "
         if os.name != "nt":
             return ""
         try:
-            ap = p.resolve()
-            s = str(ap)
-            if s.startswith("\\\\"):
-                # UNC path: \\server\share\path -> \\?\UNC\server\share\path
-                longp = "\\\\?\\UNC\\" + s.lstrip("\\")
-            else:
-                longp = "\\\\?\\" + s
-            with open(longp, "r", encoding=encoding, errors=errors) as f:
+            with open(_windows_extended_path(p), "r", encoding=encoding, errors=errors) as f:
                 return f.read()
         except Exception:
             return ""
+
+
+def _write_text_windows_safe(p: Path, text: str, *, encoding: str = "utf-8") -> int:
+    try:
+        return p.write_text(text, encoding=encoding)
+    except OSError:
+        if os.name != "nt":
+            raise
+        with open(_windows_extended_path(p), "w", encoding=encoding) as f:
+            return f.write(text)
 
 # Optional PDF engine (Playwright present? We'll call external exporter only if available)
 try:
@@ -6425,11 +6439,12 @@ def write_search_assets(input_root: Path, output_root: Path, title_map: Dict[Pat
     (output_root / "assets").mkdir(parents=True, exist_ok=True)
     # Write search index; if the assets path is problematic on Windows (long path, provider),
     # fall back to a shorter root-level path. The search page uses the inline index anyway.
+    records_json = json.dumps(records)
     try:
-        (output_root / "assets" / "search_index.json").write_text(json.dumps(records), encoding="utf-8")
+        _write_text_windows_safe(output_root / "assets" / "search_index.json", records_json, encoding="utf-8")
     except Exception:
         try:
-            (output_root / "search_index.json").write_text(json.dumps(records), encoding="utf-8")
+            _write_text_windows_safe(output_root / "search_index.json", records_json, encoding="utf-8")
         except Exception:
             # Ignore if we can't persist the extra copy
             pass
@@ -6478,11 +6493,11 @@ def write_search_assets(input_root: Path, output_root: Path, title_map: Dict[Pat
     <script>\n        // Inline index to support file:// access without fetch\n        const SEARCH_INDEX = __INDEX__;\n        let searchIndex = SEARCH_INDEX || [];\n        \n        // Normalize for fuzzy matching (lowercase, alphanumerics + spaces only)\n        function norm(s) {\n            return (s || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').replace(/\\s+/g, ' ').trim();\n        }\n        \n        function escapeHtml(text) {\n            const div = document.createElement('div');\n            div.textContent = text;\n            return div.innerHTML;\n        }\n        \n        // Small Levenshtein distance for short strings (typo-tolerance)\n        function levenshtein(a, b) {\n            if (a === b) return 0;\n            const al = a.length, bl = b.length;\n            if (al === 0) return bl;\n            if (bl === 0) return al;\n            let v0 = new Array(bl + 1);\n            let v1 = new Array(bl + 1);\n            for (let i = 0; i <= bl; i++) v0[i] = i;\n            for (let i = 0; i < al; i++) {\n                v1[0] = i + 1;\n                const ai = a.charCodeAt(i);\n                for (let j = 0; j < bl; j++) {\n                    const cost = (ai === b.charCodeAt(j)) ? 0 : 1;\n                    v1[j + 1] = Math.min(v1[j] + 1, v0[j + 1] + 1, v0[j] + cost);\n                }\n                const tmp = v0; v0 = v1; v1 = tmp;\n            }\n            return v0[bl];\n        }\n        \n        // Precompute normalized fields/words once for deterministic ranking\n        function prepareIndex() {\n            for (const item of searchIndex) {\n                item._shortcutN = norm(item.shortcut || '');\n                item._titleN = norm(item.kind === 'page' ? item.title : '');\n                item._anchorN = norm(((item.anchor || '') + ' ' + (item.anchorText || '')).trim());\n                item._textN = norm(item.text);\n                // Limit word lists scanned for fuzzy matching (keeps large sites fast)\n                item._shortcutWords = item._shortcutN.split(' ').filter(Boolean).slice(0, 50);\n                item._titleWords = item._titleN.split(' ').filter(Boolean).slice(0, 50);\n                item._anchorWords = item._anchorN.split(' ').filter(Boolean).slice(0, 100);\n                item._textWords = item._textN.split(' ').filter(Boolean).slice(0, 250);\n            }\n        }\n        \n        // Score one field: exact phrase > token substring > small edit-distance word match\n        function scoreField(hay, words, qTokens, qNorm) {\n            if (!hay) return 0;\n            if (hay.includes(qNorm)) return 1000;\n            \n            let total = 0;\n            for (const tok of qTokens) {\n                if (tok.length < 2) continue;\n                if (hay.includes(tok)) { total += 50; continue; }\n                \n                let best = 0;\n                const maxDist = (tok.length <= 4) ? 1 : 2;\n                for (const w of (words || [])) {\n                    if (!w) continue;\n                    if (Math.abs(w.length - tok.length) > maxDist) continue;\n                    const d = levenshtein(tok, w);\n                    if (d <= maxDist) {\n                        const sim = 1 - (d / Math.max(tok.length, w.length));\n                        if (sim > best) best = sim;\n                        if (best >= 1) break;\n                    }\n                }\n                \n                if (best <= 0) return 0; // require every token to match this field\n                total += best * 25;\n            }\n            return total;\n        }\n\n        function scoreItem(item, qTokens, qNorm) {\n            const shortcutScore = scoreField(item._shortcutN, item._shortcutWords, qTokens, qNorm);\n            if (shortcutScore > 0) return 400000 + shortcutScore;\n\n            const titleScore = scoreField(item._titleN, item._titleWords, qTokens, qNorm);\n            if (titleScore > 0) return 300000 + titleScore;\n\n            const anchorScore = scoreField(item._anchorN, item._anchorWords, qTokens, qNorm);\n            if (anchorScore > 0) return 200000 + anchorScore;\n\n            const textScore = scoreField(item._textN, item._textWords, qTokens, qNorm);\n            if (textScore > 0) return 100000 + textScore;\n\n            return 0;\n        }\n        \n        // autoNavigate=true: if there is exactly one hit, immediately open it.\n        function performSearch(autoNavigate) {\n            const queryRaw = document.getElementById('searchInput').value;\n            const resultsDiv = document.getElementById('results');\n            const qNorm = norm(queryRaw);\n            const qTokens = qNorm ? qNorm.split(' ').filter(Boolean) : [];\n            \n            if (!qNorm) {\n                resultsDiv.innerHTML = '';\n                return;\n            }\n            \n            const results = searchIndex\n                .map(item => ({ item, score: scoreItem(item, qTokens, qNorm) }))\n                .filter(x => x.score > 0)\n                .sort((a, b) => b.score - a.score)\n                .slice(0, 20);\n            \n            if (results.length === 0) {\n                resultsDiv.innerHTML = '<p class=\"text-muted\">No results found.</p>';\n                return;\n            }\n            \n            if (autoNavigate && results.length === 1) {\n                window.location.href = results[0].item.path;\n                return;\n            }\n            \n            let html = '';\n            results.forEach(r => {\n                const item = r.item;\n                const textLower = (item.text || '').toLowerCase();\n                const firstTok = qTokens[0] || '';\n                const queryPos = firstTok ? textLower.indexOf(firstTok) : -1;\n                let snippet = (item.text || '');\n                \n                if (queryPos >= 0) {\n                    const start = Math.max(0, queryPos - 50);\n                    const end = Math.min((item.text || '').length, queryPos + 150);\n                    snippet = (item.text || '').substring(start, end);\n                    if (start > 0) snippet = '...' + snippet;\n                    if (end < (item.text || '').length) snippet = snippet + '...';\n                } else {\n                    snippet = snippet.substring(0, 200);\n                    if ((item.text || '').length > 200) snippet = snippet + '...';\n                }\n                \n                html += `<div class=\"result\">\n                    <a href=\"${item.path}\" class=\"title\">${escapeHtml(item.title)}</a>\n                    <div class=\"snippet\">${escapeHtml(snippet)}</div>\n                </div>`;\n            });\n            \n            resultsDiv.innerHTML = html;\n        }\n        \n        // Back button behavior\n        (function(){\n          const backBtn = document.getElementById('backBtn');\n          if (backBtn) {\n            backBtn.addEventListener('click', function(){\n              if (history.length > 1) { history.back(); } else { window.location.href = './index.html'; }\n            });\n          }\n        })();\n        \n        // Prepare the index for fuzzy matching before any searches\n        prepareIndex();\n        \n        // Get query from URL and populate search box\n        const urlParams = new URLSearchParams(window.location.search);\n        const initialQuery = urlParams.get('q') || '';\n        document.getElementById('searchInput').value = initialQuery;\n        // Immediately run search if there's an initial query\n        if (initialQuery) { performSearch(true); }\n        \n        // Search on form submit\n        document.getElementById('searchForm').addEventListener('submit', function(e) {\n            e.preventDefault();\n            performSearch(true);\n        });\n        \n        // Search on input\n        document.getElementById('searchInput').addEventListener('input', function(){ performSearch(false); });\n    </script>
 </body>
 </html>"""
-    search_html = search_html.replace("__INDEX__", json.dumps(records))
+    search_html = search_html.replace("__INDEX__", records_json)
     # Auto-open immediately when search narrows to a single result (including while typing).
     search_html = search_html.replace("performSearch(false)", "performSearch(true)")
 
-    (output_root / "search.html").write_text(search_html, encoding="utf-8")
+    _write_text_windows_safe(output_root / "search.html", search_html, encoding="utf-8")
 
     # 404 page: redirect unknown URLs to search with the missing slug prefilled as ?q=...
     # Note: this assumes the site is hosted at the domain root (so /search.html exists).
@@ -6526,7 +6541,7 @@ def write_search_assets(input_root: Path, output_root: Path, title_map: Dict[Pat
   </script>
 </body>
 </html>"""
-    (output_root / "404.html").write_text(not_found_html, encoding="utf-8")
+    _write_text_windows_safe(output_root / "404.html", not_found_html, encoding="utf-8")
 
 
 # -- write all pages --
