@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>! Rubrics assessing robustness</title>
-    <meta name="description" content="20 Apr 2026 Phase 1: Testing AI Recall and Precision (The Coding Phase) The Goal: Test the hypothesis that adding extra custom columns to the initial coding prompt increases the AI&#x27;s reasoning burden, thereby reducing it">
+    <meta name="description" content="20 Apr 2026 Phase 1: Testing AI Recall and Precision (The Coding Phase) # The Goal: Test the hypothesis that adding extra custom columns to the initial coding prompt increases the AI&#x27;s reasoning burden, thereby reducing">
     <link rel="canonical" href="https://garden.causalmap.app/001%20Working%20Papers/%21%20Rubrics%20assessing%20robustness.html">
     <meta property="og:title" content="! Rubrics assessing robustness">
-    <meta property="og:description" content="20 Apr 2026 Phase 1: Testing AI Recall and Precision (The Coding Phase) The Goal: Test the hypothesis that adding extra custom columns to the initial coding prompt increases the AI&#x27;s reasoning burden, thereby reducing it">
+    <meta property="og:description" content="20 Apr 2026 Phase 1: Testing AI Recall and Precision (The Coding Phase) # The Goal: Test the hypothesis that adding extra custom columns to the initial coding prompt increases the AI&#x27;s reasoning burden, thereby reducing">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://garden.causalmap.app/001%20Working%20Papers/%21%20Rubrics%20assessing%20robustness.html">
     <meta property="og:site_name" content="">
     <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="! Rubrics assessing robustness">
-    <meta name="twitter:description" content="20 Apr 2026 Phase 1: Testing AI Recall and Precision (The Coding Phase) The Goal: Test the hypothesis that adding extra custom columns to the initial coding prompt increases the AI&#x27;s reasoning burden, thereby reducing it">
+    <meta name="twitter:description" content="20 Apr 2026 Phase 1: Testing AI Recall and Precision (The Coding Phase) # The Goal: Test the hypothesis that adding extra custom columns to the initial coding prompt increases the AI&#x27;s reasoning burden, thereby reducing">
     <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='8' fill='%2390c3c6'/></svg>">
@@ -1631,7 +1631,7 @@
         <div class="pdf-links"><a href="?fullscreen=1" class="fullscreen-enter" aria-label="Fullscreen" title="Fullscreen">⛶</a></div>
         <div class="page-title-row d-flex justify-content-between align-items-center"><div class="page-title" id="">! Rubrics assessing robustness</div></div><hr />
         <div class="paper"><div class="mb-3"><span class="badge text-bg-light border"><i class="far fa-calendar"></i> 20 Apr 2026</span></div>
-<p>Phase 1: Testing AI Recall and Precision (The Coding Phase)</p>
+<h1 id="phase-1-testing-ai-recall-and-precision-the-coding-phase">Phase 1: Testing AI Recall and Precision (The Coding Phase)<a aria-label="Permalink" class="anchor-link" href="#phase-1-testing-ai-recall-and-precision-the-coding-phase">#</a></h1>
 <ul>
 <li><strong>The Goal:</strong> Test the hypothesis that adding extra custom columns to the initial coding prompt increases the AI's reasoning burden, thereby reducing its <strong>recall</strong> (how many true links it finds) and/or <strong>precision</strong> (how accurate those links are).</li>
 <li><strong>The Variables:</strong> sentiment is heavily baked into LLM training, making it a poor variable for testing cognitive load. Instead, I will test the two link-level custom columns explicitly mentioned in the Causal Map quality assurance guidance: <strong>Certainty (Conviction)</strong> and <strong>Strength</strong>.<ul>
@@ -1639,150 +1639,89 @@
 <li><em>Strength:</em> Records if the source explicitly states whether the causal influence itself is strong or weak.</li>
 </ul>
 </li>
-<li><strong>The Process:</strong> You will run the AI-assisted coding in two variations:<ul>
-<li><em>Control Prompt:</em> A basic prompt extracting just the causal claims.</li>
+<li>
+<p><strong>The Process:</strong> You will run the AI-assisted coding in two variations:</p>
+<ul>
+<li><em>Control Prompt:</em> A basic prompt extracting just the causal claims.
+Approved </li>
+</ul>
+<h4 id="prompt">Prompt<a aria-label="Permalink" class="anchor-link" href="#prompt">#</a></h4>
+<pre><code>Later I will give you interviews, including Focus Group Discussions, about an international development project that works to enhance climate resilience and sustainable livelihoods through the protection and regeneration of Boswellia papyrifera forests and improved participation in the frankincense value chain.
+
+***Your task:***
+Try to understand the overall causal network in these texts: what is causing what, and how are they interrelated? Then give me a standard table with columns, Cause, Effect, Quote and Sentiment.
+Identify places where someone says that something causes or leads to or influences another thing, and identify how these kinds of claims fit together into causal chains or networks.
+Each row is one causal link mentioned in the text. List the Cause and Effect and give an EXACT, VERBATIM Quote backing up the causal link. Find common elements which appear as cause and/or effect multiple times, forming chains and other patterns that tell bigger stories, not just isolated pairs of links.
+Only report relationships which are really causal. Do not report hypothetical links or stories about the future or what someone would like to be true. Only report relationships which are a clear causal influence of one clearly identifiable thing or event on another.
+
+Labelling rules:
+
+1. The Cause and Effect labels should not themselves contain causal ideas like 'due to...' or 'because of...' Delete or correct or add links if necessary.
+2. Make sure to write clear, concrete and specific labels for the Cause and Effect, using the language in the text, that say what actually happened -- but rephrase anything that the ordinary reader would not understand in a more general way if necessary.
+3. Make sure the Cause and Effect are distinct; the Cause should not mention the Effect, and vice-versa.
+4. Use a special coding style of labelling: General Label; Specific Detail. 
+ - Include Actors/Locations: Try to always add the general actor responsible for the factor/causal claim in the Specific Detail part of the label using its full name or official abbreviation. For example: donor, Tree Aid, organisation X, community, youth, women etc. 
+However, remember to create clear, understandable labels, and never just add an actor as the entire label. 
+To ensure all causal factor labels are consistent for analysis, you must standardise any label that refers to a specific organisation, country, person, or place. But, do not include the specific proper noun in the main part of the label. Instead, use a generic descriptor for the actor/entity. Then, add the specific name after a semicolon (;) at the end.
+The required format is: [Generic Descriptor/Label]; [Specific Detail]
+For example: Increased income; selling more, or Increased income; making more money, etc.
+
+5. DO NOT give your opinion or draw conclusions, just print all of the causal claims within the texts.
+6. Bear in mind the meaning of these words and use them in the labels:
+- For 'TreeAid', 'Tree Aid', 'TA', 'EC0', and similar, write 'EC0 project'
+- For 'Frankincense', ‘Incense’, 'Itan', ‘Aduris’, ‘Duris’, ‘Adurs’, ‘Meker’ and similar, write ‘Frankincense’
+- For ‘PFM’, ‘PFMC’, ‘Participatory Forest Management Group’, ‘ forest protection committee’ and similar, write ‘PFM’
+- For ‘FSS’, ‘Fuel Saving Stoves’, ‘Fuel saving group’, and similar, write ‘FSS'
+- For ‘VTE’,  ‘Village Tree Enterprise’ and similar, write ‘VTE’
+- Mingaf is an ousing blade needed to tap the Boswellia tree to produce frankincense
+7. Some causal claims might mention other organisations working in the area, make sure to name every actor involved in the causal chain in the label.
+
+  **Quote**
+
+- The quote **must be a verbatim excerpt** from the text.
+- **Do NOT modify or translate it.**
+- **Do NOT break sentences apart or reassemble them differently.**
+- Do not provide links without a quote in this format.
+
+**Sentiment:**
+In the Sentiment column, give a number to rate the sentiment of the effect of the causal link.
+
+- 1 = Positive effect
+- 0 = Neutral or unclear effect
+- -1 = Negative effect
+
+- Consider the context and speaker's perspective when determining sentiment: what did the effect, outcome or result of this causal link mean to the speaker?
+- Use 0 for Effects that are purely descriptive, have no clear positive/negative connotation, or when sentiment is ambiguous.
+
+  **General**
+
+- The same piece of text or quote can be the basis for multiple but different links or chains.
+- Do not use bullet points or quote marks when printing out your answer, and do not prefix your answers with 'Cause: ' or 'Effect: '
+- Remember that one cause can have several effects, one effect can have several causes.
+- Make sure you do print out each and every causal chain, even if similar chains or links are repeated in different parts of the text. Your job is not to summarise but to provide every detail. If the text repeats the same or similar causal information several times, provide a separate chain each and every time.
+- These interviews were recorded in Amharic and translated into English, so some parts of the interviews might not be as clear. So make an effort to understand all of the causal claims mentioned in the text and report them; DO NOT skip any links. However, make sure all of the links have clear evidence in the text; DO NOT infer or invent anything. 
+- Your causal network should not be mostly fragments, individual links on their own. You need to try hard to make a coherent story out of all these fragments.
+- All of the verbatim quotes must be from the statements, do not make up any quotes.
+- Do not invent or assume causes or efects. The evidence for the causal chain must be in the text.
+- Make your labels as clear as possible for someone who never read the text
+- I love it when you find longer chains
+- Pay attention to the direction of each link to print them correctly.
+- Those are your instructions.
+
+=====
+Good, but your causal network is mostly fragments, individual links on their own. You need to try much harder to make a coherent story out of all these fragments. So give me the same links table again with the same columns and the same quotes, but find a set of factors (cause or effect labels) which express the same idea and rewrite them with a common label expressing that common idea. Repeat with other sets of similar labels until you have a much more connected causal network. But don't make stuff up, your relabelling must be true enough to the original meanings. And don't forget to also include links which in spite of your efforts are not part of a larger story. Don't forget the sentiment column!
+</code></pre>
+<ul>
 <li><em>Complex Prompt:</em> A prompt asking the AI to extract causal claims <em>and</em> simultaneously evaluate the text to populate the Certainty and Strength columns.</li>
+<li><strong>The Metric:</strong> compare the recall and precision between the two variations to see if the extra effort of evaluating Certainty and Strength degraded the AI's core extraction performance.</li>
 </ul>
 </li>
-<li><strong>The Metric:</strong> You will compare the recall and precision between the two variations to see if the extra effort of evaluating Certainty and Strength degraded the AI's core extraction performance.</li>
 </ul>
-<p>Phase 2: Bundle Assessment (The Rubrics Phase)</p>
+<h1 id="phase-2-bundle-assessment-the-rubrics-phase">Phase 2: Bundle Assessment (The Rubrics Phase)<a aria-label="Permalink" class="anchor-link" href="#phase-2-bundle-assessment-the-rubrics-phase">#</a></h1>
 <ul>
 <li><strong>The Goal:</strong> This is the "second moment" of quality assurance, where you cross the gap from evaluating individual claims to evaluating the robustness of the evidence as a whole.</li>
 <li><strong>The Process:</strong> After the AI has finished the initial coding in Phase 1, you group the individual causal claims into bundles (sets of links starting at the same cause and finishing at the same effect).</li>
 <li><strong>Applying the Rubrics:</strong> This is where your rubrics (<strong>Uniqueness, Triangulation, and Factuality</strong>) actually belong. Using the app's assessment panel, you will look at the entire bundle, along with all its underlying quotes and source metadata, and judge its overall quality against your rubrics. Based on this rubric score, you will decide whether the bundle's evidence is robust enough to be collapsed into a single, verified "assessed link"</li>
-</ul>
-<h1 id="phase-1">Phase 1<a aria-label="Permalink" class="anchor-link" href="#phase-1">#</a></h1>
-<h2 class="banner-info" id="prompt">Prompt<a aria-label="Permalink" class="anchor-link" href="#prompt">#</a></h2>
-<p>Later I will give you interviews, including Focus Group Discussions, about an international development project that works to enhance climate resilience and sustainable livelihoods through the protection and regeneration of Boswellia papyrifera forests and improved participation in the frankincense value chain.</p>
-<h3 class="rounded-info" id="your-task">Your task:<a aria-label="Permalink" class="anchor-link" href="#your-task">#</a></h3>
-<p>Try to understand the overall causal network in these texts: what is causing what, and how are they interrelated? Then give me a standard table with columns, Cause, Effect, Quote and Sentiment.</p>
-<p>Identify places where someone says that something causes or leads to or influences another thing, and identify how these kinds of claims fit together into causal chains or networks.</p>
-<p>Each row is one causal link mentioned in the text. List the Cause and Effect and give an EXACT, VERBATIM Quote backing up the causal link. Find common elements which appear as cause and/or effect multiple times, forming chains and other patterns that tell bigger stories, not just isolated pairs of links.</p>
-<p>Only report relationships which are really causal. Do not report hypothetical links or stories about the future or what someone would like to be true. Only report relationships which are a clear causal influence of one clearly identifiable thing or event on another.</p>
-<h4 id="labelling-rules">Labelling rules:<a aria-label="Permalink" class="anchor-link" href="#labelling-rules">#</a></h4>
-<ol>
-<li>
-<p>The Cause and Effect labels should not themselves contain causal ideas like 'due to...' or 'because of...' Delete or correct or add links if necessary.</p>
-</li>
-<li>
-<p>Make sure to write clear, concrete and specific labels for the Cause and Effect, using the language in the text, that say what actually happened — but rephrase anything that the ordinary reader would not understand in a more general way if necessary.</p>
-</li>
-<li>
-<p>Make sure the Cause and Effect are distinct; the Cause should not mention the Effect, and vice-versa.</p>
-</li>
-<li>
-<p>Each label should be a short sentence capturing the general idea of the cause or the effect. It does not have to use exactly the same words as in the text. Its meaning should be clear to someone who has not read the whole text, so you may need to pick some words from the surrounding context.</p>
-</li>
-<li>
-<p>Each label should be one sentence of 8-15 words.</p>
-</li>
-<li>
-<p>Never use passive sentences.</p>
-</li>
-<li>
-<p>The interviews won't have any personal names.</p>
-</li>
-<li>
-<p>DO NOT give your opinion or draw conclusions, just print all of the causal claims within the texts.</p>
-</li>
-<li>
-<p>Bear in mind the meaning of these words and use them in the labels:</p>
-</li>
-<li>
-<p>For 'TreeAid', 'Tree Aid', 'TA', 'EC0', and similar, write 'EC0 project'</p>
-</li>
-<li>
-<p>For 'Frankincense', ‘Incense’, 'Itan', ‘Aduris’, ‘Duris’, ‘Adurs’, ‘Meker’ and similar, write ‘Frankincense’</p>
-</li>
-<li>
-<p>For ‘PFM’, ‘PFMC’, ‘Participatory Forest Management Group’, ‘ forest protection committee’ and similar, write ‘PFM’</p>
-</li>
-<li>
-<p>For ‘FSS’, ‘Fuel Saving Stoves’, ‘Fuel saving group’, and similar, write ‘FSS’</p>
-</li>
-<li>
-<p>For ‘VTE’,  ‘Village Tree Enterprise’ and similar, write ‘VTE’</p>
-</li>
-<li>
-<p>Mingaf is an ousing blade needed to tap the Boswellia tree to produce frankincense</p>
-</li>
-<li>
-<p>Some causal claims might mention other organisations working in the area, make sure to name every actor involved in the causal chain in the label.</p>
-</li>
-</ol>
-<h3 class="rounded-info" id="quote"><strong>Quote</strong><a aria-label="Permalink" class="anchor-link" href="#quote">#</a></h3>
-<ul>
-<li>
-<p>The quote <strong>must be a verbatim excerpt</strong> from the text.</p>
-</li>
-<li>
-<p><strong>Do NOT modify or translate it.</strong></p>
-</li>
-<li>
-<p><strong>Do NOT break sentences apart or reassemble them differently.</strong></p>
-</li>
-<li>
-<p>Do not provide links without a quote in this format.</p>
-</li>
-</ul>
-<h2 class="banner-info" id="sentiment">Sentiment:<a aria-label="Permalink" class="anchor-link" href="#sentiment">#</a></h2>
-<p>In the Sentiment column, give a number to rate the sentiment of the effect of the causal link.</p>
-<ul>
-<li>
-<p>1 = Positive effect</p>
-</li>
-<li>
-<p>0 = Neutral or unclear effect</p>
-</li>
-<li>
-<p>-1 = Negative effect</p>
-</li>
-<li>
-<p>Consider the context and speaker's perspective when determining sentiment: what did the effect, outcome or result of this causal link mean to the speaker?</p>
-</li>
-<li>
-<p>Use 0 for Effects that are purely descriptive, have no clear positive/negative connotation, or when sentiment is ambiguous.</p>
-</li>
-</ul>
-<h2 class="banner-info" id="general">General<a aria-label="Permalink" class="anchor-link" href="#general">#</a></h2>
-<ul>
-<li>
-<p>The same piece of text or quote can be the basis for multiple but different links or chains.</p>
-</li>
-<li>
-<p>Do not use bullet points or quote marks when printing out your answer, and do not prefix your answers with 'Cause: ' or 'Effect: '</p>
-</li>
-<li>
-<p>Remember that one cause can have several effects, one effect can have several causes.</p>
-</li>
-<li>
-<p>Make sure you do print out each and every causal chain, even if similar chains or links are repeated in different parts of the text. Your job is not to summarise but to provide every detail. If the text repeats the same or similar causal information several times, provide a separate chain each and every time.</p>
-</li>
-<li>
-<p>These interviews were recorded in Amharic and translated into English, so some parts of the interviews might not be as clear. So make an effort to understand all of the causal claims mentioned in the text and report them; DO NOT skip any links. However, make sure all of the links have clear evidence in the text; DO NOT infer or invent anything. </p>
-</li>
-<li>
-<p>Your causal network should not be mostly fragments, individual links on their own. You need to try hard to make a coherent story out of all these fragments.</p>
-</li>
-<li>
-<p>All of the verbatim quotes must be from the statements, do not make up any quotes.</p>
-</li>
-<li>
-<p>Do not invent or assume causes or efects. The evidence for the causal chain must be in the text.</p>
-</li>
-<li>
-<p>Make your labels as clear as possible for someone who never read the text</p>
-</li>
-<li>
-<p>I love it when you find longer chains</p>
-</li>
-<li>
-<p>Pay attention to the direction of each link to print them correctly.</p>
-</li>
-<li>
-<p>Those are your instructions.</p>
-</li>
 </ul>
 <p>Draft</p>
 <p>Use tree aid? 
@@ -1804,19 +1743,11 @@ choose a map and work on the bundles only on that map</p>
       </main>
       <aside class="rightbar"><h2>On this page</h2><div class="hover-cue">Hover to view</div><div class="toc"><div class="toc">
 <ul>
-<li><a href="#phase-1">Phase 1</a><ul>
-<li><a href="#prompt">Prompt</a><ul>
-<li><a href="#your-task">Your task:</a><ul>
-<li><a href="#labelling-rules">Labelling rules:</a></li>
+<li><a href="#phase-1-testing-ai-recall-and-precision-the-coding-phase">Phase 1: Testing AI Recall and Precision (The Coding Phase)</a><ul>
+<li><a href="#prompt">Prompt</a></li>
 </ul>
 </li>
-<li><a href="#quote">Quote</a></li>
-</ul>
-</li>
-<li><a href="#sentiment">Sentiment:</a></li>
-<li><a href="#general">General</a></li>
-</ul>
-</li>
+<li><a href="#phase-2-bundle-assessment-the-rubrics-phase">Phase 2: Bundle Assessment (The Rubrics Phase)</a></li>
 </ul>
 </div>
 </div></aside>
