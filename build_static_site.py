@@ -351,12 +351,6 @@ def _format_author_text(authors: List[str]) -> str:
     return f"{authors[0]} et al."
 
 
-def _extract_simple_page_locator(s: str) -> str:
-    """Extract only the simple 'p. <digits>' locator form (ignore everything else)."""
-    m = re.search(r"\bp\.\s*\d+\b", s)
-    return m.group(0) if m else ""
-
-
 def _format_parenthetical_author_year(authors: List[str], year: str, locator: str = "") -> str:
     """Format like: 'Smith et al. 2005, p. 5' (outer parentheses added elsewhere)."""
     a = _format_author_text(authors)
@@ -386,30 +380,37 @@ def _convert_citations_bracket_to_apa(md_text: str, bib_index: Dict[str, Tuple[L
     def _repl(m: re.Match[str]) -> str:
         inner = m.group(1)
         out: List[str] = []
-        # Find each @key in the bracket. Anything after the key (until next @ or ;)
-        # is treated as a locator/suffix (e.g., ", p. 12").
-        for km in re.finditer(r"@([A-Za-z0-9:_-]+)([^@;]*)", inner):
+        # Each ';'-separated chunk is one citation item: optional prefix text,
+        # optional '-' author-suppression marker, the @key, then an optional
+        # locator/suffix. The bracket bounds the suffix, so it passes through
+        # verbatim (p. 5, pp. 10-15, ch. 3, "p. 5, emphasis added").
+        for chunk in inner.split(";"):
+            km = re.search(r"@([A-Za-z0-9:_-]+)", chunk)
+            if not km:
+                continue
             key = km.group(1)
-            suffix_raw = (km.group(2) or "").strip(" ,")
-            locator = _extract_simple_page_locator(suffix_raw)
+            locator = chunk[km.end():].strip(" ,")
+
+            prefix = chunk[:km.start()].rstrip()
+            suppress_author = prefix.endswith("-")
+            if suppress_author:
+                prefix = prefix[:-1].rstrip()
+            prefix = prefix.strip()
 
             if key in bib_index:
                 used_keys.add(key)
 
             authors, year = bib_index.get(key, ([], "n.d."))
-            prefix = inner[:km.start()].rstrip()
-            suppress_author = prefix.endswith("-")
-            base_inner = (
+            cite_inner = (
                 _format_parenthetical_year_only(year, locator=locator)
                 if suppress_author
                 else _format_parenthetical_author_year(authors, year, locator=locator)
             )
 
             href = bib_links.get(key) if bib_links else None
-            if href:
-                out.append(f"[{base_inner}]({href})")
-            else:
-                out.append(base_inner)
+            cite = f"[{cite_inner}]({href})" if href else cite_inner
+            # Prefix (e.g. "see", "cf.") stays as plain text before the link.
+            out.append(f"{prefix} {cite}" if prefix else cite)
 
         # One pair of parentheses for the whole group: (A; B), not (A); (B)
         return f"({'; '.join(out)})" if out else m.group(0)
@@ -418,7 +419,13 @@ def _convert_citations_bracket_to_apa(md_text: str, bib_index: Dict[str, Tuple[L
     
     # Also convert standalone citations like "@key" to narrative style.
     # Example: "@friese2025, p. 5" -> "Friese (2025, p. 5)"
-    bare_pattern = re.compile(r"(?<![\w\[])\@([A-Za-z0-9:_-]+)\b(?:\s*,\s*(p\.\s*\d+))?")
+    # Outside brackets there is no closing delimiter, so only consume a locator
+    # that starts with a recognised label (p./pp./ch./chap./sec./section sign)
+    # to avoid swallowing following prose. Value allows digits, ranges, dots.
+    bare_pattern = re.compile(
+        r"(?<![\w\[])\@([A-Za-z0-9:_-]+)\b"
+        r"(?:\s*,\s*((?:pp?\.|chap?\.|sec\.|§)\s*\w+(?:[.\-]\w+)*))?"
+    )
 
     def _repl_bare(m2: re.Match[str]) -> str:
         key = m2.group(1)
@@ -585,6 +592,7 @@ def _format_reference_list(used_keys: Set[str], bib_index: Dict[str, Tuple[List[
 # -- markdown conversion (simple) --
 try:
     import markdown  # type: ignore
+    from markdown.extensions.toc import slugify as _md_toc_slugify  # type: ignore
 except ImportError as exc:  # minimal helpful error
     raise SystemExit(
         "Missing dependency: markdown. Install with 'pip install markdown'"
@@ -2117,10 +2125,11 @@ def replace_wikilinks_with_embeds(
     external_sections = parse_external_readme_sections()
 
     def _slug_anchor(s: str) -> str:
-        a = s.lower()
-        a = re.sub(r"\s+", "-", a)
-        a = re.sub(r"[^a-z0-9-]", "", a)
-        return a
+        # Use python-markdown's own toc slugify so [[Page#Heading]] anchors match
+        # the ids the toc extension assigns to headings (handles accents like
+        # "Café" and underscores like "Step_1", which the old slug dropped).
+        # Caveat: duplicate headings on a page get "_1"/"_2" suffixes we can't see.
+        return _md_toc_slugify(s, "-")
 
     def _resolve_wikilink_target(target: str) -> Optional[Path]:
         key = target.lower()
@@ -2128,15 +2137,17 @@ def replace_wikilinks_with_embeds(
 
     def _page_href(target_md: Path, anchor: Optional[str]) -> str:
         page_anchor_id = page_anchor_map.get(target_md) if page_anchor_map else None
-        if page_anchor_id and not anchor:
-            return f"/{page_anchor_id}"
+        anchor_slug = _slug_anchor(anchor) if anchor else ""
+        if page_anchor_id:
+            # Keep the short permalink even for heading links. The short route is
+            # a full copy of the page (_short_route_stub_html), so the heading id
+            # resolves there too: /permalink#heading rather than the long path.
+            return f"/{page_anchor_id}#{anchor_slug}" if anchor_slug else f"/{page_anchor_id}"
 
         target_out = relative_output_html(input_root, output_root, target_md)
         href_base = os.path.relpath(target_out, start=current_out_dir).replace(os.sep, "/")
-        if anchor:
-            a = _slug_anchor(anchor)
-            if a:
-                href_base = f"{href_base}#{a}"
+        if anchor_slug:
+            href_base = f"{href_base}#{anchor_slug}"
         return href_base
 
     def _page_title(target_md: Path) -> str:
