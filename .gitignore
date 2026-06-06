@@ -5,6 +5,9 @@
 
 !.gitignore
 !netlify.toml
+!README.md
+!docs/
+!docs/**
 !dist/
 !dist/**
 
