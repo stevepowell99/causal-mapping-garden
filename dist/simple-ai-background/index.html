@@ -1633,17 +1633,12 @@
 <div class="user-guide-callout">
 <strong>Quick start:</strong> If you have roughly 5–100 pages of text, you can usually **just run everything** and get decent results. Press **One-click coding** and confirm the short set-up modal, then let it run. You can then go back and adjust the coding (edit links, tweak prompts, re-run specific steps) if you want. For longer texts or high-stakes coding, work incrementally: use the **source limit** in Auto-code (1, 5, 20%, 50%, 100%) and the **Links limit** in Recode to process a sample first, check quality, then scale up.
 </div>
-<p>You can activate it with the <strong>"AI coding"</strong> switch just below the Sources bar. When you sign up and choose to have AI options switched on and active, AI coding is turned on by default. Other users can switch it on later if they wish. </p>
+<p>AI is switched on and off in the <a href="../account-panel/">Account panel</a> with the <strong>"AI options switched on and active"</strong> switch. If you choose an AI workflow when you sign up, it is turned on for you; otherwise you can turn it on there at any time. When AI is on, the <strong>AI Coding panel</strong> appears inline at the top of the <strong>Create links</strong> tab, ready to use.</p>
 <p>AI usage consumes <strong>credits</strong> (see <a href="../responses-panel/">Responses Panel</a>); credits renew monthly and do not roll over. Costs depend on model and workflow, but very roughly you might autocode around 30 pages for about 1 credit.</p>
 <p>Users with dedicated AI plans receive a larger batch of AI credits each month; other users receive 10 free AI credits per month (the free credits do not stack with paid plans). </p>
 <h3 id="the-ai-workflow">The AI Workflow<a aria-label="Permalink" class="anchor-link" href="/simple-ai-background/#the-ai-workflow">#</a></h3>
-<p>When AI coding is active:</p>
-<ul>
-<li>the <strong>Sources bar</strong> is hidden (to keep focus),</li>
-<li>the right-hand output tabs stay available,</li>
-<li>the Create/Filter sub-tabs are replaced by one combined AI workflow panel.</li>
-</ul>
-<p>The workflow is broken down into six straightforward sections:</p>
+<p>The AI Coding panel sits at the top of the <strong>Create links</strong> tab, above the source text viewer. The Sources bar, the right-hand output tabs, and the <strong>Create links</strong> / <strong>Filter links</strong> / <strong>Assess links</strong> tabs all stay where they are; the panel does not take over the screen.</p>
+<p>The panel is broken down into five straightforward sections (filtering is a separate step, see below):</p>
 <ol>
 <li><strong>One-click coding</strong>: Pipeline runner with a <strong>set-up</strong> modal first. Press <strong>One-click coding</strong> to choose <strong>level of effort</strong> (Flash vs Pro for the AI model slots), <strong>Skip coded</strong>, <strong>Filter on finish</strong>, and (if the project has links) whether to delete <strong>every</strong> link in the project or <strong>only</strong> links on the sources in scope, then confirm <strong>Run</strong>.</li>
 <li>Pre-steps: clears Filter Links and turns the filter pipeline <strong>on</strong> before the modal.</li>
@@ -1671,9 +1666,8 @@
 <li><strong>Skip recoded</strong>: When on, only processes links that have at least one unrecoded label (cause or effect). Use this when recoding again to focus on remaining work.</li>
 <li><strong>Links limit</strong> (1, 5, 20%, 50%, 100%): When not 100%, a random sample of links is recoded. Non-sampled links keep their existing recoded values (or stay blank on first run).</li>
 <li>The header progress bar is segmented: grey = empty recoded fields, orange = recoded equals original cause/effect, green = recoded non-empty and different.</li>
-<li>Default model is <strong>Qwen Flash</strong>.</li>
-<li><strong>Filter links</strong>: The normal Filter Links panel appears as the final section of the same accordion, so filtering is part of one continuous simple flow.</li>
-<li>When <strong>Filter on finish</strong> is <strong>on</strong> in the One-click set-up, completing the run applies these analysis filters to the pipeline: <strong>Factor Frequency</strong> (top <code>12</code>, counted by <strong>citations</strong>) → <strong>Link Frequency</strong> (top <code>30</code>, counted by <strong>citations</strong>). The global <a href="../factor-label-set/">Label set</a> controls which <code>cause</code>/<code>effect</code> columns Recode writes to (no separate “recode suffix” in this panel).</li>
+<li>Default model is <strong>Qwen Flash</strong>.
+After coding, <strong>filtering</strong> happens in the adjacent <strong>Filter links</strong> tab (the normal Filter Links pipeline). When <strong>Filter on finish</strong> is <strong>on</strong> in the One-click set-up, completing the run applies these analysis filters to the pipeline: <strong>Factor Frequency</strong> (top <code>12</code>, counted by <strong>citations</strong>) → <strong>Link Frequency</strong> (top <code>30</code>, counted by <strong>citations</strong>). The global <a href="../factor-label-set/">Label set</a> controls which <code>cause</code>/<code>effect</code> columns Recode writes to (no separate “recode suffix” in this panel).</li>
 </ol>
 <h3 id="simple-ai-runner">One-click coding (AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-background/#simple-ai-runner">#</a></h3>
 <ul>
@@ -1748,7 +1742,7 @@
 </ul>
 <h3 id="simple-ai-filter-links">Filter links (AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-background/#simple-ai-filter-links">#</a></h3>
 <ul>
-<li>This is the same Filter Links workflow, embedded as the final simple-ai accordion section.</li>
+<li>This is the same Filter Links workflow, run from the adjacent <strong>Filter links</strong> tab (not embedded in the AI Coding panel).</li>
 <li>Use it to refine/select links before reviewing outputs on the right.</li>
 <li>When <strong>One-click coding</strong> finishes with <strong>Filter on finish</strong> enabled, the app applies top-12 factor frequency (citations), then top-30 link frequency (citations) (no longer injects the deprecated Temporary Factor Labels filter).</li>
 </ul>
