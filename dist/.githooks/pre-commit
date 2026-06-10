@@ -1,0 +1,6 @@
+#!/bin/sh
+# Google Drive scatters desktop.ini files through .git on this Drive-hosted
+# vault, which corrupts refs (e.g. "bad object refs/desktop.ini"). Strip them
+# before Git parses refs. Always exit 0 so cleanup never blocks the operation.
+find "$(git rev-parse --git-dir)" -name desktop.ini -type f -delete 2>/dev/null
+exit 0
