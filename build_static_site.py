@@ -1803,12 +1803,31 @@ def strip_yaml_front_matter(text: str) -> str:
         text = text[1:]
     # Regex: start of string, line with ---, any content, line with ---, optional trailing newline
     pattern = r'^\s*---\s*\r?\n[\s\S]*?\r?\n---\s*\r?\n?'
-    return re.sub(pattern, '', text, count=1, flags=re.MULTILINE)
+    text = re.sub(pattern, '', text, count=1, flags=re.MULTILINE)
+    # Resolve any CriticMarkup review marks so they never reach rendering/search/PDF.
+    return strip_critic_markup(text)
 
 
 def strip_percent_comments(text: str) -> str:
     """Remove custom %% ... %% comment blocks from text (can span multiple lines)."""
     return re.sub(r"%%[\s\S]*?%%", "", text)
+
+
+def strip_critic_markup(text: str) -> str:
+    """Resolve CriticMarkup as 'accept all changes', leaving clean prose for rendering.
+
+    Insertions and the new side of substitutions are kept; deletions and comments
+    are dropped; highlight wrappers are unwrapped. Markers may span multiple lines.
+    Substitution is handled first because its body contains the '~~' delimiter.
+    """
+    if "{" not in text:
+        return text
+    text = re.sub(r"\{~~[\s\S]*?~>([\s\S]*?)~~\}", r"\1", text)  # {~~ old ~> new ~~} -> new
+    text = re.sub(r"\{>>[\s\S]*?<<\}", "", text)                 # {>> comment <<}   -> drop
+    text = re.sub(r"\{--[\s\S]*?--\}", "", text)                 # {-- deletion --}  -> drop
+    text = re.sub(r"\{\+\+([\s\S]*?)\+\+\}", r"\1", text)        # {++ insertion ++} -> keep
+    text = re.sub(r"\{==([\s\S]*?)==\}", r"\1", text)            # {== highlight ==} -> unwrap
+    return text
 
 
 def extract_yaml_front_matter(text: str) -> Tuple[Dict[str, Any], str]:
@@ -4048,6 +4067,8 @@ def markdown_extensions(with_toc: bool = False) -> List[str]:
 
 def convert_markdown_to_html(md_text: str) -> str:
     """Convert markdown to HTML with minimal extensions."""
+    # Strip the "live on mist" banner so it never reaches the published site.
+    md_text = re.sub(r"<!-- mist:banner:start -->[\s\S]*?<!-- mist:banner:end -->\n*", "", md_text)
     md_text = preprocess_span_cols_marker(md_text)
     md_text = strip_percent_comments(md_text)
     md_text = preprocess_column_blocks(md_text)
