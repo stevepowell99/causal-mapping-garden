@@ -1,5 +1,4 @@
-# Allowlist: only what Netlify needs (publish = dist). content/ stays local — never committed.
-# build_static_site.py, config.yml, content/ are ignored by the * rule below.
+# Allowlist: dist/ (Netlify publish target) plus the source build tooling. content/ stays local, never committed.
 
 *
 
@@ -10,6 +9,13 @@
 !docs/**
 !dist/
 !dist/**
+
+# Source build tooling (versioned for recovery; no secrets in these)
+!build_static_site.py
+!config.yml
+!watch_and_build.ps1
+!run_build_scheduled.bat
+!serve.py
 
 # Build output copies of trash / local junk — never ship
 **/desktop.ini
