@@ -1,0 +1,1977 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>!manuscript</title>
+    <meta name="description" content="2026 1. Introduction: an orthogonal yes # The arrival of large language models in qualitative research has produced a debate that is usually drawn as a straight line with two ends. At one end is rejection. A widely endor">
+    <link rel="canonical" href="https://garden.causalmap.app/250%20Causal%20Mapping%20as%20QDA/%21manuscript.html">
+    <meta property="og:title" content="!manuscript">
+    <meta property="og:description" content="2026 1. Introduction: an orthogonal yes # The arrival of large language models in qualitative research has produced a debate that is usually drawn as a straight line with two ends. At one end is rejection. A widely endor">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://garden.causalmap.app/250%20Causal%20Mapping%20as%20QDA/%21manuscript.html">
+    <meta property="og:site_name" content="">
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="!manuscript">
+    <meta name="twitter:description" content="2026 1. Introduction: an orthogonal yes # The arrival of large language models in qualitative research has produced a debate that is usually drawn as a straight line with two ends. At one end is rejection. A widely endor">
+    <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='8' fill='%2390c3c6'/></svg>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Analytics loader (optional, generated at build time from config.yml) -->
+    <script defer src="../assets/analytics.js"></script>
+    <!-- MathJax v3: inline ($...$, \(...\)) and display (\[...\]); ignored in <code>/<pre> -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          displayMath: [['\\[','\\]']],
+          processEscapes: true
+        },
+        options: {
+          skipHtmlTags: ['script','noscript','style','textarea','pre','code']
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <style>
+      /* layout: sticky left sidebar */
+      :root {
+        --cm-body-bg: #fcfcfc;
+        --cm-text: #222;
+        --cm-muted: #6c757d;
+        --cm-border: #e5e5e5;
+        --bs-link-color: #79bb93; /* default link colour */
+        --bs-link-hover-color: #647779; /* link hover colour */
+        /* Showcase accents (aligned to existing site palette + requested highlights) */
+        --cm-accent-primary: #79bb93;
+        --cm-accent-secondary: #90c3c6;
+        --cm-accent-ink: #1f1f36;
+        --cm-accent-teal: #6dc4c8;
+        --cm-accent-cyan: #76f7ff;
+        --cm-accent-pink: #ff8fb8;
+        --cm-accent-highlight: #f7ed73;
+        --cm-accent-neon: #00ffaf;
+      }
+      a {
+        color: #79bb93; /* default link colour */
+      }
+      a:hover, a:focus {
+        color: #647779; /* hover/link focus colour */
+      }
+      ul li::marker {
+        color: #79bb93; /* default bullet colour */
+      }
+      body {
+        overflow-y: scroll;
+        background: var(--cm-body-bg);
+        color: var(--cm-text);
+        font-size: 1.2rem; /* ~18px, slightly larger */
+      }
+      .layout-container {
+        display: grid;
+        --cm-left-sidebar-width: 462px;
+        --cm-rightbar-width: 390px;
+        --cm-grid-gap: 1rem;
+        --cm-content-width: 980px;
+        grid-template-columns: var(--cm-left-sidebar-width) fit-content(var(--cm-content-width)) var(--cm-rightbar-width); /* sidebar, content card, rightbar */
+        column-gap: var(--cm-grid-gap);
+        min-height: 100vh;
+        background-color: #eee;
+        transition: grid-template-columns 0.3s ease;
+      }
+      /* Page-level layout override (YAML: layout: fullscreen / showcase) */
+      body.layout-fullscreen .layout-container {
+        grid-template-columns: minmax(0, 1fr);
+        column-gap: 0;
+        background: var(--cm-body-bg);
+      }
+      body.layout-fullscreen aside.sidebar,
+      body.layout-fullscreen aside.rightbar,
+      body.layout-fullscreen .breadcrumb-nav,
+      body.layout-fullscreen #hamburgerBtn {
+        display: none !important;
+      }
+      body.layout-fullscreen .content {
+        max-width: min(1400px, 100vw);
+        margin: 0 auto 4rem auto;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        --cm-content-pad-y: clamp(1rem, 3vw, 3rem);
+        --cm-content-pad-x: clamp(1rem, 5vw, 4rem);
+      }
+      .fullscreen-footer { display: none; }
+      body.layout-fullscreen .fullscreen-footer {
+        display: block;
+        margin-top: 4rem;
+        padding: 1.25rem 1.5rem;
+        font-size: 0.8rem;
+        color: #6b7280;
+        border-top: 1px solid #e5e7eb;
+        background: #fafafa;
+      }
+      body.layout-fullscreen .fullscreen-footer a { color: #6b7280; text-decoration: none; }
+      body.layout-fullscreen .fullscreen-footer a:hover { color: #374151; }
+      body.layout-fullscreen .fullscreen-footer .sidebar-footer {
+        background: none; border: none; padding: 0; margin: 0;
+      }
+      .fullscreen-nav { display: none; }
+      body.layout-fullscreen .fullscreen-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: .75rem;
+        margin: 0 0 1rem 0;
+        padding: .35rem .25rem;
+        border-bottom: 1px solid #e7eaf1;
+      }
+      body.layout-fullscreen .fullscreen-nav a {
+        color: #344054;
+        font-size: .95rem;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+      body.layout-fullscreen .fullscreen-nav a:hover {
+        color: #1d4ed8;
+      }
+      /* Page title (filename) as full-bleed hero in fullscreen */
+      body.layout-fullscreen .page-title-row {
+        width: 100vw;
+        max-width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        background: linear-gradient(135deg, #f0f9f9 0%, #e8f6f7 50%, #f4faf9 100%);
+        padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 5vw, 4rem);
+        text-align: center;
+        justify-content: center !important;
+      }
+      body.layout-fullscreen .page-title-row .page-title {
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 800;
+      }
+      /* Generic showcase components (can be used in any page, with/without layout: showcase) */
+      .content .cm-hero {
+        background: linear-gradient(135deg, #f0f9f9 0%, #e8f6f7 50%, #f4faf9 100%);
+        color: var(--cm-accent-ink);
+        border: 1px solid rgba(144, 195, 198, 0.4);
+        border-left: 8px solid var(--cm-accent-secondary);
+        border-radius: 16px;
+        padding: clamp(1.25rem, 3vw, 3rem);
+        margin: .25rem 0 1.6rem 0;
+        box-shadow: 0 8px 20px rgba(144, 195, 198, 0.12);
+      }
+      .content .cm-hero h1 {
+        margin: 0 0 .45rem 0;
+        color: var(--cm-accent-ink);
+        font-size: clamp(2rem, 5.2vw, 4.4rem);
+        line-height: 1.08;
+        font-weight: 800;
+      }
+      .content .cm-hero .cm-hero-accent {
+        color: var(--cm-accent-teal);
+      }
+      .content .cm-hero p {
+        margin: 0;
+        color: #475467;
+        font-size: clamp(1rem, 1.5vw, 1.2rem);
+      }
+      .content .cm-intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+        margin: 1rem 0 2rem 0;
+      }
+      .content .cm-panel {
+        background: linear-gradient(180deg, #ffffff 0%, #f7f9fd 100%);
+        border: 1px solid #dfe6f3;
+        border-radius: 14px;
+        padding: 1.25rem 1.4rem;
+        box-shadow: 0 8px 20px rgba(35, 64, 129, 0.06);
+      }
+      .content .cm-steps {
+        display: grid;
+        gap: 1rem;
+        margin: 0.5rem 0 2rem 0;
+      }
+      .content .cm-step {
+        display: grid;
+        grid-template-columns: 56px 1fr;
+        gap: 1rem;
+        align-items: center;
+        background: linear-gradient(180deg, #f8f9fc 0%, #f1f4fb 100%);
+        border: 1px solid #e0e6f5;
+        border-radius: 12px;
+        padding: 1rem 1.1rem;
+      }
+      .content .cm-step-num {
+        width: 48px;
+        height: 48px;
+        border-radius: 999px;
+        background: #dfe4ff;
+        color: #4338ca;
+        font-weight: 700;
+        font-size: 1.45rem;
+        line-height: 48px;
+        text-align: center;
+      }
+      .content .cm-step h3 {
+        margin: 0 0 .25rem 0;
+        font-size: 1.85rem;
+        color: #101828;
+      }
+      .content .cm-step p {
+        margin: 0 0 .6rem 0;
+        color: #344054;
+      }
+      .content .cm-win {
+        display: inline-block;
+        background: #dcfce7;
+        border: 1px solid #86efac;
+        color: #166534;
+        border-radius: 6px;
+        padding: .28rem .55rem;
+        font-weight: 600;
+        font-size: .95rem;
+      }
+      @media (max-width: 980px) {
+        .content .cm-intro-grid {
+          grid-template-columns: 1fr;
+        }
+        .content .cm-step {
+          grid-template-columns: 1fr;
+        }
+      }
+      .sidebar {
+        border-right: 1px solid var(--cm-border);
+        position: sticky;
+        top: 0;
+        max-height: 100vh; /* constrain sidebar to viewport height */
+        overflow: hidden; /* no scroll on sidebar itself */
+        background: #fefefe;
+        padding: 0 5px; /* remove vertical padding so footer remains in view */
+        transition: overflow 0.3s ease;
+      }
+      aside.sidebar > div {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        padding: 2.5rem 1rem 0 1rem !important;
+      }
+      aside.sidebar .sidebar-header {
+        padding .5rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      }
+      .sidebar-section-title,
+      .rightbar h2 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        color: var(--cm-muted);
+      }
+      .sidebar-section-title {
+        margin: .25rem 20px .45rem;
+      }
+      .hover-cue {
+        color: #adb5bd;
+        font-size: .78rem;
+        letter-spacing: .02em;
+        margin: 0 20px 1rem;
+        transition: opacity .15s ease;
+      }
+      aside.sidebar:hover .hover-cue,
+      .rightbar:hover .hover-cue {
+        opacity: 0;
+      }
+      aside.sidebar .nav-fade {
+        flex: 1;
+        overflow-y: auto; /* scrollable TOC */
+        overflow-x: hidden;
+        padding: 20px;
+        position: relative;
+        scrollbar-width: none;
+      }
+      aside.sidebar:hover .nav-fade {
+        scrollbar-width: auto;
+      }
+      aside.sidebar .nav-fade::-webkit-scrollbar,
+      .rightbar::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+      aside.sidebar:hover .nav-fade::-webkit-scrollbar,
+      .rightbar:hover::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      aside.sidebar .nav-fade::before,
+      .rightbar .toc::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        height: 3.4rem;
+        opacity: 1;
+        pointer-events: none;
+        transition: opacity .15s ease;
+        background:
+          linear-gradient(#eef2f4, #eef2f4) 0 .2rem / 55% .45rem no-repeat,
+          linear-gradient(#f3f6f7, #f3f6f7) 1rem 1.4rem / 72% .4rem no-repeat,
+          linear-gradient(#f3f6f7, #f3f6f7) 1rem 2.45rem / 48% .4rem no-repeat;
+      }
+      aside.sidebar .nav-fade::before {
+        left: 20px;
+        right: 20px;
+      }
+      .rightbar .toc::before {
+        left: 0;
+        right: 0;
+      }
+      aside.sidebar .nav-fade > ul,
+      .rightbar .toc > ul {
+        opacity: 0;
+        transition: opacity .15s ease;
+      }
+      aside.sidebar:hover .nav-fade::before,
+      .rightbar:hover .toc::before {
+        opacity: 0;
+      }
+      aside.sidebar:hover .nav-fade > ul,
+      .rightbar:hover .toc > ul {
+        opacity: 1;
+      }
+      @media (hover: none), (max-width: 1199.98px) {
+        aside.sidebar .nav-fade::before {
+          display: none;
+        }
+        aside.sidebar .nav-fade > ul {
+          opacity: 1;
+        }
+      }
+      aside.sidebar .nav-fade summary {
+        opacity: inherit;
+      }
+      aside.sidebar .nav-link {
+        padding: .2rem .4rem;
+        color: var(--cm-text);
+        font-size: 1.025rem; /* slightly larger */
+      }
+      aside.sidebar .nav-link:hover {
+        background: #eef2f6;
+        border-radius: .25rem;
+      }
+      details > summary {
+        cursor: pointer;
+        list-style: none;
+        transition: opacity .35s ease;
+      }
+      details > summary::marker {
+        display: none;
+      }
+      aside.sidebar details:hover > summary {
+        opacity: 1 !important; /* full visibility on section hover */
+      }
+      aside.sidebar .nav-link:hover {
+        opacity: 1 !important; /* full visibility on link hover */
+      }
+      details > summary .chev {
+        transition: transform .35s ease, opacity .35s ease;
+        opacity: 0; /* invisible by default */
+        font-size: 1.2em; /* smaller */
+        margin-left: .5rem;
+      }
+      aside.sidebar:hover details > summary .chev {
+        opacity: .6; /* visible on sidebar hover */
+      }
+      details[open] > summary .chev {
+        transform: rotate(90deg);
+      }
+      .content {
+        position: relative; /* needed for positioned inner elements */
+        /* Use vars so overlays (logo) can align with text margins */
+        --cm-content-pad-y: 3rem;
+        --cm-content-pad-x: 4rem;
+        padding: var(--cm-content-pad-y) var(--cm-content-pad-x); /* more padding */
+        max-width: 980px;  /* a bit wider */
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+        line-height: 1.7;
+        letter-spacing: .2px;
+        background: white;
+        box-shadow: 0 1px 2px rgba(0,0,0,.03);
+        border: 1px solid var(--cm-border);
+        border-radius: 8px;
+        margin: 2.5rem 0 5rem 0; /* remove right margin so rightbar hugs content */
+      }
+      .content .edge-nav-box {
+        position: sticky;
+        top: 50vh;
+        height: 0;
+        z-index: 5;
+        pointer-events: none; /* allow clicks through to content */
+      }
+      .content .edge-nav-box a {
+        pointer-events: auto; /* restore clicks on nav buttons */
+      }
+      .content img { max-width: 100%; height: auto; margin: 20px 0; }
+      /* Image layout defaults (postprocess_content_image_layout): full-bleed vs two-column plus span-cols / inline classes */
+      .content img.cm-img-flush {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .content img.cm-img-in-col {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .content img.inline {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+      }
+      .content .paper-dual-column-body .cm-figure-span,
+      .content .section-two-col .cm-figure-span {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin: 1.2rem 0;
+        width: 100%;
+      }
+      .content .cm-figure-span img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .content h1, .content h2, .content h3, .content h4 {
+        margin-top: 2rem;
+        font-weight: 600;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      }
+      /* Larger H1 on Home (index.md) */
+      .content.home h1:first-of-type {
+        font-size: 5rem;
+      }
+      /* Floating PDF links inside content container */
+      .content .pdf-links {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 5;
+      }
+      .content .pdf-links a { margin-left: .5rem; white-space: nowrap; }
+      .content .fullscreen-enter { font-size: 1.1rem; color: #6c757d; text-decoration: none; margin-left: .35rem; }
+      .content .fullscreen-enter:hover { color: #1d4ed8; }
+      body.layout-fullscreen .fullscreen-enter { display: none !important; }
+      /* Tighter hierarchy for lower headings */
+      .content h2 { font-size: 1.6rem; font-weight: 600; }
+      .content h3 { font-size: 1.25rem; font-weight: 600; }
+      .content h4 { font-size: 1.1rem; font-weight: 600; }
+      .content h5 { font-size: 1rem; font-weight: 600; }
+      .content h6 { font-size: .95rem; font-weight: 600; }
+      /* Heading self-link icon (revealed on hover) */
+      .content .anchor-link {
+        visibility: hidden;
+        text-decoration: none;
+        color: #adb5bd;
+        margin-left: .5rem;
+        font-weight: normal;
+      }
+      .content h1:hover .anchor-link, .content h2:hover .anchor-link,
+      .content h3:hover .anchor-link, .content h4:hover .anchor-link,
+      .content h5:hover .anchor-link, .content h6:hover .anchor-link {
+        visibility: visible;
+      }
+      .content .anchor-link:hover { color: #6c757d; }
+      /* Hide anchor links in print/PDF */
+      @media print {
+        .anchor-link {
+          display: none !important;
+        }
+        /* Ensure multi-column blocks render as columns in PDF even if Bootstrap CSS isn't loaded (wider gutter: +50%) */
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          page-break-inside: avoid;
+          margin-left: -1.125rem;
+          margin-right: -1.125rem;
+        }
+        .row [class*="col-"] {
+          page-break-inside: avoid;
+          padding-left: 1.125rem;
+          padding-right: 1.125rem;
+          flex: 0 0 auto;
+        }
+        .row .col-md-1 { width: 8.33333333%; }
+        .row .col-md-2 { width: 16.66666667%; }
+        .row .col-md-3 { width: 25%; }
+        .row .col-md-4 { width: 33.33333333%; }
+        .row .col-md-5 { width: 41.66666667%; }
+        .row .col-md-6 { width: 50%; }
+        .row .col-md-7 { width: 58.33333333%; }
+        .row .col-md-8 { width: 66.66666667%; }
+        .row .col-md-9 { width: 75%; }
+        .row .col-md-10 { width: 83.33333333%; }
+        .row .col-md-11 { width: 91.66666667%; }
+        .row .col-md-12 { width: 100%; }
+      }
+      /* Prominent page title (sans, larger than in-page headings) */
+      .content h1{
+        margin-bottom: 2rem;
+      }
+      /* Prominent page title (sans, larger than in-page headings) */
+      .page-title {
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        font-size: 2rem; /* ~32px: not smaller than default h1 */
+        font-weight: 700;
+        line-height: 1.25;
+        letter-spacing: .04em; /* slightly wider tracking */
+        font-variant-caps: small-caps; /* subtle distinction from h1/h2 */
+        margin: 0 0 2.25rem 0;
+        position: relative; /* For anchor link positioning */
+      }
+      .page-title .anchor-link {
+        visibility: hidden;
+        text-decoration: none;
+        color: #adb5bd;
+        margin-left: .5rem;
+        font-weight: normal;
+      }
+      .page-title:hover .anchor-link {
+        visibility: visible;
+      }
+      .page-title .anchor-link:hover {
+        color: #6c757d;
+      }
+      .page-title .page-subtitle {
+        display: block;
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: var(--cm-muted);
+        margin-top: .35rem;
+      }
+      .content p {
+        margin-bottom: 1.1rem;
+      }
+      
+      .content .section-two-col {
+        column-count: 2;
+        column-gap: 2rem;
+        column-rule: 1px solid #eee;
+        column-fill: balance;
+        display: block;
+        margin: 0 0 1.25rem 0;
+      }
+      .content .section-two-col h1,
+      .content .section-two-col h2,
+      .content .section-two-col h3,
+      .content .section-two-col h4,
+      .content .section-two-col h5,
+      .content .section-two-col h6,
+      .content .section-two-col table,
+      .content .section-two-col figure,
+      .content .section-two-col pre,
+      .content .section-two-col blockquote,
+      .content .section-two-col .callout {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .section-two-col .span-cols,
+      .content .section-two-col table.span-cols,
+      .content .section-two-col .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      
+      .content .paper-dual-column-body {
+        column-count: 2;
+        column-gap: 1.45rem;
+        column-rule: 1px solid #d7e3e3;
+        column-fill: balance;
+        margin-top: .95rem;
+      }
+      .content .paper-dual-column-body h1,
+      .content .paper-dual-column-body h2,
+      .content .paper-dual-column-body h3,
+      .content .paper-dual-column-body h4,
+      .content .paper-dual-column-body h5,
+      .content .paper-dual-column-body h6,
+      .content .paper-dual-column-body table,
+      .content .paper-dual-column-body figure,
+      .content .paper-dual-column-body pre,
+      .content .paper-dual-column-body blockquote,
+      .content .paper-dual-column-body .callout,
+      .content .paper-dual-column-body .mermaid {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      /* Opt-in full-width: tables, divs, or wrappers marked .span-cols break out of the two-column flow */
+      .content .paper-dual-column-body .span-cols,
+      .content .paper-dual-column-body table.span-cols,
+      .content .paper-dual-column-body .span-cols > table {
+        column-span: all;
+        -webkit-column-span: all;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        width: 100%;
+        margin: 1rem 0;
+      }
+      @media print {
+        .content .paper-dual-column-body p {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+        .content .paper-dual-column-body .cm-figure-span img {
+          max-height: 185mm;
+          object-fit: contain;
+        }
+        .content .section-two-col .cm-figure-span img {
+          max-height: 185mm;
+          object-fit: contain;
+        }
+        .content .paper-dual-column-body .section-two-col {
+          column-count: 1;
+          column-rule: none;
+        }
+      }
+      @media screen and (max-width: 900px) {
+        .content .paper-dual-column-body {
+          column-count: 1;
+          column-rule: none;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .content .section-two-col { column-count: 1; column-rule: none; }
+      }
+      .content pre, .content code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      }
+      .content pre {
+        background: #f7f7f7;
+        border: 1px solid var(--cm-border);
+        border-radius: 6px;
+        padding: .75rem 1rem;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+      .content pre code {
+        white-space: inherit;
+        overflow-wrap: inherit;
+        word-break: inherit;
+      }
+      .content hr {
+        border-top: 1px solid var(--cm-border);
+        margin: 1.5rem 0;
+      }
+      /* Blockquotes */
+      .content blockquote {
+        border-left: 4px solid var(--cm-border);
+        background: #f8f9fa;
+        padding: .75rem 1rem;
+        margin: 1.25rem 0;
+        color: #495057;
+      }
+      .content blockquote p:last-child {
+        margin-bottom: 0;
+      }
+      .content blockquote cite {
+        display: block;
+        margin-top: .5rem;
+        color: var(--cm-muted);
+        font-style: normal;
+      }
+      /* Tables */
+      .content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+        background: white;
+      }
+      .content thead th {
+        background: #f1f3f5;
+        color: #343a40;
+        font-weight: 600;
+        border-bottom: 2px solid var(--cm-border);
+      }
+      .content th, .content td {
+        padding: .5rem .75rem;
+        border: 1px solid var(--cm-border);
+        vertical-align: top;
+      }
+      .content tbody tr:nth-child(odd) {
+        background: #fcfcfc;
+      }
+      .content caption {
+        caption-side: bottom;
+        color: var(--cm-muted);
+        font-size: .875rem;
+        padding-top: .25rem;
+        text-align: left;
+      }
+      .content caption em,
+      .content caption i {
+        font-style: italic;
+      }
+      .content figure {
+        margin: 1rem 0;
+      }
+      .content figcaption {
+        color: var(--cm-muted);
+        font-size: .875rem;
+        padding-top: .25rem;
+        text-align: left;
+      }
+      /* Alternative heading styles */
+      .content h1.rounded, .content h1.rounded-left, .content h1.banner {
+        font-size: inherit; /* Use h1 base size */
+      }
+      .content h2.rounded, .content h2.rounded-left, .content h2.banner {
+        font-size: inherit; /* Use h2 base size */
+      }
+      .content h3.rounded, .content h3.rounded-left, .content h3.banner {
+        font-size: inherit; /* Use h3 base size */
+      }
+      .content h1.rounded, .content h2.rounded, .content h3.rounded {
+        background: rgba(121,187,147,0.08);
+        border-left: 4px solid #79bb93;
+        padding: 0.75rem 1rem 0.75rem 1.5rem;
+        border-radius: 6px;
+        margin-left: -1rem;
+        margin-right: -1rem;
+      }
+      .content h1.rounded-left, .content h2.rounded-left, .content h3.rounded-left {
+        border-left: 4px solid #79bb93;
+        padding-left: 1.5rem;
+        background: rgba(121,187,147,0.12);
+      }
+      .content h1.banner, .content h2.banner, .content h3.banner {
+        background: #79bb93;
+        color: white;
+        padding: 0.75rem 1rem 0.75rem 1.5rem;
+        border-radius: 6px;
+        margin-left: -1rem;
+        margin-right: -1rem;
+      }
+      /* Heading colour variants (Bootstrap-ish palette). Usage: add class ".rounded-info" etc to the heading */
+      .content h1.rounded-info, .content h2.rounded-info, .content h3.rounded-info { background: rgba(13,202,240,0.10); border-left-color: #0dcaf0; }
+      .content h1.rounded-warning, .content h2.rounded-warning, .content h3.rounded-warning { background: rgba(255,193,7,0.14); border-left-color: #ffc107; }
+      .content h1.rounded-danger, .content h2.rounded-danger, .content h3.rounded-danger { background: rgba(220,53,69,0.10); border-left-color: #dc3545; }
+      .content h1.rounded-tip, .content h2.rounded-tip, .content h3.rounded-tip { background: rgba(25,135,84,0.10); border-left-color: #198754; }
+      .content h1.rounded-left-info, .content h2.rounded-left-info, .content h3.rounded-left-info { border-left-color: #0dcaf0; background: rgba(13,202,240,0.12); }
+      .content h1.rounded-left-warning, .content h2.rounded-left-warning, .content h3.rounded-left-warning { border-left-color: #ffc107; background: rgba(255,193,7,0.16); }
+      .content h1.rounded-left-danger, .content h2.rounded-left-danger, .content h3.rounded-left-danger { border-left-color: #dc3545; background: rgba(220,53,69,0.12); }
+      .content h1.rounded-left-tip, .content h2.rounded-left-tip, .content h3.rounded-left-tip { border-left-color: #198754; background: rgba(25,135,84,0.12); }
+      .content h1.banner-info, .content h2.banner-info, .content h3.banner-info { background: #0dcaf0; color: #083944; }
+      .content h1.banner-warning, .content h2.banner-warning, .content h3.banner-warning { background: #ffc107; color: #3b2c00; }
+      .content h1.banner-danger, .content h2.banner-danger, .content h3.banner-danger { background: #dc3545; color: #fff; }
+      .content h1.banner-tip, .content h2.banner-tip, .content h3.banner-tip { background: #198754; color: #fff; }
+      /* Showcase hero heading: use on H1 with class "hero" */
+      .content h1.hero {
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        background: #f0f9f9;
+        color: var(--cm-accent-ink);
+        border: 1px solid rgba(144, 195, 198, 0.4);
+        border-left: 8px solid var(--cm-accent-secondary);
+        border-radius: 16px;
+        padding: clamp(1.25rem, 3vw, 3rem);
+        margin: .25rem 0 1rem 0;
+        box-shadow: 0 6px 16px rgba(144, 195, 198, 0.12);
+        font-size: clamp(2rem, 5.2vw, 4.4rem);
+        line-height: 1.08;
+        font-weight: 800;
+      }
+      .content h1.hero + p {
+        margin: 0 0 1.5rem 0;
+        color: #475467;
+        font-size: 1.08rem;
+      }
+      /* Working paper/article styling */
+      
+      .content.paper-page {
+        max-width: 980px;
+        box-shadow: none;
+        border-color: transparent;
+      }
+      .content.paper-page .page-title-row + hr {
+        display: none;
+      }
+
+      .content.paper-page .page-title {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: 2.25rem;
+        font-weight: 600;
+        font-variant-caps: normal;
+        letter-spacing: 0;
+        text-align: left;
+        line-height: 1.22;
+        border-bottom: 2px solid #111;
+        padding-bottom: 1rem;
+        margin: 0 0 1.75rem 0;
+      }
+
+      .content .paper {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: 1.03rem;
+        line-height: 1.68;
+        color: #1f2933;
+      }
+      .content .paper > .mb-3:first-child {
+        margin: -0.2rem 0 1.1rem 0 !important;
+        text-align: left;
+      }
+      .content .paper > .mb-3:first-child .badge {
+        border: none !important;
+        background: transparent !important;
+        color: #59636f;
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: .95em;
+        font-weight: 400;
+        padding: 0;
+      }
+      .content .paper h1,
+      .content .paper h2,
+      .content .paper h3,
+      .content .paper h4,
+      .content .paper h5,
+      .content .paper h6 {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+        color: #111;
+        line-height: 1.25;
+      }
+      .content .paper h1 {
+        font-size: 1.42em;
+        margin-top: 1.25rem;
+        margin-bottom: .65rem;
+      }
+      .content .paper h2 {
+        font-size: 1.2em;
+        margin-top: 1.15rem;
+        margin-bottom: .55rem;
+        padding-bottom: .18rem;
+        border-bottom: 1px solid #d9dde3;
+      }
+      .content .paper h3 {
+        font-size: 1.08em;
+        margin-top: .9rem;
+        margin-bottom: .45rem;
+        font-style: italic;
+      }
+      .content .paper h4 {
+        font-size: 1em;
+        margin-top: .8rem;
+        margin-bottom: .35rem;
+        font-weight: 600;
+      }
+      .content .paper h5 {
+        font-size: .95em;
+        margin-top: .7rem;
+        margin-bottom: .3rem;
+        font-weight: 600;
+      }
+      .content .paper h6 {
+        font-size: .9em;
+        margin-top: .65rem;
+        margin-bottom: .25rem;
+        font-weight: 600;
+        font-style: italic;
+      }
+      .content .paper a,
+      .content .paper code {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+      .content .paper a { text-decoration: underline; text-underline-offset: 2px; }
+      .content .paper .callout,
+      .content .paper .callout-note {
+        border-left: none;
+        border: 1px solid #90c3c6;
+        background: rgba(144,195,198,0.08);
+      }
+      .content .paper h2:first-of-type + .callout,
+      .content .paper h2:first-of-type + .callout-note {
+        border: none;
+        border-bottom: 1px solid #999;
+        border-radius: 0;
+        background: transparent;
+        padding: .55rem 0;
+        margin: .4rem 0 1rem 0;
+        font-size: .98em;
+      }
+      .content .paper h1.banner-info,
+      .content .paper h2.banner-info,
+      .content .paper h3.banner-info,
+      .content .paper h1.rounded-info,
+      .content .paper h2.rounded-info,
+      .content .paper h3.rounded-info {
+        background: transparent;
+        color: #111;
+        border-left: none;
+        border-bottom: 1px solid #d9dde3;
+        padding: 0 0 .25rem 0;
+        border-radius: 0;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      /* Callout styles */
+      .content .callout {
+        border-left: 4px solid #6c757d;
+        background: #f8f9fa;
+        padding: 1rem 1.25rem;
+        margin: 1.5rem 0;
+        border-radius: 4px;
+      }
+      .content .callout p:last-child,
+      .content .callout ul:last-child,
+      .content .callout ol:last-child {
+        margin-bottom: 0;
+      }
+      .content .callout ul,
+      .content .callout ol {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .content .callout-info {
+        border-left-color: #0dcaf0;
+        background: #e7f5f8;
+      }
+      .content .callout-warning {
+        border-left-color: #ffc107;
+        background: #fff8e1;
+      }
+      .content .callout-tip {
+        border-left-color: #198754;
+        background: #e8f5e9;
+      }
+      .content .callout-note {
+        border-left-color: #6c757d;
+        background: #f8f9fa;
+      }
+      /* Foldable callouts: <details>/<summary> from Obsidian [!type]+/- syntax */
+      .content details.callout-foldable > summary {
+        cursor: pointer;
+        font-weight: 600;
+        list-style: none;
+        padding-right: 1rem;
+      }
+      .content details.callout-foldable > summary::-webkit-details-marker {
+        display: none;
+      }
+      .content details.callout-foldable > summary::before {
+        content: "▸";
+        display: inline-block;
+        width: 1em;
+        margin-right: .25em;
+        transition: transform 0.15s ease-in-out;
+      }
+      .content details.callout-foldable[open] > summary::before {
+        transform: rotate(90deg);
+      }
+      .content details.callout-foldable[open] > summary {
+        margin-bottom: .5rem;
+      }
+      @media print {
+        .content details.callout-foldable > *:not(summary) {
+          display: block !important;
+        }
+        .content details.callout-foldable > summary::before {
+          content: none;
+        }
+        .content details.callout-foldable > summary {
+          margin-bottom: .5rem;
+        }
+      }
+      /* Hero callout: full-bleed in showcase mode */
+      .content .callout-hero {
+        background: linear-gradient(135deg, #f0f9f9 0%, #e8f6f7 50%, #f4faf9 100%);
+        border: none;
+        border-radius: 0;
+        padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem);
+        margin: 0;
+        box-shadow: none;
+      }
+      .content .callout-hero h1 {
+        margin: 0 0 .5rem 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 800;
+        color: var(--cm-accent-ink);
+      }
+      /* Showcase-style generic callouts for panel/step blocks */
+      .content .callout-panel {
+        border-left-color: var(--cm-accent-secondary);
+        background: linear-gradient(180deg, #ffffff 0%, rgba(144, 195, 198, 0.10) 100%);
+        border: 1px solid rgba(144, 195, 198, 0.45);
+        border-left-width: 4px;
+        border-radius: 14px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+      }
+      .content .callout-step {
+        border-left-color: var(--cm-accent-primary);
+        background: linear-gradient(180deg, #f8f9fc 0%, rgba(121, 187, 147, 0.12) 100%);
+        border: 1px solid rgba(121, 187, 147, 0.35);
+        border-left-width: 4px;
+        border-radius: 12px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+      }
+      .content .callout-step h1,
+      .content .callout-step h2,
+      .content .callout-step h3 {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 500;
+      }
+      .content .callout-step .step-content {
+        flex: 1;
+        min-width: 0;
+      }
+      .content .callout-step h1 strong,
+      .content .callout-step h2 strong,
+      .content .callout-step h3 strong {
+        font-weight: 700;
+      }
+      .content .callout-step .step-num {
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.5rem;
+        border-radius: 50%;
+        background: #E8E6F8;
+        color: #5D3FD3;
+        font-weight: 700;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      }
+      /* Popular web elements: card, stat, testimonial, cta, alert */
+      .content .callout-card {
+        border-left-color: var(--cm-accent-secondary);
+        background: #fff;
+        border: 1px solid rgba(144, 195, 198, 0.4);
+        border-left-width: 4px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      }
+      .content .callout-stat {
+        border-left: none;
+        border: 1px solid rgba(144, 195, 198, 0.35);
+        background: rgba(144, 195, 198, 0.08);
+        border-radius: 10px;
+        text-align: center;
+        padding: 1.25rem;
+      }
+      .content .callout-stat p:first-child {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--cm-accent-ink);
+        margin: 0 0 0.25rem 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      }
+      .content .callout-testimonial {
+        border-left: 4px solid var(--cm-accent-primary);
+        background: #fafcf9;
+        font-style: italic;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        padding: 1.25rem 1.5rem;
+      }
+      .content .callout-testimonial p:last-child {
+        font-style: normal;
+        font-size: 0.95rem;
+        color: var(--cm-muted);
+        margin-top: 0.5rem;
+      }
+      .content .callout-cta {
+        border: 2px solid var(--cm-accent-primary);
+        background: rgba(121, 187, 147, 0.12);
+        border-radius: 10px;
+        text-align: center;
+        padding: 1.5rem;
+      }
+      .content .callout-cta a {
+        font-weight: 600;
+      }
+      .content .callout-alert {
+        border-left: 4px solid #ffc107;
+        background: #fffbf0;
+        border-radius: 6px;
+      }
+      /* Callout layout/style modifiers (can be combined) */
+      .content .callout-narrow {
+        max-width: 66%;
+      }
+      .content .callout-right {
+        margin-left: auto;
+        display: block;
+      }
+      .content .callout-center {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .content .callout-heavy {
+        border-left-width: 6px !important;
+        border-radius: 0;
+      }
+      .content .callout-left-border {
+        border-top: none;
+        border-right: none;
+        border-bottom: none;
+      }
+      /* Rounded style - like a box, no left border, rounded border */
+      .content .callout-rounded {
+        border-left: none;
+        border: 2px solid var(--cm-border);
+        border-radius: 6px;
+      }
+      /* Inverted style - override background but preserve border colors */
+      .content .callout-inverted {
+        background: #79bb93 !important;
+        color: #ffffff;
+      }
+      /* Ensure type-specific border colors work with inverted */
+      .content .callout-info.callout-inverted {
+        border-left-color: #0dcaf0 !important;
+      }
+      .content .callout-warning.callout-inverted {
+        border-left-color: #ffc107 !important;
+      }
+      .content .callout-tip.callout-inverted {
+        border-left-color: #198754 !important;
+      }
+      .content .callout-note.callout-inverted {
+        border-left-color: #6c757d !important;
+      }
+      /* Highlight style */
+      mark {
+        background: var(--cm-accent-highlight);
+        color: var(--cm-accent-ink);
+        padding: 0.1em 0.2em;
+        border-radius: 2px;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover { text-decoration: underline; }
+      aside.sidebar .site-title {
+          flex-shrink: 0;
+          background-color: #f3f8f9;
+          border-radius: 6px;
+          width: 100%;
+          margin-bottom: 1rem;
+          text-align: left;
+          padding: 1rem;
+      }
+      aside.sidebar form {
+          flex-shrink: 0;
+      }
+      aside.sidebar .site-title {
+        display: block;
+        color: var(--cm-text);
+        font-size: larger;
+        cursor: pointer; /* make whole box feel clickable */
+        text-decoration: none;
+        /* Align subtitle under the title text (not under the emoji/icon). */
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        column-gap: .35rem;
+      }
+      aside.sidebar .site-title:hover {
+        font-size: larger;
+        color: var(--cm-text);
+        text-decoration: none;
+      }
+      /* Smaller subtitle (e.g., Work in progress) under site title */
+      aside.sidebar .site-title .site-title-sub {
+        grid-column: 2;
+        font-size: .9rem;
+        font-style: italic;
+        color: var(--cm-muted);
+        margin-top: .25rem;
+      }
+      aside.sidebar .site-title .site-title-icon {
+        grid-column: 1;
+      }
+      aside.sidebar .site-title .site-title-text {
+        grid-column: 2;
+      }
+      /* Wikilink embed blocks */
+      .embed-block {
+        border: 1px dashed var(--cm-border);
+        background: #fafafa;
+        border-radius: 6px;
+        padding: .5rem .75rem;
+      }
+      .embed-block > summary {
+        font-weight: 500;
+        user-select: none;
+      }
+      .embed-block > summary .chev {
+        transition: transform .15s ease;
+        opacity: .6;
+        font-size: 1.2em; /* smaller */
+        margin-left: .5rem;
+      }
+      .embed-block[open] > summary .chev {
+        transform: rotate(90deg);
+      }
+      .embed-block > summary::before {
+        content: "Relevant page: ";
+        font-size: 0.75rem;
+        color: var(--cm-muted);
+        opacity: 0.7;
+        margin-right: 0.5rem;
+      }
+      /* Video embeds - responsive container */
+      .video-embed {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+      }
+      .video-embed iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      /* Native <video>: don't use 16:9 iframe box (clips controls) */
+      .video-embed:has(> video) {
+        padding-bottom: 0;
+        height: auto;
+        overflow: visible;
+      }
+      .video-embed video {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      /* Active nav link */
+      aside.sidebar .nav-link.active {
+        background: #e7effa;
+        border-radius: .25rem;
+        font-weight: 600;
+      }
+      /* Sidebar footer at bottom of flex container */
+      aside.sidebar .sidebar-footer {
+        flex-shrink: 0;
+        background: #fafafa;
+        padding: 1rem;
+        border-top: 1px solid var(--cm-border);
+        margin-top: 1rem;
+        background-color: #f3f8f9;
+      }
+      /* Hamburger button (hidden by default) */
+      .hamburger {
+        display: none;
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 1100;
+      }
+      /* Desktop sidebar toggle button (hidden by default; shown on wide screens) */
+      .desktop-toggle {
+        display: none;
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 1100;
+      }
+      @media (min-width: 1200px) {
+        .desktop-toggle {
+          display: inline-flex;
+          align-items: center;
+          gap: .4rem;
+        }
+        .hamburger {
+          display: none; /* hamburger only for <1200px */
+        }
+      }
+      /* Reference list */
+      .content .references {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--cm-border);
+      }
+      .content .references h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+      .content .references .reference {
+        margin-left: 2em;
+        text-indent: -2em;
+        margin-bottom: 0.8rem;
+        line-height: 1.5;
+      }
+      /* Chapter start styling */
+      .content.chapter-start {
+        background: linear-gradient(to bottom, #f8feff 0%, var(--cm-body-bg) 300px);
+      }
+      .content.chapter-start .page-title {
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 3px solid #90c3c6;
+        font-weight: 600;
+      }
+      .content.chapter-start > p:first-of-type {
+        font-size: 1.35rem;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 2.5rem;
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: #f0f8f9;
+        border-left: 4px solid #90c3c6;
+        border-radius: 4px;
+      }
+      .content.chapter-start a:not(.edge-nav) {
+        position: relative;
+        z-index: 1;
+      }
+      /* Chapter page links styling */
+      .chapter-page-link {
+        display: inline-block;
+        transition: all 0.2s ease;
+      }
+      .chapter-page-link:hover {
+        transform: translateX(4px);
+        color: #0d6efd !important;
+      }
+      .chapter-page-link:hover i {
+        color: #0d6efd !important;
+      }
+      /* Right ToC */
+      .rightbar {
+        position: sticky;
+        top: 2.5rem; /* align with main content's top margin */
+        align-self: start; /* start at top of grid row */
+        max-height: calc(100vh - 2.5rem);
+        overflow: auto;
+        scrollbar-width: none;
+        margin: 2.5rem 0 5rem 0; /* match main content vertical margins */
+        padding: 1.5rem; /* consistent padding for TOC */
+        background: white;
+        border: 1px solid var(--cm-border);
+        border-radius: 8px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.03);
+      }
+      .rightbar:hover {
+        scrollbar-width: auto;
+      }
+      .rightbar h2 {
+        margin: 0 0 .45rem;
+      }
+      .rightbar .hover-cue {
+        margin: 0 0 1.15rem;
+      }
+      .rightbar .toc ul {
+        padding-left: 1rem;
+      }
+      .rightbar .toc {
+        position: relative;
+      }
+      @media (max-width: 1199.98px) {
+        .rightbar .toc::before {
+          display: none;
+        }
+        .rightbar .toc > ul {
+          opacity: 1;
+        }
+      }
+      .rightbar .toc a.active {
+        font-weight: 600;
+        color: #0d6efd;
+        opacity: 1;
+      }
+      /* Edge previous/next chevrons (inside content) */
+      .edge-nav {
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        background: #fff;
+        border: 1px solid #d5d5d5;
+        color: #495057;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        opacity: .8;
+        box-shadow: 0 2px 6px rgba(0,0,0,.08);
+        transition: opacity .15s ease, background .15s ease, box-shadow .15s ease;
+        z-index: 5;
+      }
+      .edge-nav:hover {
+        opacity: 1;
+        box-shadow: 0 3px 10px rgba(0,0,0,.12);
+      }
+      .edge-nav.prev {
+        left: -52px;
+      }
+      .edge-nav.next {
+        right: -52px;
+      }
+      @media (max-width: 1199.98px) {
+        .edge-nav.prev {
+          left: 8px;
+        }
+        .edge-nav.next {
+          right: 8px;
+        }
+      }
+
+      /* Breadcrumb navigation */
+      .breadcrumb-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--cm-muted);
+        margin-bottom: 1rem;
+        padding: 0.5rem 0;
+        flex-wrap: wrap;
+      }
+      .breadcrumb-nav a {
+        color: #555;
+        text-decoration: none;
+      }
+      .breadcrumb-nav a:hover {
+        color: var(--cm-text);
+        text-decoration: underline;
+      }
+      .breadcrumb-item {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+      }
+      .breadcrumb-item .bc-dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .breadcrumb-item .bc-current-link {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        transition: background 0.15s ease;
+        text-decoration: none;
+      }
+      .breadcrumb-item .bc-current-link:hover {
+        background: #f0f0f0;
+        text-decoration: none;
+      }
+      .breadcrumb-item .bc-label {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        user-select: none;
+      }
+      .breadcrumb-item .bc-label:hover {
+        background: #f0f0f0;
+      }
+      .breadcrumb-item .bc-chevron {
+        font-size: 0.7em;
+        opacity: 0.6;
+        transition: transform 0.15s ease;
+      }
+      .breadcrumb-item .bc-dropdown.open .bc-chevron {
+        transform: rotate(180deg);
+      }
+      .breadcrumb-item .bc-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid var(--cm-border);
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0,0,0,.1);
+        min-width: 675px;
+        max-width: 900px;
+        max-height: 800px;
+        overflow-y: auto;
+        z-index: 1000;
+        margin-top: 0.25rem;
+      }
+      .breadcrumb-item .bc-dropdown.open .bc-menu {
+        display: block;
+      }
+      .breadcrumb-item .bc-menu a {
+        display: block;
+        padding: 0.5rem 0.75rem;
+        color: var(--cm-text);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .breadcrumb-item .bc-menu a:hover {
+        background: #f5f5f5;
+        text-decoration: none;
+      }
+      .breadcrumb-item .bc-menu a.current {
+        background: #e7effa;
+        font-weight: 600;
+      }
+      .breadcrumb-item .bc-menu .bc-heading {
+        padding: 0.35rem 0.75rem 0.25rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--cm-muted);
+        text-transform: uppercase;
+        letter-spacing: .06em;
+      }
+      /* Tags dropdown (nested lists) */
+      .breadcrumb-item .bc-menu-tags .bc-tag {
+        padding: 0.4rem 0.75rem 0.2rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--cm-muted);
+        border-top: 1px solid #eee;
+        /* keep tag labels in normal case (e.g. "Papers and Drafts") */
+      }
+      .breadcrumb-item .bc-menu-tags .bc-tag-pages {
+        list-style: none;
+        margin: 0;
+        padding: 0 0 0.15rem 0;
+      }
+      .breadcrumb-item .bc-menu-tags .bc-tag-pages a {
+        padding-left: 1.25rem;
+      }
+      .breadcrumb-separator {
+        opacity: 0.4;
+        margin: 0 0.25rem;
+      }
+
+      /* < 1800px: hide right sidebar, let content expand */
+      @media (max-width: 1799.98px) {
+        .layout-container {
+          grid-template-columns: 462px minmax(0, 1fr);
+        }
+        .rightbar {
+          display: none !important;
+        }
+        .content {
+          max-width: none;
+        }
+      }
+
+      /* < 1200px: hide left sidebar behind hamburger; single-column layout */
+      @media (max-width: 1199.98px) {
+        .hamburger {
+          display: inline-flex;
+          align-items: center;
+          gap: .4rem;
+        }
+        .layout-container {
+          grid-template-columns: 1fr;
+          column-gap: 0;
+        }
+        aside.sidebar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 100vh;
+          width: 86vw;
+          max-width: 360px;
+          transform: translateX(-100%);
+          transition: transform .2s ease;
+          z-index: 1040;
+          box-shadow: 0 0 16px rgba(0,0,0,.12);
+        }
+        body.sidebar-open aside.sidebar {
+          transform: translateX(0);
+        }
+        .content {
+          margin: 1rem 0 4rem 0;
+          --cm-content-pad-y: 1.25rem;
+          --cm-content-pad-x: 1rem;
+          padding: var(--cm-content-pad-y) var(--cm-content-pad-x);
+        }
+      }
+    </style>
+  </head>
+  <body data-fullscreen-default="false">
+    <button id="hamburgerBtn" class="btn btn-outline-secondary btn-sm hamburger" type="button" aria-label="Toggle navigation">☰ Menu</button>
+    <div class="layout-container">
+      <aside class="sidebar"></aside>
+      <main class="content">
+        <div class="edge-nav-box"><a href="!extended-abstract.html" class="edge-nav prev" aria-label="Previous: !extended-abstract">‹</a><a href="000 Intro ((qda-intro)).html" class="edge-nav next" aria-label="Next: Intro">›</a></div>
+        <nav class="fullscreen-nav"><a href="?fullscreen=0" id="exitFullscreenBtn" class="fullscreen-exit">⊟ Exit fullscreen</a></nav>
+        <nav class="breadcrumb-nav"><span class="breadcrumb-item"><a href="../index.html">Home</a></span><span class="breadcrumb-separator">/</span><span class="breadcrumb-item"><div class="bc-dropdown"><span class="bc-label">Chapters</span><span class="bc-chevron">▼</span><div class="bc-menu"><div class="bc-heading">Chapters</div><a href="../index.html">Home</a><a href="../000 Articles/001 Intro ((articles-intro)).html">Articles</a><a href="../000 Glossary/1150- Glossary ((glossary)).html">Glossary</a><a href="../001 Working Papers/000 Working Papers ((working-papers)).html">Working Papers</a><a href="../005 Causal mapping -- overview/0.01 Intro ((overview-intro)).html">Causal mapping – overview</a><a href="../006 Task 1 -- Gathering causal mapping data/000 Task 1 -- Introduction ((task1-intro)).html">Task 1 – Gathering causal mapping data</a><a href="../007 Task 2 -- Causal coding -- minimalist style/0.001 Task 2 -- Introduction ((task2-intro)).html">Task 2 – Causal coding – minimalist style</a><a href="../007.0 Task 2 -- Coding with AI/000 Intro -- auto-coding with AI ((aut-3bc7c8.html">Task 2 – Coding with AI</a><a href="../008 Task 2 &amp; 3 -- Extensions/000 Tasks 2 &amp; 3 --  Extensions -- Intr-2815bf.html">Task 2 &amp; 3 – Extensions</a><a href="../010 Task 3 -- Answering questions -- General/010 Causal mapping produces models you-af3036.html">Task 3 – Answering questions – General</a><a href="../100 Task 3 -- Answering questions -- Individual questions/010 Individual questions -- introducti-7c4997.html">Task 3 – Answering questions – Individual questions</a><a href="../200 Causal mapping in evaluation/000 Intro ((evaluation-intro)).html">Causal mapping in evaluation</a><a href="000 Intro ((qda-intro)).html">Causal Mapping as QDA</a><a href="../290 Causal Map app and alternatives/1130-Causal mapping with kumu ((kumu)).html">Causal Map app and alternatives</a><a href="../500 AI in qualitative social science/000 Intro ((ai-qual-intro)).html">AI in qualitative social science</a><a href="../600 How to -- in the Causal Map app/001 How to -- in the Causal Map app. I-2ffda5.html">How to – in the Causal Map app</a><a href="../700 Qualia/010 Background on data collection with-c2eb42.html">Qualia</a><a href="../800 Case studies/000 Some Case Studies ((case-studies)).html">Case studies</a><a href="../850 For consultants/800 For consultants ((consultants)).html">For consultants</a><a href="../910 AI and the wider world/000 Intro ((wider-world-intro)).html">AI and the wider world</a><a href="../990 Finally/1140 About ((about)).html">Finally</a><a href="../999 Causal Map App/000 Contents.html">Causal Map App</a></div></div></span><span class="breadcrumb-separator">/</span><span class="breadcrumb-item"><div class="bc-dropdown"><span class="bc-label">Pages</span><span class="bc-chevron">▼</span><div class="bc-menu"><div class="bc-heading">Pages in this chapter</div><a href="000 Intro ((qda-intro)).html" class="">Intro</a><a href="020 Causal Mapping outputs not just co-891ab8.html" class="">Causal Mapping outputs not just codes but a model you can query to answer useful questions</a><a href="030 Causal mapping is an interesting Q-296853.html" class="">Causal mapping is an interesting QDA approach which is very suitable for scaling with AI</a><a href="033 Saturation, scale and attention ((-425d93.html" class="">Saturation, scale and attention</a><a href="900 Brief review of S Friese -- Conver-4541d6.html" class="">Brief review of S Friese – Conversational Analysis to the Power of AI</a><a href="901 GenAI is distracted by shiny thing-4a6a0f.html" class="">GenAI is distracted by shiny things</a></div></div></span><span class="breadcrumb-separator">/</span><span class="breadcrumb-item"><div class="bc-dropdown"><span class="bc-label">Tags</span><span class="bc-chevron">▼</span><div class="bc-menu bc-menu-tags"><div class="bc-heading">Tags</div><div class="bc-tag">Bath Sdr</div><ul class="bc-tag-pages"><li><a href="../800 Case studies/AgDevCo, Uganda ((AgDevCo-Uganda)).html">AgDevCo, Uganda</a></li><li><a href="../800 Case studies/Concern Worldwide, Malawi ((Concern-Wo-a5853f.html">Concern Worldwide, Malawi</a></li><li><a href="../800 Case studies/Diageo, Kenya ((Diageo-Kenya)).html">Diageo, Kenya</a></li><li><a href="../800 Case studies/Fairtrade, Cote D&#x27;Ivoire ((Fairtrade-C-c6a01f.html">Fairtrade, Cote D&#x27;Ivoire</a></li><li><a href="../800 Case studies/Feed the Children, Kenya ((Feed-the-Ch-d04983.html">Feed the Children, Kenya</a></li><li><a href="../800 Case studies/GirlEffect, Rwanda ((GirlEffect-Rwanda)).html">GirlEffect, Rwanda</a></li><li><a href="../800 Case studies/Kantar Public ((Kantar)).html">Kantar Public</a></li><li><a href="../800 Case studies/Mannion Daniels ((Mannion-Daniels)).html">Mannion Daniels</a></li><li><a href="../800 Case studies/OPM, Ghana, Mastercard ((OPM-Ghana-Mas-b7aa39.html">OPM, Ghana, Mastercard</a></li><li><a href="../800 Case studies/Opportunity International, Ghana ((Opp-2ef638.html">Opportunity International, Ghana</a></li><li><a href="../800 Case studies/Pilot Universal Child Benefit Programm-2b2ec3.html">Pilot Universal Child Benefit Programme in Kenya, UNICEF Kenya</a></li><li><a href="../800 Case studies/Power to Change, UK, 2020 ((Power-to-C-756ac0.html">Power to Change, UK, 2020</a></li><li><a href="../800 Case studies/Save the Children, Zimbabwe ((Save-the-23aa8e.html">Save the Children, Zimbabwe</a></li><li><a href="../800 Case studies/UNICEF Innocenti. Qualitative Study of-099d25.html">UNICEF Innocenti. Qualitative Study of the Social Cash Transfer Programme in Urban Zambia</a></li><li><a href="../800 Case studies/UNICEF study uses Causal Map to explor-e5b874.html">UNICEF study uses Causal Map to explore complex drivers of child work in India</a></li><li><a href="../800 Case studies/Voscur ((Voscur)).html">Voscur</a></li><li><a href="../800 Case studies/World Concern. Evaluating a Holistic C-2fc3f4.html">World Concern. Evaluating a Holistic Community Development Program with QuIP and Causal mapping</a></li></ul><div class="bc-tag">Case Studies</div><ul class="bc-tag-pages"><li><a href="../800 Case studies/A workflow for collecting and understa-090587.html">A workflow for collecting and understanding stories at scale, supported by artificial intelligence</a></li><li><a href="../850 For consultants/9193 Add Qualia to your next bid ((bid-595091.html">Add Qualia to your next bid</a></li><li><a href="../800 Case studies/AgDevCo, Uganda ((AgDevCo-Uganda)).html">AgDevCo, Uganda</a></li><li><a href="../800 Case studies/AI-assisted causal mapping. Uncovering-2038a3.html">AI-assisted causal mapping. Uncovering causal pathways with INTRAC</a></li><li><a href="../800 Case studies/An M&amp;E time machine. Using AI to measu-bd232e.html">An M&amp;E time machine. Using AI to measure changes in a system across a time period</a></li><li><a href="../850 For consultants/brief for hr agency maybe.html">brief for hr agency maybe</a></li><li><a href="../800 Case studies/Cactus Research, Kings College ((Cactu-39f831.html">Cactus Research, Kings College</a></li><li><a href="../800 Case studies/Can AI accurately map causal claims - -7781ce.html">Can AI accurately map causal claims - A validation study</a></li><li><a href="../700 Qualia/205 Case study -- our &#x27;seamless storie-07a23f.html">Case study – our &#x27;seamless stories&#x27; workflow in practice</a></li><li><a href="../700 Qualia/210 Case study -- Qualia asks about US-fbeadd.html">Case study – Qualia asks about USA problems, again</a></li><li><a href="../800 Case studies/Chartered Management Institute ((Chart-1f421d.html">Chartered Management Institute</a></li><li><a href="../800 Case studies/Comparing a Fine-Tuned Model to an Eng-c20ad8.html">Comparing a Fine-Tuned Model to an Engineered Prompt in the Context of Causal Connections in a Passage of Text</a></li><li><a href="../800 Case studies/Concern Worldwide, Malawi ((Concern-Wo-a5853f.html">Concern Worldwide, Malawi</a></li><li><a href="../800 Case studies/Creative Home Delivery Service, PSU ((-02fb80.html">Creative Home Delivery Service, PSU</a></li><li><a href="../800 Case studies/Diageo, Kenya ((Diageo-Kenya)).html">Diageo, Kenya</a></li><li><a href="../800 Case studies/DUOC UC. Evaluating Gender Equity in S-88e897.html">DUOC UC. Evaluating Gender Equity in STEM with AI-Driven Interviews</a></li><li><a href="../800 Case studies/Everyone Counts, Covid Edition. Chapte-0d10e6.html">Everyone Counts, Covid Edition. Chapter 6, On the Front Line, Stories of the Volunteers</a></li><li><a href="../800 Case studies/Exploring the Role of Social Protectio-fa03a1.html">Exploring the Role of Social Protection in UK Asylum-Seeker Wellbeing Using Human Scale Development Theory</a></li><li><a href="../800 Case studies/Fairtrade, Cote D&#x27;Ivoire ((Fairtrade-C-c6a01f.html">Fairtrade, Cote D&#x27;Ivoire</a></li><li><a href="../800 Case studies/Feed the Children, Kenya ((Feed-the-Ch-d04983.html">Feed the Children, Kenya</a></li><li><a href="../800 Case studies/ForumFed. Strengthening Federal Govern-e44840.html">ForumFed. Strengthening Federal Governance and Pluralism in Ethiopia</a></li><li><a href="../800 Case studies/GirlEffect, Rwanda ((GirlEffect-Rwanda)).html">GirlEffect, Rwanda</a></li><li><a href="../800 Case studies/GYA, Global Young Academy ((GYA)).html">GYA, Global Young Academy</a></li><li><a href="../850 For consultants/9191 Include Causal Map and QualiaInte-1ed6b1.html">Include Causal Map and QualiaInterviews in your next bid</a></li><li><a href="../800 Case studies/Kantar Public ((Kantar)).html">Kantar Public</a></li><li><a href="../800 Case studies/Mannion Daniels ((Mannion-Daniels)).html">Mannion Daniels</a></li><li><a href="../800 Case studies/MK Institut, Mission und Kirche ((MK-I-7f19b5.html">MK Institut, Mission und Kirche</a></li><li><a href="../800 Case studies/Nepal Earthquake Federation-wide Meta--552066.html">Nepal Earthquake Federation-wide Meta-evaluation</a></li><li><a href="../800 Case studies/OPM, Ghana, Mastercard ((OPM-Ghana-Mas-b7aa39.html">OPM, Ghana, Mastercard</a></li><li><a href="../800 Case studies/OPM, Tanzania ((OPM-Tanzania)).html">OPM, Tanzania</a></li><li><a href="../800 Case studies/OPM, Zambia ((OPM-Zambia)).html">OPM, Zambia</a></li><li><a href="../800 Case studies/Opportunity International, Ghana ((Opp-2ef638.html">Opportunity International, Ghana</a></li><li><a href="../800 Case studies/Pilot Universal Child Benefit Programm-2b2ec3.html">Pilot Universal Child Benefit Programme in Kenya, UNICEF Kenya</a></li><li><a href="../800 Case studies/Power to Change, UK, 2020 ((Power-to-C-756ac0.html">Power to Change, UK, 2020</a></li><li><a href="../800 Case studies/Power to Change, UK, 2021 ((Power-to-C-a90fb3.html">Power to Change, UK, 2021</a></li><li><a href="../800 Case studies/Save the Children, Zimbabwe ((Save-the-23aa8e.html">Save the Children, Zimbabwe</a></li><li><a href="../800 Case studies/Strengthening OH with causal mapping (-f38fe0.html">Strengthening OH with causal mapping</a></li><li><a href="../800 Case studies/Tearfund ((Tearfund)).html">Tearfund</a></li><li><a href="../800 Case studies/Thinking together within and beyond Co-213903.html">Thinking together within and beyond Communities of Practice</a></li><li><a href="../800 Case studies/Together for Change, Solvacare ((Toget-04ce43.html">Together for Change, Solvacare</a></li><li><a href="../800 Case studies/Tree Aid - Empowering Communities Thro-bbcd40.html">Tree Aid - Empowering Communities Through Forest Management in Burkina Faso</a></li><li><a href="../800 Case studies/UNDP Chile ((UNDP-Chile)).html">UNDP Chile</a></li><li><a href="../800 Case studies/UNICEF Innocenti. Qualitative Study of-099d25.html">UNICEF Innocenti. Qualitative Study of the Social Cash Transfer Programme in Urban Zambia</a></li><li><a href="../800 Case studies/UNICEF study uses Causal Map to explor-e5b874.html">UNICEF study uses Causal Map to explore complex drivers of child work in India</a></li><li><a href="../800 Case studies/Using AI to facilitate feedback on the-c3508e.html">Using AI to facilitate feedback on the learning experiences of doctoral students</a></li><li><a href="../800 Case studies/Using QuIP and Causal Map in an Evalua-dbd38c.html">Using QuIP and Causal Map in an Evaluation, a WFP interview with DeftEdge</a></li><li><a href="../800 Case studies/Voscur ((Voscur)).html">Voscur</a></li><li><a href="../800 Case studies/What drives group learning, PLI ((PLI-CS)).html">What drives group learning, PLI</a></li><li><a href="../800 Case studies/World Concern. Evaluating a Holistic C-2fc3f4.html">World Concern. Evaluating a Holistic Community Development Program with QuIP and Causal mapping</a></li><li><a href="../800 Case studies/World Food Programme, Forcier Consulti-7c253f.html">World Food Programme, Forcier Consulting</a></li></ul><div class="bc-tag">Dual Column</div><ul class="bc-tag-pages"><li><a href="../000 Articles/AI-assisted causal mapping -- Summary -cad7b0.html">AI-assisted causal mapping – Summary (validation)</a></li></ul><div class="bc-tag">Filters</div><ul class="bc-tag-pages"><li><a href="../008 Task 2 &amp; 3 -- Extensions/300 Path tracing and source tracing ((-caae88.html">Path tracing and source tracing</a></li></ul><div class="bc-tag">Mapcat Core</div><ul class="bc-tag-pages"><li><a href="../007.0 Task 2 -- Coding with AI/901 A workflow for causal coding with -6a7cd0.html">A workflow for causal coding with and without AI</a></li><li><a href="../000 Glossary/1150- Glossary ((glossary)).html">Glossary</a></li></ul><div class="bc-tag">Mapcat Methods</div><ul class="bc-tag-pages"><li><a href="../100 Task 3 -- Answering questions -- Individual questions/110.5 Assessing systems change ((syste-0cbc86.html">Assessing systems change</a></li><li><a href="../008 Task 2 &amp; 3 -- Extensions/270 Collapsing factor labels and exclu-8f0f90.html">Collapsing factor labels and excluding brackets</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/500 Combining questions ((combining-qu-69c49c.html">Combining questions</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/108 Comparing groups -- What factors o-a67302.html">Comparing groups – What factors or links were mentioned more by some groups than others, in the same map ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/118 Counting and comparing influences -1cc17d.html">Counting and comparing influences</a></li><li><a href="../007.0 Task 2 -- Coding with AI/905 Different kinds of coding and reco-776254.html">Different kinds of coding and recoding</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/110 Does the evidence support your the-5c161a.html">Does the evidence support your theory of change ?</a></li><li><a href="../008 Task 2 &amp; 3 -- Extensions/250 Exclude links based on group or ot-4bd4ce.html">Exclude links based on group or other metadata</a></li><li><a href="../008 Task 2 &amp; 3 -- Extensions/260 Focus or exclude factors ((factor--190abb.html">Focus or exclude factors</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/113 Focusing on specific factors. What-84944d.html">Focusing on specific factors. What influences and outcomes are connected to a specific factor ?</a></li><li><a href="../008 Task 2 &amp; 3 -- Extensions/590 Hierarchical coding ((zoom-filter)).html">Hierarchical coding</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/Hierarchical coding ((hierarchical-coding)).html">Hierarchical coding</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/108 Identifying groups -- Are there di-e1648a.html">Identifying groups – Are there different subgroups within the data ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/010 Individual questions -- introducti-7c4997.html">Individual questions – introduction</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/101 Individual views -- How does the s-129df1.html">Individual views – How does the system work according to individual sources ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/113.5 Looking downstream. What are the-0e49e7.html">Looking downstream. What are the direct and indirect consequences of one or more factors ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/113.6 Looking upstream. What are the d-69b15f.html">Looking upstream. What are the direct and indirect influences on one or more factors ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/106.5 Main drivers. Which factors are -4177ac.html">Main drivers. Which factors are mentioned most often as drivers ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/106 Main outcomes. Which factors are m-5439e1.html">Main outcomes. Which factors are mentioned most often as outcomes ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/1150 Names of tables and fields ((tabl-7cdd21.html">Names of tables and fields</a></li><li><a href="../008 Task 2 &amp; 3 -- Extensions/630 Opposites ((combine-opposites-filter)).html">Opposites</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/116 Path tracing -- How do one or more-dc46e5.html">Path tracing – How do one or more causes affect one or more effects, including indirect pathways ?</a></li><li><a href="../008 Task 2 &amp; 3 -- Extensions/300 Path tracing and source tracing ((-caae88.html">Path tracing and source tracing</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/194 Properties of the causal map -- Ar-832edf.html">Properties of the causal map – Are there feedback loops ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/193 Properties of the causal map -- Ar-47daea.html">Properties of the causal map – Are there leverage points ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/192 Properties of the causal map -- Wh-effcd5.html">Properties of the causal map – What is the overall structure of the network ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/191 Properties of the causal map – Whi-34acd5.html">Properties of the causal map – Which factors are reported as being causally central or causally peripheral ?</a></li><li><a href="../010 Task 3 -- Answering questions -- General/902 Quality assurance at each step of -b8b64f.html">Quality assurance at each step of the causal coding workflow</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/116.5 Robustness -- How robust is the -663e20.html">Robustness – How robust is the evidence for that X influences Y ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/111 Sentiment -- Which changes are per-a25e58.html">Sentiment – Which changes are perceived as most positive or negative ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/910 Showing group data as custom link -fd39d3.html">Showing group data as custom link labels on the map with optional significance test</a></li><li><a href="../008 Task 2 &amp; 3 -- Extensions/200 Simplification - factor and link f-9eeeab.html">Simplification - factor and link frequency</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/116 Source tracing -- What are the con-206a5f.html">Source tracing – What are the consequences of one or more factors, looking  only at stories told in their entirety by individual sources ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/107 Splitting by groups. Are different-60ab4b.html">Splitting by groups. Are different groups involved in different ways ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/102 Summarising -- How do the sources -07f77d.html">Summarising – How do the sources claim that the system works, in summary ?</a></li><li><a href="../008 Task 2 &amp; 3 -- Extensions/110 The factors table ((factor-group-tests)).html">The factors table</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/900 Tribes. The most relevantly differ-ca91e6.html">Tribes. The most relevantly different subgroups in your data (by causal story)</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/103 Vignettes -- What is a typical sou-4bfe36.html">Vignettes – What is a typical source and what is their story ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/109 What are the emerging or unexpecte-8f4812.html">What are the emerging or unexpected factors ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/103.5 What are the narratives behind a-0831bf.html">What are the narratives behind a specific link ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/105 Which factors and links are mentio-cbc458.html">Which factors and links are mentioned by the most sources ?</a></li><li><a href="../100 Task 3 -- Answering questions -- Individual questions/104 Which factors and links were most -6643a9.html">Which factors and links were most frequently mentioned ?</a></li></ul><div class="bc-tag">Papers and Drafts</div><ul class="bc-tag-pages"><li><a href="../001 Working Papers/006 A formalisation of causal mapping -8a4c1f.html">A formalisation of causal mapping</a></li><li><a href="../001 Working Papers/900 A simple measure of the goodness o-ce646b.html">A simple measure of the goodness of fit of a causal theory to a text corpus</a></li><li><a href="../007.0 Task 2 -- Coding with AI/901 A workflow for causal coding with -6a7cd0.html">A workflow for causal coding with and without AI</a></li><li><a href="../001 Working Papers/910 Animated social map around Donald -5fd06e.html">Animated social map around Donald Trump</a></li><li><a href="../001 Working Papers/910 Animated social map of US news ((trump)).html">Animated social map of US news</a></li><li><a href="../001 Working Papers/Assessing change in (cognitive models -7218c0.html">Assessing change in (cognitive models of) systems over time</a></li><li><a href="../001 Working Papers/040 Causal mapping as causal QDA ((cau-2db6cc.html">Causal mapping as causal QDA</a></li><li><a href="030 Causal mapping is an interesting Q-296853.html">Causal mapping is an interesting QDA approach which is very suitable for scaling with AI</a></li><li><a href="../001 Working Papers/986 Causal mapping of loneliness inter-7fafcf.html">Causal mapping of loneliness interviews</a></li><li><a href="../001 Working Papers/015 Combining opposites, sentiment ((c-cc58bc.html">Combining opposites, sentiment</a></li><li><a href="../001 Working Papers/016 Despite-claims ((despite-claims)).html">Despite-claims</a></li><li><a href="../001 Working Papers/980 Lonely in London ((lonely)).html">Lonely in London</a></li><li><a href="../001 Working Papers/982 Lonely in London response ((lonely2)).html">Lonely in London response</a></li><li><a href="../001 Working Papers/900 Magnetisation ((magnetisation)).html">Magnetisation</a></li><li><a href="../700 Qualia/120 Our paper on an inductive workflow-afd2b8.html">Our paper on an inductive workflow to gather and analyse evidence at scale.</a></li><li><a href="../010 Task 3 -- Answering questions -- General/902 Quality assurance at each step of -b8b64f.html">Quality assurance at each step of the causal coding workflow</a></li></ul><div class="bc-tag">Transforms Filters</div><ul class="bc-tag-pages"><li><a href="../008 Task 2 &amp; 3 -- Extensions/270 Collapsing factor labels and exclu-8f0f90.html">Collapsing factor labels and excluding brackets</a></li></ul><div class="bc-tag">{&#x27;Date&#x27;: &#x27;27/02/2025&#x27;}</div><ul class="bc-tag-pages"><li><a href="../700 Qualia/210 Case study -- Qualia asks about US-fbeadd.html">Case study – Qualia asks about USA problems, again</a></li></ul></div></div></span></nav>
+        <div class="pdf-links"><a href="?fullscreen=1" class="fullscreen-enter" aria-label="Fullscreen" title="Fullscreen">⛶</a></div>
+        <div class="page-title-row d-flex justify-content-between align-items-center"><div class="page-title" id="">🌻 !manuscript</div></div><hr />
+        <div class="mb-3"><span class="badge text-bg-light border"><i class="far fa-calendar"></i> 2026</span></div>
+<h2 id="1-introduction-an-orthogonal-yes">1. Introduction: an orthogonal yes<a aria-label="Permalink" class="anchor-link" href="#1-introduction-an-orthogonal-yes">#</a></h2>
+<p>The arrival of large language models in qualitative research has produced a debate that is usually drawn as a straight line with two ends. At one end is rejection. A widely endorsed commentary, written by 416 qualitative researchers, rejects the use of generative AI for reflexive thematic analysis and other reflexive approaches, on the grounds that the model is "simulated intelligence only" and "fundamentally incapable of genuinely making meaning from language", that reflexive qualitative work is "a distinctly human practice", and that the wider harms of the technology are serious (Jowsey et al. 2025). At the other end is enthusiasm: the prospect of working at scales that manual coding cannot reach, and of letting the model do much of the analytic work.</p>
+<p>This paper takes a position that does not sit at either end of that line, nor at a midpoint along it. It runs at a right angle to it. We share a good deal of the instinct behind the rejection. We do not think a research question can be reduced to a decision procedure that an algorithm executes, and we do not think interpretation can be automated. We are not making a positivist argument that meaning is waiting in the text to be read off mechanically. And yet a deliberately generic and minimalist form of causal mapping, of all the approaches one might reach for, turns out to be surprisingly useful for getting to the centre of what applied researchers and evaluators most often want to know: what, according to the people they spoke to, causes what.</p>
+<p>The reason is specific, and it is the argument of this paper. Causal mapping rests on one small coding act: record a single causal claim made by a source, as an ordered pair of a cause and an effect, attached to the verbatim quote that supports it and to a source identifier (Axelrod 1976; Eden 1988; Powell et al. 2024; Evaluation 2024). That act is narrow enough that its output can be checked locally, link by link, against the quote. This is the kind of task a model can do at scale without being asked to interpret, summarise or theorise. Every other analytic decision, framing the question, curating the vocabulary, building the pipeline, writing the account, stays with the human. In the middle sits a links table that the analyst, a co-researcher or a reviewer can read.</p>
+<p>Two features of this arrangement matter for the special issue's concerns. The first is that it works as a one-way pipeline rather than a conversation. The work moves from narrow extraction, through deterministic transforms, to human-authored synthesis. There is a to-and-fro, but it lies in refining prompts and research questions rather than in interpreting the corpus inside a chat window. We will argue that the one-way character is the source of the method's accountability rather than a deficiency in it. The second is that the chain from any analytic claim back to a supporting quote is short and inspectable, which is exactly the "accountable links between analytic claims and empirical materials" the special issue asks for.</p>
+<p>We should be plain about scope. This is closer to a small-q than a Big-Q argument, in Kidder and Fine's sense as developed by Braun and Clarke, where small q describes scientifically descriptive, often (post)positivist qualitative technique and Big Q describes artfully interpretive, non-positivist, reflexive work (Braun &amp; Clarke 2023; Braun &amp; Clarke 2025). We are not proposing causal mapping as a way of doing reflexive thematic analysis, and we are not proposing it as a route to the kind of interpretive insight that Big-Q work exists to produce. The contribution is more modest: a way of getting useful work done for researchers whose questions are about what other people think causes what, where the alternative is either much slower manual coding or a synthesis that reads well but is hard to audit.</p>
+<p>The paper proceeds as follows. Section 2 maps the current debate as a set of orthogonal positions rather than a single line. Section 3 develops a bridge to the interpretive tradition: even within thematic analysis, the difference between a mere code and a proper theme is, in a sense we make precise, answer-shaped. Sections 4 and 5 set out causal mapping as a form of qualitative data analysis and explain why its coding act is the right shape for bounded AI assistance. Section 6 works through a real corpus, 48 interviews on loneliness, comparing a causal-mapping pass with a fully AI-led conversational thematic analysis of the same data. Section 7 is the core of the paper: we state the strongest criticisms of our position and try to neutralise each. Sections 8 and 9 deal with accountability and ethics, and with limits.</p>
+<h2 id="2-the-debate-as-it-stands">2. The debate as it stands<a aria-label="Permalink" class="anchor-link" href="#2-the-debate-as-it-stands">#</a></h2>
+<p>It helps to see the current literature as several positions that are not all arguing about the same thing.</p>
+<p>The first is the rejection just described (Jowsey et al. 2025). Its scope is worth reading carefully, because the letter is precise about it. The signatories reject generative AI for "Big Q Qualitative approaches, such as reflexive thematic analysis, or various phenomenological approaches". Their central argument is that reflexive analysis is "an inherently meaning-based technique" and that the model cannot make meaning. They draw an explicit line: just as the meaning-based requirement of reflexive thematic analysis "distinguishes it methodologically from word-counting techniques such as content analysis (which can be automated), so too it must also exclude GenAI". That parenthesis matters for us, and we return to it.</p>
+<p>A second position rejects the rejection. De Paoli argues that prohibiting generative AI on what he reads as metaphysical grounds risks turning a methodological discussion into dogma and closes off useful innovation (n.d.). This is a corrective to the first position rather than an opposite of it.</p>
+<p>A third position holds that the dominant way of using AI, asking it to imitate human line-by-line coding, is itself a mistake, but for a reason almost opposite to the rejection's. Nguyen-Trung and Friese argue that coding is a "skeuomorphic" workaround for human cognitive limits, "a human crutch" built to support our limited processing power, which an AI does not share, so forcing a model to imitate it commits a "skeuomorphic fallacy" and produces "methodological incongruence" between qualitative values and actual practice (n.d.). The recommended remedy is to move "from partitioning data to holistic querying", treating the model as an interlocutor rather than a coder. The same impulse animates a family of dialogic, post-coding frameworks: Friese's Conversational Analysis with AI (Friese 2025), Morgan's Query-Based Analysis, which "reverses" coding by developing themes through an extended conversation with the data before examining the supporting quotations (n.d.), and Nguyen-Trung and Nguyen's Narrative-Integrated Thematic Analysis, which supports theme generation without coding (Nguyen-Trung &amp; Nguyen 2026). There is also work, including our own, that argues for moving beyond the binary of acceptance and rejection altogether (Friese et al. 2026).</p>
+<p>A fourth position is empirical and cautionary. Ashwin, Chhabra and Rao show, with interviews from Rohingya refugees and their Bengali hosts in Bangladesh, that the errors LLMs make when coding are "not random with respect to the characteristics of the interview subjects", so that LLM-generated codes can lead to "misleading inferences"; they recommend training a bespoke supervised model on a subset of transcripts coded by trained researchers rather than using an LLM directly (Ashwin et al. 2025). Related work finds cultural alignment effects when GPT and human coders are compared (Wei et al. 2025).</p>
+<p>These positions pull in different directions, but most of them share a target: the use of an LLM to perform open-ended interpretive synthesis, whether by imitating human coding or by carrying a conversation toward themes. The rejection says a machine cannot do this. The incongruence argument says imitating human coding is the wrong way to ask. The bias literature says the output is systematically skewed. Our position is orthogonal to all three because it does not ask the model to do interpretive synthesis at all. It asks the model for one narrow, checkable extraction, and keeps the interpretation, the synthesis and the authority with the human. The rejection's own line, that content analysis can be automated because it is not meaning-based in the reflexive sense, places a narrow, rule-governed extraction on the automatable side of the divide. Our coding act lives on that side too.</p>
+<h2 id="3-code-theme-and-the-answer-shape-of-a-finding">3. Code, theme, and the answer-shape of a finding<a aria-label="Permalink" class="anchor-link" href="#3-code-theme-and-the-answer-shape-of-a-finding">#</a></h2>
+<p>There is a bridge from this orthogonal position back into the interpretive tradition, and it runs through the difference between a code and a theme.</p>
+<p>In their guidance on good practice, Braun and Clarke draw a distinction that they regard as fundamental and that they find researchers often blur: between themes understood as "topic summaries" and themes understood as "meaning-based interpretive stories" (Braun &amp; Clarke 2023). A topic summary collects what participants said about a subject, such as "good experiences in healthcare". A meaning-based theme is built around a central organising idea and tells an interpretive story; their example contrasts the topic "good experiences of healthcare" with the meaning-based theme "validation of my personhood". The test they offer is telling: if you could have written the theme before analysing the data, or if it maps onto a data-collection question, it is probably a topic summary. A real theme could not have been written in advance, because it says something.</p>
+<p>The thing we want to draw out of this is not a claim about causation in Braun and Clarke. It is a claim about the shape of a finding. The difference between a code and a real theme, on their own account, is that a code labels and a theme makes a point in relation to the research question. A theme is answer-shaped: it is a response to a real query about something that matters, rather than a folder into which observations are filed. This is why a one-word theme name that names a topic, "Doctors", is a warning sign, while "validation of my personhood" is not. The first answers nothing; the second answers something.</p>
+<p>Causal claims are one species of answer-shaped finding. When a participant says that a clinic's Saturday opening let them keep their job and therefore attend, the content is not a topic to be filed under "access" or "opening hours". It is a small answer to a small question about what made a difference. Causal mapping is built to capture exactly this species of content, at scale, and to keep each instance attached to the words that carried it. We are not claiming that a causal map is a reflexive thematic analysis, or that every worthwhile finding is causal; much of what matters in talk is not causal at all, and we return to this in the limits. The point is narrower and, we think, useful: the move from a code to a finding that answers a real question is not foreign to causal mapping. It is the thing causal mapping does, for the causal subset of what people say, and it does it in a way that keeps the answer tied to its evidence.</p>
+<h2 id="4-causal-mapping-as-small-q-qualitative-data-analysis">4. Causal mapping as small-q qualitative data analysis<a aria-label="Permalink" class="anchor-link" href="#4-causal-mapping-as-small-q-qualitative-data-analysis">#</a></h2>
+<p>In ordinary qualitative coding a code typically denotes a theme or concept. In causal mapping the basic coded unit denotes a causal claim made by a source: a cause label, an effect label, a verbatim quote that supports the claim, and a source identifier. A coding act yields an ordered pair, written <code>Cause -&gt; Effect</code>, attached to evidence and provenance. The dataset of such acts is a links table, and that links table is the core qualitative product rather than a step on the way to a narrative (Narayanan 2005; Ackermann &amp; Maytorena-Sanchez 2024).</p>
+<p>This is a small unit by design. We do not code strength, polarity, necessity, sufficiency, or role as moderator, the features that some systems-dynamics and grounded-theory traditions attach to links (Kim &amp; Andersen 2012). Most respondents do not state those features, and most analysts cannot reliably extract them from text. By holding the coded unit to bare causation, we keep the chain of evidence intact and keep the act of coding within reach of both human coders and AI assistance. We have called this stance minimalist coding.</p>
+<p>The links table can be queried directly. Every node is a factor that appears as a cause or effect in at least one claim. Every edge is a claim with a quote behind it. Natural questions include which factors are the most frequently mentioned upstream influences on a given outcome, how the pathways into a target factor differ across subgroups, and which links are contested, with both <code>X -&gt; Y</code> and <code>X -&gt; not-Y</code> appearing in different sources. Each question is answered by an explicit, reversible operation on the table, and each answer remains traceable to the underlying quotes. For worked examples in evaluation practice, see (Remnant et al. 2025) and (Powell et al. 2025).</p>
+<p>This makes causal mapping a practically focused form of qualitative data analysis. The research question is causal, the coded unit is a causal claim, and the analysis is an explicit pipeline of operations on a structured intermediate product. Compared with a thematic analysis, it gives up breadth of interpretive scope in exchange for a much tighter audit trail from any map back to the original quotes. For research questions about drivers, barriers, mechanisms and pathways, the trade is usually worth making. It has a recognisable relative in Mayring's qualitative content analysis, which also seeks a systematic, rule-guided procedure with explicit category development, while preserving qualitative depth (Mayring 2000); causal mapping differs in that its unit is an ordered pair rather than a category, which is what makes pathway analysis possible.</p>
+<p>A short worked illustration. If an interviewee says,</p>
+<blockquote>
+<p>After the clinic started opening on Saturdays I did not have to miss work, so I could actually attend.</p>
+</blockquote>
+<p>a thematic pass might code <code>Access</code>, <code>Clinic opening hours</code>, <code>Employment constraints</code> and <code>Attendance</code>. A causal pass records two links:</p>
+<ul>
+<li><code>Saturday opening -&gt; Not missing work</code></li>
+<li><code>Not missing work -&gt; Attendance</code></li>
+</ul>
+<p>Both representations have value. Only the causal one is queryable as a mechanism. A reader can ask which other factors point into <code>Attendance</code>, which contexts mention <code>Saturday opening</code>, and which paths run from clinic operations to attendance, and every answer stays accountable, line by line, to the original quotes.</p>
+<h2 id="5-why-the-causal-coding-act-is-the-right-shape-for-ai">5. Why the causal coding act is the right shape for AI<a aria-label="Permalink" class="anchor-link" href="#5-why-the-causal-coding-act-is-the-right-shape-for-ai">#</a></h2>
+<p>The standard worry about AI in qualitative analysis is a worry about synthesis. "Find the main themes in this corpus" or "summarise what these interviewees say about X" are open-ended instructions whose output depends on the model's implicit theory of what counts as a theme. The output may read well and may even be roughly right, but it is hard to audit. The model may have downweighted minority views, smoothed over disagreement, drifted from the text, or produced categories that fit its training distribution better than the data. When the analyst inspects the output, the fluency of the writing tends to discourage scrutiny. Or it may not have drifted at all. The difficulty is that we cannot easily tell.</p>
+<p>The minimalist coding act has a different shape. The instruction to the model is, in effect:</p>
+<blockquote>
+<p>Identify each passage where the text says that one thing influenced another. For each, record the cause, the effect, and the exact quote that supports the claim.</p>
+</blockquote>
+<p>This instruction refers to features already present in the text, namely explicit causal claims. It produces outputs whose unit, a link with a quote, can be verified by reading the quote. It does not ask the model to weigh, summarise or theorise. Because each link is a separate unit, errors are local: a wrong link can be removed or corrected without unravelling the rest of the analysis. There is supporting evidence that narrow, codebook-anchored deductive coding is the regime in which LLM coding is most usable (Xiao et al. 2023), and a validation study of AI-assisted causal mapping in particular reports that the extraction is accurate enough for the rule to be worth applying (n.d.).</p>
+<p>In practice we run the extraction on short chunks of text, often a single passage at a time, and recover the corpus-level structure by aggregating the resulting links. The model is not asked to hold the whole corpus in attention or to decide what matters across documents. It does the same small job repeatedly. When the output is wrong we usually do not patch individual links; we adjust the prompt, recode and iterate. Because a coding pass is cheap and its output is locally checkable, this experimentation is cheap too, and the analyst stays in control of what the model is being asked to do.</p>
+<p>This is a qualitative version of the split-apply-combine strategy ({wickham 2011). The split is the minimalist coding act; the apply step is a deterministic pipeline of operations on the links table; the combine step is human-authored synthesis. The mapping between strategy and method is what makes the AI question tractable.</p>
+<p>A division of labour follows. The model is a clerk: fast, consistent, willing to apply a stable rule across thousands of passages, and locally accurate enough for the rule to be worth applying. The human is the architect, responsible for everything that takes judgement: framing the research question, choosing and curating the factor vocabulary rather than letting the model invent it freely, deciding where hierarchies or paired opposites are warranted, designing the analytic pipeline, and writing the interpretation, including its limits, its contested claims and the cases that do not fit. None of this is delegated to the model. The consequence is that the model never produces an analytic claim. It produces candidate evidence in a fixed format, which the human assembles into claims.</p>
+<p>It is worth being explicit about the boundary, because this is where criticism tends to land. In our workflow the model sees one chunk of text at a time and is asked to extract causal claims from it. It does not choose which research questions matter, which sources to include, what counts as a factor, where opposites or hierarchies belong, which paths through the map are interesting, how to summarise across documents, or how to write any part of the account. It proposes candidate cause and effect labels for each apparent causal claim in the chunk, pairs each with the exact supporting quote, and can flag uncertain cases for human review. Every analytic move beyond that is either the analyst's authorship or a deterministic transform whose code can be inspected.</p>
+<h2 id="6-a-worked-comparison-loneliness-in-london">6. A worked comparison: loneliness in London<a aria-label="Permalink" class="anchor-link" href="#6-a-worked-comparison-loneliness-in-london">#</a></h2>
+<p>To make the argument concrete, and to put it next to its main rival on equal terms, consider a single corpus analysed two ways.</p>
+<p>The corpus is 48 interviews on the experience of loneliness with young adults aged 18 to 24, recruited from four deprived London boroughs and collected in 2019, available as a de-identified open dataset (n.d.). It is good-quality, publicly available data on a topic that matters, which is why we use it here.</p>
+<h3 id="61-a-causal-mapping-pass">6.1 A causal-mapping pass<a aria-label="Permalink" class="anchor-link" href="#61-a-causal-mapping-pass">#</a></h3>
+<p>Coding the 48 interviews with the minimalist causal act, using AI for the extraction step only, produced a links table of around 3,392 quote-grounded causal claims, in roughly twenty minutes of processing. This was a light, illustrative analysis rather than a full empirical study, but it is enough to show the workflow. The resulting knowledge graph can be interrogated as a whole or filtered to any question of interest. One can ask which factors young Londoners most often say drive loneliness and which they say relieve it; one can trace pathways, for example from threat-appraised public space, through withdrawal, to sustained isolation, or from structured shared-purpose settings to a sense of connection; one can compare the pathways that recur across subgroups. Every arrow in the map carries the verbatim quote behind it, so reading the map and reading the evidence are the same action: pick an edge, see the claims and the quotes that produced it.</p>
+<p>The point is not that the map is a finished account of loneliness. It is not, and it is not meant to be. The point is that it is an instrument for exploring the corpus that stays accountable to the corpus at every step. The human work, deciding which questions to ask of the map, which pathways to follow, how to curate the factor vocabulary, and what the evidence does and does not support, remains human, and the AI's contribution is confined to proposing quote-backed links.</p>
+<h3 id="62-a-fully-autonomous-ai-thematic-pass-on-the-same-data">6.2 A fully autonomous AI thematic pass on the same data<a aria-label="Permalink" class="anchor-link" href="#62-a-fully-autonomous-ai-thematic-pass-on-the-same-data">#</a></h3>
+<p>The same 48 interviews were also analysed in a contrasting way: an AI agent was given the transcripts and a high-level instruction to develop and apply a thematic analysis method of its own choosing, keeping its own memo, codebook, theory and evidence files as it went. The agent planned the workflow, carried it out, and wrote the paper, with the human role confined to selecting the data and writing the opening instruction. It produced a coherent and readable account of loneliness as four interacting "mechanism stories": misrecognition and social performance, place-based constraint, connection infrastructure, and digital and material filters.</p>
+<p>This case is worth distinguishing carefully, because it is neither our position nor the dialogic one. There was no real conversation: the human did not interrogate the data through the model turn by turn, as Query-Based Analysis or Conversational Analysis with AI prescribe. The machine ran the whole interpretive procedure on its own. In that respect it is, oddly, the most positivist of the three, in that it treats analysis as a procedure to be executed rather than as situated human interpretation. The conversational camp would disown it as readily as the reject camp, since both insist that the human rather than the model must do the interpreting (Jowsey et al. 2025; n.d.). It is a clarifying limit case rather than a method we recommend.</p>
+<p>What happened when its output was checked is instructive. The account read as systematic, and that was itself a hazard: it was easy to assume that because it looked systematic it must be right. On checking the quotations against the sources, some were not verbatim, and at least one was attributed to the wrong interview. On checking the described method against the files the agent had actually produced, some process claims overstated what had been done: a timestamped journal was not maintained as fully as the paper claimed, and a "systematic negative-case search" looked, on the evidence trail, more like a check of a deliberately chosen sample. None of these errors is fatal, and the experiment was a serious and revealing one. But they are exactly the errors that handing interpretation wholesale to the model makes hard to catch, because the analytic state lives inside the model's working notes and its narrative about itself, and the reader has to trust both.</p>
+<h3 id="63-what-the-comparison-shows">6.3 What the comparison shows<a aria-label="Permalink" class="anchor-link" href="#63-what-the-comparison-shows">#</a></h3>
+<p>Three cases sit side by side here. A human-AI dialogue, in which the analyst converses with the model and keeps the interpretation by staying in the exchange. A fully autonomous pass, in which the model runs the interpretation itself. And a one-way causal-mapping pipeline, in which the model does only the narrow extraction and the human does everything else. The first two reach for meaning-based interpretive stories of the kind reflexive thematic analysis values, and a causal map does not and should not try to produce those. But on the specific matter the special issue foregrounds, accountable links between claims and materials, the contrast is sharp. In both the dialogic and the autonomous passes, the quote is something that must be requested and then verified after the fact, and the account of method is something the reader takes partly on trust. In the causal-mapping pass, the quote is the unit of coding, present on every link by construction, and the account of method is a pipeline whose steps can be rerun. The one-way street is not a poorer conversation. It is a different thing, and for this kind of question it is the more accountable thing.</p>
+<h2 id="7-the-strongest-objections-and-why-they-do-not-land">7. The strongest objections, and why they do not land<a aria-label="Permalink" class="anchor-link" href="#7-the-strongest-objections-and-why-they-do-not-land">#</a></h2>
+<p>We now state the strongest criticisms of the position as clearly as we can, in the form their proponents would recognise, and try to neutralise each. None of them, we think, is really an opponent of our view so much as an objection that becomes sharp when our view is stated carelessly. Stating it carefully is most of the answer.</p>
+<h3 id="71-the-incongruence-objection">7.1 The incongruence objection<a aria-label="Permalink" class="anchor-link" href="#71-the-incongruence-objection">#</a></h3>
+<p>The strongest version runs as follows. Reflexive, non-positivist qualitative analysis treats meaning as constructed through the researcher's situated subjectivity; a research question is not a specification to be executed. Standardised, automatable coding smuggles a positivist epistemology in under a procedural guise. Worse, coding is a skeuomorphic crutch built for human cognitive limits that an AI does not have, so building a method on AI coding imitates an obsolete workaround (n.d.). Dressing the model up as "just a clerk" hides the fact that deciding what counts as a causal claim is itself a theory-laden, interpretive act.</p>
+<p>We grant almost all of the premise. For Big-Q reflexive work, we agree that meaning is constructed, that coding-as-imitation is the wrong way to use a model, and that calling such work automatable would be a category mistake. We do not claim our method for that work. The objection bites against automating theme generation; it does not reach a quote-grounded links table that a human reads, challenges and rebuilds. And the skeuomorphism point, which is a good one, actually misses our case. The criticism is that imposing line-by-line coding on a model imitates a memory crutch the model does not need, because the model can hold a whole interview at once. But our links table is not a memory aid for the model. The model is stateless from chunk to chunk; it gets no benefit from the table at all. The table exists for the humans and the readers, as the audit artefact that keeps interpretation visible. Holding the analysis "in the model's head", which the incongruence argument recommends as the cure, is precisely the move that removes the artefact and reinstates the black box. As for the last clause: yes, deciding what counts as a causal claim is theory-laden, and we do not pretend otherwise. The difference is that in our workflow that theory is written down, as an extraction prompt that functions as the codebook, and shared, so that its effects can be inspected and argued with rather than left inside a coder's head.</p>
+<h3 id="72-the-reduction-objection">7.2 The reduction objection<a aria-label="Permalink" class="anchor-link" href="#72-the-reduction-objection">#</a></h3>
+<p>The second objection comes from the interpretive traditions the special issue serves. Cause-to-effect arrows flatten situated, indexical, interactionally produced talk into decontextualised propositions, and so lose exactly what conversation analysis, discourse analysis and narrative analysis exist to study.</p>
+<p>The answer is scope, and it has three parts. First, a coded link records what a source claimed rather than a fact about the world, and it keeps the verbatim quote attached; the arrow indexes the talk rather than replacing it, and the analyst who wants to read the surrounding turn can always do so. Second, causal mapping addresses the causal layer of meaning and leaves the rest alone; it is compatible with, and can run alongside, a fine-grained interactional analysis of a subset of episodes. Third, the map is an instrument for closer reading rather than a substitute for it. Picking an edge and reading the quotes beneath it is usually where analysis begins. The reduction objection is decisive against any claim that a causal map is a complete account of a corpus. We make no such claim.</p>
+<h3 id="73-the-bias-objection">7.3 The bias objection<a aria-label="Permalink" class="anchor-link" href="#73-the-bias-objection">#</a></h3>
+<p>The third objection is empirical and, of the five, the one we take most seriously. LLM coding has been shown to introduce systematic, non-random error correlated with the characteristics of interview subjects, which can drive misleading inferences; the proposed remedy is a bespoke supervised model trained on human codes rather than direct LLM use (Ashwin et al. 2025), and cultural-alignment effects appear when machine and human coding are compared (Wei et al. 2025). Even proponents of conversational AI analysis concede the point: Morgan notes that models can return non-existent quotes and that "there is no guaranteed system for detecting and eliminating bias in AI-based analysis" (n.d.).</p>
+<p>We do not dispute the finding. Three things follow, and none of them rescues open-ended synthesis at our method's expense. First, our workflow relocates bias into an explicit, shareable prompt and makes each unit locally checkable against its quote, so that whether the extraction is faithful, for any subgroup, is something a reader can inspect rather than infer. Bias is most dangerous exactly where no one looks at the quote; our workflow requires looking at the quote. Second, the bias literature's own recommendation, a narrow model trained on a sample of carefully human-coded transcripts, points toward standardised, checkable coding and away from holistic LLM synthesis; it is closer to our position than to the dialogic alternative. Third, where bias would do the most damage, in moving from counts of claims to inferences about magnitude, our method is explicit that frequency is not effect size, and that the move from a tally of claims to a conclusion about the world requires the same care it would in any study. The bias warning is real, and it tells against trusting an unread synthesis far more than against a workflow whose every unit is presented for reading.</p>
+<h3 id="74-the-post-coding-objection">7.4 The post-coding objection<a aria-label="Permalink" class="anchor-link" href="#74-the-post-coding-objection">#</a></h3>
+<p>The fourth objection says that coding is the past. LLMs free us from the reductive coding bottleneck, and the future is dialogic: query the data, converse with it, let themes emerge from the exchange (Friese 2025; n.d.; Nguyen-Trung &amp; Nguyen 2026). Re-instituting a rigid coding step is a step backwards.</p>
+<p>This is the objection most directly opposed to our design, and the disagreement is real rather than merely apparent, so it is worth being exact. The dialogic paradigm puts the analytic state inside the model's working memory and the analyst's conversation with it. That is the very location the rejection camp distrusts, and with reason: a conversation is hard to reproduce, and a model's account of its own process can be confabulated, as our worked comparison showed. A strong intermediate representation, the quote-grounded links table, is what keeps the work accountable, and we are not willing to give it up for fluency. The one-way pipeline is a feature of the design rather than a cost of it. We are not against dialogue as such; we relocate it to where it earns its keep, in refining the research question and the extraction prompt, and we keep it out of the place where it does damage, in the unrepeatable interpretation of the corpus. There is room for hybrids, and a conversational front end that proposes questions to ask of a links table is a plausible one. But the trade-offs are not symmetrical, and accountability is on our side of them.</p>
+<h3 id="75-the-where-is-the-gain-objection">7.5 The "where is the gain" objection<a aria-label="Permalink" class="anchor-link" href="#75-the-where-is-the-gain-objection">#</a></h3>
+<p>The last objection is deflationary. You admit it is not a one-click workflow. You have simply moved the labour into prompt engineering and vocabulary curation, which are idiosyncratic and unvalidated; the human effort has not gone away, it has hidden.</p>
+<p>The effort has not gone away, and we do not claim it has. But its concentration is the point. In a manual coding study, judgement is spread thinly and invisibly across many thousands of small decisions, each made once, none recorded. In this workflow, judgement moves to a few high-leverage moments: framing the causal question, curating the factor vocabulary, designing the pipeline, and authoring the synthesis. Those moments are fewer, they are explicit, and they are shareable. A prompt that functions as a codebook is a more inspectable object than the internalised judgement of a coder, precisely because it is written down. The gain is not that the human does less thinking. It is that the human's thinking is focused where it matters and is left on the record.</p>
+<h2 id="8-accountability-transparency-and-ethics">8. Accountability, transparency and ethics<a aria-label="Permalink" class="anchor-link" href="#8-accountability-transparency-and-ethics">#</a></h2>
+<p>A causal map produced this way carries a complete audit trail. Pick any edge in the final map and you can see the bundle of underlying claims, each with its source, its verbatim quote and its raw extracted labels, and you can see which transforms have been applied between the raw coding and the rendered view: which sources were filtered, which labels were rewritten, which evidence thresholds were imposed. Every analytic claim in the paper reduces to a sequence of explicit operations on a links table whose rows are quote-grounded extractions. A reader who doubts the analysis can rerun the pipeline, change one step and observe the consequence. A coder who disagrees with a particular link can reject it without disturbing the rest.</p>
+<p>This lets us give direct answers to the three disclosures the special issue requires.</p>
+<ul>
+<li><strong>Type of application.</strong> Commercial large language models are used at the extraction step. Specific model versions are reported, because output behaviour changes with versions and a replication needs to know which version produced which links.</li>
+<li><strong>Role in the workflow.</strong> The model is used only to propose candidate links from short text chunks, each paired with a verbatim quote. It is not used to summarise across documents, to choose the codebook, to write the report, or to make any claim about the world.</li>
+<li><strong>How accountability was maintained.</strong> Every link in the final analysis is traceable to a specific quote and source. Every analytic step beyond extraction is deterministic and human-authored. The links table is an artefact that can be shared with reviewers and co-researchers and inspected line by line. Because the extraction prompt is the codebook in another form, sharing the prompt is sharing the method, and a reviewer can read it and judge whether it framed the task fairly.</li>
+</ul>
+<p>There are practical ethical considerations beyond declaration. Where the source material is sensitive, the choice of model matters, because some commercial services may train on inputs or store data in ways that conflict with consent and confidentiality commitments. We use settings that disable training on inputs where they are available, prefer providers with explicit data-handling commitments, and remove personally identifying information at the chunking stage where possible. Consent processes should make AI use explicit, including the kind of model, the role it plays and the safeguards applied. These are the same data-protection obligations the special issue rightly treats as integral rather than as add-ons.</p>
+<h2 id="9-limits">9. Limits<a aria-label="Permalink" class="anchor-link" href="#9-limits">#</a></h2>
+<p>The workflow does not solve every qualitative research problem, and we do not claim that it should.</p>
+<ul>
+<li><strong>Non-causal meaning.</strong> Much valuable content in talk is not causal: identity work, norms, emotion, metaphor, the turn-by-turn structure of interaction. Causal coding ignores these, much as conversation analysis ignores other features. For questions about how participants account for what makes a difference, causal coding is on point; for questions about how they do identity or manage stance, it is not.</li>
+<li><strong>Claims are not facts.</strong> A coded link records what a source claimed. It does not establish what is true in the world. The map is a structured record of evidence, and the move from evidence to truth needs the same care it would in any qualitative study.</li>
+<li><strong>Frequency is not effect size.</strong> Counts of sources and claims measure how widely something is said in the corpus. They do not measure the magnitude of any underlying effect.</li>
+<li><strong>The transitivity trap.</strong> If one source says <code>Training -&gt; Knowledge</code> and another says <code>Knowledge -&gt; Adoption</code>, it is tempting to read a path from training to adoption. Unless within-source thread tracing is imposed and reported, that stitches together a mechanism no one in the corpus actually claimed.</li>
+<li><strong>Bias is relocated rather than removed.</strong> The advantage is that the prompt is an explicit, shareable artefact whose effects can be inspected and revised, but it is still doing the work a human codebook would otherwise do.</li>
+<li><strong>Attention is local.</strong> Because the model sees one chunk at a time, it cannot pick up cross-references or implicit qualifications that span chunks. For questions where cross-document context is the point, this workflow is not enough on its own.</li>
+</ul>
+<h2 id="10-conclusion">10. Conclusion<a aria-label="Permalink" class="anchor-link" href="#10-conclusion">#</a></h2>
+<p>The AI question in qualitative work is usually posed at the wrong altitude. Asked whether to trust a model with thematic synthesis or with the interpretation of a corpus, most qualitative researchers reasonably refuse, and the rejection letter states that refusal with care and force. Asked instead whether to use a model for one narrow extraction at which it is locally accurate and locally checkable, while every other analytic decision stays in human hands, the answer can be yes, and it can be a yes that the anti-positivist is free to give, because nothing in it asks a machine to make meaning. That is the sense in which our position is orthogonal rather than opposed: we are not at the embrace end of the line, and the people at the reject end are not, on this narrow matter, our opponents.</p>
+<p>Causal mapping earns its modest place in such a workflow because the unit of coding is small, the intermediate product is structured, and the chain from any analytic claim back to a supporting quote is short and inspectable. Those are also the properties that keep AI assistance accountable. The picture to hold on to is plain: a model that stays inside the narrow limits it is given, a human who never hands over judgement, and a quote-grounded links table in the middle that anyone can read.</p>
+<div class="references"><h2>References</h2><p class="reference">Ackermann, &amp; Maytorena-Sanchez (2024). <em>Overlooked and Underused? The Benefits and Challenges of Using Causal Mapping for Project Studies</em>. <a href="https://doi.org/10.1016/j.plas.2024.100161" rel="noopener" target="_blank">https://doi.org/10.1016/j.plas.2024.100161</a>.</p><p class="reference">Ashwin, Chhabra, &amp; Rao (2025). <em>Using Large Language Models for Qualitative Analysis Can Introduce Serious Bias</em>. SAGE Publications Inc. <a href="https://doi.org/10.1177/00491241251338246" rel="noopener" target="_blank">https://doi.org/10.1177/00491241251338246</a>.</p><p class="reference">Axelrod (1976). <em>The Analysis of Cognitive Maps</em>. In <em>Structure of Decision : The Cognitive Maps of Political Elites</em>.</p><p class="reference">Braun, &amp; Clarke (2023). <em>Toward Good Practice in Thematic Analysis: Avoiding Common Problems and Be(Com)Ing a Knowing Researcher</em>. Taylor \&amp; Francis. <a href="https://doi.org/10.1080/26895269.2022.2129597" rel="noopener" target="_blank">https://doi.org/10.1080/26895269.2022.2129597</a>.</p><p class="reference">Braun, &amp; Clarke (2025). <em>Reporting Guidelines for Qualitative Research: A Values-Based Approach</em>. Routledge. <a href="https://doi.org/10.1080/14780887.2024.2382244" rel="noopener" target="_blank">https://doi.org/10.1080/14780887.2024.2382244</a>.</p><p class="reference">Eden (1988). <em>Cognitive Mapping</em>. <a href="https://doi.org/10.1016/0377-2217(88)90002-1" rel="noopener" target="_blank">https://doi.org/10.1016/0377-2217(88)90002-1</a>.</p><p class="reference">Evaluation (2024). <em>Causal Mapping</em>. <a href="https://www.betterevaluation.org/methods-approaches/methods/causal-mapping" rel="noopener" target="_blank">https://www.betterevaluation.org/methods-approaches/methods/causal-mapping</a>.</p><p class="reference">Friese (2025). <em>Conversational Analysis with AI - CA to the Power of AI: Rethinking Coding in Qualitative Analysis</em>. <a href="https://doi.org/10.2139/ssrn.5232579" rel="noopener" target="_blank">https://doi.org/10.2139/ssrn.5232579</a>.</p><p class="reference">Friese, Nguyen-Trung, Powell, &amp; Morgan (2026). <em>Beyond Binary Positions: Making Space for Critical and Reflexive GenAI Integration in Qualitative Research</em>. <a href="https://doi.org/10.2139/ssrn.5962174" rel="noopener" target="_blank">https://doi.org/10.2139/ssrn.5962174</a>.</p><p class="reference">Jowsey, Braun, Clarke, Lupton, &amp; Fine (2025). <em>We Reject the Use of Generative Artificial Intelligence for Reflexive Qualitative Research</em>. <a href="https://doi.org/10.2139/ssrn.5676462" rel="noopener" target="_blank">https://doi.org/10.2139/ssrn.5676462</a>.</p><p class="reference">Kim, &amp; Andersen (2012). <em>Building Confidence in Causal Maps Generated from Purposive Text Data: Mapping Transcripts of the Federal Reserve</em>. <a href="https://doi.org/10.1002/sdr.1480" rel="noopener" target="_blank">https://doi.org/10.1002/sdr.1480</a>.</p><p class="reference">Mayring (2000). <em>Qualitative Content Analysis</em>. Forum Qualitative Sozialforschung / Forum: Qualitative Social Research. <a href="https://doi.org/10.17169/FQS-1.2.1089" rel="noopener" target="_blank">https://doi.org/10.17169/FQS-1.2.1089</a>.</p><p class="reference">Narayanan (2005). <em>Causal Mapping: An Historical Overview</em>. In <em>Causal Mapping for Research in Information Technology</em>. <a href="https://www.google.co.uk/books/edition/_/61z36j6QgmAC?hl=en&amp;gbpv=1" rel="noopener" target="_blank">https://www.google.co.uk/books/edition/_/61z36j6QgmAC?hl=en&amp;gbpv=1</a>.</p><p class="reference">Nguyen-Trung, &amp; Nguyen (2026). <em>Narrative-Integrated Thematic Analysis (NITA): How Can LLMs Support Theme Generation without Coding?</em>. Routledge. <a href="https://doi.org/10.1080/14780887.2026.2638348" rel="noopener" target="_blank">https://doi.org/10.1080/14780887.2026.2638348</a>.</p><p class="reference">Powell, Copestake, &amp; Remnant (2024). <em>Causal Mapping for Evaluators</em>. <a href="https://doi.org/10.1177/13563890231196601" rel="noopener" target="_blank">https://doi.org/10.1177/13563890231196601</a>.</p><p class="reference">Powell, Cabral, &amp; Mishan (2025). <em>A Workflow for Collecting and Understanding Stories at Scale, Supported by Artificial Intelligence</em>. SAGE PublicationsSage UK: London, England. <a href="https://doi.org/10.1177/13563890251328640" rel="noopener" target="_blank">https://doi.org/10.1177/13563890251328640</a>.</p><p class="reference">Remnant, Copestake, Powell, &amp; Channon (2025). <em>Qualitative Causal Mapping in Evaluations</em>. In <em>Handbook of Health Services Evaluation: Theories, Methods and Innovative Practices</em>. <a href="https://doi.org/10.1007/978-3-031-87869-5_12" rel="noopener" target="_blank">https://doi.org/10.1007/978-3-031-87869-5_12</a>.</p><p class="reference">Wei, Liu, Barany, Ocumpaugh, Mehta, Nasiar, Baker, Zambrano, Vanacore, &amp; Giordano (2025). <em>Cultural Alignment and Biases in Qualitative Coding: Comparing GPT and Human Coders</em>. <a href="https://doi.org/10.35542/osf.io/h8u4f_v1" rel="noopener" target="_blank">https://doi.org/10.35542/osf.io/h8u4f_v1</a>.</p><p class="reference">Xiao, Yuan, Liao, Abdelghani, &amp; Oudeyer (2023). <em>Supporting Qualitative Analysis with Large Language Models: Combining Codebook with GPT-3 for Deductive Coding</em>. In <em>28th International Conference on Intelligent User Interfaces</em>. <a href="https://doi.org/10.1145/3581754.3584136" rel="noopener" target="_blank">https://doi.org/10.1145/3581754.3584136</a>.</p><p class="reference">{wickham (2011). <em>The Split-Apply-Combine Strategy for Data Analysis</em>. <a href="https://doi.org/10.18637/jss.v040.i01" rel="noopener" target="_blank">https://doi.org/10.18637/jss.v040.i01</a>.</p></div>
+        <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a href="https://causalmap.app" class="link-secondary">Causal Map Ltd</a> 2026</span> · <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" style="height:18px;opacity:0.7;vertical-align:middle;" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" /></a><a href="https://app.causalmap.app" class="link-secondary ms-2" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>
+      </main>
+      <aside class="rightbar"><h2>On this page</h2><div class="hover-cue">Hover to view</div><div class="toc"><div class="toc">
+<ul>
+<li><a href="#1-introduction-an-orthogonal-yes">1. Introduction: an orthogonal yes</a></li>
+<li><a href="#2-the-debate-as-it-stands">2. The debate as it stands</a></li>
+<li><a href="#3-code-theme-and-the-answer-shape-of-a-finding">3. Code, theme, and the answer-shape of a finding</a></li>
+<li><a href="#4-causal-mapping-as-small-q-qualitative-data-analysis">4. Causal mapping as small-q qualitative data analysis</a></li>
+<li><a href="#5-why-the-causal-coding-act-is-the-right-shape-for-ai">5. Why the causal coding act is the right shape for AI</a></li>
+<li><a href="#6-a-worked-comparison-loneliness-in-london">6. A worked comparison: loneliness in London</a><ul>
+<li><a href="#61-a-causal-mapping-pass">6.1 A causal-mapping pass</a></li>
+<li><a href="#62-a-fully-autonomous-ai-thematic-pass-on-the-same-data">6.2 A fully autonomous AI thematic pass on the same data</a></li>
+<li><a href="#63-what-the-comparison-shows">6.3 What the comparison shows</a></li>
+</ul>
+</li>
+<li><a href="#7-the-strongest-objections-and-why-they-do-not-land">7. The strongest objections, and why they do not land</a><ul>
+<li><a href="#71-the-incongruence-objection">7.1 The incongruence objection</a></li>
+<li><a href="#72-the-reduction-objection">7.2 The reduction objection</a></li>
+<li><a href="#73-the-bias-objection">7.3 The bias objection</a></li>
+<li><a href="#74-the-post-coding-objection">7.4 The post-coding objection</a></li>
+<li><a href="#75-the-where-is-the-gain-objection">7.5 The "where is the gain" objection</a></li>
+</ul>
+</li>
+<li><a href="#8-accountability-transparency-and-ethics">8. Accountability, transparency and ethics</a></li>
+<li><a href="#9-limits">9. Limits</a></li>
+<li><a href="#10-conclusion">10. Conclusion</a></li>
+</ul>
+</div>
+</div></aside>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../assets/sidebar.js"></script>
+    <script>
+      // Hamburger toggle for small screens
+      (function(){
+        var btn = document.getElementById('hamburgerBtn');
+        if (btn) {
+          btn.addEventListener('click', function(){
+            document.body.classList.toggle('sidebar-open');
+          });
+        }
+      })();
+
+      // Fullscreen mode: ?fullscreen=1 adds layout-fullscreen, ?fullscreen=0 removes it
+      (function(){
+        var params = new URLSearchParams(window.location.search);
+        var fs = params.get('fullscreen');
+        if (fs === '0') document.body.classList.remove('layout-fullscreen');
+        else if (fs === '1') document.body.classList.add('layout-fullscreen');
+      })();
+
+      // Clamp anchor scrolling so near-top anchors don't shift page up awkwardly
+      (function(){
+        function scrollToClamped(targetId, smooth) {
+          if (!targetId) return;
+          var el = document.getElementById(targetId);
+          if (!el) return;
+          var targetTop = (el.getBoundingClientRect().top || 0) + window.scrollY;
+          var desiredTop = Math.max(0, targetTop - 100); // keep ~100px padding, clamp at 0
+          if (Math.abs(window.scrollY - desiredTop) > 1) {
+            try {
+              window.scrollTo({ top: desiredTop, behavior: smooth ? 'smooth' : 'auto' });
+            } catch(e) {
+              window.scrollTo(0, desiredTop);
+            }
+          }
+        }
+        // On load with a hash, adjust after browser's default jump
+        window.addEventListener('load', function(){
+          if (window.location.hash && window.location.hash.length > 1) {
+            setTimeout(function() {
+              scrollToClamped(window.location.hash.slice(1), false);
+            }, 0);
+          }
+        });
+        // Intercept same-document anchor clicks to apply clamped scrolling
+        document.addEventListener('click', function(e){
+          var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+          if (!a) return;
+          var href = a.getAttribute('href');
+          if (!href || href === '#') return;
+          var id = href.slice(1);
+          var target = document.getElementById(id);
+          if (!target) return; // let browser handle if element not found
+          e.preventDefault();
+          // Update URL hash without reloading
+          try { history.replaceState(null, '', '#' + id); } catch(e) {}
+          scrollToClamped(id, true);
+        }, true);
+      })();
+
+      // Root-level hash routing for page anchors (e.g., domain.com/#new-features)
+      (function(){
+        var pageAnchorMap = {};
+        if (pageAnchorMap && Object.keys(pageAnchorMap).length > 0) {
+          window.addEventListener('load', function(){
+            var hash = window.location.hash;
+            if (hash && hash.length > 1) {
+              var anchorId = hash.slice(1).toLowerCase();
+              var targetUrl = pageAnchorMap[anchorId];
+              if (targetUrl) {
+                window.location.replace(targetUrl);
+              }
+            }
+          });
+        }
+      })();
+
+      // Loop toggle for local HTML5 videos (native controls have no loop button)
+      (function(){
+        document.querySelectorAll('.video-embed > video').forEach(function(v){
+          var wrap = v.parentElement;
+          if (!wrap || wrap.querySelector('.video-loop-toggle')) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn btn-sm btn-outline-secondary video-loop-toggle mt-2';
+          function sync() {
+            btn.setAttribute('aria-pressed', v.loop ? 'true' : 'false');
+            btn.textContent = v.loop ? 'Loop on' : 'Loop off';
+          }
+          sync();
+          btn.addEventListener('click', function() { v.loop = !v.loop; sync(); });
+          wrap.appendChild(btn);
+        });
+      })();
+
+      // Keyboard navigation: ArrowLeft/ArrowRight go to prev/next page
+      (function(){
+        document.addEventListener('keydown', function(e){
+          // Ignore when typing or with modifiers
+          if (e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return;
+          var ae = document.activeElement;
+          if (ae && (ae.tagName === 'INPUT' || ae.tagName === 'TEXTAREA' || ae.tagName === 'SELECT' || ae.isContentEditable)) return;
+          var key = e.key || e.code;
+          if (key === 'ArrowLeft' || key === 'Left') {
+            var prev = document.querySelector('.edge-nav.prev');
+            if (prev && prev.getAttribute('href')) {
+              e.preventDefault();
+              window.location.href = prev.getAttribute('href');
+            }
+          } else if (key === 'ArrowRight' || key === 'Right') {
+            var next = document.querySelector('.edge-nav.next');
+            if (next && next.getAttribute('href')) {
+              e.preventDefault();
+              window.location.href = next.getAttribute('href');
+            }
+          }
+        });
+      })();
+
+      // Restore sidebar scroll position after navigation (for smoother feel)
+      (function(){
+        try {
+          var saved = sessionStorage.getItem('sidebarScroll');
+          if (saved !== null) {
+            var box = document.querySelector('aside.sidebar .nav-fade');
+            if (box) {
+              box.scrollTop = parseInt(saved, 10) || 0;
+            }
+            sessionStorage.removeItem('sidebarScroll');
+          }
+        } catch(e) {}
+      })();
+
+      // Breadcrumb dropdown toggle (click chevron or label to open)
+      document.querySelectorAll('.bc-chevron, .bc-label').forEach(function(trigger) {
+        trigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var dropdown = trigger.closest('.bc-dropdown');
+          if (!dropdown) return;
+          var isOpen = dropdown.classList.contains('open');
+          // Close all other dropdowns
+          document.querySelectorAll('.bc-dropdown.open').forEach(function(d) {
+            d.classList.remove('open');
+          });
+          // Toggle current
+          if (!isOpen) {
+            dropdown.classList.add('open');
+          }
+        });
+      });
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.bc-dropdown')) {
+          document.querySelectorAll('.bc-dropdown.open').forEach(function(d) {
+            d.classList.remove('open');
+          });
+        }
+      });
+
+      // Scroll active sidebar link into view if it sits outside the visible nav area
+      (function() {
+        var activeLink = document.querySelector('aside.sidebar .nav-link.active');
+        if (!activeLink) return;
+        var scrollBox = document.querySelector('aside.sidebar .nav-fade');
+        if (!scrollBox) return;
+        var linkRect = activeLink.getBoundingClientRect();
+        var boxRect = scrollBox.getBoundingClientRect();
+        if (linkRect.bottom > boxRect.bottom || linkRect.top < boxRect.top) {
+          scrollBox.scrollTop += linkRect.top - boxRect.top - 40;
+        }
+      })();
+
+      // Highlight current section in rightbar TOC
+      (function() {
+        var rightbar = document.querySelector('.rightbar .toc');
+        if (!rightbar) return;
+        
+        var tocLinks = rightbar.querySelectorAll('a');
+        if (tocLinks.length === 0) return;
+        
+        function updateActiveSection() {
+          var fromTop = window.scrollY + 100;
+          var current = null;
+          
+          tocLinks.forEach(function(link) {
+            var href = link.getAttribute('href');
+            if (!href || !href.startsWith('#')) return;
+            var section = document.querySelector(href);
+            if (section) {
+              if (section.offsetTop <= fromTop) {
+                current = link;
+              }
+            }
+          });
+          
+          tocLinks.forEach(function(link) {
+            link.classList.remove('active');
+          });
+          
+          if (current) {
+            current.classList.add('active');
+          }
+        }
+        
+        window.addEventListener('scroll', updateActiveSection);
+        window.addEventListener('resize', updateActiveSection);
+        updateActiveSection();
+      })();
+    </script>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+  </body>
+ </html>
