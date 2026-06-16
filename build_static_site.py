@@ -24,7 +24,7 @@ import sys
 import time
 from datetime import date, datetime
 from urllib.parse import quote, urljoin
-PIPELINE_VERSION = "2026-05-11-wikilink-img-no-newline-steal-v1"
+PIPELINE_VERSION = "2026-06-16-themes-menu-v1"
 
 # Media extensions: images + local video (mp4, webm, etc.)
 _IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".bmp"}
@@ -4510,57 +4510,156 @@ def _extract_page_layout_from_metadata(metadata: Dict[str, Any]) -> str:
     return ""
 
 
-def build_tags_index(md_files: List[Path], metadata_map: Dict[Path, Dict[str, Any]]) -> Dict[str, List[Path]]:
-    """Build tag -> pages index (tag keys are lowercased for grouping)."""
-    idx: Dict[str, List[Path]] = defaultdict(list)
+def strip_search_scaffolding(markdown_text: str) -> str:
+    """Drop generated related-link blocks and link-only contents lists from body text."""
+    # Do not let generated related-link blocks or link-only contents lists rank as article body.
+    markdown_text = re.split(r"<!--\s*xrefs-v1\s*-->", markdown_text or "", maxsplit=1)[0]
+    kept_lines: List[str] = []
+    standalone_wikilink_re = re.compile(
+        r"^\s*(?:[-*+]\s+|\d+[.)]\s+)?\[\[[^\]]+\]\]\s*$"
+    )
+    toc_embed_re = re.compile(r"^\s*!toc\[\[[^\]]+\]\]\s*$", flags=re.IGNORECASE)
+    for line in markdown_text.splitlines():
+        if standalone_wikilink_re.match(line) or toc_embed_re.match(line):
+            continue
+        kept_lines.append(line)
+    return "\n".join(kept_lines)
+
+
+def _markdown_to_plain_text(md_body: str) -> str:
+    """Crude markdown -> plain text, shared by the search index and theme snippets."""
+    plain = re.sub(r"```[\s\S]*?```", " ", md_body)
+    plain = re.sub(r"`[^`]*`", " ", plain)
+    plain = re.sub(r"\[\[(.*?)\]\]", r"\1", plain)
+    plain = re.sub(r"\[(.*?)\]\([^)]*\)", r"\1", plain)
+    plain = re.sub(r"[#*_>\-]+", " ", plain)
+    plain = re.sub(r"\s+", " ", plain).strip()
+    return plain
+
+
+def _extract_themes_from_metadata(metadata: Dict[str, Any]) -> List[str]:
+    """Extract theme values from YAML 'theme'/'themes' (string, comma list, or list)."""
+    if not isinstance(metadata, dict):
+        return []
+    val = None
+    for key in ("theme", "themes", "Theme", "Themes"):
+        if key in metadata and metadata.get(key) is not None:
+            val = metadata.get(key)
+            break
+    if val is None:
+        return []
+    if isinstance(val, list):
+        return [str(t).strip() for t in val if str(t).strip()]
+    return [s.strip() for s in re.split(r"[,;\n]+", str(val).strip()) if s.strip()]
+
+
+def _theme_slug(theme: str) -> str:
+    """Normalise a theme value to a URL slug (e.g. 'Academic Case Studies' -> 'academic-case-studies')."""
+    s = re.sub(r"[\s_]+", "-", str(theme).strip().lower())
+    s = re.sub(r"[^a-z0-9-]+", "", s)
+    return re.sub(r"-+", "-", s).strip("-")
+
+
+def _theme_display_label(theme: str) -> str:
+    """Human label for a theme value (prettify kebab/snake case)."""
+    pretty = re.sub(r"[-_]+", " ", str(theme).strip()).strip()
+    return pretty.title() if pretty else str(theme)
+
+
+def build_themes_index(md_files: List[Path], metadata_map: Dict[Path, Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+    """Build theme slug -> {label, pages} from the YAML 'theme'/'themes' property."""
+    idx: Dict[str, Dict[str, Any]] = {}
     for p in md_files:
-        tags = _extract_tags_from_metadata(metadata_map.get(p, {}) or {})
-        for t in tags:
-            key = t.strip().lower()
-            if not key:
+        for raw in _extract_themes_from_metadata(metadata_map.get(p, {}) or {}):
+            slug = _theme_slug(raw)
+            if not slug:
                 continue
-            # Control tags should not appear in the user-facing tag index dropdown.
-            if re.match(r"^\s*icon\s*;", key, flags=re.IGNORECASE):
-                continue
-            idx[key].append(p)
+            entry = idx.setdefault(slug, {"label": _theme_display_label(raw), "pages": []})
+            entry["pages"].append(p)
     return idx
 
 
-def render_tags_dropdown_html(tag_index: Dict[str, List[Path]], current_out_dir: Path, input_root: Path, output_root: Path, title_map: Dict[Path, str]) -> str:
-    """Render a breadcrumb dropdown listing tags and their pages (nested lists)."""
-    if not tag_index:
+def render_themes_dropdown_html(themes_index: Dict[str, Dict[str, Any]], current_out_dir: Path, output_root: Path) -> str:
+    """Breadcrumb 'Themes' dropdown: each theme links to its /theme/<slug>/ landing page."""
+    if not themes_index:
         return ""
-    parts: List[str] = []
-    parts.append('<div class="bc-dropdown">')
-    parts.append('<span class="bc-label">Tags</span><span class="bc-chevron">▼</span>')
-    parts.append('<div class="bc-menu bc-menu-tags"><div class="bc-heading">Tags</div>')
-
-    def _tag_display_label(tag_key: str) -> str:
-        # Custom display labels
-        if tag_key == "paper":
-            return "Papers and Drafts"
-        if tag_key == "case_study":
-            return "Case Studies"
-        # Default: prettify snake_case / kebab-case
-        pretty = tag_key.replace("_", " ").replace("-", " ").strip()
-        return pretty.title() if pretty else tag_key
-
-    # sort tags A→Z
-    for tag_key in sorted(tag_index.keys()):
-        pages = tag_index.get(tag_key) or []
-        if not pages:
+    parts: List[str] = ['<div class="bc-dropdown">',
+                        '<span class="bc-label">Themes</span><span class="bc-chevron">▼</span>',
+                        '<div class="bc-menu"><div class="bc-heading">Themes</div>']
+    for slug in sorted(themes_index.keys()):
+        entry = themes_index[slug]
+        if not entry.get("pages"):
             continue
-        # sort pages by displayed title
-        pages_sorted = sorted(pages, key=lambda p: (title_map.get(p, strip_numeric_prefix(p.stem)) or "").lower())
-        parts.append(f'<div class="bc-tag">{html.escape(_tag_display_label(tag_key))}</div>')
-        parts.append('<ul class="bc-tag-pages">')
-        for p in pages_sorted:
-            href = os.path.relpath(relative_output_html(input_root, output_root, p), start=current_out_dir).replace(os.sep, "/")
-            label = (title_map.get(p, strip_numeric_prefix(p.stem)) or strip_numeric_prefix(p.stem)).replace("--", "–")
-            parts.append(f'<li><a href="{html.escape(href)}">{html.escape(label)}</a></li>')
-        parts.append("</ul>")
+        href = os.path.relpath(output_root / "theme" / slug / "index.html", start=current_out_dir).replace(os.sep, "/")
+        parts.append(f'<a href="{html.escape(href)}">{html.escape(entry["label"])}</a>')
     parts.append("</div></div>")
     return "".join(parts)
+
+
+def _theme_card_snippet(md_path: Path, max_len: int = 200) -> str:
+    """Short plain-text preview of a page for a theme landing card."""
+    try:
+        text = md_path.read_text(encoding="utf-8", errors="ignore")
+    except Exception:
+        return ""
+    text = strip_yaml_front_matter(text)
+    try:
+        text = strip_search_scaffolding(text)
+    except Exception:
+        pass
+    plain = _markdown_to_plain_text(text)
+    if len(plain) > max_len:
+        plain = plain[:max_len].rstrip() + "…"
+    return plain
+
+
+def write_theme_pages(input_root: Path, output_root: Path, site_title: str, themes_index: Dict[str, Dict[str, Any]],
+                      title_map: Dict[Path, str], breadcrumb_folder_pages_no_drafts: Dict[str, List[Path]]) -> None:
+    """Generate one search-results-style landing page per theme at /theme/<slug>/."""
+    en_dash = chr(0x2013)
+    for slug, entry in themes_index.items():
+        pages = entry.get("pages") or []
+        if not pages:
+            continue
+        out_dir = output_root / "theme" / slug
+        out_dir.mkdir(parents=True, exist_ok=True)
+        out_html_path = out_dir / "index.html"
+        label = entry.get("label") or _theme_display_label(slug)
+        assets_href = html.escape(os.path.relpath(output_root / "assets", start=out_dir).replace(os.sep, "/") + "/")
+
+        pages_sorted = sorted(pages, key=lambda p: (title_map.get(p, strip_numeric_prefix(p.stem)) or "").lower())
+        cards: List[str] = []
+        for p in pages_sorted:
+            href = os.path.relpath(relative_output_html(input_root, output_root, p), start=out_dir).replace(os.sep, "/")
+            title = (title_map.get(p, strip_numeric_prefix(p.stem)) or strip_numeric_prefix(p.stem)).replace("--", en_dash)
+            snippet = _theme_card_snippet(p)
+            cards.append(
+                f'<a class="list-group-item list-group-item-action" href="{html.escape(href)}">'
+                f'<div class="fw-semibold">{html.escape(title)}</div>'
+                f'<div class="small text-muted">{html.escape(snippet)}</div></a>'
+            )
+        n = len(pages_sorted)
+        intro = f'<p class="text-muted">{n} page{"" if n == 1 else "s"} in this theme.</p>'
+        content_html = f'<div class="theme-results">{intro}<div class="list-group">{"".join(cards)}</div></div>'
+
+        # Reuse the normal breadcrumb (Home + chapters) via a synthetic path under /theme/<slug>/.
+        synthetic_md = input_root / "theme" / slug / "index.md"
+        breadcrumb_data = build_breadcrumb_data(synthetic_md, input_root, output_root,
+                                                breadcrumb_folder_pages_no_drafts, title_map, out_dir)
+        themes_dropdown_html = render_themes_dropdown_html(themes_index, out_dir, output_root)
+        breadcrumb_html = render_breadcrumb_html(breadcrumb_data, tags_dropdown_html=themes_dropdown_html)
+
+        full_html = render_page_html(
+            page_title=label,
+            content_html=content_html,
+            site_title=site_title,
+            assets_href=assets_href,
+            breadcrumb_html=breadcrumb_html,
+        )
+        old = out_html_path.read_text(encoding="utf-8") if out_html_path.exists() else None
+        if old != full_html:
+            out_html_path.write_text(full_html, encoding="utf-8")
+            print(f"[THEME] /theme/{slug}/ ({n} pages)")
 
 
 def render_breadcrumb_html(breadcrumb_data: List[Dict[str, Any]], tags_dropdown_html: str = "") -> str:
@@ -5994,23 +6093,6 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         text-transform: uppercase;
         letter-spacing: .06em;
       }}
-      /* Tags dropdown (nested lists) */
-      .breadcrumb-item .bc-menu-tags .bc-tag {{
-        padding: 0.4rem 0.75rem 0.2rem;
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: var(--cm-muted);
-        border-top: 1px solid #eee;
-        /* keep tag labels in normal case (e.g. "Papers and Drafts") */
-      }}
-      .breadcrumb-item .bc-menu-tags .bc-tag-pages {{
-        list-style: none;
-        margin: 0;
-        padding: 0 0 0.15rem 0;
-      }}
-      .breadcrumb-item .bc-menu-tags .bc-tag-pages a {{
-        padding-left: 1.25rem;
-      }}
       .breadcrumb-separator {{
         opacity: 0.4;
         margin: 0 0.25rem;
@@ -6365,20 +6447,6 @@ def write_search_assets(input_root: Path, output_root: Path, title_map: Dict[Pat
             anchor_text.setdefault(id_match.group(1).lower(), clean_heading_text(html.unescape(body)))
 
         return anchor_text
-
-    def strip_search_scaffolding(markdown_text: str) -> str:
-        # Do not let generated related-link blocks or link-only contents lists rank as article body.
-        markdown_text = re.split(r"<!--\s*xrefs-v1\s*-->", markdown_text or "", maxsplit=1)[0]
-        kept_lines: List[str] = []
-        standalone_wikilink_re = re.compile(
-            r"^\s*(?:[-*+]\s+|\d+[.)]\s+)?\[\[[^\]]+\]\]\s*$"
-        )
-        toc_embed_re = re.compile(r"^\s*!toc\[\[[^\]]+\]\]\s*$", flags=re.IGNORECASE)
-        for line in markdown_text.splitlines():
-            if standalone_wikilink_re.match(line) or toc_embed_re.match(line):
-                continue
-            kept_lines.append(line)
-        return "\n".join(kept_lines)
 
     def is_hidden_search_page(md_path: Path) -> bool:
         # Search must match published navigation/PDF rules: any '!' segment is hidden
@@ -7355,9 +7423,9 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
     wikilink_index = build_wikilink_index(md_files, title_map)
     _tmark("write_pages: build_wikilink_index")
 
-    # Tag index for breadcrumb "Tags" dropdown (tag -> pages)
-    tags_index = build_tags_index(md_files_no_drafts, metadata_map)
-    _tmark("write_pages: build_tags_index")
+    # Theme index for breadcrumb "Themes" dropdown and per-theme landing pages (theme -> pages)
+    themes_index = build_themes_index(md_files_no_drafts, metadata_map)
+    _tmark("write_pages: build_themes_index")
 
     # Track missing references while building the site
     missing_images: Dict[str, Set[str]] = defaultdict(set)
@@ -8132,8 +8200,8 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             title_map,
             out_dir,
         )
-        tags_dropdown_html = render_tags_dropdown_html(tags_index, out_dir, input_root, output_root, title_map)
-        breadcrumb_html = render_breadcrumb_html(breadcrumb_data, tags_dropdown_html=tags_dropdown_html)
+        themes_dropdown_html = render_themes_dropdown_html(themes_index, out_dir, output_root)
+        breadcrumb_html = render_breadcrumb_html(breadcrumb_data, tags_dropdown_html=themes_dropdown_html)
 
         # Detect if this is the first page in a chapter (for special styling)
         is_chapter_start = False
@@ -8293,6 +8361,10 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
     # After writing content pages, write search index and search page
     write_search_assets(input_root, output_root, title_map)
     _tmark("write_pages: write_search_assets")
+
+    # Generate per-theme landing pages at /theme/<slug>/ (always rebuilt; cheap and avoids incremental staleness)
+    write_theme_pages(input_root, output_root, site_title, themes_index, title_map, breadcrumb_folder_pages_no_drafts)
+    _tmark("write_pages: write_theme_pages")
     # Save build + sidebar signatures (ensures assets dir exists due to write_search_assets)
     try:
         (output_root / "assets").mkdir(parents=True, exist_ok=True)
