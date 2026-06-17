@@ -1601,6 +1601,136 @@
         }
       }
     </style>
+<style id="garden-compose">/* gmist composable layer for the Causal Map Garden
+ * ===========================================================================
+ * Phase 2 of plans/garden-shared-styles.md (in the gmist repo). An ADDITIVE
+ * layer that gives Garden authors gmist's composable grammar (panel, cards,
+ * chip, bignum, highlight, the free colour axis, scale) so a file moves between
+ * gmist and the Garden and reads the same. The build appends it AFTER the
+ * Garden's own CSS, scoped to .content, so it can only ADD classes and never
+ * override an existing Garden rule. Remove this file to turn the layer off.
+ *
+ * Derived from the gmist house framework (app/styles/deck-base.css), CORE tier,
+ * with deliberate Garden adaptations:
+ *   - .callout* DROPPED: the Garden owns callouts (richer, PDF-tuned).
+ *   - .lead DROPPED: Bootstrap owns .lead.
+ *   - .card scoped under .cards: never clobber Bootstrap's .card.
+ *   - scope :is(.reveal,.preview) becomes .content.
+ *   - colour values kept as gmist's corporate-ish hexes (both token sets are
+ *     kept; see the decision in author-grammar.md). Re-point a hue to a
+ *     --cm-accent-* token here if it jars on a Garden page.
+ *   - animation-only axes (cascade, timing) omitted: nothing animates here.
+ * Grammar contract: docs/author-grammar.md in the gmist repo.
+ * =========================================================================== */
+
+/* gmist variables the components read (the Garden's :root does not define these). */
+.content { --ink: #1a1a2e; --teal-dark: #2a8a86; --grey-bg: #f4f6f9; }
+
+/* AXIS: COLOUR (variable-only). Sets the hue knobs a component fills with. */
+.content .blue   { --hue: #2b6cb0; --hue-bright: #76F7FF; --hue-pale: #eaf2fb; --hue-deep: #16314f; --on: #fff; }
+.content .green  { --hue: #217a52; --hue-bright: #00FFAF; --hue-pale: #e8f3ec; --hue-deep: #123f2b; --on: #fff; }
+.content .teal   { --hue: #2a8a86; --hue-bright: #76F7FF; --hue-pale: #e6f7f6; --hue-deep: #14403e; --on: #fff; }
+.content .grey   { --hue: #6b7280; --hue-bright: #cbd5e1; --hue-pale: #f4f6f9; --hue-deep: #3a3f44; --on: #fff; }
+.content .yellow { --hue: #e8b84b; --hue-bright: #F7ED73; --hue-pale: #fdf6e3; --hue-deep: #8a7d1a; --on: var(--ink); }
+.content .pink   { --hue: #d6336c; --hue-bright: #FF8FB8; --hue-pale: #fdeef3; --hue-deep: #a83a64; --on: #fff; }
+.content .cyan   { --hue: #0a9bc4; --hue-bright: #76F7FF; --hue-pale: #e6fdff; --hue-deep: #0a6f7a; --on: #fff; }
+.content .mint   { --hue: #0aa06a; --hue-bright: #00FFAF; --hue-pale: #e6fff6; --hue-deep: #0a6e4c; --on: #fff; }
+.content .navy   { --hue: #1F1F36; --hue-bright: #6DC4C8; --hue-pale: #e6e6ec; --hue-deep: #0e0e1c; --on: #fff; }
+.content .mag    { --hue: #DC378C; --hue-bright: #FF8FB8; --hue-pale: #fbe3ef; --hue-deep: #8a1f56; --on: #fff; }
+.content .white  { --hue: #ffffff; --hue-bright: #ffffff; --hue-pale: #ffffff; --hue-deep: #d9d9d9; --on: var(--ink); }
+.content .black  { --hue: #1a1a1a; --hue-bright: #3a3a3a; --hue-pale: #ececec; --hue-deep: #000000; --on: #fff; }
+/* A colour on its own (no component) tints the text. It also resets --fill to
+   the guaranteed-invalid value, so a coloured component nested inside a shaded
+   one (e.g. a .pink chip in a .light panel) fills with ITS hue, not the parent's
+   inherited --fill. A shade class on the same element sets --fill again after
+   this (source order), so colour+shade still works. */
+.content :is(.blue,.green,.teal,.grey,.yellow,.pink,.cyan,.mint,.navy,.mag,.white,.black) { color: var(--hue); --fill: initial; }
+
+/* AXIS: SHADE / ALIGN */
+.content .light { --fill: var(--hue-pale); --text: var(--ink); }
+.content .dark  { --fill: var(--hue-deep); --text: #fff; }
+.content .left   { text-align: left; }
+.content .center { text-align: center; }
+.content .right  { text-align: right; }
+
+/* Self-explanatory text aliases. */
+.content .accent { color: var(--teal-dark); font-weight: 700; }
+.content .footer { font-size: 0.85em; opacity: 0.65; }
+.content .fineprint { font-size: 0.8em; opacity: 0.6; line-height: 1.3; }
+
+/* COMPONENT: highlight (static, same look as a flare at rest). */
+.content .hl, .content .flare {
+  padding: 0.02em 0.22em; border-radius: 5px; font-weight: 700;
+  /* Always a bright pill: read --hue-bright, never the container's --fill shade
+     (a .dark ancestor sets --fill deep, which would paint dark-on-dark). */
+  background: var(--hue-bright, var(--hue, #F7ED73)); color: var(--ink);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+
+/* COMPONENT: panel (padded box with accent left border). */
+.content .panel {
+  background: var(--fill, var(--hue-pale, transparent));
+  border-left: 4px solid var(--hue, transparent); color: var(--text, var(--ink));
+  border-radius: 6px; padding: 0.7em 1em 0.7em 1.3em; margin: 0.6em 0; line-height: 1.4;
+}
+.content .panel > p:first-child strong:first-child,
+.content .panel > strong:first-child { color: var(--hue, inherit); }
+/* On a dark-shaded panel the lead's hue colour would sit on its own deep fill
+   and vanish, so flip it to the panel's light text. */
+.content .panel.dark > p:first-child strong:first-child,
+.content .panel.dark > strong:first-child { color: var(--text, #fff); }
+
+/* COMPONENT: flat tint / chip. */
+.content .bg { background: var(--fill, var(--hue-pale, transparent)); padding: 0.5em 0.7em; }
+.content .chip {
+  display: inline-block; padding: 0.12em 0.6em; border-radius: 999px;
+  font-size: 0.8em; font-weight: 700; line-height: 1.3; letter-spacing: 0.02em;
+  vertical-align: 0.1em; background: var(--fill, var(--hue, #888)); color: var(--on, var(--ink));
+}
+
+/* COMPONENT: cards grid + card (card scoped under .cards so Bootstrap's .card is untouched). */
+.content .cards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.6em; margin: 0.6em 0; align-items: start;
+}
+.content .cards > ul, .content .cards > ol { display: contents; }
+.content .cards > .card, .content .cards > li { margin: 0; line-height: 1.4; }
+.content .cards > .card, .content .cards li {
+  list-style: none; background: var(--fill, var(--hue, var(--grey-bg)));
+  color: var(--text, var(--on, var(--ink))); border-radius: 6px; padding: 0.6em 0.8em; line-height: 1.4;
+}
+.content .cards .card ul, .content .cards li ul { list-style: disc; margin-left: 1.1em; }
+.content .cards .card p, .content .cards li p { margin: 0; }
+.content .cards .card p + p { margin-top: 0.4em; }
+.content .cards.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.content .cards.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.content .cards.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.content .cards.cols-1 { grid-template-columns: 1fr; }
+
+/* COMPONENT: columns (side by side). */
+.content .columns { display: flex; gap: min(4vw, 1.5em); align-items: flex-start; }
+.content .columns > .column { display: block; flex: 1 1 auto; min-width: 0; }
+
+/* COMPONENT: big-number callout. */
+.content .bignum {
+  display: flex; align-items: center; gap: 0.8em; background: var(--bignum-box, #e6f7f6);
+  border-radius: 10px; padding: 0.7em 1em; margin: 0.6em 0;
+  color: var(--ink); /* its box is always light, so never inherit a dark ancestor's white text */
+}
+.content .bignum .fig {
+  font-size: 2.6em; font-weight: 800; color: var(--bignum-fig, var(--teal-dark)); line-height: 1; white-space: nowrap;
+}
+.content .bignum .fig small { font-size: 0.4em; font-weight: 700; }
+.content .bignum .bn-body p, .content .bignum p { margin: 0.15em 0; line-height: 1.4; }
+
+/* AXIS: SCALE (zoom; reflows). */
+.content .scale     { zoom: var(--scale, 1); }
+.content .scale-50  { zoom: 0.5; }  .content .scale-60  { zoom: 0.6; }  .content .scale-75  { zoom: 0.75; }
+.content .scale-80  { zoom: 0.8; }  .content .scale-90  { zoom: 0.9; }  .content .scale-100 { zoom: 1; }
+.content .scale-110 { zoom: 1.1; }  .content .scale-125 { zoom: 1.25; } .content .scale-150 { zoom: 1.5; }
+.content .scale-175 { zoom: 1.75; } .content .scale-200 { zoom: 2; }    .content .scale-250 { zoom: 2.5; }
+.content .scale-300 { zoom: 3; }
+</style>
 </link></head>
 <body data-fullscreen-default="false">
 <button aria-label="Toggle navigation" class="btn btn-outline-secondary btn-sm hamburger" id="hamburgerBtn" type="button">☰ Menu</button>
@@ -1635,7 +1765,7 @@
 <p>Causal reasoning is not a quaint feature of human cognition awaiting correction. It is the backbone of it. The word <em>folk</em> was always a way of holding ordinary minds at arm's length, of marking them as pre-scientific so that the real scientists could get on. Used for causation it is not just wrong, it is upside down, because the faculty being patronised is the one doing the patronising.</p>
 <p>So we will keep the verb and drop the slur. Humans remain the best detectors of causation, individually and collectively. Don't call us folk.</p>
 <p>See also: <a href="obsidian://open?file=010%20causal%20mapping%2F400%20realist%20causation.md">400 realist causation</a></p>
-<div class="references"><h2>References</h2><p class="reference">Maxwell (2004). <em>Causal Explanation, Qualitative Research, and Scientific Inquiry in Education</em>. <a href="http://journals.sagepub.com/doi/10.3102/0013189X033002003" rel="noopener" target="_blank">http://journals.sagepub.com/doi/10.3102/0013189X033002003</a>.</p><p class="reference">Maxwell (2004). <em>Using Qualitative Methods for Causal Explanation</em>. SAGE Publications Inc. <a href="https://doi.org/10.1177/1525822X04266831" rel="noopener" target="_blank">https://doi.org/10.1177/1525822X04266831</a>.</p></div>
+<div class="references"><h2>References</h2><p class="reference">Maxwell (2004). <em>Using Qualitative Methods for Causal Explanation</em>. SAGE Publications Inc. <a href="https://doi.org/10.1177/1525822X04266831" rel="noopener" target="_blank">https://doi.org/10.1177/1525822X04266831</a>.</p><p class="reference">Maxwell (2004). <em>Causal Explanation, Qualitative Research, and Scientific Inquiry in Education</em>. <a href="http://journals.sagepub.com/doi/10.3102/0013189X033002003" rel="noopener" target="_blank">http://journals.sagepub.com/doi/10.3102/0013189X033002003</a>.</p></div>
 <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a class="link-secondary" href="https://causalmap.app">Causal Map Ltd</a> 2026</span> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" style="height:18px;opacity:0.7;vertical-align:middle;"/></a><a class="link-secondary ms-2" href="https://app.causalmap.app" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>
 </main>
 <aside class="rightbar"><h2>On this page</h2><div class="hover-cue">Hover to view</div><div class="toc"><div class="toc">
