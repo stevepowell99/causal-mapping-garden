@@ -12,6 +12,7 @@
 
 # Source build tooling (versioned for recovery; no secrets in these)
 !build_static_site.py
+!garden-compose.css
 !config.yml
 !watch_and_build.ps1
 !run_build_scheduled.bat

@@ -3989,6 +3989,80 @@ def preprocess_markdown_in_wrapper_divs(md_text: str) -> str:
     return _MD_IN_HTML_WRAPPER_RE.sub(_inject, md_text)
 
 
+# gmist composable block grammar: Pandoc `::: {.class}` fenced divs. A line of
+# colons plus a brace or word opens a div; a bare line of colons closes the most
+# recent one (same pairing gmist's slides build uses). Each div carries
+# markdown="1" so md_in_html parses its inner markdown and any nested divs. The
+# `:::` syntax was unused in Garden content, so existing pages are untouched.
+_FENCE_OPEN_BRACED = re.compile(r'^\s*:{3,}\s*\{([^}]*)\}\s*$')
+_FENCE_OPEN_BARE = re.compile(r'^\s*:{3,}\s+(\S.*?)\s*$')
+_FENCE_CLOSE = re.compile(r'^\s*:{3,}\s*$')
+
+
+def _pandoc_attrs_to_html(attr: str) -> str:
+    """Turn a Pandoc attr spec (.class #id style=\"..\" width=..) into HTML attrs."""
+    classes = re.findall(r'\.([\w-]+)', attr)
+    id_m = re.search(r'#([\w-]+)', attr)
+    styles: List[str] = []
+    style_m = re.search(r'\bstyle="([^"]*)"', attr)
+    if style_m:
+        styles.append(style_m.group(1).rstrip(';'))
+    w_m = re.search(r'\bwidth="?([\d.]+(?:%|px|em|rem|vw)?)"?', attr)
+    if w_m and 'width' not in ';'.join(styles):
+        styles.append(f'width:{w_m.group(1)}')
+    out = ''
+    if classes:
+        out += f' class="{" ".join(classes)}"'
+    if id_m:
+        out += f' id="{id_m.group(1)}"'
+    if styles:
+        out += f' style="{";".join(styles)}"'
+    return out
+
+
+_INLINE_SPAN_RE = re.compile(r'\[([^\]]+)\]\{([^}]+)\}')
+
+
+def preprocess_inline_spans(md_text: str) -> str:
+    """Convert gmist `[text]{.class}` inline spans to <span>. Python-Markdown's
+    attr_list does not build a span from bare brackets, so without this the
+    markup renders literally. Links and images use `](url){...}`, so the `]{`
+    requirement here never matches them."""
+    def repl(m: "re.Match[str]") -> str:
+        text, attr = m.group(1), m.group(2)
+        attrs = _pandoc_attrs_to_html(attr)
+        return f'<span{attrs}>{text}</span>' if attrs else text
+    return _INLINE_SPAN_RE.sub(repl, md_text)
+
+
+def preprocess_fenced_divs(md_text: str) -> str:
+    """Convert gmist/Pandoc `::: {.class}` fenced divs to nestable markdown divs."""
+    lines = md_text.splitlines()
+    out: List[str] = []
+    depth = 0
+    for line in lines:
+        braced = _FENCE_OPEN_BRACED.match(line)
+        bare = None if braced else _FENCE_OPEN_BARE.match(line)
+        close = _FENCE_CLOSE.match(line)
+        if close and depth > 0:
+            depth -= 1
+            out += ['', '</div>', '']
+        elif braced or bare:
+            if braced:
+                attr = braced.group(1)
+            elif bare:
+                # bare form: the words after the colons are bare class names
+                attr = ' '.join('.' + w for w in bare.group(1).split() if re.match(r'^[\w-]+$', w))
+            else:
+                attr = ''
+            depth += 1
+            out += ['', f'<div{_pandoc_attrs_to_html(attr)} markdown="1">', '']
+        else:
+            out.append(line)
+    out += ['</div>'] * depth
+    return '\n'.join(out)
+
+
 _SPAN_COLS_MARKER_RE = re.compile(r'^\s*<!--\s*span-cols\s*-->\s*$')
 
 
@@ -4074,6 +4148,8 @@ def convert_markdown_to_html(md_text: str) -> str:
     md_text = preprocess_column_blocks(md_text)
     md_text = preprocess_obsidian_callouts(md_text)
     md_text = preprocess_callout_blocks(md_text)
+    md_text = preprocess_fenced_divs(md_text)
+    md_text = preprocess_inline_spans(md_text)
     md_text = preprocess_heading_attributes(md_text)
     md_text = ensure_blank_lines_before_lists(md_text)
     md_text = preprocess_highlight_syntax(md_text)
@@ -4095,6 +4171,8 @@ def convert_markdown_with_toc(md_text: str) -> Tuple[str, str]:
     md_text = preprocess_column_blocks(md_text)
     md_text = preprocess_obsidian_callouts(md_text)
     md_text = preprocess_callout_blocks(md_text)
+    md_text = preprocess_fenced_divs(md_text)
+    md_text = preprocess_inline_spans(md_text)
     md_text = preprocess_heading_attributes(md_text)
     md_text = ensure_blank_lines_before_lists(md_text)
     md_text = preprocess_highlight_syntax(md_text)
@@ -4740,6 +4818,20 @@ def _extract_first_img_src(content_html: str) -> str:
         return ""
     except Exception:
         return ""
+
+
+# gmist composable layer (Phase 2 of the gmist garden-shared-styles plan): the
+# CSS is read once and appended AFTER the site's own styles, so it can only ADD
+# classes scoped to .content, never override a Garden rule. Delete the file to
+# turn the layer off.
+def _load_garden_compose_css() -> str:
+    try:
+        return (Path(__file__).parent / "garden-compose.css").read_text(encoding="utf-8")
+    except OSError:
+        return ""
+
+
+GARDEN_COMPOSE_CSS = _load_garden_compose_css()
 
 
 def render_page_html(page_title: Optional[str], content_html: str, site_title: str, page_anchor: Optional[str] = None, toc_html: Optional[str] = None, links_html: Optional[str] = None, backlinks_html: Optional[str] = None, prev_href: Optional[str] = None, next_href: Optional[str] = None, prev_title: Optional[str] = None, next_title: Optional[str] = None, pdf_link_html: Optional[str] = None, assets_href: str = "assets/", breadcrumb_html: Optional[str] = None, is_chapter_start: bool = False, chapter_subtitle: Optional[str] = None, page_anchor_routing_map: Optional[Dict[str, str]] = None, head_meta_html: str = "", page_icon: Optional[str] = None, page_layout: Optional[str] = None, sidebar_footer_html: str = "", is_paper_page: bool = False) -> str:
@@ -6145,6 +6237,7 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         }}
       }}
     </style>
+    <style id="garden-compose">{GARDEN_COMPOSE_CSS}</style>
   </head>
   <body{body_attr} data-fullscreen-default="{str(is_fullscreen_layout).lower()}">
     <button id=\"hamburgerBtn\" class=\"btn btn-outline-secondary btn-sm hamburger\" type=\"button\" aria-label=\"Toggle navigation\">☰ Menu</button>
@@ -8732,7 +8825,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--bib",
         type=Path,
-        default=Path("C:/Users/Zoom/Zotero-cm/My Library.bib"),
+        # Shared Zotero export at the Causal Map Drive root (machine-independent:
+        # resolves relative to this script, two levels up to the Causal Map folder).
+        default=Path(__file__).resolve().parents[2] / "MyLibrary.bib",
         help="Path to a BibTeX library for APA citation conversion in PDFs",
     )
     parser.add_argument(
