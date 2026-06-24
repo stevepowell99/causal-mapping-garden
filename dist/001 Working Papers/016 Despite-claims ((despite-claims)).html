@@ -5,18 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Despite-claims</title>
-    <meta name="description" content="24 Jan 2026 &quot;Despite&quot; coding # The problem: countervailing conditions that “failed” # Narratives often contain claims of the form: “E happened despite Z.” Examples: “The heavy rains made the river levels rise, despite th">
+    <meta name="description" content="24 Jan 2026 &quot;Despite&quot; coding # Start with minimalist causal mapping # Causal mapping is a way of analysing what people say about causes. We read a text, an interview, a report, an open survey answer, and wherever someone">
     <link rel="canonical" href="https://garden.causalmap.app/001%20Working%20Papers/016%20Despite-claims%20%28%28despite-claims%29%29.html">
     <meta property="og:title" content="Despite-claims">
-    <meta property="og:description" content="24 Jan 2026 &quot;Despite&quot; coding # The problem: countervailing conditions that “failed” # Narratives often contain claims of the form: “E happened despite Z.” Examples: “The heavy rains made the river levels rise, despite th">
+    <meta property="og:description" content="24 Jan 2026 &quot;Despite&quot; coding # Start with minimalist causal mapping # Causal mapping is a way of analysing what people say about causes. We read a text, an interview, a report, an open survey answer, and wherever someone">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://garden.causalmap.app/001%20Working%20Papers/016%20Despite-claims%20%28%28despite-claims%29%29.html">
     <meta property="og:site_name" content="">
-    <meta property="og:image" content="https://garden.causalmap.app/img/f2b956db7932466d894f98ea81fbee94--Untitled 1.png">
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Despite-claims">
-    <meta name="twitter:description" content="24 Jan 2026 &quot;Despite&quot; coding # The problem: countervailing conditions that “failed” # Narratives often contain claims of the form: “E happened despite Z.” Examples: “The heavy rains made the river levels rise, despite th">
-    <meta name="twitter:image" content="https://garden.causalmap.app/img/f2b956db7932466d894f98ea81fbee94--Untitled 1.png">
+    <meta name="twitter:description" content="24 Jan 2026 &quot;Despite&quot; coding # Start with minimalist causal mapping # Causal mapping is a way of analysing what people say about causes. We read a text, an interview, a report, an open survey answer, and wherever someone">
+    <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='8' fill='%2390c3c6'/></svg>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -470,6 +470,25 @@
         z-index: 5;
       }
       .content .pdf-links a { margin-left: .5rem; white-space: nowrap; }
+      /* On paper/article pages, make the per-page PDF link far more visible,
+         and pulse it gently for a few seconds after the page loads. */
+      .content.paper-page .pdf-links a.tr-float {
+        color: #1d4ed8;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        animation: pdf-pulse 0.9s ease-in-out 0s 4;
+        transform-origin: center;
+        display: inline-block;
+      }
+      .content.paper-page .pdf-links a.tr-float:hover { text-decoration: underline; }
+      @keyframes pdf-pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.22); opacity: 0.6; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .content.paper-page .pdf-links a.tr-float { animation: none; }
+      }
       .content .fullscreen-enter { font-size: 1.1rem; color: #6c757d; text-decoration: none; margin-left: .35rem; }
       .content .fullscreen-enter:hover { color: #1d4ed8; }
       body.layout-fullscreen .fullscreen-enter { display: none !important; }
@@ -1745,111 +1764,224 @@
         <div class="page-title-row d-flex justify-content-between align-items-center"><div class="page-title" id="despite-claims">Despite-claims<a aria-label='Permalink' class='anchor-link' href='/despite-claims'>#</a></div></div><hr />
         <div class="paper"><div class="mb-3"><span class="badge text-bg-light border"><i class="far fa-calendar"></i> 24 Jan 2026</span></div>
 <h2 class="banner-info" id="despite-coding">"Despite" coding<a aria-label="Permalink" class="anchor-link" href="#despite-coding">#</a></h2>
-<h3 class="rounded-info" id="the-problem-countervailing-conditions-that-failed">The problem: countervailing conditions that “failed”<a aria-label="Permalink" class="anchor-link" href="#the-problem-countervailing-conditions-that-failed">#</a></h3>
-<p>Narratives often contain claims of the form:</p>
-<div class="callout callout-note">
-<p>“E happened despite Z.”</p>
+<h3 class="rounded-info" id="start-with-minimalist-causal-mapping">Start with minimalist causal mapping<a aria-label="Permalink" class="anchor-link" href="#start-with-minimalist-causal-mapping">#</a></h3>
+<p>Causal mapping is a way of analysing what people say about causes. We read a text, an interview, a report, an open survey answer, and wherever someone claims that one thing influences another, we code that claim as a link. If a respondent says that the heat made them thirsty, we write down a link from <code>Heat</code> to <code>Feeling thirsty</code>, together with a note of where it came from. That is the whole basic move, and it is easy: find a causal claim, record the cause, the effect, and the source. (See  and .)</p>
+<p>A single coded link looks like this: a box for the cause, a box for the effect, and an arrow from one to the other.</p>
+<div class="mermaid">
+
+flowchart LR
+  heat("Heat")
+  thirsty("Feeling thirsty")
+  heat ==&gt; thirsty
+  classDef factor fill:#EAF7F8,stroke:#6DC4C8,stroke-width:2px,color:#1F1F36;
+  classDef outcome fill:#6DC4C8,stroke:#1F1F36,stroke-width:2px,color:#1F1F36;
+  class heat factor
+  class thirsty outcome
+  linkStyle 0 stroke:#1F1F36,stroke-width:2.5px
 </div>
-<p>Examples:</p>
-<ul>
-<li>“The heavy rains made the river levels rise, <strong>despite</strong> the prevention and clearance work.”</li>
-<li>“<strong>Despite</strong> me reminding him multiple times, he missed the train.”</li>
-</ul>
-<p>In ordinary language, the “despite” clause does two things at once:</p>
+<p>Gather many such links from many sources and they join into a causal map.</p>
+<p>This short paper is about the formal coding part. The question is not whether "despite" matters, but how to record these near-misses and failures so they mean something inside the coding system, rather than as a handwavy line with a funny arrow on it. Our  approach codes only bare cause-to-effect links and leaves most detail off the link. "Despite" is one of a small set of extensions to that base (alongside opposites and sentiment, see ): a defined link type that the app can store, filter and count, the same as any other link.</p>
+<h3 class="rounded-info" id="the-puzzle-an-influence-that-could-have-worked-but-did-not">The puzzle: an influence that could have worked, but did not<a aria-label="Permalink" class="anchor-link" href="#the-puzzle-an-influence-that-could-have-worked-but-did-not">#</a></h3>
+<p>Narratives do not only tell us what worked. Sometimes they tell us about an influence that could have worked but did not. Someone says:</p>
+<div class="callout callout-note">
+<p>"The river still rose, despite the flood-prevention work."</p>
+</div>
+<p>The flood-prevention work is the kind of thing that pushes against rising water. It had some causal power to hold the river down. In realist terms (see ) it was a real influence with a real tendency to work against the outcome. But on this occasion it was not enough: maybe something pushed harder the other way, and the river rose anyway.</p>
+<p>This sentence names only the prevention work, not whatever drove the river up. The dashed pink arrow records the influence that was present but failed.</p>
+<div class="mermaid">
+
+flowchart LR
+  prev("Flood-prevention&lt;br/&gt;work")
+  river("River levels rose")
+  prev -. despite .-&gt; river
+  classDef factor fill:#EAF7F8,stroke:#6DC4C8,stroke-width:2px,color:#1F1F36;
+  classDef outcome fill:#6DC4C8,stroke:#1F1F36,stroke-width:2px,color:#1F1F36;
+  class prev factor
+  class river outcome
+  linkStyle 0 stroke:#FF8FB8,stroke-width:2.5px
+</div>
+<p>"Despite" claims come in two flavours, depending on which way the failed influence was meant to push. Basically it's the same thing, but we tend to express them a bit differently in words.</p>
+<p><strong>A blocking influence that failed.</strong> Z was the sort of thing expected to prevent or reduce E, but E happened anyway. The flood-prevention work above is this kind: it should have held the river down, and the river rose all the same.</p>
+<p><strong>A helping influence that failed.</strong> Z was the sort of thing expected to bring about or increase E, but E did not happen. For example:</p>
+<div class="callout callout-note">
+<p>"Despite the extra coaching, her grades did not improve."</p>
+</div>
+<p>The coaching had the causal power to lift her grades. It was a real, relevant influence. But the improvement did not come.</p>
+<div class="mermaid">
+
+flowchart LR
+  coach("Extra coaching")
+  grades("Better grades")
+  coach -. despite .-&gt; grades
+  classDef factor fill:#EAF7F8,stroke:#6DC4C8,stroke-width:2px,color:#1F1F36;
+  classDef outcome fill:#6DC4C8,stroke:#1F1F36,stroke-width:2px,color:#1F1F36;
+  class coach factor
+  class grades outcome
+  linkStyle 0 stroke:#FF8FB8,stroke-width:2.5px
+</div>
+<p>Either way, the despite clause carries two pieces of information at once:</p>
 <ol>
-<li>It signals that <strong>Z was expected to prevent or reduce E</strong> (a countervailing influence).</li>
-<li>It asserts that <strong>E happened anyway</strong> (so Z was insufficient, absent, overridden, or ineffective in that case).</li>
+<li>A relevant influence was present. Z had the causal power to push the outcome one way, whether to block it or to help it.</li>
+<li>On this occasion it failed. Z was insufficient, absent or overridden, so the outcome went the other way.</li>
 </ol>
-<p>If we only code the main causal claim (e.g. <code>Heavy rains -&gt; River levels rose</code>), we lose potentially important information about attempted mitigations, resistance, barriers, or protective factors.</p>
-<p>But it is also usually wrong to code the “despite” clause as an ordinary positive causal link, e.g. <code>Prevention work -&gt; River levels rose</code>, because that flips the intended meaning on its head.</p>
-<h3 class="rounded-info" id="the-convention-a-despite-link-type-or-tag">The convention: a “despite” link type (or tag)<a aria-label="Permalink" class="anchor-link" href="#the-convention-a-despite-link-type-or-tag">#</a></h3>
-<p>We therefore treat “despite” as a <strong>link type</strong>, not a different semantics for <code>-&gt;</code>.</p>
+<h3 class="rounded-info" id="why-the-obvious-options-both-fail">Why the obvious options both fail<a aria-label="Permalink" class="anchor-link" href="#why-the-obvious-options-both-fail">#</a></h3>
+<p>What should a coder do with the "despite" clause?</p>
+<ul>
+<li>If we code an ordinary link <code>Flood-prevention work -&gt; River rose</code>, we assert the opposite of what the speaker meant, namely that the prevention work made the river rise.</li>
+<li>If we ignore the clause and code nothing, we throw away both pieces of information above: that a countervailing influence was present, and that on this occasion it failed, and the other thing happened (or failed to happen).</li>
+</ul>
+<p>Neither is satisfactory. We want to keep the speaker's meaning and keep the information.</p>
+<h3 class="rounded-info" id="but-couldnt-you-just-use-opposing-arrows-like-in-systems-modelling">But couldn't you just use opposing arrows like in systems modelling?<a aria-label="Permalink" class="anchor-link" href="#but-couldnt-you-just-use-opposing-arrows-like-in-systems-modelling">#</a></h3>
+<p>A systems modeller will say there is no problem here. Code two arrows into the outcome: a positive one from the rains, which raise the river, and a negative one from the prevention work, which lowers it. Whichever is stronger wins, and the river's level is the net result. For systems modelling that is a reasonable move, and it is roughly how signed, weighted influence diagrams already work.</p>
+<p>But look at what it takes to make those arrows say what the speaker said. To record that the prevention work lost and the river rose anyway, the modeller has to put magnitudes on the two arrows and compute a resultant, or add further codes for "this one prevailed". The opposing-arrows picture on its own does not tell you which side won, or whether the outcome actually happened.</p>
+<p>The real difference is that we are not building a model of the river system. We are encoding what people say and think: claims, cognitions, something much closer to language than to a quantitative model of forces (see  and ). When someone says "in spite of", "although" or "even though", they are expressing an idea with a particular flavour (see Talmy 1988): they name an influence that was real and relevant, then set it aside as having failed. It is open to question whether two opposing arrows, one a little larger than the other, captures that idea at all.</p>
+<p>So despite-coding is an extension we add to capture, in the language of claims, something a systems modeller can arguably get out of the box from signed and weighted arrows. The trade is straightforward: we stay close to what people say and pay for it with one extra link type, where the systems modeller pays for the net-result calculation with numbers and machinery which as humble causal mappers we do not have or want.</p>
+<h3 class="rounded-info" id="the-convention-a-despite-link-type-or-tag">The convention: a "despite" link type (or tag)<a aria-label="Permalink" class="anchor-link" href="#the-convention-a-despite-link-type-or-tag">#</a></h3>
+<p>We therefore treat "despite" as a special <strong>link type</strong>.</p>
 <p>A minimal encoding is:</p>
 <ul>
-<li><strong>Main link</strong> (ordinary): <code>X -&gt; E</code></li>
-<li><strong>Despite link</strong> (typed/tagged): <code>Z -despite-&gt; E</code></li>
+<li><strong>Main link</strong> (ordinary): <code>Heavy rain -&gt; River rose</code></li>
+<li><strong>Despite link</strong> (typed or tagged): <code>Flood-prevention work -despite-&gt; River rose</code></li>
 </ul>
-<p>Equivalently (in a plain links table), keep the same <code>Cause</code> and <code>Effect</code> columns but add either:</p>
+<p>Equivalently, in a plain links table, we keep the same <code>Cause</code> and <code>Effect</code> columns but add either:</p>
 <ul>
-<li>a <code>link_type</code> column with values like <code>normal</code> vs <code>despite</code>, or</li>
-<li>a <code>link_tags</code> column containing a tag like <code>#despite</code>.</li>
+<li>a <code>link_type</code> column with values like <code>normal</code> and <code>despite</code>, or</li>
+<li>a <code>link_tags</code> column holding a tag like <code>#despite</code>.</li>
 </ul>
-<p>The key idea is that <code>-despite-&gt;</code> does <strong>not</strong> mean “Z caused E”. It means:</p>
+<p>This is the same idea as attaching other metadata to a link (see ). The point is that <code>-despite-&gt;</code> does <strong>not</strong> mean "Z caused E". It means one of the two flavours above:</p>
 <div class="callout callout-note">
-<p>“Z was presented as a countervailing influence against E, in virtue of its causal power to work against E, but E occurred anyway.”</p>
+<p>"Z was presented as a countervailing influence against E, in virtue of its causal power to work against E, but E occurred anyway." (the blocking case)</p>
 </div>
-<h3 class="rounded-info" id="what-can-we-do-with-despite-links">What can we do with “despite” links?<a aria-label="Permalink" class="anchor-link" href="#what-can-we-do-with-despite-links">#</a></h3>
-<p>Because the distinction is explicit in the links table, we can decide—per analysis—how to treat these links:</p>
+<p>or</p>
+<div class="callout callout-note">
+<p>"Z was presented as an influence in favour of E, in virtue of its causal power to do so, but E failed to occur anyway." (the helping case)</p>
+</div>
+<p>In a map, the ordinary link and the despite link both point at the same effect, but they look different: the solid arrow is the ordinary influence, the dashed pink arrow is the despite link.</p>
+<div class="mermaid">
+
+flowchart LR
+  X("X")
+  Z("Z")
+  E("E")
+  X ==&gt; E
+  Z -. despite .-&gt; E
+  classDef factor fill:#EAF7F8,stroke:#6DC4C8,stroke-width:2px,color:#1F1F36;
+  classDef outcome fill:#6DC4C8,stroke:#1F1F36,stroke-width:2px,color:#1F1F36;
+  class X,Z factor
+  class E outcome
+  linkStyle 0 stroke:#1F1F36,stroke-width:2.5px
+  linkStyle 1 stroke:#FF8FB8,stroke-width:2.5px
+</div>
+<h3 class="rounded-info" id="what-can-we-do-with-despite-links">What can we do with "despite" links?<a aria-label="Permalink" class="anchor-link" href="#what-can-we-do-with-despite-links">#</a></h3>
+<p>Because the distinction is explicit in the links table, we can decide, per analysis, how to treat these links:</p>
 <ul>
-<li><strong>Visualise</strong> them distinctly (different colour/line style), so the map shows “tensions” rather than silently dropping them or misreading them.</li>
-<li><strong>Filter</strong>: show only <code>despite</code> links to see what people present as failed protections / resistances / mitigations.</li>
-<li><strong>Compare</strong>: for similar outcomes, do some sources describe Z as effective (ordinary preventive claim, e.g. <code>Z -&gt; ~E</code>) while others describe “despite” failures (<code>Z -despite-&gt; E</code>)? That contrast can be analytically important.</li>
-<li><strong>Count separately</strong>: include them in evidence tallies only under a separate counter (e.g. <code>Despite_Citation_Count</code>) so you don’t accidentally inflate evidence for “Z causes E”.</li>
+<li><strong>Visualise</strong> them distinctly, with a different colour or line style, so the map shows the tension rather than dropping it or misreading it.</li>
+<li><strong>Filter</strong> to show only <code>despite</code> links, to see what people present as failed protections, resistances or mitigations.</li>
+<li><strong>Compare</strong>: for similar outcomes, do some sources describe Z as effective, an ordinary preventive claim written <code>Z -&gt; ~E</code> (the tilde <code>~</code> marks the opposite of a factor, so <code>~E</code> means E did not happen, or the opposite of E; see ), while others describe a "despite" failure (<code>Z -despite-&gt; E</code>)? That contrast can matter analytically.</li>
+<li><strong>Count separately</strong>, under their own counter (for example <code>Despite_Citation_Count</code>), so you do not accidentally inflate the evidence for "Z causes E" (on counting evidence, see  and ).</li>
+<li><strong>Count together</strong>, so we can at least see how often this causal power was present regardless of whether it was effective or not.</li>
 </ul>
-<h3 class="rounded-info" id="worked-example">Worked example<a aria-label="Permalink" class="anchor-link" href="#worked-example">#</a></h3>
+<h3 class="rounded-info" id="worked-examples">Worked examples<a aria-label="Permalink" class="anchor-link" href="#worked-examples">#</a></h3>
 <p>Text:</p>
 <div class="callout callout-note">
-<p>“The heavy rains made the river levels rise, despite the prevention and clearance work.”</p>
+<p>"The heavy rains made the river levels rise, despite the prevention and clearance work."</p>
 </div>
 <p>Coding:</p>
 <ul>
 <li><code>Heavy rains -&gt; River levels rose</code></li>
 <li><code>Prevention and clearance work -despite-&gt; River levels rose</code></li>
 </ul>
-<p>This preserves the main mechanism while also storing the claim that a mitigation was present but insufficient.</p>
-<h3 class="rounded-info" id="optional-background-force-dynamics-why-despite-is-cognitively-natural">Optional background: force dynamics (why “despite” is cognitively natural)<a aria-label="Permalink" class="anchor-link" href="#optional-background-force-dynamics-why-despite-is-cognitively-natural">#</a></h3>
-<p>Leonard Talmy’s “force dynamics” treats many causal expressions as patterned talk about forces: an <strong>Agonist</strong> with a tendency (towards motion/rest) and an <strong>Antagonist</strong> that counters it. “Despite” is a canonical force-dynamics marker: it signals a countervailing force that failed to stop the outcome.</p>
-<p>You do not need this theory to use <code>-despite-&gt;</code> coding; it is only a helpful explanation of why “despite” claims feel different from ordinary causal claims, and why it can be worth capturing them explicitly.</p>
-<p>Despite is important cos it shows casual powers can fail</p>
-<h2 class="banner-info" id="hard-cases-brief-notes">Hard cases (brief notes)<a aria-label="Permalink" class="anchor-link" href="#hard-cases-brief-notes">#</a></h2>
+<p>This keeps the main mechanism while also recording that a mitigation was present but insufficient.</p>
+<p>As a map, the two links sit side by side on the same outcome. The solid arrow is the ordinary influence; the dashed pink arrow is the despite link.</p>
+<div class="mermaid">
+
+flowchart LR
+  rain("Heavy rains")
+  prev("Prevention and&lt;br/&gt;clearance work")
+  river("River levels rose")
+  rain ==&gt; river
+  prev -. despite .-&gt; river
+  classDef factor fill:#EAF7F8,stroke:#6DC4C8,stroke-width:2px,color:#1F1F36;
+  classDef outcome fill:#6DC4C8,stroke:#1F1F36,stroke-width:2px,color:#1F1F36;
+  class rain,prev factor
+  class river outcome
+  linkStyle 0 stroke:#1F1F36,stroke-width:2.5px
+  linkStyle 1 stroke:#FF8FB8,stroke-width:2.5px
+</div>
+<p>Sometimes the speaker gives no positive cause at all, only the countervailing one that failed:</p>
+<div class="callout callout-note">
+<p>"Despite me reminding him several times, he still missed the train."</p>
+</div>
+<p>Here the only thing to code is the despite link. The reminders had the power to prevent the missed train, but did not.</p>
+<div class="mermaid">
+
+flowchart LR
+  remind("Repeated reminders")
+  miss("He missed the train")
+  remind -. despite .-&gt; miss
+  classDef factor fill:#EAF7F8,stroke:#6DC4C8,stroke-width:2px,color:#1F1F36;
+  classDef outcome fill:#6DC4C8,stroke:#1F1F36,stroke-width:2px,color:#1F1F36;
+  class remind factor
+  class miss outcome
+  linkStyle 0 stroke:#FF8FB8,stroke-width:2.5px
+</div>
+<h3 class="rounded-info" id="optional-background-force-dynamics">Optional background: force dynamics<a aria-label="Permalink" class="anchor-link" href="#optional-background-force-dynamics">#</a></h3>
+<p>You do not need any theory to use <code>-despite-&gt;</code> coding. But it helps to know why "despite" claims feel different from ordinary causal claims.</p>
+<p>Leonard Talmy's "force dynamics" (Talmy 1988) treats much of our causal talk as patterned talk about forces: an <strong>Agonist</strong> with a tendency, towards motion or rest, and an <strong>Antagonist</strong> that counters it. Talmy analyses "causing" into finer ideas that include "letting", "hindering" and "helping", and notes that the same pattern runs from the physical through to the psychological and social. "Despite" is a canonical force-dynamics marker: it signals a countervailing force that failed to stop the outcome. "The ball kept rolling despite the long grass" has the ball as Agonist and the grass as the Antagonist that did not prevail.</p>
+<p>This is why "despite" is worth capturing explicitly: it shows that a causal power was present and was overcome, which is information about how the world works, not just noise to discard.</p>
+<h3 class="rounded-info" id="hard-cases-brief-notes">Hard cases (brief notes)<a aria-label="Permalink" class="anchor-link" href="#hard-cases-brief-notes">#</a></h3>
 <ul>
-<li><strong>“Despite” + opposites</strong>: should <code>Z -despite-&gt; E</code> be treated as evidence for <code>Z -&gt; ~E</code>? Usually no; treat it as its own link type, or at most as weaker evidence depending on your analysis goal.</li>
-<li><strong>Bipolar concepts</strong>: some pairs (employment/unemployment) have high cosine similarity (similar contexts) but are "opposite" in ordinary talk. This is why sentiment often becomes relevant when doing AI-assisted clustering/aggregation.</li>
+<li><strong>"Despite" plus opposites</strong>: should <code>Z -despite-&gt; E</code> count as evidence for <code>Z -&gt; ~E</code>? Usually no. Treat it as its own link type, or at most as weaker evidence, depending on the analysis goal. See  for how opposites and sentiment interact with this.</li>
+<li><strong>Bipolar concepts</strong>: some pairs (employment and unemployment) are mentioned in very similar contexts but are opposite in ordinary talk. This is why also coding sentiment often becomes very useful when doing AI-assisted clustering and aggregation.</li>
 </ul>
-<h3 class="rounded-info" id="41-force-dynamics-agonists-and-antagonists-in-latent-space">4.1 Force Dynamics: Agonists and Antagonists in Latent Space<a aria-label="Permalink" class="anchor-link" href="#41-force-dynamics-agonists-and-antagonists-in-latent-space">#</a></h3>
-<p>Leonard Talmy’s theory of <strong>Force Dynamics</strong> posits that human causal understanding is rooted in the interplay of forces: an <strong>Agonist</strong> (the entity with a tendency towards motion or rest) and an <strong>Antagonist</strong> (the opposing force).   </p>
+<h3 class="rounded-info" id="a-more-formal-picture">A more formal picture<a aria-label="Permalink" class="anchor-link" href="#a-more-formal-picture">#</a></h3>
+<p>This puts despite-coding into the grammar of <a class="wikilink" href="/formalisation">A formalisation of causal mapping</a>. There, an ordinary link is read with rule COD-ATOM as "Source S claims that X causally influenced Y in virtue of its causal power to do so", and rule INF-FACT lets us deduce from any link that S claims X happened and Y happened. A despite link adds another link type to that grammar.</p>
+<p><strong>Semantics (the blocking case).</strong> A row <code>X -despite-&gt; Y</code> from source S is read as:</p>
+<div class="callout callout-note">
+<p>Source S claims that X happened, and Y happened, and X had some causal power to make <code>~Y</code> (to work against Y), but X did not prevail.</p>
+</div>
+<p><strong>Three deductions, three lists.</strong> From that one row we can deduce three things, each feeding a different query (compare INF-FACT):</p>
 <ul>
-<li><em>Linguistic Patterns:</em> "The ball kept rolling despite the grass" (Agonist: Ball; Antagonist: Grass). "He let the book fall" (Removal of Antagonist).</li>
-<li>
-<p><em>LLM Evaluation:</em> Recent studies  have tested LLMs on translating and explaining these force-dynamic constructions.   </p>
-<ul>
-<li><strong>Findings:</strong> GPT-4 demonstrates a sophisticated grasp of these concepts. When translating "He let the greatcoat fall" into languages like Finnish or Croatian, the model correctly selects verbs that convey "cessation of impingement" (allowing) rather than "onset of causation" (pushing).   </li>
-<li><strong>Implication:</strong> This suggests that LLMs have acquired a <strong>schematic semantic structure</strong> of causality. They do not merely predict words; they map the <em>roles</em> of entities in a physical interaction. However, this capability degrades in abstract social contexts. For example, in the sentence "Being at odds with her father made her uncomfortable," models sometimes misidentify the Agonist/Antagonist relationship, struggling to map "emotional force" as accurately as "physical force".   </li>
+<li><strong>X occurred (with caveats).</strong> S claims X happened. So when listing claims that the Xs happened, include despite links, with the caveat that "despite" sometimes frames X as only partly realised or as what should have been done.</li>
+<li><strong>Y occurred.</strong> S claims Y happened. So when listing cases where Y happened, include despite links on the same footing as ordinary links.</li>
+<li><strong>X had countervailing power (with caveats).</strong> S claims X had some causal power to make <code>~Y</code>. So when listing cases where X is claimed to have had the power to prevent or reduce Y, include despite links, with the caveat that this is the speaker's claim about a power that did not, in the event, carry the outcome.</li>
 </ul>
-</li>
-</ul>
-<p><img alt="Untitled" class="cm-img-flush" loading="lazy" src="../img/f2b956db7932466d894f98ea81fbee94--Untitled 1.png" style="background-color: #fff;"/></p>
-<p>**
-This causal map reveals how <strong>T1: The Disillusioned</strong>, <strong>T2: The Pragmatists</strong>, and <strong>T3: The Loyalists</strong> experience the research environment differently. By applying a chi-square test ($p &lt; .05$) to compensate for varying group sizes, several "hotspots" emerge where specific nodes (factors) and causal links are mentioned significantly more (▲) or less (▼) than expected.</p>
-<h3 class="rounded-info" id="tribal-narrative-of-significant-divergence">Tribal Narrative of Significant Divergence<a aria-label="Permalink" class="anchor-link" href="#tribal-narrative-of-significant-divergence">#</a></h3>
-<p>The <strong>T2: The Pragmatists</strong> dominate the map's narrative of resilience and advancement. They are the only group to significantly mention the link between <strong>"good guidance"</strong> and <strong>"applying active coping strategies"</strong> (▲). Their pragmatic nature is further highlighted by their significant focus on the <strong>"high performance pressure"</strong> node (▲), which they directly link to <strong>"mental health decline."</strong> However, they balance this by identifying a <strong>"positive and supportive work environment"</strong> as a significant driver of <strong>"growth"</strong> (▲). Ultimately, they are the primary group fueling the transition from <strong>"growth"</strong> to <strong>"high career optimism"</strong> (▲).</p>
-<p>In contrast, <strong>T1: The Disillusioned</strong> are defined by a narrative of stagnation. While they experience growth, they show a <strong>significant lack of mentions</strong> connecting that <strong>"growth"</strong> to <strong>"high career optimism"</strong> (▼). For this tribe, the link between personal development and a bright future is statistically broken.</p>
-<p>Finally, <strong>T3: The Loyalists</strong> anchor their experience in community. Their significant contribution to the map is the node of <strong>"supportive colleague behavior"</strong> (▲), which they link directly to <strong>"growth."</strong> For the Loyalists, horizontal support from peers is the statistically significant engine of their professional evolution.</p>
+<p><strong>The helping case.</strong> When the despite clause is of the helping kind ("despite the coaching, the grades did not improve"), the same row is read with Y negated:</p>
+<div class="callout callout-note">
+<p>Source S claims that X happened, and Y did not happen, and X had some causal power to make Y, but X did not prevail.</p>
+</div>
+<p>The three deductions mirror the blocking case: read "Y did not happen" for the second, and "power to make Y" for the third.</p>
+<p><strong>What a despite link is not.</strong> On its own it is never evidence for an ordinary <code>X -&gt; Y</code>. It is closer to evidence about <code>X -&gt; ~Y</code>, but we keep it as its own type rather than folding it into the opposites machinery (rule FIL-OPP in the formalisation; see also the hard case above and ).</p>
 <h2 class="banner-info" id="related">Related<a aria-label="Permalink" class="anchor-link" href="#related">#</a></h2>
+<h2 id="-chapter-intro">- <a class="wikilink" href="/working-papers">chapter intro</a><a aria-label="Permalink" class="anchor-link" href="#-chapter-intro">#</a></h2>
+<h2 id="-a-formalisation-of-causal-mapping">- <a class="wikilink" href="/formalisation">A formalisation of causal mapping</a><a aria-label="Permalink" class="anchor-link" href="#-a-formalisation-of-causal-mapping">#</a></h2>
 <ul>
-<li><a class="wikilink" href="/working-papers">chapter intro</a></li>
-</ul></div>
+<li></li>
+</ul>
+<div class="references"><h2>References</h2><p class="reference">Talmy (1988). <em>Force Dynamics in Language and Cognition</em>. Wiley. <a href="https://doi.org/10.1207/s15516709cog1201_2" rel="noopener" target="_blank">https://doi.org/10.1207/s15516709cog1201_2</a>.</p></div></div>
         <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a href="https://causalmap.app" class="link-secondary">Causal Map Ltd</a> 2026</span> · <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" style="height:18px;opacity:0.7;vertical-align:middle;" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" /></a><a href="https://app.causalmap.app" class="link-secondary ms-2" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>
       </main>
       <aside class="rightbar"><h2>On this page</h2><div class="hover-cue">Hover to view</div><div class="toc"><div class="toc">
 <ul>
 <li><a href="#despite-coding">"Despite" coding</a><ul>
-<li><a href="#the-problem-countervailing-conditions-that-failed">The problem: countervailing conditions that “failed”</a></li>
-<li><a href="#the-convention-a-despite-link-type-or-tag">The convention: a “despite” link type (or tag)</a></li>
-<li><a href="#what-can-we-do-with-despite-links">What can we do with “despite” links?</a></li>
-<li><a href="#worked-example">Worked example</a></li>
-<li><a href="#optional-background-force-dynamics-why-despite-is-cognitively-natural">Optional background: force dynamics (why “despite” is cognitively natural)</a></li>
-</ul>
-</li>
-<li><a href="#hard-cases-brief-notes">Hard cases (brief notes)</a><ul>
-<li><a href="#41-force-dynamics-agonists-and-antagonists-in-latent-space">4.1 Force Dynamics: Agonists and Antagonists in Latent Space</a></li>
-<li><a href="#tribal-narrative-of-significant-divergence">Tribal Narrative of Significant Divergence</a></li>
+<li><a href="#start-with-minimalist-causal-mapping">Start with minimalist causal mapping</a></li>
+<li><a href="#the-puzzle-an-influence-that-could-have-worked-but-did-not">The puzzle: an influence that could have worked, but did not</a></li>
+<li><a href="#why-the-obvious-options-both-fail">Why the obvious options both fail</a></li>
+<li><a href="#but-couldnt-you-just-use-opposing-arrows-like-in-systems-modelling">But couldn't you just use opposing arrows like in systems modelling?</a></li>
+<li><a href="#the-convention-a-despite-link-type-or-tag">The convention: a "despite" link type (or tag)</a></li>
+<li><a href="#what-can-we-do-with-despite-links">What can we do with "despite" links?</a></li>
+<li><a href="#worked-examples">Worked examples</a></li>
+<li><a href="#optional-background-force-dynamics">Optional background: force dynamics</a></li>
+<li><a href="#hard-cases-brief-notes">Hard cases (brief notes)</a></li>
+<li><a href="#a-more-formal-picture">A more formal picture</a></li>
 </ul>
 </li>
 <li><a href="#related">Related</a></li>
+<li><a href="#-chapter-intro">- chapter intro</a></li>
+<li><a href="#-a-formalisation-of-causal-mapping">- A formalisation of causal mapping</a></li>
 </ul>
 </div>
-</div><hr /><h2>Links</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a href="000 Working Papers ((working-papers)).html" class="link-secondary">Working Papers</a></li></ul></div><hr /><h2>Backlinks</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a href="005 Minimalist coding for causal mappi-92df1f.html" class="link-secondary">Minimalist coding for causal mapping</a></li></ul></div></aside>
+</div><hr /><h2>Links</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a href="006 A formalisation of causal mapping -8a4c1f.html" class="link-secondary">A formalisation of causal mapping</a></li><li><a href="000 Working Papers ((working-papers)).html" class="link-secondary">Working Papers</a></li></ul></div><hr /><h2>Backlinks</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a href="! EES2026 bites paper.html" class="link-secondary">! EES2026 bites paper</a></li><li><a href="! EES2026 bites short paper.html" class="link-secondary">! EES2026 bites short paper</a></li><li><a href="005 Minimalist coding for causal mappi-92df1f.html" class="link-secondary">Minimalist coding for causal mapping</a></li></ul></div></aside>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="../assets/sidebar.js"></script>

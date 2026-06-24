@@ -469,6 +469,25 @@
         z-index: 5;
       }
       .content .pdf-links a { margin-left: .5rem; white-space: nowrap; }
+      /* On paper/article pages, make the per-page PDF link far more visible,
+         and pulse it gently for a few seconds after the page loads. */
+      .content.paper-page .pdf-links a.tr-float {
+        color: #1d4ed8;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        animation: pdf-pulse 0.9s ease-in-out 0s 4;
+        transform-origin: center;
+        display: inline-block;
+      }
+      .content.paper-page .pdf-links a.tr-float:hover { text-decoration: underline; }
+      @keyframes pdf-pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.22); opacity: 0.6; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .content.paper-page .pdf-links a.tr-float { animation: none; }
+      }
       .content .fullscreen-enter { font-size: 1.1rem; color: #6c757d; text-decoration: none; margin-left: .35rem; }
       .content .fullscreen-enter:hover { color: #1d4ed8; }
       body.layout-fullscreen .fullscreen-enter { display: none !important; }
@@ -1801,7 +1820,7 @@
 <p>Causal reasoning is not just a feature of human cognition—it is its backbone. Our ability to detect, infer, and act on causal relationships is what allows us to navigate, survive, and thrive in a complex world. While formalised, controlled experiments are an incredible tool for causal inference in very particular contexts such as some areas of education and economics where multiple very similar causes are regularly followed by multiple very similar effects, if we had to stick to that kind of knowledge and that kind of context we would never be able to get out of bed in the morning, let alone get the kids to school. </p>
 <p>Humans remain the best detectors of causation, both individually and collectively.</p>
 <p>See also: <a href="obsidian://open?file=010%20causal%20mapping%2F400%20realist%20causation.md">400 realist causation</a></p>
-<div class="references"><h2>References</h2><p class="reference">Maxwell (2004). <em>Using Qualitative Methods for Causal Explanation</em>. SAGE Publications Inc. <a href="https://doi.org/10.1177/1525822X04266831" rel="noopener" target="_blank">https://doi.org/10.1177/1525822X04266831</a>.</p><p class="reference">Maxwell (2004). <em>Causal Explanation, Qualitative Research, and Scientific Inquiry in Education</em>. <a href="http://journals.sagepub.com/doi/10.3102/0013189X033002003" rel="noopener" target="_blank">http://journals.sagepub.com/doi/10.3102/0013189X033002003</a>.</p></div>
+<div class="references"><h2>References</h2><p class="reference">Maxwell (2004). <em>Causal Explanation, Qualitative Research, and Scientific Inquiry in Education</em>. <a href="http://journals.sagepub.com/doi/10.3102/0013189X033002003" rel="noopener" target="_blank">http://journals.sagepub.com/doi/10.3102/0013189X033002003</a>.</p><p class="reference">Maxwell (2004). <em>Using Qualitative Methods for Causal Explanation</em>. SAGE Publications Inc. <a href="https://doi.org/10.1177/1525822X04266831" rel="noopener" target="_blank">https://doi.org/10.1177/1525822X04266831</a>.</p></div>
 <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a class="link-secondary" href="https://causalmap.app">Causal Map Ltd</a> 2026</span> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" style="height:18px;opacity:0.7;vertical-align:middle;"/></a><a class="link-secondary ms-2" href="https://app.causalmap.app" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>
 </main>
 <aside class="rightbar"><h2>On this page</h2><div class="hover-cue">Hover to view</div><div class="toc"><div class="toc">

@@ -458,6 +458,25 @@
         z-index: 5;
       }
       .content .pdf-links a { margin-left: .5rem; white-space: nowrap; }
+      /* On paper/article pages, make the per-page PDF link far more visible,
+         and pulse it gently for a few seconds after the page loads. */
+      .content.paper-page .pdf-links a.tr-float {
+        color: #1d4ed8;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        animation: pdf-pulse 0.9s ease-in-out 0s 4;
+        transform-origin: center;
+        display: inline-block;
+      }
+      .content.paper-page .pdf-links a.tr-float:hover { text-decoration: underline; }
+      @keyframes pdf-pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.22); opacity: 0.6; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .content.paper-page .pdf-links a.tr-float { animation: none; }
+      }
       .content .fullscreen-enter { font-size: 1.1rem; color: #6c757d; text-decoration: none; margin-left: .35rem; }
       .content .fullscreen-enter:hover { color: #1d4ed8; }
       body.layout-fullscreen .fullscreen-enter { display: none !important; }
