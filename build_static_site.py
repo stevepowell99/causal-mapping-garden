@@ -24,7 +24,7 @@ import sys
 import time
 from datetime import date, datetime
 from urllib.parse import quote, urljoin
-PIPELINE_VERSION = "2026-06-16-themes-menu-v1"
+PIPELINE_VERSION = "2026-06-24-breadcrumb-current-chapter-v1"
 
 # Media extensions: images + local video (mp4, webm, etc.)
 _IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".bmp"}
@@ -4755,13 +4755,18 @@ def render_breadcrumb_html(breadcrumb_data: List[Dict[str, Any]], tags_dropdown_
     # separator
     parts.append('<span class="breadcrumb-separator">/</span>')
 
-    # 2) Chapters (dropdown with Home + top-level chapters)
+    # 2) Chapters (dropdown). The label shows the current chapter so the page's
+    # location is visible in the breadcrumb; the menu marks the current chapter.
+    current_chapter = breadcrumb_data[1] if len(breadcrumb_data) >= 2 else None
+    chapters_label = html.escape(current_chapter["title"]) if current_chapter else "Chapters"
+    current_chapter_href = current_chapter["href"] if current_chapter else None
     chapters_dropdown = '<div class="bc-dropdown">'
-    chapters_dropdown += '<span class="bc-label">Chapters</span><span class="bc-chevron">▼</span>'
+    chapters_dropdown += f'<span class="bc-label">{chapters_label}</span><span class="bc-chevron">▼</span>'
     chapters_dropdown += '<div class="bc-menu"><div class="bc-heading">Chapters</div>'
     chapters_dropdown += f'<a href="{html.escape(home_item["href"])}">Home</a>'
     for sibling in (home_item.get("siblings") or []):
-        chapters_dropdown += f'<a href="{html.escape(sibling["href"])}">{html.escape(sibling["title"])}</a>'
+        cls = "current" if (current_chapter_href is not None and sibling["href"] == current_chapter_href) else ""
+        chapters_dropdown += f'<a href="{html.escape(sibling["href"])}" class="{cls}">{html.escape(sibling["title"])}</a>'
     chapters_dropdown += '</div></div>'
     parts.append(f'<span class="breadcrumb-item">{chapters_dropdown}</span>')
 
@@ -5323,6 +5328,25 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         z-index: 5;
       }}
       .content .pdf-links a {{ margin-left: .5rem; white-space: nowrap; }}
+      /* On paper/article pages, make the per-page PDF link far more visible,
+         and pulse it gently for a few seconds after the page loads. */
+      .content.paper-page .pdf-links a.tr-float {{
+        color: #1d4ed8;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        animation: pdf-pulse 0.9s ease-in-out 0s 4;
+        transform-origin: center;
+        display: inline-block;
+      }}
+      .content.paper-page .pdf-links a.tr-float:hover {{ text-decoration: underline; }}
+      @keyframes pdf-pulse {{
+        0%, 100% {{ transform: scale(1); opacity: 1; }}
+        50% {{ transform: scale(1.22); opacity: 0.6; }}
+      }}
+      @media (prefers-reduced-motion: reduce) {{
+        .content.paper-page .pdf-links a.tr-float {{ animation: none; }}
+      }}
       .content .fullscreen-enter {{ font-size: 1.1rem; color: #6c757d; text-decoration: none; margin-left: .35rem; }}
       .content .fullscreen-enter:hover {{ color: #1d4ed8; }}
       body.layout-fullscreen .fullscreen-enter {{ display: none !important; }}
@@ -7116,6 +7140,21 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             )
             pdf_print_css += section_two_col_css()
             pdf_print_css += dual_column_body_css()
+            # Dual-column article pages (tagged `dual-column` but not `paper`) keep the web's
+            # sans-serif small-caps title and sans headings, which clash with their serif PDF body.
+            # Give the title and headings the serif paper look so the cover page reads cleanly.
+            # Scoped via :has() to pages that render a dual-column body (paper + dual-column).
+            _dc_title = ".content:has(.paper-dual-column-body) .page-title"
+            _dc_headings = ",".join(
+                f".content:has(.paper-dual-column-body) {h}" for h in ("h1", "h2", "h3", "h4", "h5", "h6")
+            )
+            pdf_print_css += (
+                "@media print{"
+                f"{_dc_title},{_dc_headings}{{"
+                "font-family:Georgia,Cambria,'Times New Roman',Times,serif!important;}"
+                f"{_dc_title}{{font-variant-caps:normal!important;letter-spacing:0!important;font-weight:600!important;}}"
+                "}"
+            )
             compact_css = (
                 "table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:8.8pt;}"
                 "th,td{border:1px solid #e5e5e5;padding:.2rem .35rem;font-size:8.4pt;vertical-align:top;word-break:break-word;}"
@@ -7724,6 +7763,26 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
 
         files_to_process = sorted(affected, key=lambda p: str(p).lower())
         changed_files_for_pdf = set(changed_files)  # Per-page PDF only for actually changed, not deps
+
+        # When per-page PDFs are requested, also revisit any non-draft page whose PDF is
+        # stale (missing, or its source is newer), even if the HTML is unchanged this run.
+        # Without this, a source edit already consumed by an earlier incremental HTML build
+        # drops the page out of `affected`, stranding its PDF permanently out of date.
+        if args and getattr(args, "page_pdf", False) and _PLAYWRIGHT_AVAILABLE:
+            affected_set = set(files_to_process)
+            stale_pdf_pages: List[Path] = []
+            for p in md_files:
+                if ("!" in p.name) or (p in affected_set):
+                    continue
+                try:
+                    pdf_p = relative_output_html(input_root, output_root, p).with_suffix(".pdf")
+                    if (not pdf_p.exists()) or (p.stat().st_mtime >= pdf_p.stat().st_mtime):
+                        stale_pdf_pages.append(p)
+                except Exception:
+                    continue
+            if stale_pdf_pages:
+                files_to_process = sorted(affected_set | set(stale_pdf_pages), key=lambda p: str(p).lower())
+                print(f"[INCREMENTAL] +{len(stale_pdf_pages)} page(s) revisited for stale per-page PDFs.")
         # Note: "modified" counts include mtime-detected changes; "hash-modified" catches content changes with stale mtimes.
         print(f"[INCREMENTAL] {new_count} new, {modified_count} modified, {modified_hash_count} hash-modified (+{added_due_to_deps} deps) (from {original_count} total).")
         if empty_read_count:
@@ -7917,18 +7976,23 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                 # Skip expensive markdown->HTML pipeline
                 # Optionally generate per-page PDF only if requested
                 if args and args.page_pdf and _PLAYWRIGHT_AVAILABLE:
-                    # Incremental: only gen PDF for actually changed files, not deps
-                    if getattr(args, "incremental", False) and md_path not in changed_files_for_pdf:
-                        pass
-                    else:
-                        pdf_out_path = out_html_path.with_suffix(".pdf")
-                        needs_pdf_fast = (not pdf_out_path.exists()) or (md_path.stat().st_mtime >= pdf_out_path.stat().st_mtime)
-                        if needs_pdf_fast:
-                            try:
-                                page_title_fast = title_map.get(md_path, strip_numeric_prefix(md_path.stem))
-                                _generate_page_pdf_from_html(out_html_path, pdf_out_path, md_path, page_title_fast)
-                            except Exception:
-                                pass
+                    pdf_out_path = out_html_path.with_suffix(".pdf")
+                    # Rebuild when the PDF is genuinely stale (missing or older than its
+                    # source) or when this file's content changed this run. A dependency-only
+                    # HTML rebuild leaves the source older than the PDF, so it is skipped; but
+                    # an earlier incremental run that already consumed the source change must
+                    # NOT strand a stale PDF.
+                    needs_pdf_fast = (
+                        (not pdf_out_path.exists())
+                        or (md_path.stat().st_mtime >= pdf_out_path.stat().st_mtime)
+                        or (md_path in changed_files_for_pdf)
+                    )
+                    if needs_pdf_fast:
+                        try:
+                            page_title_fast = title_map.get(md_path, strip_numeric_prefix(md_path.stem))
+                            _generate_page_pdf_from_html(out_html_path, pdf_out_path, md_path, page_title_fast)
+                        except Exception:
+                            pass
                 # Chapter/all PDFs read markdown directly, so they don't need HTML regeneration
                 # Skip this page unless it's needed for other reasons
                 continue
@@ -8232,7 +8296,11 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             elif not pdf_out_path.exists():
                 needs_pdf = True
             else:
-                needs_pdf = md_path.stat().st_mtime >= pdf_out_path.stat().st_mtime
+                # Stale if the source is newer than the PDF (mtime) or its content
+                # changed this run (hash). The hash branch catches edits that sync
+                # providers apply without bumping mtime; the mtime branch catches a
+                # source change already consumed by an earlier incremental HTML build.
+                needs_pdf = (md_path.stat().st_mtime >= pdf_out_path.stat().st_mtime) or (md_path in changed_files_for_pdf)
         except Exception:
             needs_pdf = False
 
@@ -8415,12 +8483,13 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             except Exception:
                 pass
 
-        # Optionally generate per-page PDF using Playwright (after HTML is written)
-        # Incremental: only gen PDF for actually changed files, not deps
+        # Optionally generate per-page PDF using Playwright (after HTML is written).
+        # `needs_pdf` is the single source of truth (missing / mtime-stale / content
+        # changed this run / clean intent), so a stale PDF is never stranded by an
+        # earlier incremental run, and unchanged pages (source older than PDF) are skipped.
         # Note: is_chapter_start is already determined above
-        pdf_ok = not (args and getattr(args, "incremental", False)) or (md_path in changed_files_for_pdf)
         generated_page_pdf = False
-        if ("!" not in md_path.name) and args and args.page_pdf and needs_pdf and pdf_ok and _PLAYWRIGHT_AVAILABLE:
+        if ("!" not in md_path.name) and args and args.page_pdf and needs_pdf and _PLAYWRIGHT_AVAILABLE:
             try:
                 _generate_page_pdf_from_html(out_html_path, pdf_out_path, md_path, page_title)
                 generated_page_pdf = True
