@@ -2009,6 +2009,36 @@ For exclude filters, default behavior is AND (all terms must match), unless you 
 </li>
 <li>If you <strong>From</strong> or <strong>To</strong> matches nothing, no paths are returned.</li>
 </ul>
+<h3 id="pathways-filter">Pathways Filter <i class="fas fa-shoe-prints"></i><a aria-label="Permalink" class="anchor-link" href="/everything-filter/#pathways-filter">#</a></h3>
+<div class="user-guide-callout">
+<strong>👣 What this does:</strong> Surfaces typical causal stories. Unlike Path Tracing, you do not pick a start or an end. The filter reads the quotes inside each source and finds short passages where one source tells a whole chain of factors close together in its own text, then ranks those chains by how many sources tell them and shows you one at a time.
+</div>
+<p>This is an exploratory filter for finding typical pathways. It does not answer a definitive high-stakes evaluation question; it surfaces common stories so you can read and judge them.</p>
+<p>How it works: within each source it looks for a <strong>passage</strong>, a set of quotes, one for each step of a chain <code>f0 → f1 → … → fN</code>, that all sit within a window of <code>proximity</code> characters (from the start of the first quote to the end of the last). That grounds each chain in a piece of more or less contiguous narrative, so "A→B at the start of a long document and B→C near the end" is not counted as one story. It then lists every qualifying chain for every source and ranks the chains by how many sources tell them.</p>
+<ul>
+<li><strong>Length</strong> (radio buttons 1–6): the number of links N in the chain. Only chains of exactly this length are shown; shorter, more direct routes are not. Self-loops may form a step.</li>
+<li><strong>Rank</strong> (‹ / ›): which ranked chain to show. Rank 1 is the most frequent across sources; step right to browse rarer ones. When you step past the last chain the map goes empty, which tells you there are no more.</li>
+<li><strong>Proximity</strong> (characters): how close together the quotes of a chain must be in a source's text to count as one passage. Smaller means tighter, more clearly contiguous stories; larger is more permissive.</li>
+<li><strong>Successive</strong> (toggle, default off): also require the quotes to appear in chain order in the text (non-decreasing start positions along <code>f0 → … → fN</code>), so the source narrates the steps in the right order rather than merely nearby.</li>
+</ul>
+<p>Ranking order: number of sources that tell the chain (most first), then total number of qualifying passages, then a stable tiebreaker. The map shows the links of that single chain's passages; sister links inside the same bundles are dropped, because the output is always one chain.</p>
+<p>Once you have a chain you like on the map, use <a href="../vignette-card/">Vignettes</a> to turn it into a short written story: with the chain showing, run a <strong>Typical-source vignette</strong> to have the AI write the narrative from the quotes behind that chain, or a <strong>Whole-map vignette</strong> to describe the chain as a whole. So Pathways finds the typical story and Vignettes writes it up.</p>
+<p>Notes:</p>
+<ul>
+<li><strong>Quote offsets required</strong>: a link can only join a passage if its quote has a recorded position in the source. Links without offsets do not participate.</li>
+<li><strong>Order matters</strong>: like other filters, this runs at its position in the pipeline, so upstream transform filters (e.g. <a href="../zoom-filter/">Zoom</a>, <a href="../collapse-filter/">Collapse</a>) change which chains exist. Place a Pathways filter after any narrowing filters so it ranks within the set you care about.</li>
+<li><strong>Heuristic</strong>: on very large or dense sources the search is capped, so the ranking is indicative rather than exhaustive.</li>
+</ul>
+<h3 id="recalculate-offsets">Recalculate quote positions<a aria-label="Permalink" class="anchor-link" href="/everything-filter/#recalculate-offsets">#</a></h3>
+<p>Found in <strong>Project → Edit project → Quote positions</strong>.</p>
+<p>Each coded link holds a quote from a source. To know <em>where</em> in the source that quote sits, the app records a character position (offset) for it. These positions drive source-text highlighting and the <a href="../pathways-filter/">Pathways filter</a>, which uses them to judge whether the steps of a story sit close together in the text.</p>
+<p>Positions are normally filled in as you read sources, so older projects or ones never opened in text view can have many links without them. <strong>Recalculate quote positions</strong> does the whole project in one pass: it matches each link's quote against its source text and stores the position.</p>
+<ul>
+<li>Use it if the Pathways filter finds little or nothing, or after re-importing or editing source text.</li>
+<li>A quote that no longer matches its source text is reported as "unmatched" and left unchanged; fix the quote or the source and run it again.</li>
+<li>Needs edit access to the project.</li>
+<li>The Pathways filter also runs this automatically, once per project, when it notices many links without positions.</li>
+</ul>
 <h3 id="zoom-filter">Zoom Filter <i class="fas fa-search-plus"></i><a aria-label="Permalink" class="anchor-link" href="/everything-filter/#zoom-filter">#</a></h3>
 <p>Ideas Garden: <a href="https://garden.causalmap.app/zoom-filter">Hierarchical coding (Zoom filter)</a></p>
 <div class="user-guide-callout">
@@ -2521,6 +2551,8 @@ The meaning of the labels you give me should ideally not overlap in meaning with
 <li><a href="/everything-filter/#exclude-link-tag-filter">Exclude Tags filter</a></li>
 <li><a href="/everything-filter/#exclude-self-loops-filter">Exclude self-loops Filter</a></li>
 <li><a href="/everything-filter/#path-tracing-filter">Path Tracing Filter</a></li>
+<li><a href="/everything-filter/#pathways-filter">Pathways Filter</a></li>
+<li><a href="/everything-filter/#recalculate-offsets">Recalculate quote positions</a></li>
 <li><a href="/everything-filter/#zoom-filter">Zoom Filter</a></li>
 <li><a href="/everything-filter/#collapse-filter">Collapse Filter</a></li>
 <li><a href="/everything-filter/#combine-opposites-filter">Combine Opposites filter</a></li>
