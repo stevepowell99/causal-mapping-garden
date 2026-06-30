@@ -1827,6 +1827,9 @@
 <ul>
 <li>👉🏼 <strong>Show self-loops</strong> (toggle, default on): show/hide A→A links on the map.</li>
 </ul>
+<blockquote>
+<p><strong>Why a factor's number can look bigger than its arrows add up to.</strong> A self-loop is a link from a factor back to itself (for example a "plain coding" that just records "this theme is present"). When both factor numbers and link numbers are set to citation count, a self-loop is counted on its factor <strong>twice</strong>: once as a citation going out of it, once as a citation coming into it. But on the map that self-loop is drawn as a single looping arrow with a single number. So if you add up the numbers on a factor's arrows by eye, any factor that has a self-loop comes out higher than you expect. This is normal and correct: it is the standard way graphs count connections (a self-loop adds one to both the factor's "in" tally and its "out" tally). If you do not want self-loops counted this way, turn off <strong>Show self-loops</strong>, or use the <a href="../exclude-self-loops-filter/">Exclude self-loops filter</a>.</p>
+</blockquote>
 <h4 id="visual-appearance">Fixed visual appearance (things you can't tweak)<a aria-label="Permalink" class="anchor-link" href="#visual-appearance">#</a></h4>
 <p>Some parts of the map’s appearance are automatic (i.e. they are not controlled by the Map Formatting widgets above):</p>
 <p><strong>Leading emoji (Print / Graphviz only):</strong></p>
