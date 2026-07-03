@@ -416,6 +416,9 @@
         pointer-events: auto; /* restore clicks on nav buttons */
       }
       .content img { max-width: 100%; height: auto; margin: 20px 0; }
+      /* Mermaid diagrams scale to their container so they fit inside panels/columns */
+      .content .mermaid { text-align: center; margin: 12px 0; }
+      .content .mermaid svg { max-width: 100%; height: auto; }
       /* Image layout defaults (postprocess_content_image_layout): full-bleed vs two-column plus span-cols / inline classes */
       .content img.cm-img-flush {
         width: 100%;
@@ -1771,11 +1774,11 @@
 <p><strong>Where AI runs is a project setting, not a user setting.</strong> Each project has an <strong>AI Processing Region</strong> (Project → Edit project → AI Processing Region) with three options: <strong>EU (Belgium, europe-west1)</strong>, <strong>UK (London, europe-west2)</strong>, or <strong>US (Virginia, us-east5)</strong>. New projects default to EU.</p>
 <p>When the region is <strong>EU or UK</strong>, the app guarantees every AI call stays in Europe:</p>
 <ul>
-<li>The model picker is filtered to <strong>Gemini 2.5 Pro</strong> and <strong>Gemini 2.5 Flash</strong> only. Faster models like Gemini 3.5 Flash and Gemini 3.1 Pro are hidden because they route through Google's global endpoint, not a European region.</li>
+<li>The coding model picker offers <strong>Gemini 2.5 Flash</strong> (the default), <strong>Gemini 3.5 Flash</strong> and <strong>Gemini 3.1 Pro Preview</strong>, all European-resident: Gemini 2.5 runs in a single European region, and 3.5 Flash and 3.1 Pro run in Google's EU multiregion (processing stays inside the EU). Models with no European route (GPT-5, Qwen) are hidden.</li>
 <li>Any AI request that would process data outside Europe is blocked client-side before it leaves the browser. A notification explains which model or region caused the block and how to fix it.</li>
 <li>Document embeddings (used by RAG and similarity search) automatically route to <code>europe-west1</code> (or <code>europe-west2</code> for UK), instead of the default <code>us-central1</code>.</li>
 </ul>
-<p>When the region is <strong>US</strong>, the model picker shows the full list, including Gemini 3.5 Flash, Gemini 3.1 Pro Preview, GPT-5, Qwen and others. These are faster or more capable, but they process your prompts and data outside Europe.</p>
+<p>When the region is <strong>US</strong>, the model picker shows the full list, including GPT-5, Qwen and others. These process your prompts and data outside Europe.</p>
 <p>Switching the region for an existing project takes effect immediately — the dropdowns re-render and the gate updates without a reload.</p>
 <p>You can change this toggle anytime.</p>
 <p><strong>Account Features:</strong></p>
@@ -2071,7 +2074,18 @@
     </script>
 <script type="module">
       import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({ startOnLoad: true });
+      // Top-level fenced mermaid blocks are turned into <div class="mermaid"> by
+      // the build, but a fence inside a callout/panel/column is rendered by a
+      // nested markdown pass that emits <code class="language-mermaid"> instead.
+      // Promote those so a diagram renders wherever it is authored.
+      document.querySelectorAll('code.language-mermaid').forEach(function (c) {
+        var d = document.createElement('div');
+        d.className = 'mermaid';
+        d.textContent = c.textContent || '';
+        (c.closest('pre') || c).replaceWith(d);
+      });
+      mermaid.initialize({ startOnLoad: false });
+      mermaid.run({ querySelector: '.mermaid' });
     </script>
 </body>
 </html>

@@ -24,7 +24,7 @@ import sys
 import time
 from datetime import date, datetime
 from urllib.parse import quote, urljoin
-PIPELINE_VERSION = "2026-06-24-breadcrumb-current-chapter-v1"
+PIPELINE_VERSION = "2026-07-03-mermaid-in-panels-v1"
 
 # Media extensions: images + local video (mp4, webm, etc.)
 _IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".bmp"}
@@ -5275,6 +5275,9 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         pointer-events: auto; /* restore clicks on nav buttons */
       }}
       .content img {{ max-width: 100%; height: auto; margin: 20px 0; }}
+      /* Mermaid diagrams scale to their container so they fit inside panels/columns */
+      .content .mermaid {{ text-align: center; margin: 12px 0; }}
+      .content .mermaid svg {{ max-width: 100%; height: auto; }}
       /* Image layout defaults (postprocess_content_image_layout): full-bleed vs two-column plus span-cols / inline classes */
       .content img.cm-img-flush {{
         width: 100%;
@@ -6510,7 +6513,18 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
     </script>
     <script type="module">
       import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({{ startOnLoad: true }});
+      // Top-level fenced mermaid blocks are turned into <div class="mermaid"> by
+      // the build, but a fence inside a callout/panel/column is rendered by a
+      // nested markdown pass that emits <code class="language-mermaid"> instead.
+      // Promote those so a diagram renders wherever it is authored.
+      document.querySelectorAll('code.language-mermaid').forEach(function (c) {{
+        var d = document.createElement('div');
+        d.className = 'mermaid';
+        d.textContent = c.textContent || '';
+        (c.closest('pre') || c).replaceWith(d);
+      }});
+      mermaid.initialize({{ startOnLoad: false }});
+      mermaid.run({{ querySelector: '.mermaid' }});
     </script>
   </body>
  </html>
