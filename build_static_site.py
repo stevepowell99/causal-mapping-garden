@@ -385,7 +385,9 @@ def _convert_citations_bracket_to_apa(md_text: str, bib_index: Dict[str, Tuple[L
         # locator/suffix. The bracket bounds the suffix, so it passes through
         # verbatim (p. 5, pp. 10-15, ch. 3, "p. 5, emphasis added").
         for chunk in inner.split(";"):
-            km = re.search(r"@([A-Za-z0-9:_-]+)", chunk)
+            # A citation key's @ never directly follows a word char or dot, so
+            # emails in link text ([steve@example.com]) pass through untouched.
+            km = re.search(r"(?<![\w.])@([A-Za-z0-9:_-]+)", chunk)
             if not km:
                 continue
             key = km.group(1)
@@ -1646,6 +1648,9 @@ def strip_numeric_prefix(stem: str) -> str:
     """
     # Remove trailing page anchor like ((my-id))
     no_anchor = re.sub(r"\s*\(\([^)]+\)\)\s*$", "", stem).strip()
+    # Drop the draft flag '!' from display titles (a '!' filename marks a draft;
+    # the flag is workflow state, not part of the title)
+    no_anchor = re.sub(r"\s*!\s*", " ", no_anchor).strip()
     # Remove leading numeric prefixes (digits, optional letters e.g. 01a, then separator)
     cleaned = re.sub(r"^\s*\d[\d._-]*[a-zA-Z]*\s*[-_. ]?\s*", "", no_anchor).strip()
     cleaned = convert_qq_to_question_mark(cleaned)
@@ -3095,6 +3100,13 @@ def _metadata_is_paper(metadata: Dict[str, Any]) -> bool:
 def _metadata_has_dual_column_tag(metadata: Dict[str, Any]) -> bool:
     """Return True when YAML explicitly opts into page-level two-column layout."""
     return any(_metadata_has_tag(metadata, tag) for tag in DUAL_COLUMN_TAGS)
+
+
+def _draft_wants_pdf(metadata: Dict[str, Any]) -> bool:
+    """Drafts ('!' filenames) are excluded from PDFs unless they opt in with YAML `pdf: true`.
+    Like draft HTML, an opted-in draft's PDF lands in dist unlinked from nav/search."""
+    v = (metadata or {}).get("pdf")
+    return v is True or (isinstance(v, str) and v.strip().lower() in {"true", "yes", "on"})
 
 
 def _metadata_uses_pdf_dual_columns(metadata: Dict[str, Any]) -> bool:
@@ -7786,7 +7798,7 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             affected_set = set(files_to_process)
             stale_pdf_pages: List[Path] = []
             for p in md_files:
-                if ("!" in p.name) or (p in affected_set):
+                if (("!" in p.name) and not _draft_wants_pdf(metadata_map.get(p, {}))) or (p in affected_set):
                     continue
                 try:
                     pdf_p = relative_output_html(input_root, output_root, p).with_suffix(".pdf")
@@ -8320,7 +8332,7 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
 
         # Only create per-page PDF link if (a) not a draft and (b) PDF exists or will be generated
         page_id = page_anchor_map.get(md_path)
-        if ("!" not in md_path.name) and (pdf_out_path.exists() or (args and args.page_pdf)):
+        if (("!" not in md_path.name) or _draft_wants_pdf(metadata_map.get(md_path, {}))) and (pdf_out_path.exists() or (args and args.page_pdf)):
             pdf_href_path = (output_root / f"{page_id}.pdf") if page_id else pdf_out_path
             pdf_href_rel = os.path.relpath(pdf_href_path, start=out_dir).replace(os.sep, "/")
             pdf_link_html = f'<a class="tr-float link-secondary small" href="{html.escape(pdf_href_rel)}" download>PDF</a>'
@@ -8503,7 +8515,7 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         # earlier incremental run, and unchanged pages (source older than PDF) are skipped.
         # Note: is_chapter_start is already determined above
         generated_page_pdf = False
-        if ("!" not in md_path.name) and args and args.page_pdf and needs_pdf and _PLAYWRIGHT_AVAILABLE:
+        if (("!" not in md_path.name) or _draft_wants_pdf(metadata_map.get(md_path, {}))) and args and args.page_pdf and needs_pdf and _PLAYWRIGHT_AVAILABLE:
             try:
                 _generate_page_pdf_from_html(out_html_path, pdf_out_path, md_path, page_title)
                 generated_page_pdf = True
