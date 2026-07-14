@@ -19,7 +19,7 @@
 <meta content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685" name="twitter:image"/>
 <link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'&gt;&lt;circle cx='8' cy='8' r='8' fill='%2390c3c6'/&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet"/>
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet">
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
 <!-- Analytics loader (optional, generated at build time from config.yml) -->
 <script defer="" src="../assets/analytics.js"></script>
 <!-- MathJax v3: inline ($...$, \(...\)) and display (\[...\]); ignored in <code>/<pre> -->
@@ -1753,7 +1753,7 @@
 .content .scale-175 { zoom: 1.75; } .content .scale-200 { zoom: 2; }    .content .scale-250 { zoom: 2.5; }
 .content .scale-300 { zoom: 3; }
 </style>
-</link></head>
+</head>
 <body data-fullscreen-default="false">
 <button aria-label="Toggle navigation" class="btn btn-outline-secondary btn-sm hamburger" id="hamburgerBtn" type="button">☰ Menu</button>
 <div class="layout-container">
@@ -1776,6 +1776,7 @@
 <li><strong>Citation Count</strong> – total number of links in each bundle (cause &gt;&gt; effect pair), with muted green → white conditional formatting (darker green = more links in that bundle relative to the current view)</li>
 <li><strong>Source Count</strong> – number of different sources contributing links to each bundle, with the same muted green → white conditional formatting</li>
 <li><strong>AI run</strong> – short id of the <code>ai_runs</code> row for links created by <a href="../responses-panel/">AI coding</a> (hover for full UUID); empty for manual links or older imports</li>
+<li><strong>Package</strong> and <strong>Package type</strong> – standard columns for <a href="../coding-packages/">coding packages</a>: links claimed to work together (e.g. "you need both oxygen and a spark to make fire") share a code in Package, and Package type names the connective (<code>AND</code>, <code>OR</code>, <code>DESPITE</code>). Both are editable inline.</li>
 <li>Checkbox selection for bulk operations</li>
 <li>Edit functionality opens causal overlay for link modification</li>
 <li>Action button to open coding in the Sources pane and scroll to the corresponding highlight </li>
@@ -1808,7 +1809,10 @@
 <li>Take a screenshot and copy it to clipboard</li>
 <li>Clear any filters at the top of the table columns</li>
 <li>Bulk delete any selected rows in the table</li>
+<li><strong>Package</strong> <i class="fas fa-boxes-stacked"></i> the selected rows: give them a fresh shared package code (then set the Package type inline, e.g. <code>AND</code>, <code>OR</code>, <code>DESPITE</code>); or <strong>Unpackage</strong> <i class="fas fa-box-open"></i> them: clear their package codes and types. See <a href="../coding-packages/">coding packages</a>.</li>
 </ul>
+<h4 id="coding-packages">Coding packages<a aria-label="Permalink" class="anchor-link" href="/links-controls-row1/#coding-packages">#</a></h4>
+<p>Sometimes a source presents several influences as working <em>together</em>: "you need both oxygen and a spark to make fire". Two separate links would drop that; one combined factor label ("oxygen and a spark") would not be parsable. Instead, give the links that belong together a shared code in the <strong>Package</strong> column, and name the connective in <strong>Package type</strong>: <code>AND</code> (a claimed conjunction), <code>OR</code> (presented as alternatives), or <code>DESPITE</code> (a <a href="https://garden.causalmap.app">despite link</a> packaged with the influence that overcame it, e.g. "the fan failed to cool him down because the sun was too strong"). The code itself is arbitrary; the app mints codes for you, either from the <a href="../causal-overlay/">Link Editor's Package toggle</a> while coding, or from the bulk Package button here. Filter with the <a href="../everything-filter/">Everything filter</a> on <code>package</code> (one package, or any code) or <code>package_type</code>. Full rationale: the Garden working papers "Minimalist coding" and "Coding packages".</p>
 <h3 id="links-controls-row1">Row Grouping and Print View<a aria-label="Permalink" class="anchor-link" href="/links-controls-row1/#links-controls-row1">#</a></h3>
 <ul>
 <li><strong>Group by selector</strong> - Choose one or more columns to group rows by values. This applies both the the links table and Print View.</li>
@@ -1893,7 +1897,10 @@
 <li><a href="/links-controls-row1/#link-custom-columns">Link Custom Columns</a></li>
 </ul>
 </li>
-<li><a href="/links-controls-row1/#links-controls-row2">Links Utilities</a></li>
+<li><a href="/links-controls-row1/#links-controls-row2">Links Utilities</a><ul>
+<li><a href="/links-controls-row1/#coding-packages">Coding packages</a></li>
+</ul>
+</li>
 <li><a href="/links-controls-row1/#links-controls-row1">Row Grouping and Print View</a><ul>
 <li><a href="/links-controls-row1/#bulk-tags-editor">Bulk Tags editor</a></li>
 <li><a href="/links-controls-row1/#quotes-widget">Print View</a></li>
