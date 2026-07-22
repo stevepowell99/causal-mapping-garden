@@ -1806,6 +1806,15 @@ is shown only to users who can edit the project (owner, editor, or admin). Viewe
 <li>After restoring an earlier version, you can always go back to the latest version if you want, using the same dropdown menu.</li>
 </ul>
 <p>This panel shows a dropdown list of times when you made changes to the mapfile in UTC/GMT. Along with the size of your file which can help you identify which timepoint you want to revert to. It can be easy to forget what time you made alterations to your file, so if you're likely to want to restore a previous map it is best to note the time so that you can easily return to it.</p>
+<p><strong>Named versions.</strong> When you make a manual backup you can give it a name, for example <code>actor-focused</code> or <code>normal</code>. This is useful when you keep more than one style of coding in the same project.</p>
+<ul>
+<li>Named versions are kept forever; unnamed backups are pruned over time (see below).</li>
+<li>Names can be reused: the version list shows each entry as date and time plus its name, so the timestamp tells versions in the same line apart.</li>
+<li>The name box is prefilled with the name of your newest named version, so saving again into the same line is one click. Clear the box to make an unnamed backup, or type a new name to start a new line.</li>
+<li>Once a project has at least one named version, a shortcut button <i class="fas fa-history"></i> appears in the Projects Bar, just left of the pencil, so you can open Versions with one click instead of going through the File menu.</li>
+<li>Restoring a named version puts a fresh copy of it at the top of the version list under the same name, so the newest named version always shows which coding line you are working in.</li>
+<li>Every bookmark records the exact backup that was current when you saved it (making a fresh backup first if needed). Slides in the Reports list and slideshow show the version name as a badge, so a deck can mix slides from different coding styles and you can see which is which. Backups referenced by a bookmark are never pruned while the bookmark exists.</li>
+</ul>
 <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a class="link-secondary" href="https://causalmap.app">Causal Map Ltd</a> 2026</span> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" style="height:18px;opacity:0.7;vertical-align:middle;"/></a><a class="link-secondary ms-2" href="https://app.causalmap.app" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>
 </main>
 <aside class="rightbar"><h2>On this page</h2><div class="hover-cue">Hover to view</div><div class="toc"><div class="toc">
