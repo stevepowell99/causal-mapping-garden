@@ -1771,6 +1771,13 @@
 <h3 id="filter-system-overview">The Filter System: overview<a aria-label="Permalink" class="anchor-link" href="/map-custom-columns-filter/#filter-system-overview">#</a></h3>
 <p>Use filters to narrow down and/or transform the links you want to study. Filters are applied in order, from top to bottom. You can drag and drop them to reorder them.</p>
 <p><strong>Position in the pipeline is part of what a filter does.</strong> Each filter sees only the links handed down to it, so moving one up or down can change the final result even when the set of filters is the same. The clearest case is any filter that counts: <a href="../link-frequency-filter/">Link Frequency</a> and <a href="../factor-frequency-filter/">Factor Frequency</a> apply their threshold to the links they receive, so anything above them that removes links (Exclude self-loops, Exclude Tags, a Factor Label filter) changes the counts and therefore changes which links and factors pass. Transform filters (Zoom, Collapse, Combine Opposites and the recoding family) change the labels themselves, so anything below them works on the new labels. Only assume order does not matter when you have checked that nothing downstream counts or relabels.</p>
+<h4 id="filter-ordering-rules">Filter ordering rules<a aria-label="Permalink" class="anchor-link" href="/map-custom-columns-filter/#filter-ordering-rules">#</a></h4>
+<p>Any order of filters means something, so these are not restrictions on what you can build. They are the two orderings that usually give an answer to a question nobody asked. The app asks about them: it colours the filter pane and puts the question at the top, you can dismiss it, and it appears again the next time you change the chain. MapCat follows the same rules when it builds a chain for you, and will explain either one if you ask.</p>
+<p>The order to build in: filters that choose which sources or links you are looking at, then tracing, then Combine Opposites, then the filters that rewrite labels, then the frequency filters, then Exclude self-loops.</p>
+<p><strong>Rule 1. Put tracing at the top of the chain.</strong> <a href="../path-tracing-filter/">Path tracing</a>, source tracing (path tracing with threads turned on), the <a href="../pathways-filter/">Pathways</a> filter and a <a href="../factor-label-filter/">Factor Label</a> filter set to more than one step all exist to find causal paths that are really in the data. Put a filter that rewrites factor labels above them (<a href="../zoom-filter/">Zoom</a>, <a href="../collapse-filter/">Collapse</a>, <a href="../combine-opposites-filter/">Combine Opposites</a>, <a href="../replace-brackets-filter/">Remove Brackets</a>, <a href="../soft-relabel-filter/">Soft Relabel</a>, <a href="../soft-recode-plus/">Soft Recode Plus</a>, <a href="../clustering-filter/">Cluster</a>, <a href="../hierarchical-cluster-filter/">Auto Recode</a>) and it merges factors that were two different things in the coding, so you trace a route through a junction nobody described. Put a frequency filter above them and it removes links the paths are made of, so you find no route where the data has one. Either way you are tracing a map that is no longer the coded data. Trace first, and simplify afterwards for presentation.</p>
+<p><strong>Rule 2. Put the frequency filters at the bottom of the chain.</strong> Link Frequency and Factor Frequency count the links they are given, so they mean something different at every position. Put them after the filters that decide what you are looking at. Take an ego network: filter to the neighbourhood first and then to the most frequent material within it, and you learn what people said most about that factor. The other way round you keep the most popular material in the whole corpus and then cut it down to the ego, which is a different map and usually not the one you wanted. You can put an <a href="../exclude-self-loops-filter/">Exclude self-loops</a> filter after them.</p>
+<p><strong>Rule 3. Put <a href="../combine-opposites-filter/">Combine Opposites</a> above the filters that replace labels.</strong> Combine Opposites finds each pair by reading the labels it is given: a numeric tag such as <code>[~3]</code> against <code>[3]</code>, or a label starting with <code>~</code> against the same label without it. <a href="../replace-brackets-filter/">Remove Brackets</a> deletes the square-bracket tags, and <a href="../collapse-filter/">Collapse</a>, <a href="../soft-relabel-filter/">Soft Relabel</a>, <a href="../soft-recode-plus/">Soft Recode Plus</a>, <a href="../clustering-filter/">Cluster</a> and <a href="../hierarchical-cluster-filter/">Auto Recode</a> replace a label with a new one that no longer carries the marker. Put one of those above Combine Opposites and it finds no pairs at all, so the negative and the positive stay on the map as two separate factors and nothing tells you the pairing was lost. Combine the opposites first, then replace labels for presentation. <a href="../zoom-filter/">Zoom</a> is the exception: it truncates the hierarchy and keeps the marker on whatever it keeps.</p>
+<p>More rules will follow. Maintainers: the rules, their wording and the checker are single-sourced in <code>js/filter-type-flags.js</code> (<code>FILTER_ORDER_RULES</code>, <code>checkFilterOrder</code>, <code>suggestFilterPosition</code>), which feeds the filter-pane warning, MapCat's prompt and MapCat's default insertion position. Change them there and update this section to match.</p>
 <ul>
 <li><strong>Default filter</strong>: starts with a Factor Label Filter.  </li>
 <li>👉🏼 <strong>Add Filter</strong> <i class="fas fa-plus"></i> (button): insert a filter at the start or between existing ones.  </li>
@@ -1779,6 +1786,8 @@
 <li>👉🏼 <strong>Collapse</strong> (button on each filter): hide/show that filter’s controls.  </li>
 <li>👉🏼 <strong>Clear All</strong> <i class="fas fa-times"></i> (button): reset to the default single Factor Label Filter.</li>
 </ul>
+<p>This row of controls stays at the top of the pane while the filters below it scroll, so Add Filter and the enabled switch are within reach however long the chain is.</p>
+<p>The funnel icon on the <strong>Filter links</strong> tab itself is a second switch for the same <strong>enabled</strong> state: click it to bypass every filter, click again to turn them back on. The icon shows a line through it whenever the filters change nothing, either because the pipeline is off or because every filter in it is off.</p>
 <h4 id="transform-filters-vs-permanent-relabelling">Transform filters vs permanent relabelling<a aria-label="Permalink" class="anchor-link" href="/map-custom-columns-filter/#transform-filters-vs-permanent-relabelling">#</a></h4>
 <p>Most filters leave factor labels untouched, but these 'Transform filters' filters temporarily relabel factors:</p>
 <ul>
@@ -1807,6 +1816,7 @@
 <li>👉🏼 <strong>Type</strong> (radio buttons): <strong>Top</strong> vs <strong>Minimum</strong>.  </li>
 <li>👉🏼 <strong>Count by</strong> (radio buttons): <strong>Sources</strong> vs <strong>Citations</strong>.</li>
 </ul>
+<p><strong>Put this filter at the bottom of the chain</strong> (<a href="../filter-ordering-rules/">rule 2</a>). It counts the links it is given, so higher up it ranks the whole corpus and the filters below it only trim what survived.</p>
 <p>Examples:</p>
 <ul>
 <li><strong>Minimum 6 Sources</strong>: Only links mentioned by 6+ sources</li>
@@ -1827,7 +1837,7 @@
 <div class="user-guide-callout">
 <strong>📈 What this does:</strong> Similar to Link Frequency, but focuses on the most important factors (causes and effects). Show only the most frequently mentioned themes or concepts to identify the key issues in your data.
 </div>
-<p>Same controls as <a href="../link-frequency-filter/">Link Frequency</a> but applies to factors instead of links.</p>
+<p>Same controls as <a href="../link-frequency-filter/">Link Frequency</a> but applies to factors instead of links, and the same rule: it goes at the bottom of the chain (<a href="../filter-ordering-rules/">rule 2</a>).</p>
 <p>Example bookmarks:</p>
 <ul>
 <li><a href="bookmark=1063">Factor importance colouring (top factors)</a></li>
@@ -1917,7 +1927,7 @@
 <p>Tips:</p>
 <ul>
 <li><strong>Order matters</strong>: This filter runs wherever you place it in the pipeline. If you have <a href="../zoom-filter/">Zoom</a> above it, then your “focused” factors may be zoomed-out labels (and the dropdown options will reflect that).</li>
-<li><strong>Simplify first</strong>: Consider applying formatting/simplification filters before focusing (e.g. <a href="../zoom-filter/">Zoom</a>, <a href="../collapse-filter/">Collapse</a>, <a href="../replace-brackets-filter/">Remove Brackets</a>).</li>
+<li><strong>Simplify first, unless you are using steps</strong>: at one step up and down you are picking a set of factors, so applying <a href="../zoom-filter/">Zoom</a>, <a href="../collapse-filter/">Collapse</a> or <a href="../replace-brackets-filter/">Remove Brackets</a> first often makes the labels easier to choose from. At more than one step you are tracing a neighbourhood, so <a href="../filter-ordering-rules/">rule 1</a> applies and this filter belongs above anything that rewrites labels.</li>
 <li><strong>Collapse alternative</strong>: If you want to merge several factors into one <em>without</em> changing the neighbours, consider using <a href="../collapse-filter/">Collapse</a> instead of focusing.</li>
 </ul>
 <p>All label/tag filters have three radio buttons below the selectize input called Match: Start (default), Anywhere or Exact to control how search terms match against labels/tags:</p>
@@ -2000,7 +2010,7 @@ For exclude filters, default behavior is AND (all terms must match), unless you 
 <p>Notes:</p>
 <ul>
 <li>
-<p><strong>Order matters</strong>: this filter runs at its position in the pipeline, so upstream transform filters (e.g. <a href="../zoom-filter/">Zoom</a>, <a href="../collapse-filter/">Collapse</a>, <a href="../combine-opposites-filter/">Combine Opposites</a>) can change which labels you can select and which paths exist.</p>
+<p><strong>Order matters, and this filter belongs at the top</strong> (<a href="../filter-ordering-rules/">rule 1</a>): the app applies it at its position in the pipeline, so a transform filter above it (e.g. <a href="../zoom-filter/">Zoom</a>, <a href="../collapse-filter/">Collapse</a>, <a href="../combine-opposites-filter/">Combine Opposites</a>) changes which labels you can select and which paths exist, and a frequency filter above it removes links the paths are made of. Trace first, then simplify for presentation.</p>
 </li>
 <li>
 <p><strong>Empty selectors</strong>:</p>
@@ -2032,12 +2042,12 @@ For exclude filters, default behavior is AND (all terms must match), unless you 
 <p>Notes:</p>
 <ul>
 <li><strong>Quote offsets required</strong>: a link can only join a passage if its quote has a recorded position in the source. Links without offsets do not participate.</li>
-<li><strong>Order matters</strong>: like other filters, this runs at its position in the pipeline, so upstream transform filters (e.g. <a href="../zoom-filter/">Zoom</a>, <a href="../collapse-filter/">Collapse</a>) change which chains exist. Place a Pathways filter after any narrowing filters so it ranks within the set you care about.</li>
+<li><strong>Order matters, and this filter belongs at the top</strong> (<a href="../filter-ordering-rules/">rule 1</a>): the app applies it at its position in the pipeline, so a transform filter above it (e.g. <a href="../zoom-filter/">Zoom</a>, <a href="../collapse-filter/">Collapse</a>) changes which chains exist. Put it below the filters that choose which sources or links you are looking at, and above anything that rewrites labels or counts.</li>
 <li><strong>Heuristic</strong>: on very large or dense sources the search is capped, so the ranking is indicative rather than exhaustive.</li>
 </ul>
 <h3 id="recalculate-offsets">Recalculate quote positions<a aria-label="Permalink" class="anchor-link" href="/map-custom-columns-filter/#recalculate-offsets">#</a></h3>
 <p>Found in <strong>Project → Edit project → Quote positions</strong>.</p>
-<p>Each coded link holds a quote from a source. To know <em>where</em> in the source that quote sits, the app records a character position (offset) for it. These positions drive source-text highlighting and the <a href="../pathways-filter/">Pathways filter</a>, which uses them to judge whether the steps of a story sit close together in the text.</p>
+<p>Each coded link has a quote from a source. To know <em>where</em> in the source that quote is, the app records a character position (offset) for it. Source-text highlighting uses these positions, and so does the <a href="../pathways-filter/">Pathways filter</a>, to judge whether the steps of a story are close together in the text.</p>
 <p>Positions are normally filled in as you read sources, so older projects or ones never opened in text view can have many links without them. <strong>Recalculate quote positions</strong> does the whole project in one pass: it matches each link's quote against its source text and stores the position.</p>
 <ul>
 <li>Use it if the Pathways filter finds little or nothing, or after re-importing or editing source text.</li>
@@ -2108,7 +2118,7 @@ There's an alternative, more flexible version:
 <p>Notes:</p>
 <ul>
 <li><strong>Opposites, not sentiment</strong>: <code>~</code> marks the opposite pole (e.g. <code>smoking</code> vs <code>~smoking</code>), not “bad”. Use it even when there’s no valence.</li>
-<li><strong>Order matters</strong>: because this is a transform filter, its position in the pipeline affects downstream filters and which labels appear in dropdowns.</li>
+<li><strong>Order matters, and this filter belongs above the ones that replace labels</strong> (<a href="../filter-ordering-rules/">rule 3</a>): it reads the <code>[~3]</code>/<code>[3]</code> tags and the leading <code>~</code> to find each pair, so Remove Brackets (square), Collapse, Soft Relabel, Soft Recode Plus, Cluster or Auto Recode above it leaves nothing to pair, silently. As a transform filter it also changes what the filters below it work on, and which labels appear in their dropdowns.</li>
 <li><strong>Map colouring override</strong>: when active, arrowhead colouring switches to Combine‑Opposites colouring (flipped status / flipped share), so the Map Formatting <strong>Link Colour</strong> setting does not apply in the usual way.</li>
 </ul>
 <p>Example bookmarks (contrast):</p>
@@ -2543,6 +2553,7 @@ The meaning of the labels you give me should ideally not overlap in meaning with
 <aside class="rightbar"><h2>On this page</h2><div class="hover-cue">Hover to view</div><div class="toc"><div class="toc">
 <ul>
 <li><a href="/map-custom-columns-filter/#filter-system-overview">The Filter System: overview</a><ul>
+<li><a href="/map-custom-columns-filter/#filter-ordering-rules">Filter ordering rules</a></li>
 <li><a href="/map-custom-columns-filter/#transform-filters-vs-permanent-relabelling">Transform filters vs permanent relabelling</a></li>
 </ul>
 </li>

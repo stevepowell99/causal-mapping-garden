@@ -1777,6 +1777,7 @@
 <li>👉🏼 <strong>(<code>After pipeline</code> / <code>Before pipeline</code>)</strong> (Radio buttons): <code>Which stage to analyse?</code> — chooses post‑pipeline (matches other panels) vs raw data for the chosen dataset.</li>
 <li>👉🏼 <strong>(<code>Refresh</code>)</strong> (Button): reloads + re-renders the pivot with latest data.</li>
 <li>👉🏼 <strong>(<code>Sig level</code>)</strong> (Dropdown): significance threshold for 2-way table tests (0.10, 0.05, 0.01, 0.001).</li>
+<li>👉🏼 <strong>(<code>Shading</code>)</strong> (Dropdown): conditional formatting for every table in the panel — see <a href="../pivot-shading/">Conditional formatting</a>.</li>
 <li>👉🏼 <strong>(<code>Copy to Clipboard</code>)</strong> (Button): copies the current pivot table/chart as an image.</li>
 <li>👉🏼 <strong>(<code>Copy as Table</code>)</strong> (Button): copies the pivot as tab-separated text — paste into Excel/Sheets to get a properly aligned table (<strong>Table renderer only</strong>).</li>
 <li>👉🏼 <strong>(<code>Download XLSX</code>)</strong> (Button): downloads the current pivot as <code>.xlsx</code> (<strong>Table renderer only</strong>). Merged cells (rowspan/colspan) are expanded so columns align correctly.</li>
@@ -1828,12 +1829,21 @@
 <li>👉🏼 <strong>Heatmaps</strong> (e.g. <code>Heatmap</code>, <code>Row Heatmap</code>, <code>Col Heatmap</code>)</li>
 <li>👉🏼 <strong>Plotly charts</strong> (e.g. <code>Bar</code>, <code>Line</code>, <code>Scatter</code>, <code>Stacked Bar</code>, <code>Area</code>, <code>Multiple Pie</code>)</li>
 </ul>
+<h3 id="pivot-shading">Conditional formatting<a aria-label="Permalink" class="anchor-link" href="#pivot-shading">#</a></h3>
+<p>One <strong>Shading</strong> dropdown in the toolbar colours the tables in all three subtabs the same way, so the pivot table, the Summary heatmaps and the All-by-all tables always match.</p>
+<ul>
+<li>👉🏼 <strong>(<code>Off</code>)</strong>: no colouring.</li>
+<li>👉🏼 <strong>(<code>Rows</code>)</strong> (default): shades each cell against the other cells in its own row, so you read across a row to compare.</li>
+<li>👉🏼 <strong>(<code>Columns</code>)</strong>: shades each cell against the other cells in its column, so you read down instead.</li>
+<li>👉🏼 <strong>(<code>Cells</code>)</strong>: shades how far each cell sits from the count you would expect if the two variables were unrelated. Blue means more cases than expected, red means fewer, and white means about as expected. Hover a cell to see its observed and expected counts. This is the view that shows you where an association actually comes from.</li>
+</ul>
+<p>Row and column totals always keep their own blue shading. The pivot table's own <strong>Heatmap</strong> renderers colour their cells themselves, so Shading leaves those alone. The setting is saved to the URL, so a bookmark reopens with the same formatting.</p>
 <h3 id="export-and-sharing">Export and sharing<a aria-label="Permalink" class="anchor-link" href="#export-and-sharing">#</a></h3>
 <ul>
 <li>👉🏼 <strong>(<code>Copy to Clipboard</code>)</strong> (Button): copies the current pivot output as an image.</li>
 <li>👉🏼 <strong>(<code>Copy as Table</code>)</strong> (Button): copies the pivot as TSV — pastes as a correctly aligned table in Excel or Google Sheets (<strong>Table renderer only</strong>).</li>
 <li>👉🏼 <strong>(<code>Download XLSX</code>)</strong> (Button): exports the pivot table to <code>.xlsx</code> with merged cells expanded so columns align (<strong>Table renderer only</strong>).</li>
-<li>👉🏼 <strong>(URL state)</strong>: the pivot configuration is saved to the URL automatically, so you can bookmark/share it.</li>
+<li>👉🏼 <strong>(URL state)</strong>: the pivot configuration is saved to the URL automatically, so you can bookmark/share it. That includes which subtab you were on, the shading mode, and the field tick boxes on Summary and All-by-all, so a bookmark reopens on the same view.</li>
 </ul>
 <h3 id="significance-testing">Significance testing<a aria-label="Permalink" class="anchor-link" href="#significance-testing">#</a></h3>
 <p>When you build a <strong>2-way count table</strong> (one field in Rows, one in Cols, Count aggregator), the app runs a statistical test and shows the result below the table.</p>
@@ -1842,7 +1852,7 @@
 <li><strong>Which test?</strong> The app picks the right test for your data:</li>
 <li><strong>Chi-squared</strong> when both variables are nominal (e.g. categories with no natural order).</li>
 <li><strong>Mantel</strong> (linear-by-linear) when one or both variables are ordinal (e.g. Likert scales, age bands). This test is more sensitive to ordered trends.</li>
-<li><strong>All-by-all checks</strong>: below the pivot, tick <strong>Run all-by-all checks</strong> and click <strong>Run</strong>. The app tests every pair of categorical variables with 2–10 values, lists them by p-value, and shows heatmap tables for the significant ones. Useful for exploratory analysis when you have several group or rating variables.</li>
+<li><strong>All-by-all checks</strong>: the third subtab, which runs as soon as you open it. The app tests every pair of categorical variables with 2–10 values, lists them by p-value, and shows tables for the significant ones. Useful for exploratory analysis when you have several group or rating variables. The <strong>Rows</strong> and <strong>Cols</strong> tick boxes above the results narrow which pairs are shown; leave them empty for all of them.</li>
 </ul>
 <h3 id="notes-on-the-datasets">Notes on the datasets<a aria-label="Permalink" class="anchor-link" href="#notes-on-the-datasets">#</a></h3>
 <ul>
@@ -1861,6 +1871,7 @@
 <li><a href="#filter-or-exclude-values">Filter or exclude values</a></li>
 <li><a href="#sorting">Sorting</a></li>
 <li><a href="#heatmaps-and-charts">Heatmaps and charts</a></li>
+<li><a href="#pivot-shading">Conditional formatting</a></li>
 <li><a href="#export-and-sharing">Export and sharing</a></li>
 <li><a href="#significance-testing">Significance testing</a></li>
 <li><a href="#notes-on-the-datasets">Notes on the datasets</a></li>

@@ -1770,7 +1770,7 @@
 </div>
 <p>AI is switched on and off in the <a href="../account-panel/">Account panel</a> with the <strong>"AI options switched on and active"</strong> switch. If you choose an AI workflow when you sign up, it is turned on for you; otherwise you can turn it on there at any time. When AI is on, the <strong>AI Coding panel</strong> appears inline at the top of the <strong>Create links</strong> tab, ready to use.</p>
 <p>AI usage consumes <strong>credits</strong> (see <a href="../responses-panel/">Responses Panel</a>). <strong>One credit is a fixed unit of AI spend worth about $0.005</strong>, so 100 credits is roughly $0.50 of usage. There is no fixed credits-per-page or credits-per-token rate: the app works out the real cost of each AI call from its token usage and the model's price, then converts that to credits at $0.005 each. So the credits a task uses depend entirely on the model you choose, the length of your codebook, and how many passes you run. Credits renew monthly and do not roll over.</p>
-<p>As a rough ballpark for a single autocoding pass over 30 pages of text: around 8 credits on the default model (Gemini 2.5 Flash), around 5 credits on Qwen Flash, around 30 to 40 credits on Gemini 3.5 Flash, and considerably more on the Pro models. Running extra iterations or re-runs multiplies the cost. These figures are estimates and will change as model prices change; the <a href="../responses-panel/">Responses Panel</a> shows what your own runs actually cost.</p>
+<p>As a rough ballpark for a single autocoding pass over 30 pages of text: around 8 credits on Gemini 2.5 Flash, around 5 credits on Qwen Flash, around 30 to 40 credits on the default Gemini 3.5 Flash, and considerably more on the Pro models. Running extra iterations or re-runs multiplies the cost. These figures are estimates and will change as model prices change; the <a href="../responses-panel/">Responses Panel</a> shows what your own runs actually cost.</p>
 <p>Users with dedicated AI plans receive a larger batch of AI credits each month; other users receive 100 free AI credits per month (the free credits do not stack with paid plans). The per-plan allowances are listed under <a href="../account-panel/">AI credits</a>. </p>
 <h3 id="the-ai-workflow">The AI Workflow<a aria-label="Permalink" class="anchor-link" href="/simple-ai-target-clusters/#the-ai-workflow">#</a></h3>
 <p>The AI Coding panel sits at the top of the <strong>Create links</strong> tab, above the source text viewer. The Sources bar, the right-hand output tabs, and the <strong>Create links</strong> / <strong>Filter links</strong> / <strong>Assess links</strong> tabs all stay where they are; the panel does not take over the screen.</p>
@@ -1808,9 +1808,11 @@ After coding, <strong>filtering</strong> happens in the adjacent <strong>Filter 
 <h3 id="coding-conventions">What the coding prompt decides<a aria-label="Permalink" class="anchor-link" href="/simple-ai-target-clusters/#coding-conventions">#</a></h3>
 <p>The conventions the AI follows when it turns text into links are defined by the <strong>Auto-code prompt</strong>, which you can read and edit in the Auto-code section (it is also shown in the One-click set-up modal before a run). That prompt is the single source of truth, so to see exactly how any case is handled, or to change it, read or edit the prompt rather than relying on a summary. In outline it covers:</p>
 <ul>
-<li><strong>Hierarchical labels</strong>: factors are labelled <code>General; specific</code> (two or more free levels), most general first, so the map can later be zoomed out by truncating at a semicolon.</li>
+<li><strong>Hierarchical labels</strong>: factors can be labelled <code>General; specific</code> (two or more free levels), most general first, so the map can later be zoomed out by truncating at a semicolon. Whether to use them is a choice: it suits a large corpus with a multi-level scheme, and is left off for a small project or a fixed codebook. When it is on, the coder is also told what the top (most general) level should read like, for example a social-science concept, an actor name, or a codebook's general categories. You can ask MapCat to turn hierarchical labels on or off. </li>
+<li><strong>Actor focus</strong> (default on): factors name who or what the cause and effect are about, with the actor as the subject and no passive voice, which suits maps that track who affects what. You can ask MapCat to turn this off for a concept or thematic map, and the coder then labels in the source's own words instead. </li>
 <li><strong>Opposites</strong>: a leading <code>~</code> marks the reverse pole of a factor (for example <code>~Employment</code> for "less employment"), so both polarities share one node.</li>
 <li><strong>Failed influences</strong>: a link aimed at an outcome that did not follow is still coded, with the <strong>failure</strong> column set to 1 and the arrow pointing at what the influence was for.</li>
+<li><strong>Every segment accounted for</strong> (default on): the coder splits each source into short segments and must account for each one, finding the causal claims in it or recording that it has none, rather than stopping once it has found a few links. This raises recall on long chunks. To keep it reliable, chunks are processed at 16,000 characters even when you set a larger chunk size. </li>
 </ul>
 <p>The prompt states the full rules and their interactions; this list is only an orientation.</p>
 <h3 id="simple-ai-runner">One-click coding (AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-target-clusters/#simple-ai-runner">#</a></h3>
@@ -1820,6 +1822,7 @@ After coding, <strong>filtering</strong> happens in the adjacent <strong>Filter 
 <li>One-click uses the same panel prompts/settings as the separate step buttons, while skipping the extra per-step run confirmations after you confirm the one-click set-up modal.</li>
 <li>Existing links on the sources in scope are always replaced: they are deleted just before the run so the new coding does not duplicate them. Links on other sources are kept. The set-up modal shows the counts.</li>
 <li><strong>Recode target</strong>: Use the global <a href="../factor-label-set/">Label set</a> below the Sources bar. Create a new suffix there first if you want Recode to fill <code>cause_suffix</code> / <code>effect_suffix</code> instead of only the default columns.</li>
+<li><strong>Join islands (final step, default on)</strong>: after coding, one-click runs a join pass so the map comes out connected rather than left in many small islands. It merges near-duplicate factor labels and adds cross-island links, each backed by a verbatim quote from the same source. These added links are the least certain part of the map, so review them if precision matters. The join stays within a single source; connecting across sources is Recode's job. If it fails it is skipped and the rest of the run still completes. Through MapCat you can set the join to <strong>off</strong>, <strong>merge only</strong> (tidy and consolidate labels without adding any new links), or a set number of rounds; <strong>merge only</strong> suits reproducible coding or very long sources where no invented links are wanted. </li>
 </ul>
 <h3 id="simple-ai-background">Background (AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-target-clusters/#simple-ai-background">#</a></h3>
 <ul>
@@ -1839,22 +1842,20 @@ After coding, <strong>filtering</strong> happens in the adjacent <strong>Filter 
 <p><strong>Per-section model</strong>: each section after the first has its own model dropdown, defaulting to <strong>Main model</strong>. Use it to code with a cheap high-recall model and prune with a stronger one (for example Gemini 2.5 Flash coding, Gemini 3.1 Pro pruning), which testing showed removes most wrong links while keeping the good ones. All sections in one run must be from the same provider. </p>
 </li>
 <li>
-<p><strong>Rerun from here</strong>: each prompt section has a small rerun button. Use it to continue a stable multi-section prompt without paying again for earlier successful stages, not as an open-ended chat workflow for coding maps. Section 1 reruns normally. Later sections reuse the latest successful earlier iteration history only when the earlier source text, prompt sections, chunk bounds, and Holistic setting are unchanged; otherwise the run fails loudly. You can add new sections under a successful run and rerun from the first new section.</p>
+<p><strong>Rerun from here</strong>: each prompt section has a small rerun button. Use it to continue a stable multi-section prompt without paying again for earlier successful stages, not as an open-ended chat workflow for coding maps. Section 1 reruns normally. Later sections reuse the latest successful earlier iteration history only when the earlier source text, prompt sections and chunk bounds are unchanged; otherwise the run fails loudly. You can add new sections under a successful run and rerun from the first new section.</p>
 </li>
-<li><strong>Holistic first pass</strong>: when enabled, only the first iteration asks the model for a Mermaid causal network with quote-backed edge labels. The server parses that Mermaid into the standard links JSON format before passing it to later iterations or saving final links. If the Mermaid cannot be parsed into links, the run fails loudly.</li>
 <li><strong>Confirm</strong> before a run shows model, chunking, word count, and cost estimate. <strong>Stop</strong> cancels after current chunk tasks finish.</li>
+<li><strong>Chunk size</strong> (Advanced) defaults to <strong>16K</strong> characters. Larger chunks give the model more context per call and fewer islands to join afterwards; lower it only if a model struggles with long inputs. The every-segment-accounted-for pass caps the effective size at 16,000 characters even when you set a larger value.</li>
 <li>Timeouts scale by model and iteration count (cap ~540s total). <strong>Concurrency</strong> (1–5) is in Advanced; raise for speed, lower if you see 429/timeouts.</li>
 <li><a href="../tips-prompts/">Tips on using the prompt history</a> (same chrome as other prompt fields).</li>
 <li>Default model is <strong>Gemini 3.5 Flash</strong> (precise and EU-resident; in testing it produced very few wrong links at moderate volume). One-click coding inherits this default.</li>
 </ul>
-<h4 id="simple-ai-auto-code-holistic">Holistic first pass (Auto-code)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-target-clusters/#simple-ai-auto-code-holistic">#</a></h4>
+<h3 id="ai-run-progress">While a coding run is going<a aria-label="Permalink" class="anchor-link" href="/simple-ai-target-clusters/#ai-run-progress">#</a></h3>
 <ul>
-<li><strong>What it does</strong>: keeps Auto-code on the normal single <code>process_chunk</code> route, but changes iteration 1 so it asks for a connected Mermaid causal network before converting that network to standard links JSON in code.</li>
-<li><strong>When to use it</strong>: helpful when asking directly for a links table gives fragmented networks and you want the first pass to reason about the whole causal story.</li>
-<li><strong>Switch</strong>:</li>
-<li><strong>ON</strong> = iteration 1 uses Mermaid instructions, then server-side parsing converts the result to links JSON.</li>
-<li><strong>OFF</strong> = all sections use the standard links JSON instructions.</li>
-<li><strong>Extra columns</strong>: if your prompt asks for extra columns such as sentiment or mood, the Mermaid edge labels must include them as safe <code>key=value</code> fields. The parser writes those fields into the resulting links.</li>
+<li>Before a run starts, it shows how many sources are in scope, coloured by how much of the project that is: red for every source, amber for a large slice, grey for a small one, with the chunk count, chunk size and model underneath. A five-second countdown then runs, so you can press <strong>Stop</strong> to abort before any AI work starts if the scope looks wrong. One-click runs skip the countdown, because they confirm the scope earlier, but still show the header.</li>
+<li>While the run works, a progress panel shows the current chunk, an estimated finish time, and a <strong>Stop run</strong> button. The browser tab title also tracks progress, so you can watch it from another tab.</li>
+<li>Press <strong>Continue in the background</strong> to hide the panel and carry on working. The run keeps going on the server and tells you when it finishes; reopen the panel any time from the AI Coding panel. Server runs are safe to close the tab on; the panel says so once the run is server-side.</li>
+<li>Only one coding run happens at a time. While a run is live the <strong>Run</strong> buttons become a stop control and the other AI actions are greyed out, so you cannot start a second run over the same sources by accident.</li>
 </ul>
 <h3 id="simple-ai-revise-codebook">Revise codebook (AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-target-clusters/#simple-ai-revise-codebook">#</a></h3>
 <ul>
@@ -1913,10 +1914,8 @@ After coding, <strong>filtering</strong> happens in the adjacent <strong>Filter 
 <li><a href="/simple-ai-target-clusters/#coding-conventions">What the coding prompt decides</a></li>
 <li><a href="/simple-ai-target-clusters/#simple-ai-runner">One-click coding (AI)</a></li>
 <li><a href="/simple-ai-target-clusters/#simple-ai-background">Background (AI)</a></li>
-<li><a href="/simple-ai-target-clusters/#simple-ai-auto-code">Auto-code (AI)</a><ul>
-<li><a href="/simple-ai-target-clusters/#simple-ai-auto-code-holistic">Holistic first pass (Auto-code)</a></li>
-</ul>
-</li>
+<li><a href="/simple-ai-target-clusters/#simple-ai-auto-code">Auto-code (AI)</a></li>
+<li><a href="/simple-ai-target-clusters/#ai-run-progress">While a coding run is going</a></li>
 <li><a href="/simple-ai-target-clusters/#simple-ai-revise-codebook">Revise codebook (AI)</a><ul>
 <li><a href="/simple-ai-target-clusters/#simple-ai-target-clusters">Target clusters (Revise codebook)</a></li>
 </ul>
