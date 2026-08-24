@@ -1772,7 +1772,7 @@
 <p>The Factors panel displays all unique labels from the current filter pipeline.</p>
 <p><strong>Table Features:</strong></p>
 <ul>
-<li>Columns include:</li>
+<li>Columns include:<ul>
 <li><strong>Citation Count</strong> – total number of citations of this factor (as cause or effect)</li>
 <li><strong>Source Count</strong> – number of different sources mentioning this factor</li>
 <li><strong>Citation Count: In</strong> – number of citations of this factor as an effect of something</li>
@@ -1781,6 +1781,8 @@
 <li><strong>Influence</strong> – “influence as a cause” score (Katz-style centrality in the causal direction, cause → effect). We shift the numbers so the smallest factor is <strong>0</strong> (makes differences easier to see), but we <strong>don’t</strong> scale to 0..1.</li>
 <li><strong>Source Count: In</strong> – number of sources mentioning this factor as an effect of something</li>
 <li><strong>Source Count: Out</strong> – number of sources mentioning this factor as a cause of something</li>
+</ul>
+</li>
 </ul>
 <p><strong>Why “Importance” can be better than Citation Count: Out:</strong></p>
 <ul>
@@ -1797,8 +1799,10 @@
 <li><i class="fas fa-edit"></i> Relabel: Rename selected factors  </li>
 <li><i class="fas fa-search"></i> Search/Replace: Find and replace text in factor names</li>
 <li><i class="fas fa-compress-arrows-alt"></i> Merge: Combine multiple factors into one</li>
-<li>Buttons disabled until factors are selected</li>
+<li>Buttons disabled until factors are selected<ul>
 <li>💡Tip: Use <a href="../factors-search-replace/">Search/replace</a> for quick, scoped relabeling.</li>
+</ul>
+</li>
 </ul>
 <p>Find out more about bulk delete and relabel of factors <a href="../editing-and-deleting-multiple-factors/">here</a>.  </p>
 <h3 id="factors-relabel">Bulk factor labels editor<a aria-label="Permalink" class="anchor-link" href="/factors-relabel/#factors-relabel">#</a></h3>
@@ -1851,8 +1855,10 @@
 <li><strong>Breakdown selector</strong> - Choose custom columns to analyze by demographics</li>
 <li><strong>Count type</strong> - Source count (default) or citation count</li>
 <li><strong>Display mode</strong> - Counts (default) or % of baseline (cell as a percent of that breakdown group’s total across all factors)</li>
-<li><strong>Statistical testing</strong> - Chi-squared analysis to identify significant patterns</li>
+<li><strong>Statistical testing</strong> - Chi-squared analysis to identify significant patterns<ul>
 <li>See also <a href="../statistical-significance-testing/">Statistical Significance Testing</a></li>
+</ul>
+</li>
 </ul>
 <h3 id="statistical-significance-testing">Statistical Significance Testing<a aria-label="Permalink" class="anchor-link" href="/factors-relabel/#statistical-significance-testing">#</a></h3>
 <p>When you select exactly <strong>one custom column</strong> for breakdown, the factors table includes powerful chi-squared significance testing to identify factors that are preferentially mentioned by different groups.</p>

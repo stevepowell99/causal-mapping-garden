@@ -1828,13 +1828,15 @@
 <li>For each link, extracts the selected quote plus surrounding context</li>
 <li>Organizes contexts by source, with source metadata (title, custom columns)</li>
 <li>For ≤500 links: Sends all contexts directly to AI</li>
-<li>For &gt;500 links: Same pattern as SRP — RPC + client-triggered embedding creation, no long-running Edge Function</li>
+<li>For &gt;500 links: Same pattern as SRP — RPC + client-triggered embedding creation, no long-running Edge Function<ul>
 <li>Client gets query embedding (one call), then calls RPC <code>find_relevant_link_contexts(project_name, link_ids, query_embedding, top_k, threshold)</code></li>
 <li>RPC fetches links from DB, builds a <strong>normalized key</strong> per link (see Normalization note below), checks <code>embeddings</code>; if any missing (or <code>embedding IS NULL</code>) returns <code>needs_embeddings</code> + <code>missing_texts</code></li>
 <li>Client calls <code>DataService.createEmbeddingsBatch(missing_texts, ..., { useProvidedKeys: true })</code> (server-side generation + DB upsert), then retries RPC</li>
 <li>RPC runs similarity in Postgres (pgvector), returns <code>relevant_link_ids</code> + <code>similarities</code> (and may include a <code>debug</code> block); no embedding vectors to frontend</li>
 <li>Selection is <strong>source-diversified</strong> (round-robin: best link per source first), and avoids identical contexts within a source (exact de-dupe on the normalized key)</li>
 <li>Prompt to AI uses full chunk_text (quote + surrounding 3 sentences) built on the client</li>
+</ul>
+</li>
 <li>AI analyzes contexts showing cause → effect relationships</li>
 <li>AI is instructed to use the coded factor labels as the vocabulary (wrap labels in backticks like <code>this</code>) and to be sceptical about evidence coverage and alternative narratives.</li>
 </ol>
@@ -1889,10 +1891,12 @@ Context: "When teachers receive proper training, we see improvements in..."
 <ul>
 <li>All three subtabs use checkbox-pill choosers.</li>
 <li>Chosen fields are prepended to each row payload as <code>Field = value</code>.</li>
-<li>Default payloads:</li>
+<li>Default payloads:<ul>
 <li><strong>Sources</strong>: <code>content</code></li>
 <li><strong>Links</strong>: <code>cause</code>, <code>effect</code></li>
 <li><strong>Factors</strong>: <code>label</code></li>
+</ul>
+</li>
 </ul>
 <p><strong>Safety behavior (Create/Modify mode):</strong></p>
 <ul>

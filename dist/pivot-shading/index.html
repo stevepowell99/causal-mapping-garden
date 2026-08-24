@@ -1788,9 +1788,11 @@
 <li>👉🏼 <strong>(<code>Vals</code>)</strong> (Dropdown): chooses the numeric field to aggregate (only appears for aggregators that need it).</li>
 <li>👉🏼 <strong>(<code>Renderer</code>)</strong> (Dropdown): chooses the output type (table, heatmaps, Plotly charts).</li>
 <li>👉🏼 <strong>(<code>Row Order</code> / <code>Col Order</code>)</strong> (Dropdowns): chooses how row/column keys are sorted.</li>
-<li>👉🏼 <strong>(Filter popup on each field chip)</strong> (Popup): include/exclude values for that field.</li>
+<li>👉🏼 <strong>(Filter popup on each field chip)</strong> (Popup): include/exclude values for that field.<ul>
 <li>👉🏼 <strong>(Search)</strong> (Text field): searches within the field’s value list.</li>
 <li>👉🏼 <strong>(Checkbox list)</strong>: ticks/unticks specific values.</li>
+</ul>
+</li>
 <li>👉🏼 <strong>(<code>×</code> on a field chip)</strong> (Button): removes that field from <code>Rows</code>/<code>Cols</code>/<code>Vals</code>.</li>
 </ol>
 <h3 id="arrange-fields-drag-and-drop">Arrange fields (drag and drop)<a aria-label="Permalink" class="anchor-link" href="/pivot-shading/#arrange-fields-drag-and-drop">#</a></h3>
@@ -1805,10 +1807,12 @@
 </ul>
 <h3 id="choose-the-calculation-aggregator">Choose the calculation ("Aggregator")<a aria-label="Permalink" class="anchor-link" href="/pivot-shading/#choose-the-calculation-aggregator">#</a></h3>
 <ul>
-<li>👉🏼 <strong>(<code>Aggregator</code>)</strong> (Dropdown): chooses how each cell is calculated. <strong>Optional</strong> — you can leave this at the default <code>Count</code> (no additional variable needed).</li>
+<li>👉🏼 <strong>(<code>Aggregator</code>)</strong> (Dropdown): chooses how each cell is calculated. <strong>Optional</strong> — you can leave this at the default <code>Count</code> (no additional variable needed).<ul>
 <li>👉🏼 <strong>(<code>Count</code>)</strong>: how many rows fall into each cell.</li>
 <li>👉🏼 <strong>(<code>Sum</code> / <code>Average</code> / <code>Min</code> / <code>Max</code>)</strong>: summarises a numeric field.</li>
 <li>👉🏼 <strong>(<code>Unique Count</code>)</strong>: counts distinct values of a field.</li>
+</ul>
+</li>
 <li>👉🏼 <strong>(<code>Vals</code>)</strong> (Dropdown): choose which numeric field to summarise (<strong>optional</strong>, only shown when needed).</li>
 </ul>
 <h3 id="filter-or-exclude-values">Filter or exclude values<a aria-label="Permalink" class="anchor-link" href="/pivot-shading/#filter-or-exclude-values">#</a></h3>
@@ -1824,9 +1828,11 @@
 </ul>
 <h3 id="heatmaps-and-charts">Heatmaps and charts<a aria-label="Permalink" class="anchor-link" href="/pivot-shading/#heatmaps-and-charts">#</a></h3>
 <ul>
-<li>👉🏼 <strong>(<code>Renderer</code>)</strong> (Dropdown): switches between:</li>
+<li>👉🏼 <strong>(<code>Renderer</code>)</strong> (Dropdown): switches between:<ul>
 <li>👉🏼 <strong>Heatmaps</strong> (e.g. <code>Heatmap</code>, <code>Row Heatmap</code>, <code>Col Heatmap</code>)</li>
 <li>👉🏼 <strong>Plotly charts</strong> (e.g. <code>Bar</code>, <code>Line</code>, <code>Scatter</code>, <code>Stacked Bar</code>, <code>Area</code>, <code>Multiple Pie</code>)</li>
+</ul>
+</li>
 </ul>
 <h3 id="pivot-shading">Conditional formatting<a aria-label="Permalink" class="anchor-link" href="/pivot-shading/#pivot-shading">#</a></h3>
 <p>One <strong>Shading</strong> dropdown in the toolbar colours the tables in all three subtabs the same way, so the pivot table, the Summary heatmaps and the All-by-all tables always match.</p>
@@ -1848,9 +1854,11 @@
 <p>When you build a <strong>2-way count table</strong> (one field in Rows, one in Cols, Count aggregator), the app runs a statistical test and shows the result below the table.</p>
 <ul>
 <li><strong>Sig level</strong> (dropdown): choose your significance threshold (0.10, 0.05, 0.01, or 0.001). The test result shows whether the association is significant at that level.</li>
-<li><strong>Which test?</strong> The app picks the right test for your data:</li>
+<li><strong>Which test?</strong> The app picks the right test for your data:<ul>
 <li><strong>Chi-squared</strong> when both variables are nominal (e.g. categories with no natural order).</li>
 <li><strong>Mantel</strong> (linear-by-linear) when one or both variables are ordinal (e.g. Likert scales, age bands). This test is more sensitive to ordered trends.</li>
+</ul>
+</li>
 <li><strong>All-by-all checks</strong>: the third subtab, which runs as soon as you open it. The app tests every pair of categorical variables with 2–10 values, lists them by p-value, and shows tables for the significant ones. Useful for exploratory analysis when you have several group or rating variables. The <strong>Rows</strong> and <strong>Cols</strong> tick boxes above the results narrow which pairs are shown; leave them empty for all of them.</li>
 </ul>
 <h3 id="notes-on-the-datasets">Notes on the datasets<a aria-label="Permalink" class="anchor-link" href="/pivot-shading/#notes-on-the-datasets">#</a></h3>

@@ -1783,9 +1783,11 @@
 <li>projectname and included sources</li>
 <li>Citation coverage percentage</li>
 <li>Visual encoding explanations (link sizes, colors, numbers)</li>
-<li>Applied filters summary</li>
+<li>Applied filters summary<ul>
 <li>💡Tip: Click <a href="../map-controls/">Copy legend</a> to copy this text to clipboard.</li>
 <li>You can drag the legend box to reposition it on the map.</li>
+</ul>
+</li>
 </ul>
 <h3 id="map-evidence">Evidence (shortcut to Links Print View)<a aria-label="Permalink" class="anchor-link" href="/map-evidence/#map-evidence">#</a></h3>
 <ul>
@@ -1795,19 +1797,25 @@
 <h4 id="customisable-formatting-things-you-can-tweak">Customisable formatting (Things you can tweak)<a aria-label="Permalink" class="anchor-link" href="/map-evidence/#customisable-formatting-things-you-can-tweak">#</a></h4>
 <p><strong>Layout and interaction</strong></p>
 <ul>
-<li>👉🏼 <strong>Layout</strong> (dropdown): choose how the map is laid out.  </li>
+<li>👉🏼 <strong>Layout</strong> (dropdown): choose how the map is laid out.  <ul>
 <li>Interactive and most other layouts are good while you are conducting your research (fast + supports the <a href="../interactive-features/">interactive features</a>).  </li>
 <li>Print/Graphviz is best for static images (reports/journal articles). In Graphviz SVG you can still pan/zoom (mouse wheel, double-click, Shift+double-click).</li>
+</ul>
+</li>
 <li>👉🏼 <strong>Groups</strong> (dropdown): layout maps with top-level factors as boxes which group together their "children". Choose how group titles are extracted from factor text: No groups / Level 1 (;) / First colon (:) / Square brackets [] / Round brackets ().</li>
 <li>👉🏼 <strong>Direction</strong> (radio group): LR, RL, TB, or BT (for Interactive and Print/Graphviz layouts).</li>
-<li>👉🏼 <strong>Link direction</strong> (dropdown): Normal (directed arrows) vs Undirected (dots at both ends).  </li>
+<li>👉🏼 <strong>Link direction</strong> (dropdown): Normal (directed arrows) vs Undirected (dots at both ends).  <ul>
 <li>In Undirected mode, dots use the same colours as arrowheads (including sentiment colouring). When sentiment is neutral (0), they use <strong>Link Colour</strong>.  </li>
 <li>Note: when the <a href="../combine-opposites-filter/">Combine Opposites filter</a> is active, tail/head can still have different colours.</li>
 </ul>
+</li>
+</ul>
 <p><strong>Factors</strong></p>
 <ul>
-<li>👉🏼 <strong>Factor labels</strong> (dropdown): what to show next to each factor (same data as the <a href="../factors-panel/">Factors Panel</a>).  </li>
+<li>👉🏼 <strong>Factor labels</strong> (dropdown): what to show next to each factor (same data as the <a href="../factors-panel/">Factors Panel</a>).  <ul>
 <li>Citation count (default) / Source count / Sentiment (mean incoming) / None</li>
+</ul>
+</li>
 <li>👉🏼 <strong>Factor colours</strong> (dropdown): Outcomeness (default) / Influence / <strong>Sentiment discrepancy</strong> (orange scale: how much the factor's incoming links disagree in sentiment) / Citation count (total, in, or out) / Source count (total, in, or out) / <strong>Label segment</strong> (full label or the same segment patterns as <strong>Groups</strong>) / None</li>
 <li>👉🏼 <strong>Factor sizes</strong> (dropdown): Citation count (default) / Source count / None</li>
 <li>👉🏼 <strong>Label Width</strong> (slider): how wide a factor label may run before it wraps onto another line. The width is measured in <strong>pixels</strong>, not characters, and runs from 30px at the far left to 800px at the far right on a logarithmic scale, so equal steps make bigger jumps at the top end. The number under the slider is the width it currently means. This is the main control for the shape of the whole map: a <strong>narrow</strong> width wraps labels onto more lines, making factors tall and the map tall and thin; a <strong>wide</strong> width keeps labels on one line, making the map short and wide. So to get a taller map, move this slider <strong>down</strong>, not up. <strong>Tidy</strong> (below) sets this slider for you unless you turn it off.</li>
@@ -1817,26 +1825,32 @@
 <li>👉🏼 <strong>H-Gap</strong> and <strong>V-Gap</strong> (sliders): one sets the gap between the levels of the map, the other the gap between factors on the same level. Which is which depends on <strong>Direction</strong>, so the two labels swap when you change it: the slider marked with the horizontal arrows always changes horizontal spacing. In LR and RL the levels run left to right; in TB and BT they stack top to bottom.</li>
 </ul>
 <ul>
-<li>👉🏼 <strong>Tidy</strong> (tick box, on by default): sets <strong>Label Width</strong>, <strong>H-Gap</strong> and <strong>V-Gap</strong> for you. It aims to make the factor labels as large as they can be on screen while the arrows stay easy to follow, which usually also leaves the map with roughly the same proportions as the pane it sits in.</li>
+<li>👉🏼 <strong>Tidy</strong> (tick box, on by default): sets <strong>Label Width</strong>, <strong>H-Gap</strong> and <strong>V-Gap</strong> for you. It aims to make the factor labels as large as they can be on screen while the arrows stay easy to follow, which usually also leaves the map with roughly the same proportions as the pane it sits in.<ul>
 <li>To change the proportions it fits to, drag the map pane's separator bar so the pane is wider or taller. The map tidies itself again.</li>
 <li>To set the spacing yourself, drag any of those three sliders. That unticks Tidy and your settings stay put. Tick it again to hand control back.</li>
 <li>Where a map's arrows leave their factors very steeply and bunch into a bundle, Tidy pushes the levels further apart, and it will accept smaller labels to do so. Legibility of the arrows comes first.</li>
 <li>Some maps cannot be improved much. A long single chain, or a set of factor pairs with nothing joining them, will not sit well in a pane whatever the spacing.</li>
 </ul>
+</li>
+</ul>
 <p><strong>Links</strong></p>
 <ul>
-<li>👉🏼 <strong>Link labels</strong> (dropdown): what to show on each link.  </li>
+<li>👉🏼 <strong>Link labels</strong> (dropdown): what to show on each link.  <ul>
 <li>Citation count (default) / Source count / Sentiment / Label by Group / Unique Sources / All Sources / Unique Tags / Unique Tags (Tally) / All Tags / None</li>
+</ul>
+</li>
 <li>👉🏼 <strong>Link widths</strong> (dropdown): Citation count (default) / Source count / None</li>
 <li>👉🏼 <strong>Link label font size</strong> (control): change link label font sizes.</li>
 <li>👉🏼 <strong>Arrowhead size</strong> (control): scale arrowhead size (Interactive + Print/Graphviz). Default 100% keeps current appearance.</li>
 <li>👉🏼 <strong>Link colour</strong> (colour picker): sets the default link line colour (Interactive + Print/Graphviz). When sentiment is neutral (0), this colour is also used for arrowheads and node borders.</li>
-<li>👉🏼 <strong>Links highlight</strong> (dropdown): optional extra "halo" highlighting without changing the base colour scheme.  </li>
+<li>👉🏼 <strong>Links highlight</strong> (dropdown): optional extra "halo" highlighting without changing the base colour scheme.  <ul>
 <li>Off (default)  </li>
 <li>Reverse (backwards/same-rank in current layout direction)  </li>
 <li>Significant (when Label by Group shows ⬆/⬇)  </li>
 <li>Feedback loop (2 / ≤3 / ≤4 factors)  </li>
 <li>Feedback loop + reverse (combine the above)</li>
+</ul>
+</li>
 </ul>
 <p><strong>Other</strong></p>
 <ul>
@@ -1877,10 +1891,12 @@
 </ul>
 <h4 id="editing-and-deleting-multiple-factors">Editing and deleting (multiple) factors<a aria-label="Permalink" class="anchor-link" href="/map-evidence/#editing-and-deleting-multiple-factors">#</a></h4>
 <ul>
-<li>Select factor(s) by clicking a factor, shift-click or ctrl-click to add more, or shift+drag/ctrl+drag a box around multiple factors, then:</li>
+<li>Select factor(s) by clicking a factor, shift-click or ctrl-click to add more, or shift+drag/ctrl+drag a box around multiple factors, then:<ul>
 <li>Move selected factors together</li>
 <li>Delete matching factors everywhere or in current view only</li>
 <li>Rename matching factors everywhere or in current view only</li>
+</ul>
+</li>
 </ul>
 <p><strong>What does "everywhere or in current view only" mean?</strong></p>
 <ul>

@@ -1780,18 +1780,22 @@
 <li>Checkbox selection for bulk operations</li>
 <li>Edit functionality opens causal overlay for link modification</li>
 <li>Action button to open coding in the Sources pane and scroll to the corresponding highlight </li>
-<li><i class="fas fa-times"></i> Clear Table Filters option</li>
+<li><i class="fas fa-times"></i> Clear Table Filters option<ul>
 <li>💡Tip: For label changes, prefer <a href="../factors-search-replace/">Factors Search/replace</a> when working on labels across bundles.</li>
+</ul>
+</li>
 </ul>
 <p><strong>Link Editing:</strong></p>
 <ul>
 <li>Single link click opens editor popup</li>
 <li>Multiple link selection opens chooser interface</li>
 <li>Consistent with coding panel behavior</li>
-<li><strong>AI run id after manual save:</strong> the link editor uses a split update path:</li>
+<li><strong>AI run id after manual save:</strong> the link editor uses a split update path:<ul>
 <li><strong>1 cause × 1 effect:</strong> updates that existing row in place (keeps row id; <code>ai_run_id</code> remains unless changed elsewhere).</li>
 <li><strong>multi cause/effect (cross-product):</strong> deletes the original row and inserts new rows; those new rows do not carry the original <code>ai_run_id</code>.
   The original AI call is still traceable in <strong>Responses</strong>.</li>
+</ul>
+</li>
 </ul>
 <h4 id="link-custom-columns">Link Custom Columns<a aria-label="Permalink" class="anchor-link" href="/link-custom-columns/#link-custom-columns">#</a></h4>
 <p>Alongside <strong>tags</strong> and <strong>sentiment</strong>, each link can now carry its own named custom fields. Use these when you want more structured information on each causal claim, for example <code>confidence</code>, <code>policy_area</code>, <code>mechanism</code>, <code>evidence_strength</code>, <code>time_horizon</code>, or a numeric score.</p>

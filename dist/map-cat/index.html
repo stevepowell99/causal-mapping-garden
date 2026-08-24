@@ -1766,14 +1766,14 @@
 <div class="page-title-row d-flex justify-content-between align-items-center"><div class="page-title" id="map-cat">🌻 MapCat<a aria-label="Permalink" class="anchor-link" href="/map-cat">#</a></div></div><hr/>
 <p>MapCat is the small chat helper at the bottom-right. <strong>MapCat is available to all users</strong>, even if you do not have an AI subscription or if AI is disabled in your account settings. It is the only AI feature that does not require a subscription or for AI to be enabled, because it does not see your project data.</p>
 <h3 id="what-mapcat-is-for">What MapCat is for<a aria-label="Permalink" class="anchor-link" href="/map-cat/#what-mapcat-is-for">#</a></h3>
-<p>MapCat answers questions about the app and about causal mapping while you work. With <strong>Superpowers</strong> on and a project open (AI plan), it also works alongside you: you can ask it to do things and it carries them out, showing a confirm step before any change.</p>
-<p>Without Superpowers (the default), you can:</p>
+<p>MapCat answers questions about the app and about causal mapping while you work. With <strong>Edit my data with AI</strong> on and a project open (AI plan), it also works alongside you: you can ask it to do things and it carries them out, showing a confirm step before any change.</p>
+<p>Without that switch on (the default), you can:</p>
 <ul>
 <li>Ask how a control, panel or workflow works.</li>
 <li>Ask it to open help, highlight a control, or switch tab.</li>
 <li>Read its nudge when the cat wiggles: it has a suggested next step.</li>
 </ul>
-<p>With Superpowers on and a project loaded, you can also:</p>
+<p>With <strong>Edit my data with AI</strong> on and a project loaded, you can also:</p>
 <ul>
 <li>Ask questions about your own data: your factors, sources and links, or what a filtered view holds.</li>
 <li>Set what you want to find out and let MapCat hold that aim across the chat.</li>
@@ -1787,25 +1787,29 @@
 <p>Every change shows a confirm step first, so nothing happens to your project until you approve it.</p>
 <h3 id="header-controls-top-of-mapcat-panel">Header controls (top of MapCat panel)<a aria-label="Permalink" class="anchor-link" href="/map-cat/#header-controls-top-of-mapcat-panel">#</a></h3>
 <ul>
-<li><strong>Window controls</strong> (group of 3 icons):</li>
+<li><strong>Window controls</strong> (group of 3 icons):<ul>
 <li><strong>Maximize icon</strong>: open MapCat in large centered mode.</li>
 <li><strong>Restore icon</strong>: dock MapCat in the normal bottom-right position.</li>
 <li><strong>Minus icon</strong>: minimize back to the cat chat-head button.</li>
 </ul>
+</li>
+</ul>
 <h3 id="footer-controls-bottom-of-mapcat-panel">Footer controls (bottom of MapCat panel)<a aria-label="Permalink" class="anchor-link" href="/map-cat/#footer-controls-bottom-of-mapcat-panel">#</a></h3>
 <ul>
 <li><strong>Contact support</strong>: sends the latest question/answer context to support.</li>
-<li><strong>Superpowers</strong> (AI plan only):</li>
+<li><strong>Edit my data with AI</strong> (AI plan only). The switch was called <strong>Superpowers</strong> until August 2026; the name changed because ticking it is your consent to send this project's data to the AI, and the old name said nothing about that.<ul>
 <li>Default is <strong>OFF</strong> (safe mode).</li>
 <li>When OFF, MapCat can still answer documentation questions and use non-data UI helpers (for example help/hints/tab switching).</li>
-<li>When ON, MapCat can run data-aware actions (for example sources selection, filter pipeline edits, pivot config), which means project state data is sent to the AI.</li>
+<li>When ON, MapCat can run data-aware actions (for example sources selection, filter pipeline edits, pivot config), which means project state data is sent to the AI. It can also change your project, and every change asks you to confirm first.</li>
+</ul>
+</li>
 <li><strong>Clear</strong>: clears MapCat chat history.</li>
 <li><strong>Send</strong>: sends the current prompt.</li>
 </ul>
 <h3 id="privacy-and-data-sharing-behavior">Privacy and data-sharing behavior<a aria-label="Permalink" class="anchor-link" href="/map-cat/#privacy-and-data-sharing-behavior">#</a></h3>
 <ul>
-<li>With <strong>Superpowers OFF</strong> (default), MapCat runs in safe mode intended for users who do not want project data sent for AI actions.</li>
-<li>With <strong>Superpowers ON</strong>, MapCat may send project-derived context needed to execute data-aware requests (such as source IDs, filtered link/factor context, and related view state) to the AI service.</li>
+<li>With <strong>Edit my data with AI</strong> OFF (default), MapCat runs in safe mode intended for users who do not want project data sent for AI actions.</li>
+<li>With <strong>Edit my data with AI</strong> ON, MapCat may send project-derived context needed to execute data-aware requests (such as source IDs, filtered link/factor context, and related view state) to the AI service.</li>
 </ul>
 <h3 id="safety-rules">Safety rules<a aria-label="Permalink" class="anchor-link" href="/map-cat/#safety-rules">#</a></h3>
 <ul>

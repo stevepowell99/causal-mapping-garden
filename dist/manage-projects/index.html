@@ -1786,18 +1786,20 @@
 <li><strong>Delete all links</strong> <i class="fas fa-trash"></i>: Remove every causal link in this Project (sources remain)</li>
 <li><strong>Download</strong> <i class="fas fa-download"></i>: Export as XLSX</li>
 <li><strong>Versions</strong> <i class="fas fa-history"></i>: Restore and create backups of this Project</li>
-<li><strong>Update sources (Excel)</strong> <i class="fas fa-file-excel"></i>: Upload an XLSX to update sources in-place ("round-tripping").</li>
+<li><strong>Update sources (Excel)</strong> <i class="fas fa-file-excel"></i>: Upload an XLSX to update sources in-place ("round-tripping").<ul>
 <li><strong>Tabs</strong>: Must contain a <code>sources</code> tab (lowercase). Other tabs are ignored.</li>
 <li><strong>Required</strong> (<strong>case-insensitive headers</strong>): Must include an <code>id</code> column. IDs must exist in the current project.</li>
 <li><strong>Columns</strong>: You can include only the columns you want to change. Any missing columns are left unchanged.</li>
 <li><strong>Updates</strong>: <code>title</code>, <code>filename</code>, <code>content</code> (if those columns exist). Any other columns are merged into <code>metadata.custom_columns</code>.</li>
+</ul>
+</li>
 <li><strong>Manage projects</strong> <i class="fas fa-folder-open"></i>: Opens the <a href="../projects-panel/">Projects</a> tab as a shortcut</li>
 </ul>
 <h4 id="manage-projects"><strong>Create new project</strong><a aria-label="Permalink" class="anchor-link" href="/manage-projects/#manage-projects">#</a></h4>
 <ul>
 <li><strong>Quick upload</strong> <i class="fas fa-plus"></i>: Create a new project or add sources to the current project (same as the green + button in the Files bar)</li>
 <li><strong>New Project</strong> <i class="fas fa-plus"></i>: Create an empty Project which you can then import sources into</li>
-<li><strong>Import XLSX</strong> <i class="fas fa-file-excel"></i>: Import a complete new Project from Excel ("round-tripping").</li>
+<li><strong>Import XLSX</strong> <i class="fas fa-file-excel"></i>: Import a complete new Project from Excel ("round-tripping").<ul>
 <li><strong>Tabs</strong>: If the XLSX has 1 tab, it is treated as the sources tab (whatever its name). If it has multiple tabs, it must contain <code>sources</code> (lowercase); <code>links</code> (lowercase) is optional.</li>
 <li><strong>Long source text</strong>: If the XLSX contains a <code>source_content_chunks</code> tab (exported by this app when source content exceeds spreadsheet per-cell limits), imports will rehydrate <code>sources.content</code> from it.</li>
 <li><strong>Format note</strong>: CausalMap can import many document/file formats elsewhere in the app, but a BathSDR-style QuIP Excel workbook is not supported by this XLSX importer.</li>
@@ -1807,10 +1809,14 @@
 <li>For round-trip consistency, incoming <code>custom_&lt;name&gt;</code> headers are normalized to <code>&lt;name&gt;</code> before writing <code>links.metadata.custom_columns</code>.</li>
 </ul>
 </li>
-<li><strong>Import cm3</strong> <i class="fas fa-upload"></i>: Import a complete new Project downloaded from CausalMap3.</li>
+</ul>
+</li>
+<li><strong>Import cm3</strong> <i class="fas fa-upload"></i>: Import a complete new Project downloaded from CausalMap3.<ul>
 <li><strong>Tabs</strong>: Requires <code>links</code> and <code>statements</code> (lowercase). Optional: <code>sources</code>, <code>questions</code>.</li>
 <li><strong><code>statements</code> columns</strong> (<strong>case-insensitive headers</strong>): requires <code>source_id</code> and <code>text</code> (optional <code>statement_id</code>/<code>id</code>, optional <code>question_id</code>).</li>
 <li><strong><code>links</code> columns used</strong>: <code>from_label</code>, <code>to_label</code>, <code>quote</code>, <code>hashtags</code>, <code>sentiment</code>, <code>statement_id</code> (used to map links to sources via the statements sheet).</li>
+</ul>
+</li>
 </ul>
 <h3 id="project-selector-dropdown">Project Dropdown<a aria-label="Permalink" class="anchor-link" href="/manage-projects/#project-selector-dropdown">#</a></h3>
 <ul>
@@ -1836,36 +1842,44 @@
 - <strong>Open it</strong>: File → Edit, or the edit icon in the Projects table.
 - <strong>When it appears</strong>: Also opens on project load/change unless you turn it off for this project.
 - <strong>Save vs instant changes</strong>:
-  - Use the <em>Save</em> button to apply changes to <strong>Name</strong>, <strong>Tags</strong>, and <strong>Description</strong>.
-  - <strong>Archived</strong>, <strong>Locked</strong>, <strong>Public</strong>, and <strong>Collaborators</strong> update instantly.
+    - Use the <em>Save</em> button to apply changes to <strong>Name</strong>, <strong>Tags</strong>, and <strong>Description</strong>.
+    - <strong>Archived</strong>, <strong>Locked</strong>, <strong>Public</strong>, and <strong>Collaborators</strong> update instantly.
 </div>
 <h4 id="details">Details<a aria-label="Permalink" class="anchor-link" href="/manage-projects/#details">#</a></h4>
 <ul>
 <li><strong>Name</strong>: Rename the project. Click <em>Rename</em> to save.</li>
 <li><strong>Tags</strong>: Comma‑separated tags for quick grouping/searching.</li>
 <li><strong>Description</strong>: Free‑text notes about the project.</li>
-<li><strong>Edit codebook</strong>: Toggle to reveal a text area where you can list factor labels (one per line). These are added to the cause/effect dropdowns in the link editor; existing options are kept.</li>
+<li><strong>Edit codebook</strong>: Toggle to reveal a text area where you can list factor labels (one per line). These are added to the cause/effect dropdowns in the link editor; existing options are kept.<ul>
 <li><strong>AI coding does not read this list on its own.</strong> The codebook here is for coding by hand. To make the AI code to these labels, tick <strong>Project codebook</strong> in the AI Coding panel's Standard prompt builder, or ask MapCat to add the codebook to the coding prompt. You choose how binding it is: <strong>guided</strong>, where the AI uses one of your labels wherever one fits and writes a new label in the same style where none does, or <strong>strict</strong>, where the list is closed and the AI drops any claim it cannot express in your labels. To bring links you have ALREADY coded onto the list instead, use Recode (see AI Coding) with the codebook pasted in.</li>
 <li>MapCat can also read the codebook back to you, and add labels to it or replace it, if you would rather not edit the box by hand. </li>
-<li><strong>AI Processing Region</strong>: Choose where AI processing occurs for GDPR/data residency compliance:</li>
+</ul>
+</li>
+<li><strong>AI Processing Region</strong>: Choose where AI processing occurs for GDPR/data residency compliance:<ul>
 <li><strong>EU (Belgium - europe-west1)</strong> - Default. Recommended for EU data residency requirements.</li>
 <li><strong>UK (London - europe-west2)</strong> - UK has GDPR adequacy decision, suitable for EU/UK compliance.</li>
 <li><strong>US (Virginia - us-east5)</strong> - US East region.</li>
 <li>Setting is saved per-project and auto-saves on change (with confirmation warning).</li>
 <li>All subsequent AI coding for this project uses the selected region.</li>
+</ul>
+</li>
 <li><strong>Archived</strong>: Hide the project from the main list and make it read-only. Archived projects are only visible to owners, collaborators, and admins (hidden from public view even if marked public). Applied immediately. Unarchiving restores normal visibility and editability.</li>
-<li><strong>Info line</strong>: Created / Modified / Owner, plus counts for links/sources/words, and quick actions:</li>
+<li><strong>Info line</strong>: Created / Modified / Owner, plus counts for links/sources/words, and quick actions:<ul>
 <li><em>Versions</em>: Open the versions manager.</li>
 <li><em>Delete embeddings</em>: Remove factor embeddings for this project (advanced).</li>
+</ul>
+</li>
 <li><strong>Show on open</strong>: Toggle "Show this screen when opening this project" at the top to auto‑open or suppress this screen for this project.</li>
 </ul>
 <h4 id="sharing">Sharing<a aria-label="Permalink" class="anchor-link" href="/manage-projects/#sharing">#</a></h4>
 <ul>
 <li><strong>Locked</strong>: Make the project read‑only. Editing is disabled until unlocked. Applied immediately.</li>
 <li><strong>Public</strong>: Allow all signed‑in users to view the project (read‑only). Applied immediately.</li>
-<li><strong>Collaborators</strong>: See current collaborators, add by email, and choose permission:</li>
+<li><strong>Collaborators</strong>: See current collaborators, add by email, and choose permission:<ul>
 <li><em>Viewer</em>: Read‑only</li>
 <li><em>Editor</em>: Read &amp; write</li>
+</ul>
+</li>
 </ul>
 <h4 id="bookmarks">Bookmarks<a aria-label="Permalink" class="anchor-link" href="/manage-projects/#bookmarks">#</a></h4>
 <ul>

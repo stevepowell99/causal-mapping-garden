@@ -1851,11 +1851,13 @@
 <strong>👥 What this does:</strong> Filter your analysis by participant demographics or document characteristics. For example, show only responses from "women aged 25-35" or interviews from "urban areas." Perfect for comparing how different groups see causal relationships. This is very similar to the [Source Groups widget](../source-groups-sub-panel/) in the Sources sub-panel, but having it here too means you can add multiple source filters to the pipeline.
 </div>
 <ul>
-<li>provides </li>
+<li>provides <ul>
 <li>a prepopulated dropdown called Field with all the metadata fields plus title and projectname </li>
 <li>another multi-selectzie called Value. Multiple values work as OR: either/any count as a match </li>
 <li>a previous/next button pair to cycle through values of the selected group</li>
 <li>Example: Add two Source Groups filters in the pipeline to combine criteria (e.g., first filter Field = gender → Value = women, then another filter Field = region → Value = X) so you see links from women AND from region X.</li>
+</ul>
+</li>
 </ul>
 <p>Example bookmarks:</p>
 <ul>
@@ -1946,9 +1948,11 @@ For exclude filters, default behavior is AND (all terms must match), unless you 
 <ul>
 <li><strong>Factor selector</strong> for factors to exclude. By default shows only labels from links currently visible at this stage of the filter pipeline. Use the <strong>Show All</strong> toggle to display all factor labels from the entire project instead.</li>
 <li><strong>Matching options</strong>: Start / Anywhere / Exact</li>
-<li><strong>Exclude Any</strong> toggle (default OFF):  </li>
+<li><strong>Exclude Any</strong> toggle (default OFF):  <ul>
 <li>OFF = exclude only when <strong>all</strong> selected texts match (AND)  </li>
 <li>ON = exclude when <strong>any</strong> selected text matches (OR)</li>
+</ul>
+</li>
 </ul>
 <h3 id="link-tags-filter">Tags Filter <i class="fas fa-tags"></i><a aria-label="Permalink" class="anchor-link" href="/custom-links-label-filter/#link-tags-filter">#</a></h3>
 <div class="user-guide-callout">
@@ -1969,9 +1973,11 @@ For exclude filters, default behavior is AND (all terms must match), unless you 
 </div>
 <ul>
 <li>Same as Link Tag filter except <em>exclude</em> links containing these tags.</li>
-<li><strong>Exclude Any</strong> toggle (default OFF):  </li>
+<li><strong>Exclude Any</strong> toggle (default OFF):  <ul>
 <li>OFF = exclude only when <strong>all</strong> selected texts match (AND)  </li>
 <li>ON = exclude when <strong>any</strong> selected text matches (OR)</li>
+</ul>
+</li>
 </ul>
 <h3 id="exclude-self-loops-filter">Exclude self-loops Filter <i class="fas fa-undo"></i><a aria-label="Permalink" class="anchor-link" href="/custom-links-label-filter/#exclude-self-loops-filter">#</a></h3>
 <p>You can exclude self-loops from the maps, but that is more of a visual change. This is a real filter as part of the filter pipeline. For example, if you are using a filter like <a href="../link-frequency-filter/">Link Frequency</a> that might be retaining link bundles which are actually self-loops, so you might get unexpected results if you use the map setting to remove the self-loops. So this filter is a better way. It simply removes all links which are self-loops from the links table.</p>
@@ -2014,15 +2020,17 @@ For exclude filters, default behavior is AND (all terms must match), unless you 
 </li>
 <li>
 <p><strong>Empty selectors</strong>:</p>
-</li>
+<ul>
 <li>If put nothing in <strong>From</strong> then all paths from the factors matched by the To box of up to specified length are returned.</li>
-<li>
-<p>If put nothing in <strong>To</strong> then all paths from the factors matched by the From box of up to specified length are returned.</p>
+<li>If put nothing in <strong>To</strong> then all paths from the factors matched by the From box of up to specified length are returned.</li>
+</ul>
 </li>
 <li>
 <p><strong>Non-matching selectors</strong>:</p>
-</li>
+<ul>
 <li>If you <strong>From</strong> or <strong>To</strong> matches nothing, no paths are returned.</li>
+</ul>
+</li>
 </ul>
 <h3 id="pathways-filter">Pathways Filter <i class="fas fa-shoe-prints"></i><a aria-label="Permalink" class="anchor-link" href="/custom-links-label-filter/#pathways-filter">#</a></h3>
 <div class="user-guide-callout">
@@ -2063,10 +2071,12 @@ For exclude filters, default behavior is AND (all terms must match), unless you 
 <ul>
 <li>👉🏼 <strong>Hierarchy convention</strong>: Use semicolons <code>;</code> to express levels, e.g. <code>Health; Mental health; Depression</code>. (A space after <code>;</code> is optional.)  </li>
 <li>👉🏼 <strong>Zoom level</strong> (radio buttons): None, 1–9.</li>
-<li><strong>Examples</strong>:</li>
+<li><strong>Examples</strong>:<ul>
 <li><strong>Level 1</strong>: <code>"foo; bar; baz"</code> becomes <code>"foo"</code></li>
 <li><strong>Level 2</strong>: <code>"foo; bar; baz"</code> becomes <code>"foo; bar"</code></li>
 <li><strong>If the label has ≤ N levels</strong>: it stays unchanged at zoom level N (and higher)</li>
+</ul>
+</li>
 <li><strong>Tip (hierarchy reuse)</strong>: Once you have <em>any</em> hierarchical factor (i.e. a label containing <code>;</code>), the <strong>Cause</strong> and <strong>Effect</strong> dropdown menus also include implied <em>parent</em> labels (e.g. <code>Health behaviour</code>) to make it easier to keep higher-level naming consistent.</li>
 <li><strong>Tip (find hierarchical factors)</strong>: Search for <code>;</code> in factor labels, then zoom out to level 1 for a quick “top-level only” view.</li>
 </ul>
@@ -2131,9 +2141,11 @@ There's an alternative, more flexible version:
 <p><strong>Toggle</strong> – Turn the filter on/off.</p>
 <p><strong>Opposites mode toggles (you can use either or both):</strong></p>
 <ul>
-<li><strong>~ prefix (e.g. <code>~ foo</code>)</strong> – Treat <code>foo</code> and <code>~ foo</code> as opposites (no brackets or numbers).  </li>
+<li><strong>~ prefix (e.g. <code>~ foo</code>)</strong> – Treat <code>foo</code> and <code>~ foo</code> as opposites (no brackets or numbers).  <ul>
 <li>Works with hierarchies too: we flip <strong>every</strong> <code>;</code>-separated component when comparing opposites. Example: <code>~Healthy habits; smoking</code> is the opposite of <code>Healthy habits; ~smoking</code>.  <strong>Important</strong>: this “flip every hierarchy component” behavior applies <strong>only</strong> to the <strong>~ prefix</strong> mode (not to the numeric tag mode below).</li>
 <li><code>~foo</code> is always rewritten to <code>foo</code> (even if <code>foo</code> does not appear elsewhere in the current factor list).</li>
+</ul>
+</li>
 <li><strong>[~N] tags</strong> – Treat numeric pairs like <code>Foo [99]</code> and <code>Bar [~99]</code> as opposites. (Square brackets are optional: <code>Foo 99</code> / <code>Bar ~99</code>.)</li>
 </ul>
 <p><strong>More details on [~N] tags</strong></p>
@@ -2174,11 +2186,13 @@ There's an alternative, more flexible version:
 <ul>
 <li>In the map, you’ll often see <strong>multiple parallel links</strong> between the same two factors (one per variant).</li>
 <li>Each link label is a <strong>plain count</strong> for that variant.</li>
-<li>Variants correspond to <code>flipped_cause</code> / <code>flipped_effect</code>:</li>
+<li>Variants correspond to <code>flipped_cause</code> / <code>flipped_effect</code>:<ul>
 <li><code>foo &gt;--&gt; bar</code> (unflipped/unflipped)</li>
 <li><code>foo &gt;-F&gt; bar</code> (unflipped/flipped)</li>
 <li><code>foo &gt;F-&gt; bar</code> (flipped/unflipped)</li>
 <li><code>foo &gt;FF&gt; bar</code> (flipped/flipped)</li>
+</ul>
+</li>
 </ul>
 <p>You'll see this special <code>&gt;F-&gt;</code> notation in the Bundle column of the Links Table</p>
 <p><strong>2) Separate + Detailed</strong></p>
@@ -2193,11 +2207,13 @@ There's an alternative, more flexible version:
 <p><strong>4) Together + Detailed</strong></p>
 <ul>
 <li>You’ll see <strong>a single link</strong> between the two factors.</li>
-<li>The link label shows a <strong>per‑variant breakdown</strong> using these unicode markers:</li>
+<li>The link label shows a <strong>per‑variant breakdown</strong> using these unicode markers:<ul>
 <li><code>▔n</code> = neither flipped (<code>--</code>)</li>
 <li><code>╲n</code> = effect flipped (<code>-F</code>)</li>
 <li><code>╱n</code> = cause flipped (<code>F-</code>)</li>
 <li><code>▁n</code> = both flipped (<code>FF</code>)</li>
+</ul>
+</li>
 <li>Example: <code>▔5 ╲2 ╱1</code> means 5 <code>--</code>, 2 <code>-F</code>, 1 <code>F-</code> (zero variants are omitted).</li>
 </ul>
 <h3 id="custom-links-label-filter">Label by Group <i class="fas fa-tag"></i><a aria-label="Permalink" class="anchor-link" href="/custom-links-label-filter/#custom-links-label-filter">#</a></h3>
@@ -2208,12 +2224,14 @@ There's an alternative, more flexible version:
 <ul>
 <li><strong>Field</strong> - Dropdown of available fields from your filtered data (typically shows custom fields like tribe ID)</li>
 <li><strong>Counts</strong> - Choose whether to count <strong>Sources</strong> (unique participants/documents) or <strong>Citations</strong> (links)</li>
-<li><strong>Display mode</strong> - Choose how to show the data:</li>
+<li><strong>Display mode</strong> - Choose how to show the data:<ul>
 <li><strong>Tally</strong> - Show counts for each value (e.g., "T1:4 T2:3")</li>
 <li><strong>Percentage</strong> - Show what % of each value's total links appear in this bundle (e.g., "T1:34% T2:22%")</li>
 <li><strong>Chi-square</strong> - Show bundle size, then which values are significantly over-represented (⬆) or under-represented (⬇) (e.g., "45 (T1⬆ T3⬇)")</li>
 <li><strong>Chi-square (with counts)</strong> - Also show the observed count for each significant value (e.g., "45 (T1 4⬆, T3 3⬇)")</li>
 <li><strong>Chi-square (with counts/totals)</strong> - Also show observed/total for each significant value (e.g., "45 (T1 4/5⬆, T3 3/6⬇)")</li>
+</ul>
+</li>
 <li><strong>Ordinal correction (numeric groups)</strong> - When ON (and group values are numeric-like, including strings like <code>"12 foobar"</code>), Chi-square modes use an ordinal trend test and show only the overall total plus <strong>(⬆)</strong> or <strong>(⬇)</strong> (no per-group totals).</li>
 <li><strong>Sig level</strong> - Significance threshold for Chi-square / Ordinal trend (default p &lt; .05).</li>
 </ul>
@@ -2253,12 +2271,14 @@ There's an alternative, more flexible version:
 <p><strong>Controls:</strong></p>
 <ul>
 <li><strong>Label field</strong> - choose which link or source custom column should feed <strong>Custom label</strong></li>
-<li><strong>Label aggregation</strong> - how bundled links should be combined:</li>
+<li><strong>Label aggregation</strong> - how bundled links should be combined:<ul>
 <li><strong>Unique</strong> - distinct values only</li>
 <li><strong>Tally</strong> - counts by value</li>
 <li><strong>All</strong> - list all values</li>
 <li><strong>Average</strong> - numeric columns only</li>
 <li><strong>Sum</strong> - numeric columns only</li>
+</ul>
+</li>
 <li><strong>Width field</strong> - choose which link or source custom column should feed <strong>Custom width</strong></li>
 <li><strong>Width aggregation</strong> - numeric bundle summary, typically <strong>Average</strong>, <strong>Sum</strong>, or <strong>Max</strong></li>
 <li><strong>Colour field</strong> - choose which link or source custom column should feed <strong>Custom colour</strong></li>
@@ -2303,8 +2323,10 @@ There's an alternative, more flexible version:
 <p>Many use cases:</p>
 <ul>
 <li>temporarily merge multiple factors into one</li>
-<li>you are using magnets and you can't really use the formulation you want because you want to maximise similarity with existing labels</li>
+<li>you are using magnets and you can't really use the formulation you want because you want to maximise similarity with existing labels<ul>
 <li>eg you are using "floods" as a magnet but you really want it as a hierarchical factor like "environmental problems; floods" but you can t use that as a magnet.</li>
+</ul>
+</li>
 </ul>
 <p>Keyboard shortcuts (Win/Linux ⇄ macOS):</p>
 <ul>
@@ -2312,9 +2334,11 @@ There's an alternative, more flexible version:
 <li>Arrow Up/Down: move focus up/down between NEW cells</li>
 <li>Alt+Arrow Up/Down (mac: Option+Arrow): move the current row up/down</li>
 <li>Ctrl+Arrow Up/Down (mac: Cmd+Arrow): move the current row up/down</li>
-<li>Delete current row:</li>
+<li>Delete current row:<ul>
 <li>Shift+Delete (mac: Shift+Fn+Backspace) or</li>
 <li>Ctrl+Shift+K (mac: Cmd+Shift+K)</li>
+</ul>
+</li>
 </ul>
 <p>Potentially, one NEW label might have multiple OLD labels. </p>
 <h3 id="temporary-cause-effect-filter">Temporary Factor Labels Filter <i class="fas fa-random"></i><a aria-label="Permalink" class="anchor-link" href="/custom-links-label-filter/#temporary-cause-effect-filter">#</a></h3>
@@ -2386,9 +2410,11 @@ Optional. Ask AI to propose clear names from your current labels. Insert adds th
 <ul>
 <li>Magnets are shown with labels; raw factor labels are dots.</li>
 <li>Colour indicates the magnet group; magnet dot size represents group size.</li>
-<li>Meaning Space uses the <strong>Similarity</strong> and <strong>Drop unmatched</strong> settings from your most recent Soft Recode Plus filter:</li>
+<li>Meaning Space uses the <strong>Similarity</strong> and <strong>Drop unmatched</strong> settings from your most recent Soft Recode Plus filter:<ul>
 <li>If <strong>Drop unmatched = ON</strong>: unmatched raw labels are not shown (dot count shrinks as you increase Similarity).</li>
 <li>If <strong>Drop unmatched = OFF</strong>: unmatched raw labels are still shown, but they render in <strong>grey</strong>.</li>
+</ul>
+</li>
 <li>You can pan (drag) and zoom (mouse wheel and <a href="../map-controls/">zoom controls</a>).</li>
 <li>Double-click on an empty part of the map to zoom in at that point.</li>
 <li>Tooltips on dots show the original (raw) labels and the magnet label.</li>
