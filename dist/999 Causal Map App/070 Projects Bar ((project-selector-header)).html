@@ -1846,6 +1846,8 @@
 <li><strong>Tags</strong>: Comma‑separated tags for quick grouping/searching.</li>
 <li><strong>Description</strong>: Free‑text notes about the project.</li>
 <li><strong>Edit codebook</strong>: Toggle to reveal a text area where you can list factor labels (one per line). These are added to the cause/effect dropdowns in the link editor; existing options are kept.</li>
+<li><strong>AI coding does not read this list on its own.</strong> The codebook here is for coding by hand. To make the AI code to these labels, tick <strong>Project codebook</strong> in the AI Coding panel's Standard prompt builder, or ask MapCat to add the codebook to the coding prompt. You choose how binding it is: <strong>guided</strong>, where the AI uses one of your labels wherever one fits and writes a new label in the same style where none does, or <strong>strict</strong>, where the list is closed and the AI drops any claim it cannot express in your labels. To bring links you have ALREADY coded onto the list instead, use Recode (see AI Coding) with the codebook pasted in.</li>
+<li>MapCat can also read the codebook back to you, and add labels to it or replace it, if you would rather not edit the box by hand. </li>
 <li><strong>AI Processing Region</strong>: Choose where AI processing occurs for GDPR/data residency compliance:</li>
 <li><strong>EU (Belgium - europe-west1)</strong> - Default. Recommended for EU data residency requirements.</li>
 <li><strong>UK (London - europe-west2)</strong> - UK has GDPR adequacy decision, suitable for EU/UK compliance.</li>

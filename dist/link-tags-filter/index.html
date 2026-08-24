@@ -2151,6 +2151,7 @@ There's an alternative, more flexible version:
 </ul>
 <p>... to the current augmented links table, so that if the label has been flipped, the value is True and otherwise False. </p>
 <p><strong>Strip tags from labels</strong> (default: on) – When enabled, removes <code>[N]</code> and <code>[~N]</code> tag patterns from labels after combining opposites. This keeps labels clean while preserving the tracking information in the <code>flipped_cause</code> and <code>flipped_effect</code> columns.</p>
+<p><strong>Hide colours</strong> (default: off) - When enabled, the map stops colouring links and factor borders by flipped status and goes back to its normal colouring, which is sentiment unless you have set a custom link colour. Bundling, link labels and the <code>&gt;F-&gt;</code> bundle notation are unaffected, so you keep the variant breakdown without the red and blue. Use it when the flipped colours fight with the colouring you want to show.</p>
 <p><strong>Bundling strategy (Separate vs Together):</strong></p>
 <ul>
 <li><strong>Separate</strong> (default) – Treat each flipped/unflipped <strong>variant as its own bundle</strong> (so counts are plain numbers per bundle). This means that you may often see two or even more links between two factors. </li>
@@ -2166,7 +2167,7 @@ There's an alternative, more flexible version:
 <ul>
 <li>The “Link labels” setting only matters when Bundling is <strong>Together</strong> (it is disabled/ignored in <strong>Separate</strong>).</li>
 <li>“Count” below means whatever your map is currently showing for link labels (e.g. <strong>Sources</strong> or <strong>Citations</strong>).</li>
-<li><strong>Colours</strong>: Separate = per-end flipped status (tail=cause, head=effect; blue=no, red=yes). Together = <strong>average</strong> flipped share (tail=cause, head=effect; blue→red).</li>
+<li><strong>Colours</strong>: Separate = per-end flipped status (tail=cause, head=effect; blue=no, red=yes). Together = <strong>average</strong> flipped share (tail=cause, head=effect; blue→red). Switch <strong>Hide colours</strong> on to drop both and keep the map's normal colouring.</li>
 <li><strong>Separate mode tip</strong>: you can set <strong>Link colour</strong> (Map Formatting) to grey so the default (unflipped) links match maps without combined opposites better.</li>
 </ul>
 <p><strong>1) Separate + Simple</strong></p>

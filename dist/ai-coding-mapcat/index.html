@@ -6,11 +6,11 @@
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>AI coding</title>
 <meta content="The AI Coding panel provides a streamlined AI coding workflow inside the normal left pane. It keeps the app structure familiar while reducing clutter. You do not have to use the panel at all. With Superpowers on, you can" name="description"/>
-<link href="https://garden.causalmap.app/simple-ai-auto-code/" rel="canonical"/>
+<link href="https://garden.causalmap.app/ai-coding-mapcat/" rel="canonical"/>
 <meta content="AI coding" property="og:title"/>
 <meta content="The AI Coding panel provides a streamlined AI coding workflow inside the normal left pane. It keeps the app structure familiar while reducing clutter. You do not have to use the panel at all. With Superpowers on, you can" property="og:description"/>
 <meta content="article" property="og:type"/>
-<meta content="https://garden.causalmap.app/simple-ai-auto-code/" property="og:url"/>
+<meta content="https://garden.causalmap.app/ai-coding-mapcat/" property="og:url"/>
 <meta content="" property="og:site_name"/>
 <meta content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
@@ -1773,7 +1773,7 @@
 <p>AI usage consumes <strong>credits</strong> (see <a href="../responses-panel/">Responses Panel</a>). <strong>One credit is a fixed unit of AI spend worth about half a US cent</strong>, so 100 credits is roughly 50 cents of usage. There is no fixed credits-per-page or credits-per-token rate: the app works out the real cost of each AI call from its token usage and the model's price, then converts that to credits at half a cent each. So the credits a task uses depend entirely on the model you choose, the length of your codebook, and how many passes you run. Credits renew monthly and do not roll over.</p>
 <p>As a rough ballpark for a single Auto-code pass over 30 pages of text: around 30 to 40 credits on the default <strong>Gemini 3.5 Flash</strong>, about half that on <strong>Gemini 3.6 Flash</strong>, and about a sixth of it on <strong>Gemini 3.1 Flash-Lite</strong>, the cheapest model in the list. <strong>Gemini 3.1 Pro Preview</strong> costs about a third more per token than 3.5 Flash and usually writes more, so budget above that. One-click coding costs more than one Auto-code pass, because it also runs Revise codebook, Recode and the join-islands pass. Running extra prompt sections or re-runs multiplies the cost. These figures are estimates and will change as model prices change; the <a href="../responses-panel/">Responses Panel</a> shows what your own runs actually cost.</p>
 <p>Users with dedicated AI plans receive a larger batch of AI credits each month; other users receive 100 free AI credits per month (the free credits do not stack with paid plans). The per-plan allowances are listed under <a href="../account-panel/">AI credits</a>. </p>
-<h3 id="the-ai-workflow">The AI Workflow<a aria-label="Permalink" class="anchor-link" href="/simple-ai-auto-code/#the-ai-workflow">#</a></h3>
+<h3 id="the-ai-workflow">The AI Workflow<a aria-label="Permalink" class="anchor-link" href="/ai-coding-mapcat/#the-ai-workflow">#</a></h3>
 <p>The AI Coding panel sits at the top of the <strong>Create links</strong> tab, above the source text viewer. The Sources bar, the right-hand output tabs, and the <strong>Create links</strong> / <strong>Filter links</strong> / <strong>Assess links</strong> tabs all stay where they are; the panel does not take over the screen.</p>
 <p>The panel is broken down into five straightforward sections (filtering is a separate step, see below):</p>
 <ol>
@@ -1806,7 +1806,7 @@
 <li>Default model is <strong>Gemini 3.5 Flash</strong>.
 After coding, <strong>filtering</strong> happens in the adjacent <strong>Filter links</strong> tab (the normal Filter Links pipeline). When <strong>Filter on finish</strong> is <strong>on</strong> in the One-click set-up, completing the run applies these analysis filters to the pipeline: <strong>Factor Frequency</strong> (top <code>12</code>, counted by <strong>citations</strong>) → <strong>Link Frequency</strong> (top <code>30</code>, counted by <strong>citations</strong>). The global <a href="../factor-label-set/">Label set</a> controls which <code>cause</code>/<code>effect</code> columns Recode writes to (no separate “recode suffix” in this panel).</li>
 </ol>
-<h3 id="coding-conventions">What the coding prompt decides<a aria-label="Permalink" class="anchor-link" href="/simple-ai-auto-code/#coding-conventions">#</a></h3>
+<h3 id="coding-conventions">What the coding prompt decides<a aria-label="Permalink" class="anchor-link" href="/ai-coding-mapcat/#coding-conventions">#</a></h3>
 <p>The conventions the AI follows when it turns text into links are defined by the <strong>Auto-code prompt</strong>, which you can read and edit in the Auto-code section (it is also shown in the One-click set-up modal before a run). That prompt is the single source of truth, so to see exactly how any case is handled, or to change it, read or edit the prompt rather than relying on a summary. In outline it covers:</p>
 <ul>
 <li><strong>Hierarchical labels</strong>: factors can be labelled <code>General; specific</code> (two or more free levels), most general first, so the map can later be zoomed out by truncating at a semicolon. Whether to use them is a choice: it suits a large corpus with a multi-level scheme, and is left off for a small project or a fixed codebook. When it is on, the coder is also told what the top (most general) level should read like, for example a social-science concept, an actor name, or a codebook's general categories. You can ask MapCat to turn hierarchical labels on or off. </li>
@@ -1816,7 +1816,7 @@ After coding, <strong>filtering</strong> happens in the adjacent <strong>Filter 
 <li><strong>Every segment accounted for</strong> (default on): the coder splits each source into short segments and must account for each one, finding the causal claims in it or recording that it has none, rather than stopping once it has found a few links. This raises recall on long chunks. To keep it reliable, chunks are processed at 16,000 characters even when you set a larger chunk size. </li>
 </ul>
 <p>The prompt states the full rules and their interactions; this list is only an orientation.</p>
-<h3 id="simple-ai-runner">One-click coding (AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-auto-code/#simple-ai-runner">#</a></h3>
+<h3 id="simple-ai-runner">One-click coding (AI)<a aria-label="Permalink" class="anchor-link" href="/ai-coding-mapcat/#simple-ai-runner">#</a></h3>
 <ul>
 <li>Sequencer for the AI pipeline, with one <strong>set-up</strong> modal (see step 1 under <a href="../simple-ai/">The AI Workflow</a>).</li>
 <li><strong>Run</strong> starts <strong>Auto-code</strong>; with <strong>more than one</strong> source in scope it continues with <strong>Revise codebook</strong> then <strong>Recode</strong>, stopping on the first non-successful stage. With <strong>exactly one</strong> source in scope, it <strong>stops after Auto-code</strong>.</li>
@@ -1825,12 +1825,12 @@ After coding, <strong>filtering</strong> happens in the adjacent <strong>Filter 
 <li><strong>Recode target</strong>: Use the global <a href="../factor-label-set/">Label set</a> below the Sources bar. Create a new suffix there first if you want Recode to fill <code>cause_suffix</code> / <code>effect_suffix</code> instead of only the default columns.</li>
 <li><strong>Join islands (final step, default on)</strong>: after coding, one-click runs a join pass so the map comes out connected rather than left in many small islands. It merges near-duplicate factor labels and adds cross-island links, each backed by a verbatim quote from the same source. These added links are the least certain part of the map, so review them if precision matters. The join stays within a single source; connecting across sources is Recode's job. If it fails it is skipped and the rest of the run still completes. The pass decides for itself when to stop: when the map has come out in one piece, when a round adds nothing, or when the island count stops falling (it allows one grace round, because a merge can enable a bridge in the round after it). It reports which of those ended it, so a run that converged early does not read as one that ran out of budget. Through MapCat you can set the join to <strong>off</strong> or to <strong>merge only</strong> (tidy and consolidate labels without adding any new links); leave the number of rounds alone, because a number you name overrides the stopping rule above. <strong>merge only</strong> suits reproducible coding or very long sources where no invented links are wanted. You can also name the model the join pass should use, separately from the coding model, for example "code with Flash then join islands with Pro". </li>
 </ul>
-<h3 id="simple-ai-background">Background (AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-auto-code/#simple-ai-background">#</a></h3>
+<h3 id="simple-ai-background">Background (AI)<a aria-label="Permalink" class="anchor-link" href="/ai-coding-mapcat/#simple-ai-background">#</a></h3>
 <ul>
 <li>Sets shared project context used by AI coding prompts.</li>
 <li>The status tick indicates whether enough background text is present.</li>
 </ul>
-<h3 id="simple-ai-auto-code">Auto-code (AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-auto-code/#simple-ai-auto-code">#</a></h3>
+<h3 id="simple-ai-auto-code">Auto-code (AI)<a aria-label="Permalink" class="anchor-link" href="/ai-coding-mapcat/#simple-ai-auto-code">#</a></h3>
 <ul>
 <li>Runs AI coding across selected/all sources using your prompt and model.</li>
 <li><strong>Layout (top → bottom):</strong> <strong>Model</strong>, <strong>Skip coded</strong>, <strong>Add source prompt</strong>, and <strong>source limit</strong> row; then the <strong>Prompt sections</strong> editor; then <strong>Advanced</strong> (chunk size, concurrency, temperature, thinking, etc.).</li>
@@ -1861,14 +1861,14 @@ After coding, <strong>filtering</strong> happens in the adjacent <strong>Filter 
 <li><a href="../tips-prompts/">Tips on using the prompt history</a> (same chrome as other prompt fields).</li>
 <li>Default model is <strong>Gemini 3.5 Flash</strong> (precise and EU-resident; in testing it produced very few wrong links at moderate volume). One-click coding inherits this default.</li>
 </ul>
-<h3 id="ai-run-progress">While a coding run is going<a aria-label="Permalink" class="anchor-link" href="/simple-ai-auto-code/#ai-run-progress">#</a></h3>
+<h3 id="ai-run-progress">While a coding run is going<a aria-label="Permalink" class="anchor-link" href="/ai-coding-mapcat/#ai-run-progress">#</a></h3>
 <ul>
 <li>Before a run starts, it shows how many sources are in scope, coloured by how much of the project that is: red for every source, amber for a large slice, grey for a small one, with the chunk count, chunk size and model underneath. A five-second countdown then runs, so you can press <strong>Stop</strong> to abort before any AI work starts if the scope looks wrong. One-click runs skip the countdown, because they confirm the scope earlier, but still show the header.</li>
 <li>While the run works, a progress panel shows the current chunk, an estimated finish time, and a <strong>Stop run</strong> button. The browser tab title also tracks progress, so you can watch it from another tab.</li>
 <li>Press <strong>Continue in the background</strong> to hide the panel and carry on working. The run keeps going on the server and tells you when it finishes; reopen the panel any time from the AI Coding panel. Server runs are safe to close the tab on; the panel says so once the run is server-side.</li>
 <li>Only one coding run happens at a time. While a run is live the <strong>Run</strong> buttons become a stop control and the other AI actions are greyed out, so you cannot start a second run over the same sources by accident.</li>
 </ul>
-<h3 id="simple-ai-revise-codebook">Revise codebook (AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-auto-code/#simple-ai-revise-codebook">#</a></h3>
+<h3 id="simple-ai-revise-codebook">Revise codebook (AI)<a aria-label="Permalink" class="anchor-link" href="/ai-coding-mapcat/#simple-ai-revise-codebook">#</a></h3>
 <ul>
 <li>Suggests a cleaner consolidated codebook from existing links.</li>
 <li>Use this after you have enough coded links for a representative sample.</li>
@@ -1880,14 +1880,14 @@ After coding, <strong>filtering</strong> happens in the adjacent <strong>Filter 
 <li>Pre-clustering also adds a <strong>Representatives per cluster</strong> slider (8-20, default 8) and uses a separate labelling prompt.</li>
 <li>Default model is <strong>Gemini 3.5 Flash</strong>.</li>
 </ul>
-<h4 id="simple-ai-target-clusters">Target clusters (Revise codebook)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-auto-code/#simple-ai-target-clusters">#</a></h4>
+<h4 id="simple-ai-target-clusters">Target clusters (Revise codebook)<a aria-label="Permalink" class="anchor-link" href="/ai-coding-mapcat/#simple-ai-target-clusters">#</a></h4>
 <ul>
 <li>The <strong>Target clusters</strong> control is a slider with <strong>50 positions</strong>. The <strong>far left</strong> is <strong>Default</strong>; moving right sets an explicit target of <strong>2</strong> through <strong>50</strong> clusters (one step per cluster count).</li>
 <li><strong>Default</strong> (far left): the app derives a target count \(K\) from the number of <strong>unique factor labels</strong> \(n\) in the <strong>current filtered pipeline</strong> (same scope as Revise codebook): \(K = \min(\lfloor n/3 \rfloor, 25)\) — at most <strong>25</strong>, or roughly <strong>one label in three</strong> as clusters, whichever is smaller.</li>
 <li><strong>Explicit</strong> positions (not Default): the requested \(K\) is the number shown by the slider (<strong>2</strong>–<strong>50</strong>). If \(K\) is <strong>greater than</strong> \(n\), the run uses <strong>\(n\)</strong> instead (you cannot have more clusters than distinct labels); the app may show a short notice when that cap applies.</li>
 <li>Pre-clustering, embedding clustering, and <code>[number]</code> / <code>[cluster_count]</code> in prompts all use this <strong>effective</strong> \(K\).</li>
 </ul>
-<h3 id="simple-ai-recode">Recode (AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-auto-code/#simple-ai-recode">#</a></h3>
+<h3 id="simple-ai-recode">Recode (AI)<a aria-label="Permalink" class="anchor-link" href="/ai-coding-mapcat/#simple-ai-recode">#</a></h3>
 <ul>
 <li>Applies your codebook back onto existing links, turning raw factor labels into cleaner synthesised ones.</li>
 <li>
@@ -1907,13 +1907,13 @@ After coding, <strong>filtering</strong> happens in the adjacent <strong>Filter 
 <li>Header bar shows recode coverage mix across all cause/effect recoded fields.</li>
 <li>Default model is <strong>Gemini 3.5 Flash</strong>.</li>
 </ul>
-<h3 id="simple-ai-filter-links">Filter links (AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-auto-code/#simple-ai-filter-links">#</a></h3>
+<h3 id="simple-ai-filter-links">Filter links (AI)<a aria-label="Permalink" class="anchor-link" href="/ai-coding-mapcat/#simple-ai-filter-links">#</a></h3>
 <ul>
 <li>This is the same Filter Links workflow, run from the adjacent <strong>Filter links</strong> tab (not embedded in the AI Coding panel).</li>
 <li>Use it to refine/select links before reviewing outputs on the right.</li>
 <li>When <strong>One-click coding</strong> finishes with <strong>Filter on finish</strong> enabled, the app applies top-12 factor frequency (citations), then top-30 link frequency (citations) (no longer injects the deprecated Temporary Factor Labels filter).</li>
 </ul>
-<h3 id="advanced-settings">Advanced Settings<a aria-label="Permalink" class="anchor-link" href="/simple-ai-auto-code/#advanced-settings">#</a></h3>
+<h3 id="advanced-settings">Advanced Settings<a aria-label="Permalink" class="anchor-link" href="/ai-coding-mapcat/#advanced-settings">#</a></h3>
 <p>Each section header is clickable and opens/collapses its settings panel. Section headers also include contextual <strong>Help</strong> buttons. The advanced sections are inline (not flyouts), and only one section is expanded at a time.</p>
 <p>Inside advanced panels you can:</p>
 <ul>
@@ -1922,7 +1922,7 @@ After coding, <strong>filtering</strong> happens in the adjacent <strong>Filter 
 <li>Change the <strong>AI Model</strong> (e.g., switch to a "Pro" model for complex reasoning, or a "Flash" model for speed).</li>
 <li>Tweak technical settings like chunk size, concurrency, and temperature.</li>
 </ul>
-<h3 id="ai-coding-mapcat">Coding by chat instead<a aria-label="Permalink" class="anchor-link" href="/simple-ai-auto-code/#ai-coding-mapcat">#</a></h3>
+<h3 id="ai-coding-mapcat">Coding by chat instead<a aria-label="Permalink" class="anchor-link" href="/ai-coding-mapcat/#ai-coding-mapcat">#</a></h3>
 <p>Everything above can be asked for in words. With <strong>Superpowers</strong> on and an AI plan, <a href="../map-cat/">MapCat</a> drives this panel for you.</p>
 <ul>
 <li><strong>Code my sources.</strong> MapCat asks a couple of plain questions about how you want them coded, sets the controls, and starts the run. Ask for the plain coding pass and it runs <strong>Auto-code</strong> alone; ask for the whole pipeline and it runs one-click coding, with revise, recode, join islands and the finishing filters behind it.</li>
@@ -1936,20 +1936,20 @@ After coding, <strong>filtering</strong> happens in the adjacent <strong>Filter 
 </main>
 <aside class="rightbar"><h2>On this page</h2><div class="hover-cue">Hover to view</div><div class="toc"><div class="toc">
 <ul>
-<li><a href="/simple-ai-auto-code/#the-ai-workflow">The AI Workflow</a></li>
-<li><a href="/simple-ai-auto-code/#coding-conventions">What the coding prompt decides</a></li>
-<li><a href="/simple-ai-auto-code/#simple-ai-runner">One-click coding (AI)</a></li>
-<li><a href="/simple-ai-auto-code/#simple-ai-background">Background (AI)</a></li>
-<li><a href="/simple-ai-auto-code/#simple-ai-auto-code">Auto-code (AI)</a></li>
-<li><a href="/simple-ai-auto-code/#ai-run-progress">While a coding run is going</a></li>
-<li><a href="/simple-ai-auto-code/#simple-ai-revise-codebook">Revise codebook (AI)</a><ul>
-<li><a href="/simple-ai-auto-code/#simple-ai-target-clusters">Target clusters (Revise codebook)</a></li>
+<li><a href="/ai-coding-mapcat/#the-ai-workflow">The AI Workflow</a></li>
+<li><a href="/ai-coding-mapcat/#coding-conventions">What the coding prompt decides</a></li>
+<li><a href="/ai-coding-mapcat/#simple-ai-runner">One-click coding (AI)</a></li>
+<li><a href="/ai-coding-mapcat/#simple-ai-background">Background (AI)</a></li>
+<li><a href="/ai-coding-mapcat/#simple-ai-auto-code">Auto-code (AI)</a></li>
+<li><a href="/ai-coding-mapcat/#ai-run-progress">While a coding run is going</a></li>
+<li><a href="/ai-coding-mapcat/#simple-ai-revise-codebook">Revise codebook (AI)</a><ul>
+<li><a href="/ai-coding-mapcat/#simple-ai-target-clusters">Target clusters (Revise codebook)</a></li>
 </ul>
 </li>
-<li><a href="/simple-ai-auto-code/#simple-ai-recode">Recode (AI)</a></li>
-<li><a href="/simple-ai-auto-code/#simple-ai-filter-links">Filter links (AI)</a></li>
-<li><a href="/simple-ai-auto-code/#advanced-settings">Advanced Settings</a></li>
-<li><a href="/simple-ai-auto-code/#ai-coding-mapcat">Coding by chat instead</a></li>
+<li><a href="/ai-coding-mapcat/#simple-ai-recode">Recode (AI)</a></li>
+<li><a href="/ai-coding-mapcat/#simple-ai-filter-links">Filter links (AI)</a></li>
+<li><a href="/ai-coding-mapcat/#advanced-settings">Advanced Settings</a></li>
+<li><a href="/ai-coding-mapcat/#ai-coding-mapcat">Coding by chat instead</a></li>
 </ul>
 </div>
 </div><hr/><h2>Backlinks</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a class="link-secondary" href="../007.0 Task 2 -- Coding with AI/901 A workflow for causal coding with -6a7cd0.html">A workflow for causal coding with and without AI</a></li><li><a class="link-secondary" href="../007.0 Task 2 -- Coding with AI/! 100 AI coding overview.html">AI coding overview</a></li></ul></div></aside>
