@@ -176,8 +176,11 @@ def export(days):
     """Per-hit CSV. Only works if 'Individual pageviews' is on in site settings,
     and only covers hits recorded since it was switched on."""
     tok = token()
-    since = (datetime.utcnow() - timedelta(days=days)).strftime("%Y-%m-%dT00:00:00Z")
-    job = call("/export", None, tok, method="POST", body={"format": "csv", "start_from_day": since})
+    # CSV exports cover the whole history: start_from_day is JSON-only, and
+    # start_from_hit_id is a pagination cursor rather than a date. So export
+    # everything and cut the rows down to `days` here.
+    since = (datetime.utcnow() - timedelta(days=days)).strftime("%Y-%m-%d")
+    job = call("/export", None, tok, method="POST", body={"format": "csv"})
     job_id = job.get("id")
     if not job_id:
         sys.exit("No export id returned: %s" % json.dumps(job)[:300])
@@ -201,7 +204,11 @@ def export(days):
     except OSError:
         text = blob.decode("utf-8", "replace")
 
-    rows = list(csv.DictReader(io.StringIO(text)))
+    all_rows = list(csv.DictReader(io.StringIO(text)))
+    datecol = next((c for c in (all_rows[0].keys() if all_rows else []) if c.lower() == "date"), None)
+    rows = [r for r in all_rows if not datecol or (r.get(datecol) or "")[:10] >= since]
+    if all_rows:
+        print("exported %d hits in total; %d of them on or after %s" % (len(all_rows), len(rows), since))
     if not rows:
         print("The export is empty. 'Individual pageviews' is probably off in site settings,")
         print("so no per-hit data exists yet. Turn it on and the NEXT spike will be diagnosable.")
@@ -209,7 +216,6 @@ def export(days):
 
     header = list(rows[0].keys())
     botcol = next((c for c in header if c.lower() == "bot"), None)
-    datecol = next((c for c in header if c.lower() == "date"), None)
     print("\n%d hits exported, columns: %s" % (len(rows), ", ".join(header)))
 
     if botcol:
