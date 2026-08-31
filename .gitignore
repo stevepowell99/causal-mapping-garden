@@ -12,11 +12,22 @@
 
 # Source build tooling (versioned for recovery; no secrets in these)
 !build_static_site.py
+!build_bibliography_md.py
 !garden-compose.css
 !config.yml
 !watch_and_build.ps1
 !run_build_scheduled.bat
 !serve.py
+
+# Guidance and open work. These held only on the laptop until 31 August 2026,
+# which made the repo's own instructions the one thing a rebuild could not
+# recover. They carry no secrets: build_bibliography_md.py names ZOTERO_API_KEY
+# and reads it from a .env that stays ignored.
+!CLAUDE.md
+!_role.md
+!*xkTODO*.md
+!*xkWAITING*.md
+!*xkLATER*.md
 
 # Build output copies of trash / local junk — never ship
 **/desktop.ini
