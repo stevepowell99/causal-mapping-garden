@@ -107,29 +107,38 @@ def daily(days):
     tok = token()
     end = datetime.utcnow()
     start = end - timedelta(days=days)
-    res = call(
-        "/stats/hits",
-        {"start": hour(start), "end": hour(end), "group": "day", "limit": 200},
-        tok,
-    )
-    hits = res.get("hits", [])
+
+    # The API returns at most 100 paths per call whatever limit says, so page
+    # through with exclude_paths until it reports no more. Without this the
+    # totals below silently cover only the busiest 100 pages of 751.
+    hits, seen = [], []
+    while True:
+        params = {"start": hour(start), "end": hour(end), "group": "day", "limit": 100}
+        if seen:
+            params["exclude_paths"] = ",".join(str(i) for i in seen)
+        res = call("/stats/hits", params, tok)
+        batch = res.get("hits", [])
+        hits.extend(batch)
+        seen.extend(h["path_id"] for h in batch)
+        if not res.get("more") or not batch:
+            break
+        time.sleep(0.3)
+
     if not hits:
         print("No hits returned for the last %d days." % days)
         return
-    if res.get("more"):
-        print("NOTE: more paths exist beyond the 200 fetched; totals below are of those 200.\n")
 
     per_day = defaultdict(int)
     search_day = defaultdict(int)
     for h in hits:
-        for s in h.get("stats", []):
-            per_day[s["day"]] += s.get("daily", 0)
-            if h.get("path", "").startswith("/search"):
-                search_day[s["day"]] += s.get("daily", 0)
+        for st in h.get("stats", []):
+            per_day[st["day"]] += st.get("daily", 0)
+            if h.get("path", "").lower().startswith("/search"):
+                search_day[st["day"]] += st.get("daily", 0)
 
     counts = sorted(per_day.values())
     median = counts[len(counts) // 2] if counts else 0
-    print("paths fetched: %d   days: %d   median visitors/day: %d\n" % (len(hits), len(per_day), median))
+    print("paths: %d   days: %d   median visitors/day: %d\n" % (len(hits), len(per_day), median))
     print("%-12s %8s %8s  %s" % ("date", "visits", "search", ""))
     spikes = []
     for d in sorted(per_day):
