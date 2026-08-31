@@ -34,3 +34,4 @@
 dist/.trash/
 dist/assets/md_hashes.json
 dist/site.pdf
+!analytics_pull.py
