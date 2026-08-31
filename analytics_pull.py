@@ -58,9 +58,17 @@ ISBOT = {
 
 
 def token():
-    env = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+    # One copy of the token, in the hub .env, shared with bin/goat-report.py.
+    # The local .env is still read so the script works if it is ever detached
+    # from the hub.
+    envs = [
+        os.path.join(os.path.expanduser("~"), ".claude", ".env"),
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"),
+    ]
     tok = os.environ.get("GOATCOUNTER_TOKEN", "")
-    if not tok and os.path.exists(env):
+    for env in envs:
+        if tok or not os.path.exists(env):
+            continue
         for line in open(env, encoding="utf-8"):
             line = line.strip()
             if line.startswith("GOATCOUNTER_TOKEN="):
