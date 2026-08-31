@@ -258,8 +258,10 @@ def _build_bib_index_simple(bib_path: Path) -> Dict[str, Tuple[List[str], str]]:
     for m in re.finditer(r"@[^@{]+\{\s*([^,\s]+)\s*,([\s\S]*?)\n\}\s*", text):
         key = m.group(1)
         body = m.group(2)
-        ym = re.search(r"year\s*=\s*\{([^}]*)\}|year\s*=\s*\"([^\"]*)\"", body, flags=re.IGNORECASE)
-        year = (ym.group(1) if ym and ym.group(1) is not None else (ym.group(2) if ym else "")).strip()
+        # Zotero Better BibTeX writes the year unbraced (year = 2019), so accept a bare
+        # numeric as well as the braced and quoted forms.
+        ym = re.search(r"year\s*=\s*\{([^}]*)\}|year\s*=\s*\"([^\"]*)\"|year\s*=\s*(\d{4})", body, flags=re.IGNORECASE)
+        year = (next((g for g in ym.groups() if g), "") if ym else "").strip()
         if not year:
             dm = re.search(r"date\s*=\s*\{([^}]*)\}|date\s*=\s*\"([^\"]*)\"", body, flags=re.IGNORECASE)
             year = (dm.group(1) if dm and dm.group(1) is not None else (dm.group(2) if dm else "")).strip().split("-")[0]
