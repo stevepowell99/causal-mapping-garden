@@ -1,6 +1,23 @@
 input: "C:/Users/Zoom/My Drive (hello@causalmap.app)/Causal Map/10-19 Outreach - marketing - presentations - academic - theory/19aCMgarden/content"
 output: "./dist"  # If commented out, will auto-generate from input path hash
 readme: "C:/dev/causal-map-extension/webapp/README.md"  # External README to split into 999 folder
+
+# External docs mirrored in as ONE page each (unlike readme, which splits into a folder).
+# stop_at drops everything from that heading onwards, which is how the internal half of a
+# repo doc stays internal. The source's own YAML front matter is always stripped.
+mirror_docs:
+  - src: "C:/dev/causal-map-extension/rubicon/docs/principles.md"
+    dest: "300 Rubicon/030 Rubicon principles ((rubicon-principles)).md"
+    stop_at: "## TECH SECTION -- For whoever changes the code"
+    front_matter: |
+      ---
+      tags: paper
+      theme: theory-of-change
+      ---
+    banner: |
+      > **Work in progress.** This page is mirrored automatically from `rubicon/docs/principles.md`
+      > in the Causal Map repository and changes as the design does. The section written for
+      > whoever changes the code is not published here.
 site_url: "https://garden.causalmap.app"
 og_image_path: "https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&token=a03afb3c-0ee2-4cc1-9e3a-3762983da685"
 site_label: "💐 Causal Mapping"

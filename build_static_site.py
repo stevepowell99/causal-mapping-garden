@@ -8737,6 +8737,70 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
             print(f"[TIMING] {label}: {secs:.3f}s")
         print(f"[TIMING] write_pages total: {total:.3f}s")
 
+# -- Mirroring a single external doc in as one page --
+def mirror_external_doc(src: Path, dest: Path, stop_at: Optional[str] = None,
+                        front_matter: Optional[str] = None,
+                        banner: Optional[str] = None) -> Optional[Path]:
+    """
+    Copy one external markdown file into the vault as a single page.
+
+    Unlike split_readme_into_chapter, which explodes a README into a folder of
+    pages, this writes exactly one file, so a repo doc can be published whole.
+
+    stop_at      a heading line; everything from it to the end is dropped. This
+                 is how the internal half of a doc stays internal. Matched on
+                 the stripped line, so pass the heading exactly as written.
+    front_matter a YAML block written above the body (the source's own YAML is
+                 always stripped, since repo docs carry editor comment threads
+                 that have no business on a public page).
+    banner       markdown inserted directly after the front matter, for a
+                 work-in-progress notice.
+
+    Writes only when the result differs from what is already there. An
+    unconditional rewrite would bump mtime, and the incremental build would then
+    re-render the page and its chapter intro on every watcher cycle, committing
+    and pushing a dist change once a minute forever.
+    """
+    if not src.exists():
+        _warn("mirror", f"source not found, skipping: {src}")
+        return None
+    text = src.read_text(encoding="utf-8")
+
+    # Drop the source's own YAML front matter.
+    m = re.match(r"^---\n.*?\n---\n", text, re.S)
+    if m:
+        text = text[m.end():]
+
+    # Drop the first H1: the garden takes the title from the filename.
+    text = re.sub(r"^#\s+.+?\n", "", text.lstrip("\n"), count=1)
+
+    if stop_at:
+        needle = stop_at.strip()
+        lines = text.splitlines()
+        for i, line in enumerate(lines):
+            if line.strip() == needle:
+                text = "\n".join(lines[:i])
+                break
+        else:
+            _warn("mirror", f"stop_at heading not found in {src.name}: {needle!r}. "
+                            f"Publishing the whole file, which may expose internal sections.")
+
+    parts = []
+    if front_matter:
+        parts.append(front_matter.strip() + "\n")
+    if banner:
+        parts.append(banner.strip() + "\n")
+    parts.append(text.strip() + "\n")
+    out = "\n".join(parts)
+
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    if dest.exists() and dest.read_text(encoding="utf-8") == out:
+        return dest
+    dest.write_text(out, encoding="utf-8")
+    print(f"[MIRROR] {src.name} -> {dest.name}")
+    return dest
+
+
 # -- README splitting for external chapter --
 def split_readme_into_chapter(readme_path: Path, input_root: Path) -> Optional[Path]:
     """
@@ -9119,6 +9183,20 @@ def main() -> None:
     if readme_path and readme_path.exists():
         split_readme_into_chapter(readme_path, input_root)
     _main_mark("main: split README (if enabled)")
+
+    # Mirror single external docs into the vault as one page each
+    for _spec in (config.get("mirror_docs") or []):
+        try:
+            mirror_external_doc(
+                Path(str(_spec["src"])).expanduser(),
+                input_root / str(_spec["dest"]),
+                stop_at=_spec.get("stop_at"),
+                front_matter=_spec.get("front_matter"),
+                banner=_spec.get("banner"),
+            )
+        except Exception as _e:
+            _warn("mirror", f"mirror_docs entry failed ({_spec!r}): {_e}")
+    _main_mark("main: mirror external docs")
     
     # copy non-md assets first
     copy_assets(input_root, output_root)
