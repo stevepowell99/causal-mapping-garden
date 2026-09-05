@@ -7,7 +7,7 @@ readme: "C:/dev/causal-map-extension/webapp/README.md"  # External README to spl
 # repo doc stays internal. The source's own YAML front matter is always stripped.
 mirror_docs:
   - src: "C:/dev/causal-map-extension/rubicon/docs/principles.md"
-    dest: "300 Rubicon/030 Rubicon principles ((rubicon-principles)).md"
+    dest: "950 Rubicon/005 Rubicon principles ((rubicon-principles)).md"
     stop_at: "## TECH SECTION -- For whoever changes the code"
     front_matter: |
       ---
