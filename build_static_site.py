@@ -24,7 +24,7 @@ import sys
 import time
 from datetime import date, datetime
 from urllib.parse import quote, urljoin
-PIPELINE_VERSION = "2026-07-03-mermaid-in-panels-v1"
+PIPELINE_VERSION = "2026-09-05-anchor-prevnext-v1"
 
 # Media extensions: images + local video (mp4, webm, etc.)
 _IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".bmp"}
@@ -8299,6 +8299,14 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         def _rel_href(target_md: Optional[Path]) -> Optional[str]:
             if not target_md:
                 return None
+            # Prefer the page's own ((anchor)) short URL, as the chapter block already
+            # does. A relative href to a long filename is fragile: the builder truncates
+            # long names to a hash, so the link reads as "...((re-35a21a.html", and the
+            # same href has to work both from the real folder and from the /{anchor}/
+            # copy. The short URL is stable under a rename and readable in the bar.
+            page_slug = page_anchor_map.get(target_md) if page_anchor_map else None
+            if page_slug:
+                return f"/{page_slug}/"
             target_out = relative_output_html(input_root, output_root, target_md)
             return os.path.relpath(target_out, start=out_dir).replace(os.sep, "/")
 
