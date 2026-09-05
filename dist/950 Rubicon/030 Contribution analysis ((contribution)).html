@@ -1818,6 +1818,7 @@ flowchart TD
 <h2 class="banner-info" id="a-chain-is-as-strong-as-its-weakest-link-and-reports-average-instead">A chain is as strong as its weakest link, and reports average instead<a aria-label="Permalink" class="anchor-link" href="#a-chain-is-as-strong-as-its-weakest-link-and-reports-average-instead">#</a></h2>
 <p>If a theory of change runs A to B to C to D, and the material says a great deal about A to B and D, and nothing at all about B to C, the story fails at B to C. It does not score three out of four.</p>
 <p>Almost every contribution analysis reports as though it did, because the natural summary of a table is a total. So the combination rule has to be written into the rubric in advance, and it has to be closer to a minimum than a mean. Stating it in advance matters more here than anywhere else in this set of papers, because the temptation to switch to averaging arrives precisely when one link comes back empty.</p>
+<p>Writing this paper found that Rubicon could not express that rule. A rubric could ask whether every criterion was green, or whether any was red, and could not ask how good the weakest one was, so a chain could only have been scored by the very averaging described above. The engine now takes <code>combine: worst</code>, where the weakest criterion decides, and <code>combine: best</code>, where the strongest does. It reads the order the author declared the verdicts in, best first, and refuses a rubric that never declared them, since there the order would be an accident of writing. Nesting the two is still not possible, so a chain of branches is written as branch summaries and combined once.</p>
 <p>Two qualifications keep that from being crude. A theory of change is rarely a single chain, so a weak link in one branch is not fatal where another branch reaches the same outcome. And a link nobody mentioned is not a link the material contradicts, which is the next problem.</p>
 <h2 class="banner-info" id="silence-is-not-refutation-and-it-is-not-support-either">Silence is not refutation, and it is not support either<a aria-label="Permalink" class="anchor-link" href="#silence-is-not-refutation-and-it-is-not-support-either">#</a></h2>
 <p>Three outcomes per link, and the third is the one an evaluator cannot get any other way.</p>
@@ -1960,7 +1961,7 @@ flowchart TD
 <h2 class="banner-info" id="next-steps">Next steps<a aria-label="Permalink" class="anchor-link" href="#next-steps">#</a></h2>
 <ul>
 <li>Write the contribution analysis page in Rubicon's own knowledge base, which is the largest gap in it: the assistant is expected to offer the method and currently knows nothing about it.</li>
-<li>Settle the combination rule, in writing, before any run: how links combine, and how a branch differs from a chain.</li>
+<li>Settle the combination rule for the actual theory of change, in writing, before any run. The machinery now exists; which links form a chain and which form substitutable branches is a judgement about the programme and belongs to the people who know it.</li>
 <li>Build the annotated theory-of-change graph, which all three of these papers now want.</li>
 <li>Test the whole thing on a live evaluation rather than an archive, so that step five exists.</li>
 </ul></div>
