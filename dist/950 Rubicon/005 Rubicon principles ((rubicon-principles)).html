@@ -1989,7 +1989,11 @@ whoever changes the code is not published here.</p>
 <p>A conversation on one side and a canvas on the other. </p>
 <ul>
 <li><strong>A workflow is one scrolling document.</strong> Unrun, it is the steps. Run, each result sits in the block of the step that made it. Lineage is the point of the app.</li>
-<li><strong>A margin map runs beside it</strong>, one viewport tall and sticky, its nodes the steps and results and its edges the parentage. Click a node to scroll to its block; read a block and its node lights.</li>
+<li><strong>A margin map runs beside it</strong>, one viewport tall and sticky, its nodes the steps and results and its edges the parentage. Click a node to scroll to its block; read a block and its node lights.<ul>
+<li><strong>A step never depends on a step, so the map never draws one joined to one.</strong> It depends on the results that step produced, which is what its <code>inputs</code> name and what its edges touch. Steve, 6 September 2026: a verdict "depends on steps 2 and 3 but actually on the results of them".</li>
+<li><strong>What a result rests on is nearer than where it came from.</strong> Its lineage runs back to the words in a source and is the point of the app, but on a straight workflow that is every node on the map, so a drawing that knows only lineage answers "what was this decided from?" with "everything". What it was decided from is the handful of results the step read, drawn as lines while the rest of the chain stays behind them.</li>
+</ul>
+</li>
 <li><strong>Click a node and it opens in a lightbox:</strong> a coding step's wording and the quotes it found, a judging step's rubric and verdict. A quote opens the source around it.</li>
 <li><strong>You can walk back from any claim.</strong> A result says which results it came from, a figure opens the rows behind it, and clicking a quote opens its source with the words highlighted.</li>
 <li>Rubicon is its own page in Causal Map. It shares the login with Causal Map and reads the project's documents, and past those two things it is not a tab in an existing app.</li>
