@@ -1782,6 +1782,7 @@ whoever changes the code is not published here.</p>
 </div>
 <h2 class="banner-info" id="what-it-does">What it does<a aria-label="Permalink" class="anchor-link" href="#what-it-does">#</a></h2>
 <p>You state a question and argue out a <strong>workflow</strong> with Ruby, the assistant, before any analysis runs: which sources to read, how to mark them up, how to count what was marked, how to combine the results, how to reach a verdict. Then it runs. What you agreed is the product.</p>
+<p><strong>A workflow is a graph, not a coding pass.</strong> This is the thing most easily mistaken about Rubicon, and getting it wrong makes the whole design look like batch processing with an audit trail bolted on. One workflow fans twelve tests out from a single line and gathers them so the test that found nothing still reads as a nought; splits a corpus so the half that wrote a test never scores it; runs one instruction twice over ten sources to measure how much the answer depends on the wording rather than on the material; produces several tables from the same coded rows, each with its own base; tabulates a judgement per test before any roll-up; and combines those into one verdict by a rule stated in advance, the weakest link rather than the average. What a workflow can express is set out in full further down.</p>
 <p>So, five things.</p>
 <ul>
 <li><strong>The standard is written down and versioned before the run that applies it reads anything.</strong> Pressing Run is the act of agreeing to it.</li>
