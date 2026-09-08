@@ -439,6 +439,26 @@
         max-width: 100%;
         height: auto;
       }
+      /* Portrait figures: cap the height and let the width follow, so a tall diagram does not
+         fill a screen or run over several printed pages. The second selector outranks the
+         .cm-figure-span rule further down, which sets width: 100%. */
+      .content img.cm-img-tall,
+      .content .cm-figure-span img.cm-img-tall {
+        width: auto;
+        max-width: 100%;
+        max-height: 70vh;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media print {
+        .content img.cm-img-tall,
+        .content .cm-figure-span img.cm-img-tall {
+          max-height: 150mm;
+          object-fit: contain;
+        }
+      }
       .content .paper-dual-column-body .cm-figure-span,
       .content .section-two-col .cm-figure-span {
         column-span: all;
@@ -1873,7 +1893,7 @@ Judging value and relative contribution and comparing with alternative explanati
 <p>Finally, you want to draw a conclusion. You have done some or all of the other steps, checked the individual causal claims, assessed the robustness of co-terminal link bundles, traced paths of influence, compared influences and alternative explanations, and finally you want to at least eyeball all the evidence again and draw a valid conclusion. But "all the evidence" might be a massive corpus. In Causal Map, you can set up all the filters to present the evidence for your conclusion, and you are presented with just a map, but behind the map are still maybe hundreds of causal claims with their associated quotes and context. Does the overall claim still make sense? Can we be sure that the links in all the pathways all belong to the same context?</p>
 <p>In Causal Map, the AI vignette feature helps with this, drafting a commentary on a chosen view that helps support inference by drawing on the underlying paths, links, quotes and source metadata, and answering specific quality questions, perhaps according to rubrics you provide.</p>
 <p>Vignettes can be created with the specific task of answering quality assurance questions like: is each link really part of a coherent complete and consistent story from source factor (e.g., Intervention) to target factor (e.g., Outcome)?</p>
-<figure><img alt="map-automated-vignette-tasked-with-checking-pathway-coherence" class="img-fluid cm-img-flush" loading="lazy" src="../007 Task 2 -- Causal coding -- minimalist style/img/map-automated-vignette-tasked-with-checking-pathway-coherence.jpg" style="background-color: #fff;"/><figcaption><em>An automated Vignette for the same map, tasked with examining whether the evidence for each pathway is coherent.</em></figcaption></figure>
+<figure><img alt="map-automated-vignette-tasked-with-checking-pathway-coherence" class="img-fluid cm-img-flush cm-img-tall" loading="lazy" src="../007 Task 2 -- Causal coding -- minimalist style/img/map-automated-vignette-tasked-with-checking-pathway-coherence.jpg" style="background-color: #fff;"/><figcaption><em>An automated Vignette for the same map, tasked with examining whether the evidence for each pathway is coherent.</em></figcaption></figure>
 <p>A common use is to ask for a commentary on the pathways from an intervention to a chosen outcome from the perspective of individual sources, discussing how coherent each source's story is. But you can use a Vignette to re-examine the evidence behind any output.  </p>
 <p>The AI is doing nothing more than a careful reader could do given the same inputs, and the patience to examine the quotes behind each link. Some users use this as a starting point and then edit the vignette. </p>
 <h2 class="banner-info" id="what-the-app-does-not-do">What the app does not do<a aria-label="Permalink" class="anchor-link" href="#what-the-app-does-not-do">#</a></h2>

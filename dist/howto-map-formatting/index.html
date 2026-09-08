@@ -438,6 +438,26 @@
         max-width: 100%;
         height: auto;
       }
+      /* Portrait figures: cap the height and let the width follow, so a tall diagram does not
+         fill a screen or run over several printed pages. The second selector outranks the
+         .cm-figure-span rule further down, which sets width: 100%. */
+      .content img.cm-img-tall,
+      .content .cm-figure-span img.cm-img-tall {
+        width: auto;
+        max-width: 100%;
+        max-height: 70vh;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media print {
+        .content img.cm-img-tall,
+        .content .cm-figure-span img.cm-img-tall {
+          max-height: 150mm;
+          object-fit: contain;
+        }
+      }
       .content .paper-dual-column-body .cm-figure-span,
       .content .section-two-col .cm-figure-span {
         column-span: all;
@@ -1794,7 +1814,7 @@
 <p>If the question is "on this single map, where do the groups disagree about a given link?", use <strong>Label by Group</strong> (the Custom Links Label filter). It writes per-group counts directly onto each map link: Tally mode shows raw counts, Percentage mode shows shares, Chi-square mode highlights links where the difference is statistically significant. The chi-square arrows ⬆/⬇ pair nicely with the <strong>Links highlight: Significant</strong> option in Map Formatting, which thickens the significantly different links and dims the rest.</p>
 <figure><img alt="Factors: significant differences between age groups (bookmark #535)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/map-factors-significant-differences-between-age-groups.png" style="background-color: #fff;"/><figcaption><em>Bookmark #535 — chi-square breakdown for factors mentioned by different age groups.</em></figcaption></figure>
 <p>You can also switch to a table or heatmap when the comparison is the point:</p>
-<figure><img alt="Gender comparison heatmap (bookmark #267)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/screenshot-gender-comparison-heatmap.png" style="background-color: #fff;"/><figcaption><em>Bookmark #267 — gender comparison as a Statistics-panel heatmap, an alternative to a map for the same question.</em></figcaption></figure>
+<figure><img alt="Gender comparison heatmap (bookmark #267)" class="cm-img-flush cm-img-tall" loading="lazy" src="img/bookmarks-example-original/screenshot-gender-comparison-heatmap.png" style="background-color: #fff;"/><figcaption><em>Bookmark #267 — gender comparison as a Statistics-panel heatmap, an alternative to a map for the same question.</em></figcaption></figure>
 <h3 id="i-want-to-follow-one-sources-story">"I want to follow one source's story"<a aria-label="Permalink" class="anchor-link" href="/howto-map-formatting/#i-want-to-follow-one-sources-story">#</a></h3>
 <p>Path tracing has a Source Tracing option that constrains the trace to chains within a single source. This stops you reading off transitive stories that nobody actually told. See <a class="wikilink" href="/path-tracing-filter">path tracing</a>.</p>
 <h2 id="decide-how-each-thing-on-the-map-looks">Decide how each thing on the map looks<a aria-label="Permalink" class="anchor-link" href="/howto-map-formatting/#decide-how-each-thing-on-the-map-looks">#</a></h2>
@@ -1840,8 +1860,8 @@
 <h2 id="useful-contrasts-to-save-as-bookmarks">Useful contrasts to save as bookmarks<a aria-label="Permalink" class="anchor-link" href="/howto-map-formatting/#useful-contrasts-to-save-as-bookmarks">#</a></h2>
 <p>Some map-formatting choices are easiest to understand as a pair. Save both views as bookmarks so you can compare them later.</p>
 <h3 id="focus-with-and-without-zoom">Focus with and without zoom<a aria-label="Permalink" class="anchor-link" href="/howto-map-formatting/#focus-with-and-without-zoom">#</a></h3>
-<figure><img alt="Focus on farm production, no zoom (bookmark #805)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/map-focus-on-farm-production-no-zoom.png" style="background-color: #fff;"/><figcaption><em>Bookmark #805 — Focus filter on <code>farm production</code>, no zoom. Detailed labels remain.</em></figcaption></figure>
-<figure><img alt="Focus on farm production, zoom level 1 (bookmark #806)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/map-focus-on-farm-production-zoom-level-1.png" style="background-color: #fff;"/><figcaption><em>Bookmark #806 — same focus, zoomed to level 1. Detailed labels collapse to their top-level parents.</em></figcaption></figure>
+<figure><img alt="Focus on farm production, no zoom (bookmark #805)" class="cm-img-flush cm-img-tall" loading="lazy" src="img/bookmarks-example-original/map-focus-on-farm-production-no-zoom.png" style="background-color: #fff;"/><figcaption><em>Bookmark #805 — Focus filter on <code>farm production</code>, no zoom. Detailed labels remain.</em></figcaption></figure>
+<figure><img alt="Focus on farm production, zoom level 1 (bookmark #806)" class="cm-img-flush cm-img-tall" loading="lazy" src="img/bookmarks-example-original/map-focus-on-farm-production-zoom-level-1.png" style="background-color: #fff;"/><figcaption><em>Bookmark #806 — same focus, zoomed to level 1. Detailed labels collapse to their top-level parents.</em></figcaption></figure>
 <h3 id="path-tracing-before-and-after-source-tracing">Path tracing before and after source tracing<a aria-label="Permalink" class="anchor-link" href="/howto-map-formatting/#path-tracing-before-and-after-source-tracing">#</a></h3>
 <figure><img alt="Path tracing without source tracing (bookmark #1129)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/screenshot-path-tracing-without-source-tracing.png" style="background-color: #fff;"/><figcaption><em>Bookmark #1129 — path tracing from Increased knowledge to Improved health: every link on a route between them, across all sources.</em></figcaption></figure>
 <figure><img alt="Path tracing with source tracing (bookmark #981)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/map-path-tracing-with-source-tracing.png" style="background-color: #fff;"/><figcaption><em>Bookmark #981 — same trace with Source tracing on: only paths actually told within a single source survive.</em></figcaption></figure>

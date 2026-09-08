@@ -439,6 +439,26 @@
         max-width: 100%;
         height: auto;
       }
+      /* Portrait figures: cap the height and let the width follow, so a tall diagram does not
+         fill a screen or run over several printed pages. The second selector outranks the
+         .cm-figure-span rule further down, which sets width: 100%. */
+      .content img.cm-img-tall,
+      .content .cm-figure-span img.cm-img-tall {
+        width: auto;
+        max-width: 100%;
+        max-height: 70vh;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media print {
+        .content img.cm-img-tall,
+        .content .cm-figure-span img.cm-img-tall {
+          max-height: 150mm;
+          object-fit: contain;
+        }
+      }
       .content .paper-dual-column-body .cm-figure-span,
       .content .section-two-col .cm-figure-span {
         column-span: all;
@@ -1785,7 +1805,7 @@ Alexandra Priebe (WFP), interviewing Ashley Hollister and Sarang Mangi (DeftEdge
 <h2 class="banner" id="advice-for-other-evaluators">Advice for other evaluators<a aria-label="Permalink" class="anchor-link" href="#advice-for-other-evaluators">#</a></h2>
 <p>First, be very clear on the intention of using QuIP and Causal Map and integrate this clearly into the evaluation matrix and data analysis plan. Make sure that the team has the necessary capacity, and check this in the evaluation timeframe.</p>
 <p>Another lesson learned is that having fewer, broader questions and interviewing more people would probably be more advantageous. This approach allows more time to dig into what changes are happening and why, while also simultaneously gathering enough information to have links drawn in the Causal Map.</p>
-<p><img alt="notion image" class="cm-img-flush" loading="lazy" src="img/map-notion-image-20.jpg" style="background-color: #fff;"/></p>
+<p><img alt="notion image" class="cm-img-flush cm-img-tall" loading="lazy" src="img/map-notion-image-20.jpg" style="background-color: #fff;"/></p>
 <p><a href="https://www.wfp.org/publications/evaluation-wfp-contribution-market-systems-south-sudan-and-bangladesh-2018-2022">Check the report here</a>
 <a href="https://www.conftool.pro/ees2024/index.php?page=browseSessions&amp;form_session=579&amp;mode=table">See more details here</a></p>
         <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a href="https://causalmap.app" class="link-secondary">Causal Map Ltd</a> 2026</span> · <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" style="height:18px;opacity:0.7;vertical-align:middle;" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" /></a><a href="https://app.causalmap.app" class="link-secondary ms-2" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>

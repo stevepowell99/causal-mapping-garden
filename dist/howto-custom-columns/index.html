@@ -438,6 +438,26 @@
         max-width: 100%;
         height: auto;
       }
+      /* Portrait figures: cap the height and let the width follow, so a tall diagram does not
+         fill a screen or run over several printed pages. The second selector outranks the
+         .cm-figure-span rule further down, which sets width: 100%. */
+      .content img.cm-img-tall,
+      .content .cm-figure-span img.cm-img-tall {
+        width: auto;
+        max-width: 100%;
+        max-height: 70vh;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media print {
+        .content img.cm-img-tall,
+        .content .cm-figure-span img.cm-img-tall {
+          max-height: 150mm;
+          object-fit: contain;
+        }
+      }
       .content .paper-dual-column-body .cm-figure-span,
       .content .section-two-col .cm-figure-span {
         column-span: all;
@@ -1783,7 +1803,7 @@
 <li>you mainly want fast searching and filtering</li>
 </ul>
 <p>For example, this saved map shows <code>#hypothetical</code> and <code>#doubtful</code> tags displayed directly on the links:</p>
-<p><img alt="Link tags shown on the map (bookmark #1126)" class="cm-img-flush" loading="lazy" src="img/bookmarks-example-original/map-link-tags-visible-on-the-map.png" style="background-color: #fff;"/></p>
+<p><img alt="Link tags shown on the map (bookmark #1126)" class="cm-img-flush cm-img-tall" loading="lazy" src="img/bookmarks-example-original/map-link-tags-visible-on-the-map.png" style="background-color: #fff;"/></p>
 <p>Use a <strong>custom column</strong> when:</p>
 <ul>
 <li>you want a named field with a clear purpose, such as <code>confidence</code></li>

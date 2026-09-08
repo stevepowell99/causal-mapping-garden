@@ -439,6 +439,26 @@
         max-width: 100%;
         height: auto;
       }
+      /* Portrait figures: cap the height and let the width follow, so a tall diagram does not
+         fill a screen or run over several printed pages. The second selector outranks the
+         .cm-figure-span rule further down, which sets width: 100%. */
+      .content img.cm-img-tall,
+      .content .cm-figure-span img.cm-img-tall {
+        width: auto;
+        max-width: 100%;
+        max-height: 70vh;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media print {
+        .content img.cm-img-tall,
+        .content .cm-figure-span img.cm-img-tall {
+          max-height: 150mm;
+          object-fit: contain;
+        }
+      }
       .content .paper-dual-column-body .cm-figure-span,
       .content .section-two-col .cm-figure-span {
         column-span: all;
@@ -1767,7 +1787,7 @@
         <div class="page-title-row d-flex justify-content-between align-items-center"><div class="page-title" id="questions-introduction">🌻 Individual questions – introduction<a aria-label='Permalink' class='anchor-link' href='/questions-introduction'>#</a><div class="page-subtitle">Chapter contents.</div></div></div><hr />
         <p>Because the output is a structured network, we can apply a range of queries to explore the data. This gives us a library of <strong>pre-existing approaches</strong> to ask <strong>practical questions</strong> about the causal landscape described by the participants.</p>
 <p>Here's a poster showing a few of the main questions.
-<img alt="4c190bfe236ad057ad64e3dae96cf974_MD5" class="img-fluid cm-img-flush" loading="lazy" src="img/4c190bfe236ad057ad64e3dae96cf974_MD5.jpg" style="background-color: #fff;"/></p>
+<img alt="4c190bfe236ad057ad64e3dae96cf974_MD5" class="img-fluid cm-img-flush cm-img-tall" loading="lazy" src="img/4c190bfe236ad057ad64e3dae96cf974_MD5.jpg" style="background-color: #fff;"/></p>
 <h2 id="see-also">See also<a aria-label="Permalink" class="anchor-link" href="#see-also">#</a></h2>
 <ul>
 <li><a class="wikilink" href="/howto-map-formatting">Formatting your map for what you want to show</a> for the visualisation side.</li>

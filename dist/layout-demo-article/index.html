@@ -438,6 +438,26 @@
         max-width: 100%;
         height: auto;
       }
+      /* Portrait figures: cap the height and let the width follow, so a tall diagram does not
+         fill a screen or run over several printed pages. The second selector outranks the
+         .cm-figure-span rule further down, which sets width: 100%. */
+      .content img.cm-img-tall,
+      .content .cm-figure-span img.cm-img-tall {
+        width: auto;
+        max-width: 100%;
+        max-height: 70vh;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media print {
+        .content img.cm-img-tall,
+        .content .cm-figure-span img.cm-img-tall {
+          max-height: 150mm;
+          object-fit: contain;
+        }
+      }
       .content .paper-dual-column-body .cm-figure-span,
       .content .section-two-col .cm-figure-span {
         column-span: all;
@@ -1766,12 +1786,12 @@
 <div class="page-title-row d-flex justify-content-between align-items-center"><div class="page-title" id="layout-demo-article">Article type layout demo<a aria-label="Permalink" class="anchor-link" href="/layout-demo-article">#</a></div></div><hr/>
 <div class="paper"><div class="mb-3"><span class="badge text-bg-light border"><i class="far fa-calendar"></i> 8 May 2026</span></div>
 <p>This note lives in <strong><code>991 !!! just my notes</code></strong>. It uses <strong><code>type: article</code></strong> (same effect as <strong><code>tags: paper</code></strong>): working-paper shell, serif body, no flower icon, and automatic <strong><code>##</code></strong> / <strong><code>###</code></strong> / blockquote styling. <strong><code>dual-column</code></strong> is also set so the <strong>main body is two columns</strong> on the web and in PDF-style layout; <strong><code>paper</code></strong> PDFs would add columns anyway, but this makes the HTML match.</p>
-<h2 class="banner-info" id="what-you-should-see-on-this-page">What you should see on this page<a aria-label="Permalink" class="anchor-link" href="/layout-demo-article/#what-you-should-see-on-this-page">#</a></h2>
+<h2 class="banner-info" id="what-you-should-see-on-this-page">What you should see on this page<a aria-label="Permalink" class="anchor-link" href="/layout-demo-article/#what-you-should-see-on-this-page">#</a></h2><div class="paper-dual-column-body">
 <p>This <strong><code>##</code></strong> heading was plain in Markdown; the build added the blue <strong>banner-info</strong> style. The next line is a <strong><code>###</code></strong> heading — it should get the soft <strong>rounded-info</strong> box.</p>
 <h3 class="rounded-info" id="subsection-automatic-rounded-info">Subsection (automatic <code>rounded-info</code>)<a aria-label="Permalink" class="anchor-link" href="/layout-demo-article/#subsection-automatic-rounded-info">#</a></h3>
 <div class="callout callout-note">
 <p>On <strong><code>article</code> / <code>paper</code></strong> pages, a normal blockquote like this one is turned into a <strong>note</strong> callout (not a tip).</p>
-</div><div class="paper-dual-column-body">
+</div>
 <h3 class="rounded-info" id="images-when-the-page-really-has-two-columns">Images when the page really has two columns<a aria-label="Permalink" class="anchor-link" href="/layout-demo-article/#images-when-the-page-really-has-two-columns">#</a></h3>
 <p>Without any extra attributes, an image should stay <strong>inside one column</strong> (narrow band), not span the whole content area.</p>
 <p><img alt="" class="cm-img-in-col" loading="lazy" src="img/959605bb2315635037984e235082bc14_MD5.jpg" style="background-color: #fff;"/></p>

@@ -438,6 +438,26 @@
         max-width: 100%;
         height: auto;
       }
+      /* Portrait figures: cap the height and let the width follow, so a tall diagram does not
+         fill a screen or run over several printed pages. The second selector outranks the
+         .cm-figure-span rule further down, which sets width: 100%. */
+      .content img.cm-img-tall,
+      .content .cm-figure-span img.cm-img-tall {
+        width: auto;
+        max-width: 100%;
+        max-height: 70vh;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media print {
+        .content img.cm-img-tall,
+        .content .cm-figure-span img.cm-img-tall {
+          max-height: 150mm;
+          object-fit: contain;
+        }
+      }
       .content .paper-dual-column-body .cm-figure-span,
       .content .section-two-col .cm-figure-span {
         column-span: all;
@@ -1790,7 +1810,7 @@
 <p>Read it and a pattern that no ladder would have predicted comes through. The programme's support flows first into local partner organisations, which build the capacity of the communities they serve; that capacity then feeds advocacy, peer support and a stronger movement. The dominant story practitioners told was rarely "we delivered outputs and outcomes followed". It ran closer to "we built each other up, and that was the point". The maps put a number on the backbone of that story: across the whole dataset the single most-cited factor, with 777 citations, was Love Alliance support for advocacy and capacity building, from which two "workhorse" pathways ran, capacity-strengthening and networking. The report built its central conclusion on exactly that.</p>
 <p>One pathway shows how the counts fed the findings. The advocacy map showed a strong connection from Love Alliance support to partners running advocacy campaigns, cited 44 times, leading on to reduced stigma and discrimination against key populations (37) and to key populations empowered to advocate for their own rights (29), with spillover into partner capacity (32) and community training (31). The report carried those counts verbatim into its effectiveness chapter, using them to argue that partner-led advocacy was a central driver of change, enabled by Love Alliance funding and by the networking around it.</p>
 <p>The maps also showed something the planners' ladder cannot: reinforcing loops. In the movement-building view (Figure 3), networking and collaboration sit at the centre as a hub, and two virtuous circles appear, one where growing community capacity feeds peer support which feeds capacity again, and one where networking enables advocacy campaigns which generate more networking.</p>
-<p><img alt="map-love-alliance-movement-building" class="img-fluid cm-img-flush" loading="lazy" src="img/map-love-alliance-movement-building.png" style="background-color: #fff;"/>
+<p><img alt="map-love-alliance-movement-building" class="img-fluid cm-img-flush cm-img-tall" loading="lazy" src="img/map-love-alliance-movement-building.png" style="background-color: #fff;"/>
 <em>Figure 3. The movement-building view. "Partner organisations implement networking activities, collaborations and build alliances" is the central hub, with reinforcing feedback loops around it.</em></p>
 <p>One respondent, in a group interview in Zimbabwe, put the hub plainly: "The coalitions and partnerships also worked, there is indeed power in numbers ... It was actually this strong partnership which also made things to work for us."</p>
 <p>The dataset is overwhelmingly positive in tone, which is worth seeing rather than assuming. Of the factual links, far more were coded positive than negative.</p>

@@ -19,12 +19,13 @@ from collections import defaultdict
 from typing import Any, Dict, List, Optional, Tuple, Union, Set
 import json
 import stat
+import struct
 import subprocess
 import sys
 import time
 from datetime import date, datetime
-from urllib.parse import quote, urljoin
-PIPELINE_VERSION = "2026-09-05-anchor-prevnext-v1"
+from urllib.parse import quote, unquote, urljoin
+PIPELINE_VERSION = "2026-09-08-column-start-tall-img-v1"
 
 # Media extensions: images + local video (mp4, webm, etc.)
 _IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".bmp"}
@@ -3238,6 +3239,62 @@ def _wrap_img_cm_figure_span(soup: Any, img: Any) -> None:
     wrapper.append(img.extract())
 
 
+def _image_pixel_size(path: Path) -> Optional[Tuple[int, int]]:
+    """Intrinsic (width, height) of a PNG, JPEG or GIF, read from its header.
+
+    Parsed here rather than through Pillow so the layout below behaves the same on a
+    machine that happens not to have it installed.
+    """
+    try:
+        with open(path, "rb") as fh:
+            head = fh.read(26)
+            if head[:8] == b"\x89PNG\r\n\x1a\n" and head[12:16] == b"IHDR":
+                w, h = struct.unpack(">II", head[16:24])
+                return int(w), int(h)
+            if head[:6] in (b"GIF87a", b"GIF89a"):
+                w, h = struct.unpack("<HH", head[6:10])
+                return int(w), int(h)
+            if head[:2] == b"\xff\xd8":
+                fh.seek(2)
+                while True:
+                    marker = fh.read(2)
+                    if len(marker) < 2 or marker[0] != 0xFF:
+                        return None
+                    (seg_len,) = struct.unpack(">H", fh.read(2))
+                    # SOF0-SOF15 carry the frame size; SOF4/SOF8/SOF12 are not frame markers.
+                    if 0xC0 <= marker[1] <= 0xCF and marker[1] not in (0xC4, 0xC8, 0xCC):
+                        body = fh.read(5)
+                        h, w = struct.unpack(">HH", body[1:5])
+                        return int(w), int(h)
+                    fh.seek(seg_len - 2, 1)
+    except Exception:
+        return None
+    return None
+
+
+# Above this height-to-width ratio a figure at full column width runs off the page, so it is
+# capped by height instead. Measured against the vault: 24 of 635 images are affected.
+_TALL_IMAGE_RATIO = 1.25
+
+
+def _img_is_tall(img: Any, base_dir: Optional[Path]) -> bool:
+    """True when a local image is tall enough that full-width sizing overruns the page."""
+    if base_dir is None:
+        return False
+    src = (img.get("src") or "").strip()
+    if not src or "://" in src or src.startswith(("data:", "/")):
+        return False
+    src = unquote(src.split("#", 1)[0].split("?", 1)[0])
+    try:
+        resolved = (base_dir / src).resolve()
+    except Exception:
+        return False
+    size = _image_pixel_size(resolved)
+    if not size or size[0] <= 0:
+        return False
+    return (size[1] / size[0]) > _TALL_IMAGE_RATIO
+
+
 def _img_has_explicit_sizing(img: Any) -> bool:
     """True when the author set width/height (attr_list) or CSS width on the img."""
     if img.get("width") or img.get("height"):
@@ -3246,10 +3303,13 @@ def _img_has_explicit_sizing(img: Any) -> bool:
     return "width" in st or "max-width" in st
 
 
-def postprocess_content_image_layout(content_html: str) -> str:
+def postprocess_content_image_layout(content_html: str, base_dir: Optional[Path] = None) -> str:
     """Default image widths: full-bleed in single-column flow; in-column in real two-column regions unless {.span-cols}.
 
     Works the same for ![[wikilink]] and standard ![](markdown) images after HTML conversion.
+
+    base_dir is the folder the page's markdown sits in, used to measure local images so a
+    portrait figure can be capped by height rather than run over several printed pages.
     """
     try:
         import bs4  # type: ignore
@@ -3273,12 +3333,15 @@ def postprocess_content_image_layout(content_html: str) -> str:
                 continue
             has_span = "span-cols" in cls
             has_inline = "inline" in cls
-            for rm in ("cm-img-flush", "cm-img-in-col"):
+            for rm in ("cm-img-flush", "cm-img-in-col", "cm-img-tall"):
                 while rm in cls:
                     cls.remove(rm)
             mc = _img_inside_multicol_region(img)
+            is_tall = _img_is_tall(img, base_dir)
             if has_span:
                 _wrap_img_cm_figure_span(soup, img)
+                if is_tall:
+                    cls.append("cm-img-tall")
                 img["class"] = cls
                 continue
             if has_inline or _img_has_explicit_sizing(img):
@@ -3288,6 +3351,8 @@ def postprocess_content_image_layout(content_html: str) -> str:
                 cls.append("cm-img-in-col")
             else:
                 cls.append("cm-img-flush")
+            if is_tall:
+                cls.append("cm-img-tall")
             img["class"] = cls
         return str(soup)
     except Exception:
@@ -3307,9 +3372,19 @@ def postprocess_paper_dual_column_body(content_html: str) -> str:
             return content_html
 
         # Keep a real opening summary/abstract full-width; flow the rest as article body.
-        start_after = soup.select_one("h1 + .callout, h2 + .callout, h3 + .callout")
+        # An opening abstract is a callout sitting directly under the FIRST heading. Matching
+        # any heading-plus-callout pair would pick up an ordinary callout further down the page
+        # and leave every section above it in a single column.
+        first_heading = soup.select_one("h1, h2, h3")
+        start_after = None
+        if first_heading is not None:
+            after_heading = first_heading.find_next_sibling()
+            after_cls = (after_heading.get("class") or []) if after_heading is not None else []
+            if isinstance(after_cls, str):
+                after_cls = [after_cls]
+            if "callout" in after_cls:
+                start_after = after_heading
         if start_after is None:
-            first_heading = soup.select_one("h1, h2, h3")
             if first_heading and first_heading.get_text(" ", strip=True).lower().startswith(("abstract", "summary")):
                 start_after = first_heading
                 node = first_heading.next_sibling
@@ -5310,6 +5385,26 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         width: auto;
         max-width: 100%;
         height: auto;
+      }}
+      /* Portrait figures: cap the height and let the width follow, so a tall diagram does not
+         fill a screen or run over several printed pages. The second selector outranks the
+         .cm-figure-span rule further down, which sets width: 100%. */
+      .content img.cm-img-tall,
+      .content .cm-figure-span img.cm-img-tall {{
+        width: auto;
+        max-width: 100%;
+        max-height: 70vh;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }}
+      @media print {{
+        .content img.cm-img-tall,
+        .content .cm-figure-span img.cm-img-tall {{
+          max-height: 150mm;
+          object-fit: contain;
+        }}
       }}
       .content .paper-dual-column-body .cm-figure-span,
       .content .section-two-col .cm-figure-span {{
@@ -8185,7 +8280,7 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
                 content_html = f'<div class="paper">{content_html}</div>'
         except Exception:
             pass
-        content_html = postprocess_content_image_layout(content_html)
+        content_html = postprocess_content_image_layout(content_html, base_dir=md_path.parent)
         
         # Only show right ToC if there are at least 2 entries
         has_toc = toc_html.count("<a ") >= 2
@@ -8746,6 +8841,36 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         print(f"[TIMING] write_pages total: {total:.3f}s")
 
 # -- Mirroring a single external doc in as one page --
+_MIRROR_IMAGE_RE = re.compile(r"!\[[^\]]*\]\(\s*<?([^)\s>]+)>?[^)]*\)|!\[\[([^\]|#]+)")
+
+
+def _mirror_referenced_images(text: str, src_dir: Path, dest_dir: Path) -> None:
+    """Copy the local images a mirrored doc points at, so the page is not published broken.
+
+    The markdown moves into the vault but its `img/...` files live beside the source in the
+    other repo, and a missing one shows up only as a gap on the live page.
+    """
+    for match in _MIRROR_IMAGE_RE.finditer(text):
+        ref = (match.group(1) or match.group(2) or "").strip()
+        if not ref or "://" in ref or ref.startswith(("data:", "/", "#")):
+            continue
+        rel = unquote(ref.split("#", 1)[0].split("?", 1)[0])
+        try:
+            src_img = (src_dir / rel).resolve()
+            dest_img = (dest_dir / rel).resolve()
+        except Exception:
+            continue
+        if not src_img.is_file():
+            _warn("mirror", f"image referenced but not found beside the source: {rel}")
+            continue
+        if dest_img.exists() and dest_img.stat().st_mtime >= src_img.stat().st_mtime \
+                and dest_img.stat().st_size == src_img.stat().st_size:
+            continue
+        dest_img.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src_img, dest_img)
+        print(f"[MIRROR IMG] {rel}")
+
+
 def mirror_external_doc(src: Path, dest: Path, stop_at: Optional[str] = None,
                         front_matter: Optional[str] = None,
                         banner: Optional[str] = None) -> Optional[Path]:
@@ -8802,6 +8927,7 @@ def mirror_external_doc(src: Path, dest: Path, stop_at: Optional[str] = None,
     out = "\n".join(parts)
 
     dest.parent.mkdir(parents=True, exist_ok=True)
+    _mirror_referenced_images(text, src.parent, dest.parent)
     if dest.exists() and dest.read_text(encoding="utf-8") == out:
         return dest
     dest.write_text(out, encoding="utf-8")

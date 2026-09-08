@@ -438,6 +438,26 @@
         max-width: 100%;
         height: auto;
       }
+      /* Portrait figures: cap the height and let the width follow, so a tall diagram does not
+         fill a screen or run over several printed pages. The second selector outranks the
+         .cm-figure-span rule further down, which sets width: 100%. */
+      .content img.cm-img-tall,
+      .content .cm-figure-span img.cm-img-tall {
+        width: auto;
+        max-width: 100%;
+        max-height: 70vh;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media print {
+        .content img.cm-img-tall,
+        .content .cm-figure-span img.cm-img-tall {
+          max-height: 150mm;
+          object-fit: contain;
+        }
+      }
       .content .paper-dual-column-body .cm-figure-span,
       .content .section-two-col .cm-figure-span {
         column-span: all;
@@ -2002,7 +2022,7 @@ Delete links with too little evidence, or where you assumed a cause or effect.
 <h3 class="rounded-info" id="step-8-holistic">Holistic final judgement<a aria-label="Permalink" class="anchor-link" href="/step-3/#step-8-holistic">#</a></h3>
 <p>Finally, draw the conclusion. You have checked the claims, assessed the bundles, traced the pathways and weighed the alternatives; now look at all the evidence at once and decide. Behind a single map there may still be hundreds of quotes. Does the claim hold up? Do all the links really belong to the same context?</p>
 <p>The AI vignette feature helps: it drafts a commentary on a view, drawing on the underlying paths, links, quotes and source data, and can answer set questions, for example "is each link part of one coherent story from intervention to outcome?".</p>
-<figure><img alt="map-automated-vignette-tasked-with-checking-pathway-coherence" class="img-fluid cm-img-flush" loading="lazy" src="img/map-automated-vignette-tasked-with-checking-pathway-coherence.jpg" style="background-color: #fff;"/><figcaption><em>An automated vignette tasked with checking whether the evidence for each pathway is coherent.</em></figcaption></figure>
+<figure><img alt="map-automated-vignette-tasked-with-checking-pathway-coherence" class="img-fluid cm-img-flush cm-img-tall" loading="lazy" src="img/map-automated-vignette-tasked-with-checking-pathway-coherence.jpg" style="background-color: #fff;"/><figcaption><em>An automated vignette tasked with checking whether the evidence for each pathway is coherent.</em></figcaption></figure>
 <p>A common use is a source-by-source commentary on the pathways from an intervention to an outcome, judging how coherent each account is. The AI does only what a patient reader could do with the same quotes, so treat its draft as a starting point and edit it.</p>
 <p>Then close the loop: does the evidence answer the question you set in Step 1?</p>
 <div class="references"><h2>References</h2><p class="reference">Apgar (2024). <em>A PARTICIPATORY APPROACH TO EXPLORING CAUSAL PATHWAYS Experience from the CLARISSA Programme July 2024</em>.</p><p class="reference">Apgar, &amp; Aston (2025). <em>How Do We Define and Support Quality and Rigor in Causal Pathways Evaluation?</em>.</p><p class="reference">Befani, &amp; {Stedman-Bryce (2017). <em>Process Tracing and Bayesian Updating for Impact Evaluation</em>. Evaluation, <em>23</em>, 42--60.</p><p class="reference">Britt, Powell, &amp; Cabral (2025). <em>Strengthening Outcome Harvesting with AI-assisted Causal Mapping</em>.</p><p class="reference">Collier (2011). <em>Understanding Process Tracing</em>. PS - Political Science and Politics, <em>44</em>, 823--830. <a href="https://doi.org/10.1017/S1049096511001429" rel="noopener" target="_blank">https://doi.org/10.1017/S1049096511001429</a>.</p><p class="reference">Copestake, Morsink, &amp; Remnant (2019). <em>Attributing Development Impact: The Qualitative Impact Protocol Case Book</em>. Practical Action Publishing.</p><p class="reference">Davies, &amp; Dart (2005). <em>The Most Significant Change Technique, A Guide to Its Use</em>.</p><p class="reference">Lynn (2025). <em>HU Seafood Retrospective</em>.</p><p class="reference">Mayne (2012). <em>Making Causal Claims</em>. ILAC Brief, <em>26</em>.</p><p class="reference">Mayne (2019). <em>Assessing the Relative Importance of Causal Factors</em>.</p><p class="reference">Pawson, &amp; Tilley (1997). <em>Realistic Evaluation</em>. Sage Publications Limited.</p><p class="reference">Powell (2019). <em>Theories of Change: Making Value Explicit</em>. Journal of MultiDisciplinary Evaluation, <em>15</em>, 53--54.</p><p class="reference">{Wilson-Grau (2018). <em>Outcome Harvesting: Principles, Steps, and Evaluation Applications</em>. IAP.</p></div></div>
