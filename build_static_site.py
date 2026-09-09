@@ -8873,7 +8873,8 @@ def _mirror_referenced_images(text: str, src_dir: Path, dest_dir: Path) -> None:
 
 def mirror_external_doc(src: Path, dest: Path, stop_at: Optional[str] = None,
                         front_matter: Optional[str] = None,
-                        banner: Optional[str] = None) -> Optional[Path]:
+                        banner: Optional[str] = None,
+                        strip_classes: Optional[List[str]] = None) -> Optional[Path]:
     """
     Copy one external markdown file into the vault as a single page.
 
@@ -8888,6 +8889,12 @@ def mirror_external_doc(src: Path, dest: Path, stop_at: Optional[str] = None,
                  that have no business on a public page).
     banner       markdown inserted directly after the front matter, for a
                  work-in-progress notice.
+    strip_classes
+                 class names to drop from heading attribute braces. A repo doc
+                 can mark a heading for its own machinery (rubicon marks the
+                 sections Ruby is given with `{.ruby}`), and the garden would
+                 both publish a class it has no style for and, worse, skip the
+                 automatic paper heading styling because a class is present.
 
     Writes only when the result differs from what is already there. An
     unconditional rewrite would bump mtime, and the incremental build would then
@@ -8917,6 +8924,11 @@ def mirror_external_doc(src: Path, dest: Path, stop_at: Optional[str] = None,
         else:
             _warn("mirror", f"stop_at heading not found in {src.name}: {needle!r}. "
                             f"Publishing the whole file, which may expose internal sections.")
+
+    # Done after stop_at so the heading is still matched exactly as written in the source.
+    for _cls in (strip_classes or []):
+        text = re.sub(rf"^(#{{1,6}} .*?)\s*\{{\.{re.escape(str(_cls))}\}}\s*$",
+                      r"\1", text, flags=re.M)
 
     parts = []
     if front_matter:
@@ -9327,6 +9339,7 @@ def main() -> None:
                 stop_at=_spec.get("stop_at"),
                 front_matter=_spec.get("front_matter"),
                 banner=_spec.get("banner"),
+                strip_classes=_spec.get("strip_classes"),
             )
         except Exception as _e:
             _warn("mirror", f"mirror_docs entry failed ({_spec!r}): {_e}")

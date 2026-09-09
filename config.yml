@@ -8,7 +8,7 @@ readme: "C:/dev/causal-map-extension/webapp/README.md"  # External README to spl
 mirror_docs:
   - src: "C:/dev/causal-map-extension/rubicon/docs/principles.md"
     dest: "950 Rubicon/005 Rubicon principles ((rubicon-principles)).md"
-    stop_at: "## TECH SECTION -- For whoever changes the code"
+    stop_at: "## For whoever changes the code"
     front_matter: |
       ---
       tags: paper
@@ -18,6 +18,17 @@ mirror_docs:
       > **Work in progress.** This page is mirrored automatically from `rubicon/docs/principles.md`
       > in the Causal Map repository and changes as the design does. The section written for
       > whoever changes the code is not published here.
+  - src: "C:/dev/causal-map-extension/rubicon/docs/open-format.md"
+    dest: "950 Rubicon/003 Why we need an open format ((open-format)).md"
+    strip_classes: ["ruby"]
+    front_matter: |
+      ---
+      tags: paper
+      theme: theory-of-change
+      ---
+    banner: |
+      > **Work in progress.** This page is mirrored automatically from `rubicon/docs/open-format.md`
+      > in the Causal Map repository and changes as the argument does.
 site_url: "https://garden.causalmap.app"
 og_image_path: "https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&token=a03afb3c-0ee2-4cc1-9e3a-3762983da685"
 site_label: "💐 Causal Mapping"
