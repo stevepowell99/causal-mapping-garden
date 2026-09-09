@@ -33,7 +33,7 @@ Ledger: `_role.md`.
 ## What gets pushed where
 
 - `dist/` — auto-committed and pushed by the watcher/scheduled scripts (triggers Netlify deploy)
-- `content/` — NOT committed; local only (gitignored by the `*` rule in `.gitignore`)
+- `content/` — never committed to this repo (gitignored by the `*` rule in `.gitignore`). It is its own repo against the remote `stevepowell99/causal-mapping-garden-content`. Nothing commits that repo automatically, so vault work is committed by hand.
 - Source build tooling is versioned too, for recovery: `build_static_site.py`, `garden-compose.css`, `config.yml`, `watch_and_build.ps1`, `run_build_scheduled.bat`, `serve.py`, plus `netlify.toml`, `README.md`, `docs/`, `.gitignore` (see the allowlist comment at the top of `.gitignore`). The watcher only auto-commits `dist/`, so generator edits do NOT get committed automatically: commit `build_static_site.py` changes yourself (bundled with the next `dist` push is fine) rather than letting fixes sit only in the working tree.
 
 
