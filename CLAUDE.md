@@ -95,6 +95,7 @@ Do not keep rendered binaries (`.docx`, `.pdf`) in the repo. A `!` in a filename
 
 - Text & Talk manuscripts (`250 Causal Mapping as QDA/!manuscript.md` and `!extended-abstract.md`) set pandoc `bibliography:` to `../../../../MyLibrary.bib` (four levels up to the Causal Map root).
 - The garden build's `--bib` default resolves to the same file via `Path(__file__).resolve().parents[2] / "MyLibrary.bib"`.
+- The vault's Citations plugin sets `citationExportPath` to `../../../MyLibrary.bib` in `content/.obsidian/plugins/obsidian-citation-plugin/data.json`; the plugin resolves a relative path from the vault root. `.obsidian/` is not in git, so this setting travels by Drive only.
 
 Do **not** keep a copy under `content/assets/` (a duplicate there drifts out of sync and gets published into `dist/`), and do not hard-code an absolute path. Only genuinely separate, hand-maintained bibs (e.g. `content/assets/extra-refs.bib` for refs not in Zotero) belong under `content/assets/`.
 
