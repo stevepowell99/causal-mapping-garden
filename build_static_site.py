@@ -835,10 +835,11 @@ def copy_assets(input_root: Path, output_root: Path) -> None:
     """Copy all non-markdown files, preserving structure."""
     image_exts = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".bmp"}
     for src in input_root.rglob("*"):
-        if src.is_dir() or src.name.startswith("."):
+        if src.is_dir():
             continue
-        # Ignore Obsidian/automation cache folders we never want to publish
-        if ".smart-env" in src.parts:
+        # Never publish a dot-file or anything under a dot-folder (.git, .githooks,
+        # .cursor, .obsidian, .smart-env, the Obsidian .trash)
+        if any(part.startswith(".") for part in src.relative_to(input_root).parts):
             continue
         # Files with ! in filename are still copied when under normal rules below
         if is_markdown_file(src):
@@ -850,8 +851,8 @@ def copy_assets(input_root: Path, output_root: Path) -> None:
         if src.suffix.lower() == ".html":
             # Copy: Quarto etc. generate .html from .qmd; we don't process .qmd
             pass
-        # Skip .obsidian and any folder path segment containing '!' (folders with ! are not built)
-        elif ".obsidian" in src.parts or any('!' in part for part in src.parts[:-1]):
+        # Skip any folder path segment containing '!' (folders with ! are not built)
+        elif any('!' in part for part in src.parts[:-1]):
             continue
         # Allow all files under 'assets' or Quarto *_files folders
         in_assets = any(part.lower() == "assets" for part in src.parts)
