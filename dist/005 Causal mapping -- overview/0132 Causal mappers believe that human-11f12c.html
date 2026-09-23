@@ -493,6 +493,30 @@
         font-weight: 400;
         color: #6c757d;
       }
+      /* Home header: hero picture beside the title on wide screens; chapters in two columns */
+      .content.home .home-chapters {
+        clear: both;
+      }
+      .content.home img[src$="garden-hero.svg"] {
+        border-radius: 12px;
+      }
+      @media (min-width: 992px) {
+        .content.home > p:has(> img[src$="garden-hero.svg"]) {
+          float: right;
+          width: 55%;
+          margin: 0 0 1.5rem 2rem;
+        }
+        .content.home h1:first-of-type {
+          padding-top: 3.5rem;
+        }
+      }
+      @media (min-width: 1200px) {
+        .content.home .home-chapters-list {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          column-gap: 2.5rem;
+        }
+      }
       /* Floating PDF links inside content container */
       .content .pdf-links {
         position: absolute;
@@ -1222,50 +1246,65 @@
         text-decoration: none;
       }
       a:hover { text-decoration: underline; }
-      aside.sidebar .site-title {
-          flex-shrink: 0;
-          background-color: #f3f8f9;
-          border-radius: 6px;
-          width: 100%;
-          margin-bottom: 1rem;
-          text-align: left;
-          padding: 1rem;
-      }
       aside.sidebar form {
           flex-shrink: 0;
       }
+      /* Brand block: mark spans both lines; title and subtitle share one left edge. */
       aside.sidebar .site-title {
-        display: block;
-        color: var(--cm-text);
-        font-size: larger;
-        cursor: pointer; /* make whole box feel clickable */
-        text-decoration: none;
-        /* Align subtitle under the title text (not under the emoji/icon). */
+        flex-shrink: 0;
+        width: 100%;
+        margin-bottom: .75rem;
+        padding: .85rem 1rem;
         display: grid;
-        grid-template-columns: max-content 1fr;
-        column-gap: .35rem;
-      }
-      aside.sidebar .site-title:hover {
-        font-size: larger;
-        color: var(--cm-text);
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        column-gap: .8rem;
+        align-items: center;
+        text-align: left;
+        background-color: #f3f8f9;
+        border: 0;
+        border-radius: 10px;
+        color: #1F1F36;
+        cursor: pointer;
         text-decoration: none;
+        transition: background-color .15s ease;
       }
-      /* Smaller subtitle (e.g., Work in progress) under site title */
-      aside.sidebar .site-title .site-title-sub {
-        grid-column: 2;
-        font-size: .9rem;
-        font-style: italic;
-        color: var(--cm-muted);
-        margin-top: .25rem;
+      aside.sidebar .site-title:hover,
+      aside.sidebar .site-title:focus,
+      aside.sidebar .site-title:active {
+        background-color: #e8f2f3;
+        border: 0;
+        color: #1F1F36;
+        text-decoration: none;
+        box-shadow: none;
       }
       aside.sidebar .site-title .site-title-icon {
-        grid-column: 1;
+        grid-row: 1 / span 2;
+        display: flex;
+      }
+      aside.sidebar .site-title .site-title-icon .garden-mark {
+        width: 2.9rem;
+        height: 2.9rem;
+        vertical-align: 0;
+      }
+      aside.sidebar .site-title .site-title-text {
+        align-self: end;
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+      }
+      aside.sidebar .site-title .site-title-sub {
+        align-self: start;
+        margin-top: .3rem;
+        font-size: .7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: .12em;
+        color: #6b7280;
       }
       .garden-mark {
         vertical-align: -0.12em;
-      }
-      aside.sidebar .site-title .site-title-text {
-        grid-column: 2;
       }
       /* Wikilink embed blocks */
       .embed-block {
@@ -1855,7 +1894,7 @@
 <p>Causal reasoning is not just a feature of human cognition—it is its backbone. Our ability to detect, infer, and act on causal relationships is what allows us to navigate, survive, and thrive in a complex world. While formalised, controlled experiments are an incredible tool for causal inference in very particular contexts such as some areas of education and economics where multiple very similar causes are regularly followed by multiple very similar effects, if we had to stick to that kind of knowledge and that kind of context we would never be able to get out of bed in the morning, let alone get the kids to school. </p>
 <p>Humans remain the best detectors of causation, both individually and collectively.</p>
 <p>See also: <a href="obsidian://open?file=010%20causal%20mapping%2F400%20realist%20causation.md">400 realist causation</a></p>
-<div class="references"><h2>References</h2><p class="reference">Maxwell (2004). <em>Causal Explanation, Qualitative Research, and Scientific Inquiry in Education</em>. Educational Researcher, <em>33</em>, 3--11.</p><p class="reference">Maxwell (2004). <em>Using Qualitative Methods for Causal Explanation</em>. Field Methods - FIELD METHOD, <em>16</em>, 243--264.</p></div>
+<div class="references"><h2>References</h2><p class="reference">Maxwell (2004). <em>Using Qualitative Methods for Causal Explanation</em>. Field Methods - FIELD METHOD, <em>16</em>, 243--264.</p><p class="reference">Maxwell (2004). <em>Causal Explanation, Qualitative Research, and Scientific Inquiry in Education</em>. Educational Researcher, <em>33</em>, 3--11.</p></div>
         <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a href="https://causalmap.app" class="link-secondary">Causal Map Ltd</a> 2026</span> · <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" style="height:18px;opacity:0.7;vertical-align:middle;" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" /></a><a href="https://app.causalmap.app" class="link-secondary ms-2" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>
       </main>
       <aside class="rightbar"><h2>On this page</h2><div class="hover-cue">Hover to view</div><div class="toc"><div class="toc">

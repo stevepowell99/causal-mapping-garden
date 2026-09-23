@@ -493,6 +493,30 @@
         font-weight: 400;
         color: #6c757d;
       }
+      /* Home header: hero picture beside the title on wide screens; chapters in two columns */
+      .content.home .home-chapters {
+        clear: both;
+      }
+      .content.home img[src$="garden-hero.svg"] {
+        border-radius: 12px;
+      }
+      @media (min-width: 992px) {
+        .content.home > p:has(> img[src$="garden-hero.svg"]) {
+          float: right;
+          width: 55%;
+          margin: 0 0 1.5rem 2rem;
+        }
+        .content.home h1:first-of-type {
+          padding-top: 3.5rem;
+        }
+      }
+      @media (min-width: 1200px) {
+        .content.home .home-chapters-list {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          column-gap: 2.5rem;
+        }
+      }
       /* Floating PDF links inside content container */
       .content .pdf-links {
         position: absolute;
@@ -1222,50 +1246,65 @@
         text-decoration: none;
       }
       a:hover { text-decoration: underline; }
-      aside.sidebar .site-title {
-          flex-shrink: 0;
-          background-color: #f3f8f9;
-          border-radius: 6px;
-          width: 100%;
-          margin-bottom: 1rem;
-          text-align: left;
-          padding: 1rem;
-      }
       aside.sidebar form {
           flex-shrink: 0;
       }
+      /* Brand block: mark spans both lines; title and subtitle share one left edge. */
       aside.sidebar .site-title {
-        display: block;
-        color: var(--cm-text);
-        font-size: larger;
-        cursor: pointer; /* make whole box feel clickable */
-        text-decoration: none;
-        /* Align subtitle under the title text (not under the emoji/icon). */
+        flex-shrink: 0;
+        width: 100%;
+        margin-bottom: .75rem;
+        padding: .85rem 1rem;
         display: grid;
-        grid-template-columns: max-content 1fr;
-        column-gap: .35rem;
-      }
-      aside.sidebar .site-title:hover {
-        font-size: larger;
-        color: var(--cm-text);
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        column-gap: .8rem;
+        align-items: center;
+        text-align: left;
+        background-color: #f3f8f9;
+        border: 0;
+        border-radius: 10px;
+        color: #1F1F36;
+        cursor: pointer;
         text-decoration: none;
+        transition: background-color .15s ease;
       }
-      /* Smaller subtitle (e.g., Work in progress) under site title */
-      aside.sidebar .site-title .site-title-sub {
-        grid-column: 2;
-        font-size: .9rem;
-        font-style: italic;
-        color: var(--cm-muted);
-        margin-top: .25rem;
+      aside.sidebar .site-title:hover,
+      aside.sidebar .site-title:focus,
+      aside.sidebar .site-title:active {
+        background-color: #e8f2f3;
+        border: 0;
+        color: #1F1F36;
+        text-decoration: none;
+        box-shadow: none;
       }
       aside.sidebar .site-title .site-title-icon {
-        grid-column: 1;
+        grid-row: 1 / span 2;
+        display: flex;
+      }
+      aside.sidebar .site-title .site-title-icon .garden-mark {
+        width: 2.9rem;
+        height: 2.9rem;
+        vertical-align: 0;
+      }
+      aside.sidebar .site-title .site-title-text {
+        align-self: end;
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+      }
+      aside.sidebar .site-title .site-title-sub {
+        align-self: start;
+        margin-top: .3rem;
+        font-size: .7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: .12em;
+        color: #6b7280;
       }
       .garden-mark {
         vertical-align: -0.12em;
-      }
-      aside.sidebar .site-title .site-title-text {
-        grid-column: 2;
       }
       /* Wikilink embed blocks */
       .embed-block {
