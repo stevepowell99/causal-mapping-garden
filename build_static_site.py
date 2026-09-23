@@ -5436,6 +5436,8 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         letter-spacing: -0.01em;
       }}
       .content.home h1:first-of-type .d-block:last-of-type {{
+        font-size: 0.55em;
+        margin-top: 0.3em;
         font-weight: 400;
         color: #6c757d;
       }}
