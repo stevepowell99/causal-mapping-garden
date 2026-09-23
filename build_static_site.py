@@ -2360,6 +2360,48 @@ def replace_wikilinks_with_embeds(
     return md_text
 
 
+def garden_mark_svg(size: str = "1em") -> str:
+    """The Garden's logo mark: a sunflower whose roots form a small web, dark on a warm yellow tile."""
+    ink = "#1F1F36"
+    petals = "".join(
+        f'<ellipse cx="60" cy="13.3" rx="5.2" ry="10.9" transform="rotate({30 * i} 60 32)"/>' for i in range(12)
+    )
+    roots = "".join(
+        f'<path d="{d}" stroke-width="3.6"/>'
+        for d in ("M60 71 C60 86 36 82 28 101", "M60 71 C61 86 58 96 62 109", "M60 71 C60 86 84 82 93 99")
+    )
+    nodes = "".join(f'<circle cx="{x}" cy="{y}" r="6.5"/>' for x, y in ((28, 101), (62, 109), (93, 99)))
+    return (
+        f'<svg class="garden-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="{size}" height="{size}" aria-hidden="true">'
+        '<rect width="120" height="120" rx="24" fill="#F9C63A"/>'
+        f'<g fill="{ink}">{petals}</g>'
+        '<circle cx="60" cy="32" r="10.9" fill="#F9C63A"/>'
+        f'<circle cx="60" cy="32" r="4.2" fill="{ink}"/>'
+        f'<g fill="none" stroke="{ink}" stroke-linecap="round">'
+        '<path d="M60 44 V70" stroke-width="5"/>'
+        '<path d="M38 71 H82" stroke-width="2.5" opacity=".55"/>'
+        f'{roots}<path d="M28 101 Q44 115 62 109 Q80 114 93 99" stroke-width="2"/></g>'
+        f'<g fill="{ink}">{nodes}</g></svg>'
+    )
+
+
+def garden_favicon_href() -> str:
+    """Data URI for the favicon: the Garden mark simplified to survive at 16px (bigger head, two thick roots, no web)."""
+    ink = "#1F1F36"
+    petals = "".join(
+        f"<ellipse cx='60' cy='10' rx='8' ry='15' transform='rotate({36 * i} 60 38)'/>" for i in range(10)
+    )
+    svg = (
+        "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'>"
+        "<rect width='120' height='120' rx='26' fill='#F9C63A'/>"
+        f"<g fill='{ink}'>{petals}</g><circle cx='60' cy='38' r='14' fill='#F9C63A'/><circle cx='60' cy='38' r='6' fill='{ink}'/>"
+        f"<g fill='none' stroke='{ink}' stroke-width='9' stroke-linecap='round'><path d='M60 60 V80'/>"
+        "<path d='M60 80 C60 92 40 90 32 102'/><path d='M60 80 C60 92 80 90 88 102'/></g>"
+        f"<g fill='{ink}'><circle cx='30' cy='103' r='10'/><circle cx='90' cy='103' r='10'/></g></svg>"
+    )
+    return "data:image/svg+xml," + quote(svg, safe="/=:'")
+
+
 def build_sidebar_footer_html(config: Dict[str, object]) -> str:
     """Build footer inner HTML from config (sidebar_footer_links + CC badge). Used by sidebar and fullscreen footer."""
     footer_links: List[Tuple[str, str]] = []
@@ -2466,13 +2508,8 @@ def render_nav_html_shared(
     home_path = html.escape(root_rel_path(output_root / "index.html"))
     search_path = html.escape(root_rel_path(output_root / "search.html"))
 
-    # The brand icon is an inline SVG sunflower; site_label is the text only.
-    petals = "".join(f'<use href="#sf-petal" transform="rotate({360 * i / 14:.1f} 20 20)"/>' for i in range(14))
-    site_icon = (
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="1.3em" height="1.3em" aria-hidden="true">'
-        '<defs><ellipse id="sf-petal" cx="20" cy="8.2" rx="3.3" ry="7"/></defs>'
-        f'<g fill="#F5C518">{petals}</g><circle cx="20" cy="20" r="7.5" fill="#1F1F36"/></svg>'
-    )
+    # The brand icon is the Garden mark; site_label is the text only.
+    site_icon = garden_mark_svg("1.6em")
     site_text = html.escape(str(config.get("site_label", "Site")))
     site_sub = html.escape(str(config.get("site_subtitle", "")))
 
@@ -4926,13 +4963,13 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
     """Render full HTML page with Bootstrap layout and left sidebar."""
     title_text = html.escape((f"{page_title} · {site_title}" if site_title else page_title) if page_title else (site_title or ""))
     subtitle_html = f'<div class="page-subtitle">{html.escape(chapter_subtitle)}</div>' if chapter_subtitle else ""
-    # Page title icon: default is 🌻 unless overridden by YAML
+    # Page title icon: the Garden mark unless YAML sets an icon (or an empty one); papers get none
     icon_prefix_html = ""
-    if page_title:
-        icon_to_use = "" if is_paper_page else (page_icon if page_icon is not None else "🌻")
-        icon_to_use = (icon_to_use or "").strip()
-        if icon_to_use:
-            icon_prefix_html = html.escape(icon_to_use) + " "
+    if page_title and not is_paper_page:
+        if page_icon is None:
+            icon_prefix_html = garden_mark_svg("0.85em") + " "
+        elif page_icon.strip():
+            icon_prefix_html = html.escape(page_icon.strip()) + " "
     layout_mode = (page_layout or "").strip().lower()
     is_fullscreen_layout = layout_mode == "fullscreen"
     body_class = "layout-fullscreen" if is_fullscreen_layout else ""
@@ -4959,7 +4996,7 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{title_text}</title>
 {head_meta_html}
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='8' fill='%2390c3c6'/></svg>">
+    <link rel="icon" type="image/svg+xml" href="{garden_favicon_href()}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Analytics loader (optional, generated at build time from config.yml) -->
@@ -5984,6 +6021,9 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
       aside.sidebar .site-title .site-title-icon {{
         grid-column: 1;
       }}
+      .garden-mark {{
+        vertical-align: -0.12em;
+      }}
       aside.sidebar .site-title .site-title-text {{
         grid-column: 2;
       }}
@@ -6809,7 +6849,7 @@ def write_search_assets(input_root: Path, output_root: Path, title_map: Dict[Pat
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Search</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='8' fill='%2390c3c6'/></svg>">
+    <link rel="icon" type="image/svg+xml" href="__FAVICON__">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Analytics loader (optional, generated at build time from config.yml) -->
     <script defer src="./assets/analytics.js"></script>
@@ -6846,6 +6886,7 @@ def write_search_assets(input_root: Path, output_root: Path, title_map: Dict[Pat
     <script>\n        // Inline index to support file:// access without fetch\n        const SEARCH_INDEX = __INDEX__;\n        let searchIndex = SEARCH_INDEX || [];\n        \n        // Normalize for fuzzy matching (lowercase, alphanumerics + spaces only)\n        function norm(s) {\n            return (s || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').replace(/\\s+/g, ' ').trim();\n        }\n        \n        function escapeHtml(text) {\n            const div = document.createElement('div');\n            div.textContent = text;\n            return div.innerHTML;\n        }\n        \n        // Small Levenshtein distance for short strings (typo-tolerance)\n        function levenshtein(a, b) {\n            if (a === b) return 0;\n            const al = a.length, bl = b.length;\n            if (al === 0) return bl;\n            if (bl === 0) return al;\n            let v0 = new Array(bl + 1);\n            let v1 = new Array(bl + 1);\n            for (let i = 0; i <= bl; i++) v0[i] = i;\n            for (let i = 0; i < al; i++) {\n                v1[0] = i + 1;\n                const ai = a.charCodeAt(i);\n                for (let j = 0; j < bl; j++) {\n                    const cost = (ai === b.charCodeAt(j)) ? 0 : 1;\n                    v1[j + 1] = Math.min(v1[j] + 1, v0[j + 1] + 1, v0[j] + cost);\n                }\n                const tmp = v0; v0 = v1; v1 = tmp;\n            }\n            return v0[bl];\n        }\n        \n        // Precompute normalized fields/words once for deterministic ranking\n        function prepareIndex() {\n            for (const item of searchIndex) {\n                item._shortcutN = norm(item.shortcut || '');\n                item._titleN = norm(item.kind === 'page' ? item.title : '');\n                item._anchorN = norm(((item.anchor || '') + ' ' + (item.anchorText || '')).trim());\n                item._textN = norm(item.text);\n                // Limit word lists scanned for fuzzy matching (keeps large sites fast)\n                item._shortcutWords = item._shortcutN.split(' ').filter(Boolean).slice(0, 50);\n                item._titleWords = item._titleN.split(' ').filter(Boolean).slice(0, 50);\n                item._anchorWords = item._anchorN.split(' ').filter(Boolean).slice(0, 100);\n                item._textWords = item._textN.split(' ').filter(Boolean).slice(0, 250);\n            }\n        }\n        \n        // Score one field: exact phrase > token substring > small edit-distance word match\n        function scoreField(hay, words, qTokens, qNorm) {\n            if (!hay) return 0;\n            if (hay.includes(qNorm)) return 1000;\n            \n            let total = 0;\n            for (const tok of qTokens) {\n                if (tok.length < 2) continue;\n                if (hay.includes(tok)) { total += 50; continue; }\n                \n                let best = 0;\n                const maxDist = (tok.length <= 4) ? 1 : 2;\n                for (const w of (words || [])) {\n                    if (!w) continue;\n                    if (Math.abs(w.length - tok.length) > maxDist) continue;\n                    const d = levenshtein(tok, w);\n                    if (d <= maxDist) {\n                        const sim = 1 - (d / Math.max(tok.length, w.length));\n                        if (sim > best) best = sim;\n                        if (best >= 1) break;\n                    }\n                }\n                \n                if (best <= 0) return 0; // require every token to match this field\n                total += best * 25;\n            }\n            return total;\n        }\n\n        function scoreItem(item, qTokens, qNorm) {\n            const shortcutScore = scoreField(item._shortcutN, item._shortcutWords, qTokens, qNorm);\n            if (shortcutScore > 0) return 400000 + shortcutScore;\n\n            const titleScore = scoreField(item._titleN, item._titleWords, qTokens, qNorm);\n            if (titleScore > 0) return 300000 + titleScore;\n\n            const anchorScore = scoreField(item._anchorN, item._anchorWords, qTokens, qNorm);\n            if (anchorScore > 0) return 200000 + anchorScore;\n\n            const textScore = scoreField(item._textN, item._textWords, qTokens, qNorm);\n            if (textScore > 0) return 100000 + textScore;\n\n            return 0;\n        }\n        \n        // autoNavigate=true: if there is exactly one hit, immediately open it.\n        function performSearch(autoNavigate) {\n            const queryRaw = document.getElementById('searchInput').value;\n            const resultsDiv = document.getElementById('results');\n            const qNorm = norm(queryRaw);\n            const qTokens = qNorm ? qNorm.split(' ').filter(Boolean) : [];\n            \n            if (!qNorm) {\n                resultsDiv.innerHTML = '';\n                return;\n            }\n            \n            const results = searchIndex\n                .map(item => ({ item, score: scoreItem(item, qTokens, qNorm) }))\n                .filter(x => x.score > 0)\n                .sort((a, b) => b.score - a.score)\n                .slice(0, 20);\n            \n            if (results.length === 0) {\n                resultsDiv.innerHTML = '<p class=\"text-muted\">No results found.</p>';\n                return;\n            }\n            \n            if (autoNavigate && results.length === 1) {\n                window.location.href = results[0].item.path;\n                return;\n            }\n            \n            let html = '';\n            results.forEach(r => {\n                const item = r.item;\n                const textLower = (item.text || '').toLowerCase();\n                const firstTok = qTokens[0] || '';\n                const queryPos = firstTok ? textLower.indexOf(firstTok) : -1;\n                let snippet = (item.text || '');\n                \n                if (queryPos >= 0) {\n                    const start = Math.max(0, queryPos - 50);\n                    const end = Math.min((item.text || '').length, queryPos + 150);\n                    snippet = (item.text || '').substring(start, end);\n                    if (start > 0) snippet = '...' + snippet;\n                    if (end < (item.text || '').length) snippet = snippet + '...';\n                } else {\n                    snippet = snippet.substring(0, 200);\n                    if ((item.text || '').length > 200) snippet = snippet + '...';\n                }\n                \n                html += `<div class=\"result\">\n                    <a href=\"${item.path}\" class=\"title\">${escapeHtml(item.title)}</a>\n                    <div class=\"snippet\">${escapeHtml(snippet)}</div>\n                </div>`;\n            });\n            \n            resultsDiv.innerHTML = html;\n        }\n        \n        // Back button behavior\n        (function(){\n          const backBtn = document.getElementById('backBtn');\n          if (backBtn) {\n            backBtn.addEventListener('click', function(){\n              if (history.length > 1) { history.back(); } else { window.location.href = './index.html'; }\n            });\n          }\n        })();\n        \n        // Prepare the index for fuzzy matching before any searches\n        prepareIndex();\n        \n        // Get query from URL and populate search box\n        const urlParams = new URLSearchParams(window.location.search);\n        const initialQuery = urlParams.get('q') || '';\n        document.getElementById('searchInput').value = initialQuery;\n        // Immediately run search if there's an initial query\n        if (initialQuery) { performSearch(true); }\n        \n        // Search on form submit\n        document.getElementById('searchForm').addEventListener('submit', function(e) {\n            e.preventDefault();\n            performSearch(true);\n        });\n        \n        // Search on input\n        document.getElementById('searchInput').addEventListener('input', function(){ performSearch(false); });\n    </script>
 </body>
 </html>"""
+    search_html = search_html.replace("__FAVICON__", garden_favicon_href())
     search_html = search_html.replace("__INDEX__", records_json)
     # Auto-open immediately when search narrows to a single result (including while typing).
     search_html = search_html.replace("performSearch(false)", "performSearch(true)")
