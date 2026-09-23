@@ -5431,7 +5431,13 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
       }}
       /* Larger H1 on Home (index.md) */
       .content.home h1:first-of-type {{
-        font-size: 5rem;
+        font-size: 3.25rem;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+      }}
+      .content.home h1:first-of-type .d-block + .d-block {{
+        font-weight: 400;
+        color: #6c757d;
       }}
       /* Floating PDF links inside content container */
       .content .pdf-links {{
