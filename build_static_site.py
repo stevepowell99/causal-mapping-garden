@@ -5484,10 +5484,10 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
       }}
       .content.home .home-hero h1 {{
         position: absolute;
-        left: 4.5%;
-        top: 9%;
+        left: 3.5%;
+        top: 5.5%;
         margin: 0;
-        font-size: clamp(2rem, 4.4vw, 4.25rem);
+        font-size: clamp(1.9rem, 4vw, 3.9rem);
         color: #1F1F36;
       }}
       @media (max-width: 700px) {{
