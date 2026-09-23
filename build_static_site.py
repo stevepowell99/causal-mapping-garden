@@ -2466,19 +2466,14 @@ def render_nav_html_shared(
     home_path = html.escape(root_rel_path(output_root / "index.html"))
     search_path = html.escape(root_rel_path(output_root / "search.html"))
 
-    # Split a leading icon (e.g. "💐") from the main title so the subtitle can align with the text, not the icon.
-    raw_site_label = str(config.get("site_label", "Site"))
-    site_icon = ""
-    site_text = raw_site_label
-    if " " in raw_site_label:
-        head, tail = raw_site_label.split(" ", 1)
-        # Heuristic: treat non-ascii "head" as an icon token.
-        if any(ord(ch) > 127 for ch in head):
-            site_icon = head
-            site_text = tail
-
-    site_icon = html.escape(site_icon)
-    site_text = html.escape(site_text)
+    # The brand icon is an inline SVG sunflower; site_label is the text only.
+    petals = "".join(f'<use href="#sf-petal" transform="rotate({360 * i / 14:.1f} 20 20)"/>' for i in range(14))
+    site_icon = (
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="1.3em" height="1.3em" aria-hidden="true">'
+        '<defs><ellipse id="sf-petal" cx="20" cy="8.2" rx="3.3" ry="7"/></defs>'
+        f'<g fill="#F5C518">{petals}</g><circle cx="20" cy="20" r="7.5" fill="#1F1F36"/></svg>'
+    )
+    site_text = html.escape(str(config.get("site_label", "Site")))
     site_sub = html.escape(str(config.get("site_subtitle", "")))
 
     footer_html = build_sidebar_footer_html(config)

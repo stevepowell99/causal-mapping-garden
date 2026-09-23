@@ -20,7 +20,7 @@ mirror_docs:
       > whoever changes the code is not published here.
 site_url: "https://garden.causalmap.app"
 og_image_path: "https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&token=a03afb3c-0ee2-4cc1-9e3a-3762983da685"
-site_label: "💐 Causal Mapping"
+site_label: "Causal Mapping"
 site_subtitle: "A Garden of Ideas"
 sidebar_footer_links:
   - { text: "Causal Map Ltd", href: "https://causalmap.app" }
