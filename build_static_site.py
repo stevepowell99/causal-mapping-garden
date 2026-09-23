@@ -5471,21 +5471,30 @@ def render_page_html(page_title: Optional[str], content_html: str, site_title: s
         font-weight: 400;
         color: #6c757d;
       }}
-      /* Home header: hero picture beside the title on wide screens; chapters in two columns */
-      .content.home .home-chapters {{
-        clear: both;
+      /* Home banner: full-width picture with the title set in its sky, top left; chapters in two columns */
+      .content.home .home-hero {{
+        position: relative;
+        margin: 0 0 1.5rem;
       }}
-      .content.home img[src$="garden-hero.svg"] {{
-        border-radius: 12px;
+      .content.home .home-hero img {{
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 14px;
       }}
-      @media (min-width: 992px) {{
-        .content.home > p:has(> img[src$="garden-hero.svg"]) {{
-          float: right;
-          width: 55%;
-          margin: 0 0 1.5rem 2rem;
-        }}
-        .content.home h1:first-of-type {{
-          padding-top: 3.5rem;
+      .content.home .home-hero h1 {{
+        position: absolute;
+        left: 4.5%;
+        top: 9%;
+        margin: 0;
+        font-size: clamp(2rem, 4.4vw, 4.25rem);
+        color: #1F1F36;
+      }}
+      @media (max-width: 700px) {{
+        .content.home .home-hero h1 {{
+          position: static;
+          margin-top: 1rem;
+          font-size: 2.4rem;
         }}
       }}
       @media (min-width: 1200px) {{
