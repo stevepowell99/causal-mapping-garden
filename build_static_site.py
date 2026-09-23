@@ -4860,12 +4860,10 @@ def render_breadcrumb_html(breadcrumb_data: List[Dict[str, Any]], tags_dropdown_
     chapters_dropdown += '</div></div>'
     parts.append(f'<span class="breadcrumb-item">{chapters_dropdown}</span>')
 
-    # separator
-    parts.append('<span class="breadcrumb-separator">/</span>')
-
     # 3) Pages (dropdown with pages in current chapter) — only if not on site index and pages exist
     pages_siblings = (last_item.get("siblings") if (last_item and len(breadcrumb_data) >= 2) else [])  # type: ignore[union-attr]
     if pages_siblings:
+        parts.append('<span class="breadcrumb-separator">/</span>')
         pages_dropdown = '<div class="bc-dropdown">'
         pages_dropdown += '<span class="bc-label">Pages</span><span class="bc-chevron">▼</span>'
         pages_dropdown += '<div class="bc-menu"><div class="bc-heading">Pages in this chapter</div>'
