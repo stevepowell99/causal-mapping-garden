@@ -8962,19 +8962,52 @@ def _mirror_referenced_images(text: str, src_dir: Path, dest_dir: Path) -> None:
         print(f"[MIRROR IMG] {rel}")
 
 
+_MIRROR_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\(\s*<?([^)\s>]+)>?\s*\)")
+
+
+def _mirror_unlink_unresolvable(text: str) -> str:
+    """Turn links that cannot resolve on the garden into their plain text.
+
+    A repo doc links to its siblings (`ruby.md#sample`, `../knowledge/x.md`) and to
+    its own headings, some of which start_at or stop_at has cut. On the garden
+    each of those is a dead link, so keep the words and drop the link. Absolute
+    URLs, site-rooted paths and anchors to headings still on the page are kept.
+    """
+    kept = {_md_toc_slugify(h.strip(), "-")
+            for h in re.findall(r"^#{1,6}\s+(.+?)\s*$", text, flags=re.M)}
+
+    def _fix(m: "re.Match") -> str:
+        label, target = m.group(1), m.group(2)
+        if "://" in target or target.startswith(("/", "mailto:")):
+            return m.group(0)
+        if target.startswith("#") and target[1:] in kept:
+            return m.group(0)
+        return label
+
+    return _MIRROR_LINK_RE.sub(_fix, text)
+
+
 def mirror_external_doc(src: Path, dest: Path, stop_at: Optional[str] = None,
                         front_matter: Optional[str] = None,
                         banner: Optional[str] = None,
-                        strip_classes: Optional[List[str]] = None) -> Optional[Path]:
+                        strip_classes: Optional[List[str]] = None,
+                        start_at: Optional[str] = None) -> Optional[Path]:
     """
     Copy one external markdown file into the vault as a single page.
 
     Unlike split_readme_into_chapter, which explodes a README into a folder of
     pages, this writes exactly one file, so a repo doc can be published whole.
 
+    start_at     a heading line; everything before it is dropped, and the page
+                 begins with that heading. With stop_at it publishes one range
+                 of a longer doc. Matched like stop_at.
     stop_at      a heading line; everything from it to the end is dropped. This
                  is how the internal half of a doc stays internal. Matched on
                  the stripped line, so pass the heading exactly as written.
+
+    HTML comments are always dropped, since in a repo doc they are notes to its
+    editors or markers for its own machinery. Links that cannot resolve on the
+    garden are reduced to their text (see _mirror_unlink_unresolvable).
     front_matter a YAML block written above the body (the source's own YAML is
                  always stripped, since repo docs carry editor comment threads
                  that have no business on a public page).
@@ -9005,6 +9038,17 @@ def mirror_external_doc(src: Path, dest: Path, stop_at: Optional[str] = None,
     # Drop the first H1: the garden takes the title from the filename.
     text = re.sub(r"^#\s+.+?\n", "", text.lstrip("\n"), count=1)
 
+    if start_at:
+        needle = start_at.strip()
+        lines = text.splitlines()
+        for i, line in enumerate(lines):
+            if line.strip() == needle:
+                text = "\n".join(lines[i:])
+                break
+        else:
+            _warn("mirror", f"start_at heading not found in {src.name}: {needle!r}. "
+                            f"Publishing from the top of the file.")
+
     if stop_at:
         needle = stop_at.strip()
         lines = text.splitlines()
@@ -9020,6 +9064,9 @@ def mirror_external_doc(src: Path, dest: Path, stop_at: Optional[str] = None,
     for _cls in (strip_classes or []):
         text = re.sub(rf"^(#{{1,6}} .*?)\s*\{{\.{re.escape(str(_cls))}\}}\s*$",
                       r"\1", text, flags=re.M)
+
+    text = re.sub(r"[ \t]*<!--.*?-->[ \t]*\n?", "", text, flags=re.S)
+    text = _mirror_unlink_unresolvable(text)
 
     parts = []
     if front_matter:
@@ -9428,6 +9475,7 @@ def main() -> None:
                 Path(str(_spec["src"])).expanduser(),
                 input_root / str(_spec["dest"]),
                 stop_at=_spec.get("stop_at"),
+                start_at=_spec.get("start_at"),
                 front_matter=_spec.get("front_matter"),
                 banner=_spec.get("banner"),
                 strip_classes=_spec.get("strip_classes"),

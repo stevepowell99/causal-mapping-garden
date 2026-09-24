@@ -3,21 +3,27 @@ output: "./dist"  # If commented out, will auto-generate from input path hash
 readme: "C:/dev/causal-map-extension/webapp/README.md"  # External README to split into 999 folder
 
 # External docs mirrored in as ONE page each (unlike readme, which splits into a folder).
-# stop_at drops everything from that heading onwards, which is how the internal half of a
-# repo doc stays internal. The source's own YAML front matter is always stripped.
+# start_at and stop_at publish one range of a longer doc: everything before start_at and
+# from stop_at onwards is dropped, which is how the internal parts of a repo doc stay
+# internal. The source's own YAML front matter and HTML comments are always stripped, and
+# links that cannot resolve on the garden are reduced to their text.
 mirror_docs:
+  # Rubicon's design doc is also its assistant's instruction. Only its Principles section
+  # is published: what Rubicon is and how it works are on rubicon.causalmap.app, and the
+  # rest is product manual and roadmap.
   - src: "C:/dev/causal-map-extension/rubicon/docs/principles.md"
     dest: "950 Rubicon/005 Rubicon principles ((rubicon-principles)).md"
-    stop_at: "## For whoever changes the code"
+    start_at: "## Principles"
+    stop_at: "## Open questions"
     front_matter: |
       ---
       tags: paper
       theme: theory-of-change
       ---
     banner: |
-      > **Work in progress.** This page is mirrored automatically from `rubicon/docs/principles.md`
-      > in the Causal Map repository and changes as the design does. The section written for
-      > whoever changes the code is not published here.
+      > **Work in progress.** The principles Rubicon works to, taken from its design document and
+      > kept in step with it. What Rubicon is, and how a piece of work goes, are on
+      > [rubicon.causalmap.app](https://rubicon.causalmap.app).
 site_url: "https://garden.causalmap.app"
 og_image_path: "https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&token=a03afb3c-0ee2-4cc1-9e3a-3762983da685"
 site_label: "Causal Mapping"
