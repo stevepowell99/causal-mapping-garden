@@ -6970,7 +6970,16 @@ def write_search_assets(input_root: Path, output_root: Path, title_map: Dict[Pat
       var clean = pathname.replace(/^\/+/, '');
       var parts = clean.split('/').filter(function (x) { return !!x; });
       var slug = (parts.length ? parts[parts.length - 1] : clean) || '';
-      slug = slug.replace(/\.html$/i, '').replace(/[-_]+/g, ' ').trim();
+      slug = slug.replace(/\.html$/i, '');
+      // Search needs every word to match, so drop what is filename rather than title:
+      // the 6-hex hash on a shortened filename, a ((permalink)) whole or cut off, the
+      // draft flag and the page number.
+      var words = slug.replace(/-[0-9a-f]{6}$/i, '')
+                      .replace(/\s*\(\(.*$/, '')
+                      .replace(/^!+\s*/, '')
+                      .replace(/^\d[\d.]*\s+/, '')
+                      .replace(/[-_]+/g, ' ').trim();
+      slug = words || slug.replace(/[-_]+/g, ' ').trim();
 
       var dest = new URL('/search.html', window.location.origin);
       dest.searchParams.set('q', slug);
@@ -6984,6 +6993,123 @@ def write_search_assets(input_root: Path, output_root: Path, title_map: Dict[Pat
 </body>
 </html>"""
     _write_text_windows_safe(output_root / "404.html", not_found_html, encoding="utf-8")
+
+
+# -- Old URLs: every page URL the site has published keeps working --
+PUBLISHED_URLS_FILE = "_published_urls.txt"  # in the output root; --clean preserves it, like PDFs
+_FILENAME_HASH_RE = re.compile(r"-[0-9a-f]{6}$", re.IGNORECASE)
+_REDIRECT_URL_SAFE = "/!$&'()*+,;=:@-._~"  # browsers send these unencoded in a path
+
+
+def _page_name_key(stem: str) -> Tuple[str, bool]:
+    """Comparison key for a page filename stem, and whether the stem was cut short.
+
+    _sanitize_stem_for_windows cuts a long stem to 45 characters and appends a hash of
+    the source path, so a cut stem only matches as the start of a full title."""
+    cut = False
+    stem = re.sub(r" \(\d+\)$", "", stem)  # a Drive duplicate, "name (1)"
+    if _FILENAME_HASH_RE.search(stem):
+        cut = len(stem) >= 45
+        stem = _FILENAME_HASH_RE.sub("", stem)
+    stem = re.sub(r"\(\(.*$", "", stem)  # a ((permalink)), whole or cut off
+    return re.sub(r"[^0-9a-z]+", " ", stem.lower()).strip(), cut
+
+
+def _without_page_number(key: str) -> str:
+    return re.sub(r"^(?:\d+ )+", "", key)
+
+
+def write_old_url_redirects(input_root: Path, output_root: Path, md_files_no_drafts: List[Path]) -> None:
+    """Record every page URL the site publishes, and redirect each recorded URL that no
+    longer exists to the page it became, in `_redirects`, which Netlify reads.
+
+    A page's URL comes from its filename, so renaming, renumbering or moving a page, or
+    adding a ((permalink)), gives it a new URL. Matching is by name: a title rewritten
+    in its opening words cannot be followed, and falls through to the 404 page's search."""
+    register_path = output_root / PUBLISHED_URLS_FILE
+    known: Set[str] = set()
+    try:
+        if register_path.exists():
+            for line in register_path.read_text(encoding="utf-8").splitlines():
+                line = line.strip()
+                if line and not line.startswith("#"):
+                    known.add(line)
+        else:
+            _warn("redirects", f"{register_path.name} missing: starting a new register, so URLs retired before this build are not redirected.")
+    except Exception as e:
+        _warn("redirects", f"Could not read {register_path.name}; old URLs not redirected this run: {e}")
+        return
+
+    targets: List[Tuple[str, str, str, str]] = []  # key, key without page number, folder, URL
+    anchors: Set[str] = set()
+    for p in md_files_no_drafts:
+        rel_html = relative_output_html(input_root, output_root, p).relative_to(output_root).as_posix()
+        known.add(rel_html)
+        if p.stem.lower() == "index":
+            continue
+        key, _ = _page_name_key(p.stem)
+        anchor = extract_page_anchor_from_stem(p.stem)
+        url = f"/{anchor}/" if anchor and anchor not in {"assets", "img"} else f"/{rel_html}"
+        if url.endswith("/"):
+            anchors.add(anchor)
+        targets.append((key, _without_page_number(key), p.parent.relative_to(input_root).as_posix().lower(), url))
+
+    # Case-sensitive, as Netlify is; Netlify also serves /x from x.html.
+    live = {q.relative_to(output_root).as_posix() for q in output_root.rglob("*.html")}
+    rules: Dict[str, str] = {}
+    gone = unmatched = ambiguous = 0
+    for entry in sorted(known):
+        if "!" in entry or any(v in live for v in (entry, f"{entry}.html", f"{entry.rstrip('/')}/index.html")):
+            continue
+        gone += 1
+        parts = entry.split("/")
+        stem = parts[-1][:-5] if parts[-1].lower().endswith(".html") else parts[-1]
+        folder = "/".join(parts[:-1]).lower()
+        key, cut = _page_name_key(stem)
+        if stem.lower() == "index" or len(key) < 4:
+            unmatched += 1
+            continue
+
+        def _candidates(k: str, idx: int) -> List[Tuple[str, str, str, str]]:
+            return [t for t in targets if (t[idx].startswith(k) if cut else t[idx] == k)]
+
+        old_anchor = extract_page_anchor_from_stem(re.sub(r" \(\d+\)$", "", stem))
+        if old_anchor in anchors:  # a permalink outlives any rename of the title around it
+            cands = [t for t in targets if t[3] == f"/{old_anchor}/"]
+        else:
+            cands = _candidates(key, 0)
+        if not cands and len(_without_page_number(key)) >= 8:
+            cands = _candidates(_without_page_number(key), 1)  # renumbered
+        if len({t[3] for t in cands}) > 1:
+            cands = [t for t in cands if t[2] == folder] or cands
+        urls = sorted({t[3] for t in cands})
+        if len(urls) != 1:
+            if urls:
+                ambiguous += 1
+                _warn("redirects_ambiguous", f"{entry} -> {' | '.join(urls)}")
+            else:
+                unmatched += 1
+                _warn("redirects_unmatched", entry)
+            continue
+        for frm in {entry, entry[:-5]} if entry.lower().endswith(".html") else {entry, f"{entry}.html"}:
+            if f"/{frm}" != urls[0] and frm not in live:
+                rules[frm] = urls[0]
+
+    header = "# Generated by build_static_site.py (write_old_url_redirects). Do not edit.\n"
+    redirects = "".join(
+        f"{quote('/' + frm, safe=_REDIRECT_URL_SAFE)}  {quote(to, safe=_REDIRECT_URL_SAFE)}  301\n"
+        for frm, to in sorted(rules.items())
+    )
+    _write_text_windows_safe(output_root / "_redirects", header + redirects, encoding="utf-8")
+    _write_text_windows_safe(
+        register_path,
+        "# Every page URL garden.causalmap.app has published. build_static_site.py adds to it on each build\n"
+        "# and redirects the ones that no longer exist (see _redirects). Never shrink it.\n"
+        + "".join(f"{u}\n" for u in sorted(known)),
+        encoding="utf-8",
+    )
+    print(f"[REDIRECTS] {len(known)} URLs on record, {gone} gone: {gone - unmatched - ambiguous} redirected "
+          f"({len(rules)} rules), {unmatched} without a current page, {ambiguous} ambiguous.")
 
 
 # -- write all pages --
@@ -8874,6 +9000,9 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
         pass
     _tmark("write_pages: create short-route stubs")
 
+    write_old_url_redirects(input_root, output_root, md_files_no_drafts)
+    _tmark("write_pages: old URL redirects")
+
     _close_pdf_runtime()
 
     # Cleanup: remove unused images under output_root/img and any nested img folders
@@ -9206,7 +9335,11 @@ def split_readme_into_chapter(readme_path: Path, input_root: Path) -> Optional[P
             return f'[{link_text}](../{anchor}/)'
         
         h2_content = re.sub(r'\[([^\]]+)\]\(#([^)]+)\)', replace_anchor_link, h2_content)
-        
+
+        # The app's help panel opens `(bookmark=N)` links itself; on the Garden they
+        # resolve as relative paths and 404, so point them at the app.
+        h2_content = re.sub(r'\]\(\s*bookmark=(\d+)\s*\)', r'](https://app.causalmap.app/?bookmark=\1)', h2_content)
+
         # Clean title for filename - first strip HTML tags
         clean_title = h2_title
         # Remove HTML tags like <i class="fas fa-table"></i>
@@ -9438,7 +9571,7 @@ def main() -> None:
         for p in sorted(output_root.rglob("*"), key=lambda x: len(x.parts), reverse=True):
             try:
                 if p.is_file():
-                    if p.suffix.lower() == ".pdf":
+                    if p.suffix.lower() == ".pdf" or p.name == PUBLISHED_URLS_FILE:
                         continue
                     try:
                         os.chmod(p, stat.S_IWRITE)  # Windows: clear read-only bit if present

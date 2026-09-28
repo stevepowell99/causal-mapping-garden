@@ -89,6 +89,12 @@ Do not use a `_tmp/` folder for drafts, and do not create subchapter (nested) fo
 
 **Unpublishing an already-published page needs `--clean`, not `--incremental`.** Adding `!` to (or otherwise renaming) a page that was previously published does not fully remove it on an incremental build: incremental re-renders only the changed page, so every sibling page that linked it in the chapter nav keeps its stale link, and the old-name `dist` files are left as orphans. Run `--clean` to re-render all pages and drop the link everywhere. `--clean` without `--pdf` preserves existing per-page PDFs (verified: count unchanged), so it is cheap, but it preserves an orphaned old-name PDF too, so delete that by hand from `dist/`.
 
+**Old URLs keep working.** A page's URL comes from its filename, so renaming, renumbering or moving a page, or adding a `((permalink))`, gives it a new one. Every build adds each published page's URL to `dist/_published_urls.txt`, then writes `dist/_redirects`, which Netlify reads, sending each recorded URL that no longer exists to the page it became (`write_old_url_redirects` in `build_static_site.py`).
+- The register was seeded on 28 September 2026 from the git history of `dist/` and every page GoatCounter had counted. `--clean` preserves it. Never shrink it by hand.
+- Matching is by permalink first, then by filename. A title rewritten in its opening words is not followed. `warnings_redirects_unmatched.txt` and `warnings_redirects_ambiguous.txt` list what was left out.
+- An old-name orphan left by an incremental build still answers its own URL. The redirect takes over once `--clean` removes the orphan.
+- A URL with no redirect lands on `404.html`, which searches for the title words in the missing filename, without the page number, permalink or hash.
+
 Do not keep rendered binaries (`.docx`, `.pdf`) in the repo. A `!` in a filename does **not** stop the build copying non-markdown files to `dist/` (only a `!` folder would, and we do not use subfolders), so a stray `.docx` or `.bib` in a chapter folder would be published. Treat the `!`-prefixed markdown as the single source and regenerate other formats with pandoc on demand.
 
 **Bibliography (single source).** The canonical library is one Zotero Better BibTeX auto-export living at the **root of the shared Causal Map Drive** as `MyLibrary.bib` (on this machine `…\Causal Map\MyLibrary.bib`). Because it sits inside the same synced Drive as this repo, everything references it by a **relative** path, so it works on any colleague's machine whatever their drive letter:

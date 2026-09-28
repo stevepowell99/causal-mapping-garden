@@ -1917,6 +1917,7 @@ After coding, <strong>filtering</strong> happens in the adjacent <strong>Filter 
 <ul>
 <li>Sets shared project context used by AI coding prompts.</li>
 <li>The status tick indicates whether enough background text is present.</li>
+<li>The background is context only: the AI reads it but never codes it, because every link needs a quote from a source. So put a document you want coded into a source. The <strong>Describe your project</strong> box in Quick upload fills this field, and warns when what you type there looks like the document itself.</li>
 </ul>
 <h3 id="simple-ai-auto-code">Auto-code (AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-recode/#simple-ai-auto-code">#</a></h3>
 <ul>
@@ -1957,6 +1958,7 @@ After coding, <strong>filtering</strong> happens in the adjacent <strong>Filter 
 <li>While the run works, a progress panel shows the current chunk, an estimated finish time, and a <strong>Stop run</strong> button. The browser tab title also tracks progress, so you can watch it from another tab.</li>
 <li>Press <strong>Continue in the background</strong> to hide the panel and carry on working. The run keeps going on the server and tells you when it finishes; reopen the panel any time from the AI Coding panel. Server runs are safe to close the tab on; the panel says so once the run is server-side.</li>
 <li>Only one coding run happens at a time. While a run is live the <strong>Run</strong> buttons become a stop control and the other AI actions are greyed out, so you cannot start a second run over the same sources by accident.</li>
+<li>A run that adds no links says why and stays open until you close it. Where the AI proposed links whose quotes are not in your source text, it says so, since that usually means the text it read is somewhere other than the source. Otherwise it quotes the AI's own reasons for finding nothing. One-click coding stops at that point, rather than going on to connect islands, revise and recode a map with nothing in it.</li>
 </ul>
 <h3 id="simple-ai-revise-codebook">Revise codebook (AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-recode/#simple-ai-revise-codebook">#</a></h3>
 <ul>

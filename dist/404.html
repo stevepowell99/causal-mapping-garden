@@ -25,7 +25,16 @@
       var clean = pathname.replace(/^\/+/, '');
       var parts = clean.split('/').filter(function (x) { return !!x; });
       var slug = (parts.length ? parts[parts.length - 1] : clean) || '';
-      slug = slug.replace(/\.html$/i, '').replace(/[-_]+/g, ' ').trim();
+      slug = slug.replace(/\.html$/i, '');
+      // Search needs every word to match, so drop what is filename rather than title:
+      // the 6-hex hash on a shortened filename, a ((permalink)) whole or cut off, the
+      // draft flag and the page number.
+      var words = slug.replace(/-[0-9a-f]{6}$/i, '')
+                      .replace(/\s*\(\(.*$/, '')
+                      .replace(/^!+\s*/, '')
+                      .replace(/^\d[\d.]*\s+/, '')
+                      .replace(/[-_]+/g, ' ').trim();
+      slug = words || slug.replace(/[-_]+/g, ' ').trim();
 
       var dest = new URL('/search.html', window.location.origin);
       dest.searchParams.set('q', slug);
