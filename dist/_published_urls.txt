@@ -611,6 +611,8 @@
 950 Rubicon/010 Is there already a standard qq ((r-fd658a.html
 950 Rubicon/010 Testing rival theories ((theory-fit)).html
 950 Rubicon/010 Testing rival theories over a corp-9967c6.html
+950 Rubicon/020 Checking the claims in an AI repor-331540.html
+950 Rubicon/020 Checking the claims in an AI repor-cc431d.html
 950 Rubicon/020 Generating realist mechanisms ((re-35a21a.html
 950 Rubicon/020 Realist mechanisms ((realist-mechanisms)).html
 950 Rubicon/030 Contribution analysis ((contribution)).html
