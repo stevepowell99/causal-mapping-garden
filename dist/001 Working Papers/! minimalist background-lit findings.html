@@ -18,7 +18,7 @@
     <meta name="twitter:description" content="Minimalist Causal Coding in the Landscape of Causation, Coding and Causal Inference: A Background-Literature Paper # Introduction: the Janus spine # The minimalist (or &quot;barefoot&quot;) stance on causal coding makes a set of d">
     <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&amp;token=a03afb3c-0ee2-4cc1-9e3a-3762983da685">
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='8' fill='%2390c3c6'/></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20120%20120'%3E%3Crect%20width='120'%20height='120'%20rx='26'%20fill='%23F9C63A'/%3E%3Cg%20fill='%231F1F36'%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%280%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%2836%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%2872%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%28108%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%28144%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%28180%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%28216%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%28252%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%28288%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%28324%2060%2038%29'/%3E%3C/g%3E%3Ccircle%20cx='60'%20cy='38'%20r='14'%20fill='%23F9C63A'/%3E%3Ccircle%20cx='60'%20cy='38'%20r='6'%20fill='%231F1F36'/%3E%3Cg%20fill='none'%20stroke='%231F1F36'%20stroke-width='9'%20stroke-linecap='round'%3E%3Cpath%20d='M60%2060%20V80'/%3E%3Cpath%20d='M60%2080%20C60%2092%2040%2090%2032%20102'/%3E%3Cpath%20d='M60%2080%20C60%2092%2080%2090%2088%20102'/%3E%3C/g%3E%3Cg%20fill='%231F1F36'%3E%3Ccircle%20cx='30'%20cy='103'%20r='10'/%3E%3Ccircle%20cx='90'%20cy='103'%20r='10'/%3E%3C/g%3E%3C/svg%3E">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Analytics loader (optional, generated at build time from config.yml) -->
@@ -483,7 +483,48 @@
       }
       /* Larger H1 on Home (index.md) */
       .content.home h1:first-of-type {
-        font-size: 5rem;
+        font-size: 3.25rem;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+      }
+      .content.home h1:first-of-type .d-block:last-of-type {
+        font-size: 0.55em;
+        margin-top: 0.3em;
+        font-weight: 400;
+        color: #6c757d;
+      }
+      /* Home banner: full-width picture with the title set in its sky, top left; chapters in two columns */
+      .content.home .home-hero {
+        position: relative;
+        margin: 0 0 1.5rem;
+      }
+      .content.home .home-hero img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 14px;
+      }
+      .content.home .home-hero h1 {
+        position: absolute;
+        left: 3.5%;
+        top: 5.5%;
+        margin: 0;
+        font-size: clamp(1.9rem, 4vw, 3.9rem);
+        color: #1F1F36;
+      }
+      @media (max-width: 700px) {
+        .content.home .home-hero h1 {
+          position: static;
+          margin-top: 1rem;
+          font-size: 2.4rem;
+        }
+      }
+      @media (min-width: 1200px) {
+        .content.home .home-chapters-list {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          column-gap: 2.5rem;
+        }
       }
       /* Floating PDF links inside content container */
       .content .pdf-links {
@@ -1214,47 +1255,65 @@
         text-decoration: none;
       }
       a:hover { text-decoration: underline; }
-      aside.sidebar .site-title {
-          flex-shrink: 0;
-          background-color: #f3f8f9;
-          border-radius: 6px;
-          width: 100%;
-          margin-bottom: 1rem;
-          text-align: left;
-          padding: 1rem;
-      }
       aside.sidebar form {
           flex-shrink: 0;
       }
+      /* Brand block: mark spans both lines; title and subtitle share one left edge. */
       aside.sidebar .site-title {
-        display: block;
-        color: var(--cm-text);
-        font-size: larger;
-        cursor: pointer; /* make whole box feel clickable */
-        text-decoration: none;
-        /* Align subtitle under the title text (not under the emoji/icon). */
+        flex-shrink: 0;
+        width: 100%;
+        margin-bottom: .75rem;
+        padding: .85rem 1rem;
         display: grid;
-        grid-template-columns: max-content 1fr;
-        column-gap: .35rem;
-      }
-      aside.sidebar .site-title:hover {
-        font-size: larger;
-        color: var(--cm-text);
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        column-gap: .8rem;
+        align-items: center;
+        text-align: left;
+        background-color: #f3f8f9;
+        border: 0;
+        border-radius: 10px;
+        color: #1F1F36;
+        cursor: pointer;
         text-decoration: none;
+        transition: background-color .15s ease;
       }
-      /* Smaller subtitle (e.g., Work in progress) under site title */
-      aside.sidebar .site-title .site-title-sub {
-        grid-column: 2;
-        font-size: .9rem;
-        font-style: italic;
-        color: var(--cm-muted);
-        margin-top: .25rem;
+      aside.sidebar .site-title:hover,
+      aside.sidebar .site-title:focus,
+      aside.sidebar .site-title:active {
+        background-color: #e8f2f3;
+        border: 0;
+        color: #1F1F36;
+        text-decoration: none;
+        box-shadow: none;
       }
       aside.sidebar .site-title .site-title-icon {
-        grid-column: 1;
+        grid-row: 1 / span 2;
+        display: flex;
+      }
+      aside.sidebar .site-title .site-title-icon .garden-mark {
+        width: 2.9rem;
+        height: 2.9rem;
+        vertical-align: 0;
       }
       aside.sidebar .site-title .site-title-text {
-        grid-column: 2;
+        align-self: end;
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+      }
+      aside.sidebar .site-title .site-title-sub {
+        align-self: start;
+        margin-top: .3rem;
+        font-size: .7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: .12em;
+        color: #6b7280;
+      }
+      .garden-mark {
+        vertical-align: -0.12em;
       }
       /* Wikilink embed blocks */
       .embed-block {

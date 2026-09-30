@@ -1,0 +1,6 @@
+Four small loose ends from the 2026-08-31 session (QuIP pages, year-parser fix, Task 3 chapter opener rename), each offered to Steve and not yet answered.
+
+- **"ogher" typo.** Third section of the new Task 3 General chapter opener (`/task3-general-intro/`): "Every query returns some result or **ogher**". This is Steve's own text, so Claude left it rather than silently correcting it. Fix or confirm it's deliberate.
+- **Two orphan Love Alliance PDFs in `dist/`**, left behind by page renames/cleanup. Delete once confirmed nothing links to them.
+- **Stale `content/assets/MyLibrary.bib`** (and its `dist/assets/MyLibrary.bib` copy): a hand-placed leftover dated 16 June, not read by the build (the build only reads the canonical `../../../../MyLibrary.bib` per project CLAUDE.md), but still published to `dist/` as a stray 1.25MB file via the generic asset-copy step. Only `_tmp/text-talk/extended-abstract.md` still points at it, and that's an old scratch copy superseded by the canonical draft in `content/250 Causal Mapping as QDA/`. Proposed: delete both the `content/assets/` copy, its `dist/` copy, and the `_tmp/text-talk/` folder.
+- **Cosmetic citation bug:** two-author references render with a spurious comma, e.g. "Copestake, & Remnant (2021)" (three-or-more-author entries are fine). Not fixed this session.

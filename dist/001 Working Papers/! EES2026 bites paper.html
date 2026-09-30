@@ -18,7 +18,7 @@
     <meta name="twitter:description" content="23 Jun 2026 EES 2026, Lille. Strand S03 Responsiveness. Individual paper. Steve Powell (Causal Map Ltd) and Fiona Remnant (Bath Social &amp; Development Research). This is the conference-length version of the argument. The f">
     <meta name="twitter:image" content="https://garden.causalmap.app/008 Task 2 &amp;amp; 3 -- Extensions/img/map-278ec2b569edd2dbcda3a448a7f4742e-md5.jpg">
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='8' fill='%2390c3c6'/></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20120%20120'%3E%3Crect%20width='120'%20height='120'%20rx='26'%20fill='%23F9C63A'/%3E%3Cg%20fill='%231F1F36'%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%280%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%2836%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%2872%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%28108%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%28144%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%28180%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%28216%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%28252%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%28288%2060%2038%29'/%3E%3Cellipse%20cx='60'%20cy='10'%20rx='8'%20ry='15'%20transform='rotate%28324%2060%2038%29'/%3E%3C/g%3E%3Ccircle%20cx='60'%20cy='38'%20r='14'%20fill='%23F9C63A'/%3E%3Ccircle%20cx='60'%20cy='38'%20r='6'%20fill='%231F1F36'/%3E%3Cg%20fill='none'%20stroke='%231F1F36'%20stroke-width='9'%20stroke-linecap='round'%3E%3Cpath%20d='M60%2060%20V80'/%3E%3Cpath%20d='M60%2080%20C60%2092%2040%2090%2032%20102'/%3E%3Cpath%20d='M60%2080%20C60%2092%2080%2090%2088%20102'/%3E%3C/g%3E%3Cg%20fill='%231F1F36'%3E%3Ccircle%20cx='30'%20cy='103'%20r='10'/%3E%3Ccircle%20cx='90'%20cy='103'%20r='10'/%3E%3C/g%3E%3C/svg%3E">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Analytics loader (optional, generated at build time from config.yml) -->
@@ -483,7 +483,48 @@
       }
       /* Larger H1 on Home (index.md) */
       .content.home h1:first-of-type {
-        font-size: 5rem;
+        font-size: 3.25rem;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+      }
+      .content.home h1:first-of-type .d-block:last-of-type {
+        font-size: 0.55em;
+        margin-top: 0.3em;
+        font-weight: 400;
+        color: #6c757d;
+      }
+      /* Home banner: full-width picture with the title set in its sky, top left; chapters in two columns */
+      .content.home .home-hero {
+        position: relative;
+        margin: 0 0 1.5rem;
+      }
+      .content.home .home-hero img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 14px;
+      }
+      .content.home .home-hero h1 {
+        position: absolute;
+        left: 3.5%;
+        top: 5.5%;
+        margin: 0;
+        font-size: clamp(1.9rem, 4vw, 3.9rem);
+        color: #1F1F36;
+      }
+      @media (max-width: 700px) {
+        .content.home .home-hero h1 {
+          position: static;
+          margin-top: 1rem;
+          font-size: 2.4rem;
+        }
+      }
+      @media (min-width: 1200px) {
+        .content.home .home-chapters-list {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          column-gap: 2.5rem;
+        }
       }
       /* Floating PDF links inside content container */
       .content .pdf-links {
@@ -1214,47 +1255,65 @@
         text-decoration: none;
       }
       a:hover { text-decoration: underline; }
-      aside.sidebar .site-title {
-          flex-shrink: 0;
-          background-color: #f3f8f9;
-          border-radius: 6px;
-          width: 100%;
-          margin-bottom: 1rem;
-          text-align: left;
-          padding: 1rem;
-      }
       aside.sidebar form {
           flex-shrink: 0;
       }
+      /* Brand block: mark spans both lines; title and subtitle share one left edge. */
       aside.sidebar .site-title {
-        display: block;
-        color: var(--cm-text);
-        font-size: larger;
-        cursor: pointer; /* make whole box feel clickable */
-        text-decoration: none;
-        /* Align subtitle under the title text (not under the emoji/icon). */
+        flex-shrink: 0;
+        width: 100%;
+        margin-bottom: .75rem;
+        padding: .85rem 1rem;
         display: grid;
-        grid-template-columns: max-content 1fr;
-        column-gap: .35rem;
-      }
-      aside.sidebar .site-title:hover {
-        font-size: larger;
-        color: var(--cm-text);
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        column-gap: .8rem;
+        align-items: center;
+        text-align: left;
+        background-color: #f3f8f9;
+        border: 0;
+        border-radius: 10px;
+        color: #1F1F36;
+        cursor: pointer;
         text-decoration: none;
+        transition: background-color .15s ease;
       }
-      /* Smaller subtitle (e.g., Work in progress) under site title */
-      aside.sidebar .site-title .site-title-sub {
-        grid-column: 2;
-        font-size: .9rem;
-        font-style: italic;
-        color: var(--cm-muted);
-        margin-top: .25rem;
+      aside.sidebar .site-title:hover,
+      aside.sidebar .site-title:focus,
+      aside.sidebar .site-title:active {
+        background-color: #e8f2f3;
+        border: 0;
+        color: #1F1F36;
+        text-decoration: none;
+        box-shadow: none;
       }
       aside.sidebar .site-title .site-title-icon {
-        grid-column: 1;
+        grid-row: 1 / span 2;
+        display: flex;
+      }
+      aside.sidebar .site-title .site-title-icon .garden-mark {
+        width: 2.9rem;
+        height: 2.9rem;
+        vertical-align: 0;
       }
       aside.sidebar .site-title .site-title-text {
-        grid-column: 2;
+        align-self: end;
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+      }
+      aside.sidebar .site-title .site-title-sub {
+        align-self: start;
+        margin-top: .3rem;
+        font-size: .7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: .12em;
+        color: #6b7280;
+      }
+      .garden-mark {
+        vertical-align: -0.12em;
       }
       /* Wikilink embed blocks */
       .embed-block {
@@ -1870,7 +1929,7 @@
 <p>Evaluators are now asked to listen to larger and more diverse publics than before, across more interviews, meetings, submissions and digital texts than any analyst can read closely. If wider participation is to mean anything in evaluation, the methods that absorb all those voices must not quietly overwrite them. Variable-based coding, applied to ordinary language, does overwrite them, and the mosquito case shows how absurd the result can get.</p>
 <p>Minimalist coding, extended only where the data demands it by opposites and despite conventions that preserve rather than erase the difference between a claim and its opposite, is a more responsive default. It stays close to what people said, keeps provenance so anyone can check it, scales with AI assistance, and is clear that counts mean breadth of evidence rather than effect size. None of that requires a hidden vocabulary of necessity, sufficiency, polarity and weights. It requires labels that hold their meaning long enough to be useful, and the discipline to add nothing the speaker did not.</p>
 <p>See also (Powell et al. 2024; Remnant et al. 2025).</p>
-<div class="references"><h2>References</h2><p class="reference">Axelrod (1976). <em>Structure of Decision: The Cognitive Maps of Political Elites</em>. Princeton university press.</p><p class="reference">Copestake, Morsink, &amp; Remnant (2019). <em>Attributing Development Impact: The Qualitative Impact Protocol Case Book</em>. Practical Action Publishing.</p><p class="reference">Goertz (2020). <em>Social Science Concepts and Measurement</em>. Princeton University Press.</p><p class="reference">Powell, Copestake, &amp; Remnant (2024). <em>Causal Mapping for Evaluators</em>. Evaluation, <em>30</em>, 100--119. <a href="https://doi.org/10.1177/13563890231196601" rel="noopener" target="_blank">https://doi.org/10.1177/13563890231196601</a>.</p><p class="reference">Powell, Cabral, &amp; Mishan (2025). <em>A Workflow for Collecting and Understanding Stories at Scale, Supported by Artificial Intelligence</em>. Evaluation, <em>31</em>, 394--411. <a href="https://doi.org/10.1177/13563890251328640" rel="noopener" target="_blank">https://doi.org/10.1177/13563890251328640</a>.</p><p class="reference">Ragin (2008). <em>Measurement Versus Calibration: A Set-Theoretic Approach</em>. The Oxford Handbook of Political Methodology, 1--31. <a href="https://doi.org/10.1093/oxfordhb/9780199286546.003.0008" rel="noopener" target="_blank">https://doi.org/10.1093/oxfordhb/9780199286546.003.0008</a>.</p><p class="reference">Remnant, Copestake, Powell, &amp; Channon (2025). <em>Qualitative Causal Mapping in Evaluations</em>. In <em>Handbook of Health Services Evaluation: Theories, Methods and Innovative Practices</em>. <a href="https://doi.org/10.1007/978-3-031-87869-5_12" rel="noopener" target="_blank">https://doi.org/10.1007/978-3-031-87869-5_12</a>.</p><p class="reference">Scriven (1981). <em>Evaluation Thesaurus</em>. Edgepress.</p></div></div>
+<div class="references"><h2>References</h2><p class="reference">Axelrod (1976). <em>Structure of Decision: The Cognitive Maps of Political Elites</em>. Princeton university press.</p><p class="reference">Copestake, Morsink, &amp; Remnant (2019). <em>Attributing Development Impact: The Qualitative Impact Protocol Case Book</em>. Practical Action Publishing.</p><p class="reference">Goertz (2020). <em>Social Science Concepts and Measurement</em>. Princeton University Press.</p><p class="reference">Powell, Copestake, &amp; Remnant (2024). <em>Causal Mapping for Evaluators</em>. Evaluation, <em>30</em>, 100--119. <a href="https://doi.org/10.1177/13563890231196601" rel="noopener" target="_blank">https://doi.org/10.1177/13563890231196601</a>.</p><p class="reference">Powell, Caldas Cabral, &amp; Mishan (2025). <em>A Workflow for Collecting and Understanding Stories at Scale, Supported by Artificial Intelligence</em>. Evaluation, <em>31</em>, 394--411. <a href="https://doi.org/10.1177/13563890251328640" rel="noopener" target="_blank">https://doi.org/10.1177/13563890251328640</a>.</p><p class="reference">Ragin (2008). <em>Measurement Versus Calibration: A Set-Theoretic Approach</em>. The Oxford Handbook of Political Methodology, 1--31. <a href="https://doi.org/10.1093/oxfordhb/9780199286546.003.0008" rel="noopener" target="_blank">https://doi.org/10.1093/oxfordhb/9780199286546.003.0008</a>.</p><p class="reference">Remnant, Copestake, Powell, &amp; Channon (2025). <em>Qualitative Causal Mapping in Evaluations</em>. In <em>Handbook of Health Services Evaluation: Theories, Methods and Innovative Practices</em>. <a href="https://doi.org/10.1007/978-3-031-87869-5_12" rel="noopener" target="_blank">https://doi.org/10.1007/978-3-031-87869-5_12</a>.</p><p class="reference">Scriven (1981). <em>Evaluation Thesaurus</em>. Edgepress.</p></div></div>
         <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a href="https://causalmap.app" class="link-secondary">Causal Map Ltd</a> 2026</span> · <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" style="height:18px;opacity:0.7;vertical-align:middle;" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" /></a><a href="https://app.causalmap.app" class="link-secondary ms-2" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>
       </main>
       <aside class="rightbar"><h2>On this page</h2><div class="hover-cue">Hover to view</div><div class="toc"><div class="toc">
