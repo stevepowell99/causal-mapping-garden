@@ -9268,26 +9268,11 @@ def split_readme_into_chapter(readme_path: Path, input_root: Path) -> Optional[P
         readme_content = readme_content[:first_h1_end]
         print(f"[INFO] Processing only first H1 section, ignoring content after line ~{readme_content[:first_h1_end].count(chr(10))}")
     
-    # Remove existing folder if it exists (README has changed)
-    if folder_path.exists():
-        try:
-            def _handle_remove_readonly(func, path, exc_info):
-                try:
-                    os.chmod(path, stat.S_IWRITE)
-                except Exception:
-                    pass
-                try:
-                    func(path)
-                except Exception:
-                    pass
-            shutil.rmtree(folder_path, onerror=_handle_remove_readonly)
-            print(f"[CLEAN] Removed existing folder {folder_path.name} for regeneration")
-        except Exception as e:
-            _warn("readme_cleanup", f"Could not remove {folder_path.name}: {e}")
-    
-    # Create the folder
-    folder_path.mkdir(parents=True)
-    
+    # Regenerate in place. Deleting and recreating the folder inside Google Drive
+    # orphans its files into the Drive root; stale section files are pruned below.
+    folder_path.mkdir(parents=True, exist_ok=True)
+    written = set()
+
     # Split by H2 headings
     # Pattern to match H2 headings and capture content until next H2 or end
     sections = re.split(r'^##\s+(.+)$', readme_content, flags=re.MULTILINE)
@@ -9375,8 +9360,14 @@ def split_readme_into_chapter(readme_path: Path, input_root: Path) -> Optional[P
         file_content = h2_content
         file_path = folder_path / f"{file_num:03d} {clean_title}.md"
         file_path.write_text(file_content, encoding="utf-8")
+        written.add(file_path.name)
         file_num += 10
-    
+
+    # "000 Contents.md" belongs to the 999-folder contents step, not to this split.
+    for stale in folder_path.glob("*.md"):
+        if stale.name not in written and stale.name != "000 Contents.md":
+            stale.unlink()
+
     print(f"[INFO] Split README into {(file_num // 10)} files in {folder_path.name}")
     return folder_path
 
