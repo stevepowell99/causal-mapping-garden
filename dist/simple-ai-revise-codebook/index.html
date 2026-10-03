@@ -1978,6 +1978,7 @@ After coding, <strong>filtering</strong> happens in the adjacent <strong>Filter 
 <li><strong>Default</strong> (far left): the app derives a target count \(K\) from the number of <strong>unique factor labels</strong> \(n\) in the <strong>current filtered pipeline</strong> (same scope as Revise codebook): \(K = \min(\lfloor n/3 \rfloor, 25)\) — at most <strong>25</strong>, or roughly <strong>one label in three</strong> as clusters, whichever is smaller.</li>
 <li><strong>Explicit</strong> positions (not Default): the requested \(K\) is the number shown by the slider (<strong>2</strong>–<strong>50</strong>). If \(K\) is <strong>greater than</strong> \(n\), the run uses <strong>\(n\)</strong> instead (you cannot have more clusters than distinct labels); the app may show a short notice when that cap applies.</li>
 <li>Pre-clustering, embedding clustering, and <code>[number]</code> / <code>[cluster_count]</code> in prompts all use this <strong>effective</strong> \(K\).</li>
+<li>Without pre-clustering, \(K\) is a ceiling rather than a target: the AI returns <strong>at most</strong> \(K\) labels, fewer where the material supports fewer. Labels that fit no group are left as they are, and listed under the codebook with the AI's reason for each, together with any notes (for example, why there are fewer labels than \(K\)). Recode leaves those labels alone too.</li>
 </ul>
 <h3 id="simple-ai-recode">Recode (AI)<a aria-label="Permalink" class="anchor-link" href="/simple-ai-revise-codebook/#simple-ai-recode">#</a></h3>
 <ul>

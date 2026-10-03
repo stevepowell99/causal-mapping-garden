@@ -249,6 +249,7 @@
 007.0 Task 2 -- Coding with AI/901 A workflow for (AI-assisted) causa-afb54e.html
 007.0 Task 2 -- Coding with AI/901 A workflow for AI-assisted causal -41e64d.html
 007.0 Task 2 -- Coding with AI/901 A workflow for causal coding with -6a7cd0.html
+007.0 Task 2 -- Coding with AI/903 Consolidating overlapping labels i-cf9a51.html
 007.0 Task 2 -- Coding with AI/905 Different kinds of coding and reco-776254.html
 007.0 Task 2 -- Coding with AI/910 AI coding experiments synthesis ((-3fd7de.html
 007.0 Task 2 -- Coding with AI/910 AI coding experiments synthesis.html
