@@ -7114,6 +7114,68 @@ def write_old_url_redirects(input_root: Path, output_root: Path, md_files_no_dra
           f"({len(rules)} rules), {unmatched} without a current page, {ambiguous} ambiguous.")
 
 
+# -- Sitemap: every published page, so search engines can find them --
+def _sitemap_lastmod(md_path: Path, metadata: Dict[str, Any]) -> Optional[str]:
+    """YYYY-MM-DD from the page's YAML `date` if it parses, else the source file's modified date."""
+    from datetime import datetime, date as _date
+    raw = metadata.get("date") if "date" in metadata else metadata.get("Date")
+    if isinstance(raw, datetime):
+        return raw.date().isoformat()
+    if isinstance(raw, _date):
+        return raw.isoformat()
+    if raw:
+        for fmt in ("%Y-%m-%d", "%d/%m/%Y", "%d-%m-%Y", "%d.%m.%Y", "%d %b %Y", "%d %B %Y"):
+            try:
+                return datetime.strptime(str(raw).strip(), fmt).date().isoformat()
+            except ValueError:
+                continue
+    try:
+        return datetime.fromtimestamp(md_path.stat().st_mtime).date().isoformat()
+    except OSError:
+        return None
+
+
+def write_sitemap(input_root: Path, output_root: Path, site_url: str, md_files_no_drafts: List[Path],
+                  metadata_map: Dict[Path, Dict[str, Any]]) -> None:
+    """Write `sitemap.xml` listing every published page (drafts are not in `md_files_no_drafts`),
+    and make sure `robots.txt` names it. Built from the full page list, so an incremental
+    build still writes a complete sitemap. The URL is the page's canonical one, not a short route."""
+    from xml.sax.saxutils import escape
+    base = site_url.rstrip("/")
+    entries: Dict[str, Optional[str]] = {}
+    for p in md_files_no_drafts:
+        out_html = relative_output_html(input_root, output_root, p)
+        if not out_html.exists():
+            _warn("sitemap", f"No built page for {p.name}; left out of the sitemap.")
+            continue
+        rel = out_html.relative_to(output_root).as_posix()
+        if rel == "index.html":
+            url = f"{base}/"
+        elif rel.endswith("/index.html"):
+            url = _site_url_for_output_path(out_html.parent, output_root, site_url) + "/"
+        else:
+            url = _site_url_for_output_path(out_html, output_root, site_url)
+        entries[url] = _sitemap_lastmod(p, metadata_map.get(p) or {})
+    for t in sorted((output_root / "theme").glob("*/index.html")) if (output_root / "theme").is_dir() else []:
+        entries.setdefault(f"{base}/theme/{quote(t.parent.name, safe='')}/", None)
+
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>',
+             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for url in sorted(entries):
+        lastmod = entries[url]
+        lines.append(f"  <url><loc>{escape(url)}</loc>" + (f"<lastmod>{lastmod}</lastmod>" if lastmod else "") + "</url>")
+    lines.append("</urlset>")
+    _write_text_windows_safe(output_root / "sitemap.xml", "\n".join(lines) + "\n", encoding="utf-8")
+
+    sitemap_line = f"Sitemap: {base}/sitemap.xml"
+    robots_path = output_root / "robots.txt"
+    robots = robots_path.read_text(encoding="utf-8") if robots_path.exists() else "User-agent: *\nAllow: /\n"
+    if sitemap_line not in robots.splitlines():
+        robots = robots.rstrip("\n") + f"\n\n{sitemap_line}\n"
+        _write_text_windows_safe(robots_path, robots, encoding="utf-8")
+    print(f"[SITEMAP] {len(entries)} URLs in sitemap.xml; robots.txt names it.")
+
+
 # -- write all pages --
 def write_pages(input_root: Path, output_root: Path, site_title: str, config: Dict[str, object], args: Any = None) -> None:
     """Convert all markdown files and write HTML pages with nav."""
@@ -9005,6 +9067,9 @@ def write_pages(input_root: Path, output_root: Path, site_title: str, config: Di
     write_old_url_redirects(input_root, output_root, md_files_no_drafts)
     _tmark("write_pages: old URL redirects")
 
+    write_sitemap(input_root, output_root, site_url, md_files_no_drafts, metadata_map)
+    _tmark("write_pages: sitemap")
+
     _close_pdf_runtime()
 
     # Cleanup: remove unused images under output_root/img and any nested img folders
@@ -9536,7 +9601,11 @@ def main() -> None:
     site_title: str = cfg_get_str("site_title", args.title)
     # Get README path from config or use CLI arg default
     readme_config = config.get("readme")
-    if readme_config == "":  # Explicitly disabled in config
+    if args.readme:  # --readme beats config.yml, and the image lookup must use the same file
+        global _EXTERNAL_README_PATH_CACHE, _EXTERNAL_README_PATH_CACHE_READY
+        readme_path = args.readme.expanduser().resolve()
+        _EXTERNAL_README_PATH_CACHE, _EXTERNAL_README_PATH_CACHE_READY = readme_path, True
+    elif readme_config == "":  # Explicitly disabled in config
         readme_path = None
     elif readme_config:  # Specified in config
         readme_path = Path(str(readme_config)).expanduser().resolve()
@@ -9564,7 +9633,7 @@ def main() -> None:
         for p in sorted(output_root.rglob("*"), key=lambda x: len(x.parts), reverse=True):
             try:
                 if p.is_file():
-                    if p.suffix.lower() == ".pdf" or p.name == PUBLISHED_URLS_FILE:
+                    if p.suffix.lower() == ".pdf" or p.name in (PUBLISHED_URLS_FILE, "robots.txt"):
                         continue
                     try:
                         os.chmod(p, stat.S_IWRITE)  # Windows: clear read-only bit if present
