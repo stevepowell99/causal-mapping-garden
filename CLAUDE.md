@@ -21,10 +21,10 @@ Ledger: `_role.md`.
 ```
 19aCMgarden/
 ├── content/              Obsidian vault — all source Markdown (its own git repo, not this one: see below)
-├── dist/                 Generated HTML site — Netlify publish target (auto-committed by watcher)
+├── dist/                 Generated HTML site — Netlify publish target (build and push it yourself; see below)
 ├── build_static_site.py  Site generator script
 ├── config.yml            Build config (input → content/, output → dist/)
-├── watch_and_build.ps1   File watcher: rebuilds ~1 min after changes, commits & pushes dist/
+├── watch_and_build.ps1   File watcher, hardly ever running: never assume it will publish an edit
 ├── run_build_scheduled.bat  Full clean rebuild (run via Task Scheduler daily)
 ├── netlify.toml          Netlify config: publish = "dist"
 └── serve.py              Local dev server for previewing the generated site
