@@ -1948,8 +1948,11 @@ def extract_first_heading(md_text: str) -> Optional[str]:
 
 
 def strip_html_comments(text: str) -> str:
-    """Remove all HTML comments from text (including multiline comments)."""
-    return re.sub(r'<!--.*?-->', '', text, flags=re.DOTALL)
+    """Remove all HTML comments from text (including multiline comments).
+
+    An unclosed `<!--` runs to the end of the text, as it does in a browser.
+    """
+    return re.sub(r'<!--.*?(?:-->|\Z)', '', text, flags=re.DOTALL)
 
 
 def normalize_heading_anchors(md_text: str) -> Tuple[str, Set[str]]:
@@ -4714,6 +4717,8 @@ def strip_search_scaffolding(markdown_text: str) -> str:
     """Drop generated related-link blocks and link-only contents lists from body text."""
     # Do not let generated related-link blocks or link-only contents lists rank as article body.
     markdown_text = re.split(r"<!--\s*xrefs-v1\s*-->", markdown_text or "", maxsplit=1)[0]
+    # Author comments (<!-- TODO ... -->) never render, so they must not reach snippets either.
+    markdown_text = strip_html_comments(markdown_text)
     kept_lines: List[str] = []
     standalone_wikilink_re = re.compile(
         r"^\s*(?:[-*+]\s+|\d+[.)]\s+)?\[\[[^\]]+\]\]\s*$"
@@ -6868,13 +6873,7 @@ def write_search_assets(input_root: Path, output_root: Path, title_map: Dict[Pat
                 }
             )
 
-        # crude strip of markdown for search preview
-        plain = re.sub(r"```[\s\S]*?```", " ", article_text)
-        plain = re.sub(r"`[^`]*`", " ", plain)
-        plain = re.sub(r"\[\[(.*?)\]\]", r"\1", plain)
-        plain = re.sub(r"\[(.*?)\]\([^)]*\)", r"\1", plain)
-        plain = re.sub(r"[#*_>\-]+", " ", plain)
-        plain = re.sub(r"\s+", " ", plain).strip()
+        plain = _markdown_to_plain_text(article_text)
         add_record({"title": title, "path": href, "text": plain, "kind": "page"})
 
     (output_root / "assets").mkdir(parents=True, exist_ok=True)
