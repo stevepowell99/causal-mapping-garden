@@ -611,6 +611,7 @@
 950 Rubicon/000 Rubicon ((rubicon)).html
 950 Rubicon/003 An open format for reconstructible-070793.html
 950 Rubicon/003 Why we need an open format ((open--7b6478.html
+950 Rubicon/005 Principles for reconstructible ana-cb5238.html
 950 Rubicon/005 Rubicon principles ((rubicon-principles)).html
 950 Rubicon/007 Is there already a standard qq ((r-de54b7.html
 950 Rubicon/008 The jury test ((rubicon-jury)).html
