@@ -606,10 +606,13 @@
 910 ai and the wider world/yes, it's ok to say that an ai underst-731be3
 910 ai and the wider world/yes, there are ai-shaped holes in orga-0a879c
 910 ai and the wider world/yes, there are ai-shaped holes in orga-7104f3
+950 Rubicon/000 Reconstructible reporting -- keepi-4942f8.html
 950 Rubicon/000 Rubicon ((rubicon)).html
+950 Rubicon/003 An open format for reconstructible-070793.html
 950 Rubicon/003 Why we need an open format ((open--7b6478.html
 950 Rubicon/005 Rubicon principles ((rubicon-principles)).html
 950 Rubicon/007 Is there already a standard qq ((r-de54b7.html
+950 Rubicon/008 The jury test ((rubicon-jury)).html
 950 Rubicon/008 Theory-based evaluation ((theory-based)).html
 950 Rubicon/010 Is there already a standard qq ((r-fd658a.html
 950 Rubicon/010 Testing rival theories ((theory-fit)).html
