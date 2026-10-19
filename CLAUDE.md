@@ -91,7 +91,7 @@ Do not use a `_tmp/` folder for drafts, and do not create subchapter (nested) fo
 
 **Old URLs keep working.** A page's URL comes from its filename, so renaming, renumbering or moving a page, or adding a `((permalink))`, gives it a new one. Every build adds each published page's URL to `dist/_published_urls.txt`, then writes `dist/_redirects`, which Netlify reads, sending each recorded URL that no longer exists to the page it became (`write_old_url_redirects` in `build_static_site.py`).
 - The register was seeded on 28 September 2026 from the git history of `dist/` and every page GoatCounter had counted. `--clean` preserves it. Never shrink it by hand.
-- Matching is by permalink first, then by filename. A title rewritten in its opening words is not followed. `warnings_redirects_unmatched.txt` and `warnings_redirects_ambiguous.txt` list what was left out.
+- Matching is by permalink first, then by filename. A title rewritten in its opening words is not followed. A page replaced by one with a different permalink is declared in `config.yml` under `moved_permalinks` (old permalink: new permalink), which redirects both the old short URL and the old page files. Netlify ignores redirects in `netlify.toml` here, so `_redirects` is the only place a rule takes effect. `warnings_redirects_unmatched.txt` and `warnings_redirects_ambiguous.txt` list what was left out.
 - An old-name orphan left by an incremental build still answers its own URL. The redirect takes over once `--clean` removes the orphan.
 - A URL with no redirect lands on `404.html`, which searches for the title words in the missing filename, without the page number, permalink or hash.
 

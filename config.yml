@@ -8,6 +8,11 @@ readme: "C:/dev/causal-map-extension/webapp/README.md"  # External README to spl
 # internal. The source's own YAML front matter and HTML comments are always stripped, and
 # links that cannot resolve on the garden are reduced to their text.
 mirror_docs: []
+
+# A page replaced by one with a different permalink: old permalink -> new permalink.
+# The build redirects the old short URL and the old page files (write_old_url_redirects).
+moved_permalinks:
+  rubicon-principles: principles
 site_url: "https://garden.causalmap.app"
 og_image_path: "https://firebasestorage.googleapis.com/v0/b/digital-axon-366208.appspot.com/o/sites%2FirD5tHiGP3mTEFbsiwNH%2Flogo%2Fcm%20logo%20blue.png?alt=media&token=a03afb3c-0ee2-4cc1-9e3a-3762983da685"
 site_label: "Causal Mapping"

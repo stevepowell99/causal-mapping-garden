@@ -7053,9 +7053,26 @@ def write_old_url_redirects(input_root: Path, output_root: Path, md_files_no_dra
             anchors.add(anchor)
         targets.append((key, _without_page_number(key), p.parent.relative_to(input_root).as_posix().lower(), url))
 
+    # A page replaced by one with a different permalink cannot be matched by name, so
+    # config.yml declares it: `moved_permalinks: {old-permalink: new-permalink}`.
+    moved: Dict[str, str] = {}
+    try:
+        import yaml
+        cfg = yaml.safe_load((Path(__file__).parent / "config.yml").read_text(encoding="utf-8")) or {}
+        moved = {str(k): str(v) for k, v in (cfg.get("moved_permalinks") or {}).items()}
+    except Exception as e:
+        _warn("redirects", f"Could not read moved_permalinks from config.yml: {e}")
+    for old, new in moved.items():
+        if new not in anchors:
+            _warn("redirects_unmatched", f"moved_permalinks: {old} -> /{new}/, which is not a current page")
+
     # Case-sensitive, as Netlify is; Netlify also serves /x from x.html.
     live = {q.relative_to(output_root).as_posix() for q in output_root.rglob("*.html")}
     rules: Dict[str, str] = {}
+    for old, new in moved.items():
+        if new in anchors and f"{old}/index.html" not in live:
+            for frm in (old, f"{old}/"):
+                rules[frm] = f"/{new}/"
     gone = unmatched = ambiguous = 0
     for entry in sorted(known):
         if "!" in entry or any(v in live for v in (entry, f"{entry}.html", f"{entry.rstrip('/')}/index.html")):
@@ -7073,7 +7090,9 @@ def write_old_url_redirects(input_root: Path, output_root: Path, md_files_no_dra
             return [t for t in targets if (t[idx].startswith(k) if cut else t[idx] == k)]
 
         old_anchor = extract_page_anchor_from_stem(re.sub(r" \(\d+\)$", "", stem))
-        if old_anchor in anchors:  # a permalink outlives any rename of the title around it
+        if old_anchor in moved and moved[old_anchor] in anchors:
+            cands = [t for t in targets if t[3] == f"/{moved[old_anchor]}/"]
+        elif old_anchor in anchors:  # a permalink outlives any rename of the title around it
             cands = [t for t in targets if t[3] == f"/{old_anchor}/"]
         else:
             cands = _candidates(key, 0)

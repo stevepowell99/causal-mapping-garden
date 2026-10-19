@@ -1,13 +1,2 @@
 [build]
   publish = "dist"
-
-# The principles page was a copy of Rubicon's design doc; the general page replaced it.
-[[redirects]]
-  from = "/rubicon-principles/*"
-  to = "/principles/"
-  status = 301
-
-[[redirects]]
-  from = "/rubicon-principles"
-  to = "/principles/"
-  status = 301
