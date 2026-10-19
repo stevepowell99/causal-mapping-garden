@@ -10,8 +10,8 @@ Each heading on that page maps to one Zotero collection, by NAME rather than id,
 so renumbering collections cannot quietly point a section at the wrong list.
 
     python build_bibliography_md.py                    # report every section
-    python build_bibliography_md.py --write            # rewrite the default section
-    python build_bibliography_md.py --all --write      # rewrite all four
+    python build_bibliography_md.py --write            # rewrite all four
+    python build_bibliography_md.py --section "<heading>" --write   # rewrite one
 
 Source. The Zotero web API is the default, because it is what Zotero itself
 calls current: the local `zotero.sqlite` lags until the app next syncs, so a
@@ -21,12 +21,10 @@ fallback when there is no API key. Either way it never writes to Zotero, and the
 local route copies the database before reading, so running it with Zotero open
 is safe.
 
-Scope. It rewrites one section at a time, in place, and leaves the rest of the
-page alone. Only `causal-map-our-theory` is currently clean enough to publish
-unread, which is why it is the only section on by default. The three report
-collections still hold working items that have no business on a public page: the
-run lists them under "read as working notes", and they want clearing in Zotero
-before those sections are turned on.
+Scope. It rewrites the four sections in place and leaves the rest of the page
+alone. Working items that have no business on a public page (a `localhost` URL,
+a LinkedIn tab) are listed under "read as working notes", and `--write` refuses
+while any of them sits in a section it would rewrite.
 
 Two things it will not hide. Items in the parent collection
 `causal-mapping-biblio` but in none of the four children reach no section at all,
@@ -59,7 +57,6 @@ SECTIONS = {
     "Other reports and papers using Causal Map": "causal-map-reports-not-QuIP-ours-and-others",
     "Key works related to causal mapping": "causal-mapping-key-works-not-us",
 }
-DEFAULT_SECTIONS = ["Our publications on causal mapping"]
 
 ZOTERO_USER_ID = 17133746
 KEY_FILES = [
@@ -395,14 +392,13 @@ def replace_section(text, heading, entries):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--write", action="store_true", help="rewrite the page; otherwise report only")
-    ap.add_argument("--all", action="store_true", help="every section, not just the default one")
     ap.add_argument("--section", action="append", help="a heading to rebuild; repeatable")
     ap.add_argument("--source", choices=["api", "local", "auto"], default="auto",
                     help="where to read Zotero (default: the web API, falling back to local)")
     ap.add_argument("--db", help="path to zotero.sqlite when reading locally")
     args = ap.parse_args()
 
-    chosen = args.section or (list(SECTIONS) if args.all else DEFAULT_SECTIONS)
+    chosen = args.section or list(SECTIONS)
     unknown = [c for c in chosen if c not in SECTIONS]
     if unknown:
         sys.exit("unknown section(s): " + ", ".join(unknown))
@@ -444,10 +440,13 @@ def main():
 
     if suspect:
         print(f"\n{len(suspect)} item(s) that read as working notes rather than publications. "
-              "Clear these from Zotero before turning their section on:")
+              "Clear these from Zotero before rewriting their section:")
         for heading, iid, why, title in suspect:
             print(f"    [{heading[:34]:34s}] id={iid} ({why}) {title[:60]}")
 
+    blocking = [s for s in suspect if s[0] in chosen]
+    if args.write and blocking:
+        sys.exit(f"\nnot written: {len(blocking)} working item(s) above would reach the public page.")
     if args.write:
         PAGE.write_text(text, encoding="utf-8")
         print("\nwrote " + PAGE.name + ": " + ", ".join(chosen))
