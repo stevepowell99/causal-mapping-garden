@@ -1848,21 +1848,21 @@
 <h2 class="banner-info" id="in-vain-links">In-vain links<a aria-label="Permalink" class="anchor-link" href="#in-vain-links">#</a></h2>
 <p>This note is for anyone coding causal claims, by hand or by checking what an AI has coded, who meets sentences like "despite the extra lessons, her grades did not improve". It sets out how we record an influence that was aimed at an outcome which did not happen.</p>
 <h3 class="rounded-info" id="in-short">In short<a aria-label="Permalink" class="anchor-link" href="#in-short">#</a></h3>
-<p>When a source says an influence was aimed at an outcome that did not happen, code the outcome it was aimed at, and put a dagger, <code>†</code>, at the very start of the effect label. Read the dagger as "in vain".</p>
+<p>When a source says an influence was aimed at an outcome that did not happen, code the outcome it was aimed at, and put a cross, <code>×</code>, at the very start of the effect label. Read the cross as "in vain".</p>
 <div class="callout callout-note">
 <p>"Despite the extra coaching, her grades did not improve."</p>
 </div>
-<p><code>Extra coaching --&gt; †Better grades</code>: extra coaching, in vain, for better grades.</p>
+<p><code>Extra coaching --&gt; ×Better grades</code>: extra coaching, in vain, for better grades.</p>
 <div class="callout callout-note">
 <p>"The river still rose, despite the flood-prevention work."</p>
 </div>
-<p><code>Flood-prevention work --&gt; †~River levels rose</code>: flood-prevention work, in vain, against the river rising.</p>
+<p><code>Flood-prevention work --&gt; ×~River levels rose</code>: flood-prevention work, in vain, against the river rising.</p>
 <ul>
-<li><strong>The dagger goes only on the effect</strong>, and only at the very start of the label, before any <code>~</code> and before any hierarchy (<code>†~Flooding; river levels rose</code>).</li>
-<li><strong><code>†Better grades</code> is a separate factor from <code>Better grades</code>.</strong> So an in-vain link is never counted as evidence that her grades improved, nor that the coaching held them down. Everything else about the link is ordinary: one cause, one effect, a quote and a source.</li>
-<li><strong>If the speaker also names what prevailed, code that as an ordinary link</strong> to what actually happened. "The heavy rains made the river rise, despite the prevention work" gives <code>Heavy rains --&gt; River levels rose</code> and <code>Prevention work --&gt; †~River levels rose</code>.</li>
+<li><strong>The cross goes only on the effect</strong>, and only at the very start of the label, before any <code>~</code> and before any hierarchy (<code>×~Flooding; river levels rose</code>).</li>
+<li><strong><code>×Better grades</code> is a separate factor from <code>Better grades</code>.</strong> So an in-vain link is never counted as evidence that her grades improved, nor that the coaching held them down. Everything else about the link is ordinary: one cause, one effect, a quote and a source.</li>
+<li><strong>If the speaker also names what prevailed, code that as an ordinary link</strong> to what actually happened. "The heavy rains made the river rise, despite the prevention work" gives <code>Heavy rains --&gt; River levels rose</code> and <code>Prevention work --&gt; ×~River levels rose</code>.</li>
 <li><strong>Use it only for outcomes the speaker presents as not achieved.</strong> Partial success is success: "it raised awareness a little" is an ordinary link. An outcome that nothing was said to have pushed for is not an in-vain link either.</li>
-<li><strong>To find them, search factor labels for <code>†</code>.</strong> Each in-vain outcome is its own box on the map, so a map shows what people tried that did not work next to what actually happened.</li>
+<li><strong>To find them, search factor labels for <code>×</code>.</strong> Each in-vain outcome is its own box on the map, so a map shows what people tried that did not work next to what actually happened.</li>
 </ul>
 <p>The rest of this note explains why we need the convention, works through more examples, and sets out what an in-vain link means formally.</p>
 <h3 class="rounded-info" id="why-we-need-it">Why we need it<a aria-label="Permalink" class="anchor-link" href="#why-we-need-it">#</a></h3>
@@ -1890,7 +1890,7 @@
 <div class="callout callout-note">
 <p>"The wellbeing programme failed to improve staff morale."</p>
 </div>
-<p><code>Wellbeing programme --&gt; †Staff morale</code></p>
+<p><code>Wellbeing programme --&gt; ×Staff morale</code></p>
 <div class="callout callout-note">
 <p>"The budget cuts reduced staff morale."</p>
 </div>
@@ -1902,7 +1902,7 @@
 </div>
 <ul>
 <li><code>Heavy rains --&gt; River levels rose</code></li>
-<li><code>Prevention and clearance work --&gt; †~River levels rose</code></li>
+<li><code>Prevention and clearance work --&gt; ×~River levels rose</code></li>
 </ul>
 <div class="mermaid">
 
@@ -1910,7 +1910,7 @@ flowchart LR
   rain("Heavy rains")
   prev("Prevention and&lt;br/&gt;clearance work")
   river("River levels rose")
-  vain("†~River levels rose")
+  vain("×~River levels rose")
   rain ==&gt; river
   prev ==&gt; vain
   classDef factor fill:#EAF7F8,stroke:#6DC4C8,stroke-width:2px,color:#1F1F36;
@@ -1924,34 +1924,34 @@ flowchart LR
 <div class="callout callout-note">
 <p>"Despite me reminding him several times, he still missed the train."</p>
 </div>
-<p><code>Repeated reminders --&gt; †~Missed the train</code></p>
+<p><code>Repeated reminders --&gt; ×~Missed the train</code></p>
 <p>The reminders pushed for him not missing the train. No winner is named, so this is the only link.</p>
 <div class="callout callout-note">
 <p>"The fan failed to cool him down because the sun was too strong."</p>
 </div>
 <ul>
 <li><code>Strong sun --&gt; Feeling hot</code></li>
-<li><code>Fan --&gt; †Feeling cooler</code></li>
+<li><code>Fan --&gt; ×Feeling cooler</code></li>
 </ul>
 <div class="callout callout-note">
 <p>"We ran the training twice but it never changed how people actually write their bids."</p>
 </div>
-<p><code>Training workshops --&gt; †People write their bids differently</code></p>
+<p><code>Training workshops --&gt; ×People write their bids differently</code></p>
 <div class="callout callout-note">
 <p>"It did raise awareness a little, but nobody actually changed what they did."</p>
 </div>
 <ul>
 <li><code>Campaign --&gt; Awareness raised a little</code></li>
-<li><code>Campaign --&gt; †People changed what they do</code></li>
+<li><code>Campaign --&gt; ×People changed what they do</code></li>
 </ul>
 <p>The first link is ordinary, with the hedge carried by its label.</p>
 <h3 class="rounded-info" id="what-can-we-do-with-in-vain-links">What can we do with in-vain links?<a aria-label="Permalink" class="anchor-link" href="#what-can-we-do-with-in-vain-links">#</a></h3>
 <ul>
 <li><strong>See them on the map.</strong> In-vain outcomes appear as their own boxes, next to what actually happened.</li>
-<li><strong>List them.</strong> Search factor labels for <code>†</code> to see every in-vain claim in a project, or for <code>†</code> and one outcome to see everything that was pushed for, in vain, about it.</li>
-<li><strong>Compare.</strong> For one influence and one outcome, set the sources that say it worked (<code>Flood-prevention work --&gt; ~River levels rose</code>) against those that say it was in vain (<code>Flood-prevention work --&gt; †~River levels rose</code>). That contrast can matter a great deal to an evaluation.</li>
+<li><strong>List them.</strong> Search factor labels for <code>×</code> to see every in-vain claim in a project, or for <code>×</code> and one outcome to see everything that was pushed for, in vain, about it.</li>
+<li><strong>Compare.</strong> For one influence and one outcome, set the sources that say it worked (<code>Flood-prevention work --&gt; ~River levels rose</code>) against those that say it was in vain (<code>Flood-prevention work --&gt; ×~River levels rose</code>). That contrast can matter a great deal to an evaluation.</li>
 <li><strong>Count them separately.</strong> Because the in-vain outcome is a separate factor, its links are counted apart from the evidence that the outcome happened (on counting evidence, see <a class="wikilink" href="/counting-influences">counting and comparing influences</a> and <a class="wikilink" href="/assessing">assessing the evidence for a link</a>).</li>
-<li><strong>Count them together.</strong> Removing the dagger by hand, or with a filter, adds the in-vain links to the evidence that the influence was present and pushing, whether or not it was effective.</li>
+<li><strong>Count them together.</strong> Removing the cross by hand, or with a filter, adds the in-vain links to the evidence that the influence was present and pushing, whether or not it was effective.</li>
 </ul>
 <h3 class="rounded-info" id="optional-background-force-dynamics">Optional background: force dynamics<a aria-label="Permalink" class="anchor-link" href="#optional-background-force-dynamics">#</a></h3>
 <p>You do not need any theory to use in-vain coding. But it helps to know why "despite" claims feel different from ordinary causal claims.</p>
@@ -1959,12 +1959,12 @@ flowchart LR
 <p>This is why in-vain claims are worth capturing explicitly: they show that a causal power was present and was overcome, which is information about how the world works, not just noise to discard.</p>
 <h3 class="rounded-info" id="hard-cases-brief-notes">Hard cases (brief notes)<a aria-label="Permalink" class="anchor-link" href="#hard-cases-brief-notes">#</a></h3>
 <ul>
-<li><strong>In vain plus opposites</strong>: is <code>Z --&gt; †Y</code> evidence for <code>Z --&gt; ~Y</code>? No. The influence pushed towards Y; it did not push Y away. The dagger keeps in-vain outcomes apart from the opposites machinery, so <code>†~Y</code> is not paired with <code>†Y</code>, <code>Y</code> or <code>~Y</code> when opposites are combined.</li>
+<li><strong>In vain plus opposites</strong>: is <code>Z --&gt; ×Y</code> evidence for <code>Z --&gt; ~Y</code>? No. The influence pushed towards Y; it did not push Y away. The cross keeps in-vain outcomes apart from the opposites machinery, so <code>×~Y</code> is not paired with <code>×Y</code>, <code>Y</code> or <code>~Y</code> when opposites are combined.</li>
 <li><strong>Bipolar concepts</strong>: some pairs (employment and unemployment) are mentioned in very similar contexts but are opposite in ordinary talk. This is why also coding sentiment often becomes very useful when doing AI-assisted clustering and aggregation.</li>
 </ul>
 <h3 class="rounded-info" id="a-more-formal-picture">A more formal picture<a aria-label="Permalink" class="anchor-link" href="#a-more-formal-picture">#</a></h3>
 <p>This puts in-vain coding into the grammar of <a class="wikilink" href="/formalisation">A formalisation of causal mapping</a>. There, an ordinary link is read with rule COD-ATOM as "Source S claims that X causally influenced Y in virtue of its causal power to do so", and rule INF-FACT lets us deduce from any link that S claims X happened and Y happened.</p>
-<p><strong>Semantics.</strong> A row <code>X --&gt; †Y</code> from source S is read as:</p>
+<p><strong>Semantics.</strong> A row <code>X --&gt; ×Y</code> from source S is read as:</p>
 <div class="callout callout-note">
 <p>Source S claims that X happened, that X had some causal power to bring about Y, and that Y did not happen.</p>
 </div>
@@ -1974,7 +1974,7 @@ flowchart LR
 <li><strong>Y did not occur.</strong> S claims <code>~Y</code>. So when listing cases where Y did not happen, include in-vain links.</li>
 <li><strong>X had power towards Y (with caveats).</strong> S claims X had some causal power to bring about Y. So when listing cases where X is claimed to have that power, include in-vain links, with the caveat that it is the speaker's claim about a power that did not, in the event, carry the outcome.</li>
 </ul>
-<p><strong>What an in-vain link is not.</strong> It is never evidence for an ordinary <code>X --&gt; Y</code>, and never for <code>X --&gt; ~Y</code>. Applied naively, INF-FACT deduces only that "†Y" happened, which misleads nobody, because <code>†Y</code> is not <code>Y</code>.</p>
+<p><strong>What an in-vain link is not.</strong> It is never evidence for an ordinary <code>X --&gt; Y</code>, and never for <code>X --&gt; ~Y</code>. Applied naively, INF-FACT deduces only that "×Y" happened, which misleads nobody, because <code>×Y</code> is not <code>Y</code>.</p>
 <p>This paper was drafted with the assistance of Claude, an AI model from Anthropic; the coding convention and the judgements in it are our own.</p>
 <div class="footnote">
 <hr/>
