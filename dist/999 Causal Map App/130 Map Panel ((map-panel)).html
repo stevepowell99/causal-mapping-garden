@@ -1908,8 +1908,10 @@
 <li>👉🏼 <strong>Tidy</strong> (tick box, on by default): sets <strong>Label Width</strong>, <strong>H-Gap</strong> and <strong>V-Gap</strong> for you. It aims to make the factor labels as large as they can be on screen while the arrows stay easy to follow, which usually also leaves the map with roughly the same proportions as the pane it sits in.<ul>
 <li>To change the proportions it fits to, drag the map pane's separator bar so the pane is wider or taller. The map tidies itself again.</li>
 <li>To set the spacing yourself, drag any of those three sliders. That unticks Tidy and your settings stay put. Tick it again to hand control back.</li>
-<li>Where a map's arrows leave their factors very steeply and bunch into a bundle, Tidy pushes the levels further apart, and it will accept smaller labels to do so. Legibility of the arrows comes first.</li>
+<li>Where a map's arrows leave their factors very steeply and bunch into a bundle, Tidy pushes the levels further apart, and it will accept smaller labels to do so, but only while the labels stay readable. On a bigger map, where spreading the levels would shrink the labels too far, Tidy leaves the arrows steeper and says so under the tick box.</li>
+<li>On a map with too many factors to read with all of it in view, Tidy keeps the standard spacing, which reads best when you zoom in, and says so under the tick box. Filter the map down and Tidy fits it again.</li>
 <li>Some maps cannot be improved much. A long single chain, or a set of factor pairs with nothing joining them, will not sit well in a pane whatever the spacing.</li>
+<li>On a big map, Tidy stands aside when a single layout of the map takes more than a second and a half, or when the map is too large for it to measure, and the line under the tick box says so. Filter the map down and Tidy starts again by itself, or untick it and set the spacing by hand. Ticking it again makes it try once more.</li>
 </ul>
 </li>
 </ul>
