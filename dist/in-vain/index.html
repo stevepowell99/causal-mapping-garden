@@ -1846,67 +1846,46 @@
 <div class="paper"><div class="mb-3"><span class="badge text-bg-light border"><i class="far fa-calendar"></i> 24 Jan 2026</span></div>
 <h2 class="banner-info" id="in-vain-links">In-vain links<a aria-label="Permalink" class="anchor-link" href="/in-vain/#in-vain-links">#</a></h2>
 <p>This note is for anyone coding causal claims, by hand or by checking what an AI has coded, who meets sentences like "despite the extra lessons, her grades did not improve". It sets out how we record an influence that was aimed at an outcome which did not happen.</p>
-<h3 class="rounded-info" id="start-with-minimalist-causal-mapping">Start with minimalist causal mapping<a aria-label="Permalink" class="anchor-link" href="/in-vain/#start-with-minimalist-causal-mapping">#</a></h3>
-<p>Causal mapping is a way of analysing what people say about causes. We read a text, an interview, a report, an open survey answer, and wherever someone claims that one thing influences another, we code that claim as a link. If a respondent says that the heat made them thirsty, we write down a link from <code>Heat</code> to <code>Feeling thirsty</code>, together with a note of where it came from. That is the whole basic move, and it is easy: find a causal claim, record the cause, the effect, and the source. (See  and .)</p>
-<p>A single coded link looks like this: a box for the cause, a box for the effect, and an arrow from one to the other.</p>
-<div class="mermaid">
-
-flowchart LR
-  heat("Heat")
-  thirsty("Feeling thirsty")
-  heat ==&gt; thirsty
-  classDef factor fill:#EAF7F8,stroke:#6DC4C8,stroke-width:2px,color:#1F1F36;
-  classDef outcome fill:#6DC4C8,stroke:#1F1F36,stroke-width:2px,color:#1F1F36;
-  class heat factor
-  class thirsty outcome
-  linkStyle 0 stroke:#1F1F36,stroke-width:2.5px
-</div>
-<p>Gather many such links from many sources and they join into a causal map.</p>
-<p>Our  approach codes only bare cause-to-effect links and leaves most detail off the link. An influence that pushed for something and failed is a hue of causation this basic system cannot express. But it is too common, and too informative, to do without. So, reluctant as we always are to add to a minimal system, we add one small marker to the effect label, alongside the other small extensions to the base (opposites and sentiment, see ). Nothing else about the link changes: it is still just another row in the table of links.</p>
-<h3 class="rounded-info" id="the-puzzle-an-influence-aimed-at-an-outcome-in-vain">The puzzle: an influence aimed at an outcome, in vain<a aria-label="Permalink" class="anchor-link" href="/in-vain/#the-puzzle-an-influence-aimed-at-an-outcome-in-vain">#</a></h3>
-<p>Narratives do not only tell us what worked. Sometimes they tell us about an influence that could have worked but did not. Someone says:</p>
-<div class="callout callout-note">
-<p>"The river still rose, despite the flood-prevention work."</p>
-</div>
-<p>The flood-prevention work is the kind of thing that pushes against rising water. It had some causal power to hold the river down. In realist terms (see ) it was a real influence with a real tendency to work against the outcome. But on this occasion it was not enough, and the river rose anyway.</p>
-<p>Or:</p>
+<h3 class="rounded-info" id="in-short">In short<a aria-label="Permalink" class="anchor-link" href="/in-vain/#in-short">#</a></h3>
+<p>When a source says an influence was aimed at an outcome that did not happen, code the outcome it was aimed at, and put a dagger, <code>†</code>, at the very start of the effect label. Read the dagger as "in vain".</p>
 <div class="callout callout-note">
 <p>"Despite the extra coaching, her grades did not improve."</p>
 </div>
-<p>The coaching had the causal power to lift her grades. It was a real, relevant influence. But the improvement did not come.</p>
-<p>The first influence was meant to block something and the second to bring something about, but they are the same kind of claim. Either way, the sentence tells us two things at once:</p>
+<p><code>Extra coaching --&gt; †Better grades</code>: extra coaching, in vain, for better grades.</p>
+<div class="callout callout-note">
+<p>"The river still rose, despite the flood-prevention work."</p>
+</div>
+<p><code>Flood-prevention work --&gt; †~River levels rose</code>: flood-prevention work, in vain, against the river rising.</p>
+<ul>
+<li><strong>The dagger goes only on the effect</strong>, and only at the very start of the label, before any <code>~</code> and before any hierarchy (<code>†~Flooding; river levels rose</code>).</li>
+<li><strong><code>†Better grades</code> is a separate factor from <code>Better grades</code>.</strong> So an in-vain link is never counted as evidence that her grades improved, nor that the coaching held them down. Everything else about the link is ordinary: one cause, one effect, a quote and a source.</li>
+<li><strong>If the speaker also names what prevailed, code that as an ordinary link</strong> to what actually happened. "The heavy rains made the river rise, despite the prevention work" gives <code>Heavy rains --&gt; River levels rose</code> and <code>Prevention work --&gt; †~River levels rose</code>.</li>
+<li><strong>Use it only for outcomes the speaker presents as not achieved.</strong> Partial success is success: "it raised awareness a little" is an ordinary link. An outcome that nothing was said to have pushed for is not an in-vain link either.</li>
+<li><strong>To find them, search factor labels for <code>†</code>.</strong> Each in-vain outcome is its own box on the map, so a map shows what people tried that did not work next to what actually happened.</li>
+</ul>
+<p>The rest of this note explains why we need the convention, works through more examples, and sets out what an in-vain link means formally.</p>
+<h3 class="rounded-info" id="why-we-need-it">Why we need it<a aria-label="Permalink" class="anchor-link" href="/in-vain/#why-we-need-it">#</a></h3>
+<p>Causal mapping codes what people say about causes. Wherever someone claims that one thing influences another, we code that claim as a link from the cause to the effect, with a note of where it came from (see <a class="wikilink" href="/minimalist-bare-causation">our approach is minimalist</a> and <a class="wikilink" href="/for-outsiders">causal mapping for outsiders</a>). Our <a class="wikilink" href="/minimalist">minimalist</a> approach codes only bare cause-to-effect links and leaves most detail off the link.</p>
+<p>An influence that pushed for something and failed is a hue of causation this basic system cannot express. But it is too common, and too informative, to do without. So, reluctant as we always are to add to a minimal system, we add one small marker to the effect label, alongside the other small extensions to the base (opposites and sentiment, see <a class="wikilink" href="/combining-opposites">combining opposites</a>).</p>
+<p>The flood-prevention work is the kind of thing that pushes against rising water. In realist terms (see <a class="wikilink" href="/realist">being realist about causation</a>) it was a real influence with a real tendency to work against the outcome, but on this occasion it was not enough. The coaching likewise had the causal power to lift her grades, but the improvement did not come. One influence was meant to block something and the other to bring something about, but either way the sentence tells us two things at once:</p>
 <ul>
 <li>An influence was present and pushed towards an outcome: the river not rising, better grades.</li>
 <li>On this occasion that outcome did not happen.</li>
 </ul>
 <p>Speakers mark these claims with "despite", "in spite of", "even though", "in vain", "tried to ... but", "failed to".</p>
-<h3 class="rounded-info" id="why-the-obvious-options-fail">Why the obvious options fail<a aria-label="Permalink" class="anchor-link" href="/in-vain/#why-the-obvious-options-fail">#</a></h3>
-<p>What should a coder do with the coaching sentence?</p>
+<p>The obvious codings all fail:</p>
 <ul>
 <li><code>Extra coaching --&gt; Better grades</code> says the coaching improved her grades, which the speaker denies.</li>
-<li><code>Extra coaching --&gt; ~Better grades</code> (the tilde <code>~</code> marks the opposite of a factor; see ) says the coaching stopped her grades improving, which the speaker also denies.</li>
+<li><code>Extra coaching --&gt; ~Better grades</code> (the tilde <code>~</code> marks the opposite of a factor) says the coaching stopped her grades improving, which the speaker also denies.</li>
 <li>Coding nothing throws away both pieces of information: that an influence was present, and that it failed.</li>
 </ul>
-<p>None is satisfactory. We want to keep the speaker's meaning and keep the information.</p>
 <h3 class="rounded-info" id="but-couldnt-you-just-use-opposing-arrows-like-in-systems-modelling">But couldn't you just use opposing arrows like in systems modelling?<a aria-label="Permalink" class="anchor-link" href="/in-vain/#but-couldnt-you-just-use-opposing-arrows-like-in-systems-modelling">#</a></h3>
 <p>A systems modeller will say there is no problem here. Code two arrows into the outcome: a positive one from the rains, which raise the river, and a negative one from the prevention work, which lowers it. Whichever is stronger wins, and the river's level is the net result. For systems modelling that is a reasonable move, and it is roughly how signed, weighted influence diagrams already work.</p>
 <p>But look at what it takes to make those arrows say what the speaker said. To record that the prevention work lost and the river rose anyway, the modeller has to put magnitudes on the two arrows and compute a resultant, or add further codes for "this one prevailed". The opposing-arrows picture on its own does not tell you which side won, or whether the outcome actually happened.</p>
-<p>The real difference is that we are not building a model of the river system. We are encoding what people say and think: claims, cognitions, something much closer to language than to a quantitative model of forces (see  and ). When someone says "in spite of", "although" or "even though", they are expressing an idea with a particular flavour (see Talmy 1988): they name an influence that was real and relevant, then set it aside as having failed. It is open to question whether two opposing arrows, one a little larger than the other, captures that idea at all.</p>
+<p>The real difference is that we are not building a model of the river system. We are encoding what people say and think: claims, cognitions, something much closer to language than to a quantitative model of forces (see <a class="wikilink" href="/factors-not-variables">factors are not variables</a> and <a class="wikilink" href="/actually-say">causal mapping starts from what people actually say</a>). When someone says "in spite of", "although" or "even though", they are expressing an idea with a particular flavour (see Talmy 1988): they name an influence that was real and relevant, then set it aside as having failed. It is open to question whether two opposing arrows, one a little larger than the other, captures that idea at all.</p>
 <p>So in-vain coding is an extension we add to capture, in the language of claims, something a systems modeller can arguably get out of the box from signed and weighted arrows. We stay close to what people say and pay for it with one extra marker, where the systems modeller pays for the net-result calculation with numbers and machinery which as humble causal mappers we do not have or want.</p>
-<h3 class="rounded-info" id="the-convention-a-dagger-on-the-effect">The convention: a dagger on the effect<a aria-label="Permalink" class="anchor-link" href="/in-vain/#the-convention-a-dagger-on-the-effect">#</a></h3>
-<p>Code the outcome the influence was aimed at, and put a dagger, <code>†</code>, at the very start of the effect label:</p>
-<ul>
-<li><code>Extra coaching --&gt; †Better grades</code></li>
-<li><code>Flood-prevention work --&gt; †~River levels rose</code></li>
-</ul>
-<p>Read the dagger as "in vain": "extra coaching, in vain, for better grades"; "flood-prevention work, in vain, against the river rising".</p>
-<p>The rules are few:</p>
-<ul>
-<li>The dagger goes only on the effect, never the cause, and only at the very start of the label, before any <code>~</code> and before any hierarchy (<code>†~Flooding; river levels rose</code>).</li>
-<li><code>†Better grades</code> is a different factor from <code>Better grades</code>. It names an outcome that was pushed for and did not come. So nothing that reads the links table, however little it knows about daggers, will count an in-vain link as evidence that her grades improved, or that the coaching held them down.</li>
-<li>Everything else is an ordinary link: one cause, one effect, a quote and a source.</li>
-</ul>
-<p>To tell the effect from its in-vain twin, compare these two claims about the same programme:</p>
+<h3 class="rounded-info" id="telling-an-in-vain-link-from-an-ordinary-one">Telling an in-vain link from an ordinary one<a aria-label="Permalink" class="anchor-link" href="/in-vain/#telling-an-in-vain-link-from-an-ordinary-one">#</a></h3>
+<p>Compare these two claims about the same programme:</p>
 <div class="callout callout-note">
 <p>"The wellbeing programme failed to improve staff morale."</p>
 </div>
@@ -1916,8 +1895,7 @@ flowchart LR
 </div>
 <p><code>Budget cuts --&gt; ~Staff morale</code></p>
 <p>Both sentences end with morale low. Only the first is in vain. The budget cuts did what they pushed for, so that is an ordinary link, with the fall carried by <code>~</code>.</p>
-<h3 class="rounded-info" id="when-the-speaker-also-names-what-prevailed">When the speaker also names what prevailed<a aria-label="Permalink" class="anchor-link" href="/in-vain/#when-the-speaker-also-names-what-prevailed">#</a></h3>
-<p>Speakers often name both the influence that failed and the one that beat it. Code each as it comes: the winner is an ordinary link to what actually happened, and the loser is an in-vain link to what it was aimed at.</p>
+<p>When the speaker names both the influence that failed and the one that beat it, code each as it comes: the winner is an ordinary link to what actually happened, and the loser is an in-vain link to what it was aimed at.<sup id="fnref:1"><a class="footnote-ref" href="/in-vain/#fn:1">1</a></sup></p>
 <div class="callout callout-note">
 <p>"The heavy rains made the river levels rise, despite the prevention and clearance work."</p>
 </div>
@@ -1941,15 +1919,6 @@ flowchart LR
   linkStyle 0 stroke:#1F1F36,stroke-width:2.5px
   linkStyle 1 stroke:#1F1F36,stroke-width:2.5px
 </div>
-<p>The two links share a quote and a source, which is enough to read them together. They need no extra grouping (such as a <a class="wikilink" href="/packages">package</a>).</p>
-<h3 class="rounded-info" id="what-can-we-do-with-in-vain-links">What can we do with in-vain links?<a aria-label="Permalink" class="anchor-link" href="/in-vain/#what-can-we-do-with-in-vain-links">#</a></h3>
-<ul>
-<li><strong>See them on the map.</strong> In-vain outcomes appear as their own boxes, so a map shows what people tried that did not work, next to what actually happened.</li>
-<li><strong>List them.</strong> Search factor labels for <code>†</code> to see every in-vain claim in a project, or for <code>†</code> and one outcome to see everything that was pushed for, in vain, about it.</li>
-<li><strong>Compare.</strong> For one influence and one outcome, set the sources that say it worked (<code>Flood-prevention work --&gt; ~River levels rose</code>) against those that say it was in vain (<code>Flood-prevention work --&gt; †~River levels rose</code>). That contrast can matter a great deal to an evaluation.</li>
-<li><strong>Count them separately.</strong> Because the in-vain outcome is a separate factor, its links are counted apart from the evidence that the outcome happened (on counting evidence, see  and ).</li>
-<li><strong>Count them together.</strong> Removing the dagger by hand, or with a filter, adds the in-vain links to the evidence that the influence was present and pushing, whether or not it was effective.</li>
-</ul>
 <h3 class="rounded-info" id="more-worked-examples">More worked examples<a aria-label="Permalink" class="anchor-link" href="/in-vain/#more-worked-examples">#</a></h3>
 <div class="callout callout-note">
 <p>"Despite me reminding him several times, he still missed the train."</p>
@@ -1974,8 +1943,15 @@ flowchart LR
 <li><code>Campaign --&gt; Awareness raised a little</code></li>
 <li><code>Campaign --&gt; †People changed what they do</code></li>
 </ul>
-<p>Partial success is success: the first link is ordinary, with the hedge carried by its label. Use the dagger only for outcomes the speaker presents as not achieved.</p>
-<p>Use it only where the text says or clearly implies that an influence was aimed at something and that it did not follow. Something that simply never happened, which nothing was said to have pushed for, is not an in-vain link.</p>
+<p>The first link is ordinary, with the hedge carried by its label.</p>
+<h3 class="rounded-info" id="what-can-we-do-with-in-vain-links">What can we do with in-vain links?<a aria-label="Permalink" class="anchor-link" href="/in-vain/#what-can-we-do-with-in-vain-links">#</a></h3>
+<ul>
+<li><strong>See them on the map.</strong> In-vain outcomes appear as their own boxes, next to what actually happened.</li>
+<li><strong>List them.</strong> Search factor labels for <code>†</code> to see every in-vain claim in a project, or for <code>†</code> and one outcome to see everything that was pushed for, in vain, about it.</li>
+<li><strong>Compare.</strong> For one influence and one outcome, set the sources that say it worked (<code>Flood-prevention work --&gt; ~River levels rose</code>) against those that say it was in vain (<code>Flood-prevention work --&gt; †~River levels rose</code>). That contrast can matter a great deal to an evaluation.</li>
+<li><strong>Count them separately.</strong> Because the in-vain outcome is a separate factor, its links are counted apart from the evidence that the outcome happened (on counting evidence, see <a class="wikilink" href="/counting-influences">counting and comparing influences</a> and <a class="wikilink" href="/assessing">assessing the evidence for a link</a>).</li>
+<li><strong>Count them together.</strong> Removing the dagger by hand, or with a filter, adds the in-vain links to the evidence that the influence was present and pushing, whether or not it was effective.</li>
+</ul>
 <h3 class="rounded-info" id="optional-background-force-dynamics">Optional background: force dynamics<a aria-label="Permalink" class="anchor-link" href="/in-vain/#optional-background-force-dynamics">#</a></h3>
 <p>You do not need any theory to use in-vain coding. But it helps to know why "despite" claims feel different from ordinary causal claims.</p>
 <p>Leonard Talmy's "force dynamics" (Talmy 1988) treats much of our causal talk as patterned talk about forces: an <strong>Agonist</strong> with a tendency, towards motion or rest, and an <strong>Antagonist</strong> that counters it. Talmy analyses "causing" into finer ideas that include "letting", "hindering" and "helping", and notes that the same pattern runs from the physical through to the psychological and social. "Despite" is a canonical force-dynamics marker: it signals a countervailing force that failed to stop the outcome. "The ball kept rolling despite the long grass" has the ball as Agonist and the grass as the Antagonist that did not prevail.</p>
@@ -1999,20 +1975,26 @@ flowchart LR
 </ul>
 <p><strong>What an in-vain link is not.</strong> It is never evidence for an ordinary <code>X --&gt; Y</code>, and never for <code>X --&gt; ~Y</code>. Applied naively, INF-FACT deduces only that "†Y" happened, which misleads nobody, because <code>†Y</code> is not <code>Y</code>.</p>
 <p>This paper was drafted with the assistance of Claude, an AI model from Anthropic; the coding convention and the judgements in it are our own.</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>If you also code <a class="wikilink" href="/packages">packages</a>, you can put the winning link and the in-vain link in one package. The in-vain convention works the same either way. <a class="footnote-backref" href="/in-vain/#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 <div class="references"><h2>References</h2><p class="reference">Talmy (1988). <em>Force Dynamics in Language and Cognition</em>. Cognitive Science, <em>12</em>, 49--100. <a href="https://doi.org/10.1207/s15516709cog1201_2" rel="noopener" target="_blank">https://doi.org/10.1207/s15516709cog1201_2</a>.</p></div></div>
 <footer class="fullscreen-footer"><div class="sidebar-footer small text-muted"><span>© <a class="link-secondary" href="https://causalmap.app">Causal Map Ltd</a> 2026</span> · <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license" target="_blank" title="CC BY-NC 4.0"><img alt="CC BY-NC 4.0" src="https://licensebuttons.net/l/by-nc/4.0/88x31.png" style="height:18px;opacity:0.7;vertical-align:middle;"/></a><a class="link-secondary ms-2" href="https://app.causalmap.app" target="_blank" title="Causal Map app">App <span aria-hidden="true">↗</span></a></div></footer>
 </main>
 <aside class="rightbar"><h2>On this page</h2><div class="hover-cue">Hover to view</div><div class="toc"><div class="toc">
 <ul>
 <li><a href="/in-vain/#in-vain-links">In-vain links</a><ul>
-<li><a href="/in-vain/#start-with-minimalist-causal-mapping">Start with minimalist causal mapping</a></li>
-<li><a href="/in-vain/#the-puzzle-an-influence-aimed-at-an-outcome-in-vain">The puzzle: an influence aimed at an outcome, in vain</a></li>
-<li><a href="/in-vain/#why-the-obvious-options-fail">Why the obvious options fail</a></li>
+<li><a href="/in-vain/#in-short">In short</a></li>
+<li><a href="/in-vain/#why-we-need-it">Why we need it</a></li>
 <li><a href="/in-vain/#but-couldnt-you-just-use-opposing-arrows-like-in-systems-modelling">But couldn't you just use opposing arrows like in systems modelling?</a></li>
-<li><a href="/in-vain/#the-convention-a-dagger-on-the-effect">The convention: a dagger on the effect</a></li>
-<li><a href="/in-vain/#when-the-speaker-also-names-what-prevailed">When the speaker also names what prevailed</a></li>
-<li><a href="/in-vain/#what-can-we-do-with-in-vain-links">What can we do with in-vain links?</a></li>
+<li><a href="/in-vain/#telling-an-in-vain-link-from-an-ordinary-one">Telling an in-vain link from an ordinary one</a></li>
 <li><a href="/in-vain/#more-worked-examples">More worked examples</a></li>
+<li><a href="/in-vain/#what-can-we-do-with-in-vain-links">What can we do with in-vain links?</a></li>
 <li><a href="/in-vain/#optional-background-force-dynamics">Optional background: force dynamics</a></li>
 <li><a href="/in-vain/#hard-cases-brief-notes">Hard cases (brief notes)</a></li>
 <li><a href="/in-vain/#a-more-formal-picture">A more formal picture</a></li>
@@ -2020,7 +2002,7 @@ flowchart LR
 </li>
 </ul>
 </div>
-</div><hr/><h2>Links</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a class="link-secondary" href="006 A formalisation of causal mapping -8a4c1f.html">A formalisation of causal mapping</a></li><li><a class="link-secondary" href="017 Coding packages of links ((packages)).html">Coding packages of links</a></li></ul></div><hr/><h2>Backlinks</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a class="link-secondary" href="../950 Rubicon/020 Checking the claims in an AI repor-331540.html">Checking the claims in an AI report cannot find its omissions</a></li><li><a class="link-secondary" href="../950 Rubicon/! Checking the claims in an AI report -2cb424.html">Checking the claims in an AI report cannot find its omissions (unsaved 2026-09-29 1227)</a></li><li><a class="link-secondary" href="../950 Rubicon/! Checking the claims in an AI report -b99cb9.html">Checking the claims in an AI report cannot find its omissions (unsaved 2026-09-29 1307)</a></li><li><a class="link-secondary" href="017 Coding packages of links ((packages)).html">Coding packages of links</a></li><li><a class="link-secondary" href="! EES2026 bites paper.html">EES2026 bites paper</a></li><li><a class="link-secondary" href="! EES2026 bites short paper.html">EES2026 bites short paper</a></li><li><a class="link-secondary" href="! minimalist background-lit research brief.html">minimalist background-lit research brief</a></li><li><a class="link-secondary" href="005 Minimalist coding for causal mappi-92df1f.html">Minimalist coding for causal mapping</a></li></ul></div></aside>
+</div><hr/><h2>Links</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a class="link-secondary" href="006 A formalisation of causal mapping -8a4c1f.html">A formalisation of causal mapping</a></li><li><a class="link-secondary" href="../010 Task 3 -- Answering questions -- General/910 Assessing quality or robustness of-af4c9e.html">Assessing quality or robustness of evidence for a causal link based on a bundle of coterminal causal claims</a></li><li><a class="link-secondary" href="../005 Causal mapping -- overview/0.02 Causal mapping for outsiders ((fo-41a419.html">Causal mapping for outsiders</a></li><li><a class="link-secondary" href="../005 Causal mapping -- overview/400 Causal mapping is easier if we are-414152.html">Causal mapping is easier if we are realist about causation</a></li><li><a class="link-secondary" href="../005 Causal mapping -- overview/0.10 Causal mapping starts from what p-8fded2.html">Causal mapping starts from what people actually say</a></li><li><a class="link-secondary" href="017 Coding packages of links ((packages)).html">Coding packages of links</a></li><li><a class="link-secondary" href="015 Combining opposites, sentiment ((c-cc58bc.html">Combining opposites, sentiment</a></li><li><a class="link-secondary" href="../100 Task 3 -- Answering questions -- Individual questions/118 Counting and comparing influences -1cc17d.html">Counting and comparing influences</a></li><li><a class="link-secondary" href="005 Minimalist coding for causal mappi-92df1f.html">Minimalist coding for causal mapping</a></li><li><a class="link-secondary" href="../007 Task 2 -- Causal coding -- minimalist style/0130.1 Our approach is minimalist -- f-d1b511.html">Our approach is minimalist -- factors are not variables</a></li><li><a class="link-secondary" href="../007 Task 2 -- Causal coding -- minimalist style/010 Our approach is minimalist -- we c-36732b.html">Our approach is minimalist -- we code only bare causation</a></li></ul></div><hr/><h2>Backlinks</h2><div class="hover-cue">Hover to view</div><div class="toc"><ul><li><a class="link-secondary" href="../950 Rubicon/020 Checking the claims in an AI repor-331540.html">Checking the claims in an AI report cannot find its omissions</a></li><li><a class="link-secondary" href="../950 Rubicon/! Checking the claims in an AI report -2cb424.html">Checking the claims in an AI report cannot find its omissions (unsaved 2026-09-29 1227)</a></li><li><a class="link-secondary" href="../950 Rubicon/! Checking the claims in an AI report -b99cb9.html">Checking the claims in an AI report cannot find its omissions (unsaved 2026-09-29 1307)</a></li><li><a class="link-secondary" href="017 Coding packages of links ((packages)).html">Coding packages of links</a></li><li><a class="link-secondary" href="! EES2026 bites paper.html">EES2026 bites paper</a></li><li><a class="link-secondary" href="! EES2026 bites short paper.html">EES2026 bites short paper</a></li><li><a class="link-secondary" href="! minimalist background-lit research brief.html">minimalist background-lit research brief</a></li><li><a class="link-secondary" href="005 Minimalist coding for causal mappi-92df1f.html">Minimalist coding for causal mapping</a></li></ul></div></aside>
 </div>
 <script crossorigin="anonymous" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/sidebar.js"></script>
