@@ -1,8 +1,7 @@
 """The one place the Garden scripts look for secrets.
 
-The Garden's secrets live outside the Drive folder, in ~/.secrets/19aCMgarden.env,
-because a file inside the folder syncs to everyone it is shared with. The file is
-filled from keys.docx with `python ~/.claude/bin/keys.py env <file>`.
+The Garden's secrets live in ~/.secrets/19aCMgarden.env, filled from keys.docx
+with `python ~/.claude/bin/keys.py env <file>`.
 A missing file behaves like a missing .env: the key is simply not found.
 """
 

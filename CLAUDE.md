@@ -319,7 +319,7 @@ For **`paper`** pages, the PDF path uses two columns automatically even **withou
 
 ## Notes
 
-- **Secrets** live outside Drive, in `C:\Users\Zoom\.secrets\19aCMgarden.env`, because a file in this folder syncs to everyone it is shared with. It holds `UMAMI_API_KEY`; no script here reads that key. Source: `keys.docx`, filled with `python C:\Users\Zoom\.claude\bin\keys.py env <file>`. `garden_env.py` is the one loader (`build_bibliography_md.py` reads `ZOTERO_API_KEY` through it, `analytics_pull.py` reads `GOATCOUNTER_TOKEN`); a missing file means the key is not found. Never create a `.env` in this folder.
+- **Secrets** live in `C:\Users\Zoom\.secrets\19aCMgarden.env`. It holds `UMAMI_API_KEY`; no script here reads that key. Source: `keys.docx`, filled with `python C:\Users\Zoom\.claude\bin\keys.py env <file>`. `garden_env.py` is the one loader (`build_bibliography_md.py` reads `ZOTERO_API_KEY` through it, `analytics_pull.py` reads `GOATCOUNTER_TOKEN`); a missing file means the key is not found. A `.env` in this folder is not read.
 - Netlify build command must be **blank** — dist/ is pre-built locally; Netlify just serves it
 - Analytics are injected via generated `dist/assets/analytics.js`; GoatCounter and Umami Cloud are configured in `config.yml` and disabled automatically on `file://`
 - The output folder is named `dist/` (not `garden_generated_site/`) to keep Windows paths under 260 chars — the repo lives deep in Google Drive and the longer name pushed borderline paths over the limit
