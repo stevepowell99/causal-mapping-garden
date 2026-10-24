@@ -63,7 +63,7 @@ SECTIONS = {
 ZOTERO_USER_ID = 17133746
 KEY_FILES = [
     GARDEN_ENV,
-    ROOT.parents[1] / "20-29 Platforms and Documentation" / "20 all platforms" / "JobCat" / ".env",
+    Path.home() / ".secrets" / "JobCat.env",
 ]
 
 SKIP_TYPES = {"attachment", "note", "annotation"}
