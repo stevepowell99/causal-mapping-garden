@@ -18,11 +18,12 @@
 !watch_and_build.ps1
 !run_build_scheduled.bat
 !serve.py
+!garden_env.py
 
 # Guidance and open work. These held only on the laptop until 31 August 2026,
 # which made the repo's own instructions the one thing a rebuild could not
 # recover. They carry no secrets: build_bibliography_md.py names ZOTERO_API_KEY
-# and reads it from a .env that stays ignored.
+# and reads it from ~/.secrets/19aCMgarden.env, outside this folder.
 !CLAUDE.md
 !_role.md
 !*xkTODO*.md
@@ -35,3 +36,6 @@ dist/.trash/
 dist/assets/md_hashes.json
 dist/site.pdf
 !analytics_pull.py
+
+# Private notes: never published. build_static_site.py (NEVER_PUBLISH_DIRS) also deletes this folder from dist/ on every build.
+dist/991 !!! just my notes/

@@ -11,7 +11,7 @@ GoatCounter rather than Umami because Umami Cloud's API needs the Pro plan,
 while GoatCounter's is free and is the only one of the two that records whether
 a hit was a bot.
 
-Needs GOATCOUNTER_TOKEN in a .env beside this file. Create it at
+Needs GOATCOUNTER_TOKEN in the environment, the hub .env or ~/.secrets/19aCMgarden.env. Create it at
 causal-mapping-garden.goatcounter.com under [your name, top right] > API, with
 at least "Read statistics"; the export mode also needs "Export". The token is
 never printed.
@@ -31,8 +31,11 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from pathlib import Path
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta
+
+from garden_env import GARDEN_ENV, read_env_key
 
 SITE = "https://causal-mapping-garden.goatcounter.com"
 API = SITE + "/api/v0"
@@ -59,24 +62,17 @@ ISBOT = {
 
 def token():
     # One copy of the token, in the hub .env, shared with bin/goat-report.py.
-    # The local .env is still read so the script works if it is ever detached
-    # from the hub.
-    envs = [
-        os.path.join(os.path.expanduser("~"), ".claude", ".env"),
-        os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"),
-    ]
+    # ~/.secrets/19aCMgarden.env is read too, so the script works if it is ever
+    # detached from the hub.
+    envs = [Path.home() / ".claude" / ".env", GARDEN_ENV]
     tok = os.environ.get("GOATCOUNTER_TOKEN", "")
-    for env in envs:
-        if tok or not os.path.exists(env):
-            continue
-        for line in open(env, encoding="utf-8"):
-            line = line.strip()
-            if line.startswith("GOATCOUNTER_TOKEN="):
-                tok = line.split("=", 1)[1].strip().strip('"').strip("'")
+    if not tok:
+        found = read_env_key("GOATCOUNTER_TOKEN", envs)
+        tok = found[0] if found else ""
     if not tok:
         sys.exit(
             "No GOATCOUNTER_TOKEN. Create one at %s (menu top right > API) and put it\n"
-            "in .env beside this script as GOATCOUNTER_TOKEN=..." % SITE
+            "in ~/.secrets/19aCMgarden.env as GOATCOUNTER_TOKEN=..." % SITE
         )
     return tok
 

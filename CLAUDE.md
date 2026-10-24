@@ -126,6 +126,7 @@ Three things about the script worth knowing before running it. It reads the **Zo
 
 - Only folders starting with a digit are published (e.g. `005 Topic/`).
 - **Folders whose name contains `!`** (e.g. `991 !!! just my notes/`) are skipped entirely: not walked, not built, not copied, not searched.
+- **`991 !!! just my notes` is private and never reaches `dist/`.** `NEVER_PUBLISH_DIRS` in `build_static_site.py` deletes it from the output before every build (`--clean` keeps every PDF, so stale ones would otherwise stay), and the build fails if it is still there at the end. `.gitignore` covers it too.
 - **Filenames containing `!`** are drafts: rendered to HTML for local preview but excluded from nav, search index and PDF output. Exception: a draft with `pdf: true` in its YAML gets a per-page PDF from the normal `--page-pdf` build (so the watcher keeps it current); like draft HTML it lands in `dist` unlinked, reachable by URL but not in nav or search. Use this for shareable docs kept semi-invisible (e.g. `850 For consultants/! Causal Map and Qualia, a partner brief.md`).
 - `((anchor))` at end of filename creates short URL `/anchor/`
 - `--` in filename → en dash; `qq` → `?`
@@ -318,6 +319,7 @@ For **`paper`** pages, the PDF path uses two columns automatically even **withou
 
 ## Notes
 
+- **Secrets** live outside Drive, in `C:\Users\Zoom\.secrets\19aCMgarden.env`, because a file in this folder syncs to everyone it is shared with. It holds `UMAMI_API_KEY`; no script here reads that key. Source: `keys.docx`, filled with `python C:\Users\Zoom\.claude\bin\keys.py env <file>`. `garden_env.py` is the one loader (`build_bibliography_md.py` reads `ZOTERO_API_KEY` through it, `analytics_pull.py` reads `GOATCOUNTER_TOKEN`); a missing file means the key is not found. Never create a `.env` in this folder.
 - Netlify build command must be **blank** — dist/ is pre-built locally; Netlify just serves it
 - Analytics are injected via generated `dist/assets/analytics.js`; GoatCounter and Umami Cloud are configured in `config.yml` and disabled automatically on `file://`
 - The output folder is named `dist/` (not `garden_generated_site/`) to keep Windows paths under 260 chars — the repo lives deep in Google Drive and the longer name pushed borderline paths over the limit

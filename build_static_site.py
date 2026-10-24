@@ -6994,6 +6994,31 @@ def write_search_assets(input_root: Path, output_root: Path, title_map: Dict[Pat
     _write_text_windows_safe(output_root / "404.html", not_found_html, encoding="utf-8")
 
 
+# -- Private folders: never in the output --
+# Folders with '!' in the name are not built, but --clean keeps every PDF and an
+# incremental build removes nothing, so output written before that rule (or by
+# hand) would otherwise stay in dist/ and be published. These folders are
+# deleted from the output root before every build, and the build fails if one
+# is still there afterwards.
+NEVER_PUBLISH_DIRS = ("991 !!! just my notes",)
+
+
+def _private_output_dirs(output_root: Path) -> List[Path]:
+    return [output_root / d for d in NEVER_PUBLISH_DIRS if (output_root / d).exists()]
+
+
+def remove_private_output(output_root: Path) -> None:
+    for d in _private_output_dirs(output_root):
+        shutil.rmtree(d, onerror=lambda f, p, e: (os.chmod(p, stat.S_IWRITE), f(p)))
+        print(f"[PRIVATE] removed {d} from the output")
+
+
+def assert_no_private_output(output_root: Path) -> None:
+    left = _private_output_dirs(output_root)
+    if left:
+        raise SystemExit(f"Private folder still in the output, refusing to finish: {left}")
+
+
 # -- Old URLs: every page URL the site has published keeps working --
 PUBLISHED_URLS_FILE = "_published_urls.txt"  # in the output root; --clean preserves it, like PDFs
 _FILENAME_HASH_RE = re.compile(r"-[0-9a-f]{6}$", re.IGNORECASE)
@@ -9697,6 +9722,7 @@ def main() -> None:
             _warn("mirror", f"mirror_docs entry failed ({_spec!r}): {_e}")
     _main_mark("main: mirror external docs")
     
+    remove_private_output(output_root)
     # copy non-md assets first
     copy_assets(input_root, output_root)
     _main_mark("main: copy_assets")
@@ -9721,6 +9747,7 @@ def main() -> None:
         pass
     _main_mark("main: flush warnings")
 
+    assert_no_private_output(output_root)
     print(f"Site generated at: {output_root}")
     if timing_enabled:
         total = time.perf_counter() - _main_start

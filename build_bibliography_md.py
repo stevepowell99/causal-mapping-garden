@@ -45,6 +45,8 @@ import unicodedata
 import urllib.request
 from pathlib import Path
 
+from garden_env import GARDEN_ENV, read_env_key
+
 ROOT = Path(__file__).resolve().parent
 PAGE = ROOT / "content" / "990 Finally" / "Causal mapping - a bibliography ((bibliography)).md"
 
@@ -60,7 +62,7 @@ SECTIONS = {
 
 ZOTERO_USER_ID = 17133746
 KEY_FILES = [
-    ROOT / ".env",
+    GARDEN_ENV,
     ROOT.parents[1] / "20-29 Platforms and Documentation" / "20 all platforms" / "JobCat" / ".env",
 ]
 
@@ -221,13 +223,8 @@ def api_key():
     """ZOTERO_API_KEY from the environment, else the first .env carrying it."""
     if os.environ.get("ZOTERO_API_KEY"):
         return os.environ["ZOTERO_API_KEY"], "environment"
-    for f in KEY_FILES:
-        if not f.exists():
-            continue
-        for line in f.read_text(encoding="utf-8", errors="replace").splitlines():
-            if line.strip().startswith("ZOTERO_API_KEY="):
-                return line.split("=", 1)[1].strip().strip("\"'"), str(f)
-    return None, None
+    found = read_env_key("ZOTERO_API_KEY", KEY_FILES)
+    return (found[0], str(found[1])) if found else (None, None)
 
 
 def api_get(path, key):
