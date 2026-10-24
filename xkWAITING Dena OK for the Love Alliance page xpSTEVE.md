@@ -1,4 +1,8 @@
-# Waiting on Gabriele: Southern Hemisphere case studies
+# Waiting on Dena: OK to publish the Love Alliance page
+
+24 October 2026: Gabriele's part is answered (28 September). Steve's thread with Dena of 12 to 15 October gives no clearance yet. Once she clears it, remove the `!` draft flag from the Love Alliance page.
+
+## Background, 31 August 2026
 
 Steve noticed the garden has no Southern Hemisphere (VCA / Love Alliance) case studies and asked to ask Gabriele. Posted to `gabi-steve-claude1` on Slack, 2026-08-31, asking about three jobs:
 
@@ -11,5 +15,5 @@ Questions asked: whether Dena (Southern Hemisphere) has cleared the Love Allianc
 ## What already exists
 A Love Alliance page (joint piece by Steve, Gabriele and Dena, about the end-term evaluation) is written and reads finished, but still carries the `!` draft flag, so it is not in nav or search. It is live and readable by URL only.
 
-## Once Gabriele replies
-Un-draft the Love Alliance page if cleared, and/or write up the mid-term and VCA jobs as their own pages, per her answer.
+## 5 October 2026
+Gabriele answered Steve's list of open questions on 28 September. What is still open here is Dena's OK on the Love Alliance page, asked on 29 September and unanswered when the mailbox was checked on 5 October.

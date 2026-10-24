@@ -30,6 +30,8 @@ Ledger: `_role.md`.
 └── serve.py              Local dev server for previewing the generated site
 ```
 
+**A new Garden page is a markdown file in `content/`**, whose Drive folder id is `1kQB0SdS8zWg9yx_2RoFZoCjhyPi05pbK` for the Drive connector. A new Rubicon page is numbered into the `950 Rubicon` chapter (`008 The jury test ((rubicon-jury)).md`). Never create Garden content in Notion: no content lives there, though the Notion tools stay loaded until Steve disconnects that connector.
+
 ## What gets pushed where
 
 - `dist/` — committed and pushed by whoever builds it, and the push triggers the Netlify deploy. The watcher hardly ever runs (Steve, 10 September 2026) and no scheduled task runs `run_build_scheduled.bat` on STEVE-DELL, so a `content/` edit is not live until you build it: run the incremental build below, then `git add dist`, unstage any path containing `!`, commit and push, exactly as `Run-Build` in `watch_and_build.ps1` does. Say when the page will be live.
