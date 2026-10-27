@@ -1875,6 +1875,26 @@
 <p>Note: In the Edit Project modal, the informational notice
 "Upgrade to a Private subscription to create or share private projects. New projects on the Free plan are public by default."
 is shown only to users who can edit the project (owner, editor, or admin). Viewers do not see this notice.</p>
+<h4 id="viewer-permissions">What a Viewer can and cannot do<a aria-label="Permalink" class="anchor-link" href="/sharing-and-permissions/#viewer-permissions">#</a></h4>
+<p>A Viewer is a collaborator added with the Viewer permission, or anyone opening a <strong>Public</strong> project that they neither own nor have been added to as an Editor. The owner and Editors have the same limits while a project is <strong>Locked</strong>. When a Viewer tries something that would be saved to the project, the app refuses with a message such as "You need edit access to modify bookmarks for this project" or "This file is read-only – editing is not permitted".</p>
+<p>A Viewer can:</p>
+<ul>
+<li>Open the project and browse the map, the Links, Factors and Sources tables, and the source text.</li>
+<li>Change what they see without changing the project: select sources, filter, trace paths, sort, use the pivot tables and change how the map looks. These settings live in the page URL, not in the project.</li>
+<li>Open saved bookmarks and the report, play the slideshow, and copy a bookmark's link, image or HTML.</li>
+<li>Download the project's data and export tables, maps and the report.</li>
+<li>Ask MapCat questions about the project. MapCat cannot do for a Viewer what the app would refuse.</li>
+</ul>
+<p>Anything saved to the project needs edit access (Owner or Editor, on a project that is not Locked):</p>
+<ul>
+<li><strong>Bookmarks</strong>: saving a new bookmark, overwriting or editing one, changing its description, and deleting one.</li>
+<li><strong>Report slides and decks</strong>: every report slide is a bookmark, so creating, renaming or deleting a deck, adding slides to or removing slides from a deck, editing a slide's description, and generating report slides all need edit access.</li>
+<li><strong>Coding</strong>: highlighting text to create a link, editing or deleting a link, running AI coding, recoding, renaming or deleting factors, search and replace on labels, bulk changes to links, copying or deleting a factor label set, and managing custom link columns.</li>
+<li><strong>Assessing links</strong>: saving an assessed link, including the AI assessment.</li>
+<li><strong>Sources</strong>: adding or uploading sources, editing a source's text, title or metadata (including editing the cells of the Sources table), and deleting sources.</li>
+<li><strong>Project settings</strong>: renaming the project and changing its description or settings.</li>
+<li><strong>Prompts</strong>: a prompt that a Viewer types or runs is not added to the project's saved prompt history.</li>
+</ul>
 <h3 id="versioning">Versioning<a aria-label="Permalink" class="anchor-link" href="/sharing-and-permissions/#versioning">#</a></h3>
 <p>The app automatically backs up your project, so you can restore earlier snapshots if you want.</p>
 <ul>
@@ -1902,7 +1922,10 @@ is shown only to users who can edit the project (owner, editor, or admin). Viewe
 <li><a href="/sharing-and-permissions/#projects-panel-bulk-operations">Bulk Operations</a></li>
 </ul>
 </li>
-<li><a href="/sharing-and-permissions/#sharing-and-permissions">Sharing and Permissions</a></li>
+<li><a href="/sharing-and-permissions/#sharing-and-permissions">Sharing and Permissions</a><ul>
+<li><a href="/sharing-and-permissions/#viewer-permissions">What a Viewer can and cannot do</a></li>
+</ul>
+</li>
 <li><a href="/sharing-and-permissions/#versioning">Versioning</a></li>
 </ul>
 </div>
