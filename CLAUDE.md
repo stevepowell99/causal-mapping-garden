@@ -23,9 +23,10 @@ Ledger: `_role.md`.
 ├── content/              Obsidian vault — all source Markdown (its own git repo, not this one: see below)
 ├── dist/                 Generated HTML site — Netlify publish target (build and push it yourself; see below)
 ├── build_static_site.py  Site generator script
+├── assistant_files.mjs   Writes dist/assistants/, the pages the Causal Map assistants read (run by the build)
 ├── config.yml            Build config (input → content/, output → dist/)
 ├── watch_and_build.ps1   File watcher, hardly ever running: never assume it will publish an edit
-├── run_build_scheduled.bat  Full clean rebuild (run via Task Scheduler daily)
+├── run_build_scheduled.bat  Full clean rebuild, for Task Scheduler (no task runs it)
 ├── netlify.toml          Netlify config: publish = "dist"
 └── serve.py              Local dev server for previewing the generated site
 ```
@@ -36,7 +37,7 @@ Ledger: `_role.md`.
 
 - `dist/` — committed and pushed by whoever builds it, and the push triggers the Netlify deploy. The watcher hardly ever runs (Steve, 10 September 2026) and no scheduled task runs `run_build_scheduled.bat` on STEVE-DELL, so a `content/` edit is not live until you build it: run the incremental build below, then `git add dist`, unstage any path containing `!`, commit and push, exactly as `Run-Build` in `watch_and_build.ps1` does. Say when the page will be live.
 - `content/` — never committed to this repo (gitignored by the `*` rule in `.gitignore`). It is its own repo against the remote `stevepowell99/causal-mapping-garden-content`. Nothing commits that repo automatically, so vault work is committed by hand. **That repo is public**, so a committed `!` draft is public on GitHub even though the site hides it: client material never goes in the vault, drafts included.
-- Source build tooling is versioned too, for recovery: `build_static_site.py`, `garden-compose.css`, `config.yml`, `watch_and_build.ps1`, `run_build_scheduled.bat`, `serve.py`, plus `netlify.toml`, `README.md`, `docs/`, `.gitignore` (see the allowlist comment at the top of `.gitignore`). The watcher only auto-commits `dist/`, so generator edits do NOT get committed automatically: commit `build_static_site.py` changes yourself (bundled with the next `dist` push is fine) rather than letting fixes sit only in the working tree.
+- Source build tooling is versioned too, for recovery: `build_static_site.py`, `assistant_files.mjs`, `garden-compose.css`, `config.yml`, `watch_and_build.ps1`, `run_build_scheduled.bat`, `serve.py`, plus `netlify.toml`, `README.md`, `docs/`, `.gitignore` (see the allowlist comment at the top of `.gitignore`). The watcher only auto-commits `dist/`, so generator edits do NOT get committed automatically: commit `build_static_site.py` changes yourself (bundled with the next `dist` push is fine) rather than letting fixes sit only in the working tree.
 
 
 
@@ -60,6 +61,16 @@ python serve.py
 The watcher (`watch_and_build.ps1`) monitors `content/` and rebuilds automatically (`--incremental --incremental-strict-pipeline --page-pdf`), then does `git add dist && git commit && git push`.
 
 PDFs are expensive and optional. A generator pipeline change should not by itself mark all PDFs stale; per-page PDFs rebuild only when missing or when their source Markdown is newer. Exception: `--clean --pdf` is explicit intent to rebuild all PDF outputs, including preserved existing per-page PDFs.
+
+## The pages the Causal Map assistants read
+
+Every build writes three files into `dist/assistants/`, published at `https://garden.causalmap.app/assistants/`, which MapCat in the Causal Map app and Causal Map's MCP server fetch whenever they need them, and which Rubicon's plugin release copies from:
+
+- `mapcat-garden-index.md`: every published page tagged `mapcat_core` or `mapcat_methods`, with its URL and what it is for (its `mapcat_use_for`, `description` or `summary`, else its first paragraph), then the Garden links in the app README that `config.yml`'s `readme:` names. It goes into MapCat's prompt.
+- `mapcat-garden-pages.json`: each of those pages in full, which MapCat and the MCP server read one at a time.
+- `agent-guidance.json`: each published page tagged `agent_guidance` in full, method guidance written for people and agents alike. MapCat and the MCP server read it, and Rubicon's release copies each page into its plugin's method notes.
+
+A page needs a `((slug))` to be included: a MapCat-tagged page without one is left out with a warning, and an `agent_guidance` page without one stops the build. Drafts are left out. `write_assistant_files` in `build_static_site.py` hands the build's own list of published pages to `assistant_files.mjs`, which needs Node on the PATH, and a failure there stops the build, so a push never carries a missing or stale file. It also writes `dist/_headers`, which Netlify reads: `Access-Control-Allow-Origin: *` on `/assistants/*` alone, since the app fetches these files from the browser on `app.causalmap.app` and the dev site. The assistants see a change of tag or text once that build's `dist/` is pushed.
 
 ## Making a polished branded PDF (briefs, one-pagers, case studies)
 

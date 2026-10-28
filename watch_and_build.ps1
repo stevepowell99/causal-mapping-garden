@@ -6,8 +6,6 @@ $configFile = Join-Path $scriptPath "config.yml"  # Which config to use
 $sourceFolder = "C:/Users/Zoom/My Drive (hello@causalmap.app)/Causal Map/10-19 Outreach - marketing - presentations - academic - theory/19aCMgarden/content"
 $outputFolder = "dist"  # Which output folder to commit/push
 $buildScript = Join-Path $scriptPath "build_static_site.py"
-$mapcatIndexScript = "C:/dev/causal-map-extension/scripts/generate-mapcat-garden-index.js"
-$mapcatIndexOutput = "C:/dev/causal-map-extension/webapp/mapcat-garden-index.md"
 $debounceSeconds = 60  # Wait 1 minute after last change
 $maxWaitSeconds = 300  # Force build after 5 minutes even if changes keep coming
 $pollIntervalSeconds = 180  # Poll every 3 minutes for Google Drive changes
@@ -64,15 +62,6 @@ function Run-Build {
     
     Write-Host "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] Build completed successfully." -ForegroundColor Green
 
-    # Keep MapCat's Garden index in sync with Obsidian front matter tags.
-    if (Test-Path $mapcatIndexScript) {
-        Write-Host "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] Updating MapCat Garden index..." -ForegroundColor Cyan
-        node $mapcatIndexScript --garden-config $configFile --out $mapcatIndexOutput
-        if ($LASTEXITCODE -ne 0) {
-            Write-Host "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] MapCat Garden index update failed; continuing Garden build flow." -ForegroundColor Yellow
-        }
-    }
-    
     # Commit and push changes
     Write-Host "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] Checking for changes to commit..." -ForegroundColor Cyan
     Remove-GitDesktopIniRefs

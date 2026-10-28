@@ -34,9 +34,10 @@ Content is written as Markdown in an [Obsidian](https://obsidian.md) vault under
 content/              Obsidian vault, all source Markdown (local only, see note below)
 dist/                 Generated HTML site, the Netlify publish target
 build_static_site.py  The generator (one file)
+assistant_files.mjs   Writes dist/assistants/, the pages the Causal Map assistants read
 config.yml            Site config: title, URL, analytics, footer links
 watch_and_build.ps1   Watcher: rebuilds after a change, commits and pushes dist/
-run_build_scheduled.bat  Full clean rebuild, run daily by Task Scheduler
+run_build_scheduled.bat  Full clean rebuild, for Task Scheduler (not scheduled at present)
 serve.py              Local preview server
 netlify.toml          Netlify config (publish = "dist")
 ```
@@ -68,6 +69,8 @@ python serve.py
 ```
 
 The watcher (`watch_and_build.ps1`) monitors `content/`, rebuilds about a minute after a change, then runs `git add dist`, commits and pushes, which triggers a Netlify deploy. PDFs are expensive, so per-page PDFs rebuild only when missing or when their source Markdown is newer.
+
+Every build also writes `dist/assistants/`: an index and the full text of the pages tagged for the Causal Map app's assistant (`mapcat_core`, `mapcat_methods`) and of the method guidance written for agents (`agent_guidance`), which the app, its MCP server and the Rubicon plugin's release read from the live site. `assistant_files.mjs` writes them, so the build needs Node. `dist/_headers` lets other origins fetch that folder.
 
 ### Main flags
 
