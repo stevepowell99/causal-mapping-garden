@@ -274,10 +274,8 @@ async function main() {
   mapcatPages.sort((a, b) => a.slug.localeCompare(b.slug))
   guidancePages.sort((a, b) => a.slug.localeCompare(b.slug))
 
-  let readmeLinks = []
-  if (readme) {
-    try { readmeLinks = parseReadmeGardenLinks(await fs.readFile(readme, 'utf8')) } catch (_) {}
-  }
+  // A README that is named but cannot be read stops the build, rather than quietly dropping the index's README links
+  const readmeLinks = readme ? parseReadmeGardenLinks(await fs.readFile(readme, 'utf8')) : []
 
   await fs.mkdir(out, { recursive: true })
   await fs.writeFile(path.join(out, 'mapcat-garden-index.md'), mapcatIndex(taggedPages, readmeLinks), 'utf8')

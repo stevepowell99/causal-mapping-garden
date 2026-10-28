@@ -22,6 +22,7 @@ import stat
 import struct
 import subprocess
 import sys
+import tempfile
 import time
 from datetime import date, datetime
 from urllib.parse import quote, unquote, urljoin
@@ -944,8 +945,65 @@ _EXTERNAL_README_PATH_CACHE: Optional[Path] = None
 _EXTERNAL_README_PATH_CACHE_READY = False
 
 
+_GITHUB_README = re.compile(r"^github:(?P<repo>[\w.-]+/[\w.-]+)@(?P<ref>[\w./-]+):(?P<path>.+)$")
+# Images the README names by a path relative to itself, as markdown or as an <img> tag
+_README_RELATIVE_IMAGE = re.compile(r'!\[[^\]]*\]\(([^)\s]+)|<img[^>]*\ssrc="([^"]+)"')
+
+
+def _gh_raw(repo: str, ref: str, path: str) -> bytes:
+    """One file from GitHub at `ref`, through the gh CLI; stops the build when it cannot be had."""
+    cmd = ["gh", "api", f"repos/{repo}/contents/{quote(path)}?ref={ref}", "-H", "Accept: application/vnd.github.raw"]
+    error = ""
+    for attempt in range(3):  # GitHub's DNS fails intermittently on this machine
+        try:
+            done = subprocess.run(cmd, capture_output=True, timeout=60)
+        except (OSError, subprocess.TimeoutExpired) as e:
+            error = str(e)
+        else:
+            if done.returncode == 0 and done.stdout:
+                return done.stdout
+            error = done.stderr.decode("utf-8", "replace").strip()[:300]
+        time.sleep(3 * (attempt + 1))
+    raise SystemExit(f"[readme] gh could not fetch {repo}@{ref}:{path}: {error}")
+
+
+def _fetch_github_readme(spec: str) -> Path:
+    """Fetch a README named `github:owner/repo@ref:path`, and every image it names by a relative path, into the temp
+    folder at the same relative places, so the chapter is built from that branch whatever any local checkout holds.
+    Stops the build when it cannot: an app-docs chapter built from some other copy would publish docs the branch does
+    not have."""
+    m = _GITHUB_README.match(spec)
+    if not m:
+        raise SystemExit(f"[readme] {spec!r} is not of the form github:owner/repo@ref:path")
+    root = Path(tempfile.gettempdir()) / "garden-external-readme"
+    out = root / Path(m["path"]).name
+    out.parent.mkdir(parents=True, exist_ok=True)
+    text = _gh_raw(m["repo"], m["ref"], m["path"])
+    out.write_bytes(text)
+    readme_dir = Path(m["path"]).parent.as_posix()
+    images = set()
+    for a, b in _README_RELATIVE_IMAGE.findall(text.decode("utf-8", "replace")):
+        ref = unquote((a or b).split("#")[0].split("?")[0])
+        if ref and not re.match(r"^([a-z]+:|/|\.\.)", ref, re.I):
+            images.add(ref)
+    for ref in sorted(images):
+        target = root / ref
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(_gh_raw(m["repo"], m["ref"], f"{readme_dir}/{ref}" if readme_dir not in ("", ".") else ref))
+    print(f"[readme] {spec}: {len(text):,} bytes and {len(images)} image(s) it names")
+    return out
+
+
+def external_readme_from_setting(value: str) -> Path:
+    """The README file a `readme:` setting names: a `github:` spec is fetched, anything else is a local path."""
+    if value.startswith("github:"):
+        return _fetch_github_readme(value)
+    return Path(value).expanduser().resolve()
+
+
 def resolve_external_readme_path(readme_path: Optional[str] = None) -> Optional[Path]:
-    """Resolve external README path from arg/config/default, with lightweight caching."""
+    """The external README: the given path, else the one main() resolved, else config.yml's `readme:` (None when it
+    names none). Fetched once per build."""
     global _EXTERNAL_README_PATH_CACHE, _EXTERNAL_README_PATH_CACHE_READY
 
     if readme_path:
@@ -958,19 +1016,12 @@ def resolve_external_readme_path(readme_path: Optional[str] = None) -> Optional[
         return _EXTERNAL_README_PATH_CACHE
 
     resolved: Optional[Path] = None
-    try:
-        config_path = Path("config.yml")
-        if config_path.exists():
-            import yaml
-            cfg_text = config_path.read_text(encoding="utf-8")
-            loaded = yaml.safe_load(cfg_text) or {}
-            if isinstance(loaded, dict) and loaded.get("readme"):
-                resolved = Path(str(loaded["readme"])).expanduser().resolve()
-    except Exception:
-        resolved = None
-
-    if resolved is None:
-        resolved = Path(r"C:\dev\causal-map-extension\webapp\README.md")
+    config_path = Path("config.yml")
+    if config_path.exists():
+        import yaml
+        loaded = yaml.safe_load(config_path.read_text(encoding="utf-8")) or {}
+        if isinstance(loaded, dict) and loaded.get("readme"):
+            resolved = external_readme_from_setting(str(loaded["readme"]))
 
     _EXTERNAL_README_PATH_CACHE = resolved
     _EXTERNAL_README_PATH_CACHE_READY = True
@@ -7175,7 +7226,7 @@ def write_assistant_files(input_root: Path, output_root: Path, site_url: str, md
         "content": str(input_root),
         "files": sorted(p.relative_to(input_root).as_posix() for p in md_files),
         "siteUrl": site_url,
-        "readme": str(readme) if readme and readme.exists() else None,
+        "readme": str(readme) if readme else None,
         "out": str(output_root / ASSISTANTS_DIR),
     }
     done = subprocess.run([node, str(Path(__file__).with_name("assistant_files.mjs"))], input=json.dumps(payload),
@@ -9681,18 +9732,17 @@ def main() -> None:
         output_root: Path = cfg_get_path("output", args.output).resolve()
     
     site_title: str = cfg_get_str("site_title", args.title)
-    # Get README path from config or use CLI arg default
+    # The external README: --readme beats config.yml's `readme:`, and every later lookup (images, the assistants'
+    # files) uses the same file through the cache
+    global _EXTERNAL_README_PATH_CACHE, _EXTERNAL_README_PATH_CACHE_READY
     readme_config = config.get("readme")
-    if args.readme:  # --readme beats config.yml, and the image lookup must use the same file
-        global _EXTERNAL_README_PATH_CACHE, _EXTERNAL_README_PATH_CACHE_READY
+    if args.readme:
         readme_path = args.readme.expanduser().resolve()
-        _EXTERNAL_README_PATH_CACHE, _EXTERNAL_README_PATH_CACHE_READY = readme_path, True
-    elif readme_config == "":  # Explicitly disabled in config
+    elif readme_config:
+        readme_path = external_readme_from_setting(str(readme_config))
+    else:  # absent or empty: no app-docs chapter
         readme_path = None
-    elif readme_config:  # Specified in config
-        readme_path = Path(str(readme_config)).expanduser().resolve()
-    else:  # Use CLI arg or default
-        readme_path = args.readme if args.readme else Path("C:/dev/causal-map-extension/webapp/README.md")
+    _EXTERNAL_README_PATH_CACHE, _EXTERNAL_README_PATH_CACHE_READY = readme_path, True
 
     if not input_root.exists() or not input_root.is_dir():
         raise SystemExit(f"Input directory not found: {input_root}")

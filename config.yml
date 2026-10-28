@@ -1,6 +1,6 @@
 input: "C:/Users/Zoom/My Drive (hello@causalmap.app)/Causal Map/10-19 Outreach - marketing - presentations - academic - theory/19aCMgarden/content"
 output: "./dist"  # If commented out, will auto-generate from input path hash
-readme: "C:/dev/causal-map-extension/webapp/README.md"  # External README to split into 999 folder
+readme: "github:stevepowell99/causal-map-extension@main:webapp/README.md"  # The app README on main, fetched with gh each build and split into the 999 folder; a local path also works
 
 # External docs mirrored in as ONE page each (unlike readme, which splits into a folder).
 # start_at and stop_at publish one range of a longer doc: everything before start_at and

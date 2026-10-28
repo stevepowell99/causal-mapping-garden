@@ -113,6 +113,6 @@ A handful of Causal Map specifics are still hardcoded in `build_static_site.py`,
 
 - Deep links into `app.causalmap.app/help-docs` and the "Causal Map Ltd / app" link normalisation.
 - The "Causal Map Garden" label on PDF chapter title pages and the page footer link.
-- The `--readme` option, which splits an external app README into a final chapter, points at a local path.
+- `config.yml`'s `readme:` names the external app README split into a final chapter: `github:stevepowell99/causal-map-extension@main:webapp/README.md`, which each build fetches from that branch with the `gh` CLI, together with the images it names, so the chapter shows the app's docs as shipped on `main` whatever a local checkout holds. A local path also works, and `--readme <path>` overrides it for one build. A build that cannot fetch it stops.
 
 The generator is a single 8,000-line file with no test suite, written for one site. It is shared in case the approach is useful, not as a maintained framework.
