@@ -1910,7 +1910,7 @@
 <li>For &gt;500 links: Same pattern as SRP — RPC + client-triggered embedding creation, no long-running Edge Function<ul>
 <li>Client gets query embedding (one call), then calls RPC <code>find_relevant_link_contexts(project_name, link_ids, query_embedding, top_k, threshold)</code></li>
 <li>RPC fetches links from DB, builds a <strong>normalized key</strong> per link (see Normalization note below), checks <code>embeddings</code>; if any missing (or <code>embedding IS NULL</code>) returns <code>needs_embeddings</code> + <code>missing_texts</code></li>
-<li>Client calls <code>DataService.createEmbeddingsBatch(missing_texts, ..., { useProvidedKeys: true })</code> (server-side generation + DB upsert), then retries RPC</li>
+<li>Client calls <code>DataService.createEmbeddingsBatch(missing_texts, ..., { useProvidedKeys: true })</code> (the <code>generate-embedding</code> edge function computes and stores them), then retries RPC</li>
 <li>RPC runs similarity in Postgres (pgvector), returns <code>relevant_link_ids</code> + <code>similarities</code> (and may include a <code>debug</code> block); no embedding vectors to frontend</li>
 <li>Selection is <strong>source-diversified</strong> (round-robin: best link per source first), and avoids identical contexts within a source (exact de-dupe on the normalized key)</li>
 <li>Prompt to AI uses full chunk_text (quote + surrounding 3 sentences) built on the client</li>
